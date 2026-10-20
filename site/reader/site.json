@@ -115,7 +115,11 @@
       ]
     }
   ],
-  "excludedSections": ["extra-146", "extra-147", "extra-148"],
+  "excludedSections": [
+    "extra-146",
+    "extra-147",
+    "extra-148"
+  ],
   "knowledge": {
     "file": "knowledge/catalog.json",
     "people": [
@@ -158,6 +162,146 @@
       {
         "id": "lu-meng",
         "section": "chapter-054"
+      },
+      {
+        "id": "wudi-p0100",
+        "section": "chapter-010"
+      },
+      {
+        "id": "wudi-p0143",
+        "section": "chapter-010"
+      },
+      {
+        "id": "wudi-p0182",
+        "section": "chapter-010"
+      },
+      {
+        "id": "wudi-p0178",
+        "section": "chapter-017"
+      },
+      {
+        "id": "wudi-p0236",
+        "section": "chapter-017"
+      },
+      {
+        "id": "wudi-p0162",
+        "section": "chapter-017"
+      },
+      {
+        "id": "wudi-p0183",
+        "section": "chapter-017"
+      },
+      {
+        "id": "wudi-p0180",
+        "section": "chapter-017"
+      },
+      {
+        "id": "zhuge-liang",
+        "section": "chapter-035"
+      },
+      {
+        "id": "wudi-p0172",
+        "section": "chapter-036"
+      },
+      {
+        "id": "wudi-p0367",
+        "section": "chapter-036"
+      },
+      {
+        "id": "wudi-p0282",
+        "section": "chapter-036"
+      },
+      {
+        "id": "xianzhu-p0051",
+        "section": "chapter-036"
+      },
+      {
+        "id": "xianzhu-p0034",
+        "section": "chapter-036"
+      },
+      {
+        "id": "wudi-p0119",
+        "section": "chapter-046"
+      },
+      {
+        "id": "wudi-p0099",
+        "section": "chapter-046"
+      },
+      {
+        "id": "sun-quan",
+        "section": "chapter-047"
+      },
+      {
+        "id": "xianzhu-p0048",
+        "section": "chapter-037"
+      },
+      {
+        "id": "xianzhu-p0046",
+        "section": "chapter-037"
+      },
+      {
+        "id": "xianzhu-p0115",
+        "section": "chapter-058"
+      },
+      {
+        "id": "luxun-p0048",
+        "section": "chapter-058"
+      },
+      {
+        "id": "wudi-p0027",
+        "section": "chapter-009"
+      },
+      {
+        "id": "wudi-p0278",
+        "section": "chapter-009"
+      },
+      {
+        "id": "cao-ren",
+        "section": "chapter-009"
+      },
+      {
+        "id": "xiahoucao-p0045",
+        "section": "chapter-009"
+      },
+      {
+        "id": "wudi-p0075",
+        "section": "chapter-009"
+      },
+      {
+        "id": "wendi-p0039",
+        "section": "chapter-009"
+      },
+      {
+        "id": "wendi-p0038",
+        "section": "chapter-009"
+      },
+      {
+        "id": "mingdi-p0056",
+        "section": "chapter-009"
+      },
+      {
+        "id": "mingdi-p0063",
+        "section": "chapter-009"
+      },
+      {
+        "id": "shaodi-p0064",
+        "section": "chapter-009"
+      },
+      {
+        "id": "wudi-p0053",
+        "section": "chapter-006"
+      },
+      {
+        "id": "wudi-p0052",
+        "section": "chapter-006"
+      },
+      {
+        "id": "wudi-p0057",
+        "section": "chapter-006"
+      },
+      {
+        "id": "liu-biao",
+        "section": "chapter-006"
       }
     ],
     "profiles": "knowledge/profiles.json"
