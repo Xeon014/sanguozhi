@@ -9,17 +9,23 @@ export const PERIODS = [
 export function atlasState(bundle, qs) {
   const period=PERIODS.find(p=>p.id===qs.get('period')) || PERIODS[0];
   const category=Object.hasOwn(bundle.categories,qs.get('category'))?qs.get('category'):'';
-  const nodes=bundle.nodes.filter(n=>n.year>=period.from&&n.year<=period.to&&(!category||n.categories.includes(category)));
+  const filters=Object.fromEntries(['q','person','year'].filter(k=>qs.get(k)).map(k=>[k,qs.get(k)]));
+  const nodes=bundle.nodes.filter(n=>qs.get('period')!=='undated'&&n.year>=period.from&&n.year<=period.to&&(!category||n.categories.includes(category))&&(!bundle.allowedKeys||bundle.allowedKeys.includes(n.key)));
   const key=nodes.find(n=>n.key===qs.get('node'))?.key ||
     nodes.find(n=>n.key===bundle.default)?.key || nodes[0]?.key || '';
-  return {period:period.id,category,key,nodes};
+  return {period:qs.get('period')==='undated'?'undated':period.id,category,key,nodes,...(Object.keys(filters).length?{filters}:{})};
 }
 export function atlasHash(state, home=false) {
   const q=new URLSearchParams(home?{}:{view:'atlas'});
   q.set('period',state.period);
   if(state.category)q.set('category',state.category);
   if(state.key)q.set('node',state.key);
+  for(const [k,v] of Object.entries(state.filters||{}))q.set(k,v);
   return (home?'#/':'#/events')+'?'+q;
+}
+export function yearbookHash(state) {
+  const q=new URLSearchParams(atlasHash(state).split('?')[1]);q.set('view','highlights');
+  return '#/events?'+q;
 }
 export function layoutNodes(nodes, period, width, measureTitle=s=>s.length*14) {
   const lanes=[],labelLanes=[],points=new Map();
@@ -79,7 +85,7 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
   function draw() {
     if(disposed||!host.isConnected)return;
     const focused=canvas.contains(document.activeElement)?document.activeElement.dataset.node:null;
-    const period=PERIODS.find(p=>p.id===state.period);
+    const period=PERIODS.find(p=>p.id===state.period)||PERIODS[0];
     const available=Math.max(matchMedia('(max-width:760px)').matches?(state.period==='all'?960:640):500,scroll.clientWidth);
     const measure=document.createElement('canvas').getContext('2d');
     measure.font=`13px ${getComputedStyle(host).fontFamily}`;
@@ -133,6 +139,7 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
       <p class="atlas-summary">${text(n.summary)}</p>
       <div class="atlas-card-actions">${n.topic?`<a class="atlas-primary" href="#/topics/${encodeURIComponent(n.topic)}">${text('合读赤壁')} →</a>`:''}
       <a href="${esc(href)}">${text('大事记载')} →</a></div>
+      <a class="atlas-yearbook" href="${esc(yearbookHash(state))}">${text('在年表中定位')} →</a>
       <div class="atlas-people">${n.participants.slice(0,5).map(p=>`<a href="#/people/${encodeURIComponent(p.id)}">${text(p.name)}</a>`).join('')}</div></div>
       <div class="atlas-excerpts">${n.sources.map(excerpt).join('')}</div>`;
   }
@@ -144,6 +151,8 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
     list.innerHTML=years.length?years.map(y=>`<section><h3>${y} ${text('年')}</h3><ul>${state.nodes.filter(n=>n.year===y).map(n=>`<li><button type="button" data-node="${esc(n.key)}" aria-pressed="${n.key===state.key}">${text(n.title)}${n.warfare?` <small>${text('· 战事')}</small>`:''}</button></li>`).join('')}</ul></section>`).join(''):`<p>${text('没有符合条件的大事')}</p>`;
     list.querySelectorAll('button').forEach(b=>b.onclick=()=>pick(b.dataset.node,'list'));
     const enter=host.querySelector('.atlas-enter');if(enter)enter.href=atlasHash(state);
+    const yearbook=host.closest('.query-view')?.querySelector('[data-yearbook-link]');
+    if(yearbook)yearbook.href=yearbookHash(state);
   }
   function focusNode(kind) {
     if(kind==='list'){
@@ -171,16 +180,17 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
     change({...state,key},focus);
   }
   for(const button of host.querySelectorAll('[data-period]'))button.onclick=()=>{
-    const q=new URLSearchParams({period:button.dataset.period,category:state.category,node:state.key});
+    const q=new URLSearchParams({...state.filters,period:button.dataset.period,category:state.category,node:state.key});
     change(atlasState(bundle,q));scroll.scrollLeft=0;button.focus({preventScroll:true});onChange();
   };
   select.onchange=()=>{
-    const q=new URLSearchParams({period:state.period,category:select.value,node:state.key});
+    const q=new URLSearchParams({...state.filters,period:state.period,category:select.value,node:state.key});
     change(atlasState(bundle,q));select.focus({preventScroll:true});
   };
   scroll.addEventListener('scroll',onChange,{passive:true});
   render();
   scroll.scrollLeft=saved?.scrollLeft||0;
+  if(!home&&!saved&&qs.get('node')===state.key)focusNode('point');
   const observer=new ResizeObserver(()=>{
     cancelAnimationFrame(frame);frame=requestAnimationFrame(draw);
   });observer.observe(scroll);

@@ -2,6 +2,7 @@ import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './kn
 import {biographyContext} from './profiles.js';
 import {topicDirectory, renderTopic} from './topics.js';
 import {mountAtlas, atlasHash} from './atlas.js';
+import {yearbookItems} from './event-editorial.js';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -42,8 +43,7 @@ function applyPrefs() {
   $('#zh').textContent = prefs.zh === 't' ? '简' : '繁';
   $('#theme').textContent = cv(prefs.theme === 'dark' ? '日间' : '夜间');
   $('#brand').textContent = cv(site.title);
-  const names = ['首页','全书目录','人物','史事','专题研究','原文检索','补充材料'];
-  document.querySelectorAll('.site-head nav a').forEach((a,i) => a.textContent = cv(names[i]));
+  document.querySelectorAll('[data-nav-label]').forEach(a => a.textContent = cv(a.dataset.navLabel));
   $('#nav-toggle').textContent=cv('菜单');
   $('#footer').textContent = cv(`${site.title} · ${site.credit}`);
 }
@@ -308,14 +308,29 @@ function replaceHash(hash) {
 }
 function closeMenu(restoreFocus=false) {
   const button=$('#nav-toggle');
+  document.querySelectorAll('.nav-group[open]').forEach(group=>group.open=false);
   if(button.getAttribute('aria-expanded')!=='true')return;
   button.setAttribute('aria-expanded','false');
   if(restoreFocus&&button.getClientRects().length)button.focus({preventScroll:true});
 }
 function updateNavigation(parts) {
   const current=parts[0]==='read'?(section?.kind==='chapter'?'contents':'supplements'):(parts[0]==='timeline'?'events':parts[0]||'');
+  const params=new URLSearchParams(location.hash.split('?')[1]||'');
+  const view=params.get('view');
+  let target='#/'+current;
+  if(current==='contents'){
+    const selected=parts[0]==='read'?collection(section?.id)?.id:params.get('book');
+    if(site.collections.some(c=>c.id===selected))target+='?book='+selected;
+  }
+  if(current==='events'&&['atlas','highlights'].includes(view))target+='?view='+view;
   document.querySelectorAll('#site-nav a').forEach(a=>{
-    if(a.hash==='#/'+current)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
+    if(a.hash===target)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');
+  });
+  document.querySelectorAll('.nav-group').forEach(group=>{
+    const active=!!group.querySelector('[aria-current=page]');
+    group.classList.toggle('is-current',active);
+    const summary=group.querySelector('summary');
+    if(active)summary.setAttribute('aria-current','true');else summary.removeAttribute('aria-current');
   });
 }
 async function route(){
@@ -338,9 +353,17 @@ async function route(){
     else if(parts[0]==='supplements')supplements();
     else if(parts[0]==='search')await search(qs,version);
     else if(parts[0]==='events'&&parts.length===1&&qs.get('view')==='atlas'){
-      const atlas=await loadAtlas();if(version!==routeVersion)return;
+      let atlas=await loadAtlas();if(version!==routeVersion)return;
       if(!atlas)throw Error('时间星图暂时不可用');
-      main.innerHTML=`<div class="knowledge-page query-view atlas-explore"><nav class="knowledge-tabs" aria-label="${cv('史事视图')}"><a href="#/events?view=atlas" aria-current="page">${cv('时间星图')}</a><a href="#/events?view=highlights">${cv('大事概览')}</a><a href="#/events">${cv('全部记载')}</a></nav><section id="full-atlas"></section></div>`;
+      if(['q','person','year'].some(k=>qs.get(k))){
+        const [catalog,editorial]=await Promise.all([json(site.knowledge.file),json(site.knowledge.editorial)]);
+        if(version!==routeVersion)return;
+        if(catalog.source_sha256!==book.source_sha256||editorial.source_sha256!==catalog.source_sha256||Object.entries(editorial.section_sha256).some(([id,sha])=>catalog.section_sha256[id]!==sha))throw Error('史事资料版本不一致');
+        const filters=new URLSearchParams();for(const k of ['q','person','year'])if(qs.get(k))filters.set(k,qs.get(k));
+        atlas={...atlas,allowedKeys:yearbookItems(catalog.events,editorial,filters,normalize).map(i=>i.type+':'+i.id)};
+      }
+      const filterNotice=['q','person','year'].some(k=>qs.get(k))?`<p class="meta">${cv('已沿用年表筛选，可返回年表调整。')}</p>`:'';
+      main.innerHTML=`<div class="knowledge-page query-view atlas-explore"><nav class="knowledge-tabs" aria-label="${cv('史事视图')}"><a href="#/events?view=atlas" aria-current="page">${cv('时间星图')}</a><a data-yearbook-link href="#/events?view=highlights">${cv('大事年表')}</a><a href="#/events">${cv('全部记载')}</a></nav>${filterNotice}<section id="full-atlas"></section></div>`;
       showAtlas($('#full-atlas'),atlas,qs,saved);knowledgeTitle='时间星图';
     }
     else if(['people','events','timeline'].includes(parts[0])){
@@ -373,7 +396,8 @@ async function route(){
           if(version!==routeVersion)return;
         }
       }
-      knowledgeTitle=renderKnowledge(content,{main,parts,qs:cleanQS,esc,cv,normalize,url,navigate:(hash,filterFocus)=>navigate(hash,filterFocus?{y:window.scrollY,filterFocus}:null,returnSearch?.atlas?returnSearch:null,returnList),saved,profiles,editorial,atlasEnabled:!!site.knowledge.atlas,sections,visiblePeople:site.knowledge.people??null,legacySources:parts[0]==='events'&&qs.get('view')==='sources',onChange:saveContext});
+      const yearbookAtlas=cleanQS.get('view')==='highlights'?await loadAtlas():null;if(version!==routeVersion)return;
+      knowledgeTitle=renderKnowledge(content,{main,parts,qs:cleanQS,esc,cv,normalize,url,navigate:(hash,filterFocus)=>navigate(hash,filterFocus?{y:window.scrollY,filterFocus}:null,returnSearch?.atlas?returnSearch:null,returnList),saved,profiles,editorial,atlas:yearbookAtlas,atlasEnabled:!!site.knowledge.atlas,sections,visiblePeople:site.knowledge.people??null,legacySources:parts[0]==='events'&&qs.get('view')==='sources',onChange:saveContext});
       if(parts[0]==='events'&&parts[1]&&editorial?.records[parts[1]]){
         const record=editorial.records[parts[1]],group=editorial.groups.find(g=>g.id===record.primary_group);
         const metadata=document.createElement('div');metadata.className='event-classification';
@@ -430,14 +454,31 @@ async function boot(){
   prefs.fs=Math.min(30,Math.max(16,Number(prefs.fs)||20));applyPrefs();
   $('#theme').onclick=()=>{prefs.theme=prefs.theme==='dark'?'paper':'dark';savePrefs();applyPrefs();};
   $('#zh').onclick=()=>{saveContext();prefs.zh=prefs.zh==='s'?'t':'s';savePrefs();applyPrefs();route();};
-  $('#nav-toggle').onclick=()=>{const button=$('#nav-toggle');button.setAttribute('aria-expanded',String(button.getAttribute('aria-expanded')!=='true'));};
-  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('#nav-toggle').getAttribute('aria-expanded')==='true'){e.preventDefault();closeMenu(true);}});
+  $('#nav-toggle').onclick=()=>{
+    const button=$('#nav-toggle');
+    if(button.getAttribute('aria-expanded')==='true'){closeMenu(true);return;}
+    button.setAttribute('aria-expanded','true');
+    const current=$('.nav-group.is-current');if(current)current.open=true;
+  };
+  document.querySelectorAll('.nav-group').forEach(group=>{
+    group.querySelector('summary').addEventListener('click',()=>{
+      if(!group.open)document.querySelectorAll('.nav-group').forEach(other=>{if(other!==group)other.open=false;});
+    });
+  });
+  document.addEventListener('keydown',e=>{
+    if(e.key!=='Escape')return;
+    const open=$('.nav-group[open]');
+    if(open){e.preventDefault();open.open=false;open.querySelector('summary').focus({preventScroll:true});}
+    else if($('#nav-toggle').getAttribute('aria-expanded')==='true'){e.preventDefault();closeMenu(true);}
+  });
+  document.addEventListener('click',e=>{if(!e.target.closest('.site-head'))closeMenu();});
+  document.addEventListener('focusin',e=>{if(!e.target.closest('.site-head'))closeMenu();});
   const mobile=matchMedia('(max-width:760px)');
   mobile.addEventListener('change',()=>{if(mobile.matches&&document.activeElement?.closest('#site-nav'))$('#nav-toggle').focus({preventScroll:true});closeMenu();});
   history.scrollRestoration='manual';
   document.addEventListener('click',e=>{
     const a=e.target.closest('a[href^="#/"]');if(!a||e.defaultPrevented||e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;
-    e.preventDefault();const origin=a.closest('.atlas')&&!a.matches('.atlas-enter')?{hash:location.hash,view:viewSnapshot(),label:'← 返回时间星图',atlas:true}:a.closest('.topic-page')&&a.hash!=='#/topics'&&!a.hash.startsWith('#/topics/')?{hash:location.hash,view:viewSnapshot(),label:'← 返回赤壁专题',topic:true,parent:returnSearch?.atlas?returnSearch:null}:a.closest('.result')?{hash:location.hash,view:viewSnapshot()}:a.matches('.evidence-link')?{hash:location.hash,view:viewSnapshot(),label:'← 返回人物与史事',returnList,parent:returnSearch}:returnSearch?.atlas&&!a.closest('#site-nav')?returnSearch:null;
+    e.preventDefault();const origin=a.matches('.yearbook-locate')||(a.closest('.knowledge-tabs')&&a.hash.startsWith('#/events?view=atlas'))?null:a.closest('.atlas')&&!a.matches('.atlas-enter')?{hash:location.hash,view:viewSnapshot(),label:'← 返回时间星图',atlas:true}:a.closest('.topic-page')&&a.hash!=='#/topics'&&!a.hash.startsWith('#/topics/')?{hash:location.hash,view:viewSnapshot(),label:'← 返回赤壁专题',topic:true,parent:returnSearch?.atlas?returnSearch:null}:a.closest('.result')?{hash:location.hash,view:viewSnapshot()}:a.matches('.evidence-link')?{hash:location.hash,view:viewSnapshot(),label:'← 返回人物与史事',returnList,parent:returnSearch}:returnSearch?.atlas&&!a.closest('#site-nav')?returnSearch:null;
     const list=a.closest('.atlas')?null:a.closest('.query-view')&&/^#\/(people|events)\//.test(a.hash)?{hash:location.hash,view:viewSnapshot()}:returnList;
     if(a.closest('#site-nav'))closeMenu(true);
     const topicState=a.closest('.topic-page')&&a.hash.startsWith('#/topics/')?{...viewSnapshot(),y:undefined,anchor:null}:null;

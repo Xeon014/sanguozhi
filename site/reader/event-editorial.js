@@ -14,7 +14,15 @@ export function canonicalEditorial(qs, editorial) {
   if(!editorial)return result;
   if(qs.get('view')==='highlights')result.set('view','highlights');
   const group=editorial.groups.find(g=>g.id===qs.get('group'));
-  if(result.has('view')&&group){result.set('group',group.id);return result;}
+  if(result.has('view')){
+    if(group)result.set('group',group.id);
+    if(group&&!qs.has('node'))return result;
+    if(['all','184-199','200-219','220-249','250-280','undated'].includes(qs.get('period')))result.set('period',qs.get('period'));
+    const keys=new Set();
+    editorial.groups.forEach(g=>keys.add('group:'+g.id));
+    Object.keys(editorial.records).forEach(id=>keys.add('event:'+id));
+    if(keys.has(qs.get('node')))result.set('node',qs.get('node'));
+  }
   for(const [key,field] of [['category','categories'],['importance','importance'],['kind','record_kind']]){
     if(result.has('view')&&key!=='category')continue;
     if(Object.hasOwn(editorial.taxonomy[field],qs.get(key)))result.set(key,qs.get(key));
@@ -48,6 +56,24 @@ export function groupDateText(events) {
   if(events.some(e=>e.time.precision==='relative'))parts.push('另有相对时间记载');
   if(events.some(e=>e.time.precision==='undated'))parts.push('另有年代未详记载');
   return '记载纪年：'+(parts.join(' · ')||'年代未详');
+}
+
+// Filter whole reviewed groups; member dates never replace the anchor year.
+export function yearbookItems(events, editorial, qs, normalize=s=>String(s).toLowerCase()) {
+  const period=qs.get('period')||'all',year=qs.get('year'),person=qs.get('person');
+  const needle=normalize(qs.get('q')||''),category=qs.get('category');
+  return overviewItems(events,editorial).filter(item=>{
+    const members=item.type==='group'?item.events:[item.event],time=item.anchor.time;
+    const dated=Number.isInteger(time.year);
+    if(period==='undated'&&dated)return false;
+    if(/^\d{3}-\d{3}$/.test(period)){const [from,to]=period.split('-').map(Number);if(!dated||time.year<from||time.year>to)return false;}
+    if(year&&(dated?String(time.year):time.precision==='relative'?'relative':'undated')!==year)return false;
+    const categories=item.group?.categories||editorial.records[item.id]?.categories||[];
+    if(category&&!categories.includes(category))return false;
+    if(person&&!members.some(e=>e.participants.some(p=>p.person===person)))return false;
+    if(needle&&![item.group?.title||'',...members.flatMap(e=>[e.title,e.place?.text||'',...e.accounts.map(a=>a.text)])].some(s=>normalize(s).includes(needle)))return false;
+    return true;
+  }).sort((a,b)=>(a.anchor.time.year??Infinity)-(b.anchor.time.year??Infinity));
 }
 
 export function editorialStats(events, editorial) {

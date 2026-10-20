@@ -11,7 +11,34 @@
   <header class="site-head">
     <a class="brand" href="#/" id="brand">三国志</a>
     <button id="nav-toggle" aria-expanded="false" aria-controls="site-nav">菜单</button>
-    <nav id="site-nav" aria-label="主导航"><a href="#/">首页</a><a href="#/contents">全书目录</a><a href="#/people">人物</a><a href="#/events">史事</a><a href="#/topics">专题研究</a><a href="#/search">原文检索</a><a href="#/supplements">补充材料</a></nav>
+    <nav id="site-nav" aria-label="主导航">
+      <details class="nav-group" data-nav="reading">
+        <summary data-nav-label="原典阅读">原典阅读</summary>
+        <div class="nav-links">
+          <a href="#/contents" data-nav-label="全书目录">全书目录</a>
+          <a href="#/contents?book=wei" data-nav-label="魏书">魏书</a>
+          <a href="#/contents?book=shu" data-nav-label="蜀书">蜀书</a>
+          <a href="#/contents?book=wu" data-nav-label="吴书">吴书</a>
+          <a href="#/supplements" data-nav-label="附录与补充">附录与补充</a>
+        </div>
+      </details>
+      <details class="nav-group" data-nav="entities">
+        <summary data-nav-label="人物史事">人物史事</summary>
+        <div class="nav-links"><a href="#/people" data-nav-label="人物">人物</a><a href="#/events" data-nav-label="史事">史事</a></div>
+      </details>
+      <details class="nav-group" data-nav="era">
+        <summary data-nav-label="时代纵览">时代纵览</summary>
+        <div class="nav-links">
+          <a href="#/events?view=atlas" data-nav-label="三国风云">三国风云</a>
+          <a href="#/events?view=highlights" data-nav-label="大事年表">大事年表</a>
+          <a href="#/topics" data-nav-label="专题研究">专题研究</a>
+        </div>
+      </details>
+      <details class="nav-group" data-nav="tools">
+        <summary data-nav-label="检索与统计">检索与统计</summary>
+        <div class="nav-links"><a href="#/search" data-nav-label="原文检索">原文检索</a></div>
+      </details>
+    </nav>
     <div class="preferences">
       <button id="zh" title="简繁切换">繁</button>
       <button id="theme">夜间</button>
