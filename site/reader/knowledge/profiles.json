@@ -18,7 +18,8 @@
     "chapter-009": "1ea4f07c42f6c03a0ea52f25f11f50d07eebc10e103b79badbcf752f5eb248bd",
     "chapter-006": "901e82940ed39d65d67bf239a4d4a22ef64dca1eccad342805569308ff9b1042",
     "chapter-037": "3a31f347a754d0cc679f264c87a42272b4a77f2ec52847d4d7731f441948b4c8",
-    "chapter-058": "96fec57b485009675959eea96ef614906ce42afd8dce8318e433309129ee4ee5"
+    "chapter-058": "96fec57b485009675959eea96ef614906ce42afd8dce8318e433309129ee4ee5",
+    "chapter-033": "ded685c6023abb4a96101a03340d59b1cdbab094bcc95e1f47cfdbb7c51d6b9e"
   },
   "profiles": {
     "cao-cao": {
@@ -4876,6 +4877,14 @@
           {
             "event": "luxun-e-p005a",
             "stage": "last"
+          },
+          {
+            "event": "houzhu-e-o001m0",
+            "stage": null
+          },
+          {
+            "event": "houzhu-e-p007a",
+            "stage": null
           }
         ],
         "compat": {
