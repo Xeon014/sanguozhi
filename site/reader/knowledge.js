@@ -1,6 +1,7 @@
 import {personSources, renderBiography, evidenceKey, biographyScope, scopeIncludes, biographyAnchor} from './profiles.js';
 import {matchesEditorial, canonicalEditorial, overviewItems, groupDateText} from './event-editorial.js';
 import {eventPeople, mountPersonFilter} from './person-filter.js';
+import {readingProjection,quoteText,passageHTML} from './event-reading.js';
 // People and events share evidence; chronology is a view of events, never a second fact set.
 const BATCH = 40, SOURCE_BATCH = 20;
 const LAYERS = {original:'正文', pei:'裴注', modern:'现代注释'};
@@ -140,29 +141,10 @@ export function eventSources(data, event) {
   return {direct,support};
 }
 
-// Reading context comes from the bound source text, never neighbouring events.
+// Source paragraphs are an optional in-place reading view, not extra evidence.
 export function eventReadingSources(data,event,sections={}) {
   const {direct,support}=eventSources(data,event);
-  const extra=support.filter(r=>!direct.includes(r));
-  const notes=extra.filter(r=>r.layer==='modern');
-  const context=extra.filter(r=>r.layer!=='modern'&&direct.some(d=>d.section===r.section&&d.block===r.block));
-  const supplementary=extra.filter(r=>r.layer!=='modern'&&!context.includes(r));
-  for(const r of direct){
-    if(!['original','pei'].includes(r.layer))continue;
-    const section=sections[r.section],block=section?.blocks.find(b=>b.id===r.block);
-    if(!block)continue;
-    if([...block.text].slice(r.start,r.end).join('')!==r.quote)throw Error('引文与当前文本不一致，暂不可查看前后文');
-    // Adjacent original paragraphs are narrative context. A Pei passage stays
-    // in its own note; proximity to another note does not establish continuity.
-    const blocks=r.layer==='original'?section.blocks.filter(b=>b.kind==='original'):[block];
-    const at=blocks.indexOf(block);
-    for(const b of blocks.slice(Math.max(0,at-1),at+2)){
-      const item={...r,id:'context-'+b.id,ids:['context-'+b.id],block:b.id,source:b.source,start:0,end:[...b.text].length,quote:b.text,claims:[],attribution:r.layer==='pei'?'':r.attribution};
-      const existing=context.find(c=>evidenceKey(c)===evidenceKey(item));
-      if(!existing)context.push(item);
-    }
-  }
-  return {direct,notes,context,supplementary};
+  return readingProjection(direct,support,sections);
 }
 
 export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url, navigate, saved=null, visiblePeople=null, profiles={}, editorial=null, atlasEnabled=false, sections:sourceSections={}, legacySources=false, onChange=()=>{}}) {
@@ -272,29 +254,38 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
   }
   if(page==='events'&&id) {
     const e=data.events.find(e=>e.id===id);if(!e)throw Error('未找到此条记载');
-    const heading=head(e.title,'#/events',`<p class="event-meta"><a href="${esc(sourceURL(e.time.evidence[0]))}">${text(dateText(e.time))}</a>${e.place?`<span> · ${text(e.place.text)}</span>`:''}</p>`);
-    const {direct,notes,context,supplementary}=eventReadingSources(data,e,sourceSections);
-    const all=[...direct,...notes,...context,...supplementary],selected=qs.get('section')||'';
+    const {direct,dating,notes,other,passages}=eventReadingSources(data,e,sourceSections);
+    const all=[...new Set([...direct,...dating,...notes,...other])],selected=qs.get('section')||'';
     const sections=[...new Map(all.map(r=>[r.section,r.section_title]))];
-    const visible=direct.filter(r=>!selected||r.section===selected);
+    const visible=passages.filter(p=>!selected||p.records[0].section===selected);
     const scoped=items=>items.filter(r=>!selected||r.section===selected);
     const target=all.find(r=>r.ids.includes(qs.get('ref')));
-    const quote=r=>r.quote.length>180
-      ? `<details class="source-quote event-quote" id="quote-${esc(r.ids[0])}"><summary><span class="quote-preview">${text(r.quote)}</span><span class="quote-action"><span class="when-closed">${text('展开全文')}</span><span class="when-open">${text('收起')}</span></span></summary><blockquote>${text(r.quote)}</blockquote><div class="reading-actions"><button type="button" class="close-reading">${text('收起并返回')}</button></div></details>`
-      : `<blockquote>${text(r.quote)}</blockquote>`;
-    const card=r=>`<article class="source-record event-source" id="source-${esc(r.ids[0])}" data-context tabindex="-1" ${r===target?'data-source-target':''}>
+    const quote=r=>{
+      const value=quoteText(r,sourceSections);
+      return value.length>180
+        ? `<details class="source-quote event-quote" id="quote-${esc(r.ids[0])}"><summary><span class="quote-preview">${text(value)}</span><span class="quote-action"><span class="when-closed">${text('展开全文')}</span><span class="when-open">${text('收起')}</span></span></summary><blockquote>${text(value)}</blockquote><div class="reading-actions"><button type="button" class="close-reading">${text('收起并返回')}</button></div></details>`
+        : `<blockquote>${text(value)}</blockquote>`;
+    };
+    const uses=r=>[...new Set(r.claims.filter(c=>c.label!=='记载').map(c=>c.label==='时间'?'纪年':c.label+'：'+c.text))];
+    const card=(r,grouped=false,withUses=false)=>`<article class="source-record event-source" id="source-${esc(r.ids[0])}" data-context tabindex="-1" ${r===target&&!grouped?'data-source-target':''}>
       <h2>${text(sourceLabel(r))}</h2>
-      ${quote(r)}
+      ${withUses?`<p class="source-uses">${uses(r).map(text).join(' · ')}</p>`:''}${quote(r)}
       <a class="evidence-link" href="${url(r.section,r.block)}">${text('阅读全文')} <span aria-hidden="true">↗</span></a></article>`;
-    const disclosure=(items,id,title)=>scoped(items).length?`<details class="event-reading" id="${id}"><summary>${title==='查看前后文'?`<span class="when-closed">${text(title)}</span><span class="when-open">${text('收起前后文')}</span>`:text(title)}</summary><div>${scoped(items).map(card).join('')}<div class="reading-actions"><button type="button" class="close-reading">${text('收起并返回')}</button></div></div></details>`:'';
+    const disclosure=(items,id,title)=>scoped(items).length?`<details class="event-reading" id="${id}"><summary>${text(title)}</summary><div>${scoped(items).map(r=>direct.includes(r)
+      ?`<p class="evidence-pointer"><a href="${esc(sourceURL(r.ids[0]))}">${text(sourceLabel(r)+' · 查看本文引句')}</a><small>${uses(r).map(text).join(' · ')}</small></p>`:card(r,false,true)).join('')}<div class="reading-actions"><button type="button" class="close-reading">${text('收起并返回')}</button></div></div></details>`:'';
+    const passage=p=>`<section class="event-passage" id="passage-${esc(p.records[0].ids[0])}" data-context tabindex="-1" ${p.records.includes(target)?'data-source-target':''}>
+      <div class="passage-excerpts">${p.records.map(r=>card(r,true)).join('')}</div>
+      ${p.canExpand?`<details class="event-paragraph" id="paragraph-${esc(p.records[0].ids[0])}"><summary><span class="when-closed">${text('展开所在段落')}</span><span class="when-open">${text('收起所在段落')}</span></summary>
+      <div class="source-record"><h2>${text(sourceLabel(p.records[0]))}</h2><blockquote>${passageHTML(p,text)}</blockquote><a class="evidence-link" href="${url(p.records[0].section,p.records[0].block)}">${text('阅读全文')} ↗</a><div class="reading-actions"><button type="button" class="close-reading">${text('收起并返回')}</button></div></div></details>`:''}</section>`;
+    const heading=head(e.title,'#/events',`<p class="event-meta">${text(dateText(e.time))}${e.place?`<span> · ${text(e.place.text)}</span>`:''}</p>${disclosure(dating,'event-dating','纪年依据')}`);
     main.innerHTML=`<article class="knowledge-page event-detail unified-event">${heading}
       ${sections.length>1?`<form class="source-filter" role="search"><label class="filter-field"><span>${text('篇目')}</span><select name="section" id="source-section"><option value="">${text('全部篇目')}</option>${sections.map(([id,title])=>`<option value="${esc(id)}" ${id===selected?'selected':''}>${text(title)}</option>`).join('')}</select></label><button>${text('筛选')}</button></form>`:''}
       <section class="event-accounts" aria-label="${text('文献记载')}" data-batch></section>
-      <div id="event-basis">${disclosure(supplementary,'event-supplementary','补充记载')}${disclosure(notes,'event-notes','相关注释')}${disclosure(context,'event-context','查看前后文')}</div>
+      <div id="event-basis">${disclosure(other,'event-other','其他依据')}${disclosure(notes,'event-notes','相关注释')}</div>
       ${e.participants.length?`<section class="event-participants"><h2>${text('人物')}</h2><dl class="participant-list">${e.participants.map(p=>`<div class="participant"><dt>${personLink(p.person)}</dt><dd>${text(p.role)}</dd></div>`).join('')}</dl></section>`:''}
       ${e.related_events?.length?`<section class="related-events"><h2>${text('相关史事')}</h2>${e.related_events.map(r=>`<p><a href="${eventURL(r.event)}">${text(data.events.find(x=>x.id===r.event).title)}</a></p>`).join('')}</section>`:''}
       ${e.time.after?`<p class="preceding-event"><a href="${eventURL(e.time.after)}">${text('前接')}：${text(data.events.find(x=>x.id===e.time.after).title)}</a></p>`:''}</article>`;
-    batch(visible,SOURCE_BATCH,items=>items.map(r=>card(r)).join(''),visible.indexOf(target));
+    batch(visible,SOURCE_BATCH,items=>items.map(passage).join(''),visible.findIndex(p=>p.records.includes(target)));
     if(sections.length>1)formSubmit(detailPath);
     // Persist the default action synchronously, before an immediate refresh can
     // race the browser's asynchronously dispatched details toggle event.
@@ -306,10 +297,11 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
       event.preventDefault();summary.parentElement.open=!summary.parentElement.open;onChange();
     });
     if(!saved||legacySources){
-      if(qs.get('basis')==='1')main.querySelectorAll('#event-basis>details').forEach(d=>d.open=true);
+      if(qs.get('basis')==='1')main.querySelectorAll('.event-reading').forEach(d=>d.open=true);
       if(target){
         const node=main.querySelector('[data-source-target]');
-        node?.querySelector('.source-quote')?.setAttribute('open','');
+        const exact=target&&document.getElementById('source-'+target.ids[0]);
+        exact?.querySelector('.source-quote')?.setAttribute('open','');
         for(let parent=node?.parentElement;parent&&parent!==main;parent=parent.parentElement)if(parent.tagName==='DETAILS')parent.open=true;
       }
     }

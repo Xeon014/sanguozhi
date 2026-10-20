@@ -1,6 +1,6 @@
 import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js';
 import {biographyContext} from './profiles.js';
-import {topicHome, renderTopic} from './topics.js';
+import {topicDirectory, renderTopic} from './topics.js';
 import {mountAtlas, atlasHash} from './atlas.js';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
@@ -42,7 +42,7 @@ function applyPrefs() {
   $('#zh').textContent = prefs.zh === 't' ? '简' : '繁';
   $('#theme').textContent = cv(prefs.theme === 'dark' ? '日间' : '夜间');
   $('#brand').textContent = cv(site.title);
-  const names = ['首页','全书目录','人物','史事','原文检索','补充材料'];
+  const names = ['首页','全书目录','人物','史事','专题研究','原文检索','补充材料'];
   document.querySelectorAll('.site-head nav a').forEach((a,i) => a.textContent = cv(names[i]));
   $('#nav-toggle').textContent=cv('菜单');
   $('#footer').textContent = cv(`${site.title} · ${site.credit}`);
@@ -132,17 +132,11 @@ async function home(version,qs,saved) {
   // Core reading entrances are available while optional visual data is loading.
   main.innerHTML=`<section class="hero"><p class="eyebrow">${esc(cv(site.credit))}</p><h1>${esc(cv(site.title))}</h1><form class="home-search" role="search"><input aria-label="关键词" name="q" type="search"><button aria-label="检索">${cv('检索')} <span aria-hidden="true">→</span></button></form></section>
   ${site.knowledge?.atlas?'<section id="home-atlas" hidden></section>':''}
-  <div id="home-topic"></div>
   <section class="collection-grid" aria-label="${cv('分书目录')}">${site.collections.map((c,i)=>`<a class="collection-card collection-${i}" href="#/contents?book=${c.id}"><span class="eyebrow">${cv(`${numeral(c.chapters.length)}卷`)}</span><h2>${esc(cv(c.label))}</h2><p>${esc(cv(c.subtitle))}</p><span class="collection-link">${cv('浏览目录')} <span aria-hidden="true">→</span></span><span class="collection-letter" aria-hidden="true">${esc(cv(c.label[0]))}</span></a>`).join('')}</section>
   <section class="featured"><div class="section-heading"><h2>${cv('篇目选读')}</h2><a href="#/contents">${cv('全书目录')} →</a></div><div class="featured-books">${site.collections.map(c=>`<section><h3>${esc(cv(c.label))}</h3>${sectionItems(site.featured.filter(id=>c.chapters.includes(id)).map(id=>book.sections.find(s=>s.id===id)))}</section>`).join('')}</div></section>`;
-  main.insertAdjacentHTML('beforeend',`<nav class="home-queries" aria-label="${cv('资料查询')}"><a href="#/people">${cv('人物')} →</a><a href="#/events">${cv('史事')} →</a></nav>`);
   $('.home-search').onsubmit=e=>{e.preventDefault();navigate('#/search?q='+encodeURIComponent(e.target.q.value.trim()));};
-  const [topicResult,atlasResult]=await Promise.allSettled([loadTopicPresentation(),loadAtlas()]);
+  const atlas=await loadAtlas().catch(()=>null);
   if(version!==routeVersion)return;
-  const presentation=topicResult.status==='fulfilled'?topicResult.value:null;
-  const atlas=atlasResult.status==='fulfilled'?atlasResult.value:null;
-  const topic=presentation?.topics.find(t=>t.id===site.topics.featured);
-  if(topic)$('#home-topic').outerHTML=topicHome(topic,{evidence:presentation.preview_sources},{esc,cv,collection});
   if(atlas){$('#home-atlas').hidden=false;showAtlas($('#home-atlas'),atlas,qs,saved,true);}
 }
 function directoryHTML(selected='') {
@@ -392,6 +386,11 @@ async function route(){
         back.onclick=e=>{e.preventDefault();navigate(returnList.hash,returnList.view,returnSearch?.atlas?returnSearch:null);};$('.knowledge-page').prepend(back);
       }
     }
+    else if(parts[0]==='topics'&&parts.length===1){
+      const presentation=await loadTopicPresentation();if(version!==routeVersion)return;
+      if(!presentation)throw Error('专题暂时不可用');
+      main.innerHTML=topicDirectory(presentation,{esc,cv});knowledgeTitle='专题研究';
+    }
     else if(parts[0]==='topics'){
       const bundle=await loadTopics();if(version!==routeVersion)return;
       const topic=bundle?.presentation.topics.find(t=>t.id===parts[1]);
@@ -407,7 +406,7 @@ async function route(){
     if(version!==routeVersion)return;
     if((parts[0]!=='topics'&&returnSearch?.topic)||returnSearch?.atlas){
       const back=document.createElement('a');back.className='back-search';back.href=returnSearch.hash;back.textContent=cv(returnSearch.label);
-      back.onclick=e=>{if(e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();e.stopPropagation();navigate(returnSearch.hash,returnSearch.view);};
+      back.onclick=e=>{if(e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();e.stopPropagation();navigate(returnSearch.hash,returnSearch.view,returnSearch.parent||null,returnSearch.returnList||null);};
       if(parts[0]!=='read')main.prepend(back);
     }
     if(parts[0]!=='read')window.scrollTo(0,0);
@@ -438,7 +437,7 @@ async function boot(){
   history.scrollRestoration='manual';
   document.addEventListener('click',e=>{
     const a=e.target.closest('a[href^="#/"]');if(!a||e.defaultPrevented||e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;
-    e.preventDefault();const origin=a.closest('.atlas')&&!a.matches('.atlas-enter')?{hash:location.hash,view:viewSnapshot(),label:'← 返回时间星图',atlas:true}:a.closest('.topic-page')&&!a.hash.startsWith('#/topics/')?{hash:location.hash,view:viewSnapshot(),label:'← 返回赤壁专题',topic:true}:a.closest('.result')?{hash:location.hash,view:viewSnapshot()}:a.matches('.evidence-link')?{hash:location.hash,view:viewSnapshot(),label:'← 返回人物与史事',returnList,parent:returnSearch}:returnSearch?.atlas&&!a.closest('#site-nav')?returnSearch:null;
+    e.preventDefault();const origin=a.closest('.atlas')&&!a.matches('.atlas-enter')?{hash:location.hash,view:viewSnapshot(),label:'← 返回时间星图',atlas:true}:a.closest('.topic-page')&&a.hash!=='#/topics'&&!a.hash.startsWith('#/topics/')?{hash:location.hash,view:viewSnapshot(),label:'← 返回赤壁专题',topic:true,parent:returnSearch?.atlas?returnSearch:null}:a.closest('.result')?{hash:location.hash,view:viewSnapshot()}:a.matches('.evidence-link')?{hash:location.hash,view:viewSnapshot(),label:'← 返回人物与史事',returnList,parent:returnSearch}:returnSearch?.atlas&&!a.closest('#site-nav')?returnSearch:null;
     const list=a.closest('.atlas')?null:a.closest('.query-view')&&/^#\/(people|events)\//.test(a.hash)?{hash:location.hash,view:viewSnapshot()}:returnList;
     if(a.closest('#site-nav'))closeMenu(true);
     const topicState=a.closest('.topic-page')&&a.hash.startsWith('#/topics/')?{...viewSnapshot(),y:undefined,anchor:null}:null;

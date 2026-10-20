@@ -1,4 +1,27 @@
-import {eventReadingSources, sourceLayerLabel, dateText} from './knowledge.js';
+import {eventSources, sourceLayerLabel, dateText} from './knowledge.js';
+import {evidenceKey} from './profiles.js';
+
+// Topic excerpts retain their existing context view; event pages use the new
+// in-place paragraph projection. Do not couple these two reading interfaces.
+export function topicReadingSources(catalog,event,sections) {
+  const {direct,support}=eventSources(catalog,event);
+  const extra=support.filter(r=>!direct.includes(r));
+  const notes=extra.filter(r=>r.layer==='modern');
+  const context=extra.filter(r=>r.layer!=='modern'&&direct.some(d=>d.section===r.section&&d.block===r.block));
+  for(const r of direct){
+    if(!['original','pei'].includes(r.layer))continue;
+    const section=sections[r.section],block=section?.blocks.find(b=>b.id===r.block);
+    if(!block)continue;
+    if([...block.text].slice(r.start,r.end).join('')!==r.quote)throw Error('引文与当前文本不一致，暂不可查看前后文');
+    const blocks=r.layer==='original'?section.blocks.filter(b=>b.kind==='original'):[block],at=blocks.indexOf(block);
+    for(const b of blocks.slice(Math.max(0,at-1),at+2)){
+      const item={...r,id:'context-'+b.id,ids:['context-'+b.id],block:b.id,source:b.source,
+        start:0,end:[...b.text].length,quote:b.text,claims:[],attribution:r.layer==='pei'?'':r.attribution};
+      if(!context.some(c=>evidenceKey(c)===evidenceKey(item)))context.push(item);
+    }
+  }
+  return {notes,context};
+}
 
 export function topicReadingState(chapterIds, saved, targetChapter) {
   const prior=saved?.topic||{};
@@ -11,16 +34,15 @@ export function topicReadingState(chapterIds, saved, targetChapter) {
   return {mode,a,b};
 }
 
-export function topicHome(topic, catalog, {esc, cv, collection}) {
-  const text=s=>esc(cv(s)), refs=new Map(catalog.evidence.map(r=>[r.id,r]));
-  return `<section class="topic-feature" aria-labelledby="topic-feature-title">
-    <div class="topic-feature-heading"><p class="eyebrow">${text('诸篇合读')}</p>
-    <h2 id="topic-feature-title">${text('赤壁')}</h2><p>${text(topic.subtitle)}</p>
-    <a class="topic-enter" href="#/topics/${esc(topic.id)}">${text('合读赤壁')} <span aria-hidden="true">→</span></a></div>
-    <div class="topic-preview">${topic.preview.map(p=>{
-      const r=refs.get(p.ref), col=collection(r.section);
-      return `<figure class="topic-preview-quote" data-book="${esc(col?.id||'')}"><figcaption>${text(r.section_title)}</figcaption>
-      <blockquote><a href="#/topics/${esc(topic.id)}?step=battle&ref=${encodeURIComponent(r.id)}">${text(p.quote)}</a></blockquote></figure>`;
+export function topicDirectory(presentation, {esc, cv}) {
+  const text=s=>esc(cv(s)),refs=new Map(presentation.preview_sources.map(r=>[r.id,r]));
+  return `<section class="topic-directory"><header><p class="eyebrow">${text('诸篇合读')}</p><h1>${text('专题研究')}</h1>
+    <p>${text('围绕一件史事，合读不同篇目的记载。')}</p></header><div class="topic-directory-list">
+    ${presentation.topics.map(topic=>{
+      const sources=[...new Map(topic.preview.map(p=>{const r=refs.get(p.ref);return [r.section,r.section_title];})).values()];
+      return `<article class="topic-directory-card"><h2><a href="#/topics/${esc(topic.id)}">${text(topic.title)}</a></h2><p>${text(topic.subtitle)}</p>
+      <ul class="topic-directory-sources" aria-label="${text('选读篇目')}">${sources.map(s=>`<li>${text(s)}</li>`).join('')}</ul>
+      <a class="topic-enter" href="#/topics/${esc(topic.id)}">${text('进入合读')} →</a></article>`;
     }).join('')}</div></section>`;
 }
 
@@ -37,7 +59,7 @@ export function renderTopic(topic, catalog, {main, qs, esc, cv, url, collection,
     <div class="reading-actions"><button type="button" class="topic-close">${text('收起并返回')} ↑</button></div></details>`;
   function card(entry,step) {
     const r=refs.get(entry.ref),event=events.get(entry.event),id=`topic-${step.id}-${r.id}`;
-    const reading=eventReadingSources(catalog,{...event,accounts:[{evidence:[r.id]}],participants:[],place:null},sections);
+    const reading=topicReadingSources(catalog,{...event,accounts:[{evidence:[r.id]}],participants:[],place:null},sections);
     return `<article class="topic-record" id="${esc(id)}" tabindex="-1" data-context ${targetRef===r.id?'data-source-target':''}>
       ${sourceText(r)}
       ${reading.notes.length?disclosure(id+'-notes','相关注释',reading.notes.map(n=>sourceText(n,true)).join('')):''}
@@ -48,7 +70,7 @@ export function renderTopic(topic, catalog, {main, qs, esc, cv, url, collection,
     </article>`;
   }
   main.innerHTML=`<article class="topic-page" data-topic-mode="${mode}">
-    <header class="topic-heading"><p class="crumb"><a href="#/">${text('首页')}</a> / ${text('诸篇合读')}</p>
+    <header class="topic-heading"><p class="crumb"><a href="#/topics">${text('专题研究')}</a> / ${text('诸篇合读')}</p>
     <p class="eyebrow">${text('赤壁')}</p><h1>${text(topic.title)}</h1><p>${text(topic.subtitle)}</p></header>
     <nav class="topic-steps" aria-label="${text('专题分节')}">${topic.steps.map((s,i)=>`<a href="#/topics/${esc(topic.id)}?step=${esc(s.id)}" ${s===targetStep?'aria-current="location"':''}><span aria-hidden="true">0${i+1}</span>${text(s.title)}</a>`).join('')}</nav>
     <div class="topic-controls"><div class="topic-mode" role="group" aria-label="${text('阅读布局')}"><button type="button" data-topic-view="all">${text('诸篇选读')}</button><button type="button" data-topic-view="compare">${text('两篇对读')}</button></div>
