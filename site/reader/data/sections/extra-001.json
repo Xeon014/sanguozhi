@@ -1,0 +1,31 @@
+{
+  "id": "extra-001",
+  "title": "封面 / 图版",
+  "kind": "extra",
+  "status": "source",
+  "blocks": [
+    {
+      "id": "b-34edc0ed614b746eddc4",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0001.xhtml",
+        "index": 0,
+        "anchor": "filepos109"
+      },
+      "tokens": [
+        {
+          "type": "image",
+          "path": "OEBPS/Images/00121.jpg",
+          "alt": ""
+        }
+      ],
+      "text": "",
+      "kind": "heading",
+      "anchors": [
+        "filepos109"
+      ],
+      "source_heading": true
+    }
+  ],
+  "groups": [],
+  "notes": {}
+}

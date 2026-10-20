@@ -1,0 +1,41 @@
+{
+  "id": "extra-000",
+  "title": "封面 / 图版",
+  "kind": "extra",
+  "status": "source",
+  "blocks": [
+    {
+      "id": "b-c192c5a3fa222984ede2",
+      "source": {
+        "file": "titlepage.xhtml",
+        "index": 0,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "\n                "
+        },
+        {
+          "type": "image",
+          "path": "cover.jpeg",
+          "alt": ""
+        },
+        {
+          "type": "text",
+          "text": "\n            "
+        },
+        {
+          "type": "text",
+          "text": "\n        "
+        }
+      ],
+      "text": "",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": true
+    }
+  ],
+  "groups": [],
+  "notes": {}
+}

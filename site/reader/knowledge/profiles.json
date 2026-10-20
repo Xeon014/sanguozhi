@@ -1,0 +1,2527 @@
+{
+  "schema_version": 1,
+  "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+  "section_sha256": {
+    "chapter-001": "8aca4c346aa9cc8706094afc84a5888aa03910aadd75d3ee763fc732c00f7cf9",
+    "chapter-002": "818e8049aaf4f2a93e8e46cd1aec733ed0e64863d8e91740be9c2472df004a3f",
+    "chapter-003": "a712d3afa6ac7c3e4faf87034c28a6aa57016260f8ddc98db8371e45a741536f",
+    "chapter-004": "2171636d4f88c51d566305b5c1dab806c253f5c206c89344f7e018893e738028",
+    "chapter-005": "f33226d3809db3cbfa443023153066e4dc45f48bdf0a8fb7eaaae1e8f82bf8d4",
+    "chapter-032": "a96846f8d938ee9c7b7644e4c1129ee5f143cef89abd660e00079e672445f305",
+    "chapter-054": "b5a12151318a634fc4ef1614a82b326cf31c11f29517fa7499b22e9df91cfead"
+  },
+  "profiles": {
+    "cao-cao": {
+      "fields": [
+        {
+          "id": "cao-cao-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "孟德",
+          "evidence": [
+            "cao-identity"
+          ]
+        },
+        {
+          "id": "wudi-f-p001-cao-cao-55c4cb",
+          "key": "alias",
+          "label": "别名",
+          "text": "吉利",
+          "evidence": [
+            "wudi-q-p001"
+          ]
+        },
+        {
+          "id": "wudi-f-p001-cao-cao-153a0d",
+          "key": "childhood",
+          "label": "小字",
+          "text": "阿瞒",
+          "evidence": [
+            "wudi-q-p001"
+          ]
+        },
+        {
+          "id": "cao-cao-home",
+          "key": "home",
+          "label": "籍贯",
+          "text": "沛国谯",
+          "evidence": [
+            "cao-identity"
+          ]
+        },
+        {
+          "id": "cao-cao-profile-lifespan",
+          "key": "lifespan",
+          "label": "生卒",
+          "text": "卒于 220 年",
+          "evidence": [
+            "wudi-e-o200a-q",
+            "wudi-q-o199",
+            "wudi-q-b-14b02b05b047b9111bbf"
+          ]
+        },
+        {
+          "id": "cao-cao-profile-identity",
+          "key": "identity",
+          "label": "主要身份",
+          "text": "魏王",
+          "evidence": [
+            "wudi-e-o182a-q"
+          ]
+        },
+        {
+          "id": "wudi-f-o200-cao-cao-961e24",
+          "key": "posthumous",
+          "label": "谥号",
+          "text": "武王",
+          "evidence": [
+            "wudi-f-o200-cao-cao-961e24-q"
+          ]
+        }
+      ],
+      "biography": {
+        "stages": [
+          {
+            "id": "youth",
+            "title": "早年"
+          },
+          {
+            "id": "service",
+            "title": "初仕"
+          },
+          {
+            "id": "rising",
+            "title": "起兵讨董"
+          },
+          {
+            "id": "yanzhou",
+            "title": "立足兖州"
+          },
+          {
+            "id": "court",
+            "title": "奉迎天子"
+          },
+          {
+            "id": "plains",
+            "title": "中原争衡"
+          },
+          {
+            "id": "hebei",
+            "title": "平定河北"
+          },
+          {
+            "id": "south",
+            "title": "南征荆州"
+          },
+          {
+            "id": "west",
+            "title": "经营关中"
+          },
+          {
+            "id": "duke",
+            "title": "进封魏公"
+          },
+          {
+            "id": "king",
+            "title": "魏王时期"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "early",
+            "stage": "youth",
+            "title": "少年时的赏识",
+            "time_events": [
+              "wudi-e-o002a"
+            ],
+            "sentences": [
+              {
+                "text": "曹操少年时任侠放荡，桥玄、何颙却认为他不同寻常；桥玄以济乱之才相许。",
+                "events": [
+                  "wudi-e-o002a"
+                ],
+                "evidence": [
+                  "wudi-e-o002a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "office",
+            "stage": "service",
+            "title": "早年任官",
+            "time_events": [
+              "wudi-e-o003a",
+              "wudi-e-o003b"
+            ],
+            "sentences": [
+              {
+                "text": "二十岁时，曹操举孝廉为郎，后任洛阳北部尉。",
+                "events": [
+                  "wudi-e-o003a"
+                ],
+                "evidence": [
+                  "wudi-e-o003a-q"
+                ]
+              },
+              {
+                "text": "此后迁顿丘令，又被征拜议郎。",
+                "events": [
+                  "wudi-e-o003b"
+                ],
+                "evidence": [
+                  "wudi-e-o003b-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "huangjin",
+            "stage": "service",
+            "title": "讨颍川黄巾",
+            "time_events": [
+              "wudi-e-o004a"
+            ],
+            "sentences": [
+              {
+                "text": "曹操受拜骑都尉，讨颍川黄巾。",
+                "events": [
+                  "wudi-e-o004a"
+                ],
+                "evidence": [
+                  "wudi-e-o004a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "jinan-govern",
+            "stage": "service",
+            "title": "治理济南",
+            "time_events": [
+              "wudi-e-o004b"
+            ],
+            "sentences": [
+              {
+                "text": "曹操迁济南相，整治贪污长吏、禁断淫祀。",
+                "events": [
+                  "wudi-e-o004b"
+                ],
+                "evidence": [
+                  "wudi-e-o004b-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "return-home",
+            "stage": "service",
+            "title": "称病归乡",
+            "time_events": [
+              "wudi-e-o004c"
+            ],
+            "sentences": [
+              {
+                "text": "后来被征为东郡太守，未赴任，称病归乡。",
+                "events": [
+                  "wudi-e-o004c"
+                ],
+                "evidence": [
+                  "wudi-e-o004c-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "rising",
+            "stage": "rising",
+            "title": "起兵讨董",
+            "time_events": [
+              "wudi-e-o008e",
+              "wudi-e-o012a"
+            ],
+            "sentences": [
+              {
+                "text": "曹操在陈留散家财、合义兵，于己吾起兵，准备讨伐董卓。",
+                "events": [
+                  "wudi-e-o008e"
+                ],
+                "evidence": [
+                  "wudi-e-o008e-q"
+                ]
+              },
+              {
+                "text": "汴水之战败于徐荣，曹操受伤，得曹洪让马而脱身。",
+                "events": [
+                  "wudi-e-o012a"
+                ],
+                "evidence": [
+                  "wudi-e-o012a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "yanzhou",
+            "stage": "yanzhou",
+            "title": "领兖州",
+            "time_events": [
+              "wudi-e-o022a",
+              "wudi-e-o022c"
+            ],
+            "sentences": [
+              {
+                "text": "鲍信、万潜等迎曹操领兖州牧。",
+                "events": [
+                  "wudi-e-o022a"
+                ],
+                "evidence": [
+                  "wudi-e-o022a-q"
+                ]
+              },
+              {
+                "text": "曹操追击黄巾至济北，接受投降，选取精锐组成青州兵。",
+                "events": [
+                  "wudi-e-o022c"
+                ],
+                "evidence": [
+                  "wudi-e-o022c-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "xuzhou-campaign",
+            "stage": "yanzhou",
+            "title": "两征徐州",
+            "time_events": [
+              "wudi-e-o026a",
+              "wudi-e-o029a"
+            ],
+            "sentences": [
+              {
+                "text": "曹操两次征陶谦，再征时攻拔数城，原文记其所过多有残戮。",
+                "events": [
+                  "wudi-e-o026a",
+                  "wudi-e-o029a"
+                ],
+                "evidence": [
+                  "wudi-e-o026a-q",
+                  "wudi-e-o029a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "recover-yanzhou",
+            "stage": "yanzhou",
+            "title": "收复兖州",
+            "time_events": [
+              "wudi-e-o030a",
+              "wudi-e-o036b"
+            ],
+            "sentences": [
+              {
+                "text": "兖州叛迎吕布后，曹操回援，后来击败吕布并收复定陶。",
+                "events": [
+                  "wudi-e-o030a",
+                  "wudi-e-o036b"
+                ],
+                "evidence": [
+                  "wudi-e-o030a-q",
+                  "wudi-e-o036b-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "court-guard",
+            "stage": "court",
+            "title": "入卫朝廷",
+            "time_events": [
+              "wudi-e-o043a"
+            ],
+            "sentences": [
+              {
+                "text": "曹操至洛阳护卫朝廷，天子授予节钺，令其录尚书事。",
+                "events": [
+                  "wudi-e-o043a"
+                ],
+                "evidence": [
+                  "wudi-e-o043a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "tuntian",
+            "stage": "court",
+            "title": "兴办屯田",
+            "time_events": [
+              "wudi-e-o047a"
+            ],
+            "sentences": [
+              {
+                "text": "曹操采纳枣祗、韩浩等人的建议，开始兴办屯田。",
+                "events": [
+                  "wudi-e-o047a"
+                ],
+                "evidence": [
+                  "wudi-e-o047a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wan",
+            "stage": "plains",
+            "title": "宛城败战",
+            "time_events": [
+              "wudi-e-o050a"
+            ],
+            "sentences": [
+              {
+                "text": "张绣投降后再反，曹操在宛城战败并受箭伤，曹昂、曹安民遇害。",
+                "events": [
+                  "wudi-e-o050a"
+                ],
+                "evidence": [
+                  "wudi-e-o050a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "xiapi",
+            "stage": "plains",
+            "title": "攻取下邳",
+            "time_events": [
+              "wudi-e-o058b"
+            ],
+            "sentences": [
+              {
+                "text": "曹操采纳荀攸、郭嘉之计，引泗水、沂水灌下邳；城降后，吕布、陈宫被擒杀。",
+                "events": [
+                  "wudi-e-o058b"
+                ],
+                "evidence": [
+                  "wudi-e-o058b-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "guandu",
+            "stage": "plains",
+            "title": "官渡之战",
+            "time_events": [
+              "wudi-e-o080b",
+              "wudi-e-o081a"
+            ],
+            "sentences": [
+              {
+                "text": "曹操率五千步骑夜袭淳于琼粮营，大破其军。",
+                "events": [
+                  "wudi-e-o080b"
+                ],
+                "evidence": [
+                  "wudi-e-o080b-q"
+                ]
+              },
+              {
+                "text": "张郃、高览来降，袁绍军溃败，袁绍与袁谭渡河北逃。",
+                "events": [
+                  "wudi-e-o081a"
+                ],
+                "evidence": [
+                  "wudi-e-o081a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ye",
+            "stage": "hebei",
+            "title": "攻取邺城",
+            "time_events": [
+              "wudi-e-o094b"
+            ],
+            "sentences": [
+              {
+                "text": "审荣开邺城东门纳兵，审配战败被杀，邺城平定。",
+                "events": [
+                  "wudi-e-o094b"
+                ],
+                "evidence": [
+                  "wudi-e-o094b-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "nanpi",
+            "stage": "hebei",
+            "title": "攻破南皮",
+            "time_events": [
+              "wudi-e-o100a"
+            ],
+            "sentences": [
+              {
+                "text": "曹操攻破南皮，杀袁谭并诛其妻子，冀州平定。",
+                "events": [
+                  "wudi-e-o100a"
+                ],
+                "evidence": [
+                  "wudi-e-o100a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wuhuan",
+            "stage": "hebei",
+            "title": "北征乌丸",
+            "time_events": [
+              "wudi-e-o115a",
+              "wudi-e-o117b"
+            ],
+            "sentences": [
+              {
+                "text": "曹军在白狼山遇乌丸军，曹操令张辽为先锋，大破敌军，斩蹋顿。",
+                "events": [
+                  "wudi-e-o115a"
+                ],
+                "evidence": [
+                  "wudi-e-o115a-q"
+                ]
+              },
+              {
+                "text": "曹操回军后，公孙康斩袁尚、袁熙等并送其首级。",
+                "events": [
+                  "wudi-e-o117b"
+                ],
+                "evidence": [
+                  "wudi-e-o117b-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "jingzhou-campaign",
+            "stage": "south",
+            "title": "南征荆州",
+            "time_events": [
+              "south-jingzhou",
+              "liu-cong-surrender"
+            ],
+            "sentences": [
+              {
+                "text": "曹操南征刘表，刘表死后，刘琮在曹军到达新野时投降。",
+                "events": [
+                  "south-jingzhou",
+                  "liu-cong-surrender"
+                ],
+                "evidence": [
+                  "south",
+                  "surrender"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "chibi-retreat",
+            "stage": "south",
+            "title": "赤壁退军",
+            "time_events": [
+              "chibi-engagement",
+              "cao-retreat"
+            ],
+            "sentences": [
+              {
+                "text": "《武帝纪》记赤壁交战不利，又有疫病，曹操引军退还；《周瑜鲁肃吕蒙传》记刘备与周瑜等追击，曹操留曹仁守江陵后北归。",
+                "events": [
+                  "chibi-engagement",
+                  "cao-retreat"
+                ],
+                "evidence": [
+                  "battle-wei",
+                  "retreat"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "talent",
+            "stage": "west",
+            "title": "唯才是举",
+            "time_events": [
+              "wudi-e-o126a"
+            ],
+            "sentences": [
+              {
+                "text": "曹操发布求贤令，提出用人不拘于廉士，要求属下举荐有才能而未被发现的人。",
+                "events": [
+                  "wudi-e-o126a"
+                ],
+                "evidence": [
+                  "wudi-e-o126a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "guanzhong",
+            "stage": "west",
+            "title": "平定关中",
+            "time_events": [
+              "wudi-e-o132b"
+            ],
+            "sentences": [
+              {
+                "text": "曹军与关中联军会战，以轻兵挑战，再用虎骑夹击，击败韩遂、马超等军。",
+                "events": [
+                  "wudi-e-o132b"
+                ],
+                "evidence": [
+                  "wudi-e-o132b-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "duke",
+            "stage": "duke",
+            "title": "受封魏公",
+            "time_events": [
+              "wudi-e-o141a"
+            ],
+            "sentences": [
+              {
+                "text": "汉献帝遣御史大夫郗虑持节，册命曹操为魏公。",
+                "events": [
+                  "wudi-e-o141a"
+                ],
+                "evidence": [
+                  "wudi-e-o141a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "nanzheng",
+            "stage": "duke",
+            "title": "进入南郑",
+            "time_events": [
+              "wudi-e-o176c"
+            ],
+            "sentences": [
+              {
+                "text": "曹军进入南郑，取得张鲁府库，巴、汉归降，曹操调整当地郡县。",
+                "events": [
+                  "wudi-e-o176c"
+                ],
+                "evidence": [
+                  "wudi-e-o176c-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "zhanglu-surrender",
+            "stage": "duke",
+            "title": "张鲁归降",
+            "time_events": [
+              "wudi-e-o179a"
+            ],
+            "sentences": [
+              {
+                "text": "张鲁从巴中率余众投降，与五子一同受封列侯。",
+                "events": [
+                  "wudi-e-o179a"
+                ],
+                "evidence": [
+                  "wudi-e-o179a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "king",
+            "stage": "king",
+            "title": "进爵魏王",
+            "time_events": [
+              "wudi-e-o182a"
+            ],
+            "sentences": [
+              {
+                "text": "汉献帝进曹操爵位为魏王。",
+                "events": [
+                  "wudi-e-o182a"
+                ],
+                "evidence": [
+                  "wudi-e-o182a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "return-changan",
+            "stage": "king",
+            "title": "退还长安",
+            "time_events": [
+              "wudi-e-o196a"
+            ],
+            "sentences": [
+              {
+                "text": "曹操从汉中退军，返回长安。",
+                "events": [
+                  "wudi-e-o196a"
+                ],
+                "evidence": [
+                  "wudi-e-o196a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "luoyang-death",
+            "stage": "king",
+            "title": "卒于洛阳",
+            "time_events": [
+              "wudi-e-o200a",
+              "wudi-e-o200b"
+            ],
+            "sentences": [
+              {
+                "text": "曹操卒于洛阳，年六十六。",
+                "events": [
+                  "wudi-e-o200a"
+                ],
+                "evidence": [
+                  "wudi-e-o200a-q"
+                ]
+              },
+              {
+                "text": "遗令要求葬毕除服，屯戍将士不得离部，以时服入殓，不藏金玉珍宝。",
+                "events": [
+                  "wudi-e-o200b"
+                ],
+                "evidence": [
+                  "wudi-e-o200b-q"
+                ]
+              }
+            ]
+          }
+        ],
+        "placements": [
+          {
+            "event": "wudi-e-o002a",
+            "stage": "youth"
+          },
+          {
+            "event": "wudi-e-o003a",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-o003b",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-p006a",
+            "stage": "youth"
+          },
+          {
+            "event": "wudi-e-p007a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p010a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p011a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p011b",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p011c",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p012a",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-p013a",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-p013c",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-p013d",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-o004a",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-o004b",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-o004c",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-o005a",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-p014a",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-p015a",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-p017a",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-o006b",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-o008b",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-o008e",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-p018a",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-p019a",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-p020a",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-p021a",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-o009a",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-p025c",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-o011a",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-o012a",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-o013a",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-o013b",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-o015a",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-p031a",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-p032a",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-p033a",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-o018b",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-o019a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o019b",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-p035a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o022a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o022b",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o022c",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o023a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-p037a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-p038a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-p038b",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o024b",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o025a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o026a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o028a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o029a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o030a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o031a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o031b",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-p041a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o032a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o032b",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o033a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o034a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o035a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o036a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o036b",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o037a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o038a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o038b",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-p042a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o040a",
+            "stage": "court"
+          },
+          {
+            "event": "wudi-e-o040b",
+            "stage": "court"
+          },
+          {
+            "event": "wudi-e-o041a",
+            "stage": "court"
+          },
+          {
+            "event": "wudi-e-o042a",
+            "stage": "court"
+          },
+          {
+            "event": "wudi-e-o043a",
+            "stage": "court"
+          },
+          {
+            "event": "wudi-e-o043b",
+            "stage": "court"
+          },
+          {
+            "event": "wudi-e-o044a",
+            "stage": "court"
+          },
+          {
+            "event": "wudi-e-p045b",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-o046a",
+            "stage": "court"
+          },
+          {
+            "event": "wudi-e-o046b",
+            "stage": "court"
+          },
+          {
+            "event": "wudi-e-o047a",
+            "stage": "court"
+          },
+          {
+            "event": "wudi-e-o048a",
+            "stage": "court"
+          },
+          {
+            "event": "wudi-e-p046a",
+            "stage": "court"
+          },
+          {
+            "event": "wudi-e-o050a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o050b",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o052a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o052b",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o053a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-p047a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-p048a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-p049a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o054a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o054b",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o055a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o056a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-p050a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o057a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o058a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o058b",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o059a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o059b",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o060a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-o060b",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-p051a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-o061a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o062a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o062b",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o063a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o064a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o065a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o066a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o066b",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o067a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o067b",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o068a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o068b",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o069a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o070a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-p053a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-p055a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-o072a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o072b",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o074a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o075a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o076a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o077a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o077b",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-p058a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-p059a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o078b",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o079a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o079b",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o080a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o080b",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o081a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o081b",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-p060a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-p060b",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-p061a",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-o083a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o084b",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o084a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-o085a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o085b",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o087a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o088a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o089a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o089b",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-p066a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-o090a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o090b",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o090c",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o091a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o091b",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-p067a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-p069a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o092a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o092b",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o093a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o093b",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o094a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o094b",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o094c",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-p071a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o095a",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-o096a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o098a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o099a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-p074a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o100a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o100b",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o100c",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o101a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-p075a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o102a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o103a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o104a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o105a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o106a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o107a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o108a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o110a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-p078a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o111a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o111b",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-p081a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-o112a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o113a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o114a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o114b",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o115a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o116a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o117a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o117b",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o118a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-p082a",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-p082b",
+            "stage": "hebei"
+          },
+          {
+            "event": "wudi-e-o119a",
+            "stage": "south"
+          },
+          {
+            "event": "wudi-e-o120a",
+            "stage": "south"
+          },
+          {
+            "event": "south-jingzhou",
+            "stage": "south"
+          },
+          {
+            "event": "liu-cong-surrender",
+            "stage": "south"
+          },
+          {
+            "event": "wudi-e-o121d",
+            "stage": "south"
+          },
+          {
+            "event": "wudi-e-o121e",
+            "stage": "south"
+          },
+          {
+            "event": "wudi-e-o122a",
+            "stage": "south"
+          },
+          {
+            "event": "chibi-engagement",
+            "stage": "south"
+          },
+          {
+            "event": "cao-retreat",
+            "stage": "south"
+          },
+          {
+            "event": "wudi-e-p084a",
+            "stage": "south"
+          },
+          {
+            "event": "wudi-e-p085d",
+            "stage": "south"
+          },
+          {
+            "event": "wudi-e-p086c",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-p086d",
+            "stage": "south"
+          },
+          {
+            "event": "wudi-e-p087a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p087b",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p087e",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p087f",
+            "stage": "south"
+          },
+          {
+            "event": "wudi-e-o123a",
+            "stage": "south"
+          },
+          {
+            "event": "wudi-e-o124a",
+            "stage": "south"
+          },
+          {
+            "event": "wudi-e-o124b",
+            "stage": "south"
+          },
+          {
+            "event": "wudi-e-o125a",
+            "stage": "south"
+          },
+          {
+            "event": "wudi-e-o126a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-o127a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-p091a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-p092a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-p090a",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-p090d",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-p090b",
+            "stage": "rising"
+          },
+          {
+            "event": "wudi-e-p090e",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "wudi-e-p090c",
+            "stage": "plains"
+          },
+          {
+            "event": "wudi-e-p090f",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p090g",
+            "stage": "south"
+          },
+          {
+            "event": "wudi-e-o128a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-o129a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-o129b",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-p093a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-o130a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-o131a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-o131b",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-o131c",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-o132a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-o132b",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-o133a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-o134a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-o135a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-o136a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-p094a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-p095a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-p096a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-p098a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-o137a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-o137b",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-o138a",
+            "stage": "west"
+          },
+          {
+            "event": "wudi-e-o139a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o140a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o141a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o146a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-p102a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p112a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-p113a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o158a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o158b",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o158c",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o160a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o161a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o163a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o164a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o165a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o166b",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o168a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o170a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o171a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o172a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-p116a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-p117a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-p118a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-p119a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o174a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o175a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o176a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o176b",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o176c",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o178a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o178b",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o179a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o179b",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o180a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-p122a",
+            "stage": "duke"
+          },
+          {
+            "event": "wudi-e-o181a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o182a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o182b",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o182c",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o183a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o184a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-p128a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-p131a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-p133a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o185a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o185b",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o186a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o186d",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-p137b",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o191a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o192a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o193a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-p138a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p140a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-p141a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-p142a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-p142b",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o195b",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o196a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o197a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o197b",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o198a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o198b",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-p144a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-p147a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-p148a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-p149a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-p150a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o199a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o200a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o200b",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-o201a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-p152a",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-p152b",
+            "stage": "king"
+          },
+          {
+            "event": "wudi-e-p153a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p153b",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p153c",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p154a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p155a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p155b",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p156a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p157a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p157b",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p157c",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-p157d",
+            "stage": null
+          },
+          {
+            "event": "wendi-e-p002a",
+            "stage": null
+          },
+          {
+            "event": "wendi-e-p106a",
+            "stage": null
+          },
+          {
+            "event": "wendi-e-p106g",
+            "stage": null
+          },
+          {
+            "event": "mingdi-e-p001a",
+            "stage": null
+          },
+          {
+            "event": "mingdi-e-p021b",
+            "stage": "plains"
+          },
+          {
+            "event": "mingdi-e-p021e",
+            "stage": null
+          },
+          {
+            "event": "mingdi-e-p024a",
+            "stage": null
+          },
+          {
+            "event": "mingdi-e-p024b",
+            "stage": null
+          },
+          {
+            "event": "shaodi-e-p035c",
+            "stage": "king"
+          },
+          {
+            "event": "houfei-e-o004a",
+            "stage": null
+          },
+          {
+            "event": "houfei-e-o005a",
+            "stage": null
+          },
+          {
+            "event": "houfei-e-o006a",
+            "stage": null
+          },
+          {
+            "event": "houfei-e-o006b",
+            "stage": "king"
+          },
+          {
+            "event": "houfei-e-p002b",
+            "stage": null
+          },
+          {
+            "event": "houfei-e-p002d",
+            "stage": null
+          },
+          {
+            "event": "houfei-e-p002e",
+            "stage": "king"
+          },
+          {
+            "event": "houfei-e-p003a",
+            "stage": null
+          },
+          {
+            "event": "houfei-e-p006a",
+            "stage": null
+          },
+          {
+            "event": "houfei-e-o019a",
+            "stage": "hebei"
+          },
+          {
+            "event": "houfei-e-p012c",
+            "stage": "west"
+          },
+          {
+            "event": "houfei-e-p012e",
+            "stage": "king"
+          },
+          {
+            "event": "xianzhu-e-p006a",
+            "stage": "service"
+          },
+          {
+            "event": "xianzhu-e-o008a",
+            "stage": "yanzhou"
+          },
+          {
+            "event": "xianzhu-e-o010b",
+            "stage": "court"
+          },
+          {
+            "event": "xianzhu-e-o013b",
+            "stage": null
+          },
+          {
+            "event": "xianzhu-e-o013d",
+            "stage": "plains"
+          },
+          {
+            "event": "xianzhu-e-o015a",
+            "stage": "plains"
+          },
+          {
+            "event": "xianzhu-e-p016a",
+            "stage": null
+          },
+          {
+            "event": "xianzhu-e-o027a",
+            "stage": "south"
+          },
+          {
+            "event": "xianzhu-e-o039a",
+            "stage": "west"
+          },
+          {
+            "event": "xianzhu-e-p036a",
+            "stage": null
+          },
+          {
+            "event": "xianzhu-e-p039d",
+            "stage": "south"
+          },
+          {
+            "event": "xianzhu-e-o046a",
+            "stage": null
+          },
+          {
+            "event": "zhou-plan",
+            "stage": "south"
+          },
+          {
+            "event": "zhouyu-e-p006a",
+            "stage": "hebei"
+          },
+          {
+            "event": "huang-fire",
+            "stage": "south"
+          },
+          {
+            "event": "zhouyu-e-p008a",
+            "stage": "south"
+          },
+          {
+            "event": "zhouyu-e-p009a",
+            "stage": "south"
+          },
+          {
+            "event": "zhouyu-e-p012b",
+            "stage": null
+          },
+          {
+            "event": "zhouyu-e-p012d",
+            "stage": "south"
+          },
+          {
+            "event": "zhouyu-e-o051b",
+            "stage": null
+          },
+          {
+            "event": "meng-wulin",
+            "stage": "south"
+          },
+          {
+            "event": "zhouyu-e-o076b",
+            "stage": null
+          },
+          {
+            "event": "zhouyu-e-o077a",
+            "stage": null
+          },
+          {
+            "event": "zhouyu-e-o085c",
+            "stage": null
+          },
+          {
+            "event": "zhouyu-e-o085d",
+            "stage": null
+          }
+        ],
+        "compat": {
+          "anchors": {
+            "stage-1": "stage-youth",
+            "stage-2": "stage-rising",
+            "stage-3": "stage-court",
+            "stage-4": "stage-hebei",
+            "stage-5": "stage-south",
+            "stage-6": "stage-duke",
+            "jinan": "huangjin",
+            "xuzhou": "xuzhou-campaign",
+            "emperor": "court-guard",
+            "hebei": "ye",
+            "chibi": "jingzhou-campaign",
+            "hanzhong": "nanzheng",
+            "death": "return-changan"
+          },
+          "sources": {
+            "jinan": {
+              "title": "讨黄巾与治理济南",
+              "nodes": [
+                "huangjin",
+                "jinan-govern",
+                "return-home"
+              ],
+              "evidence": [
+                "wudi-e-o004a-q",
+                "wudi-e-o004b-q",
+                "wudi-e-o004c-q"
+              ]
+            },
+            "xuzhou": {
+              "title": "征徐州与兖州争夺",
+              "nodes": [
+                "xuzhou-campaign",
+                "recover-yanzhou"
+              ],
+              "evidence": [
+                "wudi-e-o026a-q",
+                "wudi-e-o029a-q",
+                "wudi-e-o030a-q",
+                "wudi-e-o036b-q"
+              ]
+            },
+            "emperor": {
+              "title": "入卫朝廷与兴屯田",
+              "nodes": [
+                "court-guard",
+                "tuntian"
+              ],
+              "evidence": [
+                "wudi-e-o043a-q",
+                "wudi-e-o047a-q"
+              ]
+            },
+            "hebei": {
+              "title": "取邺与破袁谭",
+              "nodes": [
+                "ye",
+                "nanpi"
+              ],
+              "evidence": [
+                "wudi-e-o094b-q",
+                "wudi-e-o100a-q"
+              ]
+            },
+            "chibi": {
+              "title": "南征荆州与赤壁退军",
+              "nodes": [
+                "jingzhou-campaign",
+                "chibi-retreat"
+              ],
+              "evidence": [
+                "south",
+                "surrender",
+                "battle-wei",
+                "retreat"
+              ]
+            },
+            "hanzhong": {
+              "title": "进入汉中与张鲁归降",
+              "nodes": [
+                "nanzheng",
+                "zhanglu-surrender"
+              ],
+              "evidence": [
+                "wudi-e-o176c-q",
+                "wudi-e-o179a-q"
+              ]
+            },
+            "death": {
+              "title": "退还长安与卒于洛阳",
+              "nodes": [
+                "return-changan",
+                "luoyang-death"
+              ],
+              "evidence": [
+                "wudi-e-o196a-q",
+                "wudi-e-o200a-q",
+                "wudi-e-o200b-q"
+              ]
+            }
+          },
+          "stage_groups": {
+            "1": [
+              "youth",
+              "service"
+            ],
+            "2": [
+              "rising",
+              "yanzhou"
+            ],
+            "3": [
+              "court",
+              "plains"
+            ],
+            "4": [
+              "hebei"
+            ],
+            "5": [
+              "south",
+              "west"
+            ],
+            "6": [
+              "duke",
+              "king"
+            ]
+          }
+        }
+      }
+    },
+    "wudi-p0170": {
+      "fields": [
+        {
+          "id": "wendi-f0001",
+          "key": "courtesy",
+          "label": "字",
+          "text": "子桓",
+          "evidence": [
+            "wendi-f0001-q"
+          ]
+        }
+      ]
+    },
+    "wendi-p0005": {
+      "fields": [
+        {
+          "id": "mingdi-f0001",
+          "key": "courtesy",
+          "label": "字",
+          "text": "元仲",
+          "evidence": [
+            "mingdi-f0001-q"
+          ]
+        }
+      ]
+    },
+    "wendi-p0129": {
+      "fields": [
+        {
+          "id": "shaodi-f0001",
+          "key": "courtesy",
+          "label": "字",
+          "text": "兰卿",
+          "evidence": [
+            "shaodi-f0001-q"
+          ]
+        }
+      ]
+    },
+    "shaodi-p0068": {
+      "fields": [
+        {
+          "id": "shaodi-f0004",
+          "key": "courtesy",
+          "label": "字",
+          "text": "彦士",
+          "evidence": [
+            "shaodi-f0004-q"
+          ]
+        }
+      ]
+    },
+    "shaodi-p0137": {
+      "fields": [
+        {
+          "id": "shaodi-f0007",
+          "key": "courtesy",
+          "label": "字",
+          "text": "景明",
+          "evidence": [
+            "shaodi-f0007-q"
+          ]
+        }
+      ]
+    },
+    "liu-bei": {
+      "fields": [
+        {
+          "id": "liu-bei-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "玄德",
+          "evidence": [
+            "liu-identity"
+          ]
+        },
+        {
+          "id": "liu-bei-home",
+          "key": "home",
+          "label": "籍贯",
+          "text": "涿郡涿县",
+          "evidence": [
+            "liu-identity"
+          ]
+        },
+        {
+          "id": "xianzhu-f0023",
+          "key": "posthumous",
+          "label": "谥号",
+          "text": "昭烈皇帝",
+          "evidence": [
+            "xianzhu-f0023-q"
+          ]
+        }
+      ]
+    },
+    "zhou-yu": {
+      "fields": [
+        {
+          "id": "zhou-yu-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "公瑾",
+          "evidence": [
+            "zhou-identity"
+          ]
+        },
+        {
+          "id": "zhou-yu-home",
+          "key": "home",
+          "label": "籍贯",
+          "text": "庐江舒",
+          "evidence": [
+            "zhou-identity"
+          ]
+        }
+      ]
+    },
+    "lu-su": {
+      "fields": [
+        {
+          "id": "lu-su-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "子敬",
+          "evidence": [
+            "su-identity"
+          ]
+        },
+        {
+          "id": "lu-su-home",
+          "key": "home",
+          "label": "籍贯",
+          "text": "临淮东城",
+          "evidence": [
+            "su-identity"
+          ]
+        }
+      ]
+    },
+    "lu-meng": {
+      "fields": [
+        {
+          "id": "lu-meng-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "子明",
+          "evidence": [
+            "meng-identity"
+          ]
+        },
+        {
+          "id": "lu-meng-home",
+          "key": "home",
+          "label": "籍贯",
+          "text": "汝南富陂",
+          "evidence": [
+            "meng-identity"
+          ]
+        }
+      ]
+    }
+  }
+}

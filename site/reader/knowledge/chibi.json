@@ -1,0 +1,1757 @@
+{
+  "schema_version": 1,
+  "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+  "section_sha256": {
+    "chapter-001": "8aca4c346aa9cc8706094afc84a5888aa03910aadd75d3ee763fc732c00f7cf9",
+    "chapter-032": "a96846f8d938ee9c7b7644e4c1129ee5f143cef89abd660e00079e672445f305",
+    "chapter-054": "b5a12151318a634fc4ef1614a82b326cf31c11f29517fa7499b22e9df91cfead"
+  },
+  "topic": {
+    "id": "chibi",
+    "title": "赤壁之战",
+    "scope": [
+      "chapter-001",
+      "chapter-032",
+      "chapter-054"
+    ],
+    "description": "合读《武帝纪》《先主传》《周瑜鲁肃吕蒙传》中的赤壁相关记载。"
+  },
+  "persons": [
+    {
+      "id": "cao-cao",
+      "name": "曹操",
+      "evidence": [
+        "cao-identity"
+      ],
+      "facts": [
+        {
+          "id": "cao-cao-courtesy",
+          "label": "字",
+          "text": "孟德",
+          "evidence": [
+            "cao-identity"
+          ]
+        },
+        {
+          "id": "cao-cao-home",
+          "label": "籍贯",
+          "text": "沛国谯",
+          "evidence": [
+            "cao-identity"
+          ]
+        },
+        {
+          "id": "cao-title",
+          "label": "本文称谓",
+          "text": "本段记事中的“公”“曹公”指曹操；现代注释说明了这一阶段的称谓。",
+          "evidence": [
+            "cao-titles"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "liu-bei",
+      "name": "刘备",
+      "evidence": [
+        "liu-identity"
+      ],
+      "facts": [
+        {
+          "id": "liu-bei-courtesy",
+          "label": "字",
+          "text": "玄德",
+          "evidence": [
+            "liu-identity"
+          ]
+        },
+        {
+          "id": "liu-bei-home",
+          "label": "籍贯",
+          "text": "涿郡涿县",
+          "evidence": [
+            "liu-identity"
+          ]
+        },
+        {
+          "id": "liu-title",
+          "label": "本文称谓",
+          "text": "“先主”指刘备。",
+          "evidence": [
+            "liu-identity"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zhou-yu",
+      "name": "周瑜",
+      "evidence": [
+        "zhou-identity"
+      ],
+      "facts": [
+        {
+          "id": "zhou-yu-courtesy",
+          "label": "字",
+          "text": "公瑾",
+          "evidence": [
+            "zhou-identity"
+          ]
+        },
+        {
+          "id": "zhou-yu-home",
+          "label": "籍贯",
+          "text": "庐江舒",
+          "evidence": [
+            "zhou-identity"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lu-su",
+      "name": "鲁肃",
+      "evidence": [
+        "su-identity"
+      ],
+      "facts": [
+        {
+          "id": "lu-su-courtesy",
+          "label": "字",
+          "text": "子敬",
+          "evidence": [
+            "su-identity"
+          ]
+        },
+        {
+          "id": "lu-su-home",
+          "label": "籍贯",
+          "text": "临淮东城",
+          "evidence": [
+            "su-identity"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lu-meng",
+      "name": "吕蒙",
+      "evidence": [
+        "meng-identity"
+      ],
+      "facts": [
+        {
+          "id": "lu-meng-courtesy",
+          "label": "字",
+          "text": "子明",
+          "evidence": [
+            "meng-identity"
+          ]
+        },
+        {
+          "id": "lu-meng-home",
+          "label": "籍贯",
+          "text": "汝南富陂",
+          "evidence": [
+            "meng-identity"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sun-quan",
+      "name": "孙权",
+      "evidence": [
+        "envoy-shu"
+      ],
+      "facts": []
+    },
+    {
+      "id": "zhuge-liang",
+      "name": "诸葛亮",
+      "evidence": [
+        "envoy-shu"
+      ],
+      "facts": []
+    },
+    {
+      "id": "cheng-pu",
+      "name": "程普",
+      "evidence": [
+        "allied-shu"
+      ],
+      "facts": []
+    },
+    {
+      "id": "huang-gai",
+      "name": "黄盖",
+      "evidence": [
+        "huang-plan"
+      ],
+      "facts": []
+    },
+    {
+      "id": "cao-ren",
+      "name": "曹仁",
+      "evidence": [
+        "retreat"
+      ],
+      "facts": []
+    },
+    {
+      "id": "liu-cong",
+      "name": "刘琮",
+      "evidence": [
+        "zhou-year"
+      ],
+      "facts": []
+    },
+    {
+      "id": "liu-biao",
+      "name": "刘表",
+      "evidence": [
+        "south"
+      ],
+      "facts": []
+    },
+    {
+      "id": "gan-ning",
+      "name": "甘宁",
+      "evidence": [
+        "yiling-zhou"
+      ],
+      "facts": []
+    },
+    {
+      "id": "ling-tong",
+      "name": "凌统",
+      "evidence": [
+        "yiling-zhou"
+      ],
+      "facts": []
+    }
+  ],
+  "events": [
+    {
+      "id": "south-jingzhou",
+      "title": "曹操南征刘表",
+      "order": 1,
+      "accounts": [
+        {
+          "id": "south-jingzhou-account-1",
+          "label": "记载",
+          "text": "《武帝纪》记曹操于秋七月南征刘表。",
+          "evidence": [
+            "south"
+          ]
+        }
+      ],
+      "participants": [
+        {
+          "person": "cao-cao",
+          "role": "南征",
+          "evidence": [
+            "south"
+          ]
+        },
+        {
+          "person": "liu-biao",
+          "role": "征讨对象",
+          "evidence": [
+            "south"
+          ]
+        }
+      ],
+      "place": {
+        "text": "荆州",
+        "evidence": [
+          "south",
+          "zhou-year"
+        ]
+      },
+      "time": {
+        "label": "建安十三年秋七月",
+        "year": 208,
+        "precision": "lunar-month",
+        "basis": "月份见正文；年次承接本篇十三年，公元年份采用现代注释释年。",
+        "evidence": [
+          "year-original",
+          "year-modern",
+          "south"
+        ],
+        "month": 7
+      }
+    },
+    {
+      "id": "liu-cong-surrender",
+      "title": "刘琮降曹",
+      "order": 2,
+      "accounts": [
+        {
+          "id": "liu-cong-surrender-account-1",
+          "label": "记载",
+          "text": "《武帝纪》记九月曹操到新野，刘琮遂降。",
+          "evidence": [
+            "surrender"
+          ]
+        },
+        {
+          "id": "liu-cong-surrender-account-2",
+          "label": "记载",
+          "text": "《周瑜传》同记其年九月曹操入荆州、刘琮举众降。",
+          "evidence": [
+            "zhou-year"
+          ]
+        }
+      ],
+      "participants": [
+        {
+          "person": "cao-cao",
+          "role": "受降",
+          "evidence": [
+            "surrender"
+          ]
+        },
+        {
+          "person": "liu-cong",
+          "role": "举众投降",
+          "evidence": [
+            "zhou-year"
+          ]
+        }
+      ],
+      "place": {
+        "text": "新野；荆州",
+        "evidence": [
+          "surrender",
+          "zhou-year"
+        ]
+      },
+      "time": {
+        "label": "建安十三年九月",
+        "year": 208,
+        "precision": "lunar-month",
+        "basis": "月份见正文；年次承接本篇十三年，公元年份采用现代注释释年。",
+        "evidence": [
+          "year-original",
+          "year-modern",
+          "surrender",
+          "zhou-year"
+        ],
+        "month": 9
+      }
+    },
+    {
+      "id": "dangyang-meeting",
+      "title": "鲁肃当阳会刘备",
+      "order": 3,
+      "accounts": [
+        {
+          "id": "dangyang-meeting-account-1",
+          "label": "记载",
+          "text": "鲁肃到当阳长坂与刘备相会，传达孙权之意，劝刘备与孙权并力。",
+          "evidence": [
+            "su-meets"
+          ]
+        },
+        {
+          "id": "dangyang-meeting-account-2",
+          "label": "记载",
+          "text": "《周瑜传》也记刘备与鲁肃遇于当阳，共同商议。",
+          "evidence": [
+            "meeting-zhou"
+          ]
+        }
+      ],
+      "participants": [
+        {
+          "person": "lu-su",
+          "role": "传达孙权之意、劝说联合",
+          "evidence": [
+            "su-meets"
+          ]
+        },
+        {
+          "person": "liu-bei",
+          "role": "与鲁肃会商",
+          "evidence": [
+            "su-meets"
+          ]
+        },
+        {
+          "person": "sun-quan",
+          "role": "派遣鲁肃",
+          "evidence": [
+            "su-meets"
+          ]
+        }
+      ],
+      "place": {
+        "text": "当阳长坂",
+        "evidence": [
+          "su-meets"
+        ]
+      },
+      "time": {
+        "label": "建安十三年（208）",
+        "year": 208,
+        "precision": "year",
+        "basis": "年次承接本篇建安十三年记事，现代注释释为公元 208 年；此条未记具体月日。",
+        "evidence": [
+          "year-original",
+          "year-modern",
+          "zhou-year",
+          "zhou-year-modern",
+          "su-meets",
+          "meeting-zhou"
+        ]
+      }
+    },
+    {
+      "id": "liang-envoy",
+      "title": "诸葛亮出使孙权",
+      "order": 4,
+      "accounts": [
+        {
+          "id": "liang-envoy-account-1",
+          "label": "记载",
+          "text": "《先主传》记刘备派诸葛亮与孙权联结。",
+          "evidence": [
+            "envoy-shu"
+          ]
+        },
+        {
+          "id": "liang-envoy-account-2",
+          "label": "记载",
+          "text": "《鲁肃传》记刘备到夏口后派诸葛亮出使，鲁肃返回复命。",
+          "evidence": [
+            "envoy-su"
+          ]
+        },
+        {
+          "id": "liang-envoy-account-3",
+          "label": "记载",
+          "text": "裴松之按语将刘备与孙权合力拒曹的谋划归于鲁肃；这是注家的判断。",
+          "evidence": [
+            "pei-su-assessment"
+          ]
+        }
+      ],
+      "participants": [
+        {
+          "person": "liu-bei",
+          "role": "派遣使者",
+          "evidence": [
+            "envoy-shu"
+          ]
+        },
+        {
+          "person": "zhuge-liang",
+          "role": "出使",
+          "evidence": [
+            "envoy-shu"
+          ]
+        },
+        {
+          "person": "sun-quan",
+          "role": "出使对象",
+          "evidence": [
+            "envoy-shu"
+          ]
+        },
+        {
+          "person": "lu-su",
+          "role": "返回复命",
+          "evidence": [
+            "envoy-su"
+          ]
+        }
+      ],
+      "place": {
+        "text": "夏口（出发记事）",
+        "evidence": [
+          "envoy-su"
+        ]
+      },
+      "time": {
+        "label": "建安十三年（208）",
+        "year": 208,
+        "precision": "year",
+        "basis": "年次承接本篇建安十三年记事，现代注释释为公元 208 年；此条未记具体月日。",
+        "evidence": [
+          "year-original",
+          "year-modern",
+          "zhou-year",
+          "zhou-year-modern",
+          "meeting-zhou",
+          "envoy-su"
+        ]
+      }
+    },
+    {
+      "id": "su-resistance",
+      "title": "鲁肃劝孙权拒曹",
+      "order": 5,
+      "accounts": [
+        {
+          "id": "su-resistance-account-1",
+          "label": "记载",
+          "text": "鲁肃劝孙权不要采纳迎曹之议，并劝其召回周瑜。",
+          "evidence": [
+            "su-advice",
+            "su-recall"
+          ]
+        }
+      ],
+      "participants": [
+        {
+          "person": "lu-su",
+          "role": "劝拒曹、召周瑜",
+          "evidence": [
+            "su-advice",
+            "su-recall"
+          ]
+        },
+        {
+          "person": "sun-quan",
+          "role": "听取劝说",
+          "evidence": [
+            "su-advice"
+          ]
+        },
+        {
+          "person": "zhou-yu",
+          "role": "被建议召回",
+          "evidence": [
+            "su-recall"
+          ]
+        }
+      ],
+      "place": {
+        "text": "原段未明示会谈地点",
+        "evidence": [
+          "su-advice"
+        ]
+      },
+      "time": {
+        "label": "建安十三年（208）",
+        "year": 208,
+        "precision": "year",
+        "basis": "年次承接本篇建安十三年记事，现代注释释为公元 208 年；此条未记具体月日。",
+        "evidence": [
+          "year-original",
+          "year-modern",
+          "zhou-year",
+          "zhou-year-modern",
+          "meeting-zhou",
+          "su-advice"
+        ]
+      }
+    },
+    {
+      "id": "zhou-plan",
+      "title": "周瑜陈说拒曹之策",
+      "order": 6,
+      "accounts": [
+        {
+          "id": "zhou-plan-account-1",
+          "label": "记载",
+          "text": "周瑜请率精兵进住夏口；孙权赞同迎击曹操。",
+          "evidence": [
+            "zhou-advice",
+            "sun-decision"
+          ]
+        }
+      ],
+      "participants": [
+        {
+          "person": "zhou-yu",
+          "role": "陈说进军方案",
+          "evidence": [
+            "zhou-advice"
+          ]
+        },
+        {
+          "person": "sun-quan",
+          "role": "赞同迎击",
+          "evidence": [
+            "sun-decision"
+          ]
+        },
+        {
+          "person": "cao-cao",
+          "role": "拟迎击对象",
+          "evidence": [
+            "allied-zhou",
+            "zhou-advice"
+          ]
+        }
+      ],
+      "place": {
+        "text": "夏口（拟进军地点）",
+        "evidence": [
+          "zhou-advice"
+        ]
+      },
+      "time": {
+        "label": "建安十三年（208）",
+        "year": 208,
+        "precision": "year",
+        "basis": "年次承接本篇建安十三年记事，现代注释释为公元 208 年；此条未记具体月日。",
+        "evidence": [
+          "year-original",
+          "year-modern",
+          "zhou-year",
+          "zhou-year-modern",
+          "zhou-advice",
+          "sun-decision"
+        ]
+      }
+    },
+    {
+      "id": "allied-army",
+      "title": "孙权遣军，与刘备并力",
+      "order": 7,
+      "accounts": [
+        {
+          "id": "allied-army-account-1",
+          "label": "记载",
+          "text": "《先主传》记孙权遣周瑜、程普等水军，与刘备并力。",
+          "evidence": [
+            "allied-shu"
+          ]
+        },
+        {
+          "id": "allied-army-account-2",
+          "label": "记载",
+          "text": "《周瑜传》记所遣军与刘备共同迎曹，遇于赤壁。",
+          "evidence": [
+            "allied-zhou"
+          ]
+        },
+        {
+          "id": "allied-army-account-3",
+          "label": "记载",
+          "text": "《鲁肃传》记鲁肃任赞军校尉，协助谋划。",
+          "evidence": [
+            "su-role"
+          ]
+        }
+      ],
+      "participants": [
+        {
+          "person": "sun-quan",
+          "role": "派遣军队",
+          "evidence": [
+            "allied-shu"
+          ]
+        },
+        {
+          "person": "zhou-yu",
+          "role": "率军迎曹",
+          "evidence": [
+            "allied-shu",
+            "allied-zhou"
+          ]
+        },
+        {
+          "person": "cheng-pu",
+          "role": "参与所遣水军",
+          "evidence": [
+            "allied-shu"
+          ]
+        },
+        {
+          "person": "liu-bei",
+          "role": "与所遣军联合",
+          "evidence": [
+            "allied-shu"
+          ]
+        },
+        {
+          "person": "lu-su",
+          "role": "赞军校尉、助画方略",
+          "evidence": [
+            "su-role"
+          ]
+        }
+      ],
+      "place": {
+        "text": "赤壁（相遇地点）",
+        "evidence": [
+          "allied-zhou"
+        ]
+      },
+      "time": {
+        "label": "建安十三年（208）",
+        "year": 208,
+        "precision": "year",
+        "basis": "年次承接本篇建安十三年记事，现代注释释为公元 208 年；此条未记具体月日。",
+        "evidence": [
+          "year-original",
+          "year-modern",
+          "zhou-year",
+          "zhou-year-modern",
+          "allied-zhou",
+          "su-role"
+        ]
+      }
+    },
+    {
+      "id": "chibi-engagement",
+      "title": "赤壁交战",
+      "order": 8,
+      "accounts": [
+        {
+          "id": "chibi-engagement-account-1",
+          "label": "记载",
+          "text": "《武帝纪》记曹操至赤壁与刘备战，不利；继而写到大疫和引军还。",
+          "evidence": [
+            "battle-wei"
+          ]
+        },
+        {
+          "id": "chibi-engagement-account-2",
+          "label": "记载",
+          "text": "《先主传》记与曹军战于赤壁，大破并焚烧其舟船。",
+          "evidence": [
+            "battle-shu"
+          ]
+        },
+        {
+          "id": "chibi-engagement-account-3",
+          "label": "记载",
+          "text": "《周瑜传》将初次交战写为曹军败退至江北，周瑜等驻南岸；并称曹军此前已有疾病。",
+          "evidence": [
+            "first-battle",
+            "allied-zhou"
+          ]
+        }
+      ],
+      "participants": [
+        {
+          "person": "cao-cao",
+          "role": "交战一方",
+          "evidence": [
+            "battle-wei"
+          ]
+        },
+        {
+          "person": "liu-bei",
+          "role": "交战一方",
+          "evidence": [
+            "battle-wei",
+            "battle-shu"
+          ]
+        },
+        {
+          "person": "zhou-yu",
+          "role": "初战后驻南岸",
+          "evidence": [
+            "first-battle"
+          ]
+        }
+      ],
+      "place": {
+        "text": "赤壁；江北、南岸",
+        "evidence": [
+          "allied-zhou",
+          "first-battle"
+        ]
+      },
+      "time": {
+        "label": "建安十三年（208）",
+        "year": 208,
+        "precision": "year",
+        "basis": "年次承接本篇建安十三年记事，现代注释释为公元 208 年；此条未记具体月日。",
+        "evidence": [
+          "year-original",
+          "year-modern",
+          "zhou-year",
+          "zhou-year-modern",
+          "battle-wei",
+          "allied-zhou"
+        ]
+      }
+    },
+    {
+      "id": "huang-fire",
+      "title": "黄盖诈降与火攻",
+      "order": 9,
+      "accounts": [
+        {
+          "id": "huang-fire-account-1",
+          "label": "记载",
+          "text": "《周瑜传》记黄盖提出火攻、先书诈降，再放船发火，火势延及岸上营落。",
+          "evidence": [
+            "huang-plan",
+            "huang-feint",
+            "huang-fire"
+          ]
+        },
+        {
+          "id": "huang-fire-account-2",
+          "label": "记载",
+          "text": "裴注引《江表传》补叙东南风、火船逼近及延烧岸营。",
+          "evidence": [
+            "fire-jiangbiao"
+          ]
+        }
+      ],
+      "participants": [
+        {
+          "person": "huang-gai",
+          "role": "提出并实施火攻",
+          "evidence": [
+            "huang-plan",
+            "huang-fire"
+          ]
+        },
+        {
+          "person": "cao-cao",
+          "role": "诈降书与火攻所向",
+          "evidence": [
+            "huang-feint",
+            "huang-plan"
+          ]
+        },
+        {
+          "person": "zhou-yu",
+          "role": "黄盖所属主将",
+          "evidence": [
+            "huang-plan"
+          ]
+        }
+      ],
+      "place": {
+        "text": "赤壁交战水域及岸上营落",
+        "evidence": [
+          "allied-zhou",
+          "huang-fire"
+        ]
+      },
+      "time": {
+        "label": "建安十三年（208）",
+        "year": 208,
+        "precision": "year",
+        "basis": "年次承接本篇建安十三年记事，现代注释释为公元 208 年；此条未记具体月日。",
+        "evidence": [
+          "year-original",
+          "year-modern",
+          "zhou-year",
+          "zhou-year-modern",
+          "allied-zhou",
+          "huang-fire"
+        ]
+      }
+    },
+    {
+      "id": "cao-retreat",
+      "title": "曹军退却，刘备与周瑜追击",
+      "order": 10,
+      "accounts": [
+        {
+          "id": "cao-retreat-account-1",
+          "label": "记载",
+          "text": "《周瑜传》记曹军退保南郡，刘备与周瑜等追击；曹操留曹仁等守江陵，自己北归。",
+          "evidence": [
+            "retreat"
+          ]
+        },
+        {
+          "id": "cao-retreat-account-2",
+          "label": "记载",
+          "text": "《先主传》记刘备与吴军追到南郡，并提到疾疫及曹操引归。",
+          "evidence": [
+            "battle-shu"
+          ]
+        },
+        {
+          "id": "cao-retreat-account-3",
+          "label": "记载",
+          "text": "裴注引《山阳公载记》称曹操从华容道步行撤军。",
+          "evidence": [
+            "retreat-shanyang"
+          ]
+        }
+      ],
+      "participants": [
+        {
+          "person": "cao-cao",
+          "role": "退军北归",
+          "evidence": [
+            "retreat"
+          ]
+        },
+        {
+          "person": "liu-bei",
+          "role": "追击",
+          "evidence": [
+            "retreat"
+          ]
+        },
+        {
+          "person": "zhou-yu",
+          "role": "追击",
+          "evidence": [
+            "retreat"
+          ]
+        },
+        {
+          "person": "cao-ren",
+          "role": "留守江陵",
+          "evidence": [
+            "retreat"
+          ]
+        }
+      ],
+      "place": {
+        "text": "南郡、江陵；华容道见裴注",
+        "evidence": [
+          "retreat",
+          "retreat-shanyang"
+        ]
+      },
+      "time": {
+        "label": "建安十三年（208）",
+        "year": 208,
+        "precision": "year",
+        "basis": "年次承接本篇建安十三年记事，现代注释释为公元 208 年；此条未记具体月日。",
+        "evidence": [
+          "year-original",
+          "year-modern",
+          "zhou-year",
+          "zhou-year-modern",
+          "allied-zhou",
+          "retreat"
+        ]
+      }
+    },
+    {
+      "id": "meng-wulin",
+      "title": "吕蒙与周瑜等破曹于乌林",
+      "order": 11,
+      "accounts": [
+        {
+          "id": "meng-wulin-account-1",
+          "label": "记载",
+          "text": "《吕蒙传》以“是岁”记吕蒙与周瑜、程普等西破曹公于乌林。这是相关战事的另一份记载，不另计为一场战争。",
+          "evidence": [
+            "meng-wulin"
+          ]
+        }
+      ],
+      "participants": [
+        {
+          "person": "lu-meng",
+          "role": "参与破曹",
+          "evidence": [
+            "meng-identity",
+            "meng-context",
+            "meng-wulin"
+          ]
+        },
+        {
+          "person": "zhou-yu",
+          "role": "共同破曹",
+          "evidence": [
+            "meng-wulin"
+          ]
+        },
+        {
+          "person": "cheng-pu",
+          "role": "共同破曹",
+          "evidence": [
+            "meng-wulin"
+          ]
+        },
+        {
+          "person": "cao-cao",
+          "role": "被击败一方",
+          "evidence": [
+            "meng-wulin"
+          ]
+        }
+      ],
+      "place": {
+        "text": "乌林",
+        "evidence": [
+          "meng-wulin"
+        ]
+      },
+      "time": {
+        "label": "同年（承接征黄祖记事）",
+        "precision": "relative",
+        "basis": "原文以“是岁”承接本段征黄祖记事，保留这一相对时间表达。",
+        "relative": "承接本段征黄祖记事",
+        "evidence": [
+          "meng-context",
+          "meng-wulin"
+        ]
+      }
+    },
+    {
+      "id": "yiling-relief",
+      "title": "战后救援夷陵",
+      "order": 12,
+      "accounts": [
+        {
+          "id": "yiling-relief-account-1",
+          "label": "记载",
+          "text": "《周瑜传》记甘宁据夷陵后被曹仁分兵围攻，周瑜采纳吕蒙建议，留凌统守后，亲自与吕蒙救援。",
+          "evidence": [
+            "yiling-zhou"
+          ]
+        },
+        {
+          "id": "yiling-relief-account-2",
+          "label": "记载",
+          "text": "《吕蒙传》保存吕蒙提出留凌公绩守后、自己与周瑜等救援的言辞。",
+          "evidence": [
+            "yiling-meng"
+          ]
+        }
+      ],
+      "participants": [
+        {
+          "person": "gan-ning",
+          "role": "据夷陵、告急",
+          "evidence": [
+            "yiling-zhou"
+          ]
+        },
+        {
+          "person": "cao-ren",
+          "role": "分兵围攻",
+          "evidence": [
+            "yiling-zhou"
+          ]
+        },
+        {
+          "person": "zhou-yu",
+          "role": "救援",
+          "evidence": [
+            "yiling-zhou"
+          ]
+        },
+        {
+          "person": "lu-meng",
+          "role": "献策、同行救援",
+          "evidence": [
+            "yiling-zhou"
+          ]
+        },
+        {
+          "person": "ling-tong",
+          "role": "留守后方",
+          "evidence": [
+            "yiling-zhou"
+          ]
+        }
+      ],
+      "place": {
+        "text": "夷陵",
+        "evidence": [
+          "yiling-zhou"
+        ]
+      },
+      "time": {
+        "label": "曹军北归后的南郡战事",
+        "precision": "relative",
+        "basis": "依《周瑜传》北归、进南郡、救夷陵的叙述先后；原段未明示年月，不沿用赤壁年份。",
+        "after": "cao-retreat",
+        "evidence": [
+          "retreat",
+          "yiling-zhou"
+        ]
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "cao-identity",
+      "section": "chapter-001",
+      "block": "b-acdd0481f4a63ccf47c8",
+      "quote": "太祖武皇帝〖1〗，沛国谯人也〖2〗。姓曹，讳操〖3〗，字孟德。",
+      "layer": "original",
+      "section_title": "武帝纪第一",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0007_split_000.xhtml",
+        "index": 1,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 31,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "cao-titles",
+      "section": "chapter-001",
+      "block": "b-ebc78e137d2bb3d1e2b4",
+      "quote": "建安元年冬十月曹操升任司空之前均称“太祖”，之后则改称“公”或“曹公”。建安二十一年五月曹操进爵魏王后，再改称“王”，直至其去世。",
+      "layer": "modern",
+      "section_title": "武帝纪第一",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0007_split_000.xhtml",
+        "index": 3,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": "n-c36a60028d8a45c1b059",
+      "start": 186,
+      "end": 251,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "liu-identity",
+      "section": "chapter-032",
+      "block": "b-509e42d717c77e836d5f",
+      "quote": "先主姓刘〖1〗，讳备，字玄德。涿郡涿县人。",
+      "layer": "original",
+      "section_title": "先主传第二",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0070.xhtml",
+        "index": 1,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 21,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "zhou-identity",
+      "section": "chapter-054",
+      "block": "b-7e5b67e8fe855e34c562",
+      "quote": "周瑜字公瑾，庐江舒人也〖1〗。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 1,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 15,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "su-identity",
+      "section": "chapter-054",
+      "block": "b-9b2db2891ae881732ec0",
+      "quote": "鲁肃字子敬，临淮东城人也〖1〗。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 168,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 16,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "meng-identity",
+      "section": "chapter-054",
+      "block": "b-09ad3b8bc938115b5986",
+      "quote": "吕蒙字子明，汝南富陂人也〖1〗。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 312,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 16,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "year-original",
+      "section": "chapter-001",
+      "block": "b-4bcffcc4ee709a4e5ea3",
+      "quote": "十三年春正月〖1〗，公还邺。",
+      "layer": "original",
+      "section_title": "武帝纪第一",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0007_split_000.xhtml",
+        "index": 661,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 14,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "year-modern",
+      "section": "chapter-001",
+      "block": "b-888495d8be7766faf20c",
+      "quote": "十三年：建安十三年（公元 208）。",
+      "layer": "modern",
+      "section_title": "武帝纪第一",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0007_split_000.xhtml",
+        "index": 666,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": "n-0bae348fdb687025113d",
+      "start": 3,
+      "end": 21,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "zhou-year",
+      "section": "chapter-054",
+      "block": "b-3661896c106f1817bf4b",
+      "quote": "十三年春〖6〗，权讨江夏，瑜为前部大督〖7〗。其年九月，曹公入荆州，刘琮举众降。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 34,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 40,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "zhou-year-modern",
+      "section": "chapter-054",
+      "block": "b-63f47c62fde80b3a0132",
+      "quote": "十三年：建安十三年（公元 208）。",
+      "layer": "modern",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 43,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": "n-8f109f42647e5ee8d831",
+      "start": 3,
+      "end": 21,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "south",
+      "section": "chapter-001",
+      "block": "b-031a374e9090ba29242f",
+      "quote": "秋七月，公南征刘表。八月，表卒；其子琮代〖4〗，屯襄阳〖5〗。",
+      "layer": "original",
+      "section_title": "武帝纪第一",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0007_split_000.xhtml",
+        "index": 663,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 31,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "surrender",
+      "section": "chapter-001",
+      "block": "b-031a374e9090ba29242f",
+      "quote": "九月，公到新野〖7〗，琮遂降。备走夏口〖8〗。",
+      "layer": "original",
+      "section_title": "武帝纪第一",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0007_split_000.xhtml",
+        "index": 663,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 39,
+      "end": 62,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "su-meets",
+      "section": "chapter-054",
+      "block": "b-ecd089e31afbb09dad94",
+      "quote": "权即遣肃行。到夏口，闻曹公已向荆州，晨夜兼道。比至南郡，而表子琮已降曹公；备惶遽奔走，欲南渡江。肃径迎之，到当阳长坂〖10〗，与备会。宣腾权旨〖11〗，及陈江东强固，劝备与权并力：备甚欢悦。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 213,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 95,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "envoy-shu",
+      "section": "chapter-032",
+      "block": "b-1846d8225e91af23e064",
+      "quote": "先主遣诸葛亮自结于孙权，",
+      "layer": "original",
+      "section_title": "先主传第二",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0070.xhtml",
+        "index": 113,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 12,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "envoy-su",
+      "section": "chapter-054",
+      "block": "b-47261412a84083cdfce6",
+      "quote": "备遂到夏口，遣亮使权。肃亦反命〖13〗。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 214,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 31,
+      "end": 51,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "meeting-zhou",
+      "section": "chapter-054",
+      "block": "b-df9e8a2d1c2855c608f2",
+      "quote": "时刘备为曹公所破，欲引南渡江；与鲁肃遇于当阳，遂共图计。因进住夏口，遣诸葛亮诣权。权遂遣瑜及程普等，与备并力逆曹公，遇于赤壁。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 62,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 63,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "su-advice",
+      "section": "chapter-054",
+      "block": "b-472e77c03c5b35774219",
+      "quote": "权知其意，执肃手曰：“卿欲何言？”肃对曰：“向察众人之议〖5〗，专欲误将军：不足与图大事。今肃可迎操耳，如将军，不可也。何以言之？今肃迎操，操当以肃还付乡党〖6〗；品其名位，犹不失下曹从事〖7〗，乘犊车〖8〗，从吏卒，交游士林：累官故不失州郡也〖9〗。将军迎操，欲安所归〖10〗？愿早定大计，莫用众人之议也！”",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 232,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 155,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "su-recall",
+      "section": "chapter-054",
+      "block": "b-6e5753512f06b6a12b33",
+      "quote": "时周瑜受使至鄱阳〖12〗，肃劝追召瑜还。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 233,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 45,
+      "end": 65,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "zhou-advice",
+      "section": "chapter-054",
+      "block": "b-bacde9135abd2a205a56",
+      "quote": "瑜请得精兵三万人，进住夏口，保为将军破之！",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 35,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 276,
+      "end": 297,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "sun-decision",
+      "section": "chapter-054",
+      "block": "b-ce104dcfbe59e8754c6b",
+      "quote": "君言当击，甚与孤合，此天以君授孤也！",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 36,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 59,
+      "end": 77,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "allied-shu",
+      "section": "chapter-032",
+      "block": "b-1846d8225e91af23e064",
+      "quote": "权遣周瑜、程普等水军数万〖9〗；与先主并力，",
+      "layer": "original",
+      "section_title": "先主传第二",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0070.xhtml",
+        "index": 113,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 15,
+      "end": 37,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "allied-zhou",
+      "section": "chapter-054",
+      "block": "b-df9e8a2d1c2855c608f2",
+      "quote": "权遂遣瑜及程普等，与备并力逆曹公，遇于赤壁。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 62,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 41,
+      "end": 63,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "su-role",
+      "section": "chapter-054",
+      "block": "b-27591a11de61813e45a8",
+      "quote": "遂任瑜以行事，以肃为赞军校尉〖13〗，助画方略。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 234,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 24,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "first-battle",
+      "section": "chapter-054",
+      "block": "b-95e35995161a23acb622",
+      "quote": "时曹公军众，已有疾病；初一交战，公军败退，引次江北〖1〗。瑜等在南岸。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 63,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 35,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "battle-wei",
+      "section": "chapter-001",
+      "block": "b-c35781bdeff07231cb61",
+      "quote": "公至赤壁〖16〗，与备战，不利；于是大疫，吏士多死者。乃引军还，",
+      "layer": "original",
+      "section_title": "武帝纪第一",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0007_split_000.xhtml",
+        "index": 664,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 50,
+      "end": 82,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "battle-shu",
+      "section": "chapter-032",
+      "block": "b-1846d8225e91af23e064",
+      "quote": "与曹公战于赤壁〖10〗；大破之，焚其舟船。先主与吴军水陆并进，追到南郡。时又疾疫，北军多死，曹公引归。",
+      "layer": "original",
+      "section_title": "先主传第二",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0070.xhtml",
+        "index": 113,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 40,
+      "end": 91,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "huang-plan",
+      "section": "chapter-054",
+      "block": "b-8be6669092a37ba75e2e",
+      "quote": "瑜部将黄盖曰：“今寇众我寡，难与持久。然观操军船舰，首尾相接：可烧而走也。”",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 64,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 38,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "huang-feint",
+      "section": "chapter-054",
+      "block": "b-8be6669092a37ba75e2e",
+      "quote": "先书报曹公，欺以欲降。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 64,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 76,
+      "end": 87,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "huang-fire",
+      "section": "chapter-054",
+      "block": "b-8be6669092a37ba75e2e",
+      "quote": "盖放诸船，同时发火。时风盛〔火〕猛，悉延烧岸上营落。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 64,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 132,
+      "end": 158,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "fire-jiangbiao",
+      "section": "chapter-054",
+      "block": "b-046b11c4d33d588538b8",
+      "quote": "时东南风急，因以十舰最著前，中江举帆。盖举火白诸校，使众兵齐声大叫曰：‘降焉！’操军人皆出营立观。去北军二里余，同时发火；火烈风猛，往船如箭；飞埃绝烂，烧尽北船，延及岸边营（柴）〔栅〕。",
+      "layer": "pei",
+      "attribution": "《江表传》",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 86,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": "n-90216583c8655708d70e",
+      "start": 53,
+      "end": 146,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "retreat",
+      "section": "chapter-054",
+      "block": "b-9cefd55fcd0518a1c94f",
+      "quote": "军遂败退，还保南郡。﹝二﹞备与瑜等复共追。曹公留曹仁等守江陵城，径自北归。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 65,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 37,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "retreat-shanyang",
+      "section": "chapter-001",
+      "block": "b-1d0fe831aaf31892272a",
+      "quote": "公船舰为备所烧，引军从华容道，步归。",
+      "layer": "pei",
+      "attribution": "《山阳公载记》",
+      "section_title": "武帝纪第一",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0007_split_001.xhtml",
+        "index": 14,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": "n-b1c5198aca732b51719e",
+      "start": 13,
+      "end": 31,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "meng-wulin",
+      "section": "chapter-054",
+      "block": "b-c5dafa5a24682c296ffa",
+      "quote": "是岁，又与周瑜、程普等，西破曹公于乌林，围曹仁于南郡。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 316,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 91,
+      "end": 118,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "meng-context",
+      "section": "chapter-054",
+      "block": "b-c5dafa5a24682c296ffa",
+      "quote": "从征黄祖，祖令都督陈就，逆以水军出战。蒙勒前锋〖15〗，亲枭就首；将士乘胜，进攻其城。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 316,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 43,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "yiling-zhou",
+      "section": "chapter-054",
+      "block": "b-e959844e829722ef4767",
+      "quote": "瑜与程普又进南郡，与仁相对，各隔大江。兵未交锋，﹝三﹞瑜即遣甘宁前据夷陵。仁分兵骑，别攻围宁，宁告急于瑜。瑜用吕蒙计，留凌统以守其后〖7〗；身与蒙上〖8〗，救宁。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 66,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 81,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "yiling-meng",
+      "section": "chapter-054",
+      "block": "b-b3cb94f577df75ecc6eb",
+      "quote": "瑜使甘宁前据夷陵。曹仁分众攻宁；宁困急，使使请救。诸将以兵少不足分，蒙谓瑜、普曰：“留凌公绩〖20〗，蒙与君行；解围释急，势亦不久。蒙保公绩能十日守也。”",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 318,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 77,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "pei-su-assessment",
+      "section": "chapter-054",
+      "block": "b-ce708dbc3c8fcdf9b474",
+      "quote": "臣松之按：刘备与权并力，共拒中国，皆肃之本谋。",
+      "layer": "pei",
+      "attribution": "裴松之按语",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 230,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": "n-44a03e4ab7c323e722bd",
+      "start": 3,
+      "end": 26,
+      "offset_unit": "unicode_code_point"
+    }
+  ],
+  "timeline": [
+    "south-jingzhou",
+    "liu-cong-surrender",
+    "dangyang-meeting",
+    "liang-envoy",
+    "su-resistance",
+    "zhou-plan",
+    "allied-army",
+    "chibi-engagement",
+    "huang-fire",
+    "cao-retreat"
+  ],
+  "relative_events": [
+    "meng-wulin",
+    "yiling-relief"
+  ]
+}

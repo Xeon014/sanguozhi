@@ -1,0 +1,6848 @@
+{
+  "id": "chapter-063",
+  "title": "吴范刘惇赵达传第十八",
+  "heading": "【三国志译注卷六十三】 吴志十八",
+  "kind": "chapter",
+  "status": "aligned",
+  "blocks": [
+    {
+      "id": "b-98d531b3b8374627da89",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0132.xhtml",
+        "index": 0,
+        "anchor": "filepos8350063"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【三国志译注卷六十三】 吴志十八 "
+        }
+      ],
+      "text": "【三国志译注卷六十三】 吴志十八",
+      "kind": "heading",
+      "anchors": [
+        "filepos8350063"
+      ],
+      "source_heading": true
+    },
+    {
+      "id": "b-c76036f590907713763d",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 0,
+        "anchor": "filepos8350196"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "吴范刘惇赵达传第十八 "
+        }
+      ],
+      "text": "吴范刘惇赵达传第十八",
+      "kind": "heading",
+      "anchors": [
+        "filepos8350196"
+      ],
+      "source_heading": true
+    },
+    {
+      "id": "b-54107db4b08a9dcc93a9",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 1,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "吴范字文则，会稽上虞人也。以治历数"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17203",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17203"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ],
+          "note_id": "n-6fdd06d45c3b8c49c1b1"
+        },
+        {
+          "type": "text",
+          "text": "，知风气"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17204",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17204"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ],
+          "note_id": "n-96f6c0b3b710ddaeb3bc"
+        },
+        {
+          "type": "text",
+          "text": "，闻于郡中。举有道"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17205",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17205"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ],
+          "note_id": "n-f4843f367ac2a05c0792"
+        },
+        {
+          "type": "text",
+          "text": "，诣京都；世乱不行。"
+        }
+      ],
+      "text": "吴范字文则，会稽上虞人也。以治历数〖1〗，知风气〖2〗，闻于郡中。举有道〖3〗，诣京都；世乱不行。",
+      "kind": "original",
+      "anchors": [
+        "Y17203",
+        "Y17204",
+        "Y17205"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-b84cf48ba2c7aa9dcf0c",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 2,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "会孙权起于东南，范委身服事。每有灾祥，辄推数言状；其术多效，遂以显名。初，权在吴，欲讨黄祖。范曰：“今兹少利，不如明年。明年戊子"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17206",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17206"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ],
+          "note_id": "n-5609559d79006bb150b2"
+        },
+        {
+          "type": "text",
+          "text": "，荆州刘表亦身死国亡。”权遂征祖，卒不能克。明年，军出。行及寻阳，范见风气，因诣船贺，催兵急行。至即破祖，祖（得）夜亡"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17207",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17207"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ],
+          "note_id": "n-b357a61fa03edce753a2"
+        },
+        {
+          "type": "text",
+          "text": "。权恐失之，范曰：“未远，必生擒祖。”至五更中，果得之。刘表竟死，荆州分割。"
+        }
+      ],
+      "text": "会孙权起于东南，范委身服事。每有灾祥，辄推数言状；其术多效，遂以显名。初，权在吴，欲讨黄祖。范曰：“今兹少利，不如明年。明年戊子〖4〗，荆州刘表亦身死国亡。”权遂征祖，卒不能克。明年，军出。行及寻阳，范见风气，因诣船贺，催兵急行。至即破祖，祖（得）夜亡〖5〗。权恐失之，范曰：“未远，必生擒祖。”至五更中，果得之。刘表竟死，荆州分割。",
+      "kind": "original",
+      "anchors": [
+        "Y17206",
+        "Y17207"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-43a13b931b91f0a0aaf9",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 3,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "及壬辰岁"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17208",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17208"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ],
+          "note_id": "n-6325828497b769149082"
+        },
+        {
+          "type": "text",
+          "text": "，范又白言：“岁在甲午"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17209",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17209"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ],
+          "note_id": "n-09e9780e9137347dd33c"
+        },
+        {
+          "type": "text",
+          "text": "，刘备当得益州。”后吕岱从蜀还，遇之白帝；说备部众离落"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17210",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17210"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ],
+          "note_id": "n-92210807d0cdfbbdf3b4"
+        },
+        {
+          "type": "text",
+          "text": "，死亡且半"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17211",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17211"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖9〗"
+            }
+          ],
+          "note_id": "n-88e1864ec3e279908b3f"
+        },
+        {
+          "type": "text",
+          "text": "，事必不克。权以难范"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17212",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17212"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖10〗"
+            }
+          ],
+          "note_id": "n-68169eeb4251e7423682"
+        },
+        {
+          "type": "text",
+          "text": "，范曰：“臣所言者，天道也；而岱所见者，人事耳。”备卒得蜀。"
+        }
+      ],
+      "text": "及壬辰岁〖6〗，范又白言：“岁在甲午〖7〗，刘备当得益州。”后吕岱从蜀还，遇之白帝；说备部众离落〖8〗，死亡且半〖9〗，事必不克。权以难范〖10〗，范曰：“臣所言者，天道也；而岱所见者，人事耳。”备卒得蜀。",
+      "kind": "original",
+      "anchors": [
+        "Y17208",
+        "Y17209",
+        "Y17210",
+        "Y17211",
+        "Y17212"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-c41c0565cf67aa38c9ac",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 4,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "权与吕蒙谋袭关羽；议之近臣，多曰不可。权以问范，范曰：“得之。”后羽在麦城，使使请降。权问范曰：“竟当降否？”范曰：“彼有走气；言降，诈耳！”权使潘璋邀其径路"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17213",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17213"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖11〗"
+            }
+          ],
+          "note_id": "n-b3d81706ae6fed489b6f"
+        },
+        {
+          "type": "text",
+          "text": "，觇候者还"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17214",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17214"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖12〗"
+            }
+          ],
+          "note_id": "n-34e712931aeef5f2582b"
+        },
+        {
+          "type": "text",
+          "text": "，白羽已去。范曰：“虽去，不免。”问其期，曰：“明日日中。”权立表下漏以待之"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17215",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17215"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖13〗"
+            }
+          ],
+          "note_id": "n-89e5013ce843b1225831"
+        },
+        {
+          "type": "text",
+          "text": "。及〔日〕中不至，权问其故，范曰：“时尚未正中也。”顷之，有风动帷。范拊手曰：“羽至矣！”须臾，外称“万岁"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17216",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17216"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖14〗"
+            }
+          ],
+          "note_id": "n-577046ad678a9b28c012"
+        },
+        {
+          "type": "text",
+          "text": "”，传言得羽。"
+        }
+      ],
+      "text": "权与吕蒙谋袭关羽；议之近臣，多曰不可。权以问范，范曰：“得之。”后羽在麦城，使使请降。权问范曰：“竟当降否？”范曰：“彼有走气；言降，诈耳！”权使潘璋邀其径路〖11〗，觇候者还〖12〗，白羽已去。范曰：“虽去，不免。”问其期，曰：“明日日中。”权立表下漏以待之〖13〗。及〔日〕中不至，权问其故，范曰：“时尚未正中也。”顷之，有风动帷。范拊手曰：“羽至矣！”须臾，外称“万岁〖14〗”，传言得羽。",
+      "kind": "original",
+      "anchors": [
+        "Y17213",
+        "Y17214",
+        "Y17215",
+        "Y17216"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-be904178c6413fc762b7",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 5,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "后权与魏为好，范曰：“以风气言之：彼以貌来"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17217",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17217"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖15〗"
+            }
+          ],
+          "note_id": "n-314c2079c0b3cfc775ca"
+        },
+        {
+          "type": "text",
+          "text": "，其实有谋；宜为之备。”刘备盛兵西陵"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17218",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17218"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖16〗"
+            }
+          ],
+          "note_id": "n-c2e55c58989ba084bf0a"
+        },
+        {
+          "type": "text",
+          "text": "，范曰：“后当和亲"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17219",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17219"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖17〗"
+            }
+          ],
+          "note_id": "n-50c67e7b023690a0ac33"
+        },
+        {
+          "type": "text",
+          "text": "。”终皆如言。"
+        }
+      ],
+      "text": "后权与魏为好，范曰：“以风气言之：彼以貌来〖15〗，其实有谋；宜为之备。”刘备盛兵西陵〖16〗，范曰：“后当和亲〖17〗。”终皆如言。",
+      "kind": "original",
+      "anchors": [
+        "Y17217",
+        "Y17218",
+        "Y17219"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-d530d8aeeaf21f5eb93e",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 6,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "其占验明审如此"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17220",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17220"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖18〗"
+            }
+          ],
+          "note_id": "n-1165daaf180cc6be0634"
+        },
+        {
+          "type": "text",
+          "text": "。权以范为骑都尉，领太史令。数从访问，欲知其（决）〔诀〕"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17221",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17221"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖19〗"
+            }
+          ],
+          "note_id": "n-93430debf74ea55b9a4c"
+        },
+        {
+          "type": "text",
+          "text": "。"
+        }
+      ],
+      "text": "其占验明审如此〖18〗。权以范为骑都尉，领太史令。数从访问，欲知其（决）〔诀〕〖19〗。",
+      "kind": "original",
+      "anchors": [
+        "Y17220",
+        "Y17221"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-3d990c5530729ade3c60",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 7,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【注释】"
+        }
+      ],
+      "text": "【注释】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-346e3a6bfe0ad24e7de7",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 8,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17203",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17203"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "历数：历法计算。"
+        }
+      ],
+      "text": "〖1〗历数：历法计算。",
+      "kind": "modern",
+      "anchors": [
+        "Z17203"
+      ],
+      "source_heading": false,
+      "note_id": "n-6fdd06d45c3b8c49c1b1"
+    },
+    {
+      "id": "b-a320c9b3cf0df2008f8c",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 9,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17204",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17204"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "风气：指观察风和云气以预测事情结果或吉凶的方法。古代很流行，参见《史记》卷二十七《天官书》。"
+        }
+      ],
+      "text": "〖2〗风气：指观察风和云气以预测事情结果或吉凶的方法。古代很流行，参见《史记》卷二十七《天官书》。",
+      "kind": "modern",
+      "anchors": [
+        "Z17204"
+      ],
+      "source_heading": false,
+      "note_id": "n-96f6c0b3b710ddaeb3bc"
+    },
+    {
+      "id": "b-d15398a29d753ddc433c",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 10,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17205",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17205"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "有道：东汉选拔人才的科目之一。不是常科。由公卿、郡国守相推举。"
+        }
+      ],
+      "text": "〖3〗有道：东汉选拔人才的科目之一。不是常科。由公卿、郡国守相推举。",
+      "kind": "modern",
+      "anchors": [
+        "Z17205"
+      ],
+      "source_heading": false,
+      "note_id": "n-f4843f367ac2a05c0792"
+    },
+    {
+      "id": "b-f046d5363888435531c4",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 11,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17206",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17206"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "戊子：指建安十三年（公元 208）。"
+        }
+      ],
+      "text": "〖4〗戊子：指建安十三年（公元 208）。",
+      "kind": "modern",
+      "anchors": [
+        "Z17206"
+      ],
+      "source_heading": false,
+      "note_id": "n-5609559d79006bb150b2"
+    },
+    {
+      "id": "b-8566bf6d94e0c36ff940",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 12,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17207",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17207"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "亡：逃亡。"
+        }
+      ],
+      "text": "〖5〗亡：逃亡。",
+      "kind": "modern",
+      "anchors": [
+        "Z17207"
+      ],
+      "source_heading": false,
+      "note_id": "n-b357a61fa03edce753a2"
+    },
+    {
+      "id": "b-36e0ff199ef52ffde1ac",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 13,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17208",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17208"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "壬辰：指建安十七年（公元 212）。"
+        }
+      ],
+      "text": "〖6〗壬辰：指建安十七年（公元 212）。",
+      "kind": "modern",
+      "anchors": [
+        "Z17208"
+      ],
+      "source_heading": false,
+      "note_id": "n-6325828497b769149082"
+    },
+    {
+      "id": "b-e4c517037fef01c18ba4",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 14,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17209",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17209"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "甲午：指建安十九年（公元 214）。"
+        }
+      ],
+      "text": "〖7〗甲午：指建安十九年（公元 214）。",
+      "kind": "modern",
+      "anchors": [
+        "Z17209"
+      ],
+      "source_heading": false,
+      "note_id": "n-09e9780e9137347dd33c"
+    },
+    {
+      "id": "b-0e6d1e2d105df1eea771",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 15,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17210",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17210"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "离落：离散流落。"
+        }
+      ],
+      "text": "〖8〗离落：离散流落。",
+      "kind": "modern",
+      "anchors": [
+        "Z17210"
+      ],
+      "source_heading": false,
+      "note_id": "n-92210807d0cdfbbdf3b4"
+    },
+    {
+      "id": "b-fedcb04a3fd7bb855c45",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 16,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17211",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17211"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖9〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "且：将近。"
+        }
+      ],
+      "text": "〖9〗且：将近。",
+      "kind": "modern",
+      "anchors": [
+        "Z17211"
+      ],
+      "source_heading": false,
+      "note_id": "n-88e1864ec3e279908b3f"
+    },
+    {
+      "id": "b-c50195c83bad34282a96",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 17,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17212",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17212"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖10〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "难（nàn ）：反驳。"
+        }
+      ],
+      "text": "〖10〗难（nàn ）：反驳。",
+      "kind": "modern",
+      "anchors": [
+        "Z17212"
+      ],
+      "source_heading": false,
+      "note_id": "n-68169eeb4251e7423682"
+    },
+    {
+      "id": "b-c9215ad09e4c29b324b8",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 18,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17213",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17213"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖11〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "邀：截断。"
+        }
+      ],
+      "text": "〖11〗邀：截断。",
+      "kind": "modern",
+      "anchors": [
+        "Z17213"
+      ],
+      "source_heading": false,
+      "note_id": "n-b3d81706ae6fed489b6f"
+    },
+    {
+      "id": "b-32ec884a4f5759431730",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 19,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17214",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17214"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖12〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "觇（chān）候：侦察。"
+        }
+      ],
+      "text": "〖12〗觇（chān）候：侦察。",
+      "kind": "modern",
+      "anchors": [
+        "Z17214"
+      ],
+      "source_heading": false,
+      "note_id": "n-34e712931aeef5f2582b"
+    },
+    {
+      "id": "b-843ff165ce9c8397d842",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 20,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17215",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17215"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖13〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "表：即晷表。测量日影的长度方向以定一天时刻的仪器。漏：即漏壶。古代的计时装置。"
+        }
+      ],
+      "text": "〖13〗表：即晷表。测量日影的长度方向以定一天时刻的仪器。漏：即漏壶。古代的计时装置。",
+      "kind": "modern",
+      "anchors": [
+        "Z17215"
+      ],
+      "source_heading": false,
+      "note_id": "n-89e5013ce843b1225831"
+    },
+    {
+      "id": "b-2afb6dd14d809cc1cb33",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 21,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17216",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17216"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖14〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "称万岁：高呼万岁。这里万岁是臣下对于君主的祝贺词，不是对皇帝的代称。"
+        }
+      ],
+      "text": "〖14〗称万岁：高呼万岁。这里万岁是臣下对于君主的祝贺词，不是对皇帝的代称。",
+      "kind": "modern",
+      "anchors": [
+        "Z17216"
+      ],
+      "source_heading": false,
+      "note_id": "n-577046ad678a9b28c012"
+    },
+    {
+      "id": "b-a1a2418d7a79a98809ee",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 22,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17217",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17217"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖15〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "以貌来：带着和善的姿态前来。"
+        }
+      ],
+      "text": "〖15〗以貌来：带着和善的姿态前来。",
+      "kind": "modern",
+      "anchors": [
+        "Z17217"
+      ],
+      "source_heading": false,
+      "note_id": "n-314c2079c0b3cfc775ca"
+    },
+    {
+      "id": "b-32f39b2d308058cf65ce",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 23,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17218",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17218"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖16〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "盛兵：调集大兵。指刘备东下伐吴一事。"
+        }
+      ],
+      "text": "〖16〗盛兵：调集大兵。指刘备东下伐吴一事。",
+      "kind": "modern",
+      "anchors": [
+        "Z17218"
+      ],
+      "source_heading": false,
+      "note_id": "n-c2e55c58989ba084bf0a"
+    },
+    {
+      "id": "b-d122b657188f240790ba",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 24,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17219",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17219"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖17〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "和亲：和好亲善。"
+        }
+      ],
+      "text": "〖17〗和亲：和好亲善。",
+      "kind": "modern",
+      "anchors": [
+        "Z17219"
+      ],
+      "source_heading": false,
+      "note_id": "n-50c67e7b023690a0ac33"
+    },
+    {
+      "id": "b-3dd550b46a138372fd18",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 25,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17220",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17220"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖18〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "占验：预测的应验。"
+        }
+      ],
+      "text": "〖18〗占验：预测的应验。",
+      "kind": "modern",
+      "anchors": [
+        "Z17220"
+      ],
+      "source_heading": false,
+      "note_id": "n-1165daaf180cc6be0634"
+    },
+    {
+      "id": "b-50ca0bc7bb9854b90bef",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 26,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17221",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17221"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖19〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "诀：指断定事情结果或吉凶的诀窍。"
+        }
+      ],
+      "text": "〖19〗诀：指断定事情结果或吉凶的诀窍。",
+      "kind": "modern",
+      "anchors": [
+        "Z17221"
+      ],
+      "source_heading": false,
+      "note_id": "n-93430debf74ea55b9a4c"
+    },
+    {
+      "id": "b-2917683be1b448479475",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 27,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "范秘惜其术，不以至要语权"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17222",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17222"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ],
+          "note_id": "n-64a719fdc53907a87692"
+        },
+        {
+          "type": "text",
+          "text": "：权由是恨之。"
+        },
+        {
+          "type": "link",
+          "anchor": "K1721",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "H1721"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝一﹞"
+            }
+          ],
+          "note_id": "n-67696a5d5f4f827368da"
+        },
+        {
+          "type": "text",
+          "text": "初，权为将军时，范尝白言：“江南有王气，亥子之间有大福庆"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17223",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17223"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ],
+          "note_id": "n-38fa6c38bbba31264d71"
+        },
+        {
+          "type": "text",
+          "text": "。”权曰：“若终如言，以君为侯。”及立为吴王，范时侍宴，曰：“昔在吴中"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17224",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17224"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ],
+          "note_id": "n-a15510882c871070267b"
+        },
+        {
+          "type": "text",
+          "text": "，尝言此事；大王识之邪"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17225",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17225"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ],
+          "note_id": "n-8b93bfe41848722e0cf3"
+        },
+        {
+          "type": "text",
+          "text": "？”权曰：“有之。”因呼左右，以侯绶带范"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17226",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17226"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ],
+          "note_id": "n-9b23834b87897b68271c"
+        },
+        {
+          "type": "text",
+          "text": "。范知权欲以厌当前言"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17227",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17227"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ],
+          "note_id": "n-36a2cb8adbe806d76a23"
+        },
+        {
+          "type": "text",
+          "text": "，辄手推不受。及后论功行封，以范为都亭侯。诏临当出，权恚其爱道于己也"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17228",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17228"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ],
+          "note_id": "n-b322d35d56a44b740972"
+        },
+        {
+          "type": "text",
+          "text": "，削除其名。"
+        }
+      ],
+      "text": "范秘惜其术，不以至要语权〖1〗：权由是恨之。﹝一﹞初，权为将军时，范尝白言：“江南有王气，亥子之间有大福庆〖2〗。”权曰：“若终如言，以君为侯。”及立为吴王，范时侍宴，曰：“昔在吴中〖3〗，尝言此事；大王识之邪〖4〗？”权曰：“有之。”因呼左右，以侯绶带范〖5〗。范知权欲以厌当前言〖6〗，辄手推不受。及后论功行封，以范为都亭侯。诏临当出，权恚其爱道于己也〖7〗，削除其名。",
+      "kind": "original",
+      "anchors": [
+        "Y17222",
+        "K1721",
+        "Y17223",
+        "Y17224",
+        "Y17225",
+        "Y17226",
+        "Y17227",
+        "Y17228"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-38ef3673a3d7dd8b8743",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 28,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "范为人刚直，颇好自称"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17229",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17229"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ],
+          "note_id": "n-84b9b37a12151fa7cd7b"
+        },
+        {
+          "type": "text",
+          "text": "。然与亲故交接，有终始。素与魏滕同邑相善。滕尝有罪，权责怒其严，敢有谏者死。范谓滕曰：“与汝偕死！”滕曰：“死而无益，何用死为？”范曰：“安能虑此，坐观汝邪？”乃髡头自缚诣门下"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17230",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17230"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖9〗"
+            }
+          ],
+          "note_id": "n-418bcb1834bc83a63a55"
+        },
+        {
+          "type": "text",
+          "text": "，使铃下以闻"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17231",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17231"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖10〗"
+            }
+          ],
+          "note_id": "n-cb5932b8047568702e9c"
+        },
+        {
+          "type": "text",
+          "text": "。铃下不敢，曰：“必死！不敢白。”范曰：“汝有子邪？”曰：“有。”曰：“使汝为吴范死"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17232",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17232"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖11〗"
+            }
+          ],
+          "note_id": "n-815bc494047cf9a80606"
+        },
+        {
+          "type": "text",
+          "text": "，子以属我"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17233",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17233"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖12〗"
+            }
+          ],
+          "note_id": "n-48a1421feaa664fbb8fc"
+        },
+        {
+          "type": "text",
+          "text": "。”铃下曰：“诺。”乃排<入"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17234",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17234"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖13〗"
+            }
+          ],
+          "note_id": "n-4576da58d33e5ff48a9e"
+        },
+        {
+          "type": "text",
+          "text": "。言未卒，权大怒，欲便投以戟。逡巡走出"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17235",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17235"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖14〗"
+            }
+          ],
+          "note_id": "n-d26f92bda3ae376ed8ec"
+        },
+        {
+          "type": "text",
+          "text": "。范因突入，叩头流血，言与涕并。良久，权意释，乃免滕"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17236",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17236"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖15〗"
+            }
+          ],
+          "note_id": "n-d434cfaaca3a49e761b8"
+        },
+        {
+          "type": "text",
+          "text": "。"
+        }
+      ],
+      "text": "范为人刚直，颇好自称〖8〗。然与亲故交接，有终始。素与魏滕同邑相善。滕尝有罪，权责怒其严，敢有谏者死。范谓滕曰：“与汝偕死！”滕曰：“死而无益，何用死为？”范曰：“安能虑此，坐观汝邪？”乃髡头自缚诣门下〖9〗，使铃下以闻〖10〗。铃下不敢，曰：“必死！不敢白。”范曰：“汝有子邪？”曰：“有。”曰：“使汝为吴范死〖11〗，子以属我〖12〗。”铃下曰：“诺。”乃排<入〖13〗。言未卒，权大怒，欲便投以戟。逡巡走出〖14〗。范因突入，叩头流血，言与涕并。良久，权意释，乃免滕〖15〗。",
+      "kind": "original",
+      "anchors": [
+        "Y17229",
+        "Y17230",
+        "Y17231",
+        "Y17232",
+        "Y17233",
+        "Y17234",
+        "Y17235",
+        "Y17236"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-7c7769d8d9420163daae",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 29,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "滕见范谢曰：“父母能生长我，不能免我于死。丈夫相知，如汝足矣，何用多为！”"
+        },
+        {
+          "type": "link",
+          "anchor": "K1722",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "H1722"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝二﹞"
+            }
+          ],
+          "note_id": "n-12d93e9e230aa0662150"
+        }
+      ],
+      "text": "滕见范谢曰：“父母能生长我，不能免我于死。丈夫相知，如汝足矣，何用多为！”﹝二﹞",
+      "kind": "original",
+      "anchors": [
+        "K1722"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-72117c9d0f78574995ae",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 30,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "黄武五年，范病卒。长子先死，少子尚幼：于是业绝。"
+        }
+      ],
+      "text": "黄武五年，范病卒。长子先死，少子尚幼：于是业绝。",
+      "kind": "original",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-9dc9bc7136dd4ae5d902",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 31,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "权追思之，募三州有能举知术数如吴范、赵达者"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17237",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17237"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖16〗"
+            }
+          ],
+          "note_id": "n-9bc0f8708f60244334f1"
+        },
+        {
+          "type": "text",
+          "text": "，封千户侯；卒无所得。"
+        },
+        {
+          "type": "link",
+          "anchor": "K1723",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "H1723"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝三﹞"
+            }
+          ],
+          "note_id": "n-321bec019a72e74d3518"
+        }
+      ],
+      "text": "权追思之，募三州有能举知术数如吴范、赵达者〖16〗，封千户侯；卒无所得。﹝三﹞",
+      "kind": "original",
+      "anchors": [
+        "Y17237",
+        "K1723"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-6b804dbcb9b6e2eb8d5e",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 32,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【注释】"
+        }
+      ],
+      "text": "【注释】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-81622a9b2a40517172f7",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 33,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17222",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17222"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "至要：最为重要（的内容）。"
+        }
+      ],
+      "text": "〖1〗至要：最为重要（的内容）。",
+      "kind": "modern",
+      "anchors": [
+        "Z17222"
+      ],
+      "source_heading": false,
+      "note_id": "n-64a719fdc53907a87692"
+    },
+    {
+      "id": "b-1e22b6a54565a7564eb2",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 34,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17223",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17223"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "亥子：亥年或子年。据下面传文所言，赵达所指的“大福庆”，是指孙权当上吴王一事。而本书卷四十七记载，孙权受曹魏之封为吴王，时在魏文帝黄初元年（公元 220）的十一月。当年的干支是庚子，正是子年。"
+        }
+      ],
+      "text": "〖2〗亥子：亥年或子年。据下面传文所言，赵达所指的“大福庆”，是指孙权当上吴王一事。而本书卷四十七记载，孙权受曹魏之封为吴王，时在魏文帝黄初元年（公元 220）的十一月。当年的干支是庚子，正是子年。",
+      "kind": "modern",
+      "anchors": [
+        "Z17223"
+      ],
+      "source_heading": false,
+      "note_id": "n-38fa6c38bbba31264d71"
+    },
+    {
+      "id": "b-bbbe9d07286b6359e395",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 35,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17224",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17224"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "吴中：指吴县地区。县治在今江苏苏州市。"
+        }
+      ],
+      "text": "〖3〗吴中：指吴县地区。县治在今江苏苏州市。",
+      "kind": "modern",
+      "anchors": [
+        "Z17224"
+      ],
+      "source_heading": false,
+      "note_id": "n-a15510882c871070267b"
+    },
+    {
+      "id": "b-0f7567ff6e967420213a",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 36,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17225",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17225"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "识（zhì）：记得。"
+        }
+      ],
+      "text": "〖4〗识（zhì）：记得。",
+      "kind": "modern",
+      "anchors": [
+        "Z17225"
+      ],
+      "source_heading": false,
+      "note_id": "n-8b93bfe41848722e0cf3"
+    },
+    {
+      "id": "b-dfcf576d40cf77017260",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 37,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17226",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17226"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "侯绶：侯爵所佩的绶带。当时侯爵绶带用紫白二色的丝线编成，长一丈七尺，见《续汉舆服志》下。"
+        }
+      ],
+      "text": "〖5〗侯绶：侯爵所佩的绶带。当时侯爵绶带用紫白二色的丝线编成，长一丈七尺，见《续汉舆服志》下。",
+      "kind": "modern",
+      "anchors": [
+        "Z17226"
+      ],
+      "source_heading": false,
+      "note_id": "n-9b23834b87897b68271c"
+    },
+    {
+      "id": "b-2557046610a1bcac2905",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 38,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17227",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17227"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "厌当（yā tāng）：指勉强搪塞。"
+        }
+      ],
+      "text": "〖6〗厌当（yā tāng）：指勉强搪塞。",
+      "kind": "modern",
+      "anchors": [
+        "Z17227"
+      ],
+      "source_heading": false,
+      "note_id": "n-36a2cb8adbe806d76a23"
+    },
+    {
+      "id": "b-77df05b6eb19fa642fca",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 39,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17228",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17228"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "爱道于己：对自己吝惜而不传授（观望风气的）方法。"
+        }
+      ],
+      "text": "〖7〗爱道于己：对自己吝惜而不传授（观望风气的）方法。",
+      "kind": "modern",
+      "anchors": [
+        "Z17228"
+      ],
+      "source_heading": false,
+      "note_id": "n-b322d35d56a44b740972"
+    },
+    {
+      "id": "b-cc9e77984e6f5bcd0f73",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 40,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17229",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17229"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "自称：自夸。"
+        }
+      ],
+      "text": "〖8〗自称：自夸。",
+      "kind": "modern",
+      "anchors": [
+        "Z17229"
+      ],
+      "source_heading": false,
+      "note_id": "n-84b9b37a12151fa7cd7b"
+    },
+    {
+      "id": "b-f6c3176d1b08a882f075",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 41,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17230",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17230"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖9〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "髡（kūn ）头：剪去头发。"
+        }
+      ],
+      "text": "〖9〗髡（kūn ）头：剪去头发。",
+      "kind": "modern",
+      "anchors": [
+        "Z17230"
+      ],
+      "source_heading": false,
+      "note_id": "n-418bcb1834bc83a63a55"
+    },
+    {
+      "id": "b-b7eb3589fb10d8f61832",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 42,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17231",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17231"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖10〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "铃下：小吏名。负责通报传令。"
+        }
+      ],
+      "text": "〖10〗铃下：小吏名。负责通报传令。",
+      "kind": "modern",
+      "anchors": [
+        "Z17231"
+      ],
+      "source_heading": false,
+      "note_id": "n-cb5932b8047568702e9c"
+    },
+    {
+      "id": "b-13dc5da62226de247dd1",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 43,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17232",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17232"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖11〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "使：假使。"
+        }
+      ],
+      "text": "〖11〗使：假使。",
+      "kind": "modern",
+      "anchors": [
+        "Z17232"
+      ],
+      "source_heading": false,
+      "note_id": "n-815bc494047cf9a80606"
+    },
+    {
+      "id": "b-d594e4e8ab4fd886df39",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 44,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17233",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17233"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖12〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "属（zhǔ）：托付。"
+        }
+      ],
+      "text": "〖12〗属（zhǔ）：托付。",
+      "kind": "modern",
+      "anchors": [
+        "Z17233"
+      ],
+      "source_heading": false,
+      "note_id": "n-48a1421feaa664fbb8fc"
+    },
+    {
+      "id": "b-8847b81ee60be0423d9a",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 45,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17234",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17234"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖13〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "排< ：推开房门。"
+        }
+      ],
+      "text": "〖13〗排< ：推开房门。",
+      "kind": "modern",
+      "anchors": [
+        "Z17234"
+      ],
+      "source_heading": false,
+      "note_id": "n-4576da58d33e5ff48a9e"
+    },
+    {
+      "id": "b-f00fe4ff98138a729265",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 46,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17235",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17235"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖14〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "逡（qūn）巡：立即。当时习语。"
+        }
+      ],
+      "text": "〖14〗逡（qūn）巡：立即。当时习语。",
+      "kind": "modern",
+      "anchors": [
+        "Z17235"
+      ],
+      "source_heading": false,
+      "note_id": "n-d26f92bda3ae376ed8ec"
+    },
+    {
+      "id": "b-4f4e3883db70dee4c674",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 47,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17236",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17236"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖15〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "免滕：免除了魏滕的罪行不予惩处。孙权赦免魏滕，其母亲吴夫人起了关键性作用，参见本书卷五十《孙破虏吴夫人传》裴注引《会稽典录》。"
+        }
+      ],
+      "text": "〖15〗免滕：免除了魏滕的罪行不予惩处。孙权赦免魏滕，其母亲吴夫人起了关键性作用，参见本书卷五十《孙破虏吴夫人传》裴注引《会稽典录》。",
+      "kind": "modern",
+      "anchors": [
+        "Z17236"
+      ],
+      "source_heading": false,
+      "note_id": "n-d434cfaaca3a49e761b8"
+    },
+    {
+      "id": "b-63b4317ff24f6a945697",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 48,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17237",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17237"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖16〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "三州：指孙吴统治的扬州、荆州和交州。术数：当时把天文、历算、阴阳五行、卜筮、风气等具有专门性方法和计算的技艺称为术数。这些技艺大多用于预测事情的结果或吉凶，迷信色彩浓厚。"
+        }
+      ],
+      "text": "〖16〗三州：指孙吴统治的扬州、荆州和交州。术数：当时把天文、历算、阴阳五行、卜筮、风气等具有专门性方法和计算的技艺称为术数。这些技艺大多用于预测事情的结果或吉凶，迷信色彩浓厚。",
+      "kind": "modern",
+      "anchors": [
+        "Z17237"
+      ],
+      "source_heading": false,
+      "note_id": "n-9bc0f8708f60244334f1"
+    },
+    {
+      "id": "b-7a3bb08ed44b50c1e307",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 49,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【裴注】"
+        }
+      ],
+      "text": "【裴注】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-3ec29320b56fb8bec4fd",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 50,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "H1721",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "K1721"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝一﹞"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "《吴录》曰：“范独心计，所以见重者术；术亡则身弃矣：故终不言。”"
+        }
+      ],
+      "text": "﹝一﹞《吴录》曰：“范独心计，所以见重者术；术亡则身弃矣：故终不言。”",
+      "kind": "pei",
+      "anchors": [
+        "H1721"
+      ],
+      "source_heading": false,
+      "note_id": "n-67696a5d5f4f827368da"
+    },
+    {
+      "id": "b-10857288d302bde370ae",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 51,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "H1722",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "K1722"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝二﹞"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "《会稽典录》曰：“滕字周林。祖父河内太守朗，字少英。列在‘八俊’。滕性刚直，行不苟合；虽遭困逼，终不回挠。初亦忤策，几殆，赖太妃救得免。”语见《妃嫔传》。历历（山）〔阳〕、（潘）〔鄱〕阳、山阴三县令，鄱阳太守。"
+        }
+      ],
+      "text": "﹝二﹞《会稽典录》曰：“滕字周林。祖父河内太守朗，字少英。列在‘八俊’。滕性刚直，行不苟合；虽遭困逼，终不回挠。初亦忤策，几殆，赖太妃救得免。”语见《妃嫔传》。历历（山）〔阳〕、（潘）〔鄱〕阳、山阴三县令，鄱阳太守。",
+      "kind": "pei",
+      "anchors": [
+        "H1722"
+      ],
+      "source_heading": false,
+      "note_id": "n-12d93e9e230aa0662150"
+    },
+    {
+      "id": "b-fd7981443a3a373270e1",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 52,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "H1723",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "K1723"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝三﹞"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "《吴录》曰：“范先知其死日，谓权曰：‘陛下某日，当丧军师。’权曰：‘吾无军师，焉得丧之？’范曰：‘陛下出军临敌，须臣言而后行；臣乃陛下之军师也！’至其日，果卒。”臣松之按：范死时，权未称帝；此云“陛下”，非也。"
+        }
+      ],
+      "text": "﹝三﹞《吴录》曰：“范先知其死日，谓权曰：‘陛下某日，当丧军师。’权曰：‘吾无军师，焉得丧之？’范曰：‘陛下出军临敌，须臣言而后行；臣乃陛下之军师也！’至其日，果卒。”臣松之按：范死时，权未称帝；此云“陛下”，非也。",
+      "kind": "pei",
+      "anchors": [
+        "H1723"
+      ],
+      "source_heading": false,
+      "note_id": "n-321bec019a72e74d3518"
+    },
+    {
+      "id": "b-cbd06593206ca2b2b3e0",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 53,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "刘惇字子仁，平原人也"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17238",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17238"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ],
+          "note_id": "n-ddbe76ba4ac2794aab50"
+        },
+        {
+          "type": "text",
+          "text": "。遭乱避地，客游庐陵，事孙辅"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17239",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17239"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ],
+          "note_id": "n-22dca518292c99f25102"
+        },
+        {
+          "type": "text",
+          "text": "。以明天官、达占数，显于南土"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17240",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17240"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ],
+          "note_id": "n-93533909f27e23e9487c"
+        },
+        {
+          "type": "text",
+          "text": "。"
+        }
+      ],
+      "text": "刘惇字子仁，平原人也〖1〗。遭乱避地，客游庐陵，事孙辅〖2〗。以明天官、达占数，显于南土〖3〗。",
+      "kind": "original",
+      "anchors": [
+        "Y17238",
+        "Y17239",
+        "Y17240"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-4756992061338dc7e698",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 54,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "每有水旱寇贼，皆先时处期"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17241",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17241"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ],
+          "note_id": "n-0f8575f8f916a6970948"
+        },
+        {
+          "type": "text",
+          "text": "，无不中者。辅异焉，以为军师。军中咸敬事之，号曰“神明”。建安中，孙权在豫章。时有星变"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17242",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17242"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ],
+          "note_id": "n-677cab251f1bc5223147"
+        },
+        {
+          "type": "text",
+          "text": "，以问惇。惇曰：“灾在丹杨。”权曰：“何如？”曰：“客胜主人。到某日，当得问"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17243",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17243"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ],
+          "note_id": "n-9abbcae6f093a874d5e3"
+        },
+        {
+          "type": "text",
+          "text": "。”是时边鸿作乱"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17244",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17244"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ],
+          "note_id": "n-71af6ec20738b3201405"
+        },
+        {
+          "type": "text",
+          "text": "，卒如惇言。"
+        }
+      ],
+      "text": "每有水旱寇贼，皆先时处期〖4〗，无不中者。辅异焉，以为军师。军中咸敬事之，号曰“神明”。建安中，孙权在豫章。时有星变〖5〗，以问惇。惇曰：“灾在丹杨。”权曰：“何如？”曰：“客胜主人。到某日，当得问〖6〗。”是时边鸿作乱〖7〗，卒如惇言。",
+      "kind": "original",
+      "anchors": [
+        "Y17241",
+        "Y17242",
+        "Y17243",
+        "Y17244"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-52e9049ea13a2705a189",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 55,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "惇于诸术皆善，尤明太乙"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17245",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17245"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ],
+          "note_id": "n-f8ba6ac8ab258c8ccbc1"
+        },
+        {
+          "type": "text",
+          "text": "；皆能推演其事，穷尽要妙。著书百余篇，名儒刁玄称以为奇。惇亦宝爱其术，不以告人；故世莫得而明也。"
+        }
+      ],
+      "text": "惇于诸术皆善，尤明太乙〖8〗；皆能推演其事，穷尽要妙。著书百余篇，名儒刁玄称以为奇。惇亦宝爱其术，不以告人；故世莫得而明也。",
+      "kind": "original",
+      "anchors": [
+        "Y17245"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-c8a077bff70e34054820",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 56,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【注释】"
+        }
+      ],
+      "text": "【注释】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-d7c1a18214667542ed97",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 57,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17238",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17238"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "平原：王国名。治所在今山东平原县西南。"
+        }
+      ],
+      "text": "〖1〗平原：王国名。治所在今山东平原县西南。",
+      "kind": "modern",
+      "anchors": [
+        "Z17238"
+      ],
+      "source_heading": false,
+      "note_id": "n-ddbe76ba4ac2794aab50"
+    },
+    {
+      "id": "b-39d071051983928a5724",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 58,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17239",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17239"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "孙辅：传见本书卷五十一。"
+        }
+      ],
+      "text": "〖2〗孙辅：传见本书卷五十一。",
+      "kind": "modern",
+      "anchors": [
+        "Z17239"
+      ],
+      "source_heading": false,
+      "note_id": "n-22dca518292c99f25102"
+    },
+    {
+      "id": "b-22e3165cbf0a18d952df",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 59,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17240",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17240"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "天官：天文。占数：占卜的计算。"
+        }
+      ],
+      "text": "〖3〗天官：天文。占数：占卜的计算。",
+      "kind": "modern",
+      "anchors": [
+        "Z17240"
+      ],
+      "source_heading": false,
+      "note_id": "n-93533909f27e23e9487c"
+    },
+    {
+      "id": "b-c3f796a3e40d373b1dde",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 60,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17241",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17241"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "处：确定。"
+        }
+      ],
+      "text": "〖4〗处：确定。",
+      "kind": "modern",
+      "anchors": [
+        "Z17241"
+      ],
+      "source_heading": false,
+      "note_id": "n-0f8575f8f916a6970948"
+    },
+    {
+      "id": "b-41c61bf36934b7724ca2",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 61,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17242",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17242"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "星变：异常的星象。"
+        }
+      ],
+      "text": "〖5〗星变：异常的星象。",
+      "kind": "modern",
+      "anchors": [
+        "Z17242"
+      ],
+      "source_heading": false,
+      "note_id": "n-677cab251f1bc5223147"
+    },
+    {
+      "id": "b-f8ad3db9741f197320fc",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 62,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17243",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17243"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "问：消息。"
+        }
+      ],
+      "text": "〖6〗问：消息。",
+      "kind": "modern",
+      "anchors": [
+        "Z17243"
+      ],
+      "source_heading": false,
+      "note_id": "n-9abbcae6f093a874d5e3"
+    },
+    {
+      "id": "b-b8adeb9b9b5ede617dbf",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 63,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17244",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17244"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "边鸿作乱：指边鸿等刺杀孙权弟弟丹杨太守孙翊事，见本书卷五十一《孙翊传》。"
+        }
+      ],
+      "text": "〖7〗边鸿作乱：指边鸿等刺杀孙权弟弟丹杨太守孙翊事，见本书卷五十一《孙翊传》。",
+      "kind": "modern",
+      "anchors": [
+        "Z17244"
+      ],
+      "source_heading": false,
+      "note_id": "n-71af6ec20738b3201405"
+    },
+    {
+      "id": "b-ed7a7febb95c1a33c695",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 64,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17245",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17245"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "太乙：占卜术的一种。又称太一。《隋书》卷三十四《经籍志》三载有以“太一”命名的占卜书多种。"
+        }
+      ],
+      "text": "〖8〗太乙：占卜术的一种。又称太一。《隋书》卷三十四《经籍志》三载有以“太一”命名的占卜书多种。",
+      "kind": "modern",
+      "anchors": [
+        "Z17245"
+      ],
+      "source_heading": false,
+      "note_id": "n-f8ba6ac8ab258c8ccbc1"
+    },
+    {
+      "id": "b-b1c1bc08a69e5ae5e3e0",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 65,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "赵达，河南人也"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17246",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17246"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ],
+          "note_id": "n-3ba7b3e43d1151549e72"
+        },
+        {
+          "type": "text",
+          "text": "。少从汉侍中单甫受学，用思精密。谓东南有王者气，可以避难，故脱身渡江。治九宫一算之术"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17247",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17247"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ],
+          "note_id": "n-f724ab5f43d737f8bbe8"
+        },
+        {
+          "type": "text",
+          "text": "，究其微旨。是以能应机立成，对问若神；至计飞蝗"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17248",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17248"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ],
+          "note_id": "n-0228db750133a9180832"
+        },
+        {
+          "type": "text",
+          "text": "，射隐伏"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17249",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17249"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ],
+          "note_id": "n-5e3f2e677586f4558a44"
+        },
+        {
+          "type": "text",
+          "text": "，无不中效。"
+        }
+      ],
+      "text": "赵达，河南人也〖1〗。少从汉侍中单甫受学，用思精密。谓东南有王者气，可以避难，故脱身渡江。治九宫一算之术〖2〗，究其微旨。是以能应机立成，对问若神；至计飞蝗〖3〗，射隐伏〖4〗，无不中效。",
+      "kind": "original",
+      "anchors": [
+        "Y17246",
+        "Y17247",
+        "Y17248",
+        "Y17249"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-e0df12163a7154d2aaba",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 66,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "或难达曰：“飞者固不可校"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17250",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17250"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ],
+          "note_id": "n-d89a4b36c20a8cdbe52f"
+        },
+        {
+          "type": "text",
+          "text": "，谁知其然？此殆妄耳！”达使其人取小豆数斗，播之席上。立处其数"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17251",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17251"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ],
+          "note_id": "n-24883c113b410447e891"
+        },
+        {
+          "type": "text",
+          "text": "，验覆果信。"
+        }
+      ],
+      "text": "或难达曰：“飞者固不可校〖5〗，谁知其然？此殆妄耳！”达使其人取小豆数斗，播之席上。立处其数〖6〗，验覆果信。",
+      "kind": "original",
+      "anchors": [
+        "Y17250",
+        "Y17251"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-61eba2da0b6189d66d52",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 67,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "尝过知故"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17252",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17252"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ],
+          "note_id": "n-2cfa456b3d223b2a0720"
+        },
+        {
+          "type": "text",
+          "text": "，知故为之具食。食毕，谓曰：“仓猝乏酒，又无嘉肴；无以叙意，如何？”达因取盘中只箸"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17253",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17253"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ],
+          "note_id": "n-cee59e7d358b155840e4"
+        },
+        {
+          "type": "text",
+          "text": "，再三纵横之"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17254",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17254"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖9〗"
+            }
+          ],
+          "note_id": "n-e30ae5a6e2fb4d716185"
+        },
+        {
+          "type": "text",
+          "text": "。乃言：“卿东壁下有美酒一斛，又有鹿肉三斤；何以辞无"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17255",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17255"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖10〗"
+            }
+          ],
+          "note_id": "n-c070ac9a5cf844cb3eae"
+        },
+        {
+          "type": "text",
+          "text": "？”时坐有他宾，内得主人情。主人惭曰：“以卿善射有无，欲相试耳。竟效如此！”遂出酒，酣饮。"
+        }
+      ],
+      "text": "尝过知故〖7〗，知故为之具食。食毕，谓曰：“仓猝乏酒，又无嘉肴；无以叙意，如何？”达因取盘中只箸〖8〗，再三纵横之〖9〗。乃言：“卿东壁下有美酒一斛，又有鹿肉三斤；何以辞无〖10〗？”时坐有他宾，内得主人情。主人惭曰：“以卿善射有无，欲相试耳。竟效如此！”遂出酒，酣饮。",
+      "kind": "original",
+      "anchors": [
+        "Y17252",
+        "Y17253",
+        "Y17254",
+        "Y17255"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-92878773d27d2587f37e",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 68,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "又有书简上作千万数"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17256",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17256"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖11〗"
+            }
+          ],
+          "note_id": "n-4404a4a0b16dde77224a"
+        },
+        {
+          "type": "text",
+          "text": "，著空仓中封之；令达算之。达处如数，云：“但有名无实。”其精微若是。"
+        }
+      ],
+      "text": "又有书简上作千万数〖11〗，著空仓中封之；令达算之。达处如数，云：“但有名无实。”其精微若是。",
+      "kind": "original",
+      "anchors": [
+        "Y17256"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-107c2ef275bd39e731d3",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 69,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "达宝惜其术。自阚泽、殷礼皆名儒善士"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17257",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17257"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖12〗"
+            }
+          ],
+          "note_id": "n-32f4373ce2dae77fa305"
+        },
+        {
+          "type": "text",
+          "text": "，亲屈节就学：达秘而不告。太史丞公孙滕少师事达"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17258",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17258"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖13〗"
+            }
+          ],
+          "note_id": "n-1fc62a8651de4ef019d6"
+        },
+        {
+          "type": "text",
+          "text": "，勤苦累年；达许教之者有年数矣，临当喻语而辄复止"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17259",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17259"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖14〗"
+            }
+          ],
+          "note_id": "n-d1cc99d6dda99d94a489"
+        },
+        {
+          "type": "text",
+          "text": "。"
+        }
+      ],
+      "text": "达宝惜其术。自阚泽、殷礼皆名儒善士〖12〗，亲屈节就学：达秘而不告。太史丞公孙滕少师事达〖13〗，勤苦累年；达许教之者有年数矣，临当喻语而辄复止〖14〗。",
+      "kind": "original",
+      "anchors": [
+        "Y17257",
+        "Y17258",
+        "Y17259"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-17ba6052b150008390fd",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 70,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "滕他日赍酒具"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17260",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17260"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖15〗"
+            }
+          ],
+          "note_id": "n-592ff58b38557097da81"
+        },
+        {
+          "type": "text",
+          "text": "，候颜色，拜跪而请。达曰：“吾先人得此术，欲图为帝王师；至仕来三世，不过太史郎：诚不欲复传之！且此术微妙，头乘尾除，一算之法，父子不相语。然以子笃好不倦，今真以相授矣。”饮酒数行"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17261",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17261"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖16〗"
+            }
+          ],
+          "note_id": "n-4710704d2e65f1064a76"
+        },
+        {
+          "type": "text",
+          "text": "，达起取素书两卷"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17262",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17262"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖17〗"
+            }
+          ],
+          "note_id": "n-15aa60a786b243fc464e"
+        },
+        {
+          "type": "text",
+          "text": "，大如手指。达曰：“当写读此，则自解也。吾久废，不复省之"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17263",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17263"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖18〗"
+            }
+          ],
+          "note_id": "n-e0bc83483f21f15cca75"
+        },
+        {
+          "type": "text",
+          "text": "。今欲思论一过"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17264",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17264"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖19〗"
+            }
+          ],
+          "note_id": "n-1e6a0ff29d7c2698cd09"
+        },
+        {
+          "type": "text",
+          "text": "，数日当以相与。”"
+        }
+      ],
+      "text": "滕他日赍酒具〖15〗，候颜色，拜跪而请。达曰：“吾先人得此术，欲图为帝王师；至仕来三世，不过太史郎：诚不欲复传之！且此术微妙，头乘尾除，一算之法，父子不相语。然以子笃好不倦，今真以相授矣。”饮酒数行〖16〗，达起取素书两卷〖17〗，大如手指。达曰：“当写读此，则自解也。吾久废，不复省之〖18〗。今欲思论一过〖19〗，数日当以相与。”",
+      "kind": "original",
+      "anchors": [
+        "Y17260",
+        "Y17261",
+        "Y17262",
+        "Y17263",
+        "Y17264"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-a23a7a957e69ce5bb914",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 71,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "滕如期往，至，乃佯求索书"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17265",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17265"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖20〗"
+            }
+          ],
+          "note_id": "n-810a40d437fac50c0944"
+        },
+        {
+          "type": "text",
+          "text": "，惊言失之。云：“女婿昨来，必是渠所窃"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17266",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17266"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖21〗"
+            }
+          ],
+          "note_id": "n-29a0c9bf24e7adba5987"
+        },
+        {
+          "type": "text",
+          "text": "！”遂从此绝。"
+        }
+      ],
+      "text": "滕如期往，至，乃佯求索书〖20〗，惊言失之。云：“女婿昨来，必是渠所窃〖21〗！”遂从此绝。",
+      "kind": "original",
+      "anchors": [
+        "Y17265",
+        "Y17266"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-dd6d927659222277cdc9",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 72,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【注释】"
+        }
+      ],
+      "text": "【注释】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-8d0d60eea1840d5b073e",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 73,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17246",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17246"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "河南：即河南尹，是东汉京城洛阳所在的郡。治所在今河南洛阳市东。"
+        }
+      ],
+      "text": "〖1〗河南：即河南尹，是东汉京城洛阳所在的郡。治所在今河南洛阳市东。",
+      "kind": "modern",
+      "anchors": [
+        "Z17246"
+      ],
+      "source_heading": false,
+      "note_id": "n-3ba7b3e43d1151549e72"
+    },
+    {
+      "id": "b-68b9435d091c3025427f",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 74,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17247",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17247"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "九宫一算：古代特别的算法名。计算时要使用一种数字表，表纵横三格，共有九格，格内有数字，故名。"
+        }
+      ],
+      "text": "〖2〗九宫一算：古代特别的算法名。计算时要使用一种数字表，表纵横三格，共有九格，格内有数字，故名。",
+      "kind": "modern",
+      "anchors": [
+        "Z17247"
+      ],
+      "source_heading": false,
+      "note_id": "n-f724ab5f43d737f8bbe8"
+    },
+    {
+      "id": "b-ff4127b6d33858902ffc",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 75,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17248",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17248"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "至：至于。计飞蝗：计算飞过的蝗虫数目。"
+        }
+      ],
+      "text": "〖3〗至：至于。计飞蝗：计算飞过的蝗虫数目。",
+      "kind": "modern",
+      "anchors": [
+        "Z17248"
+      ],
+      "source_heading": false,
+      "note_id": "n-0228db750133a9180832"
+    },
+    {
+      "id": "b-59b9ad911c1101d220e6",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 76,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17249",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17249"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "射隐伏：猜测被隐藏（而看不见）的东西。"
+        }
+      ],
+      "text": "〖4〗射隐伏：猜测被隐藏（而看不见）的东西。",
+      "kind": "modern",
+      "anchors": [
+        "Z17249"
+      ],
+      "source_heading": false,
+      "note_id": "n-5e3f2e677586f4558a44"
+    },
+    {
+      "id": "b-1055d03c9b89bb75064a",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 77,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17250",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17250"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "飞者：指蝗虫。校：考核。"
+        }
+      ],
+      "text": "〖5〗飞者：指蝗虫。校：考核。",
+      "kind": "modern",
+      "anchors": [
+        "Z17250"
+      ],
+      "source_heading": false,
+      "note_id": "n-d89a4b36c20a8cdbe52f"
+    },
+    {
+      "id": "b-b5ab571e9e1b5f61bc8f",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 78,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17251",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17251"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "处：确定。"
+        }
+      ],
+      "text": "〖6〗处：确定。",
+      "kind": "modern",
+      "anchors": [
+        "Z17251"
+      ],
+      "source_heading": false,
+      "note_id": "n-24883c113b410447e891"
+    },
+    {
+      "id": "b-119f5351da95cb5564fb",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 79,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17252",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17252"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "过（guō）：拜访。知故：相识的老朋友。"
+        }
+      ],
+      "text": "〖7〗过（guō）：拜访。知故：相识的老朋友。",
+      "kind": "modern",
+      "anchors": [
+        "Z17252"
+      ],
+      "source_heading": false,
+      "note_id": "n-2cfa456b3d223b2a0720"
+    },
+    {
+      "id": "b-c4f7f37cd70aa1551c6a",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 80,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17253",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17253"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "只箸：单根筷子。"
+        }
+      ],
+      "text": "〖8〗只箸：单根筷子。",
+      "kind": "modern",
+      "anchors": [
+        "Z17253"
+      ],
+      "source_heading": false,
+      "note_id": "n-cee59e7d358b155840e4"
+    },
+    {
+      "id": "b-0bcfc841cde6e33d09f3",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 81,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17254",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17254"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖9〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "再三纵横之：竖着横着摆放了两三次。"
+        }
+      ],
+      "text": "〖9〗再三纵横之：竖着横着摆放了两三次。",
+      "kind": "modern",
+      "anchors": [
+        "Z17254"
+      ],
+      "source_heading": false,
+      "note_id": "n-e30ae5a6e2fb4d716185"
+    },
+    {
+      "id": "b-ee785c5f013314f0f788",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 82,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17255",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17255"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖10〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "辞无：推辞说没有。"
+        }
+      ],
+      "text": "〖10〗辞无：推辞说没有。",
+      "kind": "modern",
+      "anchors": [
+        "Z17255"
+      ],
+      "source_heading": false,
+      "note_id": "n-c070ac9a5cf844cb3eae"
+    },
+    {
+      "id": "b-b99f280323a1841ea64a",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 83,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17256",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17256"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖11〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "书：写。"
+        }
+      ],
+      "text": "〖11〗书：写。",
+      "kind": "modern",
+      "anchors": [
+        "Z17256"
+      ],
+      "source_heading": false,
+      "note_id": "n-4404a4a0b16dde77224a"
+    },
+    {
+      "id": "b-8632b42c396424f124ad",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 84,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17257",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17257"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖12〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "阚泽：事见本书卷五十三《阚泽传》。"
+        }
+      ],
+      "text": "〖12〗阚泽：事见本书卷五十三《阚泽传》。",
+      "kind": "modern",
+      "anchors": [
+        "Z17257"
+      ],
+      "source_heading": false,
+      "note_id": "n-32f4373ce2dae77fa305"
+    },
+    {
+      "id": "b-6ca1a273822776bbd00a",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 85,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17258",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17258"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖13〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "太史丞：官名。协助太史令观察天象，制定历法，为朝廷祭祀、婚、丧活动选择时辰。"
+        }
+      ],
+      "text": "〖13〗太史丞：官名。协助太史令观察天象，制定历法，为朝廷祭祀、婚、丧活动选择时辰。",
+      "kind": "modern",
+      "anchors": [
+        "Z17258"
+      ],
+      "source_heading": false,
+      "note_id": "n-1fc62a8651de4ef019d6"
+    },
+    {
+      "id": "b-d8f02459b91679a948ae",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 86,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17259",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17259"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖14〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "喻语：告诉。"
+        }
+      ],
+      "text": "〖14〗喻语：告诉。",
+      "kind": "modern",
+      "anchors": [
+        "Z17259"
+      ],
+      "source_heading": false,
+      "note_id": "n-d1cc99d6dda99d94a489"
+    },
+    {
+      "id": "b-4bb0c6ae7556b8e35326",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 87,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17260",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17260"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖15〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "酒具：酒和食物。"
+        }
+      ],
+      "text": "〖15〗酒具：酒和食物。",
+      "kind": "modern",
+      "anchors": [
+        "Z17260"
+      ],
+      "source_heading": false,
+      "note_id": "n-592ff58b38557097da81"
+    },
+    {
+      "id": "b-77c046800c8fd7149de8",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 88,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17261",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17261"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖16〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "数行：斟酒数次。"
+        }
+      ],
+      "text": "〖16〗数行：斟酒数次。",
+      "kind": "modern",
+      "anchors": [
+        "Z17261"
+      ],
+      "source_heading": false,
+      "note_id": "n-4710704d2e65f1064a76"
+    },
+    {
+      "id": "b-270e374c085579fb6d52",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 89,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17262",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17262"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖17〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "素书：白绢写的书。"
+        }
+      ],
+      "text": "〖17〗素书：白绢写的书。",
+      "kind": "modern",
+      "anchors": [
+        "Z17262"
+      ],
+      "source_heading": false,
+      "note_id": "n-15aa60a786b243fc464e"
+    },
+    {
+      "id": "b-da93fe32175232019246",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 90,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17263",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17263"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖18〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "省（xǐng）：看。"
+        }
+      ],
+      "text": "〖18〗省（xǐng）：看。",
+      "kind": "modern",
+      "anchors": [
+        "Z17263"
+      ],
+      "source_heading": false,
+      "note_id": "n-e0bc83483f21f15cca75"
+    },
+    {
+      "id": "b-9f3b7e84dad88c7a43c4",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 91,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17264",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17264"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖19〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "一过：一遍。"
+        }
+      ],
+      "text": "〖19〗一过：一遍。",
+      "kind": "modern",
+      "anchors": [
+        "Z17264"
+      ],
+      "source_heading": false,
+      "note_id": "n-1e6a0ff29d7c2698cd09"
+    },
+    {
+      "id": "b-849b472b1970c2a9e894",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 92,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17265",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17265"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖20〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "求索：寻找。"
+        }
+      ],
+      "text": "〖20〗求索：寻找。",
+      "kind": "modern",
+      "anchors": [
+        "Z17265"
+      ],
+      "source_heading": false,
+      "note_id": "n-810a40d437fac50c0944"
+    },
+    {
+      "id": "b-366042b19017ba838747",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 93,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17266",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17266"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖21〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "渠：他。"
+        }
+      ],
+      "text": "〖21〗渠：他。",
+      "kind": "modern",
+      "anchors": [
+        "Z17266"
+      ],
+      "source_heading": false,
+      "note_id": "n-29a0c9bf24e7adba5987"
+    },
+    {
+      "id": "b-5594b8fa211989854fd8",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 94,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "初，孙权行师征伐，每令达有所推步"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17267",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17267"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ],
+          "note_id": "n-a36bb22851e03222bf0a"
+        },
+        {
+          "type": "text",
+          "text": "，皆如其言。权问其法，达终不语；由此见薄，禄位不至。"
+        },
+        {
+          "type": "link",
+          "anchor": "K1724",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "H1724"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝一﹞"
+            }
+          ],
+          "note_id": "n-23ae4ebce99532b82d2b"
+        }
+      ],
+      "text": "初，孙权行师征伐，每令达有所推步〖1〗，皆如其言。权问其法，达终不语；由此见薄，禄位不至。﹝一﹞",
+      "kind": "original",
+      "anchors": [
+        "Y17267",
+        "K1724"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-609dd9a43bcf68e7d854",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 95,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "达常笑谓诸星气风术者曰"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17268",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17268"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ],
+          "note_id": "n-4b3accb7af1efc1b6d80"
+        },
+        {
+          "type": "text",
+          "text": "：“当回算帷幕"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17269",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17269"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ],
+          "note_id": "n-61a25314812423ecf451"
+        },
+        {
+          "type": "text",
+          "text": "，不出户牖以知天道。而反昼夜暴露，以望气祥"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17270",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17270"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ],
+          "note_id": "n-146c78d96bfc1ecfd207"
+        },
+        {
+          "type": "text",
+          "text": "，不亦难乎！”"
+        }
+      ],
+      "text": "达常笑谓诸星气风术者曰〖2〗：“当回算帷幕〖3〗，不出户牖以知天道。而反昼夜暴露，以望气祥〖4〗，不亦难乎！”",
+      "kind": "original",
+      "anchors": [
+        "Y17268",
+        "Y17269",
+        "Y17270"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-00d31326556c44b7cbcb",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 96,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "间居无为，引算自校"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17271",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17271"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ],
+          "note_id": "n-91074a500bc1697ae9a6"
+        },
+        {
+          "type": "text",
+          "text": "。乃叹曰：“吾算，讫尽某年月日，其终矣！”达妻数见达效，闻而哭泣。达欲弭妻意，乃更步算"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17272",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17272"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ],
+          "note_id": "n-4c2dd3ce8ae790d63735"
+        },
+        {
+          "type": "text",
+          "text": "。言：“向者谬误耳。尚未也！”后如期死。"
+        }
+      ],
+      "text": "间居无为，引算自校〖5〗。乃叹曰：“吾算，讫尽某年月日，其终矣！”达妻数见达效，闻而哭泣。达欲弭妻意，乃更步算〖6〗。言：“向者谬误耳。尚未也！”后如期死。",
+      "kind": "original",
+      "anchors": [
+        "Y17271",
+        "Y17272"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-8094a5943aa0cffcd530",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 97,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "权闻达有书，求之不得。乃录问其女"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17273",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17273"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ],
+          "note_id": "n-ea55975b30c079b4177e"
+        },
+        {
+          "type": "text",
+          "text": "，及发棺，皆无所得：法术绝焉"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17274",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17274"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ],
+          "note_id": "n-ed95aa7320bf25b436ff"
+        },
+        {
+          "type": "text",
+          "text": "。"
+        },
+        {
+          "type": "link",
+          "anchor": "K1725",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "H1725"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝二﹞"
+            }
+          ],
+          "note_id": "n-a0bd07c10a0db1fefc47"
+        }
+      ],
+      "text": "权闻达有书，求之不得。乃录问其女〖7〗，及发棺，皆无所得：法术绝焉〖8〗。﹝二﹞",
+      "kind": "original",
+      "anchors": [
+        "Y17273",
+        "Y17274",
+        "K1725"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-adf3bee9f9700049925f",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 98,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【注释】"
+        }
+      ],
+      "text": "【注释】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-30d500897336cbfb73ab",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 99,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17267",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17267"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "推步：分步推算（军事行动的结果）。"
+        }
+      ],
+      "text": "〖1〗推步：分步推算（军事行动的结果）。",
+      "kind": "modern",
+      "anchors": [
+        "Z17267"
+      ],
+      "source_heading": false,
+      "note_id": "n-a36bb22851e03222bf0a"
+    },
+    {
+      "id": "b-822bbcac4449695e15c0",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 100,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17268",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17268"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "星气风术者：观察星象、云气、风以预测事情结果或吉凶的人。"
+        }
+      ],
+      "text": "〖2〗星气风术者：观察星象、云气、风以预测事情结果或吉凶的人。",
+      "kind": "modern",
+      "anchors": [
+        "Z17268"
+      ],
+      "source_heading": false,
+      "note_id": "n-4b3accb7af1efc1b6d80"
+    },
+    {
+      "id": "b-f9449200f42efad19ca1",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 101,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17269",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17269"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "回算帷幕：在挂上帷幔的密室中进行反复计算。"
+        }
+      ],
+      "text": "〖3〗回算帷幕：在挂上帷幔的密室中进行反复计算。",
+      "kind": "modern",
+      "anchors": [
+        "Z17269"
+      ],
+      "source_heading": false,
+      "note_id": "n-61a25314812423ecf451"
+    },
+    {
+      "id": "b-081219106ac82f44a831",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 102,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17270",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17270"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "气祥：云气所显示的吉凶征兆。"
+        }
+      ],
+      "text": "〖4〗气祥：云气所显示的吉凶征兆。",
+      "kind": "modern",
+      "anchors": [
+        "Z17270"
+      ],
+      "source_heading": false,
+      "note_id": "n-146c78d96bfc1ecfd207"
+    },
+    {
+      "id": "b-cc163b4170f2ecf1bb90",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 103,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17271",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17271"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "自校：考核自己（的寿数）。"
+        }
+      ],
+      "text": "〖5〗自校：考核自己（的寿数）。",
+      "kind": "modern",
+      "anchors": [
+        "Z17271"
+      ],
+      "source_heading": false,
+      "note_id": "n-91074a500bc1697ae9a6"
+    },
+    {
+      "id": "b-d324b55080116b8315c9",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 104,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17272",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17272"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "步算：分步推算。"
+        }
+      ],
+      "text": "〖6〗步算：分步推算。",
+      "kind": "modern",
+      "anchors": [
+        "Z17272"
+      ],
+      "source_heading": false,
+      "note_id": "n-4c2dd3ce8ae790d63735"
+    },
+    {
+      "id": "b-9940fbcd837a0fdd9bf6",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 105,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17273",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17273"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "录问：抓来追问。"
+        }
+      ],
+      "text": "〖7〗录问：抓来追问。",
+      "kind": "modern",
+      "anchors": [
+        "Z17273"
+      ],
+      "source_heading": false,
+      "note_id": "n-ea55975b30c079b4177e"
+    },
+    {
+      "id": "b-29a33d33ea60bdbfd1f6",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 106,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17274",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17274"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "法术：方法。"
+        }
+      ],
+      "text": "〖8〗法术：方法。",
+      "kind": "modern",
+      "anchors": [
+        "Z17274"
+      ],
+      "source_heading": false,
+      "note_id": "n-ed95aa7320bf25b436ff"
+    },
+    {
+      "id": "b-6a4258ea5c4eb9280517",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 107,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【裴注】"
+        }
+      ],
+      "text": "【裴注】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-c5889490acc554489cec",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 108,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "H1724",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "K1724"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝一﹞"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "《吴书》曰：“初，权即尊号，令达算‘作天子之后，当复几年’？达曰：‘高祖建元十二年；陛下倍之。’权大喜，左右称‘万岁’。果如达言。”"
+        }
+      ],
+      "text": "﹝一﹞《吴书》曰：“初，权即尊号，令达算‘作天子之后，当复几年’？达曰：‘高祖建元十二年；陛下倍之。’权大喜，左右称‘万岁’。果如达言。”",
+      "kind": "pei",
+      "anchors": [
+        "H1724"
+      ],
+      "source_heading": false,
+      "note_id": "n-23ae4ebce99532b82d2b"
+    },
+    {
+      "id": "b-914eb0282e241c66943d",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 109,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "H1725",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "K1725"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝二﹞"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "《吴录》曰：“皇象字休明，广陵江都人。幼工书。时有张子并、陈梁甫能书。甫恨逋，并恨峻；象斟酌其间，甚得其妙，中国善书者不能及也。严武字子卿。卫尉畯再从子也。围棋莫与为辈。宋寿占梦，十不失一。曹不兴善画。权使画屏风，误落笔点素，因就以作蝇；既进御，权以为生蝇，举手弹之。孤城郑妪，能相人。及范、惇、达，八人，世皆称妙，谓之‘八绝’云。”"
+        }
+      ],
+      "text": "﹝二﹞《吴录》曰：“皇象字休明，广陵江都人。幼工书。时有张子并、陈梁甫能书。甫恨逋，并恨峻；象斟酌其间，甚得其妙，中国善书者不能及也。严武字子卿。卫尉畯再从子也。围棋莫与为辈。宋寿占梦，十不失一。曹不兴善画。权使画屏风，误落笔点素，因就以作蝇；既进御，权以为生蝇，举手弹之。孤城郑妪，能相人。及范、惇、达，八人，世皆称妙，谓之‘八绝’云。”",
+      "kind": "pei",
+      "anchors": [
+        "H1725"
+      ],
+      "source_heading": false,
+      "note_id": "n-a0bd07c10a0db1fefc47"
+    },
+    {
+      "id": "b-4f307843c835b6433910",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 110,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "《晋阳秋》曰：“吴有葛（衡）〔衟〕字思真。明达天官，能为机巧。作浑天，使地居于中，以机动之，天转而地止：以上应晷度。”"
+        }
+      ],
+      "text": "《晋阳秋》曰：“吴有葛（衡）〔衟〕字思真。明达天官，能为机巧。作浑天，使地居于中，以机动之，天转而地止：以上应晷度。”",
+      "kind": "pei",
+      "anchors": [],
+      "source_heading": false,
+      "note_id": "n-a0bd07c10a0db1fefc47"
+    },
+    {
+      "id": "b-301da1de3d18a5b5b588",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 111,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "评曰：三子各于其术精矣，其用思妙矣；然君子（算）〔等〕役心神"
+        },
+        {
+          "type": "link",
+          "anchor": "Y17275",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Z17275"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ],
+          "note_id": "n-ffd8fb25cfa45b29adf2"
+        },
+        {
+          "type": "text",
+          "text": "，宜于大者远者。是以有识之士，舍彼而取此也。"
+        },
+        {
+          "type": "link",
+          "anchor": "K1726",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "H1726"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝一﹞"
+            }
+          ],
+          "note_id": "n-fb85abd35bccd57b5d40"
+        }
+      ],
+      "text": "评曰：三子各于其术精矣，其用思妙矣；然君子（算）〔等〕役心神〖1〗，宜于大者远者。是以有识之士，舍彼而取此也。﹝一﹞",
+      "kind": "original",
+      "anchors": [
+        "Y17275",
+        "K1726"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-fbdb20bc9fe1751ce2e3",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 112,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【注释】"
+        }
+      ],
+      "text": "【注释】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-35ffe00a2b04edc79000",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 113,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z17275",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "Y17275"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "等役心神：同样是耗费心神。"
+        }
+      ],
+      "text": "〖1〗等役心神：同样是耗费心神。",
+      "kind": "modern",
+      "anchors": [
+        "Z17275"
+      ],
+      "source_heading": false,
+      "note_id": "n-ffd8fb25cfa45b29adf2"
+    },
+    {
+      "id": "b-bb94c4095d229cb7fe02",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 114,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【裴注】"
+        }
+      ],
+      "text": "【裴注】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-0b21b08a9dd53e473843",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 115,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "H1726",
+          "target": [
+            "OEBPS/Text/titlepage_0133.xhtml",
+            "K1726"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝一﹞"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "孙盛曰：“夫玄览未然，逆鉴来事，虽裨灶、梓慎其犹病诸，况术之下此者乎？吴史书达知东南当有王气，故轻举济江。魏承汉绪，受命中畿；达不能预睹兆萌，而流窜吴越。又不知吝术之鄙，见薄于时；安在其能逆睹天道而审帝王之符瑞哉！昔圣王观天地之文，以画八卦之象；故亹亹成于蓍策，变化形乎六爻；是以三《易》虽殊，卦繇理一。安有回转一筹，可以钩深测隐？意对逆占，而能遂知来物者乎？流俗好异，妄设神奇；不幸之中，仲尼所弃。是以君子志其大者，无所取诸。”"
+        }
+      ],
+      "text": "﹝一﹞孙盛曰：“夫玄览未然，逆鉴来事，虽裨灶、梓慎其犹病诸，况术之下此者乎？吴史书达知东南当有王气，故轻举济江。魏承汉绪，受命中畿；达不能预睹兆萌，而流窜吴越。又不知吝术之鄙，见薄于时；安在其能逆睹天道而审帝王之符瑞哉！昔圣王观天地之文，以画八卦之象；故亹亹成于蓍策，变化形乎六爻；是以三《易》虽殊，卦繇理一。安有回转一筹，可以钩深测隐？意对逆占，而能遂知来物者乎？流俗好异，妄设神奇；不幸之中，仲尼所弃。是以君子志其大者，无所取诸。”",
+      "kind": "pei",
+      "anchors": [
+        "H1726"
+      ],
+      "source_heading": false,
+      "note_id": "n-fb85abd35bccd57b5d40"
+    },
+    {
+      "id": "b-b321de26ddc32173ce49",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 116,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "臣松之以为：盛云“君子志其大者，无所取诸”，故评家之旨，非新声也。其余所讥，则皆为非理。自中原酷乱，至于建安；数十年间，生民殆尽：比至小康，皆百死之余耳。江左虽有兵革，不能如中国之甚也；焉知达不算其安危，知祸有多少，利在东南，以全其身乎？而责不知魏氏将兴，流播吴越；在京房之筹，犹不能自免刑戮，况达但以秘术见薄，在悔吝之间乎！古之道术，盖非一方；探赜之功，岂惟六爻？苟得其要，则可以易而知之矣；回转一筹，胡足怪哉！达之推算，穷其要妙以知幽测隐，何愧于古？而以裨、梓限之，谓达为妄，非笃论也。"
+        }
+      ],
+      "text": "臣松之以为：盛云“君子志其大者，无所取诸”，故评家之旨，非新声也。其余所讥，则皆为非理。自中原酷乱，至于建安；数十年间，生民殆尽：比至小康，皆百死之余耳。江左虽有兵革，不能如中国之甚也；焉知达不算其安危，知祸有多少，利在东南，以全其身乎？而责不知魏氏将兴，流播吴越；在京房之筹，犹不能自免刑戮，况达但以秘术见薄，在悔吝之间乎！古之道术，盖非一方；探赜之功，岂惟六爻？苟得其要，则可以易而知之矣；回转一筹，胡足怪哉！达之推算，穷其要妙以知幽测隐，何愧于古？而以裨、梓限之，谓达为妄，非笃论也。",
+      "kind": "pei",
+      "anchors": [],
+      "source_heading": false,
+      "note_id": "n-fb85abd35bccd57b5d40"
+    },
+    {
+      "id": "b-8cc376b89b26d3fec7c2",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 117,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "《抱朴子》曰：“时有葛仙公者，每饮酒醉，常入人家门前陂水中卧，竟日乃出。曾从吴主别到洌洲，还，遇大风，百官船多没；仙公船亦沉沦，吴主甚怅恨。明日使人钩求公船，而登高以望焉。久之，见公步从水上来，衣履不沾，而有酒色。既见而言曰：‘臣昨侍从而伍子胥见请，暂过设酒，忽忽不得，即委之。’又有姚光者，有火术。吴主身临试之：积荻数千束，使光坐其上；又以数千束荻裹之，因猛风而燔之。荻了尽，谓光当已化为烬；而光端坐灰中，振衣而起，把一卷书。吴主取其书视之，不能解也。”"
+        }
+      ],
+      "text": "《抱朴子》曰：“时有葛仙公者，每饮酒醉，常入人家门前陂水中卧，竟日乃出。曾从吴主别到洌洲，还，遇大风，百官船多没；仙公船亦沉沦，吴主甚怅恨。明日使人钩求公船，而登高以望焉。久之，见公步从水上来，衣履不沾，而有酒色。既见而言曰：‘臣昨侍从而伍子胥见请，暂过设酒，忽忽不得，即委之。’又有姚光者，有火术。吴主身临试之：积荻数千束，使光坐其上；又以数千束荻裹之，因猛风而燔之。荻了尽，谓光当已化为烬；而光端坐灰中，振衣而起，把一卷书。吴主取其书视之，不能解也。”",
+      "kind": "pei",
+      "anchors": [],
+      "source_heading": false,
+      "note_id": "n-fb85abd35bccd57b5d40"
+    },
+    {
+      "id": "b-829fe7ca89d75d868e3d",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 118,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "又曰：“吴景帝有疾，求觋视者。得一人，景帝欲试之。乃杀鹅而埋于苑中，架小屋，施床几，以妇人屐履服物著其上。乃使觋视之，告曰：‘若能说此冢中鬼妇人形状者，当加赏而即信矣。’竟日尽夕，无言。帝推问之急，乃曰：‘实不见有鬼，但见一头白鹅立墓上；所以不即白之，疑是鬼神变化作此相，当候其真形；而定无复移易，不知何故。不敢不以实上闻。’景帝乃厚赐之。然则鹅死，亦有鬼也。”"
+        }
+      ],
+      "text": "又曰：“吴景帝有疾，求觋视者。得一人，景帝欲试之。乃杀鹅而埋于苑中，架小屋，施床几，以妇人屐履服物著其上。乃使觋视之，告曰：‘若能说此冢中鬼妇人形状者，当加赏而即信矣。’竟日尽夕，无言。帝推问之急，乃曰：‘实不见有鬼，但见一头白鹅立墓上；所以不即白之，疑是鬼神变化作此相，当候其真形；而定无复移易，不知何故。不敢不以实上闻。’景帝乃厚赐之。然则鹅死，亦有鬼也。”",
+      "kind": "pei",
+      "anchors": [],
+      "source_heading": false,
+      "note_id": "n-fb85abd35bccd57b5d40"
+    },
+    {
+      "id": "b-421af20f01b68a978a95",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 119,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "葛洪《神仙传》曰：“仙人介象，字元则。会稽人。有诸方术。吴主闻之，征象到武昌，甚敬贵之，称为‘介君’。为起宅，以御帐给之，赐遗前后累千金。从象学蔽形之术，试还后宫，及出殿门，莫有见者。又使象作变化，种瓜菜百果，皆立生，可食。吴主共论鲙鱼何者最美，象曰：‘鲻鱼为上。’吴主曰：‘论近道鱼耳；此出海中，安可得邪？’象曰：‘可得耳。’乃令人于殿庭中作方坎，汲水满之。并求钩，象起饵之，垂纶于坎中。须臾，果得鲻鱼。吴主惊喜，问象曰：‘可食不？’象曰：‘故为陛下取以作生鲙，安敢取不可食之物！’乃使厨下切之。吴主曰：‘闻蜀使来，得蜀姜作鲙甚好；恨尔时无此！’象曰：‘蜀姜岂不易得！愿差所使者，并付直。’吴主指左右一人，以钱五十付之。象书一符，以著青竹杖中，使行人闭目骑杖；杖止，便买姜讫，复闭目。此人承其言骑杖，须臾止，已至成都。不知是何处，问人，人言是蜀市中；乃买姜。于时吴使张温，先在蜀，既于市中相识；甚惊，便作书寄其家。此人买姜毕，捉书负姜；骑杖闭目，须臾已还到吴：厨下切鲙适了。”"
+        }
+      ],
+      "text": "葛洪《神仙传》曰：“仙人介象，字元则。会稽人。有诸方术。吴主闻之，征象到武昌，甚敬贵之，称为‘介君’。为起宅，以御帐给之，赐遗前后累千金。从象学蔽形之术，试还后宫，及出殿门，莫有见者。又使象作变化，种瓜菜百果，皆立生，可食。吴主共论鲙鱼何者最美，象曰：‘鲻鱼为上。’吴主曰：‘论近道鱼耳；此出海中，安可得邪？’象曰：‘可得耳。’乃令人于殿庭中作方坎，汲水满之。并求钩，象起饵之，垂纶于坎中。须臾，果得鲻鱼。吴主惊喜，问象曰：‘可食不？’象曰：‘故为陛下取以作生鲙，安敢取不可食之物！’乃使厨下切之。吴主曰：‘闻蜀使来，得蜀姜作鲙甚好；恨尔时无此！’象曰：‘蜀姜岂不易得！愿差所使者，并付直。’吴主指左右一人，以钱五十付之。象书一符，以著青竹杖中，使行人闭目骑杖；杖止，便买姜讫，复闭目。此人承其言骑杖，须臾止，已至成都。不知是何处，问人，人言是蜀市中；乃买姜。于时吴使张温，先在蜀，既于市中相识；甚惊，便作书寄其家。此人买姜毕，捉书负姜；骑杖闭目，须臾已还到吴：厨下切鲙适了。”",
+      "kind": "pei",
+      "anchors": [],
+      "source_heading": false,
+      "note_id": "n-fb85abd35bccd57b5d40"
+    },
+    {
+      "id": "b-d26728c67b5d387a3a2a",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 120,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "臣松之以为：葛洪所记，近为惑众；其书文颇行世，故撮取数事，载之篇末也。神仙之术，讵可测量？臣之臆断，以为“惑众”，所谓夏虫不知冷冰耳！"
+        }
+      ],
+      "text": "臣松之以为：葛洪所记，近为惑众；其书文颇行世，故撮取数事，载之篇末也。神仙之术，讵可测量？臣之臆断，以为“惑众”，所谓夏虫不知冷冰耳！",
+      "kind": "pei",
+      "anchors": [],
+      "source_heading": false,
+      "note_id": "n-fb85abd35bccd57b5d40"
+    },
+    {
+      "id": "b-251aba13b00c72ccd2f9",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 121,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【译文】"
+        }
+      ],
+      "text": "【译文】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-2385cdf7154414c6666c",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 122,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "吴范，字文则，会稽郡上虞县人。他因为研习历法计算，懂得观察风和云气以预测事情结果和吉凶的方法，从而闻名于郡中。他被举荐为有道，前往京都；由于社会动乱而没有成行。"
+        }
+      ],
+      "text": "吴范，字文则，会稽郡上虞县人。他因为研习历法计算，懂得观察风和云气以预测事情结果和吉凶的方法，从而闻名于郡中。他被举荐为有道，前往京都；由于社会动乱而没有成行。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-3f454fc05c8a614c6de7",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 123,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "碰到孙权在东南兴起，吴范献身服务。每当有灾祸或吉祥出现，他总是要推算并说明情况；他的预测大多有效，结果在京城也出了名。当初，孙权在吴县，想讨伐黄祖。吴范说：“现今出兵不太有利，不如在明年。明年是戊子年，荆州牧刘表也会人死国亡。”孙权仍然出了兵，结果未能攻克黄祖。第二年，大军再度出动，走到寻阳时，吴范观察风和云气的情况后，赶到孙权的船上来庆贺，并让孙权催促兵马急速前进。赶到江夏郡，马上击溃黄祖的军队，黄祖本人在夜晚逃跑。孙权怕他逃脱，吴范说：“他跑得不远，必定会抓住他。”到当晚半夜过后的五更天时，果然把黄祖擒杀。而刘表也确实在这一年死去，荆州被瓜分。"
+        }
+      ],
+      "text": "碰到孙权在东南兴起，吴范献身服务。每当有灾祸或吉祥出现，他总是要推算并说明情况；他的预测大多有效，结果在京城也出了名。当初，孙权在吴县，想讨伐黄祖。吴范说：“现今出兵不太有利，不如在明年。明年是戊子年，荆州牧刘表也会人死国亡。”孙权仍然出了兵，结果未能攻克黄祖。第二年，大军再度出动，走到寻阳时，吴范观察风和云气的情况后，赶到孙权的船上来庆贺，并让孙权催促兵马急速前进。赶到江夏郡，马上击溃黄祖的军队，黄祖本人在夜晚逃跑。孙权怕他逃脱，吴范说：“他跑得不远，必定会抓住他。”到当晚半夜过后的五更天时，果然把黄祖擒杀。而刘表也确实在这一年死去，荆州被瓜分。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-699a244947eb6b0aab50",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 124,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "到了壬辰这一年，吴范又报告说：“在后年甲午年，刘备会取得益州。”后来吕岱充当使者到了益州后回来，在白帝城碰到吴范；谈到刘备进入益州后部下的人马离散流落，死亡将近一半，并断言刘备攻克不下益州。孙权以此来反驳吴范，吴范说：“为臣所预言的是天意，而吕岱所看到的只是人事方面的情况啊。”刘备最后果然得到益州。"
+        }
+      ],
+      "text": "到了壬辰这一年，吴范又报告说：“在后年甲午年，刘备会取得益州。”后来吕岱充当使者到了益州后回来，在白帝城碰到吴范；谈到刘备进入益州后部下的人马离散流落，死亡将近一半，并断言刘备攻克不下益州。孙权以此来反驳吴范，吴范说：“为臣所预言的是天意，而吕岱所看到的只是人事方面的情况啊。”刘备最后果然得到益州。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-a7350b6e8f614d3c45f7",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 125,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "孙权与吕蒙商议偷袭关羽；又征询亲近臣僚的意见，大多数人都说不行。孙权就此事问吴范，吴范说：“能够抓到他。”后来关羽被打败逃往麦城，派使者来请求投降。孙权问吴范：“关羽果真会投降么？”吴范说：“为臣看到有一股预示他要逃走的云气；他说投降是欺诈。”孙权派潘璋去截断关羽的退路，侦察兵回来报告，说关羽已经逃走了。吴范说：“即使他已逃走，也逃不脱。”孙权问什么时候能抓到关羽，吴范说：“在明天太阳当顶的中午。”孙权立即吩咐人树立晷表并装好计时的漏箭来等着。到中午太阳当顶的时候还没有消息传来，孙权问是什么原因，吴范说：“还没有到正中午啊。”一会儿，有风吹动帷幔，吴范双手一拍，说：“关羽到了！”转眼间，外面传来一阵高呼万岁的声音，果然传进来已经擒杀关羽的消息。"
+        }
+      ],
+      "text": "孙权与吕蒙商议偷袭关羽；又征询亲近臣僚的意见，大多数人都说不行。孙权就此事问吴范，吴范说：“能够抓到他。”后来关羽被打败逃往麦城，派使者来请求投降。孙权问吴范：“关羽果真会投降么？”吴范说：“为臣看到有一股预示他要逃走的云气；他说投降是欺诈。”孙权派潘璋去截断关羽的退路，侦察兵回来报告，说关羽已经逃走了。吴范说：“即使他已逃走，也逃不脱。”孙权问什么时候能抓到关羽，吴范说：“在明天太阳当顶的中午。”孙权立即吩咐人树立晷表并装好计时的漏箭来等着。到中午太阳当顶的时候还没有消息传来，孙权问是什么原因，吴范说：“还没有到正中午啊。”一会儿，有风吹动帷幔，吴范双手一拍，说：“关羽到了！”转眼间，外面传来一阵高呼万岁的声音，果然传进来已经擒杀关羽的消息。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-e111133bbea943ad5604",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 126,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "后来孙权与魏国友好，吴范说：“从风和云气的情况看：对方虽然带着和善的姿态来，其实内心有阴谋；应当对此有防备。”刘备在西陵出动大量军队进攻孙权，吴范却说：“往后他会与我们和好亲善。”结果都像他所预言的这样。"
+        }
+      ],
+      "text": "后来孙权与魏国友好，吴范说：“从风和云气的情况看：对方虽然带着和善的姿态来，其实内心有阴谋；应当对此有防备。”刘备在西陵出动大量军队进攻孙权，吴范却说：“往后他会与我们和好亲善。”结果都像他所预言的这样。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-b95664e472e3de2532a6",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 127,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "他在预测上的应验就达到如此准确的程度。孙权任命吴范为骑都尉，兼太史令。又多次向他询问，想知道他断定事情结果和吉凶的诀窍。"
+        }
+      ],
+      "text": "他在预测上的应验就达到如此准确的程度。孙权任命吴范为骑都尉，兼太史令。又多次向他询问，想知道他断定事情结果和吉凶的诀窍。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-dd663e58bb751010eb85",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 128,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "吴范内心吝惜他的绝技，不把至关重要的地方告诉孙权：孙权因此愤恨他。当初，孙权当将军的时候，吴范曾经报告说：“长江以南有帝王之气，在亥年或子年之后将有大喜庆的事发生。”孙权说：“如果最终像您所预言的那样，我将封您为侯爵。”到了孙权在壬寅年（公元 222）当了吴王，吴范当时在庆祝宴会上作陪，对孙权说：“从前在吴县，为臣就曾经说过这件事；大王还记得么？”孙权说：“有这回事。”于是吩咐左右，把侯爵的绶带取来给吴范佩上。吴范知道孙权想以此勉强搪塞从前的许诺，所以总是用手推开不接受。后来论功行赏，孙权封吴范为都亭侯。诏书临当送出去颁布时，孙权愤恨他对自己吝惜而不传授其绝技，又把他的名字从封侯的名单当中删去。"
+        }
+      ],
+      "text": "吴范内心吝惜他的绝技，不把至关重要的地方告诉孙权：孙权因此愤恨他。当初，孙权当将军的时候，吴范曾经报告说：“长江以南有帝王之气，在亥年或子年之后将有大喜庆的事发生。”孙权说：“如果最终像您所预言的那样，我将封您为侯爵。”到了孙权在壬寅年（公元 222）当了吴王，吴范当时在庆祝宴会上作陪，对孙权说：“从前在吴县，为臣就曾经说过这件事；大王还记得么？”孙权说：“有这回事。”于是吩咐左右，把侯爵的绶带取来给吴范佩上。吴范知道孙权想以此勉强搪塞从前的许诺，所以总是用手推开不接受。后来论功行赏，孙权封吴范为都亭侯。诏书临当送出去颁布时，孙权愤恨他对自己吝惜而不传授其绝技，又把他的名字从封侯的名单当中删去。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-b4ce0316a829ee2828d0",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 129,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "吴范为人刚直，很喜欢自夸。然而他与亲戚朋友交往时有始有终。他从小就与同县的魏滕友善。魏滕曾经犯罪，孙权对他严加怒斥，并且宣布敢有劝阻处死魏滕者也一同处死。吴范对魏滕说：“我与你一起死。”魏滕说：“你死而无益，何必死呢？”吴范说：“我怎能顾虑这一点，而坐视你丢掉生命不管啊？”于是他自己剪光头发，又把自己双手反绑，然后到了孙权的府署门前，请负责通报传令的办事员去向孙权通报。那办事员不敢，说：“我去通报必定被处死！不敢去啊。”吴范说：“你有儿子么？”那人说：“有。”吴范说：“假如你因我而死，你的儿子归我抚养好了。”那人说：“行。”于是推开内房门进去报告。他话还没说完，孙权就勃然大怒，想拔出手戟向他掷去。那人立即逃了出来。吴范借机闯了进去，不住叩头以至于鲜血长流，说话时声泪俱下。过了很久，孙权的怒气才消散，下令赦免了魏滕。"
+        }
+      ],
+      "text": "吴范为人刚直，很喜欢自夸。然而他与亲戚朋友交往时有始有终。他从小就与同县的魏滕友善。魏滕曾经犯罪，孙权对他严加怒斥，并且宣布敢有劝阻处死魏滕者也一同处死。吴范对魏滕说：“我与你一起死。”魏滕说：“你死而无益，何必死呢？”吴范说：“我怎能顾虑这一点，而坐视你丢掉生命不管啊？”于是他自己剪光头发，又把自己双手反绑，然后到了孙权的府署门前，请负责通报传令的办事员去向孙权通报。那办事员不敢，说：“我去通报必定被处死！不敢去啊。”吴范说：“你有儿子么？”那人说：“有。”吴范说：“假如你因我而死，你的儿子归我抚养好了。”那人说：“行。”于是推开内房门进去报告。他话还没说完，孙权就勃然大怒，想拔出手戟向他掷去。那人立即逃了出来。吴范借机闯了进去，不住叩头以至于鲜血长流，说话时声泪俱下。过了很久，孙权的怒气才消散，下令赦免了魏滕。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-a8d3eb1ab8947f159ff6",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 130,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "魏滕见到吴范道谢说：“父母能够养育我，却不能把我从死亡中拯救出来。男子汉交知心朋友，像您这样的一位就足够了，何必要很多啊！”"
+        }
+      ],
+      "text": "魏滕见到吴范道谢说：“父母能够养育我，却不能把我从死亡中拯救出来。男子汉交知心朋友，像您这样的一位就足够了，何必要很多啊！”",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-5c7f19d0556c12811160",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 131,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "黄武五年（公元 226），吴范生病去世。他的长子先死，而小儿子又年幼：所以他的绝技失传。"
+        }
+      ],
+      "text": "黄武五年（公元 226），吴范生病去世。他的长子先死，而小儿子又年幼：所以他的绝技失传。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-cd6fa53a960b8565cf97",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 132,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "孙权追思他，悬赏征求扬、荆、交三州当中有能举荐擅长于预测事情的结果和吉凶，其方法和计算就像吴范、赵达那样神妙的人，将封为食邑有一千户的侯爵；结果却没能找到。"
+        }
+      ],
+      "text": "孙权追思他，悬赏征求扬、荆、交三州当中有能举荐擅长于预测事情的结果和吉凶，其方法和计算就像吴范、赵达那样神妙的人，将封为食邑有一千户的侯爵；结果却没能找到。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-89d47236ec442ba3a6ac",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 133,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "刘惇，字子仁，平原国人。他在遭遇战乱时到其他地方躲避，客居在庐陵郡，为郡太守孙辅服务。他因为了解天文懂得占卜吉凶的方法而闻名于南方。"
+        }
+      ],
+      "text": "刘惇，字子仁，平原国人。他在遭遇战乱时到其他地方躲避，客居在庐陵郡，为郡太守孙辅服务。他因为了解天文懂得占卜吉凶的方法而闻名于南方。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-1fc6bd0f1df3146cd43c",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 134,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "每当有水灾、旱灾、土匪等出现，他都能预先确定其出现的时间，没有哪一次不能预测准确。孙辅很感神奇，把他当作军师。军中将士都尊敬他，称他有神灵那样的先见之明。汉献帝建安年间，孙权在豫章郡。当时天上出现了异常的星象，就以此询问刘惇。刘惇说：“灾祸将在丹杨郡发生。”孙权问：“什么样的灾祸？”刘惇说：“是客人压倒主人，到某一天将得到消息。”当时有边鸿在丹杨作乱杀死郡太守孙翊，果然如刘惇所说的那样。"
+        }
+      ],
+      "text": "每当有水灾、旱灾、土匪等出现，他都能预先确定其出现的时间，没有哪一次不能预测准确。孙辅很感神奇，把他当作军师。军中将士都尊敬他，称他有神灵那样的先见之明。汉献帝建安年间，孙权在豫章郡。当时天上出现了异常的星象，就以此询问刘惇。刘惇说：“灾祸将在丹杨郡发生。”孙权问：“什么样的灾祸？”刘惇说：“是客人压倒主人，到某一天将得到消息。”当时有边鸿在丹杨作乱杀死郡太守孙翊，果然如刘惇所说的那样。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-baf051a80d766b014287",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 135,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "刘惇对各种占卜术都擅长，尤其精通太乙这种方法；他能对各种占卜术加以推求发挥，穷尽其奥妙。为此写了一百多篇文章，著名的儒家学者刁玄也啧啧称奇。刘惇很珍爱他的绝技，从不告诉别人；所以世人没有谁能弄清他的秘密。"
+        }
+      ],
+      "text": "刘惇对各种占卜术都擅长，尤其精通太乙这种方法；他能对各种占卜术加以推求发挥，穷尽其奥妙。为此写了一百多篇文章，著名的儒家学者刁玄也啧啧称奇。刘惇很珍爱他的绝技，从不告诉别人；所以世人没有谁能弄清他的秘密。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-2f1cb29ae6eea3bf7a94",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 136,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "赵达，河南郡人。他年轻时就跟随汉朝的侍中单甫学习，能够进行精密思考。他认为东南方有帝王之气，可以躲避中原的动乱，所以脱身南渡长江。他主要研习九宫一算这种占卜方法，能够推究其微妙之处。所以擅长用它来进行当场预测，回答就像有神灵指点那么准确；至于计算飞过的蝗虫数目，猜测被隐藏而看不见的东西，没有哪次预测不中。"
+        }
+      ],
+      "text": "赵达，河南郡人。他年轻时就跟随汉朝的侍中单甫学习，能够进行精密思考。他认为东南方有帝王之气，可以躲避中原的动乱，所以脱身南渡长江。他主要研习九宫一算这种占卜方法，能够推究其微妙之处。所以擅长用它来进行当场预测，回答就像有神灵指点那么准确；至于计算飞过的蝗虫数目，猜测被隐藏而看不见的东西，没有哪次预测不中。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-8ff70a4e0cdb467dded7",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 137,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "有人反驳他说：“飞过的蝗虫数目又无法核实，谁知道对不对，这大概是乱说的吧！”赵达立即叫那人取来几斗小豆，倒在坐席上。马上计算确定其数目，然后一五一十数完后对比验证果然不差，那人才真正信服了。"
+        }
+      ],
+      "text": "有人反驳他说：“飞过的蝗虫数目又无法核实，谁知道对不对，这大概是乱说的吧！”赵达立即叫那人取来几斗小豆，倒在坐席上。马上计算确定其数目，然后一五一十数完后对比验证果然不差，那人才真正信服了。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-2f70ba8db5a44b12ba69",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 138,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "赵达曾去拜访相识的老朋友，老朋友为他准备饮食。吃完之后，朋友对他说：“仓促之间没有准备酒，家里又没有好的下酒菜；无法畅叙情意，怎么办？”赵达就从盘子里取了一根筷子，横着竖着摆放了两三次。然后说：“你东面的墙壁下有美酒一斛，又有鹿肉三斤；怎么推辞说没有酒菜呢？”当时同座的还有其他宾客，心里知道主人的实情。主人满面羞惭地说：“因为你善于猜东西的有没有，想试一下。没想到竟然如此准确啊！”于是拿出酒肉大家畅饮。"
+        }
+      ],
+      "text": "赵达曾去拜访相识的老朋友，老朋友为他准备饮食。吃完之后，朋友对他说：“仓促之间没有准备酒，家里又没有好的下酒菜；无法畅叙情意，怎么办？”赵达就从盘子里取了一根筷子，横着竖着摆放了两三次。然后说：“你东面的墙壁下有美酒一斛，又有鹿肉三斤；怎么推辞说没有酒菜呢？”当时同座的还有其他宾客，心里知道主人的实情。主人满面羞惭地说：“因为你善于猜东西的有没有，想试一下。没想到竟然如此准确啊！”于是拿出酒肉大家畅饮。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-d5aadae75b059797c1d4",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 139,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "又有人在小板上写着千、万之类的数字，密封在一座空仓库中；然后让赵达算其中有多少实物。赵达确定出与小板上相同的数字，又说：“不过这个数目有名无实。”他算法的精密微妙就像这样。"
+        }
+      ],
+      "text": "又有人在小板上写着千、万之类的数字，密封在一座空仓库中；然后让赵达算其中有多少实物。赵达确定出与小板上相同的数字，又说：“不过这个数目有名无实。”他算法的精密微妙就像这样。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-335ef34c5e282d4e5c70",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 140,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "赵达珍惜他的算法。阚泽、殷礼等都是著名的儒家学者和优秀人物，亲自屈尊到赵达处学习：赵达保守秘密而不告诉他们。太史丞公孙滕从年轻时起就把赵达作为老师对待，侍奉多年；赵达答应教他也是有年头了，但是临到应当告诉时总是又停止。"
+        }
+      ],
+      "text": "赵达珍惜他的算法。阚泽、殷礼等都是著名的儒家学者和优秀人物，亲自屈尊到赵达处学习：赵达保守秘密而不告诉他们。太史丞公孙滕从年轻时起就把赵达作为老师对待，侍奉多年；赵达答应教他也是有年头了，但是临到应当告诉时总是又停止。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-a17b72e19392a62e3245",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 141,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "公孙滕有一天带去酒和食物，等他的脸色和蔼时，跪下向他请求。赵达说：“我的祖先得到这套算法，是打算凭借它当帝王的老师；但是从他当官起到而今已有三辈人出仕，官位都没有超过小小的太史郎：我确实不再想传它了！而且这种算法微妙，头乘尾除，一一计算的程序，连亲生父子都不会彼此告诉秘密。不过因为你好学不倦，现在我真的要传给你了。”饮酒几杯后，赵达起身取出两卷白绢写的书，裹着的书卷也不过手指粗的样子。赵达说：“你只要把上面的内容写下来阅读，就自然明白了。我已经长久荒废练习，没有再看它。而今我想再对着它思考讲论一遍，几天之后就把它送给你。”"
+        }
+      ],
+      "text": "公孙滕有一天带去酒和食物，等他的脸色和蔼时，跪下向他请求。赵达说：“我的祖先得到这套算法，是打算凭借它当帝王的老师；但是从他当官起到而今已有三辈人出仕，官位都没有超过小小的太史郎：我确实不再想传它了！而且这种算法微妙，头乘尾除，一一计算的程序，连亲生父子都不会彼此告诉秘密。不过因为你好学不倦，现在我真的要传给你了。”饮酒几杯后，赵达起身取出两卷白绢写的书，裹着的书卷也不过手指粗的样子。赵达说：“你只要把上面的内容写下来阅读，就自然明白了。我已经长久荒废练习，没有再看它。而今我想再对着它思考讲论一遍，几天之后就把它送给你。”",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-94469324ad29ae4945d8",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 142,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "公孙滕如期前往，到了后，赵达装出寻找书的样子，忽然惊呼宝书丢了。他说：“我女婿昨天来过，必定是他偷的！”于是公孙滕的希望落了空。"
+        }
+      ],
+      "text": "公孙滕如期前往，到了后，赵达装出寻找书的样子，忽然惊呼宝书丢了。他说：“我女婿昨天来过，必定是他偷的！”于是公孙滕的希望落了空。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-ee916585c220367d8542",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 143,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "当初，孙权出兵征伐，每次让赵达进行推算战争的结果，都如他所料。孙权问他的方法，赵达始终不说；因此受到孙权的薄待，俸禄官位达不到他的期望。"
+        }
+      ],
+      "text": "当初，孙权出兵征伐，每次让赵达进行推算战争的结果，都如他所料。孙权问他的方法，赵达始终不说；因此受到孙权的薄待，俸禄官位达不到他的期望。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-8d1763ab9f640cc7f2cf",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 144,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "赵达常常讥笑那些观察星象、云气、风等以预测事情结果或吉凶的人，他说：“应当在挂上帷幔的密室中进行反复计算，不出门户就知道天机。而却昼夜暴露在房子外边，观察云气所显示的吉凶征兆，不也困难了点吗！”"
+        }
+      ],
+      "text": "赵达常常讥笑那些观察星象、云气、风等以预测事情结果或吉凶的人，他说：“应当在挂上帷幔的密室中进行反复计算，不出门户就知道天机。而却昼夜暴露在房子外边，观察云气所显示的吉凶征兆，不也困难了点吗！”",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-df0f153773c054fabf81",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 145,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "闲居无事，他使用算法考核自己的寿数。不禁叹息说：“我计算中的数字，讫止于某年某月某日，大概这就是死期了！”他的妻子多次看到他的计算被事实证实，听到结果不禁大放悲声。赵达想安慰妻子，又重新推算。然后说：“前面那次算错了。还没有到死期啊。”后来他果然在第一次算出的时间去世。"
+        }
+      ],
+      "text": "闲居无事，他使用算法考核自己的寿数。不禁叹息说：“我计算中的数字，讫止于某年某月某日，大概这就是死期了！”他的妻子多次看到他的计算被事实证实，听到结果不禁大放悲声。赵达想安慰妻子，又重新推算。然后说：“前面那次算错了。还没有到死期啊。”后来他果然在第一次算出的时间去世。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-5c767c677e1026c34f37",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 146,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "孙权听说赵达的算法有书，派人到家里去找却没找到。又把他的女儿抓来追问，甚至挖墓打开他的棺材翻看，都毫无所获：他的算法从此失传了。"
+        }
+      ],
+      "text": "孙权听说赵达的算法有书，派人到家里去找却没找到。又把他的女儿抓来追问，甚至挖墓打开他的棺材翻看，都毫无所获：他的算法从此失传了。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-aa732052c2811e76204d",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0133.xhtml",
+        "index": 147,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "评论说：这三人各自在自己的占卜术上进行的钻研算是很精密了，运用的思考算是很微妙了；但是作为一个君子，同样是耗费心思精神，应当选择远大的目标。所以有识之士，会抛下那些雕虫小技而致力于建立丰功伟业啊。"
+        }
+      ],
+      "text": "评论说：这三人各自在自己的占卜术上进行的钻研算是很精密了，运用的思考算是很微妙了；但是作为一个君子，同样是耗费心思精神，应当选择远大的目标。所以有识之士，会抛下那些雕虫小技而致力于建立丰功伟业啊。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    }
+  ],
+  "groups": [
+    {
+      "id": "group-001",
+      "original": [
+        "b-54107db4b08a9dcc93a9"
+      ],
+      "translation": [
+        "b-2385cdf7154414c6666c"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-002",
+      "original": [
+        "b-b84cf48ba2c7aa9dcf0c"
+      ],
+      "translation": [
+        "b-3f454fc05c8a614c6de7"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-003",
+      "original": [
+        "b-43a13b931b91f0a0aaf9"
+      ],
+      "translation": [
+        "b-699a244947eb6b0aab50"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-004",
+      "original": [
+        "b-c41c0565cf67aa38c9ac"
+      ],
+      "translation": [
+        "b-a7350b6e8f614d3c45f7"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-005",
+      "original": [
+        "b-be904178c6413fc762b7"
+      ],
+      "translation": [
+        "b-e111133bbea943ad5604"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-006",
+      "original": [
+        "b-d530d8aeeaf21f5eb93e"
+      ],
+      "translation": [
+        "b-b95664e472e3de2532a6"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-007",
+      "original": [
+        "b-2917683be1b448479475"
+      ],
+      "translation": [
+        "b-dd663e58bb751010eb85"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-008",
+      "original": [
+        "b-38ef3673a3d7dd8b8743"
+      ],
+      "translation": [
+        "b-b4ce0316a829ee2828d0"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-009",
+      "original": [
+        "b-7c7769d8d9420163daae"
+      ],
+      "translation": [
+        "b-a8d3eb1ab8947f159ff6"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-010",
+      "original": [
+        "b-72117c9d0f78574995ae"
+      ],
+      "translation": [
+        "b-5c7f19d0556c12811160"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-011",
+      "original": [
+        "b-9dc9bc7136dd4ae5d902"
+      ],
+      "translation": [
+        "b-cd6fa53a960b8565cf97"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-012",
+      "original": [
+        "b-cbd06593206ca2b2b3e0"
+      ],
+      "translation": [
+        "b-89d47236ec442ba3a6ac"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-013",
+      "original": [
+        "b-4756992061338dc7e698"
+      ],
+      "translation": [
+        "b-1fc6bd0f1df3146cd43c"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-014",
+      "original": [
+        "b-52e9049ea13a2705a189"
+      ],
+      "translation": [
+        "b-baf051a80d766b014287"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-015",
+      "original": [
+        "b-b1c1bc08a69e5ae5e3e0"
+      ],
+      "translation": [
+        "b-2f1cb29ae6eea3bf7a94"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-016",
+      "original": [
+        "b-e0df12163a7154d2aaba"
+      ],
+      "translation": [
+        "b-8ff70a4e0cdb467dded7"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-017",
+      "original": [
+        "b-61eba2da0b6189d66d52"
+      ],
+      "translation": [
+        "b-2f70ba8db5a44b12ba69"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-018",
+      "original": [
+        "b-92878773d27d2587f37e"
+      ],
+      "translation": [
+        "b-d5aadae75b059797c1d4"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-019",
+      "original": [
+        "b-107c2ef275bd39e731d3"
+      ],
+      "translation": [
+        "b-335ef34c5e282d4e5c70"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-020",
+      "original": [
+        "b-17ba6052b150008390fd"
+      ],
+      "translation": [
+        "b-a17b72e19392a62e3245"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-021",
+      "original": [
+        "b-a23a7a957e69ce5bb914"
+      ],
+      "translation": [
+        "b-94469324ad29ae4945d8"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-022",
+      "original": [
+        "b-5594b8fa211989854fd8"
+      ],
+      "translation": [
+        "b-ee916585c220367d8542"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-023",
+      "original": [
+        "b-609dd9a43bcf68e7d854"
+      ],
+      "translation": [
+        "b-8d1763ab9f640cc7f2cf"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-024",
+      "original": [
+        "b-00d31326556c44b7cbcb"
+      ],
+      "translation": [
+        "b-df0f153773c054fabf81"
+      ],
+      "review": "核对起讫和相邻段，词面低相似或分段差异未发现额外错配；不表示逐字校勘。"
+    },
+    {
+      "id": "group-025",
+      "original": [
+        "b-8094a5943aa0cffcd530"
+      ],
+      "translation": [
+        "b-5c767c677e1026c34f37"
+      ],
+      "review": "核对起讫和相邻段，词面低相似或分段差异未发现额外错配；不表示逐字校勘。"
+    },
+    {
+      "id": "group-026",
+      "original": [
+        "b-301da1de3d18a5b5b588"
+      ],
+      "translation": [
+        "b-aa732052c2811e76204d"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    }
+  ],
+  "notes": {
+    "n-6fdd06d45c3b8c49c1b1": {
+      "id": "n-6fdd06d45c3b8c49c1b1",
+      "type": "modern",
+      "label": "〖1〗",
+      "blocks": [
+        "b-346e3a6bfe0ad24e7de7"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17203"
+      ]
+    },
+    "n-96f6c0b3b710ddaeb3bc": {
+      "id": "n-96f6c0b3b710ddaeb3bc",
+      "type": "modern",
+      "label": "〖2〗",
+      "blocks": [
+        "b-a320c9b3cf0df2008f8c"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17204"
+      ]
+    },
+    "n-f4843f367ac2a05c0792": {
+      "id": "n-f4843f367ac2a05c0792",
+      "type": "modern",
+      "label": "〖3〗",
+      "blocks": [
+        "b-d15398a29d753ddc433c"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17205"
+      ]
+    },
+    "n-5609559d79006bb150b2": {
+      "id": "n-5609559d79006bb150b2",
+      "type": "modern",
+      "label": "〖4〗",
+      "blocks": [
+        "b-f046d5363888435531c4"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17206"
+      ]
+    },
+    "n-b357a61fa03edce753a2": {
+      "id": "n-b357a61fa03edce753a2",
+      "type": "modern",
+      "label": "〖5〗",
+      "blocks": [
+        "b-8566bf6d94e0c36ff940"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17207"
+      ]
+    },
+    "n-6325828497b769149082": {
+      "id": "n-6325828497b769149082",
+      "type": "modern",
+      "label": "〖6〗",
+      "blocks": [
+        "b-36e0ff199ef52ffde1ac"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17208"
+      ]
+    },
+    "n-09e9780e9137347dd33c": {
+      "id": "n-09e9780e9137347dd33c",
+      "type": "modern",
+      "label": "〖7〗",
+      "blocks": [
+        "b-e4c517037fef01c18ba4"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17209"
+      ]
+    },
+    "n-92210807d0cdfbbdf3b4": {
+      "id": "n-92210807d0cdfbbdf3b4",
+      "type": "modern",
+      "label": "〖8〗",
+      "blocks": [
+        "b-0e6d1e2d105df1eea771"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17210"
+      ]
+    },
+    "n-88e1864ec3e279908b3f": {
+      "id": "n-88e1864ec3e279908b3f",
+      "type": "modern",
+      "label": "〖9〗",
+      "blocks": [
+        "b-fedcb04a3fd7bb855c45"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17211"
+      ]
+    },
+    "n-68169eeb4251e7423682": {
+      "id": "n-68169eeb4251e7423682",
+      "type": "modern",
+      "label": "〖10〗",
+      "blocks": [
+        "b-c50195c83bad34282a96"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17212"
+      ]
+    },
+    "n-b3d81706ae6fed489b6f": {
+      "id": "n-b3d81706ae6fed489b6f",
+      "type": "modern",
+      "label": "〖11〗",
+      "blocks": [
+        "b-c9215ad09e4c29b324b8"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17213"
+      ]
+    },
+    "n-34e712931aeef5f2582b": {
+      "id": "n-34e712931aeef5f2582b",
+      "type": "modern",
+      "label": "〖12〗",
+      "blocks": [
+        "b-32ec884a4f5759431730"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17214"
+      ]
+    },
+    "n-89e5013ce843b1225831": {
+      "id": "n-89e5013ce843b1225831",
+      "type": "modern",
+      "label": "〖13〗",
+      "blocks": [
+        "b-843ff165ce9c8397d842"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17215"
+      ]
+    },
+    "n-577046ad678a9b28c012": {
+      "id": "n-577046ad678a9b28c012",
+      "type": "modern",
+      "label": "〖14〗",
+      "blocks": [
+        "b-2afb6dd14d809cc1cb33"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17216"
+      ]
+    },
+    "n-314c2079c0b3cfc775ca": {
+      "id": "n-314c2079c0b3cfc775ca",
+      "type": "modern",
+      "label": "〖15〗",
+      "blocks": [
+        "b-a1a2418d7a79a98809ee"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17217"
+      ]
+    },
+    "n-c2e55c58989ba084bf0a": {
+      "id": "n-c2e55c58989ba084bf0a",
+      "type": "modern",
+      "label": "〖16〗",
+      "blocks": [
+        "b-32f39b2d308058cf65ce"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17218"
+      ]
+    },
+    "n-50c67e7b023690a0ac33": {
+      "id": "n-50c67e7b023690a0ac33",
+      "type": "modern",
+      "label": "〖17〗",
+      "blocks": [
+        "b-d122b657188f240790ba"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17219"
+      ]
+    },
+    "n-1165daaf180cc6be0634": {
+      "id": "n-1165daaf180cc6be0634",
+      "type": "modern",
+      "label": "〖18〗",
+      "blocks": [
+        "b-3dd550b46a138372fd18"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17220"
+      ]
+    },
+    "n-93430debf74ea55b9a4c": {
+      "id": "n-93430debf74ea55b9a4c",
+      "type": "modern",
+      "label": "〖19〗",
+      "blocks": [
+        "b-50ca0bc7bb9854b90bef"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17221"
+      ]
+    },
+    "n-64a719fdc53907a87692": {
+      "id": "n-64a719fdc53907a87692",
+      "type": "modern",
+      "label": "〖1〗",
+      "blocks": [
+        "b-81622a9b2a40517172f7"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17222"
+      ]
+    },
+    "n-38fa6c38bbba31264d71": {
+      "id": "n-38fa6c38bbba31264d71",
+      "type": "modern",
+      "label": "〖2〗",
+      "blocks": [
+        "b-1e22b6a54565a7564eb2"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17223"
+      ]
+    },
+    "n-a15510882c871070267b": {
+      "id": "n-a15510882c871070267b",
+      "type": "modern",
+      "label": "〖3〗",
+      "blocks": [
+        "b-bbbe9d07286b6359e395"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17224"
+      ]
+    },
+    "n-8b93bfe41848722e0cf3": {
+      "id": "n-8b93bfe41848722e0cf3",
+      "type": "modern",
+      "label": "〖4〗",
+      "blocks": [
+        "b-0f7567ff6e967420213a"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17225"
+      ]
+    },
+    "n-9b23834b87897b68271c": {
+      "id": "n-9b23834b87897b68271c",
+      "type": "modern",
+      "label": "〖5〗",
+      "blocks": [
+        "b-dfcf576d40cf77017260"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17226"
+      ]
+    },
+    "n-36a2cb8adbe806d76a23": {
+      "id": "n-36a2cb8adbe806d76a23",
+      "type": "modern",
+      "label": "〖6〗",
+      "blocks": [
+        "b-2557046610a1bcac2905"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17227"
+      ]
+    },
+    "n-b322d35d56a44b740972": {
+      "id": "n-b322d35d56a44b740972",
+      "type": "modern",
+      "label": "〖7〗",
+      "blocks": [
+        "b-77df05b6eb19fa642fca"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17228"
+      ]
+    },
+    "n-84b9b37a12151fa7cd7b": {
+      "id": "n-84b9b37a12151fa7cd7b",
+      "type": "modern",
+      "label": "〖8〗",
+      "blocks": [
+        "b-cc9e77984e6f5bcd0f73"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17229"
+      ]
+    },
+    "n-418bcb1834bc83a63a55": {
+      "id": "n-418bcb1834bc83a63a55",
+      "type": "modern",
+      "label": "〖9〗",
+      "blocks": [
+        "b-f6c3176d1b08a882f075"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17230"
+      ]
+    },
+    "n-cb5932b8047568702e9c": {
+      "id": "n-cb5932b8047568702e9c",
+      "type": "modern",
+      "label": "〖10〗",
+      "blocks": [
+        "b-b7eb3589fb10d8f61832"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17231"
+      ]
+    },
+    "n-815bc494047cf9a80606": {
+      "id": "n-815bc494047cf9a80606",
+      "type": "modern",
+      "label": "〖11〗",
+      "blocks": [
+        "b-13dc5da62226de247dd1"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17232"
+      ]
+    },
+    "n-48a1421feaa664fbb8fc": {
+      "id": "n-48a1421feaa664fbb8fc",
+      "type": "modern",
+      "label": "〖12〗",
+      "blocks": [
+        "b-d594e4e8ab4fd886df39"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17233"
+      ]
+    },
+    "n-4576da58d33e5ff48a9e": {
+      "id": "n-4576da58d33e5ff48a9e",
+      "type": "modern",
+      "label": "〖13〗",
+      "blocks": [
+        "b-8847b81ee60be0423d9a"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17234"
+      ]
+    },
+    "n-d26f92bda3ae376ed8ec": {
+      "id": "n-d26f92bda3ae376ed8ec",
+      "type": "modern",
+      "label": "〖14〗",
+      "blocks": [
+        "b-f00fe4ff98138a729265"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17235"
+      ]
+    },
+    "n-d434cfaaca3a49e761b8": {
+      "id": "n-d434cfaaca3a49e761b8",
+      "type": "modern",
+      "label": "〖15〗",
+      "blocks": [
+        "b-4f4e3883db70dee4c674"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17236"
+      ]
+    },
+    "n-9bc0f8708f60244334f1": {
+      "id": "n-9bc0f8708f60244334f1",
+      "type": "modern",
+      "label": "〖16〗",
+      "blocks": [
+        "b-63b4317ff24f6a945697"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17237"
+      ]
+    },
+    "n-67696a5d5f4f827368da": {
+      "id": "n-67696a5d5f4f827368da",
+      "type": "pei",
+      "label": "﹝一﹞",
+      "blocks": [
+        "b-3ec29320b56fb8bec4fd"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "K1721"
+      ]
+    },
+    "n-12d93e9e230aa0662150": {
+      "id": "n-12d93e9e230aa0662150",
+      "type": "pei",
+      "label": "﹝二﹞",
+      "blocks": [
+        "b-10857288d302bde370ae"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "K1722"
+      ]
+    },
+    "n-321bec019a72e74d3518": {
+      "id": "n-321bec019a72e74d3518",
+      "type": "pei",
+      "label": "﹝三﹞",
+      "blocks": [
+        "b-fd7981443a3a373270e1"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "K1723"
+      ]
+    },
+    "n-ddbe76ba4ac2794aab50": {
+      "id": "n-ddbe76ba4ac2794aab50",
+      "type": "modern",
+      "label": "〖1〗",
+      "blocks": [
+        "b-d7c1a18214667542ed97"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17238"
+      ]
+    },
+    "n-22dca518292c99f25102": {
+      "id": "n-22dca518292c99f25102",
+      "type": "modern",
+      "label": "〖2〗",
+      "blocks": [
+        "b-39d071051983928a5724"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17239"
+      ]
+    },
+    "n-93533909f27e23e9487c": {
+      "id": "n-93533909f27e23e9487c",
+      "type": "modern",
+      "label": "〖3〗",
+      "blocks": [
+        "b-22e3165cbf0a18d952df"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17240"
+      ]
+    },
+    "n-0f8575f8f916a6970948": {
+      "id": "n-0f8575f8f916a6970948",
+      "type": "modern",
+      "label": "〖4〗",
+      "blocks": [
+        "b-c3f796a3e40d373b1dde"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17241"
+      ]
+    },
+    "n-677cab251f1bc5223147": {
+      "id": "n-677cab251f1bc5223147",
+      "type": "modern",
+      "label": "〖5〗",
+      "blocks": [
+        "b-41c61bf36934b7724ca2"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17242"
+      ]
+    },
+    "n-9abbcae6f093a874d5e3": {
+      "id": "n-9abbcae6f093a874d5e3",
+      "type": "modern",
+      "label": "〖6〗",
+      "blocks": [
+        "b-f8ad3db9741f197320fc"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17243"
+      ]
+    },
+    "n-71af6ec20738b3201405": {
+      "id": "n-71af6ec20738b3201405",
+      "type": "modern",
+      "label": "〖7〗",
+      "blocks": [
+        "b-b8adeb9b9b5ede617dbf"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17244"
+      ]
+    },
+    "n-f8ba6ac8ab258c8ccbc1": {
+      "id": "n-f8ba6ac8ab258c8ccbc1",
+      "type": "modern",
+      "label": "〖8〗",
+      "blocks": [
+        "b-ed7a7febb95c1a33c695"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17245"
+      ]
+    },
+    "n-3ba7b3e43d1151549e72": {
+      "id": "n-3ba7b3e43d1151549e72",
+      "type": "modern",
+      "label": "〖1〗",
+      "blocks": [
+        "b-8d0d60eea1840d5b073e"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17246"
+      ]
+    },
+    "n-f724ab5f43d737f8bbe8": {
+      "id": "n-f724ab5f43d737f8bbe8",
+      "type": "modern",
+      "label": "〖2〗",
+      "blocks": [
+        "b-68b9435d091c3025427f"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17247"
+      ]
+    },
+    "n-0228db750133a9180832": {
+      "id": "n-0228db750133a9180832",
+      "type": "modern",
+      "label": "〖3〗",
+      "blocks": [
+        "b-ff4127b6d33858902ffc"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17248"
+      ]
+    },
+    "n-5e3f2e677586f4558a44": {
+      "id": "n-5e3f2e677586f4558a44",
+      "type": "modern",
+      "label": "〖4〗",
+      "blocks": [
+        "b-59b9ad911c1101d220e6"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17249"
+      ]
+    },
+    "n-d89a4b36c20a8cdbe52f": {
+      "id": "n-d89a4b36c20a8cdbe52f",
+      "type": "modern",
+      "label": "〖5〗",
+      "blocks": [
+        "b-1055d03c9b89bb75064a"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17250"
+      ]
+    },
+    "n-24883c113b410447e891": {
+      "id": "n-24883c113b410447e891",
+      "type": "modern",
+      "label": "〖6〗",
+      "blocks": [
+        "b-b5ab571e9e1b5f61bc8f"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17251"
+      ]
+    },
+    "n-2cfa456b3d223b2a0720": {
+      "id": "n-2cfa456b3d223b2a0720",
+      "type": "modern",
+      "label": "〖7〗",
+      "blocks": [
+        "b-119f5351da95cb5564fb"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17252"
+      ]
+    },
+    "n-cee59e7d358b155840e4": {
+      "id": "n-cee59e7d358b155840e4",
+      "type": "modern",
+      "label": "〖8〗",
+      "blocks": [
+        "b-c4f7f37cd70aa1551c6a"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17253"
+      ]
+    },
+    "n-e30ae5a6e2fb4d716185": {
+      "id": "n-e30ae5a6e2fb4d716185",
+      "type": "modern",
+      "label": "〖9〗",
+      "blocks": [
+        "b-0bcfc841cde6e33d09f3"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17254"
+      ]
+    },
+    "n-c070ac9a5cf844cb3eae": {
+      "id": "n-c070ac9a5cf844cb3eae",
+      "type": "modern",
+      "label": "〖10〗",
+      "blocks": [
+        "b-ee785c5f013314f0f788"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17255"
+      ]
+    },
+    "n-4404a4a0b16dde77224a": {
+      "id": "n-4404a4a0b16dde77224a",
+      "type": "modern",
+      "label": "〖11〗",
+      "blocks": [
+        "b-b99f280323a1841ea64a"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17256"
+      ]
+    },
+    "n-32f4373ce2dae77fa305": {
+      "id": "n-32f4373ce2dae77fa305",
+      "type": "modern",
+      "label": "〖12〗",
+      "blocks": [
+        "b-8632b42c396424f124ad"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17257"
+      ]
+    },
+    "n-1fc62a8651de4ef019d6": {
+      "id": "n-1fc62a8651de4ef019d6",
+      "type": "modern",
+      "label": "〖13〗",
+      "blocks": [
+        "b-6ca1a273822776bbd00a"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17258"
+      ]
+    },
+    "n-d1cc99d6dda99d94a489": {
+      "id": "n-d1cc99d6dda99d94a489",
+      "type": "modern",
+      "label": "〖14〗",
+      "blocks": [
+        "b-d8f02459b91679a948ae"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17259"
+      ]
+    },
+    "n-592ff58b38557097da81": {
+      "id": "n-592ff58b38557097da81",
+      "type": "modern",
+      "label": "〖15〗",
+      "blocks": [
+        "b-4bb0c6ae7556b8e35326"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17260"
+      ]
+    },
+    "n-4710704d2e65f1064a76": {
+      "id": "n-4710704d2e65f1064a76",
+      "type": "modern",
+      "label": "〖16〗",
+      "blocks": [
+        "b-77c046800c8fd7149de8"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17261"
+      ]
+    },
+    "n-15aa60a786b243fc464e": {
+      "id": "n-15aa60a786b243fc464e",
+      "type": "modern",
+      "label": "〖17〗",
+      "blocks": [
+        "b-270e374c085579fb6d52"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17262"
+      ]
+    },
+    "n-e0bc83483f21f15cca75": {
+      "id": "n-e0bc83483f21f15cca75",
+      "type": "modern",
+      "label": "〖18〗",
+      "blocks": [
+        "b-da93fe32175232019246"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17263"
+      ]
+    },
+    "n-1e6a0ff29d7c2698cd09": {
+      "id": "n-1e6a0ff29d7c2698cd09",
+      "type": "modern",
+      "label": "〖19〗",
+      "blocks": [
+        "b-9f3b7e84dad88c7a43c4"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17264"
+      ]
+    },
+    "n-810a40d437fac50c0944": {
+      "id": "n-810a40d437fac50c0944",
+      "type": "modern",
+      "label": "〖20〗",
+      "blocks": [
+        "b-849b472b1970c2a9e894"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17265"
+      ]
+    },
+    "n-29a0c9bf24e7adba5987": {
+      "id": "n-29a0c9bf24e7adba5987",
+      "type": "modern",
+      "label": "〖21〗",
+      "blocks": [
+        "b-366042b19017ba838747"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17266"
+      ]
+    },
+    "n-a36bb22851e03222bf0a": {
+      "id": "n-a36bb22851e03222bf0a",
+      "type": "modern",
+      "label": "〖1〗",
+      "blocks": [
+        "b-30d500897336cbfb73ab"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17267"
+      ]
+    },
+    "n-4b3accb7af1efc1b6d80": {
+      "id": "n-4b3accb7af1efc1b6d80",
+      "type": "modern",
+      "label": "〖2〗",
+      "blocks": [
+        "b-822bbcac4449695e15c0"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17268"
+      ]
+    },
+    "n-61a25314812423ecf451": {
+      "id": "n-61a25314812423ecf451",
+      "type": "modern",
+      "label": "〖3〗",
+      "blocks": [
+        "b-f9449200f42efad19ca1"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17269"
+      ]
+    },
+    "n-146c78d96bfc1ecfd207": {
+      "id": "n-146c78d96bfc1ecfd207",
+      "type": "modern",
+      "label": "〖4〗",
+      "blocks": [
+        "b-081219106ac82f44a831"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17270"
+      ]
+    },
+    "n-91074a500bc1697ae9a6": {
+      "id": "n-91074a500bc1697ae9a6",
+      "type": "modern",
+      "label": "〖5〗",
+      "blocks": [
+        "b-cc163b4170f2ecf1bb90"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17271"
+      ]
+    },
+    "n-4c2dd3ce8ae790d63735": {
+      "id": "n-4c2dd3ce8ae790d63735",
+      "type": "modern",
+      "label": "〖6〗",
+      "blocks": [
+        "b-d324b55080116b8315c9"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17272"
+      ]
+    },
+    "n-ea55975b30c079b4177e": {
+      "id": "n-ea55975b30c079b4177e",
+      "type": "modern",
+      "label": "〖7〗",
+      "blocks": [
+        "b-9940fbcd837a0fdd9bf6"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17273"
+      ]
+    },
+    "n-ed95aa7320bf25b436ff": {
+      "id": "n-ed95aa7320bf25b436ff",
+      "type": "modern",
+      "label": "〖8〗",
+      "blocks": [
+        "b-29a33d33ea60bdbfd1f6"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17274"
+      ]
+    },
+    "n-23ae4ebce99532b82d2b": {
+      "id": "n-23ae4ebce99532b82d2b",
+      "type": "pei",
+      "label": "﹝一﹞",
+      "blocks": [
+        "b-c5889490acc554489cec"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "K1724"
+      ]
+    },
+    "n-a0bd07c10a0db1fefc47": {
+      "id": "n-a0bd07c10a0db1fefc47",
+      "type": "pei",
+      "label": "﹝二﹞",
+      "blocks": [
+        "b-914eb0282e241c66943d",
+        "b-4f307843c835b6433910"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "K1725"
+      ]
+    },
+    "n-ffd8fb25cfa45b29adf2": {
+      "id": "n-ffd8fb25cfa45b29adf2",
+      "type": "modern",
+      "label": "〖1〗",
+      "blocks": [
+        "b-35ffe00a2b04edc79000"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "Y17275"
+      ]
+    },
+    "n-fb85abd35bccd57b5d40": {
+      "id": "n-fb85abd35bccd57b5d40",
+      "type": "pei",
+      "label": "﹝一﹞",
+      "blocks": [
+        "b-0b21b08a9dd53e473843",
+        "b-b321de26ddc32173ce49",
+        "b-8cc376b89b26d3fec7c2",
+        "b-829fe7ca89d75d868e3d",
+        "b-421af20f01b68a978a95",
+        "b-d26728c67b5d387a3a2a"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0133.xhtml",
+        "K1726"
+      ]
+    }
+  },
+  "review_status": "machine_checked"
+}

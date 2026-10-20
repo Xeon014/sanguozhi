@@ -1,0 +1,6105 @@
+{
+  "id": "chapter-034",
+  "title": "二主妃子传第四",
+  "heading": "【三国志译注卷三十四】 蜀志四",
+  "kind": "chapter",
+  "status": "aligned",
+  "blocks": [
+    {
+      "id": "b-1f7821eb6e21f9a31baa",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0073.xhtml",
+        "index": 0,
+        "anchor": "filepos5233786"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【三国志译注卷三十四】 蜀志四 "
+        }
+      ],
+      "text": "【三国志译注卷三十四】 蜀志四",
+      "kind": "heading",
+      "anchors": [
+        "filepos5233786"
+      ],
+      "source_heading": true
+    },
+    {
+      "id": "b-8a7634fd1b576931e92c",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 0,
+        "anchor": "filepos5233916"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "二主妃子传第四 "
+        }
+      ],
+      "text": "二主妃子传第四",
+      "kind": "heading",
+      "anchors": [
+        "filepos5233916"
+      ],
+      "source_heading": true
+    },
+    {
+      "id": "b-c3b960c67d5476e63405",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 1,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "先主昭烈甘皇后，沛人也。先主临豫州"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10270",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10270"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ],
+          "note_id": "n-26916b1bae55d31748c3"
+        },
+        {
+          "type": "text",
+          "text": "，住小沛，纳以为妾。先主数丧嫡室"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10271",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10271"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ],
+          "note_id": "n-4a16b362f0a12fac0a9a"
+        },
+        {
+          "type": "text",
+          "text": "，常摄内事"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10272",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10272"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ],
+          "note_id": "n-4a219e2987e827c77de9"
+        },
+        {
+          "type": "text",
+          "text": "。随先主于荆州，产后主。值曹公军至，追及先主于当阳长坂；于时困逼，弃后及后主：赖赵云保护，得免于难。后卒，葬于南郡。"
+        }
+      ],
+      "text": "先主昭烈甘皇后，沛人也。先主临豫州〖1〗，住小沛，纳以为妾。先主数丧嫡室〖2〗，常摄内事〖3〗。随先主于荆州，产后主。值曹公军至，追及先主于当阳长坂；于时困逼，弃后及后主：赖赵云保护，得免于难。后卒，葬于南郡。",
+      "kind": "original",
+      "anchors": [
+        "Y10270",
+        "Y10271",
+        "Y10272"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-ca4931503d944da1291b",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 2,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "章武二年，追谥“皇思夫人”，迁葬于蜀；未至，而先主殂陨。丞相亮上言：“皇思夫人履行修仁"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10273",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10273"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ],
+          "note_id": "n-161c427f1055d0347d3f"
+        },
+        {
+          "type": "text",
+          "text": "，淑慎其身。大行皇帝昔在上将"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10274",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10274"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ],
+          "note_id": "n-5f1fcb3b8fc3ba01c4d8"
+        },
+        {
+          "type": "text",
+          "text": "，嫔妃作合"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10275",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10275"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ],
+          "note_id": "n-b11b3c534e835a36f9bf"
+        },
+        {
+          "type": "text",
+          "text": "；载育圣躬"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10276",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10276"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ],
+          "note_id": "n-dd04cad4f59f6aa95832"
+        },
+        {
+          "type": "text",
+          "text": "，大命不融"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10277",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10277"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ],
+          "note_id": "n-5ba8ee6af8d16a20d714"
+        },
+        {
+          "type": "text",
+          "text": "。大行皇帝存时，笃义垂恩"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10278",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10278"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖9〗"
+            }
+          ],
+          "note_id": "n-127ed6d8d297cd62e691"
+        },
+        {
+          "type": "text",
+          "text": "；念皇思夫人神柩在远飘摇"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10279",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10279"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖10〗"
+            }
+          ],
+          "note_id": "n-da3ebd347df01da74b07"
+        },
+        {
+          "type": "text",
+          "text": "，特遣使者奉迎；会大行皇帝崩。今皇思夫人神柩已到；又梓宫在道"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10280",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10280"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖11〗"
+            }
+          ],
+          "note_id": "n-26abc33eb79fbd79ba0b"
+        },
+        {
+          "type": "text",
+          "text": "，园陵将成"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10281",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10281"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖12〗"
+            }
+          ],
+          "note_id": "n-6b441e3fcbc5d9c29570"
+        },
+        {
+          "type": "text",
+          "text": "，安厝有期"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10282",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10282"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖13〗"
+            }
+          ],
+          "note_id": "n-10e411c6ae466b53f839"
+        },
+        {
+          "type": "text",
+          "text": "。臣辄与太常臣赖恭等议：《礼记》曰：‘立爱自亲始"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10283",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10283"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖14〗"
+            }
+          ],
+          "note_id": "n-d6e67d5c4a5968777905"
+        },
+        {
+          "type": "text",
+          "text": "，教民孝也；立敬自长始，教民顺也。’不忘其亲，所由生也"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10284",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10284"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖15〗"
+            }
+          ],
+          "note_id": "n-ff49bb2957759fc50def"
+        },
+        {
+          "type": "text",
+          "text": "。《春秋》之义，母以子贵"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10285",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10285"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖16〗"
+            }
+          ],
+          "note_id": "n-25e59e3c8129eeb2c7d9"
+        },
+        {
+          "type": "text",
+          "text": "。昔高皇帝追尊太上昭灵夫人为昭灵皇后"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10286",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10286"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖17〗"
+            }
+          ],
+          "note_id": "n-8fc1a2397294c52934dd"
+        },
+        {
+          "type": "text",
+          "text": "；孝和皇帝改葬其母梁贵人"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10287",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10287"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖18〗"
+            }
+          ],
+          "note_id": "n-9907975b7001c85316b4"
+        },
+        {
+          "type": "text",
+          "text": "，尊号曰恭怀皇后；孝愍皇帝亦改葬其母王夫人"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10288",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10288"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖19〗"
+            }
+          ],
+          "note_id": "n-9410bdcebe10db437dc2"
+        },
+        {
+          "type": "text",
+          "text": "，尊号曰灵怀皇后。今皇思夫人宜有尊号，以慰寒泉之思"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10289",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10289"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖20〗"
+            }
+          ],
+          "note_id": "n-67fcc780bd7466005378"
+        },
+        {
+          "type": "text",
+          "text": "。辄与恭等案《谥法》"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10290",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10290"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖21〗"
+            }
+          ],
+          "note_id": "n-e25dd2d392646abb0cd8"
+        },
+        {
+          "type": "text",
+          "text": "，宜曰昭烈皇后。《诗》曰：‘穀则异室"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10291",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10291"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖22〗"
+            }
+          ],
+          "note_id": "n-11fc5566cd3dc46e72c2"
+        },
+        {
+          "type": "text",
+          "text": "，死则同穴。’"
+        },
+        {
+          "type": "link",
+          "anchor": "K1087",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "H1087"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝一﹞"
+            }
+          ],
+          "note_id": "n-76c89db6392eef44fefb"
+        },
+        {
+          "type": "text",
+          "text": "故昭烈皇后宜与大行皇帝合葬。臣请太尉告宗庙，布露天下"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10292",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10292"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖23〗"
+            }
+          ],
+          "note_id": "n-d03ac6fe43e81a2e7dbb"
+        },
+        {
+          "type": "text",
+          "text": "；具礼仪别奏"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10293",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10293"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖24〗"
+            }
+          ],
+          "note_id": "n-af03e0c50091198f56a7"
+        },
+        {
+          "type": "text",
+          "text": "。”"
+        }
+      ],
+      "text": "章武二年，追谥“皇思夫人”，迁葬于蜀；未至，而先主殂陨。丞相亮上言：“皇思夫人履行修仁〖4〗，淑慎其身。大行皇帝昔在上将〖5〗，嫔妃作合〖6〗；载育圣躬〖7〗，大命不融〖8〗。大行皇帝存时，笃义垂恩〖9〗；念皇思夫人神柩在远飘摇〖10〗，特遣使者奉迎；会大行皇帝崩。今皇思夫人神柩已到；又梓宫在道〖11〗，园陵将成〖12〗，安厝有期〖13〗。臣辄与太常臣赖恭等议：《礼记》曰：‘立爱自亲始〖14〗，教民孝也；立敬自长始，教民顺也。’不忘其亲，所由生也〖15〗。《春秋》之义，母以子贵〖16〗。昔高皇帝追尊太上昭灵夫人为昭灵皇后〖17〗；孝和皇帝改葬其母梁贵人〖18〗，尊号曰恭怀皇后；孝愍皇帝亦改葬其母王夫人〖19〗，尊号曰灵怀皇后。今皇思夫人宜有尊号，以慰寒泉之思〖20〗。辄与恭等案《谥法》〖21〗，宜曰昭烈皇后。《诗》曰：‘穀则异室〖22〗，死则同穴。’﹝一﹞故昭烈皇后宜与大行皇帝合葬。臣请太尉告宗庙，布露天下〖23〗；具礼仪别奏〖24〗。”",
+      "kind": "original",
+      "anchors": [
+        "Y10273",
+        "Y10274",
+        "Y10275",
+        "Y10276",
+        "Y10277",
+        "Y10278",
+        "Y10279",
+        "Y10280",
+        "Y10281",
+        "Y10282",
+        "Y10283",
+        "Y10284",
+        "Y10285",
+        "Y10286",
+        "Y10287",
+        "Y10288",
+        "Y10289",
+        "Y10290",
+        "Y10291",
+        "K1087",
+        "Y10292",
+        "Y10293"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-823039f84a1735b0b5e8",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 3,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "制曰"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10294",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10294"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖25〗"
+            }
+          ],
+          "note_id": "n-97cb9eb2d07aef9352b2"
+        },
+        {
+          "type": "text",
+          "text": "：“可。”"
+        }
+      ],
+      "text": "制曰〖25〗：“可。”",
+      "kind": "original",
+      "anchors": [
+        "Y10294"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-824cfac792255f3cad59",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 4,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【注释】"
+        }
+      ],
+      "text": "【注释】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-fc8c8e4e299b38569f23",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 5,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10270",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10270"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "临豫州：治理豫州。指担任豫州牧。"
+        }
+      ],
+      "text": "〖1〗临豫州：治理豫州。指担任豫州牧。",
+      "kind": "modern",
+      "anchors": [
+        "Z10270"
+      ],
+      "source_heading": false,
+      "note_id": "n-26916b1bae55d31748c3"
+    },
+    {
+      "id": "b-c11d5910ec3b5e58ce10",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 6,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10271",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10271"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "数（shuò）：一再。丧（sàng）：死。嫡室：正妻。"
+        }
+      ],
+      "text": "〖2〗数（shuò）：一再。丧（sàng）：死。嫡室：正妻。",
+      "kind": "modern",
+      "anchors": [
+        "Z10271"
+      ],
+      "source_heading": false,
+      "note_id": "n-4a16b362f0a12fac0a9a"
+    },
+    {
+      "id": "b-6700da4f08302003a89c",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 7,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10272",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10272"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "摄：代管。"
+        }
+      ],
+      "text": "〖3〗摄：代管。",
+      "kind": "modern",
+      "anchors": [
+        "Z10272"
+      ],
+      "source_heading": false,
+      "note_id": "n-4a219e2987e827c77de9"
+    },
+    {
+      "id": "b-345671bd03381d22efc1",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 8,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10273",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10273"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "履行：行为。修仁：美好仁慈。"
+        }
+      ],
+      "text": "〖4〗履行：行为。修仁：美好仁慈。",
+      "kind": "modern",
+      "anchors": [
+        "Z10273"
+      ],
+      "source_heading": false,
+      "note_id": "n-161c427f1055d0347d3f"
+    },
+    {
+      "id": "b-13fef67a7daafdce3a03",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 9,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10274",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10274"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "上将：高级将领。指刘备曾经担任的左将军。"
+        }
+      ],
+      "text": "〖5〗上将：高级将领。指刘备曾经担任的左将军。",
+      "kind": "modern",
+      "anchors": [
+        "Z10274"
+      ],
+      "source_heading": false,
+      "note_id": "n-5f1fcb3b8fc3ba01c4d8"
+    },
+    {
+      "id": "b-aae0cd93a34f54accdf9",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 10,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10275",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10275"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "嫔妃作合：充当嫔妃与之结合。当时刘备的小妾还不能称为嫔妃，这里是用后来的名号。"
+        }
+      ],
+      "text": "〖6〗嫔妃作合：充当嫔妃与之结合。当时刘备的小妾还不能称为嫔妃，这里是用后来的名号。",
+      "kind": "modern",
+      "anchors": [
+        "Z10275"
+      ],
+      "source_heading": false,
+      "note_id": "n-b11b3c534e835a36f9bf"
+    },
+    {
+      "id": "b-2b8d02faa2ba903ebb79",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 11,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10276",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10276"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "载育：孕育。圣躬：圣体。"
+        }
+      ],
+      "text": "〖7〗载育：孕育。圣躬：圣体。",
+      "kind": "modern",
+      "anchors": [
+        "Z10276"
+      ],
+      "source_heading": false,
+      "note_id": "n-dd04cad4f59f6aa95832"
+    },
+    {
+      "id": "b-f9b2609635e60d1aa2cd",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 12,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10277",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10277"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "不融：不长寿。"
+        }
+      ],
+      "text": "〖8〗不融：不长寿。",
+      "kind": "modern",
+      "anchors": [
+        "Z10277"
+      ],
+      "source_heading": false,
+      "note_id": "n-5ba8ee6af8d16a20d714"
+    },
+    {
+      "id": "b-8edb58bb704ff86ffc1f",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 13,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10278",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10278"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖9〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "笃义：很重情义。"
+        }
+      ],
+      "text": "〖9〗笃义：很重情义。",
+      "kind": "modern",
+      "anchors": [
+        "Z10278"
+      ],
+      "source_heading": false,
+      "note_id": "n-127ed6d8d297cd62e691"
+    },
+    {
+      "id": "b-523cc87f976bb6ea9872",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 14,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10279",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10279"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖10〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "飘摇（yáo）：飘动。这里形容孤独无依的样子。"
+        }
+      ],
+      "text": "〖10〗飘摇（yáo）：飘动。这里形容孤独无依的样子。",
+      "kind": "modern",
+      "anchors": [
+        "Z10279"
+      ],
+      "source_heading": false,
+      "note_id": "n-da3ebd347df01da74b07"
+    },
+    {
+      "id": "b-d5ab59da1fafa6849e43",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 15,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10280",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10280"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖11〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "梓宫：指刘备的棺材。"
+        }
+      ],
+      "text": "〖11〗梓宫：指刘备的棺材。",
+      "kind": "modern",
+      "anchors": [
+        "Z10280"
+      ],
+      "source_heading": false,
+      "note_id": "n-26abc33eb79fbd79ba0b"
+    },
+    {
+      "id": "b-582c03282196d082f1db",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 16,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10281",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10281"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖12〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "园陵：陵园。指惠陵。"
+        }
+      ],
+      "text": "〖12〗园陵：陵园。指惠陵。",
+      "kind": "modern",
+      "anchors": [
+        "Z10281"
+      ],
+      "source_heading": false,
+      "note_id": "n-6b441e3fcbc5d9c29570"
+    },
+    {
+      "id": "b-0915d6e6e0b09250fa96",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 17,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10282",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10282"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖13〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "安厝：（棺材的）安放。"
+        }
+      ],
+      "text": "〖13〗安厝：（棺材的）安放。",
+      "kind": "modern",
+      "anchors": [
+        "Z10282"
+      ],
+      "source_heading": false,
+      "note_id": "n-10e411c6ae466b53f839"
+    },
+    {
+      "id": "b-1c455fbec9e0fef2e698",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 18,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10283",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10283"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖14〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "立爱自亲始：这四句是孔子的话，载《礼记•祭义》。原文为：“立爱自亲始，教民睦也；立敬自长始，教民顺也。”"
+        }
+      ],
+      "text": "〖14〗立爱自亲始：这四句是孔子的话，载《礼记•祭义》。原文为：“立爱自亲始，教民睦也；立敬自长始，教民顺也。”",
+      "kind": "modern",
+      "anchors": [
+        "Z10283"
+      ],
+      "source_heading": false,
+      "note_id": "n-d6e67d5c4a5968777905"
+    },
+    {
+      "id": "b-5b39e31af51c7e7c4a1c",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 19,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10284",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10284"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖15〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "所由生也：是由父母这里出生的。"
+        }
+      ],
+      "text": "〖15〗所由生也：是由父母这里出生的。",
+      "kind": "modern",
+      "anchors": [
+        "Z10284"
+      ],
+      "source_heading": false,
+      "note_id": "n-ff49bb2957759fc50def"
+    },
+    {
+      "id": "b-9b774554c5eaf877f091",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 20,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10285",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10285"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖16〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "母以子贵：这是《公羊传》隐公元年中的话。"
+        }
+      ],
+      "text": "〖16〗母以子贵：这是《公羊传》隐公元年中的话。",
+      "kind": "modern",
+      "anchors": [
+        "Z10285"
+      ],
+      "source_heading": false,
+      "note_id": "n-25e59e3c8129eeb2c7d9"
+    },
+    {
+      "id": "b-6505b25118ce7a0329ab",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 21,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10286",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10286"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖17〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "昭灵夫人：汉高祖刘邦的母亲。前 202 年，刘邦称帝，追尊为昭灵夫人。但是追尊她为昭灵皇后，是吕后七年（前 181）事，这时刘邦已死去十五年。"
+        }
+      ],
+      "text": "〖17〗昭灵夫人：汉高祖刘邦的母亲。前 202 年，刘邦称帝，追尊为昭灵夫人。但是追尊她为昭灵皇后，是吕后七年（前 181）事，这时刘邦已死去十五年。",
+      "kind": "modern",
+      "anchors": [
+        "Z10286"
+      ],
+      "source_heading": false,
+      "note_id": "n-8fc1a2397294c52934dd"
+    },
+    {
+      "id": "b-bbcbfcb29813a6863cb2",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 22,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10287",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10287"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖18〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "孝和皇帝：即刘肇（公元 79—105）。东汉皇帝。公元 89 至 105 年在位。诛杀专权的大将军窦宪，颁布减轻人民负担的政策，又令班超平定西域。事详《后汉书》卷四。梁贵人（？—公元 83）：和帝生母。被皇后窦氏害死。公元 97 年，和帝改葬梁氏，追尊为恭怀皇后。传见《后汉书》卷十上。"
+        }
+      ],
+      "text": "〖18〗孝和皇帝：即刘肇（公元 79—105）。东汉皇帝。公元 89 至 105 年在位。诛杀专权的大将军窦宪，颁布减轻人民负担的政策，又令班超平定西域。事详《后汉书》卷四。梁贵人（？—公元 83）：和帝生母。被皇后窦氏害死。公元 97 年，和帝改葬梁氏，追尊为恭怀皇后。传见《后汉书》卷十上。",
+      "kind": "modern",
+      "anchors": [
+        "Z10287"
+      ],
+      "source_heading": false,
+      "note_id": "n-9907975b7001c85316b4"
+    },
+    {
+      "id": "b-f84a9c91a53354cb9a69",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 23,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10288",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10288"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖19〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "孝愍皇帝：即汉献帝。蜀汉听说献帝被曹丕杀死，即谥为孝愍皇帝。实际上献帝还活着，但以后蜀汉仍称为孝愍皇帝不改。王夫人（？—公元 181）：献帝的生母。被皇后何氏毒死。兴平元年（公元194），献帝追尊王氏为灵怀皇后。传见《后汉书》卷十下。"
+        }
+      ],
+      "text": "〖19〗孝愍皇帝：即汉献帝。蜀汉听说献帝被曹丕杀死，即谥为孝愍皇帝。实际上献帝还活着，但以后蜀汉仍称为孝愍皇帝不改。王夫人（？—公元 181）：献帝的生母。被皇后何氏毒死。兴平元年（公元194），献帝追尊王氏为灵怀皇后。传见《后汉书》卷十下。",
+      "kind": "modern",
+      "anchors": [
+        "Z10288"
+      ],
+      "source_heading": false,
+      "note_id": "n-9410bdcebe10db437dc2"
+    },
+    {
+      "id": "b-a05d6b31cbcdbed8d26f",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 24,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10289",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10289"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖20〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "寒泉之思：指对母亲的思念。《诗经•凯风》一诗，用寒泉灌溉禾苗比喻母亲养育子女，这里即用此典故。"
+        }
+      ],
+      "text": "〖20〗寒泉之思：指对母亲的思念。《诗经•凯风》一诗，用寒泉灌溉禾苗比喻母亲养育子女，这里即用此典故。",
+      "kind": "modern",
+      "anchors": [
+        "Z10289"
+      ],
+      "source_heading": false,
+      "note_id": "n-67fcc780bd7466005378"
+    },
+    {
+      "id": "b-a37253feafce80c46bf7",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 25,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10290",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10290"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖21〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "《谥法》：说明各种谥号的含义和适用对象的条文。"
+        }
+      ],
+      "text": "〖21〗《谥法》：说明各种谥号的含义和适用对象的条文。",
+      "kind": "modern",
+      "anchors": [
+        "Z10290"
+      ],
+      "source_heading": false,
+      "note_id": "n-e25dd2d392646abb0cd8"
+    },
+    {
+      "id": "b-1c9505eb127570489390",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 26,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10291",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10291"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖22〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "穀则异室：活着不能同居一室。这是《诗经•大车》中的诗句。"
+        }
+      ],
+      "text": "〖22〗穀则异室：活着不能同居一室。这是《诗经•大车》中的诗句。",
+      "kind": "modern",
+      "anchors": [
+        "Z10291"
+      ],
+      "source_heading": false,
+      "note_id": "n-11fc5566cd3dc46e72c2"
+    },
+    {
+      "id": "b-4ab8cd2b064a7323bd2a",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 27,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10292",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10292"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖23〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "布露：公告。又作露布。"
+        }
+      ],
+      "text": "〖23〗布露：公告。又作露布。",
+      "kind": "modern",
+      "anchors": [
+        "Z10292"
+      ],
+      "source_heading": false,
+      "note_id": "n-d03ac6fe43e81a2e7dbb"
+    },
+    {
+      "id": "b-165ee8a566c7c3353f62",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 28,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10293",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10293"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖24〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "礼仪：指合葬的礼仪程序。"
+        }
+      ],
+      "text": "〖24〗礼仪：指合葬的礼仪程序。",
+      "kind": "modern",
+      "anchors": [
+        "Z10293"
+      ],
+      "source_heading": false,
+      "note_id": "n-af03e0c50091198f56a7"
+    },
+    {
+      "id": "b-5de1b17e4202b1bb086e",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 29,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10294",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10294"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖25〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "制：皇帝的指示。"
+        }
+      ],
+      "text": "〖25〗制：皇帝的指示。",
+      "kind": "modern",
+      "anchors": [
+        "Z10294"
+      ],
+      "source_heading": false,
+      "note_id": "n-97cb9eb2d07aef9352b2"
+    },
+    {
+      "id": "b-bceb096c168424affb8b",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 30,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【裴注】"
+        }
+      ],
+      "text": "【裴注】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-f8769e9005fd09736853",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 31,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "H1087",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "K1087"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝一﹞"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "《礼》云：“上古无合葬；中古后，因时方有。”"
+        }
+      ],
+      "text": "﹝一﹞《礼》云：“上古无合葬；中古后，因时方有。”",
+      "kind": "pei",
+      "anchors": [
+        "H1087"
+      ],
+      "source_heading": false,
+      "note_id": "n-76c89db6392eef44fefb"
+    },
+    {
+      "id": "b-503b60285f39e36005b1",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 32,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "先主穆吴皇后"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10295",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10295"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ],
+          "note_id": "n-f5d08d06796c2cef239c"
+        },
+        {
+          "type": "text",
+          "text": "，陈留人也。兄吴壹，少孤；壹父素与刘焉有旧"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10296",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10296"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ],
+          "note_id": "n-8de966218a659ba89b97"
+        },
+        {
+          "type": "text",
+          "text": "，是以举家随焉入蜀。焉有异志"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10297",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10297"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ],
+          "note_id": "n-dbb15130cefd26c009cb"
+        },
+        {
+          "type": "text",
+          "text": "，而闻善相者相后当大贵，焉时将子瑁自随；遂为瑁纳后。瑁死，后寡居。"
+        }
+      ],
+      "text": "先主穆吴皇后〖1〗，陈留人也。兄吴壹，少孤；壹父素与刘焉有旧〖2〗，是以举家随焉入蜀。焉有异志〖3〗，而闻善相者相后当大贵，焉时将子瑁自随；遂为瑁纳后。瑁死，后寡居。",
+      "kind": "original",
+      "anchors": [
+        "Y10295",
+        "Y10296",
+        "Y10297"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-e1720e70babf6930eb0b",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 33,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "先主既定益州，而孙夫人还吴；"
+        },
+        {
+          "type": "link",
+          "anchor": "K1088",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "H1088"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝一﹞"
+            }
+          ],
+          "note_id": "n-e26d52ed69bc9da71903"
+        },
+        {
+          "type": "text",
+          "text": "群下劝先主聘后，先主疑与瑁同族"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10298",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10298"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ],
+          "note_id": "n-36566b921c326b838d71"
+        },
+        {
+          "type": "text",
+          "text": "。法正进曰：“论其亲疏，何与晋文之于子圉乎"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10299",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10299"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ],
+          "note_id": "n-1299bc0f7757192db57f"
+        },
+        {
+          "type": "text",
+          "text": "？”于是纳后为夫人。"
+        },
+        {
+          "type": "link",
+          "anchor": "K1089",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "H1089"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝二﹞"
+            }
+          ],
+          "note_id": "n-d27d3c5c35c5d571ac34"
+        },
+        {
+          "type": "text",
+          "text": "建安二十四年，立为汉中王后。"
+        }
+      ],
+      "text": "先主既定益州，而孙夫人还吴；﹝一﹞群下劝先主聘后，先主疑与瑁同族〖4〗。法正进曰：“论其亲疏，何与晋文之于子圉乎〖5〗？”于是纳后为夫人。﹝二﹞建安二十四年，立为汉中王后。",
+      "kind": "original",
+      "anchors": [
+        "K1088",
+        "Y10298",
+        "Y10299",
+        "K1089"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-b32e4a84f604af4b02d4",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 34,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "章武元年夏五月，策曰：“朕承天命，奉至尊"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10300",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10300"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ],
+          "note_id": "n-f1cab9fbf93199645e38"
+        },
+        {
+          "type": "text",
+          "text": "，临万国。今以后为皇后，遣使持节、丞相亮授玺绶"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10301",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10301"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ],
+          "note_id": "n-069da122fc025a205856"
+        },
+        {
+          "type": "text",
+          "text": "；承宗庙，母天下"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10302",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10302"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ],
+          "note_id": "n-34de442dc8e97ef5070e"
+        },
+        {
+          "type": "text",
+          "text": "。皇后其敬之哉！”"
+        }
+      ],
+      "text": "章武元年夏五月，策曰：“朕承天命，奉至尊〖6〗，临万国。今以后为皇后，遣使持节、丞相亮授玺绶〖7〗；承宗庙，母天下〖8〗。皇后其敬之哉！”",
+      "kind": "original",
+      "anchors": [
+        "Y10300",
+        "Y10301",
+        "Y10302"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-4d9028f30fabc08b31ce",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 35,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "建兴元年五月，后主即位。尊后为皇太后，称“长乐宫”。壹官至车骑将军，封县侯。延熙八年，后薨，合葬惠陵。"
+        },
+        {
+          "type": "link",
+          "anchor": "K1090",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "H1090"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝三﹞"
+            }
+          ],
+          "note_id": "n-26c7f8ca5e396fd67914"
+        }
+      ],
+      "text": "建兴元年五月，后主即位。尊后为皇太后，称“长乐宫”。壹官至车骑将军，封县侯。延熙八年，后薨，合葬惠陵。﹝三﹞",
+      "kind": "original",
+      "anchors": [
+        "K1090"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-a88559b4a66045593d01",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 36,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【注释】"
+        }
+      ],
+      "text": "【注释】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-1d76ff034e2a42c8ae00",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 37,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10295",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10295"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "穆：这里是谥号。本姓吴。"
+        }
+      ],
+      "text": "〖1〗穆：这里是谥号。本姓吴。",
+      "kind": "modern",
+      "anchors": [
+        "Z10295"
+      ],
+      "source_heading": false,
+      "note_id": "n-f5d08d06796c2cef239c"
+    },
+    {
+      "id": "b-eab9b50bdeaf33f2e90e",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 38,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10296",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10296"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "刘焉（？—公元 194）：传见本书卷三十一。"
+        }
+      ],
+      "text": "〖2〗刘焉（？—公元 194）：传见本书卷三十一。",
+      "kind": "modern",
+      "anchors": [
+        "Z10296"
+      ],
+      "source_heading": false,
+      "note_id": "n-8de966218a659ba89b97"
+    },
+    {
+      "id": "b-449bb744b254c0172edb",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 39,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10297",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10297"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "异志：指想割据一方当皇帝。"
+        }
+      ],
+      "text": "〖3〗异志：指想割据一方当皇帝。",
+      "kind": "modern",
+      "anchors": [
+        "Z10297"
+      ],
+      "source_heading": false,
+      "note_id": "n-dbb15130cefd26c009cb"
+    },
+    {
+      "id": "b-c5af2db866fb504e14e8",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 40,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10298",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10298"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "疑与瑁同族：因自己与刘瑁同族而犹疑不定。"
+        }
+      ],
+      "text": "〖4〗疑与瑁同族：因自己与刘瑁同族而犹疑不定。",
+      "kind": "modern",
+      "anchors": [
+        "Z10298"
+      ],
+      "source_heading": false,
+      "note_id": "n-36566b921c326b838d71"
+    },
+    {
+      "id": "b-36a2b2aeea4ec19f4b4c",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 41,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10299",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10299"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "何与：怎么比得上。子圉（yǔ）：晋文公的侄儿。曾在秦国做人质，娶妻。后单独逃回晋国，秦国又把他的妻子转嫁给晋文公。详见《史记》卷三十九《晋世家》。"
+        }
+      ],
+      "text": "〖5〗何与：怎么比得上。子圉（yǔ）：晋文公的侄儿。曾在秦国做人质，娶妻。后单独逃回晋国，秦国又把他的妻子转嫁给晋文公。详见《史记》卷三十九《晋世家》。",
+      "kind": "modern",
+      "anchors": [
+        "Z10299"
+      ],
+      "source_heading": false,
+      "note_id": "n-1299bc0f7757192db57f"
+    },
+    {
+      "id": "b-82a1a89bb6454e241dc8",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 42,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10300",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10300"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "奉：恭敬接受。至尊：指帝位。"
+        }
+      ],
+      "text": "〖6〗奉：恭敬接受。至尊：指帝位。",
+      "kind": "modern",
+      "anchors": [
+        "Z10300"
+      ],
+      "source_heading": false,
+      "note_id": "n-f1cab9fbf93199645e38"
+    },
+    {
+      "id": "b-34111058f02a9fadf9c6",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 43,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10301",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10301"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "亮：即诸葛亮。"
+        }
+      ],
+      "text": "〖7〗亮：即诸葛亮。",
+      "kind": "modern",
+      "anchors": [
+        "Z10301"
+      ],
+      "source_heading": false,
+      "note_id": "n-069da122fc025a205856"
+    },
+    {
+      "id": "b-2d4880edb4b51966cf22",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 44,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10302",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10302"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "母天下：做天下的母亲。"
+        }
+      ],
+      "text": "〖8〗母天下：做天下的母亲。",
+      "kind": "modern",
+      "anchors": [
+        "Z10302"
+      ],
+      "source_heading": false,
+      "note_id": "n-34de442dc8e97ef5070e"
+    },
+    {
+      "id": "b-e6f59b6c9c98f9f015c1",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 45,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【裴注】"
+        }
+      ],
+      "text": "【裴注】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-46243ff94b4566a8a9e1",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 46,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "H1088",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "K1088"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝一﹞"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "《汉晋春秋》云：“先主入益州，吴遣迎孙夫人，夫人欲将太子归吴。诸葛亮使赵云勒兵断江，留太子，乃得止。”"
+        }
+      ],
+      "text": "﹝一﹞《汉晋春秋》云：“先主入益州，吴遣迎孙夫人，夫人欲将太子归吴。诸葛亮使赵云勒兵断江，留太子，乃得止。”",
+      "kind": "pei",
+      "anchors": [
+        "H1088"
+      ],
+      "source_heading": false,
+      "note_id": "n-e26d52ed69bc9da71903"
+    },
+    {
+      "id": "b-18ebd02719a1be2155ea",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 47,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "H1089",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "K1089"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝二﹞"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "习凿齿曰：“夫婚姻，人伦之始，王化之本；匹夫犹不可以无礼，而况人君乎！晋文废礼行权，以济其业，故子犯曰：‘有求于人，必先从之；将夺其国，何有于妻？’非无故而违礼教者也。今先主无权事之逼，而引前失以为譬；非导其君以尧、舜之道者。先主从之，过矣。”"
+        }
+      ],
+      "text": "﹝二﹞习凿齿曰：“夫婚姻，人伦之始，王化之本；匹夫犹不可以无礼，而况人君乎！晋文废礼行权，以济其业，故子犯曰：‘有求于人，必先从之；将夺其国，何有于妻？’非无故而违礼教者也。今先主无权事之逼，而引前失以为譬；非导其君以尧、舜之道者。先主从之，过矣。”",
+      "kind": "pei",
+      "anchors": [
+        "H1089"
+      ],
+      "source_heading": false,
+      "note_id": "n-d27d3c5c35c5d571ac34"
+    },
+    {
+      "id": "b-97cebf0d15e9759bd486",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 48,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "H1090",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "K1090"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝三﹞"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "孙盛《蜀世谱》曰：“壹孙乔，没李雄中；三十年，不为雄屈也。”"
+        }
+      ],
+      "text": "﹝三﹞孙盛《蜀世谱》曰：“壹孙乔，没李雄中；三十年，不为雄屈也。”",
+      "kind": "pei",
+      "anchors": [
+        "H1090"
+      ],
+      "source_heading": false,
+      "note_id": "n-26c7f8ca5e396fd67914"
+    },
+    {
+      "id": "b-cae8377725a898e49048",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 49,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "后主敬哀张皇后，车骑将军张飞长女也。章武元年，纳为太子妃。建兴元年，立为皇后。十五年薨"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10303",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10303"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ],
+          "note_id": "n-c270638c18397ec944ad"
+        },
+        {
+          "type": "text",
+          "text": "，葬南陵"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10304",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10304"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ],
+          "note_id": "n-4b992ec8abdc5c161b3b"
+        },
+        {
+          "type": "text",
+          "text": "。"
+        }
+      ],
+      "text": "后主敬哀张皇后，车骑将军张飞长女也。章武元年，纳为太子妃。建兴元年，立为皇后。十五年薨〖1〗，葬南陵〖2〗。",
+      "kind": "original",
+      "anchors": [
+        "Y10303",
+        "Y10304"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-660d1860bc4fe22b4427",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 50,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【注释】"
+        }
+      ],
+      "text": "【注释】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-c3038fb75598428ebec4",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 51,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10303",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10303"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "十五年：建兴十五年（公元 237）。"
+        }
+      ],
+      "text": "〖1〗十五年：建兴十五年（公元 237）。",
+      "kind": "modern",
+      "anchors": [
+        "Z10303"
+      ],
+      "source_heading": false,
+      "note_id": "n-c270638c18397ec944ad"
+    },
+    {
+      "id": "b-b142700c93f99131141e",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 52,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10304",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10304"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "南陵：当在今四川成都市南。"
+        }
+      ],
+      "text": "〖2〗南陵：当在今四川成都市南。",
+      "kind": "modern",
+      "anchors": [
+        "Z10304"
+      ],
+      "source_heading": false,
+      "note_id": "n-4b992ec8abdc5c161b3b"
+    },
+    {
+      "id": "b-b00e4a0b53c2891dee6b",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 53,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "后主张皇后，前后敬哀之妹也。建兴十五年，入为贵人。延熙元年春正月，策曰：“朕统承大业，君临天下，奉郊庙、社稷。今以贵人为皇后。使行丞相事、左将军（向）朗"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10305",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10305"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ],
+          "note_id": "n-e251212aa970ebb67a34"
+        },
+        {
+          "type": "text",
+          "text": "，持节，授玺绶。勉修中馈"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10306",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10306"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ],
+          "note_id": "n-81a5e5ca71bc85994e04"
+        },
+        {
+          "type": "text",
+          "text": "，恪肃禋祀"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10307",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10307"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ],
+          "note_id": "n-8252cbb98b6efd477fe3"
+        },
+        {
+          "type": "text",
+          "text": "。皇后其敬之哉！”"
+        }
+      ],
+      "text": "后主张皇后，前后敬哀之妹也。建兴十五年，入为贵人。延熙元年春正月，策曰：“朕统承大业，君临天下，奉郊庙、社稷。今以贵人为皇后。使行丞相事、左将军（向）朗〖1〗，持节，授玺绶。勉修中馈〖2〗，恪肃禋祀〖3〗。皇后其敬之哉！”",
+      "kind": "original",
+      "anchors": [
+        "Y10305",
+        "Y10306",
+        "Y10307"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-c938dd06ea7b294157c0",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 54,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "咸熙元年，随后主迁于洛阳。"
+        },
+        {
+          "type": "link",
+          "anchor": "K1091",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "H1091"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝一﹞"
+            }
+          ],
+          "note_id": "n-df50c89086a50fa2e3c2"
+        }
+      ],
+      "text": "咸熙元年，随后主迁于洛阳。﹝一﹞",
+      "kind": "original",
+      "anchors": [
+        "K1091"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-7340856f98fdbf53e165",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 55,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【注释】"
+        }
+      ],
+      "text": "【注释】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-82075e6f9f7152627640",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 56,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10305",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10305"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "行丞相事：蜀汉一种临时性的加衔。意为代行丞相职责。蜀汉立皇后和皇太子，是由丞相充任皇帝特使宣读策文并授玺。但是，自诸葛亮死后，蜀汉再没有任命他人为丞相，这时候立皇后和皇太子，只好给充任特使的官员加一个行丞相事的官衔。向朗（？—公元 247）：传见本书卷四十一。"
+        }
+      ],
+      "text": "〖1〗行丞相事：蜀汉一种临时性的加衔。意为代行丞相职责。蜀汉立皇后和皇太子，是由丞相充任皇帝特使宣读策文并授玺。但是，自诸葛亮死后，蜀汉再没有任命他人为丞相，这时候立皇后和皇太子，只好给充任特使的官员加一个行丞相事的官衔。向朗（？—公元 247）：传见本书卷四十一。",
+      "kind": "modern",
+      "anchors": [
+        "Z10305"
+      ],
+      "source_heading": false,
+      "note_id": "n-e251212aa970ebb67a34"
+    },
+    {
+      "id": "b-26b9732bdc40610a88d0",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 57,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10306",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10306"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "中馈：家庭的饮食供应。修中馈意指主持家务。"
+        }
+      ],
+      "text": "〖2〗中馈：家庭的饮食供应。修中馈意指主持家务。",
+      "kind": "modern",
+      "anchors": [
+        "Z10306"
+      ],
+      "source_heading": false,
+      "note_id": "n-81a5e5ca71bc85994e04"
+    },
+    {
+      "id": "b-d26767eb1144961dac1a",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 58,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10307",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10307"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "恪肃：恭敬。禋（yīn）祀：祭祀。这里指进行祭祀。"
+        }
+      ],
+      "text": "〖3〗恪肃：恭敬。禋（yīn）祀：祭祀。这里指进行祭祀。",
+      "kind": "modern",
+      "anchors": [
+        "Z10307"
+      ],
+      "source_heading": false,
+      "note_id": "n-8252cbb98b6efd477fe3"
+    },
+    {
+      "id": "b-22bd6ac57e6360da22a5",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 59,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【裴注】"
+        }
+      ],
+      "text": "【裴注】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-81e458f732a66e6ada63",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 60,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "H1091",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "K1091"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝一﹞"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "《汉晋春秋》曰：“魏以蜀宫人，赐诸将之无妻者。李昭仪曰：‘我不能二三屈辱。’乃自杀。”"
+        }
+      ],
+      "text": "﹝一﹞《汉晋春秋》曰：“魏以蜀宫人，赐诸将之无妻者。李昭仪曰：‘我不能二三屈辱。’乃自杀。”",
+      "kind": "pei",
+      "anchors": [
+        "H1091"
+      ],
+      "source_heading": false,
+      "note_id": "n-df50c89086a50fa2e3c2"
+    },
+    {
+      "id": "b-73d59e5e28371f20461f",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 61,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "刘永字公寿。先主子，后主庶弟也"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10308",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10308"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ],
+          "note_id": "n-fcbb1b9afa82d2cda8ee"
+        },
+        {
+          "type": "text",
+          "text": "。章武元年六月，使司徒靖立永为鲁王"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10309",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10309"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ],
+          "note_id": "n-9018cbb1b5dc8546e9b8"
+        },
+        {
+          "type": "text",
+          "text": "。策曰：“小子永"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10310",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10310"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ],
+          "note_id": "n-927503a868e2a6aee922"
+        },
+        {
+          "type": "text",
+          "text": "：受兹青土"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10311",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10311"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ],
+          "note_id": "n-7df1ac06722740564495"
+        },
+        {
+          "type": "text",
+          "text": "。朕承天序"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10312",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10312"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ],
+          "note_id": "n-8d75741c3fff7c7a266b"
+        },
+        {
+          "type": "text",
+          "text": "，继统大业。遵修稽古"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10313",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10313"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ],
+          "note_id": "n-87be998101a399c288e3"
+        },
+        {
+          "type": "text",
+          "text": "，建尔国家：封于东土，奄有龟蒙"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10314",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10314"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ],
+          "note_id": "n-414e05d862396693c1bf"
+        },
+        {
+          "type": "text",
+          "text": "，世为藩辅。呜呼，恭朕之诏！惟彼鲁邦，一变适道"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10315",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10315"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ],
+          "note_id": "n-4e0c83c5c01cbd97085b"
+        },
+        {
+          "type": "text",
+          "text": "，风化存焉；人之好德，世滋懿美"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10316",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10316"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖9〗"
+            }
+          ],
+          "note_id": "n-5a9a64911e5d90527136"
+        },
+        {
+          "type": "text",
+          "text": "。王其秉心率礼，绥尔士民"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10317",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10317"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖10〗"
+            }
+          ],
+          "note_id": "n-bd573e92c8b7467a58e8"
+        },
+        {
+          "type": "text",
+          "text": "，是飨是宜"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10318",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10318"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖11〗"
+            }
+          ],
+          "note_id": "n-2fb544b8c1c84ea7e42b"
+        },
+        {
+          "type": "text",
+          "text": "。其戒之哉！”"
+        }
+      ],
+      "text": "刘永字公寿。先主子，后主庶弟也〖1〗。章武元年六月，使司徒靖立永为鲁王〖2〗。策曰：“小子永〖3〗：受兹青土〖4〗。朕承天序〖5〗，继统大业。遵修稽古〖6〗，建尔国家：封于东土，奄有龟蒙〖7〗，世为藩辅。呜呼，恭朕之诏！惟彼鲁邦，一变适道〖8〗，风化存焉；人之好德，世滋懿美〖9〗。王其秉心率礼，绥尔士民〖10〗，是飨是宜〖11〗。其戒之哉！”",
+      "kind": "original",
+      "anchors": [
+        "Y10308",
+        "Y10309",
+        "Y10310",
+        "Y10311",
+        "Y10312",
+        "Y10313",
+        "Y10314",
+        "Y10315",
+        "Y10316",
+        "Y10317",
+        "Y10318"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-f32c94405104cd60952a",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 62,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "建兴八年，改封为甘陵王。初，永憎宦人黄皓。皓既信任用事"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10319",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10319"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖12〗"
+            }
+          ],
+          "note_id": "n-15d74a0e57eda27f3db1"
+        },
+        {
+          "type": "text",
+          "text": "，谮构永于后主"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10320",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10320"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖13〗"
+            }
+          ],
+          "note_id": "n-280875417b41bce0be18"
+        },
+        {
+          "type": "text",
+          "text": "；后主稍疏外永"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10321",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10321"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖14〗"
+            }
+          ],
+          "note_id": "n-2eb7e791705464d29eca"
+        },
+        {
+          "type": "text",
+          "text": "，至不得朝见者十余年。"
+        }
+      ],
+      "text": "建兴八年，改封为甘陵王。初，永憎宦人黄皓。皓既信任用事〖12〗，谮构永于后主〖13〗；后主稍疏外永〖14〗，至不得朝见者十余年。",
+      "kind": "original",
+      "anchors": [
+        "Y10319",
+        "Y10320",
+        "Y10321"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-4eab094a726e8ab41bd6",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 63,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "咸熙元年，永东迁洛阳；拜奉车都尉，封为乡侯。"
+        }
+      ],
+      "text": "咸熙元年，永东迁洛阳；拜奉车都尉，封为乡侯。",
+      "kind": "original",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-8eb3eee30d9d64ba285a",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 64,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【注释】"
+        }
+      ],
+      "text": "【注释】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-38db7f170d86cf900649",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 65,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10308",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10308"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "庶弟：庶母所生的弟弟。庶母是父亲的小妾。"
+        }
+      ],
+      "text": "〖1〗庶弟：庶母所生的弟弟。庶母是父亲的小妾。",
+      "kind": "modern",
+      "anchors": [
+        "Z10308"
+      ],
+      "source_heading": false,
+      "note_id": "n-fcbb1b9afa82d2cda8ee"
+    },
+    {
+      "id": "b-2a53cc25d1bb5309f0a2",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 66,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10309",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10309"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "靖：即许靖（？—公元 222）。传见本书卷三十八。蜀汉立皇子为王，是由司徒充任皇帝的特使。"
+        }
+      ],
+      "text": "〖2〗靖：即许靖（？—公元 222）。传见本书卷三十八。蜀汉立皇子为王，是由司徒充任皇帝的特使。",
+      "kind": "modern",
+      "anchors": [
+        "Z10309"
+      ],
+      "source_heading": false,
+      "note_id": "n-9018cbb1b5dc8546e9b8"
+    },
+    {
+      "id": "b-22566c60899a27010d0e",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 67,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10310",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10310"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "小子：长辈对晚辈的称呼。"
+        }
+      ],
+      "text": "〖3〗小子：长辈对晚辈的称呼。",
+      "kind": "modern",
+      "anchors": [
+        "Z10310"
+      ],
+      "source_heading": false,
+      "note_id": "n-927503a868e2a6aee922"
+    },
+    {
+      "id": "b-b0eea9b7be88e269a0cd",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 68,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10311",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10311"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "青土：青色的泥土。古代天子分封诸侯，要按方位用茅草包一些相应颜色的泥土给受封者，东方用青色泥土。鲁郡在东方，所以这样说。不过，当时鲁郡所在的豫州，在曹魏控制之下，刘永封鲁王只是虚有其名。"
+        }
+      ],
+      "text": "〖4〗青土：青色的泥土。古代天子分封诸侯，要按方位用茅草包一些相应颜色的泥土给受封者，东方用青色泥土。鲁郡在东方，所以这样说。不过，当时鲁郡所在的豫州，在曹魏控制之下，刘永封鲁王只是虚有其名。",
+      "kind": "modern",
+      "anchors": [
+        "Z10311"
+      ],
+      "source_heading": false,
+      "note_id": "n-7df1ac06722740564495"
+    },
+    {
+      "id": "b-6a559329a1c69728e86f",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 69,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10312",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10312"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "天序：指皇帝传承次序。"
+        }
+      ],
+      "text": "〖5〗天序：指皇帝传承次序。",
+      "kind": "modern",
+      "anchors": [
+        "Z10312"
+      ],
+      "source_heading": false,
+      "note_id": "n-8d75741c3fff7c7a266b"
+    },
+    {
+      "id": "b-b56d92af966316b0fed9",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 70,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10313",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10313"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "稽古：考察古事。这里指古代的封建诸侯制度。"
+        }
+      ],
+      "text": "〖6〗稽古：考察古事。这里指古代的封建诸侯制度。",
+      "kind": "modern",
+      "anchors": [
+        "Z10313"
+      ],
+      "source_heading": false,
+      "note_id": "n-87be998101a399c288e3"
+    },
+    {
+      "id": "b-b614dd349cf2e0e94e85",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 71,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10314",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10314"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "奄有：包括有。龟蒙：山名。龟山和蒙山的合称。在今山东蒙阴县西南。由西北向东南，其西北一段叫龟山，东南一段叫蒙山。"
+        }
+      ],
+      "text": "〖7〗奄有：包括有。龟蒙：山名。龟山和蒙山的合称。在今山东蒙阴县西南。由西北向东南，其西北一段叫龟山，东南一段叫蒙山。",
+      "kind": "modern",
+      "anchors": [
+        "Z10314"
+      ],
+      "source_heading": false,
+      "note_id": "n-414e05d862396693c1bf"
+    },
+    {
+      "id": "b-868dbf195a78162ed26e",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 72,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10315",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10315"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "一变适道：《论语•雍也》载孔子的话：“齐一变，至于鲁；鲁一变，至于道。”意思是齐国（的政治和教育）再一变革，可以赶上鲁国；鲁国再一变革，就进而合乎大道了。这是在赞美鲁国。鲁郡在鲁国故地，所以策文用此典故。"
+        }
+      ],
+      "text": "〖8〗一变适道：《论语•雍也》载孔子的话：“齐一变，至于鲁；鲁一变，至于道。”意思是齐国（的政治和教育）再一变革，可以赶上鲁国；鲁国再一变革，就进而合乎大道了。这是在赞美鲁国。鲁郡在鲁国故地，所以策文用此典故。",
+      "kind": "modern",
+      "anchors": [
+        "Z10315"
+      ],
+      "source_heading": false,
+      "note_id": "n-4e0c83c5c01cbd97085b"
+    },
+    {
+      "id": "b-2af762f470b96a9c8d5b",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 73,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10316",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10316"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖9〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "滋：增加。懿：美好。"
+        }
+      ],
+      "text": "〖9〗滋：增加。懿：美好。",
+      "kind": "modern",
+      "anchors": [
+        "Z10316"
+      ],
+      "source_heading": false,
+      "note_id": "n-5a9a64911e5d90527136"
+    },
+    {
+      "id": "b-f53fc15d450b7b58e0ef",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 74,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10317",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10317"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖10〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "绥：安抚。"
+        }
+      ],
+      "text": "〖10〗绥：安抚。",
+      "kind": "modern",
+      "anchors": [
+        "Z10317"
+      ],
+      "source_heading": false,
+      "note_id": "n-bd573e92c8b7467a58e8"
+    },
+    {
+      "id": "b-8df90619b0a7d89d5702",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 75,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10318",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10318"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖11〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "是：于是就。飨：祭祀祖先。宜：祭祀土神。"
+        }
+      ],
+      "text": "〖11〗是：于是就。飨：祭祀祖先。宜：祭祀土神。",
+      "kind": "modern",
+      "anchors": [
+        "Z10318"
+      ],
+      "source_heading": false,
+      "note_id": "n-2fb544b8c1c84ea7e42b"
+    },
+    {
+      "id": "b-90743c0c123b6e96d685",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 76,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10319",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10319"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖12〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "用事：掌权。"
+        }
+      ],
+      "text": "〖12〗用事：掌权。",
+      "kind": "modern",
+      "anchors": [
+        "Z10319"
+      ],
+      "source_heading": false,
+      "note_id": "n-15d74a0e57eda27f3db1"
+    },
+    {
+      "id": "b-36a005b43f452b3388fb",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 77,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10320",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10320"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖13〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "谮构：诋毁。"
+        }
+      ],
+      "text": "〖13〗谮构：诋毁。",
+      "kind": "modern",
+      "anchors": [
+        "Z10320"
+      ],
+      "source_heading": false,
+      "note_id": "n-280875417b41bce0be18"
+    },
+    {
+      "id": "b-41ebe0fe4fa95080cdf0",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 78,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10321",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10321"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖14〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "稍：逐渐。疏外：疏远。"
+        }
+      ],
+      "text": "〖14〗稍：逐渐。疏外：疏远。",
+      "kind": "modern",
+      "anchors": [
+        "Z10321"
+      ],
+      "source_heading": false,
+      "note_id": "n-2eb7e791705464d29eca"
+    },
+    {
+      "id": "b-ba53693076b6b95703b6",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 79,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "刘理字奉孝。亦后主庶弟也，与永异母。章武元年六月，使司徒靖立理为梁王。策曰：“小子理：朕统承汉序，祗顺天命。遵修典秩"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10322",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10322"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ],
+          "note_id": "n-d0b1b4aa7b36805cf5d3"
+        },
+        {
+          "type": "text",
+          "text": "，建尔于东，为汉藩辅。惟彼梁土，畿甸之邦"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10323",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10323"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ],
+          "note_id": "n-b026a4e23ef8e56635d4"
+        },
+        {
+          "type": "text",
+          "text": "；民狎教化"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10324",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10324"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ],
+          "note_id": "n-098ab0f5eba6f7cfbf2d"
+        },
+        {
+          "type": "text",
+          "text": "，易导以礼。往悉乃心"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10325",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10325"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ],
+          "note_id": "n-f1f938a9517d323be76a"
+        },
+        {
+          "type": "text",
+          "text": "，怀保黎庶"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10326",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10326"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ],
+          "note_id": "n-a72dce1c386257d05488"
+        },
+        {
+          "type": "text",
+          "text": "，以永尔国。王其敬之哉！”"
+        }
+      ],
+      "text": "刘理字奉孝。亦后主庶弟也，与永异母。章武元年六月，使司徒靖立理为梁王。策曰：“小子理：朕统承汉序，祗顺天命。遵修典秩〖1〗，建尔于东，为汉藩辅。惟彼梁土，畿甸之邦〖2〗；民狎教化〖3〗，易导以礼。往悉乃心〖4〗，怀保黎庶〖5〗，以永尔国。王其敬之哉！”",
+      "kind": "original",
+      "anchors": [
+        "Y10322",
+        "Y10323",
+        "Y10324",
+        "Y10325",
+        "Y10326"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-04a5ef8a760dfbd48eb4",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 80,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "建兴八年，改封理为安平王。"
+        }
+      ],
+      "text": "建兴八年，改封理为安平王。",
+      "kind": "original",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-ebbe05c85e6433b7bc52",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 81,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "延熙七年卒，谥曰悼王。子哀王胤嗣，十九年卒"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10327",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10327"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ],
+          "note_id": "n-bd0fcd6c1e23cd5e53a5"
+        },
+        {
+          "type": "text",
+          "text": "。子殇王承嗣，二十年卒"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10328",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10328"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ],
+          "note_id": "n-83748f51333e510cdb58"
+        },
+        {
+          "type": "text",
+          "text": "。"
+        }
+      ],
+      "text": "延熙七年卒，谥曰悼王。子哀王胤嗣，十九年卒〖6〗。子殇王承嗣，二十年卒〖7〗。",
+      "kind": "original",
+      "anchors": [
+        "Y10327",
+        "Y10328"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-559929cbb11346eb3c9d",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 82,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "景耀四年诏曰：“安平王，先帝所命。三世早夭，国嗣颓绝，朕用伤悼"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10329",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10329"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ],
+          "note_id": "n-51dbed206c063b9c1347"
+        },
+        {
+          "type": "text",
+          "text": "。其以武邑侯辑，袭王位。”辑，理子也。咸熙元年，东迁洛阳；拜奉车都尉，封乡侯。"
+        }
+      ],
+      "text": "景耀四年诏曰：“安平王，先帝所命。三世早夭，国嗣颓绝，朕用伤悼〖8〗。其以武邑侯辑，袭王位。”辑，理子也。咸熙元年，东迁洛阳；拜奉车都尉，封乡侯。",
+      "kind": "original",
+      "anchors": [
+        "Y10329"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-a38d0c7888b02a232d9c",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 83,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【注释】"
+        }
+      ],
+      "text": "【注释】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-70b340db58264d1d051f",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 84,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10322",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10322"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "典秩：典章制度规定的等级秩序。指封爵制度。"
+        }
+      ],
+      "text": "〖1〗典秩：典章制度规定的等级秩序。指封爵制度。",
+      "kind": "modern",
+      "anchors": [
+        "Z10322"
+      ],
+      "source_heading": false,
+      "note_id": "n-d0b1b4aa7b36805cf5d3"
+    },
+    {
+      "id": "b-2bbedf6e3684904a38b5",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 85,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10323",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10323"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "畿甸：京都附近的地区。梁郡（治所在今河南商丘市南）也属豫州。距东汉京城洛阳不远。当时在曹魏控制之下，所以刘理封梁王也是虚有其名。"
+        }
+      ],
+      "text": "〖2〗畿甸：京都附近的地区。梁郡（治所在今河南商丘市南）也属豫州。距东汉京城洛阳不远。当时在曹魏控制之下，所以刘理封梁王也是虚有其名。",
+      "kind": "modern",
+      "anchors": [
+        "Z10323"
+      ],
+      "source_heading": false,
+      "note_id": "n-b026a4e23ef8e56635d4"
+    },
+    {
+      "id": "b-a91183943b7cc9ef644f",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 86,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10324",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10324"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "狎（xiá）：熟习。"
+        }
+      ],
+      "text": "〖3〗狎（xiá）：熟习。",
+      "kind": "modern",
+      "anchors": [
+        "Z10324"
+      ],
+      "source_heading": false,
+      "note_id": "n-098ab0f5eba6f7cfbf2d"
+    },
+    {
+      "id": "b-e46d28ae6da4838a5195",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 87,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10325",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10325"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "往悉乃心：前去尽你的心。"
+        }
+      ],
+      "text": "〖4〗往悉乃心：前去尽你的心。",
+      "kind": "modern",
+      "anchors": [
+        "Z10325"
+      ],
+      "source_heading": false,
+      "note_id": "n-f1f938a9517d323be76a"
+    },
+    {
+      "id": "b-106eba3086534356d56b",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 88,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10326",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10326"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖5〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "怀保：安抚保育。"
+        }
+      ],
+      "text": "〖5〗怀保：安抚保育。",
+      "kind": "modern",
+      "anchors": [
+        "Z10326"
+      ],
+      "source_heading": false,
+      "note_id": "n-a72dce1c386257d05488"
+    },
+    {
+      "id": "b-17204a0a2841d2f09e0f",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 89,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10327",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10327"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖6〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "十九年：延熙十九年（公元 256）。"
+        }
+      ],
+      "text": "〖6〗十九年：延熙十九年（公元 256）。",
+      "kind": "modern",
+      "anchors": [
+        "Z10327"
+      ],
+      "source_heading": false,
+      "note_id": "n-bd0fcd6c1e23cd5e53a5"
+    },
+    {
+      "id": "b-d0cf0e8e0858ed35dc96",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 90,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10328",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10328"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖7〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "二十年：延熙二十年（公元 257）。"
+        }
+      ],
+      "text": "〖7〗二十年：延熙二十年（公元 257）。",
+      "kind": "modern",
+      "anchors": [
+        "Z10328"
+      ],
+      "source_heading": false,
+      "note_id": "n-83748f51333e510cdb58"
+    },
+    {
+      "id": "b-3cdbd631e62559119911",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 91,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10329",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10329"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖8〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "用：因此。"
+        }
+      ],
+      "text": "〖8〗用：因此。",
+      "kind": "modern",
+      "anchors": [
+        "Z10329"
+      ],
+      "source_heading": false,
+      "note_id": "n-51dbed206c063b9c1347"
+    },
+    {
+      "id": "b-7da40348af4a58b0e891",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 92,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "后主太子璿，字文衡。母王贵人，本敬哀张皇后侍人也。延熙元年正月策曰：“在昔帝王，继体立嗣"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10330",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10330"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ],
+          "note_id": "n-a47fbfb4e3a6478ab68e"
+        },
+        {
+          "type": "text",
+          "text": "；副贰国统，古今常道。今以璿为皇太子，昭显祖宗之威。命使行丞相事、左将军朗，持节，授印绶。其勉修茂质，祗恪道义；咨询典礼，敬友师傅；斟酌众善，翼成尔德"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10331",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10331"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ],
+          "note_id": "n-2644374a74a580c13feb"
+        },
+        {
+          "type": "text",
+          "text": "。可不务修以自勖哉"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10332",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10332"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ],
+          "note_id": "n-2dceb08ad0ddf13cf7a1"
+        },
+        {
+          "type": "text",
+          "text": "！”时年十五。"
+        }
+      ],
+      "text": "后主太子璿，字文衡。母王贵人，本敬哀张皇后侍人也。延熙元年正月策曰：“在昔帝王，继体立嗣〖1〗；副贰国统，古今常道。今以璿为皇太子，昭显祖宗之威。命使行丞相事、左将军朗，持节，授印绶。其勉修茂质，祗恪道义；咨询典礼，敬友师傅；斟酌众善，翼成尔德〖2〗。可不务修以自勖哉〖3〗！”时年十五。",
+      "kind": "original",
+      "anchors": [
+        "Y10330",
+        "Y10331",
+        "Y10332"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-caa1bd390bc6a9f3db51",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 93,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "景耀六年冬，蜀亡。咸熙元年正月，钟会作乱于成都，璿为乱兵所害。"
+        },
+        {
+          "type": "link",
+          "anchor": "K1092",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "H1092"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝一﹞"
+            }
+          ],
+          "note_id": "n-813601b69dce121e984d"
+        }
+      ],
+      "text": "景耀六年冬，蜀亡。咸熙元年正月，钟会作乱于成都，璿为乱兵所害。﹝一﹞",
+      "kind": "original",
+      "anchors": [
+        "K1092"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-343bd1b7974fbdfe7787",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 94,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【注释】"
+        }
+      ],
+      "text": "【注释】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-edf556c58f7245a1be09",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 95,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10330",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10330"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "继体立嗣：继位后就要确立继承人。"
+        }
+      ],
+      "text": "〖1〗继体立嗣：继位后就要确立继承人。",
+      "kind": "modern",
+      "anchors": [
+        "Z10330"
+      ],
+      "source_heading": false,
+      "note_id": "n-a47fbfb4e3a6478ab68e"
+    },
+    {
+      "id": "b-cc85be5393068382abe4",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 96,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10331",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10331"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "翼成：辅助而形成。"
+        }
+      ],
+      "text": "〖2〗翼成：辅助而形成。",
+      "kind": "modern",
+      "anchors": [
+        "Z10331"
+      ],
+      "source_heading": false,
+      "note_id": "n-2644374a74a580c13feb"
+    },
+    {
+      "id": "b-c7dc760dc8f5a563aadc",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 97,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10332",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10332"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "可：岂能够。自勖（xù）：自勉。"
+        }
+      ],
+      "text": "〖3〗可：岂能够。自勖（xù）：自勉。",
+      "kind": "modern",
+      "anchors": [
+        "Z10332"
+      ],
+      "source_heading": false,
+      "note_id": "n-2dceb08ad0ddf13cf7a1"
+    },
+    {
+      "id": "b-3c638b41419dc9c00502",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 98,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【裴注】"
+        }
+      ],
+      "text": "【裴注】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-f0ff05e7afb84b61ca38",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 99,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "H1092",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "K1092"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "﹝一﹞"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "孙盛《蜀世谱》曰：“璿弟：瑶、琮、瓒、谌、恂、璩六人。蜀败，谌自杀，余皆内徙。值永嘉大乱，子孙绝灭。唯永孙玄，奔蜀；李雄伪署安乐公，以嗣禅后。永和三年讨李势，盛，参戎行，见玄于成都也。”"
+        }
+      ],
+      "text": "﹝一﹞孙盛《蜀世谱》曰：“璿弟：瑶、琮、瓒、谌、恂、璩六人。蜀败，谌自杀，余皆内徙。值永嘉大乱，子孙绝灭。唯永孙玄，奔蜀；李雄伪署安乐公，以嗣禅后。永和三年讨李势，盛，参戎行，见玄于成都也。”",
+      "kind": "pei",
+      "anchors": [
+        "H1092"
+      ],
+      "source_heading": false,
+      "note_id": "n-813601b69dce121e984d"
+    },
+    {
+      "id": "b-5da98bd00ac2fac76110",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 100,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "评曰：《易》称“有夫妇，然后有父子”"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10333",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10333"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ],
+          "note_id": "n-56a2e708f8737693b680"
+        },
+        {
+          "type": "text",
+          "text": "。夫人伦之始"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10334",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10334"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ],
+          "note_id": "n-c2c85a862fff84cd8f99"
+        },
+        {
+          "type": "text",
+          "text": "，恩纪之隆"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10335",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10335"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ],
+          "note_id": "n-b886e46d58e6b340581e"
+        },
+        {
+          "type": "text",
+          "text": "，莫尚于此矣"
+        },
+        {
+          "type": "link",
+          "anchor": "Y10336",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Z10336"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ],
+          "note_id": "n-de7ab04f1766566999ed"
+        },
+        {
+          "type": "text",
+          "text": "；是故纪录，以究一国之体焉。"
+        }
+      ],
+      "text": "评曰：《易》称“有夫妇，然后有父子”〖1〗。夫人伦之始〖2〗，恩纪之隆〖3〗，莫尚于此矣〖4〗；是故纪录，以究一国之体焉。",
+      "kind": "original",
+      "anchors": [
+        "Y10333",
+        "Y10334",
+        "Y10335",
+        "Y10336"
+      ],
+      "source_heading": false
+    },
+    {
+      "id": "b-9bcf02cb7573f855dc5b",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 101,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【注释】"
+        }
+      ],
+      "text": "【注释】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-ad23e460955ba333a2ab",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 102,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10333",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10333"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖1〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "有夫妇，然后有父子：这是《周易•序卦》中的话。"
+        }
+      ],
+      "text": "〖1〗有夫妇，然后有父子：这是《周易•序卦》中的话。",
+      "kind": "modern",
+      "anchors": [
+        "Z10333"
+      ],
+      "source_heading": false,
+      "note_id": "n-56a2e708f8737693b680"
+    },
+    {
+      "id": "b-82c8f528f7aa59eaf149",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 103,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10334",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10334"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖2〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "人伦：人与人之间的关系和应当遵守的行为准则。关系有父子、君臣、夫妇、长幼、朋友，相应的行为准则是亲、义、别、叙、信，见《孟子•滕文公》上。"
+        }
+      ],
+      "text": "〖2〗人伦：人与人之间的关系和应当遵守的行为准则。关系有父子、君臣、夫妇、长幼、朋友，相应的行为准则是亲、义、别、叙、信，见《孟子•滕文公》上。",
+      "kind": "modern",
+      "anchors": [
+        "Z10334"
+      ],
+      "source_heading": false,
+      "note_id": "n-c2c85a862fff84cd8f99"
+    },
+    {
+      "id": "b-198be59743f0e3aaf851",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 104,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10335",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10335"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖3〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "恩纪：感情。"
+        }
+      ],
+      "text": "〖3〗恩纪：感情。",
+      "kind": "modern",
+      "anchors": [
+        "Z10335"
+      ],
+      "source_heading": false,
+      "note_id": "n-b886e46d58e6b340581e"
+    },
+    {
+      "id": "b-8eb57dcd77277173e0bd",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 105,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "link",
+          "anchor": "Z10336",
+          "target": [
+            "OEBPS/Text/titlepage_0074.xhtml",
+            "Y10336"
+          ],
+          "children": [
+            {
+              "type": "text",
+              "text": "〖4〗"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": "尚：高于。"
+        }
+      ],
+      "text": "〖4〗尚：高于。",
+      "kind": "modern",
+      "anchors": [
+        "Z10336"
+      ],
+      "source_heading": false,
+      "note_id": "n-de7ab04f1766566999ed"
+    },
+    {
+      "id": "b-a0a26ee19a4e8e0d809e",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 106,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "【译文】"
+        }
+      ],
+      "text": "【译文】",
+      "kind": "heading",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-03458258c06f5f86b099",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 107,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "先主昭烈甘皇后，是沛国沛县人。先主刘备当豫州牧时，住在沛县，娶她为小妾。先主多次死了嫡妻，所以甘后常常代管家内的事务。她随从先主到荆州，生下了后主刘禅。碰上曹操的追兵来到，在当阳县的长坂追上先主一行，当时情况危急，逼得先主丢下甘后和后主逃走：幸亏有赵云在身边保护，母子才得以免遭大难。甘后去世，埋葬在南郡。"
+        }
+      ],
+      "text": "先主昭烈甘皇后，是沛国沛县人。先主刘备当豫州牧时，住在沛县，娶她为小妾。先主多次死了嫡妻，所以甘后常常代管家内的事务。她随从先主到荆州，生下了后主刘禅。碰上曹操的追兵来到，在当阳县的长坂追上先主一行，当时情况危急，逼得先主丢下甘后和后主逃走：幸亏有赵云在身边保护，母子才得以免遭大难。甘后去世，埋葬在南郡。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-04e52d2f3b993ba81f1b",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 108,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "先主章武二年（公元 222），追谥他为皇思夫人，把遗骨迁到西蜀安葬，而遗骨还未运到先主就去世了。丞相诸葛亮向后主上奏说：“皇思夫人行为美好仁慈，为人贤淑谨慎。先皇帝当初任左将军的高级军职时，夫人作为嫔妃与之结合，从而养育了陛下的圣体，可惜她却未能享受长寿。先皇帝在世时，很重情义，所以特别施恩，说是想到皇思夫人的遗骨在远方的南郡孤独无依，专门派遣使者前去迎接回来。不料又恰逢先皇帝去世，现今皇思夫人的灵柩已到，而先皇帝的灵柩又正在前来成都的途中。先皇帝在成都的陵园即将修成，安葬的时间已经可以预期。为臣自作主张与太常卿臣赖恭等商议之后认为：《礼记•祭义》上说：‘树立爱心从父母开始，是为了教育人民孝顺；树立敬意从长者开始，是为了教育人民服从。’之所以不能忘记父母，在于父母给了自己生命。《春秋》上说，母亲因为有了儿子而地位贵重。从前我朝的高皇帝曾追尊生母昭灵夫人为昭灵皇后；孝和皇帝改葬生母梁贵人时，也追尊为恭怀皇后；孝愍皇帝改葬生母王夫人时，同样追尊为灵怀皇后。因此，皇思夫人也应当有尊贵的称号，以安慰陛下对母亲的思念之情。为臣自作主张，与赖恭等人查阅《谥法》，认为应当追尊为昭烈皇后。《诗经•大车》一诗说：‘活着不能同居一间住房，死了也要同葬一个墓穴。’所以昭烈皇后应当与先皇帝合葬。为臣请求陛下派太尉去向宗庙中的祖先神灵禀告，同时把此事公告天下。至于合葬的具体礼仪程序将另外上奏。”"
+        }
+      ],
+      "text": "先主章武二年（公元 222），追谥他为皇思夫人，把遗骨迁到西蜀安葬，而遗骨还未运到先主就去世了。丞相诸葛亮向后主上奏说：“皇思夫人行为美好仁慈，为人贤淑谨慎。先皇帝当初任左将军的高级军职时，夫人作为嫔妃与之结合，从而养育了陛下的圣体，可惜她却未能享受长寿。先皇帝在世时，很重情义，所以特别施恩，说是想到皇思夫人的遗骨在远方的南郡孤独无依，专门派遣使者前去迎接回来。不料又恰逢先皇帝去世，现今皇思夫人的灵柩已到，而先皇帝的灵柩又正在前来成都的途中。先皇帝在成都的陵园即将修成，安葬的时间已经可以预期。为臣自作主张与太常卿臣赖恭等商议之后认为：《礼记•祭义》上说：‘树立爱心从父母开始，是为了教育人民孝顺；树立敬意从长者开始，是为了教育人民服从。’之所以不能忘记父母，在于父母给了自己生命。《春秋》上说，母亲因为有了儿子而地位贵重。从前我朝的高皇帝曾追尊生母昭灵夫人为昭灵皇后；孝和皇帝改葬生母梁贵人时，也追尊为恭怀皇后；孝愍皇帝改葬生母王夫人时，同样追尊为灵怀皇后。因此，皇思夫人也应当有尊贵的称号，以安慰陛下对母亲的思念之情。为臣自作主张，与赖恭等人查阅《谥法》，认为应当追尊为昭烈皇后。《诗经•大车》一诗说：‘活着不能同居一间住房，死了也要同葬一个墓穴。’所以昭烈皇后应当与先皇帝合葬。为臣请求陛下派太尉去向宗庙中的祖先神灵禀告，同时把此事公告天下。至于合葬的具体礼仪程序将另外上奏。”",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-46eec43524e0218a6a08",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 109,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "后主的指示说：“同意。”"
+        }
+      ],
+      "text": "后主的指示说：“同意。”",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-f325aa7bdf134ffbda34",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 110,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "先主吴皇后，是陈留郡人。哥哥吴壹，从小死了父亲；由于吴壹的父亲与益州牧刘焉有老交情，所以吴壹全家跟随刘焉到了益州。刘焉有割据称帝的野心，而他听到会看相的术士说吴壹的妹妹有大贵之相，当时他的儿子刘瑁在身边，就让刘瑁娶了吴后为妻。刘瑁死后，吴后守寡在家。"
+        }
+      ],
+      "text": "先主吴皇后，是陈留郡人。哥哥吴壹，从小死了父亲；由于吴壹的父亲与益州牧刘焉有老交情，所以吴壹全家跟随刘焉到了益州。刘焉有割据称帝的野心，而他听到会看相的术士说吴壹的妹妹有大贵之相，当时他的儿子刘瑁在身边，就让刘瑁娶了吴后为妻。刘瑁死后，吴后守寡在家。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-b12128844d5403caa285",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 111,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "先主占领益州，孙夫人回到娘家孙吴；群臣就劝先主娶吴后。先主因为自己与刘瑁是本家而犹豫不决，法正进言说：“论起关系的亲疏来，总比不上晋文公娶亲侄儿子圉的妻子吧？”于是先主正式娶吴后为夫人。建安二十四年（公元 219），她被立为汉中王的王后。"
+        }
+      ],
+      "text": "先主占领益州，孙夫人回到娘家孙吴；群臣就劝先主娶吴后。先主因为自己与刘瑁是本家而犹豫不决，法正进言说：“论起关系的亲疏来，总比不上晋文公娶亲侄儿子圉的妻子吧？”于是先主正式娶吴后为夫人。建安二十四年（公元 219），她被立为汉中王的王后。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-071b3fdcae0158ca5717",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 112,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "章武元年（公元 221）夏五月，称帝之后的先主下达册立皇后的文书说：“朕承受天命，恭敬地接受帝位，以统治全国各地。现今以汉中王后为皇后，特派丞相诸葛亮为使者，持有节杖，授给皇后的玉玺和绶带；皇后要尊崇祖先，做天下的母亲，可要恭恭敬敬做到这些啊！”"
+        }
+      ],
+      "text": "章武元年（公元 221）夏五月，称帝之后的先主下达册立皇后的文书说：“朕承受天命，恭敬地接受帝位，以统治全国各地。现今以汉中王后为皇后，特派丞相诸葛亮为使者，持有节杖，授给皇后的玉玺和绶带；皇后要尊崇祖先，做天下的母亲，可要恭恭敬敬做到这些啊！”",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-520ff171b75c903cb6b7",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 113,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "建兴元年（公元223）五月，后主即帝位，尊称吴后为皇太后，代号是长乐宫。吴壹官做到车骑将军，封县侯。延熙八年（公元245），吴后去世，与先主合葬在惠陵。"
+        }
+      ],
+      "text": "建兴元年（公元223）五月，后主即帝位，尊称吴后为皇太后，代号是长乐宫。吴壹官做到车骑将军，封县侯。延熙八年（公元245），吴后去世，与先主合葬在惠陵。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-2de7aff0fe1c3cfda124",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 114,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "后主敬哀皇后，是车骑将军张飞的大女儿。先主章武元年（公元221），嫁给太子刘禅为妃。后主建兴元年（公元 223），立为皇后。建兴十五年（公元237）去世，安葬在南陵。"
+        }
+      ],
+      "text": "后主敬哀皇后，是车骑将军张飞的大女儿。先主章武元年（公元221），嫁给太子刘禅为妃。后主建兴元年（公元 223），立为皇后。建兴十五年（公元237）去世，安葬在南陵。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-212cda9b05d204c9d314",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 115,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "后主张皇后，是前面敬哀皇后的妹妹。建兴十五年（公元 237）进宫为后主的妃嫔，被封为贵人。延熙元年（公元 238）春正月，后主下达册立皇后的文书说：“朕继承大业，君临天下，承担天地、祖先、土神、谷神的祭祀。现今立贵人张氏为皇后，特派左将军、代行丞相职权的向朗为使者，持有节杖，授给皇后的玉玺和绶带。皇后要勉力主持内务，恭敬地举行祭祀，可要认真做到这些啊！”"
+        }
+      ],
+      "text": "后主张皇后，是前面敬哀皇后的妹妹。建兴十五年（公元 237）进宫为后主的妃嫔，被封为贵人。延熙元年（公元 238）春正月，后主下达册立皇后的文书说：“朕继承大业，君临天下，承担天地、祖先、土神、谷神的祭祀。现今立贵人张氏为皇后，特派左将军、代行丞相职权的向朗为使者，持有节杖，授给皇后的玉玺和绶带。皇后要勉力主持内务，恭敬地举行祭祀，可要认真做到这些啊！”",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-03bdb9be9e048c080a48",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 116,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "魏元帝咸熙元年（公元264），她随后主迁往洛阳。"
+        }
+      ],
+      "text": "魏元帝咸熙元年（公元264），她随后主迁往洛阳。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-2677e5e11efadb2e73ae",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 117,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "刘永，字公寿。是先主的儿子，后主庶母所生的弟弟。先主章武元年（公元 221）六月，派司徒许靖为使者，立刘永为鲁王，下达的封爵文书说：“小孩子刘永，前来接受朕赐给你的青色泥土。朕遵守上天安排好的次序，继承大业。依照古代的分封制度，建立你的封国，封你在东边的鲁郡，包括龟山和蒙山在内，世世代代充当保护辅助中央的藩王。啊，你要恭恭敬敬执行朕的诏命！想那鲁郡位于古代鲁国的故地，而鲁国的政治和教育，据孔子评价，说是只消再变革一下就可以合乎大道了。所以至今还保存着良好的风化。人们喜欢道德，世代都在增添美好。鲁王你应当秉持忠心，遵守礼仪，安抚你的下属和人民，祭祀祖先，祭祀土神，可要时刻告诫自己做好这些啊！”"
+        }
+      ],
+      "text": "刘永，字公寿。是先主的儿子，后主庶母所生的弟弟。先主章武元年（公元 221）六月，派司徒许靖为使者，立刘永为鲁王，下达的封爵文书说：“小孩子刘永，前来接受朕赐给你的青色泥土。朕遵守上天安排好的次序，继承大业。依照古代的分封制度，建立你的封国，封你在东边的鲁郡，包括龟山和蒙山在内，世世代代充当保护辅助中央的藩王。啊，你要恭恭敬敬执行朕的诏命！想那鲁郡位于古代鲁国的故地，而鲁国的政治和教育，据孔子评价，说是只消再变革一下就可以合乎大道了。所以至今还保存着良好的风化。人们喜欢道德，世代都在增添美好。鲁王你应当秉持忠心，遵守礼仪，安抚你的下属和人民，祭祀祖先，祭祀土神，可要时刻告诫自己做好这些啊！”",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-909bcd2ab1aea43792e6",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 118,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "后主建兴八年（公元 230），刘永改封为甘陵王。当初，刘永憎恨宦官黄皓。黄皓受到信任掌权后，就在后主面前诋毁刘永，后主逐渐疏远他，以至于十多年都未能进宫朝见。"
+        }
+      ],
+      "text": "后主建兴八年（公元 230），刘永改封为甘陵王。当初，刘永憎恨宦官黄皓。黄皓受到信任掌权后，就在后主面前诋毁刘永，后主逐渐疏远他，以至于十多年都未能进宫朝见。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-b0f318eead07c946440c",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 119,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "魏元帝咸熙元年（公元 264），刘永随后主东迁洛阳；被任命为奉车都尉，封为乡侯。"
+        }
+      ],
+      "text": "魏元帝咸熙元年（公元 264），刘永随后主东迁洛阳；被任命为奉车都尉，封为乡侯。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-c790dd4e67d6d53049d5",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 120,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "刘理，字奉孝。也是后主庶母所生的弟弟，但和刘永是不同母亲所生。先主章武元年（公元 221）六月，派司徒许靖为使者，立刘理为梁王，下达的封爵文书说：“小孩子刘理，朕遵照汉朝的帝位传承次序做了皇帝，恭敬地顺从天命，建立典章规定的封爵制度，把你的封国建立在东边的梁郡，充当保护辅助汉朝的藩王。想那梁郡，位于我大汉朝的京城地区，民众熟习教化；容易用礼仪教导他们。前去尽你的心，安抚保育黎民百姓，使你的国家永存，可要恭恭敬敬做到这些啊！”"
+        }
+      ],
+      "text": "刘理，字奉孝。也是后主庶母所生的弟弟，但和刘永是不同母亲所生。先主章武元年（公元 221）六月，派司徒许靖为使者，立刘理为梁王，下达的封爵文书说：“小孩子刘理，朕遵照汉朝的帝位传承次序做了皇帝，恭敬地顺从天命，建立典章规定的封爵制度，把你的封国建立在东边的梁郡，充当保护辅助汉朝的藩王。想那梁郡，位于我大汉朝的京城地区，民众熟习教化；容易用礼仪教导他们。前去尽你的心，安抚保育黎民百姓，使你的国家永存，可要恭恭敬敬做到这些啊！”",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-8782df7bd34d21cfd5e6",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 121,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "后主建兴八年（公元230），刘理改封为安平王。"
+        }
+      ],
+      "text": "后主建兴八年（公元230），刘理改封为安平王。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-f983df9ea9cabd0126cb",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 122,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "延熙七年（公元 244）去世，他被谥为悼王。儿子刘胤继承了他的爵位，在延熙十九年（公元 256）去世，谥为哀王。他的儿子刘承继承爵位，第二年去世，谥为殇王。"
+        }
+      ],
+      "text": "延熙七年（公元 244）去世，他被谥为悼王。儿子刘胤继承了他的爵位，在延熙十九年（公元 256）去世，谥为哀王。他的儿子刘承继承爵位，第二年去世，谥为殇王。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-eb79442221de16f7fc48",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 123,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "景耀四年（公元261）后主下诏说：“安平王的王爵，是先皇帝封给的。不幸三代人都早死，王爵的继承人断绝，朕因此伤心悲痛不已。现在以武邑侯刘辑继承王爵。”刘辑，是刘理的儿子。魏元帝咸熙元年（公元 264），刘辑随后主东迁洛阳；被任命为奉车都尉，封乡侯。"
+        }
+      ],
+      "text": "景耀四年（公元261）后主下诏说：“安平王的王爵，是先皇帝封给的。不幸三代人都早死，王爵的继承人断绝，朕因此伤心悲痛不已。现在以武邑侯刘辑继承王爵。”刘辑，是刘理的儿子。魏元帝咸熙元年（公元 264），刘辑随后主东迁洛阳；被任命为奉车都尉，封乡侯。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-b69307ff21f6de733d0b",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 124,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "后主的太子刘璿，字文衡。生母为王贵人，本是敬哀张皇后的侍女。后主延熙元年（公元238）正月下达的册立文书说：“从前的帝王，继承君位后就要确立自己的继承人，这是古今的常规。现今立刘璿为皇太子，以显示祖宗的神威，特委派代行丞相职权的左将军向朗为使者，持有节杖，授给印章和绶带。你要勉力培养自己的优秀品质，恪守道义，咨询和学习典章礼仪，尊敬爱戴辅导老师，吸收众人的优点，从而在大家的帮助下形成自己的美德，能不专心专意自我勉励吗！”这一年他十五岁。"
+        }
+      ],
+      "text": "后主的太子刘璿，字文衡。生母为王贵人，本是敬哀张皇后的侍女。后主延熙元年（公元238）正月下达的册立文书说：“从前的帝王，继承君位后就要确立自己的继承人，这是古今的常规。现今立刘璿为皇太子，以显示祖宗的神威，特委派代行丞相职权的左将军向朗为使者，持有节杖，授给印章和绶带。你要勉力培养自己的优秀品质，恪守道义，咨询和学习典章礼仪，尊敬爱戴辅导老师，吸收众人的优点，从而在大家的帮助下形成自己的美德，能不专心专意自我勉励吗！”这一年他十五岁。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-f3bc49953ac557f4e260",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 125,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "景耀六年（公元 263）冬，蜀国灭亡。魏元帝咸熙元年（公元264）正月，钟会在成都造反，刘璿被乱兵杀害。"
+        }
+      ],
+      "text": "景耀六年（公元 263）冬，蜀国灭亡。魏元帝咸熙元年（公元264）正月，钟会在成都造反，刘璿被乱兵杀害。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-28437c12171f79a89ce7",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0074.xhtml",
+        "index": 126,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "评论说：《周易•序卦》说是有夫妇然后才会有父子。可见夫妇是人与人之间关系的开始，感情的浓厚，再没有超过夫妇的了；所以这里加以记载，以便考察蜀汉一国的体制。"
+        }
+      ],
+      "text": "评论说：《周易•序卦》说是有夫妇然后才会有父子。可见夫妇是人与人之间关系的开始，感情的浓厚，再没有超过夫妇的了；所以这里加以记载，以便考察蜀汉一国的体制。",
+      "kind": "translation",
+      "anchors": [],
+      "source_heading": false
+    }
+  ],
+  "groups": [
+    {
+      "id": "group-001",
+      "original": [
+        "b-c3b960c67d5476e63405"
+      ],
+      "translation": [
+        "b-03458258c06f5f86b099"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-002",
+      "original": [
+        "b-ca4931503d944da1291b"
+      ],
+      "translation": [
+        "b-04e52d2f3b993ba81f1b"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-003",
+      "original": [
+        "b-823039f84a1735b0b5e8"
+      ],
+      "translation": [
+        "b-46eec43524e0218a6a08"
+      ],
+      "review": "核对起讫和相邻段，词面低相似或分段差异未发现额外错配；不表示逐字校勘。"
+    },
+    {
+      "id": "group-004",
+      "original": [
+        "b-503b60285f39e36005b1"
+      ],
+      "translation": [
+        "b-f325aa7bdf134ffbda34"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-005",
+      "original": [
+        "b-e1720e70babf6930eb0b"
+      ],
+      "translation": [
+        "b-b12128844d5403caa285"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-006",
+      "original": [
+        "b-b32e4a84f604af4b02d4"
+      ],
+      "translation": [
+        "b-071b3fdcae0158ca5717"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-007",
+      "original": [
+        "b-4d9028f30fabc08b31ce"
+      ],
+      "translation": [
+        "b-520ff171b75c903cb6b7"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-008",
+      "original": [
+        "b-cae8377725a898e49048"
+      ],
+      "translation": [
+        "b-2de7aff0fe1c3cfda124"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-009",
+      "original": [
+        "b-b00e4a0b53c2891dee6b"
+      ],
+      "translation": [
+        "b-212cda9b05d204c9d314"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-010",
+      "original": [
+        "b-c938dd06ea7b294157c0"
+      ],
+      "translation": [
+        "b-03bdb9be9e048c080a48"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-011",
+      "original": [
+        "b-73d59e5e28371f20461f"
+      ],
+      "translation": [
+        "b-2677e5e11efadb2e73ae"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-012",
+      "original": [
+        "b-f32c94405104cd60952a"
+      ],
+      "translation": [
+        "b-909bcd2ab1aea43792e6"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-013",
+      "original": [
+        "b-4eab094a726e8ab41bd6"
+      ],
+      "translation": [
+        "b-b0f318eead07c946440c"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-014",
+      "original": [
+        "b-ba53693076b6b95703b6"
+      ],
+      "translation": [
+        "b-c790dd4e67d6d53049d5"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-015",
+      "original": [
+        "b-04a5ef8a760dfbd48eb4"
+      ],
+      "translation": [
+        "b-8782df7bd34d21cfd5e6"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-016",
+      "original": [
+        "b-ebbe05c85e6433b7bc52"
+      ],
+      "translation": [
+        "b-f983df9ea9cabd0126cb"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-017",
+      "original": [
+        "b-559929cbb11346eb3c9d"
+      ],
+      "translation": [
+        "b-eb79442221de16f7fc48"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-018",
+      "original": [
+        "b-7da40348af4a58b0e891"
+      ],
+      "translation": [
+        "b-b69307ff21f6de733d0b"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-019",
+      "original": [
+        "b-caa1bd390bc6a9f3db51"
+      ],
+      "translation": [
+        "b-f3bc49953ac557f4e260"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    },
+    {
+      "id": "group-020",
+      "original": [
+        "b-5da98bd00ac2fac76110"
+      ],
+      "translation": [
+        "b-28437c12171f79a89ce7"
+      ],
+      "review": "顺序、覆盖及邻接边界机器检查通过；未逐字人工对读。"
+    }
+  ],
+  "notes": {
+    "n-26916b1bae55d31748c3": {
+      "id": "n-26916b1bae55d31748c3",
+      "type": "modern",
+      "label": "〖1〗",
+      "blocks": [
+        "b-fc8c8e4e299b38569f23"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10270"
+      ]
+    },
+    "n-4a16b362f0a12fac0a9a": {
+      "id": "n-4a16b362f0a12fac0a9a",
+      "type": "modern",
+      "label": "〖2〗",
+      "blocks": [
+        "b-c11d5910ec3b5e58ce10"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10271"
+      ]
+    },
+    "n-4a219e2987e827c77de9": {
+      "id": "n-4a219e2987e827c77de9",
+      "type": "modern",
+      "label": "〖3〗",
+      "blocks": [
+        "b-6700da4f08302003a89c"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10272"
+      ]
+    },
+    "n-161c427f1055d0347d3f": {
+      "id": "n-161c427f1055d0347d3f",
+      "type": "modern",
+      "label": "〖4〗",
+      "blocks": [
+        "b-345671bd03381d22efc1"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10273"
+      ]
+    },
+    "n-5f1fcb3b8fc3ba01c4d8": {
+      "id": "n-5f1fcb3b8fc3ba01c4d8",
+      "type": "modern",
+      "label": "〖5〗",
+      "blocks": [
+        "b-13fef67a7daafdce3a03"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10274"
+      ]
+    },
+    "n-b11b3c534e835a36f9bf": {
+      "id": "n-b11b3c534e835a36f9bf",
+      "type": "modern",
+      "label": "〖6〗",
+      "blocks": [
+        "b-aae0cd93a34f54accdf9"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10275"
+      ]
+    },
+    "n-dd04cad4f59f6aa95832": {
+      "id": "n-dd04cad4f59f6aa95832",
+      "type": "modern",
+      "label": "〖7〗",
+      "blocks": [
+        "b-2b8d02faa2ba903ebb79"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10276"
+      ]
+    },
+    "n-5ba8ee6af8d16a20d714": {
+      "id": "n-5ba8ee6af8d16a20d714",
+      "type": "modern",
+      "label": "〖8〗",
+      "blocks": [
+        "b-f9b2609635e60d1aa2cd"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10277"
+      ]
+    },
+    "n-127ed6d8d297cd62e691": {
+      "id": "n-127ed6d8d297cd62e691",
+      "type": "modern",
+      "label": "〖9〗",
+      "blocks": [
+        "b-8edb58bb704ff86ffc1f"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10278"
+      ]
+    },
+    "n-da3ebd347df01da74b07": {
+      "id": "n-da3ebd347df01da74b07",
+      "type": "modern",
+      "label": "〖10〗",
+      "blocks": [
+        "b-523cc87f976bb6ea9872"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10279"
+      ]
+    },
+    "n-26abc33eb79fbd79ba0b": {
+      "id": "n-26abc33eb79fbd79ba0b",
+      "type": "modern",
+      "label": "〖11〗",
+      "blocks": [
+        "b-d5ab59da1fafa6849e43"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10280"
+      ]
+    },
+    "n-6b441e3fcbc5d9c29570": {
+      "id": "n-6b441e3fcbc5d9c29570",
+      "type": "modern",
+      "label": "〖12〗",
+      "blocks": [
+        "b-582c03282196d082f1db"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10281"
+      ]
+    },
+    "n-10e411c6ae466b53f839": {
+      "id": "n-10e411c6ae466b53f839",
+      "type": "modern",
+      "label": "〖13〗",
+      "blocks": [
+        "b-0915d6e6e0b09250fa96"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10282"
+      ]
+    },
+    "n-d6e67d5c4a5968777905": {
+      "id": "n-d6e67d5c4a5968777905",
+      "type": "modern",
+      "label": "〖14〗",
+      "blocks": [
+        "b-1c455fbec9e0fef2e698"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10283"
+      ]
+    },
+    "n-ff49bb2957759fc50def": {
+      "id": "n-ff49bb2957759fc50def",
+      "type": "modern",
+      "label": "〖15〗",
+      "blocks": [
+        "b-5b39e31af51c7e7c4a1c"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10284"
+      ]
+    },
+    "n-25e59e3c8129eeb2c7d9": {
+      "id": "n-25e59e3c8129eeb2c7d9",
+      "type": "modern",
+      "label": "〖16〗",
+      "blocks": [
+        "b-9b774554c5eaf877f091"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10285"
+      ]
+    },
+    "n-8fc1a2397294c52934dd": {
+      "id": "n-8fc1a2397294c52934dd",
+      "type": "modern",
+      "label": "〖17〗",
+      "blocks": [
+        "b-6505b25118ce7a0329ab"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10286"
+      ]
+    },
+    "n-9907975b7001c85316b4": {
+      "id": "n-9907975b7001c85316b4",
+      "type": "modern",
+      "label": "〖18〗",
+      "blocks": [
+        "b-bbcbfcb29813a6863cb2"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10287"
+      ]
+    },
+    "n-9410bdcebe10db437dc2": {
+      "id": "n-9410bdcebe10db437dc2",
+      "type": "modern",
+      "label": "〖19〗",
+      "blocks": [
+        "b-f84a9c91a53354cb9a69"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10288"
+      ]
+    },
+    "n-67fcc780bd7466005378": {
+      "id": "n-67fcc780bd7466005378",
+      "type": "modern",
+      "label": "〖20〗",
+      "blocks": [
+        "b-a05d6b31cbcdbed8d26f"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10289"
+      ]
+    },
+    "n-e25dd2d392646abb0cd8": {
+      "id": "n-e25dd2d392646abb0cd8",
+      "type": "modern",
+      "label": "〖21〗",
+      "blocks": [
+        "b-a37253feafce80c46bf7"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10290"
+      ]
+    },
+    "n-11fc5566cd3dc46e72c2": {
+      "id": "n-11fc5566cd3dc46e72c2",
+      "type": "modern",
+      "label": "〖22〗",
+      "blocks": [
+        "b-1c9505eb127570489390"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10291"
+      ]
+    },
+    "n-d03ac6fe43e81a2e7dbb": {
+      "id": "n-d03ac6fe43e81a2e7dbb",
+      "type": "modern",
+      "label": "〖23〗",
+      "blocks": [
+        "b-4ab8cd2b064a7323bd2a"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10292"
+      ]
+    },
+    "n-af03e0c50091198f56a7": {
+      "id": "n-af03e0c50091198f56a7",
+      "type": "modern",
+      "label": "〖24〗",
+      "blocks": [
+        "b-165ee8a566c7c3353f62"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10293"
+      ]
+    },
+    "n-97cb9eb2d07aef9352b2": {
+      "id": "n-97cb9eb2d07aef9352b2",
+      "type": "modern",
+      "label": "〖25〗",
+      "blocks": [
+        "b-5de1b17e4202b1bb086e"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10294"
+      ]
+    },
+    "n-76c89db6392eef44fefb": {
+      "id": "n-76c89db6392eef44fefb",
+      "type": "pei",
+      "label": "﹝一﹞",
+      "blocks": [
+        "b-f8769e9005fd09736853"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "K1087"
+      ]
+    },
+    "n-f5d08d06796c2cef239c": {
+      "id": "n-f5d08d06796c2cef239c",
+      "type": "modern",
+      "label": "〖1〗",
+      "blocks": [
+        "b-1d76ff034e2a42c8ae00"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10295"
+      ]
+    },
+    "n-8de966218a659ba89b97": {
+      "id": "n-8de966218a659ba89b97",
+      "type": "modern",
+      "label": "〖2〗",
+      "blocks": [
+        "b-eab9b50bdeaf33f2e90e"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10296"
+      ]
+    },
+    "n-dbb15130cefd26c009cb": {
+      "id": "n-dbb15130cefd26c009cb",
+      "type": "modern",
+      "label": "〖3〗",
+      "blocks": [
+        "b-449bb744b254c0172edb"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10297"
+      ]
+    },
+    "n-36566b921c326b838d71": {
+      "id": "n-36566b921c326b838d71",
+      "type": "modern",
+      "label": "〖4〗",
+      "blocks": [
+        "b-c5af2db866fb504e14e8"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10298"
+      ]
+    },
+    "n-1299bc0f7757192db57f": {
+      "id": "n-1299bc0f7757192db57f",
+      "type": "modern",
+      "label": "〖5〗",
+      "blocks": [
+        "b-36a2b2aeea4ec19f4b4c"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10299"
+      ]
+    },
+    "n-f1cab9fbf93199645e38": {
+      "id": "n-f1cab9fbf93199645e38",
+      "type": "modern",
+      "label": "〖6〗",
+      "blocks": [
+        "b-82a1a89bb6454e241dc8"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10300"
+      ]
+    },
+    "n-069da122fc025a205856": {
+      "id": "n-069da122fc025a205856",
+      "type": "modern",
+      "label": "〖7〗",
+      "blocks": [
+        "b-34111058f02a9fadf9c6"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10301"
+      ]
+    },
+    "n-34de442dc8e97ef5070e": {
+      "id": "n-34de442dc8e97ef5070e",
+      "type": "modern",
+      "label": "〖8〗",
+      "blocks": [
+        "b-2d4880edb4b51966cf22"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10302"
+      ]
+    },
+    "n-e26d52ed69bc9da71903": {
+      "id": "n-e26d52ed69bc9da71903",
+      "type": "pei",
+      "label": "﹝一﹞",
+      "blocks": [
+        "b-46243ff94b4566a8a9e1"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "K1088"
+      ]
+    },
+    "n-d27d3c5c35c5d571ac34": {
+      "id": "n-d27d3c5c35c5d571ac34",
+      "type": "pei",
+      "label": "﹝二﹞",
+      "blocks": [
+        "b-18ebd02719a1be2155ea"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "K1089"
+      ]
+    },
+    "n-26c7f8ca5e396fd67914": {
+      "id": "n-26c7f8ca5e396fd67914",
+      "type": "pei",
+      "label": "﹝三﹞",
+      "blocks": [
+        "b-97cebf0d15e9759bd486"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "K1090"
+      ]
+    },
+    "n-c270638c18397ec944ad": {
+      "id": "n-c270638c18397ec944ad",
+      "type": "modern",
+      "label": "〖1〗",
+      "blocks": [
+        "b-c3038fb75598428ebec4"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10303"
+      ]
+    },
+    "n-4b992ec8abdc5c161b3b": {
+      "id": "n-4b992ec8abdc5c161b3b",
+      "type": "modern",
+      "label": "〖2〗",
+      "blocks": [
+        "b-b142700c93f99131141e"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10304"
+      ]
+    },
+    "n-e251212aa970ebb67a34": {
+      "id": "n-e251212aa970ebb67a34",
+      "type": "modern",
+      "label": "〖1〗",
+      "blocks": [
+        "b-82075e6f9f7152627640"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10305"
+      ]
+    },
+    "n-81a5e5ca71bc85994e04": {
+      "id": "n-81a5e5ca71bc85994e04",
+      "type": "modern",
+      "label": "〖2〗",
+      "blocks": [
+        "b-26b9732bdc40610a88d0"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10306"
+      ]
+    },
+    "n-8252cbb98b6efd477fe3": {
+      "id": "n-8252cbb98b6efd477fe3",
+      "type": "modern",
+      "label": "〖3〗",
+      "blocks": [
+        "b-d26767eb1144961dac1a"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10307"
+      ]
+    },
+    "n-df50c89086a50fa2e3c2": {
+      "id": "n-df50c89086a50fa2e3c2",
+      "type": "pei",
+      "label": "﹝一﹞",
+      "blocks": [
+        "b-81e458f732a66e6ada63"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "K1091"
+      ]
+    },
+    "n-fcbb1b9afa82d2cda8ee": {
+      "id": "n-fcbb1b9afa82d2cda8ee",
+      "type": "modern",
+      "label": "〖1〗",
+      "blocks": [
+        "b-38db7f170d86cf900649"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10308"
+      ]
+    },
+    "n-9018cbb1b5dc8546e9b8": {
+      "id": "n-9018cbb1b5dc8546e9b8",
+      "type": "modern",
+      "label": "〖2〗",
+      "blocks": [
+        "b-2a53cc25d1bb5309f0a2"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10309"
+      ]
+    },
+    "n-927503a868e2a6aee922": {
+      "id": "n-927503a868e2a6aee922",
+      "type": "modern",
+      "label": "〖3〗",
+      "blocks": [
+        "b-22566c60899a27010d0e"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10310"
+      ]
+    },
+    "n-7df1ac06722740564495": {
+      "id": "n-7df1ac06722740564495",
+      "type": "modern",
+      "label": "〖4〗",
+      "blocks": [
+        "b-b0eea9b7be88e269a0cd"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10311"
+      ]
+    },
+    "n-8d75741c3fff7c7a266b": {
+      "id": "n-8d75741c3fff7c7a266b",
+      "type": "modern",
+      "label": "〖5〗",
+      "blocks": [
+        "b-6a559329a1c69728e86f"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10312"
+      ]
+    },
+    "n-87be998101a399c288e3": {
+      "id": "n-87be998101a399c288e3",
+      "type": "modern",
+      "label": "〖6〗",
+      "blocks": [
+        "b-b56d92af966316b0fed9"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10313"
+      ]
+    },
+    "n-414e05d862396693c1bf": {
+      "id": "n-414e05d862396693c1bf",
+      "type": "modern",
+      "label": "〖7〗",
+      "blocks": [
+        "b-b614dd349cf2e0e94e85"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10314"
+      ]
+    },
+    "n-4e0c83c5c01cbd97085b": {
+      "id": "n-4e0c83c5c01cbd97085b",
+      "type": "modern",
+      "label": "〖8〗",
+      "blocks": [
+        "b-868dbf195a78162ed26e"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10315"
+      ]
+    },
+    "n-5a9a64911e5d90527136": {
+      "id": "n-5a9a64911e5d90527136",
+      "type": "modern",
+      "label": "〖9〗",
+      "blocks": [
+        "b-2af762f470b96a9c8d5b"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10316"
+      ]
+    },
+    "n-bd573e92c8b7467a58e8": {
+      "id": "n-bd573e92c8b7467a58e8",
+      "type": "modern",
+      "label": "〖10〗",
+      "blocks": [
+        "b-f53fc15d450b7b58e0ef"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10317"
+      ]
+    },
+    "n-2fb544b8c1c84ea7e42b": {
+      "id": "n-2fb544b8c1c84ea7e42b",
+      "type": "modern",
+      "label": "〖11〗",
+      "blocks": [
+        "b-8df90619b0a7d89d5702"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10318"
+      ]
+    },
+    "n-15d74a0e57eda27f3db1": {
+      "id": "n-15d74a0e57eda27f3db1",
+      "type": "modern",
+      "label": "〖12〗",
+      "blocks": [
+        "b-90743c0c123b6e96d685"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10319"
+      ]
+    },
+    "n-280875417b41bce0be18": {
+      "id": "n-280875417b41bce0be18",
+      "type": "modern",
+      "label": "〖13〗",
+      "blocks": [
+        "b-36a005b43f452b3388fb"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10320"
+      ]
+    },
+    "n-2eb7e791705464d29eca": {
+      "id": "n-2eb7e791705464d29eca",
+      "type": "modern",
+      "label": "〖14〗",
+      "blocks": [
+        "b-41ebe0fe4fa95080cdf0"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10321"
+      ]
+    },
+    "n-d0b1b4aa7b36805cf5d3": {
+      "id": "n-d0b1b4aa7b36805cf5d3",
+      "type": "modern",
+      "label": "〖1〗",
+      "blocks": [
+        "b-70b340db58264d1d051f"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10322"
+      ]
+    },
+    "n-b026a4e23ef8e56635d4": {
+      "id": "n-b026a4e23ef8e56635d4",
+      "type": "modern",
+      "label": "〖2〗",
+      "blocks": [
+        "b-2bbedf6e3684904a38b5"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10323"
+      ]
+    },
+    "n-098ab0f5eba6f7cfbf2d": {
+      "id": "n-098ab0f5eba6f7cfbf2d",
+      "type": "modern",
+      "label": "〖3〗",
+      "blocks": [
+        "b-a91183943b7cc9ef644f"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10324"
+      ]
+    },
+    "n-f1f938a9517d323be76a": {
+      "id": "n-f1f938a9517d323be76a",
+      "type": "modern",
+      "label": "〖4〗",
+      "blocks": [
+        "b-e46d28ae6da4838a5195"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10325"
+      ]
+    },
+    "n-a72dce1c386257d05488": {
+      "id": "n-a72dce1c386257d05488",
+      "type": "modern",
+      "label": "〖5〗",
+      "blocks": [
+        "b-106eba3086534356d56b"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10326"
+      ]
+    },
+    "n-bd0fcd6c1e23cd5e53a5": {
+      "id": "n-bd0fcd6c1e23cd5e53a5",
+      "type": "modern",
+      "label": "〖6〗",
+      "blocks": [
+        "b-17204a0a2841d2f09e0f"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10327"
+      ]
+    },
+    "n-83748f51333e510cdb58": {
+      "id": "n-83748f51333e510cdb58",
+      "type": "modern",
+      "label": "〖7〗",
+      "blocks": [
+        "b-d0cf0e8e0858ed35dc96"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10328"
+      ]
+    },
+    "n-51dbed206c063b9c1347": {
+      "id": "n-51dbed206c063b9c1347",
+      "type": "modern",
+      "label": "〖8〗",
+      "blocks": [
+        "b-3cdbd631e62559119911"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10329"
+      ]
+    },
+    "n-a47fbfb4e3a6478ab68e": {
+      "id": "n-a47fbfb4e3a6478ab68e",
+      "type": "modern",
+      "label": "〖1〗",
+      "blocks": [
+        "b-edf556c58f7245a1be09"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10330"
+      ]
+    },
+    "n-2644374a74a580c13feb": {
+      "id": "n-2644374a74a580c13feb",
+      "type": "modern",
+      "label": "〖2〗",
+      "blocks": [
+        "b-cc85be5393068382abe4"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10331"
+      ]
+    },
+    "n-2dceb08ad0ddf13cf7a1": {
+      "id": "n-2dceb08ad0ddf13cf7a1",
+      "type": "modern",
+      "label": "〖3〗",
+      "blocks": [
+        "b-c7dc760dc8f5a563aadc"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10332"
+      ]
+    },
+    "n-813601b69dce121e984d": {
+      "id": "n-813601b69dce121e984d",
+      "type": "pei",
+      "label": "﹝一﹞",
+      "blocks": [
+        "b-f0ff05e7afb84b61ca38"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "K1092"
+      ]
+    },
+    "n-56a2e708f8737693b680": {
+      "id": "n-56a2e708f8737693b680",
+      "type": "modern",
+      "label": "〖1〗",
+      "blocks": [
+        "b-ad23e460955ba333a2ab"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10333"
+      ]
+    },
+    "n-c2c85a862fff84cd8f99": {
+      "id": "n-c2c85a862fff84cd8f99",
+      "type": "modern",
+      "label": "〖2〗",
+      "blocks": [
+        "b-82c8f528f7aa59eaf149"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10334"
+      ]
+    },
+    "n-b886e46d58e6b340581e": {
+      "id": "n-b886e46d58e6b340581e",
+      "type": "modern",
+      "label": "〖3〗",
+      "blocks": [
+        "b-198be59743f0e3aaf851"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10335"
+      ]
+    },
+    "n-de7ab04f1766566999ed": {
+      "id": "n-de7ab04f1766566999ed",
+      "type": "modern",
+      "label": "〖4〗",
+      "blocks": [
+        "b-8eb57dcd77277173e0bd"
+      ],
+      "reference": [
+        "OEBPS/Text/titlepage_0074.xhtml",
+        "Y10336"
+      ]
+    }
+  },
+  "review_status": "machine_checked"
+}

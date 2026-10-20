@@ -1,0 +1,138 @@
+{
+  "id": "extra-145",
+  "title": "上三国志注表",
+  "kind": "extra",
+  "status": "source",
+  "blocks": [
+    {
+      "id": "b-fb619e8f306291117752",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0142.xhtml",
+        "index": 0,
+        "anchor": "filepos8718755"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "上三国志注表 "
+        }
+      ],
+      "text": "上三国志注表",
+      "kind": "heading",
+      "anchors": [
+        "filepos8718755"
+      ],
+      "source_heading": true
+    },
+    {
+      "id": "b-7df2245a2107525377ea",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0142.xhtml",
+        "index": 1,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "臣松之言：臣闻智周则万理自宾，鉴远则物无遗照。虽尽性穷微，深不可识；至于绪余所寄，则必接乎粗迹。是以体备之量，犹曰好察迩言；蓄德之厚，在于多识往行。"
+        }
+      ],
+      "text": "臣松之言：臣闻智周则万理自宾，鉴远则物无遗照。虽尽性穷微，深不可识；至于绪余所寄，则必接乎粗迹。是以体备之量，犹曰好察迩言；蓄德之厚，在于多识往行。",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-bf692de160ca94a4d787",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0142.xhtml",
+        "index": 2,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "伏惟陛下道该渊极，神超妙物；晖光日新，郁哉弥盛。虽一贯坟典，怡心玄赜；犹复降怀近代，博观兴废；将以总括前踪，贻诲来世。"
+        }
+      ],
+      "text": "伏惟陛下道该渊极，神超妙物；晖光日新，郁哉弥盛。虽一贯坟典，怡心玄赜；犹复降怀近代，博观兴废；将以总括前踪，贻诲来世。",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-0777b52442f9813dcbed",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0142.xhtml",
+        "index": 3,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "臣前被诏，使采三国异同，以注陈寿《国志》。寿书铨叙可观，事多审正；诚游览之苑囿，近世之嘉史。然失在于略，时有所脱漏。臣奉旨寻详，务在周悉；上搜旧闻，傍摭遗逸。按三国虽历年不远，而事关汉、晋；首尾所涉，出入百载；注记纷错，每多舛互。其寿所不载，事宜存录者，则罔不毕取，以补其阙；或同说一事而辞有乖杂，或出事本异，疑不能判，并皆抄纳，以备异闻；若乃纰缪显然，言不附理，则随违矫正，以惩其妄；其时事当否及寿之小失，颇以愚意，有所论辩。"
+        }
+      ],
+      "text": "臣前被诏，使采三国异同，以注陈寿《国志》。寿书铨叙可观，事多审正；诚游览之苑囿，近世之嘉史。然失在于略，时有所脱漏。臣奉旨寻详，务在周悉；上搜旧闻，傍摭遗逸。按三国虽历年不远，而事关汉、晋；首尾所涉，出入百载；注记纷错，每多舛互。其寿所不载，事宜存录者，则罔不毕取，以补其阙；或同说一事而辞有乖杂，或出事本异，疑不能判，并皆抄纳，以备异闻；若乃纰缪显然，言不附理，则随违矫正，以惩其妄；其时事当否及寿之小失，颇以愚意，有所论辩。",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-6452c12e78c77178814b",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0142.xhtml",
+        "index": 4,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "自就撰集，已垂期月；写校始讫，谨封上呈。"
+        }
+      ],
+      "text": "自就撰集，已垂期月；写校始讫，谨封上呈。",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-201173458c80098de53e",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0142.xhtml",
+        "index": 5,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "窃惟绘事以众色成文，蜜蜂以兼采为味；故能使绚素有章，甘逾本质。臣实顽乏，顾惭二物。虽自罄励，分绝藻绘；既谢淮南食时之敏，又微狂简斐然之作。淹留无成，只秽翰墨；不足以上酬圣旨，少塞愆责；愧惧之深，若坠渊谷！谨拜表以闻，随用流汗。臣松之诚惶诚恐、顿首顿首、死罪谨言。"
+        }
+      ],
+      "text": "窃惟绘事以众色成文，蜜蜂以兼采为味；故能使绚素有章，甘逾本质。臣实顽乏，顾惭二物。虽自罄励，分绝藻绘；既谢淮南食时之敏，又微狂简斐然之作。淹留无成，只秽翰墨；不足以上酬圣旨，少塞愆责；愧惧之深，若坠渊谷！谨拜表以闻，随用流汗。臣松之诚惶诚恐、顿首顿首、死罪谨言。",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-e64c89708779ff8d126a",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0142.xhtml",
+        "index": 6,
+        "anchor": null
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "元嘉六年七月二十四日，中书侍郎、西乡侯臣裴松之上。"
+        }
+      ],
+      "text": "元嘉六年七月二十四日，中书侍郎、西乡侯臣裴松之上。",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    }
+  ],
+  "groups": [],
+  "notes": {}
+}

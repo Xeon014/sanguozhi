@@ -1,0 +1,30 @@
+{
+  "id": "extra-048",
+  "title": "第二分册",
+  "kind": "extra",
+  "status": "source",
+  "blocks": [
+    {
+      "id": "b-f1337ffd96f15731f70b",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0046.xhtml",
+        "index": 0,
+        "anchor": "filepos3301865"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "第二分册 "
+        }
+      ],
+      "text": "第二分册",
+      "kind": "heading",
+      "anchors": [
+        "filepos3301865"
+      ],
+      "source_heading": true
+    }
+  ],
+  "groups": [],
+  "notes": {}
+}

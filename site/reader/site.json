@@ -1,0 +1,165 @@
+{
+  "title": "三国志",
+  "credit": "陈寿 撰 · 裴松之 注",
+  "noteLabels": {
+    "modern": "注释",
+    "pei": "裴注"
+  },
+  "collections": [
+    {
+      "id": "wei",
+      "label": "魏书",
+      "subtitle": "本纪与列传",
+      "chapters": [
+        "chapter-001",
+        "chapter-002",
+        "chapter-003",
+        "chapter-004",
+        "chapter-005",
+        "chapter-006",
+        "chapter-007",
+        "chapter-008",
+        "chapter-009",
+        "chapter-010",
+        "chapter-011",
+        "chapter-012",
+        "chapter-013",
+        "chapter-014",
+        "chapter-015",
+        "chapter-016",
+        "chapter-017",
+        "chapter-018",
+        "chapter-019",
+        "chapter-020",
+        "chapter-021",
+        "chapter-022",
+        "chapter-023",
+        "chapter-024",
+        "chapter-025",
+        "chapter-026",
+        "chapter-027",
+        "chapter-028",
+        "chapter-029",
+        "chapter-030"
+      ]
+    },
+    {
+      "id": "shu",
+      "label": "蜀书",
+      "subtitle": "先主后主与蜀汉诸臣",
+      "chapters": [
+        "chapter-031",
+        "chapter-032",
+        "chapter-033",
+        "chapter-034",
+        "chapter-035",
+        "chapter-036",
+        "chapter-037",
+        "chapter-038",
+        "chapter-039",
+        "chapter-040",
+        "chapter-041",
+        "chapter-042",
+        "chapter-043",
+        "chapter-044",
+        "chapter-045"
+      ]
+    },
+    {
+      "id": "wu",
+      "label": "吴书",
+      "subtitle": "江东三世与吴国诸臣",
+      "chapters": [
+        "chapter-046",
+        "chapter-047",
+        "chapter-048",
+        "chapter-049",
+        "chapter-050",
+        "chapter-051",
+        "chapter-052",
+        "chapter-053",
+        "chapter-054",
+        "chapter-055",
+        "chapter-056",
+        "chapter-057",
+        "chapter-058",
+        "chapter-059",
+        "chapter-060",
+        "chapter-061",
+        "chapter-062",
+        "chapter-063",
+        "chapter-064",
+        "chapter-065"
+      ]
+    }
+  ],
+  "featured": [
+    "chapter-001",
+    "chapter-010",
+    "chapter-017",
+    "chapter-032",
+    "chapter-035",
+    "chapter-036",
+    "chapter-046",
+    "chapter-047",
+    "chapter-054"
+  ],
+  "supplements": [
+    {
+      "title": "人物与文献",
+      "sections": [
+        "extra-142",
+        "extra-143",
+        "extra-144",
+        "extra-145"
+      ]
+    }
+  ],
+  "excludedSections": ["extra-146", "extra-147", "extra-148"],
+  "knowledge": {
+    "file": "knowledge/catalog.json",
+    "people": [
+      {
+        "id": "cao-cao",
+        "section": "chapter-001"
+      },
+      {
+        "id": "wudi-p0170",
+        "section": "chapter-002"
+      },
+      {
+        "id": "wendi-p0005",
+        "section": "chapter-003"
+      },
+      {
+        "id": "wendi-p0129",
+        "section": "chapter-004"
+      },
+      {
+        "id": "shaodi-p0068",
+        "section": "chapter-004"
+      },
+      {
+        "id": "shaodi-p0137",
+        "section": "chapter-004"
+      },
+      {
+        "id": "liu-bei",
+        "section": "chapter-032"
+      },
+      {
+        "id": "zhou-yu",
+        "section": "chapter-054"
+      },
+      {
+        "id": "lu-su",
+        "section": "chapter-054"
+      },
+      {
+        "id": "lu-meng",
+        "section": "chapter-054"
+      }
+    ],
+    "profiles": "knowledge/profiles.json"
+  }
+}

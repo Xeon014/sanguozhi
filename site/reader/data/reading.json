@@ -1,0 +1,1113 @@
+{
+  "note_references": {
+    "modern": 18066,
+    "pei": 1753
+  },
+  "reviewed_sections": [
+    {
+      "id": "chapter-001",
+      "groups": 196,
+      "blocks_by_type": {
+        "heading": 96,
+        "original": 202,
+        "modern": 695,
+        "pei": 157,
+        "translation": 201
+      },
+      "notes_by_type": {
+        "modern": 695,
+        "pei": 118
+      },
+      "review_status": "verified",
+      "reviewer": "Codex 原译对应核对，非用户确认或版本学勘校"
+    },
+    {
+      "id": "chapter-002",
+      "groups": 56,
+      "blocks_by_type": {
+        "heading": 43,
+        "original": 58,
+        "modern": 317,
+        "pei": 107,
+        "translation": 57
+      },
+      "notes_by_type": {
+        "modern": 317,
+        "pei": 45
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-003",
+      "groups": 68,
+      "blocks_by_type": {
+        "heading": 36,
+        "original": 69,
+        "modern": 351,
+        "pei": 62,
+        "translation": 74
+      },
+      "notes_by_type": {
+        "modern": 351,
+        "pei": 36
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-004",
+      "groups": 193,
+      "blocks_by_type": {
+        "heading": 56,
+        "original": 193,
+        "modern": 682,
+        "pei": 59,
+        "translation": 196
+      },
+      "notes_by_type": {
+        "modern": 682,
+        "pei": 33
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-005",
+      "groups": 51,
+      "blocks_by_type": {
+        "heading": 25,
+        "original": 53,
+        "modern": 152,
+        "pei": 25,
+        "translation": 51
+      },
+      "notes_by_type": {
+        "modern": 152,
+        "pei": 19
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-006",
+      "groups": 91,
+      "blocks_by_type": {
+        "heading": 55,
+        "original": 91,
+        "modern": 254,
+        "pei": 128,
+        "translation": 92
+      },
+      "notes_by_type": {
+        "modern": 254,
+        "pei": 89
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-007",
+      "groups": 54,
+      "blocks_by_type": {
+        "heading": 30,
+        "original": 54,
+        "modern": 247,
+        "pei": 29,
+        "translation": 56
+      },
+      "notes_by_type": {
+        "modern": 247,
+        "pei": 25
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-008",
+      "groups": 58,
+      "blocks_by_type": {
+        "heading": 32,
+        "original": 58,
+        "modern": 170,
+        "pei": 62,
+        "translation": 59
+      },
+      "notes_by_type": {
+        "modern": 170,
+        "pei": 44
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-009",
+      "groups": 108,
+      "blocks_by_type": {
+        "heading": 47,
+        "original": 108,
+        "modern": 430,
+        "pei": 71,
+        "translation": 109
+      },
+      "notes_by_type": {
+        "modern": 430,
+        "pei": 49
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-010",
+      "groups": 70,
+      "blocks_by_type": {
+        "heading": 42,
+        "original": 71,
+        "modern": 199,
+        "pei": 58,
+        "translation": 73
+      },
+      "notes_by_type": {
+        "modern": 199,
+        "pei": 39
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-011",
+      "groups": 87,
+      "blocks_by_type": {
+        "heading": 48,
+        "original": 87,
+        "modern": 403,
+        "pei": 62,
+        "translation": 88
+      },
+      "notes_by_type": {
+        "modern": 403,
+        "pei": 46
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-012",
+      "groups": 69,
+      "blocks_by_type": {
+        "heading": 33,
+        "original": 69,
+        "modern": 286,
+        "pei": 36,
+        "translation": 70
+      },
+      "notes_by_type": {
+        "modern": 286,
+        "pei": 26
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-013",
+      "groups": 77,
+      "blocks_by_type": {
+        "heading": 43,
+        "original": 77,
+        "modern": 361,
+        "pei": 50,
+        "translation": 77
+      },
+      "notes_by_type": {
+        "modern": 361,
+        "pei": 39
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-014",
+      "groups": 104,
+      "blocks_by_type": {
+        "heading": 46,
+        "original": 104,
+        "modern": 354,
+        "pei": 43,
+        "translation": 105
+      },
+      "notes_by_type": {
+        "modern": 354,
+        "pei": 39
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-015",
+      "groups": 66,
+      "blocks_by_type": {
+        "heading": 32,
+        "original": 69,
+        "modern": 171,
+        "pei": 39,
+        "translation": 68
+      },
+      "notes_by_type": {
+        "modern": 171,
+        "pei": 28
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-016",
+      "groups": 70,
+      "blocks_by_type": {
+        "heading": 36,
+        "original": 71,
+        "modern": 239,
+        "pei": 40,
+        "translation": 72
+      },
+      "notes_by_type": {
+        "modern": 239,
+        "pei": 33
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-017",
+      "groups": 51,
+      "blocks_by_type": {
+        "heading": 21,
+        "original": 51,
+        "modern": 112,
+        "pei": 12,
+        "translation": 51
+      },
+      "notes_by_type": {
+        "modern": 112,
+        "pei": 12
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-018",
+      "groups": 65,
+      "blocks_by_type": {
+        "heading": 22,
+        "original": 65,
+        "modern": 178,
+        "pei": 25,
+        "translation": 67
+      },
+      "notes_by_type": {
+        "modern": 178,
+        "pei": 17
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-019",
+      "groups": 54,
+      "blocks_by_type": {
+        "heading": 21,
+        "original": 55,
+        "modern": 369,
+        "pei": 29,
+        "translation": 195
+      },
+      "notes_by_type": {
+        "modern": 369,
+        "pei": 21
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-020",
+      "groups": 68,
+      "blocks_by_type": {
+        "heading": 22,
+        "original": 68,
+        "modern": 166,
+        "pei": 18,
+        "translation": 69
+      },
+      "notes_by_type": {
+        "modern": 166,
+        "pei": 11
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-021",
+      "groups": 69,
+      "blocks_by_type": {
+        "heading": 39,
+        "original": 72,
+        "modern": 378,
+        "pei": 82,
+        "translation": 73
+      },
+      "notes_by_type": {
+        "modern": 378,
+        "pei": 53
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-022",
+      "groups": 84,
+      "blocks_by_type": {
+        "heading": 43,
+        "original": 88,
+        "modern": 457,
+        "pei": 27,
+        "translation": 86
+      },
+      "notes_by_type": {
+        "modern": 457,
+        "pei": 20
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-023",
+      "groups": 69,
+      "blocks_by_type": {
+        "heading": 34,
+        "original": 70,
+        "modern": 263,
+        "pei": 31,
+        "translation": 71
+      },
+      "notes_by_type": {
+        "modern": 263,
+        "pei": 18
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-024",
+      "groups": 73,
+      "blocks_by_type": {
+        "heading": 30,
+        "original": 75,
+        "modern": 330,
+        "pei": 20,
+        "translation": 75
+      },
+      "notes_by_type": {
+        "modern": 330,
+        "pei": 16
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-025",
+      "groups": 90,
+      "blocks_by_type": {
+        "heading": 29,
+        "original": 92,
+        "modern": 569,
+        "pei": 13,
+        "translation": 95
+      },
+      "notes_by_type": {
+        "modern": 568,
+        "pei": 11
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-026",
+      "groups": 75,
+      "blocks_by_type": {
+        "heading": 25,
+        "original": 76,
+        "modern": 272,
+        "pei": 11,
+        "translation": 77
+      },
+      "notes_by_type": {
+        "modern": 272,
+        "pei": 10
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-027",
+      "groups": 61,
+      "blocks_by_type": {
+        "heading": 23,
+        "original": 64,
+        "modern": 270,
+        "pei": 17,
+        "translation": 62
+      },
+      "notes_by_type": {
+        "modern": 270,
+        "pei": 15
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-028",
+      "groups": 111,
+      "blocks_by_type": {
+        "heading": 49,
+        "original": 117,
+        "modern": 410,
+        "pei": 68,
+        "translation": 121
+      },
+      "notes_by_type": {
+        "modern": 410,
+        "pei": 49
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-029",
+      "groups": 84,
+      "blocks_by_type": {
+        "heading": 35,
+        "original": 85,
+        "modern": 307,
+        "pei": 41,
+        "translation": 88
+      },
+      "notes_by_type": {
+        "modern": 307,
+        "pei": 26
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-030",
+      "groups": 101,
+      "blocks_by_type": {
+        "heading": 34,
+        "original": 105,
+        "modern": 317,
+        "pei": 33,
+        "translation": 102
+      },
+      "notes_by_type": {
+        "modern": 316,
+        "pei": 17
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-031",
+      "groups": 19,
+      "blocks_by_type": {
+        "heading": 11,
+        "original": 19,
+        "modern": 87,
+        "pei": 23,
+        "translation": 19
+      },
+      "notes_by_type": {
+        "modern": 87,
+        "pei": 20
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-032",
+      "groups": 73,
+      "blocks_by_type": {
+        "heading": 35,
+        "original": 78,
+        "modern": 307,
+        "pei": 51,
+        "translation": 79
+      },
+      "notes_by_type": {
+        "modern": 307,
+        "pei": 47
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-033",
+      "groups": 71,
+      "blocks_by_type": {
+        "heading": 19,
+        "original": 74,
+        "modern": 168,
+        "pei": 17,
+        "translation": 73
+      },
+      "notes_by_type": {
+        "modern": 168,
+        "pei": 15
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-034",
+      "groups": 20,
+      "blocks_by_type": {
+        "heading": 15,
+        "original": 20,
+        "modern": 67,
+        "pei": 6,
+        "translation": 20
+      },
+      "notes_by_type": {
+        "modern": 67,
+        "pei": 6
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-035",
+      "groups": 91,
+      "blocks_by_type": {
+        "heading": 26,
+        "original": 91,
+        "modern": 295,
+        "pei": 59,
+        "translation": 92
+      },
+      "notes_by_type": {
+        "modern": 295,
+        "pei": 35
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-036",
+      "groups": 47,
+      "blocks_by_type": {
+        "heading": 24,
+        "original": 48,
+        "modern": 125,
+        "pei": 27,
+        "translation": 49
+      },
+      "notes_by_type": {
+        "modern": 125,
+        "pei": 22
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-037",
+      "groups": 27,
+      "blocks_by_type": {
+        "heading": 16,
+        "original": 28,
+        "modern": 145,
+        "pei": 15,
+        "translation": 30
+      },
+      "notes_by_type": {
+        "modern": 145,
+        "pei": 13
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-038",
+      "groups": 56,
+      "blocks_by_type": {
+        "heading": 28,
+        "original": 58,
+        "modern": 319,
+        "pei": 25,
+        "translation": 58
+      },
+      "notes_by_type": {
+        "modern": 319,
+        "pei": 21
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-039",
+      "groups": 46,
+      "blocks_by_type": {
+        "heading": 18,
+        "original": 46,
+        "modern": 165,
+        "pei": 17,
+        "translation": 46
+      },
+      "notes_by_type": {
+        "modern": 164,
+        "pei": 17
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-040",
+      "groups": 65,
+      "blocks_by_type": {
+        "heading": 25,
+        "original": 67,
+        "modern": 254,
+        "pei": 17,
+        "translation": 65
+      },
+      "notes_by_type": {
+        "modern": 254,
+        "pei": 17
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-041",
+      "groups": 48,
+      "blocks_by_type": {
+        "heading": 15,
+        "original": 50,
+        "modern": 147,
+        "pei": 15,
+        "translation": 48
+      },
+      "notes_by_type": {
+        "modern": 147,
+        "pei": 11
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-042",
+      "groups": 90,
+      "blocks_by_type": {
+        "heading": 34,
+        "original": 91,
+        "modern": 446,
+        "pei": 31,
+        "translation": 91
+      },
+      "notes_by_type": {
+        "modern": 446,
+        "pei": 29
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-043",
+      "groups": 64,
+      "blocks_by_type": {
+        "heading": 24,
+        "original": 67,
+        "modern": 174,
+        "pei": 19,
+        "translation": 65
+      },
+      "notes_by_type": {
+        "modern": 174,
+        "pei": 18
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-044",
+      "groups": 57,
+      "blocks_by_type": {
+        "heading": 22,
+        "original": 58,
+        "modern": 187,
+        "pei": 25,
+        "translation": 57
+      },
+      "notes_by_type": {
+        "modern": 187,
+        "pei": 20
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-045",
+      "groups": 96,
+      "blocks_by_type": {
+        "heading": 24,
+        "original": 96,
+        "modern": 254,
+        "pei": 21,
+        "translation": 129
+      },
+      "notes_by_type": {
+        "modern": 254,
+        "pei": 15
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-046",
+      "groups": 37,
+      "blocks_by_type": {
+        "heading": 19,
+        "original": 37,
+        "modern": 187,
+        "pei": 59,
+        "translation": 37
+      },
+      "notes_by_type": {
+        "modern": 187,
+        "pei": 36
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-047",
+      "groups": 168,
+      "blocks_by_type": {
+        "heading": 44,
+        "original": 169,
+        "modern": 566,
+        "pei": 76,
+        "translation": 169
+      },
+      "notes_by_type": {
+        "modern": 566,
+        "pei": 62
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-048",
+      "groups": 123,
+      "blocks_by_type": {
+        "heading": 47,
+        "original": 125,
+        "modern": 340,
+        "pei": 57,
+        "translation": 125
+      },
+      "notes_by_type": {
+        "modern": 340,
+        "pei": 43
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-049",
+      "groups": 47,
+      "blocks_by_type": {
+        "heading": 16,
+        "original": 47,
+        "modern": 177,
+        "pei": 18,
+        "translation": 47
+      },
+      "notes_by_type": {
+        "modern": 177,
+        "pei": 15
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-050",
+      "groups": 44,
+      "blocks_by_type": {
+        "heading": 25,
+        "original": 44,
+        "modern": 85,
+        "pei": 19,
+        "translation": 45
+      },
+      "notes_by_type": {
+        "modern": 85,
+        "pei": 19
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-051",
+      "groups": 49,
+      "blocks_by_type": {
+        "heading": 26,
+        "original": 50,
+        "modern": 142,
+        "pei": 24,
+        "translation": 49
+      },
+      "notes_by_type": {
+        "modern": 141,
+        "pei": 22
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-052",
+      "groups": 98,
+      "blocks_by_type": {
+        "heading": 38,
+        "original": 99,
+        "modern": 350,
+        "pei": 44,
+        "translation": 101
+      },
+      "notes_by_type": {
+        "modern": 349,
+        "pei": 38
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-053",
+      "groups": 59,
+      "blocks_by_type": {
+        "heading": 23,
+        "original": 59,
+        "modern": 267,
+        "pei": 27,
+        "translation": 150
+      },
+      "notes_by_type": {
+        "modern": 267,
+        "pei": 24
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-054",
+      "groups": 98,
+      "blocks_by_type": {
+        "heading": 35,
+        "original": 98,
+        "modern": 339,
+        "pei": 26,
+        "translation": 102
+      },
+      "notes_by_type": {
+        "modern": 339,
+        "pei": 23
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-055",
+      "groups": 117,
+      "blocks_by_type": {
+        "heading": 32,
+        "original": 117,
+        "modern": 227,
+        "pei": 21,
+        "translation": 117
+      },
+      "notes_by_type": {
+        "modern": 227,
+        "pei": 20
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-056",
+      "groups": 73,
+      "blocks_by_type": {
+        "heading": 26,
+        "original": 73,
+        "modern": 192,
+        "pei": 14,
+        "translation": 77
+      },
+      "notes_by_type": {
+        "modern": 192,
+        "pei": 14
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-057",
+      "groups": 82,
+      "blocks_by_type": {
+        "heading": 32,
+        "original": 82,
+        "modern": 348,
+        "pei": 43,
+        "translation": 86
+      },
+      "notes_by_type": {
+        "modern": 348,
+        "pei": 26
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-058",
+      "groups": 84,
+      "blocks_by_type": {
+        "heading": 28,
+        "original": 84,
+        "modern": 335,
+        "pei": 18,
+        "translation": 84
+      },
+      "notes_by_type": {
+        "modern": 335,
+        "pei": 14
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-059",
+      "groups": 71,
+      "blocks_by_type": {
+        "heading": 24,
+        "original": 71,
+        "modern": 182,
+        "pei": 21,
+        "translation": 74
+      },
+      "notes_by_type": {
+        "modern": 182,
+        "pei": 16
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-060",
+      "groups": 89,
+      "blocks_by_type": {
+        "heading": 36,
+        "original": 89,
+        "modern": 283,
+        "pei": 26,
+        "translation": 89
+      },
+      "notes_by_type": {
+        "modern": 282,
+        "pei": 24
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-061",
+      "groups": 63,
+      "blocks_by_type": {
+        "heading": 16,
+        "original": 63,
+        "modern": 185,
+        "pei": 12,
+        "translation": 65
+      },
+      "notes_by_type": {
+        "modern": 183,
+        "pei": 10
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-062",
+      "groups": 44,
+      "blocks_by_type": {
+        "heading": 16,
+        "original": 44,
+        "modern": 156,
+        "pei": 5,
+        "translation": 102
+      },
+      "notes_by_type": {
+        "modern": 156,
+        "pei": 4
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-063",
+      "groups": 26,
+      "blocks_by_type": {
+        "heading": 12,
+        "original": 26,
+        "modern": 73,
+        "pei": 12,
+        "translation": 26
+      },
+      "notes_by_type": {
+        "modern": 73,
+        "pei": 6
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-064",
+      "groups": 114,
+      "blocks_by_type": {
+        "heading": 37,
+        "original": 115,
+        "modern": 378,
+        "pei": 30,
+        "translation": 114
+      },
+      "notes_by_type": {
+        "modern": 378,
+        "pei": 22
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    },
+    {
+      "id": "chapter-065",
+      "groups": 65,
+      "blocks_by_type": {
+        "heading": 23,
+        "original": 66,
+        "modern": 413,
+        "pei": 9,
+        "translation": 92
+      },
+      "notes_by_type": {
+        "modern": 413,
+        "pei": 5
+      },
+      "review_status": "machine_checked",
+      "reviewer": "Codex：全量结构与边界机器检查；717 个无注标续段分类复核，异常组起讫重点对读。未声称全书逐字人工精校。"
+    }
+  ]
+}
