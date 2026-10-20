@@ -111,7 +111,7 @@ function notesHTML(group) {
   const ids=[...new Set(group.original.flatMap(id=>blockMap.get(id).tokens.filter(t=>t.note_id).map(t=>t.note_id)))];
   return `<div class="note-stacks">${Object.keys(book.note_types).filter(k=>ids.some(id=>section.notes[id].type===k)).map(k=>`<details class="note-stack ${noteClass(k)}" id="notes-${group.id}-${k}"><summary>${esc(cv(label(k)))}</summary>${ids.filter(id=>section.notes[id].type===k).map(id=>{
     const n=section.notes[id],ref=group.original.find(bid=>blockMap.get(bid).tokens.some(t=>t.note_id===id));
-    return `<details class="note ${noteClass(n.type)}" id="${n.id}"><summary>${esc(cv(label(n.type)))} ${esc(cv(n.label))}</summary><div class="note-body">${n.blocks.map(b=>blockHTML(b)).join('')}<a class="return-link" data-return="${esc(ref)}" href="${url(section.id,ref)}">↑ ${cv('收起并返回引用')}</a></div></details>`;
+    return `<details class="note ${noteClass(n.type)}" id="${n.id}"><summary>${esc(cv(label(n.type)))} ${esc(cv(n.label))}</summary><div class="note-body">${n.blocks.map(b=>blockHTML(b)).join('')}<div class="reading-actions"><a class="return-link" data-return="${esc(ref)}" href="${url(section.id,ref)}">${cv('收起并返回引用')} ↑</a></div></div></details>`;
   }).join('')}</details>`).join('')}</div>`;
 }
 function setMode(mode) {
@@ -194,7 +194,7 @@ async function readSection(id,target,version) {
     note.scrollIntoView({block:'nearest'});note.querySelector('summary').focus({preventScroll:true});saveContext();
   });
   document.querySelectorAll('.note').forEach(n=>n.addEventListener('toggle',()=>document.querySelectorAll(`[data-note="${n.id}"]`).forEach(b=>b.setAttribute('aria-expanded',String(n.open)))));
-  document.querySelectorAll('[data-return]').forEach(a=>a.onclick=e=>{e.preventDefault();const n=a.closest('.note');const ref=document.getElementById(n.dataset.returnId);const dest=ref?.getClientRects().length?ref:(ref?.closest('.block')||document.getElementById(a.dataset.return));n.open=false;dest?.scrollIntoView({block:'center'});dest?.focus({preventScroll:true});});
+  document.querySelectorAll('[data-return]').forEach(a=>a.onclick=e=>{e.preventDefault();const n=a.closest('.note');const ref=document.getElementById(n.dataset.returnId);const dest=ref?.getClientRects().length?ref:(ref?.closest('.block')||document.getElementById(a.dataset.return));n.open=false;dest?.scrollIntoView({block:'center'});dest?.focus({preventScroll:true});saveContext();});
   if(target){if(!focusTarget(target))main.insertAdjacentHTML('afterbegin',`<p role="status">${cv('未找到指定段落，已显示本章。')}</p>`);}
   else window.scrollTo(0,0);
   if(returnSearch){const back=document.createElement('a');back.className='back-search';back.href=returnSearch.hash;
@@ -276,7 +276,17 @@ async function route(){
       if(parts[0]==='people'&&qs.get('view')!=='sources')saved=biographyContext(profiles[parts[1]]?.biography,saved);
       replaceHash(canonicalKnowledgeHash(parts,qs,content,profiles));
       const cleanQS=new URLSearchParams(location.hash.split('?')[1]||'');
-      knowledgeTitle=renderKnowledge(content,{main,parts,qs:cleanQS,esc,cv,normalize,url,navigate:hash=>navigate(hash,null,null,returnList),saved,profiles,visiblePeople:site.knowledge.people??null,legacySources:parts[0]==='events'&&qs.get('view')==='sources',onChange:saveContext});
+      let sections={};
+      if(parts[0]==='events'&&parts[1]){
+        const event=content.events.find(e=>e.id===parts[1]);
+        if(event){
+          const refs=new Set([...event.time.evidence,...event.accounts.flatMap(a=>a.evidence),...event.participants.flatMap(p=>p.evidence),...(event.place?.evidence||[])]);
+          const ids=[...new Set(content.evidence.filter(r=>refs.has(r.id)).map(r=>r.section))];
+          sections=Object.fromEntries(await Promise.all(ids.map(async id=>[id,await data(`sections/${id}.json`)])));
+          if(version!==routeVersion)return;
+        }
+      }
+      knowledgeTitle=renderKnowledge(content,{main,parts,qs:cleanQS,esc,cv,normalize,url,navigate:hash=>navigate(hash,null,null,returnList),saved,profiles,sections,visiblePeople:site.knowledge.people??null,legacySources:parts[0]==='events'&&qs.get('view')==='sources',onChange:saveContext});
       if(parts[0]==='events'&&parts[1]&&returnList){
         const back=document.createElement('a');back.className='knowledge-back';back.href=returnList.hash;back.textContent=cv('← 返回查询结果');
         back.onclick=e=>{e.preventDefault();navigate(returnList.hash,returnList.view);};$('.knowledge-page').prepend(back);
