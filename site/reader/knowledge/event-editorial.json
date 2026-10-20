@@ -1,0 +1,693 @@
+{
+  "schema_version": 1,
+  "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+  "section_sha256": {
+    "chapter-001": "8aca4c346aa9cc8706094afc84a5888aa03910aadd75d3ee763fc732c00f7cf9",
+    "chapter-002": "818e8049aaf4f2a93e8e46cd1aec733ed0e64863d8e91740be9c2472df004a3f",
+    "chapter-006": "901e82940ed39d65d67bf239a4d4a22ef64dca1eccad342805569308ff9b1042",
+    "chapter-032": "a96846f8d938ee9c7b7644e4c1129ee5f143cef89abd660e00079e672445f305",
+    "chapter-047": "d1894475df403fb65529aa57eb61a381255c0003de05a8ea635c4c1e3ad1321c",
+    "chapter-054": "b5a12151318a634fc4ef1614a82b326cf31c11f29517fa7499b22e9df91cfead",
+    "chapter-010": "09b405418e12ca9955223795330cf68335053af94f8586f546597fb93df73066",
+    "chapter-036": "47395a433ab8fe36f518928103d5c65f2d0e0c2ab4c4f2a0b4d3b20baa6edfa4",
+    "chapter-035": "1562f254358a04b1163df4f3f0ded73c0127bc1cbfa658b64749c98d9dc0f472",
+    "chapter-009": "1ea4f07c42f6c03a0ea52f25f11f50d07eebc10e103b79badbcf752f5eb248bd",
+    "chapter-017": "5cec5d9ac492f6f2d39500b30462be81180ffc6a29b4d9a4d704029814fb72d3"
+  },
+  "taxonomy": {
+    "record_kind": {
+      "event": "史事记载",
+      "commentary": "史家评述"
+    },
+    "importance": {
+      "major": "大事",
+      "significant": "重要事项",
+      "detail": "细节"
+    },
+    "categories": {
+      "military": "军事",
+      "government": "政务",
+      "appointment": "任免",
+      "diplomacy": "外交",
+      "economy": "经济民生",
+      "ritual": "礼制",
+      "culture": "文化",
+      "personal": "个人经历",
+      "portent": "灾异"
+    }
+  },
+  "records": {
+    "wudi-e-p003a": {
+      "record_kind": "event",
+      "categories": [
+        "personal"
+      ],
+      "importance": "detail",
+      "primary_group": null
+    },
+    "wudi-e-o003a": {
+      "record_kind": "event",
+      "categories": [
+        "appointment",
+        "personal"
+      ],
+      "importance": "significant",
+      "primary_group": null
+    },
+    "wudi-e-p011b": {
+      "record_kind": "event",
+      "categories": [
+        "culture",
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": null
+    },
+    "wudi-e-p011c": {
+      "record_kind": "event",
+      "categories": [
+        "personal"
+      ],
+      "importance": "detail",
+      "primary_group": null
+    },
+    "wudi-e-p012a": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "personal"
+      ],
+      "importance": "significant",
+      "primary_group": null
+    },
+    "wudi-e-p013b": {
+      "record_kind": "event",
+      "categories": [
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o004a": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "appointment"
+      ],
+      "importance": "significant",
+      "primary_group": null
+    },
+    "wudi-e-o004b": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "ritual"
+      ],
+      "importance": "significant",
+      "primary_group": null
+    },
+    "wudi-e-o007b": {
+      "record_kind": "event",
+      "categories": [
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o008a": {
+      "record_kind": "event",
+      "categories": [
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o008e": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "personal"
+      ],
+      "importance": "significant",
+      "primary_group": null
+    },
+    "wudi-e-o009a": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o010a": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "military"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o012a": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": null
+    },
+    "wudi-e-o018a": {
+      "record_kind": "event",
+      "categories": [
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o022c": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o026a": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": null
+    },
+    "wudi-e-o030a": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o033a": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "personal"
+      ],
+      "importance": "detail",
+      "primary_group": null
+    },
+    "wudi-e-o043a": {
+      "record_kind": "event",
+      "categories": [
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o047a": {
+      "record_kind": "event",
+      "categories": [
+        "economy",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o050a": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "personal"
+      ],
+      "importance": "significant",
+      "primary_group": null
+    },
+    "wudi-e-o058b": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o073a": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": "guandu-campaign"
+    },
+    "wudi-e-o074a": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": "guandu-campaign"
+    },
+    "wudi-e-o075a": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": "guandu-campaign"
+    },
+    "wudi-e-o077a": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": "guandu-campaign"
+    },
+    "wudi-e-o077b": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": "guandu-campaign"
+    },
+    "wudi-e-o080a": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": "guandu-campaign"
+    },
+    "wudi-e-o080b": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": "guandu-campaign"
+    },
+    "wudi-e-o081a": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "major",
+      "primary_group": "guandu-campaign"
+    },
+    "wudi-e-o081b": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "importance": "significant",
+      "primary_group": "guandu-campaign"
+    },
+    "wudi-e-p060b": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": "guandu-campaign"
+    },
+    "wudi-e-o085a": {
+      "record_kind": "event",
+      "categories": [
+        "economy",
+        "government"
+      ],
+      "importance": "significant",
+      "primary_group": null
+    },
+    "wudi-e-o090a": {
+      "record_kind": "event",
+      "categories": [
+        "culture",
+        "government"
+      ],
+      "importance": "significant",
+      "primary_group": null
+    },
+    "wudi-e-o096a": {
+      "record_kind": "event",
+      "categories": [
+        "economy",
+        "government"
+      ],
+      "importance": "significant",
+      "primary_group": null
+    },
+    "wudi-e-p074a": {
+      "record_kind": "event",
+      "categories": [
+        "economy",
+        "government"
+      ],
+      "importance": "significant",
+      "primary_group": null
+    },
+    "wudi-e-o100a": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o105a": {
+      "record_kind": "event",
+      "categories": [
+        "personal"
+      ],
+      "importance": "detail",
+      "primary_group": null
+    },
+    "wudi-e-o115a": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o117b": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o120a": {
+      "record_kind": "event",
+      "categories": [
+        "appointment",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o126a": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "appointment"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o127a": {
+      "record_kind": "event",
+      "categories": [
+        "government"
+      ],
+      "importance": "detail",
+      "primary_group": null
+    },
+    "wudi-e-o132b": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o141a": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "ritual"
+      ],
+      "importance": "major",
+      "primary_group": "wei-duchy"
+    },
+    "wudi-e-o146a": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "ritual"
+      ],
+      "importance": "significant",
+      "primary_group": "wei-duchy"
+    },
+    "wudi-e-o156a": {
+      "record_kind": "event",
+      "categories": [
+        "government"
+      ],
+      "importance": "significant",
+      "primary_group": "wei-duchy"
+    },
+    "wudi-e-o169a": {
+      "record_kind": "event",
+      "categories": [
+        "government"
+      ],
+      "importance": "significant",
+      "primary_group": null
+    },
+    "wudi-e-o176c": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o182a": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "ritual"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o197b": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o199b": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o200a": {
+      "record_kind": "event",
+      "categories": [
+        "personal",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-p152a": {
+      "record_kind": "event",
+      "categories": [
+        "portent"
+      ],
+      "importance": "detail",
+      "primary_group": null
+    },
+    "wudi-e-p157b": {
+      "record_kind": "event",
+      "categories": [
+        "personal",
+        "military"
+      ],
+      "importance": "detail",
+      "primary_group": null
+    },
+    "wudi-e-p157c": {
+      "record_kind": "event",
+      "categories": [
+        "personal"
+      ],
+      "importance": "detail",
+      "primary_group": null
+    },
+    "wudi-e-p157d": {
+      "record_kind": "event",
+      "categories": [
+        "personal",
+        "military"
+      ],
+      "importance": "detail",
+      "primary_group": null
+    },
+    "south-jingzhou": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": null
+    },
+    "liu-cong-surrender": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "dangyang-meeting": {
+      "record_kind": "event",
+      "categories": [
+        "diplomacy"
+      ],
+      "importance": "significant",
+      "primary_group": "chibi-campaign"
+    },
+    "liang-envoy": {
+      "record_kind": "event",
+      "categories": [
+        "diplomacy"
+      ],
+      "importance": "significant",
+      "primary_group": "chibi-campaign"
+    },
+    "su-resistance": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": "chibi-campaign"
+    },
+    "zhou-plan": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": "chibi-campaign"
+    },
+    "allied-army": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "diplomacy"
+      ],
+      "importance": "significant",
+      "primary_group": "chibi-campaign"
+    },
+    "chibi-engagement": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "major",
+      "primary_group": "chibi-campaign"
+    },
+    "huang-fire": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": "chibi-campaign"
+    },
+    "cao-retreat": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": "chibi-campaign"
+    },
+    "meng-wulin": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": "chibi-campaign"
+    },
+    "yiling-relief": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": null
+    }
+  },
+  "groups": [
+    {
+      "id": "guandu-campaign",
+      "title": "官渡之战",
+      "importance": "major",
+      "categories": [
+        "military"
+      ],
+      "anchor": "wudi-e-o081a",
+      "members": [
+        "wudi-e-o073a",
+        "wudi-e-o074a",
+        "wudi-e-o075a",
+        "wudi-e-o077a",
+        "wudi-e-o077b",
+        "wudi-e-o080a",
+        "wudi-e-o080b",
+        "wudi-e-o081a",
+        "wudi-e-o081b",
+        "wudi-e-p060b"
+      ]
+    },
+    {
+      "id": "chibi-campaign",
+      "title": "赤壁之战",
+      "importance": "major",
+      "categories": [
+        "military",
+        "diplomacy"
+      ],
+      "anchor": "chibi-engagement",
+      "members": [
+        "dangyang-meeting",
+        "liang-envoy",
+        "su-resistance",
+        "zhou-plan",
+        "allied-army",
+        "chibi-engagement",
+        "huang-fire",
+        "cao-retreat",
+        "meng-wulin"
+      ]
+    },
+    {
+      "id": "wei-duchy",
+      "title": "魏公建国",
+      "importance": "major",
+      "categories": [
+        "government",
+        "ritual"
+      ],
+      "anchor": "wudi-e-o141a",
+      "members": [
+        "wudi-e-o141a",
+        "wudi-e-o146a",
+        "wudi-e-o156a"
+      ]
+    }
+  ]
+}

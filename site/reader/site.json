@@ -304,6 +304,11 @@
         "section": "chapter-006"
       }
     ],
-    "profiles": "knowledge/profiles.json"
+    "profiles": "knowledge/profiles.json",
+    "editorial": "knowledge/event-editorial.json"
+  },
+  "topics": {
+    "file": "knowledge/topics.json",
+    "featured": "chibi"
   }
 }

@@ -1,0 +1,301 @@
+{
+  "schema_version": 1,
+  "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+  "section_sha256": {
+    "chapter-054": "b5a12151318a634fc4ef1614a82b326cf31c11f29517fa7499b22e9df91cfead",
+    "chapter-001": "8aca4c346aa9cc8706094afc84a5888aa03910aadd75d3ee763fc732c00f7cf9",
+    "chapter-032": "a96846f8d938ee9c7b7644e4c1129ee5f143cef89abd660e00079e672445f305"
+  },
+  "bindings": {
+    "allied-zhou": "485f6d117bc8c3fefa0fbf352ed7bb2e6b7f92c9d7a71c6de04a515241598f7f",
+    "battle-shu": "100f7058cbaa31d4c31d5c1255adf07a7ed3abcf0583b549aba66e1bd3caf74b",
+    "battle-wei": "3ecb489b17ade1020b70d9179e926e1ef0ea4b0640af632480528fedc8f28366",
+    "envoy-shu": "bb181baafaab9d74291c628680e14f888cc417a5a0176f3ab86ae59bde0d958a",
+    "envoy-su": "f950cb744cf6151b0126a7e395ea02fc1936a7243cfe6b5a2b7ae16796649df2",
+    "fire-jiangbiao": "cca3f087fc8804d4282c4849728163a3d2599b73306742fe1f6988f44cd50d9d",
+    "first-battle": "58c148f3f548a47975b6bf54fae423ac6d48e68cb37a7177003892f34e0e6abb",
+    "huang-feint": "9c18eec5162163d7e6b2a5caf66a11bd2a846937a9f0d433846ac706bc1824f9",
+    "huang-fire": "2dad65899d66f2b2170d3f080a4d188b55b8223f2947d3119014b1caa453a9eb",
+    "huang-plan": "3dbbd1e255ec9e87143f5094d5b9e48b4b46a9c978e070f005ae9f6731cf84b3",
+    "meeting-zhou": "f19426db1e2369b4d86fee708ce02e7e0304ff689746fdae0e1b7fbe62ec4269",
+    "retreat": "c98ae5e90c4191344b17ae208e4b31ed26a694f316524bcc38fe21ce05a103ec",
+    "south": "46c7621b2c4b1b558e9e6246a720e5f6507d9f3fee559f2fb74bdebf1dbce819",
+    "su-advice": "57ee63deb942fc50e190d44f5f3fe027743436e52a82193d413b77d876f14280",
+    "su-meets": "1d0fdd5cc88437e954045cc622dac5609c1cc40af30182553fcc4d72bc623d46",
+    "sun-decision": "a9ea788fa224fd3a6523d55a9d7e69a86f20c38b259411f19574badc05e8b968",
+    "surrender": "67c964eaf687c3248a75aee6b6b6e2c57aee5bce12fa71ac5564d05f7632fcb6",
+    "wudi-e-o122c-q": "08894d769a433b2a8a6b1ea33863aac0b0db2c8eefb2c7791e87817a03bd526c",
+    "wudi-e-p088a-q": "61087faaf6ee1558ee7639d8f5eaba048d4116a91f21512f47e00d5580d5f0f0",
+    "xianzhu-e-o024b-q": "9f9901ed3426b33da9a14dbdb8a59f4c4ebbd90a8e0bc6cd4bf01d2233b2f52e",
+    "year-modern": "e0914c4d07b95e555d1bd1423154cbf41c0de1b0edd014747d369898d1424c7d",
+    "year-original": "a6c362740b84a1c32e21be939736d7b05045f1adf740f2b3f8ffce343895dd59",
+    "yiling-meng": "d40d7a5478b10de4fe8e628dd666801fd57b38634bcb143f2bfda4649bbd5c95",
+    "yiling-zhou": "4caf8e26cad42fea25f7b9bc85470f1fa5a90b808d8554a18b14b9c5b0b7abd9",
+    "zhou-advice": "5f402fc941d97eade84feda758ac537306c54a2ebdeb5b5289721abc91c882d1",
+    "zhou-year": "512404604b78f7f1279097f440e1a49604894f4dcaee7fc67b67f5da93092358",
+    "zhou-year-modern": "bf2fec3454b39fc3abda6a5afc9476eddaeed53427e11ea5865765105632821e",
+    "zhouyu-q-o010-reasoning": "83f8c5d13b1f053a0d6e16d5f6f085587707c287c54b39eeb9c6b93d6eef343a",
+    "zhouyu-q-p007-priority": "3a1d6a75224bf949fda9d666547c71d6458106d9ebe14775b712d218a7650c3e",
+    "zhouyu-q-p012-cao-claim": "88e632a3c501a22a787c39edb37d3ae50c373ddf14f15e89f65e5072905d95d0",
+    "zhouyu-q-p014-judgment": "1973d056e4fd6a52db3f4da54312a2a9fbd33ab8e30a1e4edb9367b922c28bad"
+  },
+  "event_bindings": {
+    "south-jingzhou": "477953a0b7265a84d1412410d275a8e5bcc9abb216ce78835aab63085011a720",
+    "liu-cong-surrender": "c9cd5afc3cd16e5852f35a2fe673b8d6892b17e18889b0e12ae22c4ddf963b36",
+    "chibi-engagement": "a3448863aef90ec49493fc3fa73fbb6671e015be905359218da414e1f0c186ce",
+    "cao-retreat": "bf95c683abab4777d8b39636a7c8d9f08c5e727b29fc478dc6b05bc46fccf435",
+    "liang-envoy": "0a1ecd38f8f6499eb8cad52142a652eff479cc3d32426c1e9afde8a5dc358639",
+    "dangyang-meeting": "a0416598b909580ac96a99ba949406718ccdae4009446131ab88ed308259f3d6",
+    "yiling-relief": "b3f8b20fecbba1c449de9977d74c1a6ec43034d1d15a9b0a4407a0d857cee6c1",
+    "zhou-plan": "0e6c76c0b399f87b38dbf7f65b6d8e08de6e704253008e9b1fe3174d40482a6b",
+    "su-resistance": "aa2d6eb9323d41cc1dff3be0d67f6d18bf8f5b32ee50fb8b8ffbadaa5159312f",
+    "huang-fire": "09a8b612bcecc171f2067015414fe8f2be8ca3ee508cf2b7be8b93f95beb1313"
+  },
+  "topics": [
+    {
+      "id": "chibi",
+      "title": "赤壁：诸篇合读",
+      "subtitle": "循着一件史事，读见不同记载",
+      "steps": [
+        {
+          "id": "jingzhou",
+          "title": "南征与荆州",
+          "intro": [
+            {
+              "text": "《武帝纪》记曹操于秋七月南征刘表。",
+              "evidence": [
+                "south"
+              ]
+            }
+          ],
+          "entries": [
+            {
+              "ref": "south",
+              "event": "south-jingzhou"
+            },
+            {
+              "ref": "surrender",
+              "event": "liu-cong-surrender"
+            },
+            {
+              "ref": "xianzhu-e-o024b-q",
+              "event": "liu-cong-surrender"
+            },
+            {
+              "ref": "zhou-year",
+              "event": "liu-cong-surrender"
+            }
+          ],
+          "people": [
+            "cao-cao",
+            "liu-bei"
+          ]
+        },
+        {
+          "id": "alliance",
+          "title": "联盟与议战",
+          "intro": [
+            {
+              "text": "《周瑜鲁肃吕蒙传》记鲁肃在当阳与刘备相会，劝其与孙权并力。",
+              "evidence": [
+                "su-meets"
+              ]
+            }
+          ],
+          "entries": [
+            {
+              "ref": "su-meets",
+              "event": "dangyang-meeting"
+            },
+            {
+              "ref": "envoy-shu",
+              "event": "liang-envoy"
+            },
+            {
+              "ref": "su-advice",
+              "event": "su-resistance"
+            },
+            {
+              "ref": "zhouyu-q-o010-reasoning",
+              "event": "zhou-plan"
+            },
+            {
+              "ref": "zhouyu-q-p014-judgment",
+              "event": "dangyang-meeting"
+            },
+            {
+              "ref": "zhouyu-q-p007-priority",
+              "event": "zhou-plan"
+            }
+          ],
+          "people": [
+            "liu-bei",
+            "lu-su",
+            "zhou-yu"
+          ]
+        },
+        {
+          "id": "battle",
+          "title": "交战与火攻",
+          "intro": [
+            {
+              "text": "《武帝纪》记曹操与刘备战于赤壁，不利而还。",
+              "evidence": [
+                "battle-wei"
+              ]
+            }
+          ],
+          "entries": [
+            {
+              "ref": "battle-wei",
+              "event": "chibi-engagement"
+            },
+            {
+              "ref": "battle-shu",
+              "event": "chibi-engagement"
+            },
+            {
+              "ref": "first-battle",
+              "event": "chibi-engagement"
+            },
+            {
+              "ref": "huang-plan",
+              "event": "huang-fire"
+            },
+            {
+              "ref": "huang-feint",
+              "event": "huang-fire"
+            },
+            {
+              "ref": "huang-fire",
+              "event": "huang-fire"
+            },
+            {
+              "ref": "fire-jiangbiao",
+              "event": "huang-fire"
+            },
+            {
+              "ref": "zhouyu-q-p012-cao-claim",
+              "event": "huang-fire"
+            }
+          ],
+          "people": [
+            "cao-cao",
+            "liu-bei",
+            "zhou-yu"
+          ]
+        },
+        {
+          "id": "aftermath",
+          "title": "退军与后续",
+          "intro": [
+            {
+              "text": "《周瑜鲁肃吕蒙传》记曹军退保南郡，刘备与周瑜等继续追击。",
+              "evidence": [
+                "retreat"
+              ]
+            }
+          ],
+          "entries": [
+            {
+              "ref": "retreat",
+              "event": "cao-retreat"
+            },
+            {
+              "ref": "wudi-e-o122c-q",
+              "event": "cao-retreat"
+            },
+            {
+              "ref": "wudi-e-p088a-q",
+              "event": "cao-retreat"
+            },
+            {
+              "ref": "yiling-zhou",
+              "event": "yiling-relief"
+            },
+            {
+              "ref": "yiling-meng",
+              "event": "yiling-relief"
+            }
+          ],
+          "people": [
+            "cao-cao",
+            "liu-bei",
+            "zhou-yu",
+            "lu-meng"
+          ]
+        }
+      ],
+      "preview": [
+        {
+          "ref": "battle-wei",
+          "quote": "与备战，不利；"
+        },
+        {
+          "ref": "battle-shu",
+          "quote": "大破之，焚其舟船。"
+        },
+        {
+          "ref": "huang-fire",
+          "quote": "盖放诸船，同时发火。"
+        }
+      ]
+    }
+  ],
+  "preview_sources": [
+    {
+      "id": "battle-wei",
+      "section": "chapter-001",
+      "block": "b-c35781bdeff07231cb61",
+      "quote": "公至赤壁〖16〗，与备战，不利；于是大疫，吏士多死者。乃引军还，",
+      "layer": "original",
+      "section_title": "武帝纪第一",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0007_split_000.xhtml",
+        "index": 664,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 50,
+      "end": 82,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "battle-shu",
+      "section": "chapter-032",
+      "block": "b-1846d8225e91af23e064",
+      "quote": "与曹公战于赤壁〖10〗；大破之，焚其舟船。先主与吴军水陆并进，追到南郡。时又疾疫，北军多死，曹公引归。",
+      "layer": "original",
+      "section_title": "先主传第二",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0070.xhtml",
+        "index": 113,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 40,
+      "end": 91,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "huang-fire",
+      "section": "chapter-054",
+      "block": "b-8be6669092a37ba75e2e",
+      "quote": "盖放诸船，同时发火。时风盛〔火〕猛，悉延烧岸上营落。",
+      "layer": "original",
+      "section_title": "周瑜鲁肃吕蒙传第九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0115.xhtml",
+        "index": 64,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 132,
+      "end": 158,
+      "offset_unit": "unicode_code_point"
+    }
+  ]
+}

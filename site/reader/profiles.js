@@ -64,17 +64,19 @@ export function personSources(data,person,profile,base) {
       if(purpose&&!r.purposes.some(x=>x.key===purpose.key))r.purposes.push(purpose);
     }
   }
-  add(person.evidence,{key:'name',use:'identity',text:'姓名：'+person.name,target:'profile'});
+  // Person-level references identify an entity; only displayed fields define
+  // the basic-profile scope. All original references remain in the base groups.
   const fields=profile?.fields||[];
   for(const f of fields)add(f.evidence,{key:f.id,use:'identity',text:f.label+'：'+f.text,target:'profile'});
   for(const f of person.facts)if(!fields.some(x=>x.id===f.id))add(f.evidence,{key:f.id,use:'other',text:f.label+'：'+f.text});
   for(const a of person.aliases||[])if(!person.facts.some(f=>f.text===a.text))add(a.evidence,{key:'alias-'+a.text,use:'other',text:'别称：'+a.text});
   for(const e of data.events){
     const participant=e.participants.find(p=>p.person===person.id);if(!participant)continue;
-    // Only references explicitly used by this event; no paragraph-neighbour joins.
-    const purpose={key:'event-'+e.id,use:'life',text:e.title+' · '+participant.role,event:e.id};
-    for(const a of e.accounts)add(a.evidence,purpose);
-    add(participant.evidence,purpose);
+    // Prefer a role label only on its exact evidence. Other accounts explain
+    // the event, not necessarily this person's part in it. One link per event.
+    const purpose={key:'event-'+e.id,use:'life',event:e.id};
+    add(participant.evidence,{...purpose,kind:'role',text:e.title+' · '+participant.role});
+    for(const a of e.accounts)add(a.evidence,{...purpose,kind:'event',text:e.title});
   }
   for(const n of profile?.biography?.nodes||[])for(const s of n.sentences)add(s.evidence,{key:'node-'+n.id,use:'life',text:'用于生平：'+n.title,target:n.id});
   for(const r of groups.values())r.uses=[...new Set(r.purposes.map(p=>p.use))];
