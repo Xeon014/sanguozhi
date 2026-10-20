@@ -2,8 +2,8 @@
   "schema_version": 1,
   "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
   "section_sha256": {
-    "chapter-054": "b5a12151318a634fc4ef1614a82b326cf31c11f29517fa7499b22e9df91cfead",
     "chapter-001": "8aca4c346aa9cc8706094afc84a5888aa03910aadd75d3ee763fc732c00f7cf9",
+    "chapter-054": "b5a12151318a634fc4ef1614a82b326cf31c11f29517fa7499b22e9df91cfead",
     "chapter-032": "a96846f8d938ee9c7b7644e4c1129ee5f143cef89abd660e00079e672445f305"
   },
   "bindings": {
@@ -44,12 +44,12 @@
     "liu-cong-surrender": "c9cd5afc3cd16e5852f35a2fe673b8d6892b17e18889b0e12ae22c4ddf963b36",
     "chibi-engagement": "a3448863aef90ec49493fc3fa73fbb6671e015be905359218da414e1f0c186ce",
     "cao-retreat": "bf95c683abab4777d8b39636a7c8d9f08c5e727b29fc478dc6b05bc46fccf435",
-    "liang-envoy": "0a1ecd38f8f6499eb8cad52142a652eff479cc3d32426c1e9afde8a5dc358639",
-    "dangyang-meeting": "a0416598b909580ac96a99ba949406718ccdae4009446131ab88ed308259f3d6",
-    "yiling-relief": "b3f8b20fecbba1c449de9977d74c1a6ec43034d1d15a9b0a4407a0d857cee6c1",
-    "zhou-plan": "0e6c76c0b399f87b38dbf7f65b6d8e08de6e704253008e9b1fe3174d40482a6b",
-    "su-resistance": "aa2d6eb9323d41cc1dff3be0d67f6d18bf8f5b32ee50fb8b8ffbadaa5159312f",
-    "huang-fire": "09a8b612bcecc171f2067015414fe8f2be8ca3ee508cf2b7be8b93f95beb1313"
+    "liang-envoy": "5fc4d4b2c7004358245a7588d3d4f2be588fa97235ce5b70b9d69d8fa7ea6ed8",
+    "dangyang-meeting": "d245d1c79c4af67a6c368a29e5f7560663fca74d04712ad1906ba07dd9e174cc",
+    "yiling-relief": "1d94fe2047d65a1ef36a7b1f55c1693f878eb41e420ef2575d6797400b2fc8ec",
+    "zhou-plan": "1fa01e491b318d994d1e22c218dd73d47e6d4f9b894cde6491438759041cb13c",
+    "su-resistance": "d1da85dc64039fdab68d37efe5b8112da482af05db31b7db669ec32c6a28e264",
+    "huang-fire": "47c4255c6a8635f851ec65b2b305324c73b8b37ce2d0bd336cbe0e0cad240726"
   },
   "topics": [
     {

@@ -305,7 +305,8 @@
       }
     ],
     "profiles": "knowledge/profiles.json",
-    "editorial": "knowledge/event-editorial.json"
+    "editorial": "knowledge/event-editorial.json",
+    "atlas": "knowledge/atlas.json"
   },
   "topics": {
     "file": "knowledge/topics.json",

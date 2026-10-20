@@ -3,16 +3,21 @@
   "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
   "section_sha256": {
     "chapter-001": "8aca4c346aa9cc8706094afc84a5888aa03910aadd75d3ee763fc732c00f7cf9",
-    "chapter-002": "818e8049aaf4f2a93e8e46cd1aec733ed0e64863d8e91740be9c2472df004a3f",
+    "chapter-054": "b5a12151318a634fc4ef1614a82b326cf31c11f29517fa7499b22e9df91cfead",
     "chapter-006": "901e82940ed39d65d67bf239a4d4a22ef64dca1eccad342805569308ff9b1042",
     "chapter-032": "a96846f8d938ee9c7b7644e4c1129ee5f143cef89abd660e00079e672445f305",
-    "chapter-047": "d1894475df403fb65529aa57eb61a381255c0003de05a8ea635c4c1e3ad1321c",
-    "chapter-054": "b5a12151318a634fc4ef1614a82b326cf31c11f29517fa7499b22e9df91cfead",
+    "chapter-003": "a712d3afa6ac7c3e4faf87034c28a6aa57016260f8ddc98db8371e45a741536f",
+    "chapter-004": "2171636d4f88c51d566305b5c1dab806c253f5c206c89344f7e018893e738028",
     "chapter-010": "09b405418e12ca9955223795330cf68335053af94f8586f546597fb93df73066",
-    "chapter-036": "47395a433ab8fe36f518928103d5c65f2d0e0c2ab4c4f2a0b4d3b20baa6edfa4",
-    "chapter-035": "1562f254358a04b1163df4f3f0ded73c0127bc1cbfa658b64749c98d9dc0f472",
     "chapter-009": "1ea4f07c42f6c03a0ea52f25f11f50d07eebc10e103b79badbcf752f5eb248bd",
-    "chapter-017": "5cec5d9ac492f6f2d39500b30462be81180ffc6a29b4d9a4d704029814fb72d3"
+    "chapter-035": "1562f254358a04b1163df4f3f0ded73c0127bc1cbfa658b64749c98d9dc0f472",
+    "chapter-047": "d1894475df403fb65529aa57eb61a381255c0003de05a8ea635c4c1e3ad1321c",
+    "chapter-002": "818e8049aaf4f2a93e8e46cd1aec733ed0e64863d8e91740be9c2472df004a3f",
+    "chapter-017": "5cec5d9ac492f6f2d39500b30462be81180ffc6a29b4d9a4d704029814fb72d3",
+    "chapter-036": "47395a433ab8fe36f518928103d5c65f2d0e0c2ab4c4f2a0b4d3b20baa6edfa4",
+    "chapter-048": "1a501150c90be19c978c8cde2d3cd7fb37fe72426a86dc0e38cd064d9f7ac1c4",
+    "chapter-046": "2753c06ad42c38c1bdda422039c88144527fde54706e2c9246256b95d67ccf78",
+    "chapter-058": "96fec57b485009675959eea96ef614906ce42afd8dce8318e433309129ee4ee5"
   },
   "taxonomy": {
     "record_kind": {
@@ -629,6 +634,338 @@
       ],
       "importance": "significant",
       "primary_group": null
+    },
+    "sunshi-e-o004a": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "military"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o027a": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "sunshi-e-o035b": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "personal"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "xianzhu-e-o043a": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wudi-e-o177a": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "xianzhu-e-o055a": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "ritual"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "xianzhu-e-o061a": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "ritual"
+      ],
+      "importance": "major",
+      "primary_group": "wei-accession"
+    },
+    "wendi-e-o013a": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "ritual"
+      ],
+      "importance": "significant",
+      "primary_group": "wei-accession"
+    },
+    "xianzhu-e-o065a": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "ritual"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "xianzhu-e-o069b": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "zhuge-e-o023a": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "economy"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "zhuge-e-o024a": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "culture",
+        "military"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "zhuge-e-o032a": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "zhuge-e-o040a": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "personal"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wuzhu-e-o086a": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "ritual"
+      ],
+      "importance": "major",
+      "primary_group": "wu-accession"
+    },
+    "wuzhu-e-o089a": {
+      "record_kind": "event",
+      "categories": [
+        "diplomacy",
+        "government"
+      ],
+      "importance": "significant",
+      "primary_group": "wu-accession"
+    },
+    "wuzhu-e-o094a": {
+      "record_kind": "event",
+      "categories": [
+        "government"
+      ],
+      "importance": "significant",
+      "primary_group": "wu-accession"
+    },
+    "wuzhu-e-o082a": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "mingdi-e-o063a": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "shaodi-e-o002b": {
+      "record_kind": "event",
+      "categories": [
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "shaodi-e-o043a": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "military"
+      ],
+      "importance": "major",
+      "primary_group": "gaopingling"
+    },
+    "shaodi-e-o043b": {
+      "record_kind": "event",
+      "categories": [
+        "government"
+      ],
+      "importance": "significant",
+      "primary_group": "gaopingling"
+    },
+    "xiahoucao-e-o068a": {
+      "record_kind": "event",
+      "categories": [
+        "government"
+      ],
+      "importance": "significant",
+      "primary_group": "gaopingling"
+    },
+    "xiahoucao-e-o069b": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": "gaopingling"
+    },
+    "wuzhu-e-o159b": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "personal"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "wuzhu-e-o167a": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "personal"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "shaodi-e-o064a": {
+      "record_kind": "event",
+      "categories": [
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "shaodi-e-o072a": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "shaodi-e-o129a": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "shaodi-e-p045d": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "military"
+      ],
+      "importance": "major",
+      "primary_group": "cao-mao-death"
+    },
+    "shaodi-e-p050b": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": "cao-mao-death"
+    },
+    "shaodi-e-o169a": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": "shu-conquest"
+    },
+    "shaodi-e-o166a": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": "shu-conquest"
+    },
+    "shaodi-e-o166b": {
+      "record_kind": "event",
+      "categories": [
+        "military"
+      ],
+      "importance": "significant",
+      "primary_group": "shu-conquest"
+    },
+    "shaodi-e-o171d": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "shaodi-e-o183a": {
+      "record_kind": "event",
+      "categories": [
+        "economy",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "atlas-close-e-cession": {
+      "record_kind": "event",
+      "categories": [
+        "government",
+        "ritual"
+      ],
+      "importance": "major",
+      "primary_group": null
+    },
+    "atlas-close-e-wu-surrender": {
+      "record_kind": "event",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "importance": "major",
+      "primary_group": null
     }
   },
   "groups": [
@@ -687,6 +1024,81 @@
         "wudi-e-o141a",
         "wudi-e-o146a",
         "wudi-e-o156a"
+      ]
+    },
+    {
+      "id": "wei-accession",
+      "title": "曹丕受禅称帝",
+      "importance": "major",
+      "categories": [
+        "government",
+        "ritual"
+      ],
+      "anchor": "xianzhu-e-o061a",
+      "members": [
+        "xianzhu-e-o061a",
+        "wendi-e-o013a"
+      ]
+    },
+    {
+      "id": "wu-accession",
+      "title": "孙权称帝",
+      "importance": "major",
+      "categories": [
+        "government",
+        "ritual",
+        "diplomacy"
+      ],
+      "anchor": "wuzhu-e-o086a",
+      "members": [
+        "wuzhu-e-o086a",
+        "wuzhu-e-o089a",
+        "wuzhu-e-o094a"
+      ]
+    },
+    {
+      "id": "gaopingling",
+      "title": "高平陵之变",
+      "importance": "major",
+      "categories": [
+        "government",
+        "military"
+      ],
+      "anchor": "shaodi-e-o043a",
+      "members": [
+        "shaodi-e-o043a",
+        "shaodi-e-o043b",
+        "xiahoucao-e-o068a",
+        "xiahoucao-e-o069b"
+      ]
+    },
+    {
+      "id": "cao-mao-death",
+      "title": "曹髦遇害",
+      "importance": "major",
+      "categories": [
+        "government",
+        "military"
+      ],
+      "anchor": "shaodi-e-p045d",
+      "members": [
+        "shaodi-e-p045d",
+        "shaodi-e-p050b"
+      ]
+    },
+    {
+      "id": "shu-conquest",
+      "title": "魏灭蜀",
+      "importance": "major",
+      "categories": [
+        "military",
+        "government"
+      ],
+      "anchor": "shaodi-e-o169a",
+      "members": [
+        "shaodi-e-o169a",
+        "shaodi-e-o166a",
+        "shaodi-e-o166b"
       ]
     }
   ]
