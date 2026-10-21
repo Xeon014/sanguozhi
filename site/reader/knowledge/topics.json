@@ -2,9 +2,9 @@
   "schema_version": 1,
   "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
   "section_sha256": {
-    "chapter-032": "a96846f8d938ee9c7b7644e4c1129ee5f143cef89abd660e00079e672445f305",
+    "chapter-001": "8aca4c346aa9cc8706094afc84a5888aa03910aadd75d3ee763fc732c00f7cf9",
     "chapter-054": "b5a12151318a634fc4ef1614a82b326cf31c11f29517fa7499b22e9df91cfead",
-    "chapter-001": "8aca4c346aa9cc8706094afc84a5888aa03910aadd75d3ee763fc732c00f7cf9"
+    "chapter-032": "a96846f8d938ee9c7b7644e4c1129ee5f143cef89abd660e00079e672445f305"
   },
   "bindings": {
     "allied-zhou": "485f6d117bc8c3fefa0fbf352ed7bb2e6b7f92c9d7a71c6de04a515241598f7f",
@@ -44,12 +44,12 @@
     "liu-cong-surrender": "c9cd5afc3cd16e5852f35a2fe673b8d6892b17e18889b0e12ae22c4ddf963b36",
     "chibi-engagement": "a3448863aef90ec49493fc3fa73fbb6671e015be905359218da414e1f0c186ce",
     "cao-retreat": "bf95c683abab4777d8b39636a7c8d9f08c5e727b29fc478dc6b05bc46fccf435",
-    "liang-envoy": "5fc4d4b2c7004358245a7588d3d4f2be588fa97235ce5b70b9d69d8fa7ea6ed8",
-    "dangyang-meeting": "d245d1c79c4af67a6c368a29e5f7560663fca74d04712ad1906ba07dd9e174cc",
-    "yiling-relief": "cd6e209d3b630b93ddc083eb1c45873466acd3eab1691e483593b53c5528df03",
-    "zhou-plan": "a535862d96f20fe9aa4a384a38878ff7434ba6f954e7548020f5a4cfd90f7c83",
-    "su-resistance": "92ff8b999b56f192ad67192fb255e6cd78906b20afed580a34dc3fc0ce7b4848",
-    "huang-fire": "243edf4f2f19f561bd22bdc0b8c8e5caa227fe227f3fac9c220e4d26ee937377"
+    "liang-envoy": "4892b63c2a3f669216aae47ffb3546fe43eedeb3b8b4b4ca9062c9a7d6dd0fc8",
+    "dangyang-meeting": "bf04517ec18c4549a7a91cf8f0b93d99c917dcabb62adbbb6f0847c86d514f93",
+    "yiling-relief": "477dafe9b8b8831acca1e8c50e523fd7ee1cf4cf2e290a0b245e5eb2e3d349a8",
+    "zhou-plan": "c711976e2e0d39b61458e16e0a2eb1dad72c2f45c496c098c98a645d4feea171",
+    "su-resistance": "04510fb5b6c6cb970242ce2b17eacf4bb2c0688e94da7a0f029c060f8c68b1e1",
+    "huang-fire": "436b6d5cb7d7e2bc65f0b8aea4f9ced47f4763b88c0195b6650d9dad6a1fe09b"
   },
   "topics": [
     {

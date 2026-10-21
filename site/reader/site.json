@@ -302,6 +302,38 @@
       {
         "id": "liu-biao",
         "section": "chapter-006"
+      },
+      {
+        "id": "guanzhang-p0047",
+        "section": "chapter-044"
+      },
+      {
+        "id": "shaodi-p0051",
+        "section": "chapter-044"
+      },
+      {
+        "id": "shaodi-p0050",
+        "section": "chapter-044"
+      },
+      {
+        "id": "shaodi-p0004",
+        "section": "chapter-028"
+      },
+      {
+        "id": "mingdi-p0048",
+        "section": "chapter-028"
+      },
+      {
+        "id": "shaodi-p0044",
+        "section": "chapter-028"
+      },
+      {
+        "id": "shaodi-p0080",
+        "section": "chapter-028"
+      },
+      {
+        "id": "shaodi-p0073",
+        "section": "chapter-028"
       }
     ],
     "profiles": "knowledge/profiles.json",
