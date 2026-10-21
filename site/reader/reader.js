@@ -421,13 +421,12 @@ async function route(){
         }
       }
       const yearbookAtlas=cleanQS.get('view')==='highlights'?await loadAtlas():null;if(version!==routeVersion)return;
-      knowledgeTitle=renderKnowledge(content,{main,parts,qs:cleanQS,esc,cv,normalize,url,navigate:(hash,filterFocus)=>navigate(hash,filterFocus?{y:window.scrollY,filterFocus}:null,returnSearch?.atlas?returnSearch:null,returnList),saved,profiles,directoryFactions:presentation?.directory_factions||{},personListHash:returnList?.hash.startsWith('#/people?')?returnList.hash:'#/people',eventHasContext:!!(returnList||returnSearch),editorial,atlas:yearbookAtlas,atlasEnabled:!!site.knowledge.atlas,sections,visiblePeople:site.knowledge.people??null,legacySources:parts[0]==='events'&&qs.get('view')==='sources',onChange:saveContext});
+      knowledgeTitle=renderKnowledge(content,{main,parts,qs:cleanQS,esc,cv,normalize,url,navigate:(hash,filterFocus)=>navigate(hash,filterFocus?{y:window.scrollY,filterFocus}:null,returnSearch,returnList),loadSection:id=>data(`sections/${id}.json`),saved,profiles,directoryFactions:presentation?.directory_factions||{},personListHash:returnList?.hash.startsWith('#/people?')?returnList.hash:'#/people',eventHasContext:!!(returnList||returnSearch),editorial,atlas:yearbookAtlas,atlasEnabled:!!site.knowledge.atlas,sections,visiblePeople:site.knowledge.people??null,legacySources:parts[0]==='events'&&qs.get('view')==='sources',onChange:saveContext});
       if(parts[0]==='events'&&parts[1]&&editorial?.records[parts[1]]){
-        const record=editorial.records[parts[1]],group=editorial.groups.find(g=>g.id===record.primary_group);
+        const record=editorial.records[parts[1]];
         const metadata=document.createElement('div');metadata.className='event-classification';
         metadata.innerHTML=[editorial.taxonomy.record_kind[record.record_kind],editorial.taxonomy.importance[record.importance],...record.categories.map(c=>editorial.taxonomy.categories[c])].map(label=>`<span>${esc(cv(label))}</span>`).join('');
         $('.knowledge-heading',main)?.append(metadata);
-        if(group){const link=document.createElement('a');link.href='#/events?view=highlights&group='+encodeURIComponent(group.id);link.textContent=cv('所属大事：'+group.title)+' →';$('.event-context',main)?.append(link);}
       }
     }
     else if(parts[0]==='topics'&&parts.length===1){
@@ -458,6 +457,9 @@ async function route(){
       }
     }
     if(parts[0]!=='read')window.scrollTo(0,0);
+    restoreView(saved);
+    await $('.knowledge-page')?.citationReady?.();
+    if(version!==routeVersion)return;
     restoreView(saved);
     if(!saved||saved.y===undefined){const target=main.querySelector('[data-source-target]');if(target){target.scrollIntoView({block:'start'});target.focus({preventScroll:true});}}
     updateNavigation(parts);renderedHash=location.hash;ready=true;saveContext();

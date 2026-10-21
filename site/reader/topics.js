@@ -1,5 +1,6 @@
 import {eventSources, sourceLayerLabel, dateText} from './knowledge.js';
 import {evidenceKey} from './profiles.js';
+import {quoteText,readingProjection,passageHTML} from './event-reading.js';
 
 // Topic excerpts retain their existing context view; event pages use the new
 // in-place paragraph projection. Do not couple these two reading interfaces.
@@ -16,7 +17,7 @@ export function topicReadingSources(catalog,event,sections) {
     const blocks=r.layer==='original'?section.blocks.filter(b=>b.kind==='original'):[block],at=blocks.indexOf(block);
     for(const b of blocks.slice(Math.max(0,at-1),at+2)){
       const item={...r,id:'context-'+b.id,ids:['context-'+b.id],block:b.id,source:b.source,
-        start:0,end:[...b.text].length,quote:b.text,claims:[],attribution:r.layer==='pei'?'':r.attribution};
+        start:0,end:[...b.text].length,quote:b.text,claims:[],attribution:r.attribution};
       if(!context.some(c=>evidenceKey(c)===evidenceKey(item)))context.push(item);
     }
   }
@@ -54,18 +55,23 @@ export function renderTopic(topic, catalog, {main, qs, esc, cv, url, collection,
   const targetStep=topic.steps.find(s=>s.entries.some(e=>e.ref===qs.get('ref')))||topic.steps.find(s=>s.id===qs.get('step'));
   const targetRef=targetStep?.entries.find(e=>e.ref===qs.get('ref'))?.ref;
   let {mode,a,b}=topicReadingState(chapterIds,saved,refs.get(targetRef)?.section);
-  const sourceText=(r,context=false)=>`<p class="topic-source-label">${text((context?r.section_title+' · ':'')+sourceLayerLabel(r))}</p><blockquote>${text(r.quote)}</blockquote>`;
+  const sourceText=(r,context=false)=>`<p class="topic-source-label">${text((context?r.section_title+' · ':'')+sourceLayerLabel(r))}</p><blockquote>${text(quoteText(r,sections))}</blockquote>`;
   const disclosure=(id,title,body)=>`<details class="topic-disclosure" id="${esc(id)}"><summary>${text(title)}</summary>${body}
     <div class="reading-actions"><button type="button" class="topic-close">${text('收起并返回')} ↑</button></div></details>`;
   function card(entry,step) {
     const r=refs.get(entry.ref),event=events.get(entry.event),id=`topic-${step.id}-${r.id}`;
     const reading=topicReadingSources(catalog,{...event,accounts:[{evidence:[r.id]}],participants:[],place:null},sections);
+    const passage=readingProjection([{...r,claims:[]}],[],sections).passages[0];
+    const context=reading.context.filter(n=>n.start===0&&n.end===[...sections[n.section].blocks.find(b=>b.id===n.block).text].length||!reading.context.some(other=>other!==n&&other.block===n.block&&other.section===n.section&&other.layer===n.layer&&other.attribution===n.attribution&&other.start===0&&other.end===[...sections[n.section].blocks.find(b=>b.id===n.block).text].length));
+    context.sort((x,y)=>sections[x.section].blocks.findIndex(b=>b.id===x.block)-sections[y.section].blocks.findIndex(b=>b.id===y.block));
+    const contextBody=context.map(n=>n.section===r.section&&n.block===r.block&&n.layer===r.layer&&n.attribution===r.attribution
+      ?`<p class="topic-source-label">${text(r.section_title+' · '+sourceLayerLabel(r))}</p><blockquote>${passageHTML(passage,text)}</blockquote>`:sourceText(n,true)).join('');
     return `<article class="topic-record" id="${esc(id)}" data-topic-evidence="${esc(r.id)}" tabindex="-1" data-context ${targetRef===r.id?'data-source-target':''}>
-      ${sourceText(r)}
+      <div class="topic-passage"><div class="topic-excerpt">${sourceText(r)}</div>
+      ${context.some(n=>n.block!==r.block||n.quote!==r.quote)?disclosure(id+'-context','查看前后文',contextBody):''}</div>
       ${reading.notes.length?disclosure(id+'-notes','相关注释',reading.notes.map(n=>sourceText(n,true)).join('')):''}
-      ${disclosure(id+'-context','查看前后文',reading.context.map(n=>sourceText(n,true)).join(''))}
       <div class="topic-record-links"><a class="topic-out" href="${url(r.section,r.block)}">${text('阅读全文')} ↗</a>
-      <details class="reading-more topic-event-more" id="${esc(id)}-event"><summary>${text('相关史事')}</summary><a class="topic-out" href="#/events/${encodeURIComponent(event.id)}?ref=${encodeURIComponent(r.id)}">${text(event.title)} →</a></details></div>
+      <a class="topic-out topic-event-link" href="#/events/${encodeURIComponent(event.id)}?ref=${encodeURIComponent(r.id)}" aria-label="${text(event.title+' · 史事详情')}">${text('史事详情')} →</a></div>
       <p class="topic-date">${text('相关史事纪年：'+dateText(event.time))}</p>
     </article>`;
   }
@@ -81,8 +87,9 @@ export function renderTopic(topic, catalog, {main, qs, esc, cv, url, collection,
       <header class="topic-step-heading"><span class="topic-step-number" aria-hidden="true">0${i+1}</span><div><h2>${text(s.title)}</h2>
       ${s.intro.map(line=>`<p>${text(line.text)} <a class="topic-jump" data-topic-ref="topic-${esc(s.id)}-${esc(line.evidence[0])}" href="#/topics/${esc(topic.id)}?step=${esc(s.id)}&ref=${encodeURIComponent(line.evidence[0])}">${text('记载')} ↓</a></p>`).join('')}
       </div></header>
-      <div class="topic-chapters">${chapterIds.map(cid=>`<section class="topic-chapter" data-chapter="${esc(cid)}" data-book="${esc(collection(cid)?.id||'')}"><h3>${text(chapterName(cid))}</h3>${s.entries.filter(e=>refs.get(e.ref).section===cid).map(e=>card(e,s)).join('')||`<p class="topic-empty">${text('本节请选读其他篇目。')}</p>`}</section>`).join('')}</div>
-      <details class="topic-people reading-more" id="topic-people-${esc(s.id)}"><summary>${text('相关人物')}</summary>${s.people.map(id=>`<a class="topic-out" href="#/people/${encodeURIComponent(id)}">${text(people.get(id).name)} →</a>`).join('')}</details><button class="topic-adjust" type="button">${text('调整对读篇目')} ↑</button>
+      <div class="topic-chapters">${chapterIds.map(cid=>`<section class="topic-chapter" data-chapter="${esc(cid)}" data-book="${esc(collection(cid)?.id||'')}"><h3>${text(chapterName(cid))}</h3>${s.entries.filter(e=>refs.get(e.ref).section===cid).map(e=>card(e,s)).join('')||`<p class="topic-empty">${text('本节未选录《'+chapterName(cid)+'》。')}</p>`}</section>`).join('')}</div>
+      <details class="topic-local-pair" id="topic-pair-${esc(s.id)}"><summary>${text('调整对读篇目')}</summary><div class="topic-pair">${['a','b'].map((slot,i)=>`<label>${text(i===0?'第一篇':'第二篇')}<select data-local-pair="${slot}" aria-label="${text(s.title+' · '+(i===0?'第一篇':'第二篇'))}">${chapterIds.map(cid=>{const included=s.entries.some(e=>refs.get(e.ref).section===cid);return `<option value="${esc(cid)}" data-included="${included}">${text(chapterName(cid)+(included?'':'（本节未选录）'))}</option>`;}).join('')}</select></label>`).join('')}</div></details>
+      <details class="topic-people reading-more" id="topic-people-${esc(s.id)}"><summary>${text('相关人物')}</summary>${s.people.map(id=>`<a class="topic-out" href="#/people/${encodeURIComponent(id)}">${text(people.get(id).name)} →</a>`).join('')}</details>
     </section>`).join('')}
     <nav class="topic-end"><a href="#/topics">${text('返回专题研究')} →</a></nav></article>`;
   const page=main.querySelector('.topic-page'), selectA=main.querySelector('#topic-a'), selectB=main.querySelector('#topic-b');
@@ -92,9 +99,17 @@ export function renderTopic(topic, catalog, {main, qs, esc, cv, url, collection,
     for(const o of selectA.options)o.disabled=o.value===b;
     for(const o of selectB.options)o.disabled=o.value===a;
     main.querySelector('.topic-pair').hidden=mode!=='compare';
+    main.querySelectorAll('.topic-local-pair').forEach(el=>{
+      el.hidden=mode!=='compare';
+      for(const select of el.querySelectorAll('select')){
+        const slot=select.dataset.localPair;select.value=slot==='a'?a:b;
+        for(const option of select.options)option.disabled=option.value===(slot==='a'?b:a)||option.dataset.included!=='true';
+      }
+    });
     main.querySelectorAll('[data-topic-view]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.topicView===mode)));
     main.querySelectorAll('.topic-chapter').forEach(el=>{
       el.hidden=mode==='compare'?![a,b].includes(el.dataset.chapter):!el.querySelector('.topic-record');
+      el.classList.toggle('topic-chapter-empty',!el.querySelector('.topic-record'));
       el.style.order=mode==='compare'?(el.dataset.chapter===a?'0':'1'):'';
     });
     onChange();
@@ -105,8 +120,10 @@ export function renderTopic(topic, catalog, {main, qs, esc, cv, url, collection,
     const details=button.closest('details');details.open=false;
     const summary=details.querySelector('summary');summary.scrollIntoView({block:'nearest'});summary.focus({preventScroll:true});onChange();
   });
-  main.querySelectorAll('.topic-adjust').forEach(button=>button.onclick=()=>{
-    mode='compare';update();selectA.scrollIntoView({block:'center'});selectA.focus({preventScroll:true});
+  main.querySelectorAll('[data-local-pair]').forEach(select=>select.onchange=()=>{
+    const top=select.getBoundingClientRect().top;
+    if(select.dataset.localPair==='a')a=select.value;else b=select.value;
+    update();window.scrollBy(0,select.getBoundingClientRect().top-top);select.focus({preventScroll:true});onChange();
   });
   update();
   return topic.title;

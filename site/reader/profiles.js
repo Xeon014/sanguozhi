@@ -84,15 +84,17 @@ export function personSources(data,person,profile,base) {
   return [...groups.values()].sort((a,b)=>a.section.localeCompare(b.section,undefined,{numeric:true})||({original:0,pei:1,modern:2}[a.layer]-{original:0,pei:1,modern:2}[b.layer])||(a.source?.file||'').localeCompare(b.source?.file||'',undefined,{numeric:true})||(a.source?.index||0)-(b.source?.index||0)||(a.start||0)-(b.start||0));
 }
 
-export function renderBiography({bio,data,main,text,esc,dateText,url,sourceLabel,detailPath,saved,onChange,readingRow=null}) {
+export function renderBiography({bio,data,main,text,esc,dateText,url,sourceLabel,detailPath,saved,onChange,readingRow=null,renderQuote=r=>`<blockquote>${text(r.quote)}</blockquote>`}) {
   const events=new Map(data.events.map(e=>[e.id,e]));
   const selected=new Set(bio.nodes.flatMap(n=>n.sentences.flatMap(s=>s.events)));
   const eventLink=e=>`<a href="#/events/${esc(e.id)}">${text(e.title)}</a>`;
   const row=e=>readingRow?readingRow(e):`<article class="life-event" id="life-event-${esc(e.id)}" data-context tabindex="-1"><span>${text(dateText(e.time))}</span>${eventLink(e)}</article>`;
   const nodes=stage=>bio.nodes.filter(n=>n.stage===stage).map(n=>{
     const ids=[...new Set(n.sentences.flatMap(s=>s.events))];
-    const quotes=biographySources(n,data).map(r=>`<div class="life-source" id="life-source-${esc(n.id)}-${esc(r.ids[0])}" data-evidence-ids="${esc(JSON.stringify(r.ids))}"><p class="life-source-label">${text(sourceLabel(r))}</p><blockquote>${text(r.quote)}</blockquote><a class="evidence-link" href="${url(r.section,r.block)}">${text('原文与译注')} <span aria-hidden="true">↗</span></a></div>`).join('');
-    return `<article class="life-node" id="life-${esc(n.id)}" data-context tabindex="-1"><p class="event-date">${text(biographyDate(n,events,dateText))}</p><h4>${text(n.title)}</h4><p class="life-narrative">${n.sentences.map(s=>text(s.text)).join('')}</p><details class="life-documents" id="life-linked-${esc(n.id)}"><summary>${text('文献记载')}</summary><div class="life-documents-body">${quotes}<details class="life-document-events reading-more" id="life-events-${esc(n.id)}"><summary>${text('相关史事')}</summary>${ids.map(id=>`<p>${eventLink(events.get(id))}</p>`).join('')}</details><div class="reading-actions"><button type="button" class="close-records">${text('收起记载')}</button></div></div></details></article>`;
+    const quotes=biographySources(n,data).map(r=>`<div class="life-source" id="life-source-${esc(n.id)}-${esc(r.ids[0])}" data-evidence-ids="${esc(JSON.stringify(r.ids))}"><p class="life-source-label">${text(sourceLabel(r))}</p>${renderQuote(r)}<a class="evidence-link" href="${url(r.section,r.block)}">${text('阅读全文')} <span aria-hidden="true">↗</span></a></div>`).join('');
+    const links=ids.map(id=>`<p>${eventLink(events.get(id))}</p>`).join('');
+    const related=ids.length>1?`<details class="life-document-events reading-more" id="life-events-${esc(n.id)}"><summary>${text('相关史事')}</summary>${links}</details>`:`<div class="life-document-events" id="life-events-${esc(n.id)}">${links}</div>`;
+    return `<article class="life-node" id="life-${esc(n.id)}" data-context tabindex="-1"><p class="event-date">${text(biographyDate(n,events,dateText))}</p><h4>${text(n.title)}</h4><p class="life-narrative">${n.sentences.map(s=>text(s.text)).join('')}</p><details class="life-documents" id="life-linked-${esc(n.id)}"><summary>${text('文献记载')}</summary><div class="life-documents-body">${quotes}${related}<div class="reading-actions"><button type="button" class="close-records">${text('收起记载')}</button></div></div></details></article>`;
   }).join('');
   const buckets=[];
   function bucket(stage,title){
@@ -115,8 +117,16 @@ export function renderBiography({bio,data,main,text,esc,dateText,url,sourceLabel
       const targetIndex=b.items.findIndex(e=>'life-event-'+e.id===saved?.anchor);
       let limit=Math.max(20,Number(saved?.lifeLimits?.[b.id])||0,targetIndex>=0?Math.ceil((targetIndex+1)/20)*20:0);
       if(targetIndex>=0)container.closest('details').open=true;
-      const paint=()=>{container.dataset.limit=String(limit);container.innerHTML=b.items.slice(0,limit).map(row).join('')+(limit<b.items.length?`<button type="button" class="load-more">${text('加载更多')}</button>`:'');
-        const button=container.querySelector('button');if(button)button.onclick=()=>{const y=window.scrollY,old=limit;limit+=20;paint();window.scrollTo(0,y);(container.querySelector('button')||container.querySelectorAll('article')[old])?.focus({preventScroll:true});onChange();};};paint();
+      const more=()=>limit<b.items.length?`<button type="button" class="load-more">${text('加载更多')}</button>`:'';
+      limit=Math.min(limit,b.items.length);container.dataset.limit=String(limit);
+      container.innerHTML=b.items.slice(0,limit).map(row).join('')+more();
+      container.addEventListener('click',event=>{
+        const button=event.target.closest('.load-more');if(!button||button.parentElement!==container)return;
+        const y=window.scrollY,old=limit;limit=Math.min(limit+20,b.items.length);button.remove();
+        container.insertAdjacentHTML('beforeend',b.items.slice(old,limit).map(row).join('')+more());
+        container.dataset.limit=String(limit);window.scrollTo(0,y);
+        container.querySelectorAll(':scope>article')[old]?.focus({preventScroll:true});onChange();
+      });
     }
   }};
 }

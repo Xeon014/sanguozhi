@@ -348,3 +348,24 @@ footer:before{content:'◆ ◆ ◆';display:block;font-size:8px;letter-spacing:.
 .topic-people{display:block!important}.topic-people a{margin-right:20px}.topic-record-links{align-items:flex-start;flex-wrap:wrap}.topic-record-links .reading-more{margin:0}
 .yearbook-more{margin:4px 0 12px}.yearbook-more .yearbook-locate{font-size:13px}
 @media(max-width:760px){.inline-life-event{grid-template-columns:minmax(0,1fr);gap:2px}.inline-life-event .event-date{padding-top:0}.inline-event>summary{font-size:18px}.inline-source blockquote{font-size:16px}.inline-evidence-body{padding-left:12px}}
+
+/* Concrete actions stay visible; only substantial reading and related lists fold. */
+.site-head #site-nav>.nav-search{display:flex;align-items:center;min-height:44px;font:14px system-ui,sans-serif}
+.preferences button{min-width:44px;min-height:44px}
+.person-source-link,.inline-detail-link,.yearbook-actions{font:13px/1.8 system-ui,sans-serif;margin:12px 0}
+.person-source-link a,.inline-detail-link a,.yearbook-actions a,.life-document-events a{display:inline-flex;align-items:center;min-height:44px;color:var(--accent)}
+.person-source-link{margin-top:0}.yearbook-item{padding-bottom:16px;margin-bottom:18px}.yearbook-item>.event-date{margin-bottom:10px}.yearbook-actions{margin:8px 0 0}
+.atlas-card-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}.atlas-card-actions a,.atlas-yearbook{display:inline-flex;align-items:center;min-height:44px}
+.atlas-card-actions .atlas-primary{background:none;color:var(--accent);padding:8px 0}.atlas-people{font:13px/1.8 system-ui,sans-serif}
+.topic-passage:has(>.topic-disclosure[open])>.topic-excerpt{display:none}
+.topic-passage mark{background:var(--soft);color:inherit;border-bottom:1px solid var(--accent)}
+.topic-local-pair{margin:18px 0;font:13px/1.8 system-ui,sans-serif}.topic-local-pair>summary{cursor:pointer;min-height:44px;padding:10px 0;color:var(--accent)}
+.topic-local-pair>.topic-pair{margin:12px 0}.topic-chapter-empty{background:transparent;box-shadow:none;border-top:1px solid var(--line);padding:14px 18px}
+.topic-chapter-empty>h3{font-size:15px;margin-bottom:8px}.topic-chapter-empty .topic-empty{margin:0;font-size:13px}
+[data-quote-ref]>[role=status]{font:13px/1.8 system-ui,sans-serif;color:var(--muted)}
+@media(max-width:760px){
+  .site-head #nav-toggle,.site-head .preferences button{min-width:44px;min-height:44px}
+  .site-head #site-nav>.nav-search{border-top:1px solid var(--line);padding:10px 4px;min-height:48px}
+  .topic-local-pair .topic-pair{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}.topic-local-pair label{min-width:0;display:grid;grid-template-columns:52px minmax(0,1fr)}
+  .topic-local-pair select{max-width:none;width:100%}.yearbook-item{margin-bottom:14px}
+}
