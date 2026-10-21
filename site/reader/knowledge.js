@@ -1,9 +1,9 @@
-import {personSources, renderBiography, evidenceKey, biographyScope, scopeIncludes, biographyAnchor} from './profiles.js';
-import {matchesEditorial, canonicalEditorial, overviewItems, groupDateText, yearbookItems} from './event-editorial.js';
-import {eventPeople, mountPersonFilter} from './person-filter.js';
-import {readingProjection,quoteText,passageHTML} from './event-reading.js';
-import {directoryPeople} from './people-directory.js';
-import {inlineEventRow,mountInlineReading,citationText,mountCitationText} from './inline-reading.js';
+import {personSources, renderBiography, evidenceKey, biographyScope, scopeIncludes, biographyAnchor} from './profiles.js?v=f0f0efaf1361bb90';
+import {matchesEditorial, canonicalEditorial, overviewItems, groupDateText, yearbookItems} from './event-editorial.js?v=f0f0efaf1361bb90';
+import {eventPeople, mountPersonFilter} from './person-filter.js?v=f0f0efaf1361bb90';
+import {readingProjection,quoteText,passageHTML} from './event-reading.js?v=f0f0efaf1361bb90';
+import {directoryPeople} from './people-directory.js?v=f0f0efaf1361bb90';
+import {inlineEventRow,mountInlineReading,citationText,mountCitationText} from './inline-reading.js?v=f0f0efaf1361bb90';
 // People and events share evidence; chronology is a view of events, never a second fact set.
 const BATCH = 40, SOURCE_BATCH = 20;
 const LAYERS = {original:'正文', pei:'裴注', modern:'现代注释'};

@@ -1,8 +1,8 @@
-import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js';
-import {biographyContext} from './profiles.js';
-import {topicDirectory, renderTopic} from './topics.js';
-import {mountAtlas, atlasHash} from './atlas.js';
-import {filteredOverviewItems} from './event-editorial.js';
+import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=f0f0efaf1361bb90';
+import {biographyContext} from './profiles.js?v=f0f0efaf1361bb90';
+import {topicDirectory, renderTopic} from './topics.js?v=f0f0efaf1361bb90';
+import {mountAtlas, atlasHash} from './atlas.js?v=f0f0efaf1361bb90';
+import {filteredOverviewItems} from './event-editorial.js?v=f0f0efaf1361bb90';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -16,6 +16,7 @@ const topicSections = new Set();
 let atlasPresentation;
 const normalize = s => simplified(String(s)).normalize('NFKC').toLowerCase();
 const cache = new Map();
+const assetVersion = new URL(import.meta.url).searchParams.get('v');
 const simplified = window.OpenCC?.Converter({from:'t',to:'cn'}) || (s => s);
 const traditional = window.OpenCC?.Converter({from:'cn',to:'t'}) || (s => s);
 const cv = s => prefs?.zh === 't' ? traditional(String(s)) : simplified(String(s));
@@ -27,7 +28,11 @@ const chapterCaption = s => {const c=collection(s.id);return c?`${c.label} · �
 const noteClass = kind => Object.keys(book.note_types).indexOf(kind) % 2 === 1 ? 'note-secondary' : 'note-primary';
 const url = (id, target = '') => `#/read/${encodeURIComponent(id)}${target ? '/' + encodeURIComponent(target) : ''}`;
 const resourceURL = path => root + 'resources/' + path.split('/').map(encodeURIComponent).join('/');
-async function json(path, options) { const r = await fetch(path, options); if (!r.ok) throw Error(`读取失败（${r.status}）`); return r.json(); }
+async function json(path, options) {
+  const address=new URL(path,location.href);
+  if(assetVersion)address.searchParams.set('v',assetVersion);
+  const r=await fetch(address,options);if(!r.ok)throw Error(`读取失败（${r.status}）`);return r.json();
+}
 async function data(path, options) {
   if (!cache.has(path)) {
     const pending=json(root + path, options).catch(e => { if(cache.get(path)===pending)cache.delete(path); throw e; });
