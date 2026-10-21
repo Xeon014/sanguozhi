@@ -24,7 +24,9 @@ export function atlasHash(state, home=false) {
   return (home?'#/':'#/events')+'?'+q;
 }
 export function yearbookHash(state) {
-  const q=new URLSearchParams(atlasHash(state).split('?')[1]);q.set('view','highlights');
+  const q=new URLSearchParams({view:'highlights'});
+  if(state.key)q.set('node',state.key);
+  for(const key of ['q','person'])if(state.filters?.[key])q.set(key,state.filters[key]);
   return '#/events?'+q;
 }
 export function layoutNodes(nodes, period, width, measureTitle=s=>s.length*14) {
@@ -64,8 +66,8 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
   host.className='atlas'+(home?' atlas-home':'');
   host.dataset.atlasHome=String(home);
   host.innerHTML=`<header class="atlas-heading"><div><p class="eyebrow">${text('184—280 · 精选大事')}</p>
-    <${home?'h2':'h1'}>${text(home?'三国风云':'三国风云 · 时间星图')}</${home?'h2':'h1'}><p>${text('循年看事，循事入卷')}</p></div>
-    ${home?'<a class="atlas-enter" href="#/events?view=atlas">'+text('进入史事探索')+' ↗</a>':''}</header>
+    <${home?'h2':'h1'}>${text('时代星图')}</${home?'h2':'h1'}><p>${text('循年看事，循事入卷')}</p></div>
+    ${home?'<a class="atlas-enter" href="#/events?view=atlas">'+text('完整星图')+' ↗</a>':''}</header>
     <div class="atlas-controls"><div class="atlas-periods" role="group" aria-label="${text('时间范围')}">
     ${PERIODS.map(p=>`<button type="button" data-period="${p.id}">${text(p.title)}</button>`).join('')}</div>
     <label>${text('类别')}<select aria-label="${text('星图类别')}"><option value="">${text('全部类别')}</option>${Object.entries(bundle.categories).map(([id,label])=>`<option value="${id}">${text(label)}</option>`).join('')}</select></label></div>
@@ -137,10 +139,11 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
       ${grouped?`<details class="atlas-member-dates" id="atlas-member-dates"><summary>${text('组内纪年：'+years.join('、')+'年'+(other?'；另有相对时间或年代未详记载':''))}</summary>
       <ul>${n.members.map(m=>`<li><a href="#/events/${encodeURIComponent(m.id)}">${text(m.title)}</a><span>${text(m.time)}</span></li>`).join('')}</ul></details>`:''}
       <p class="atlas-summary">${text(n.summary)}</p>
+      <details class="atlas-related reading-more" id="atlas-further-reading"><summary>${text('进一步查阅')}</summary>
       <div class="atlas-card-actions">${n.topic?`<a class="atlas-primary" href="#/topics/${encodeURIComponent(n.topic)}">${text('合读赤壁')} →</a>`:''}
-      <a href="${esc(href)}">${text('大事记载')} →</a></div>
-      <a class="atlas-yearbook" href="${esc(yearbookHash(state))}">${text('在年表中定位')} →</a>
-      <div class="atlas-people">${n.participants.slice(0,5).map(p=>`<a href="#/people/${encodeURIComponent(p.id)}">${text(p.name)}</a>`).join('')}</div></div>
+      ${!grouped?`<a href="${esc(href)}">${text('史事详情')} →</a>`:''}</div>
+      ${home?`<a class="atlas-yearbook" href="${esc(yearbookHash(state))}">${text('在大事年表中查看')} →</a>`:''}
+      <div class="atlas-people">${n.participants.slice(0,5).map(p=>`<a href="#/people/${encodeURIComponent(p.id)}">${text(p.name)}</a>`).join('')}</div></details></div>
       <div class="atlas-excerpts">${n.sources.map(excerpt).join('')}</div>`;
   }
   function render() {

@@ -29,7 +29,18 @@
     "chapter-022": "44ea2a8467c39dba4e4d1742e8a1ee73a77007a1960dd5c12cabffd3b38a3b5d",
     "chapter-026": "f038b0b3c7ab02f8d05d669052a812546bdcd29ed0b652c11be35e0923e16836",
     "chapter-060": "1321fb2e3a483f0af1de1833bd11a7a9019a7258de111a501bb9d172ba39ae81",
-    "chapter-014": "b73a4ced9fb5b7dba83be6531e23f0ed6efdbb235dc7b12b80441313d91fe3dd"
+    "chapter-014": "b73a4ced9fb5b7dba83be6531e23f0ed6efdbb235dc7b12b80441313d91fe3dd",
+    "chapter-008": "86929324e129234f886d27df82c96cfb20348564ee9e5f50a31f22819b0b867c",
+    "chapter-007": "95943e8c03d791b311520f9c7f77fa5b9015679510b88179c6adf9ddc3b84533",
+    "chapter-055": "f8bf8f526d6ea21eff760e3d455acfdd35e36080c95461478a408e442f879a10",
+    "chapter-040": "5c4dc70650ccb66438f3abed0660441f0e70c13b0c12ccfb0a13d36b4c5c3c6a",
+    "chapter-052": "852088264807358d2a616e3fc794a53418be0194eaa5a72c62b0afddbb345889"
+  },
+  "directory_factions": {
+    "wei": "魏",
+    "shu": "蜀",
+    "wu": "吴",
+    "qunxiong": "群雄"
   },
   "profiles": {
     "cao-cao": {
@@ -100,6 +111,9 @@
           ]
         }
       ],
+      "directory": {
+        "faction": "wei"
+      },
       "biography": {
         "stages": [
           {
@@ -3502,6 +3516,170 @@
           {
             "event": "chengguo-e-o009",
             "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o043",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o044",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o045",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o057",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o068",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o082",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o121",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o172",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o173",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o187",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o219",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o230",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o236",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o237",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o238",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o016",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o017",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o035",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o036",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o046",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o048",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o095",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o097",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o098",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o105",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o106",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o113",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o114",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o115",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o116",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o121",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o128",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o134",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-o061b",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-review-caocao-attacks",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-review-jinshang-office",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o051",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o068",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o074",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o121",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o132",
+            "stage": null
           }
         ],
         "compat": {
@@ -3645,7 +3823,10 @@
             "wendi-f0001-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "wendi-p0005": {
       "fields": [
@@ -3658,7 +3839,10 @@
             "mingdi-f0001-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "wendi-p0129": {
       "fields": [
@@ -3671,7 +3855,10 @@
             "shaodi-f0001-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "shaodi-p0068": {
       "fields": [
@@ -3684,7 +3871,10 @@
             "shaodi-f0004-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "shaodi-p0137": {
       "fields": [
@@ -3697,7 +3887,10 @@
             "shaodi-f0007-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "liu-bei": {
       "fields": [
@@ -3729,6 +3922,9 @@
           ]
         }
       ],
+      "directory": {
+        "faction": "shu"
+      },
       "biography": {
         "stages": [
           {
@@ -5383,6 +5579,134 @@
           {
             "event": "chengguo-e-p173",
             "stage": null
+          },
+          {
+            "event": "lvzang-e-o026",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o027",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o028",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o030",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o051",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o081",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o115",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-o058b",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o054",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o136",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o001",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o002",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o005",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o011",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o014",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o015",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o016",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o018",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o022",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o024",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o032",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o033",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o059",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o060",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o067",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o071",
+            "stage": null
+          },
+          {
+            "event": "wendi-e-o010b",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o008",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o066",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o091",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o141",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o142",
+            "stage": null
           }
         ],
         "compat": {
@@ -5412,7 +5736,10 @@
             "zhou-identity"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wu"
+      }
     },
     "lu-su": {
       "fields": [
@@ -5434,7 +5761,10 @@
             "su-identity"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wu"
+      }
     },
     "lu-meng": {
       "fields": [
@@ -5456,7 +5786,10 @@
             "meng-identity"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wu"
+      }
     },
     "wudi-p0100": {
       "fields": [
@@ -5487,7 +5820,10 @@
             "xunyu-f0027-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "wudi-p0143": {
       "fields": [
@@ -5509,7 +5845,10 @@
             "xunyu-f0028-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "wudi-p0182": {
       "fields": [
@@ -5540,7 +5879,10 @@
             "xunyu-f0029-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "wudi-p0178": {
       "fields": [
@@ -5571,7 +5913,10 @@
             "zhangle-f0013-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "wudi-p0236": {
       "fields": [
@@ -5602,7 +5947,10 @@
             "zhangle-f0014-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "wudi-p0162": {
       "fields": [
@@ -5633,7 +5981,10 @@
             "zhangle-f0015-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "wudi-p0183": {
       "fields": [
@@ -5664,7 +6015,10 @@
             "zhangle-f0016-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "wudi-p0180": {
       "fields": [
@@ -5695,7 +6049,10 @@
             "zhangle-f0017-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "zhuge-liang": {
       "fields": [
@@ -5726,7 +6083,10 @@
             "zhuge-f0008-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "shu"
+      }
     },
     "wudi-p0172": {
       "fields": [
@@ -5757,7 +6117,10 @@
             "guanzhang-q-o011"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "shu"
+      }
     },
     "wudi-p0367": {
       "fields": [
@@ -5788,7 +6151,10 @@
             "guanzhang-q-o023"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "shu"
+      }
     },
     "wudi-p0282": {
       "fields": [
@@ -5819,7 +6185,10 @@
             "guanzhang-f0019-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "shu"
+      }
     },
     "xianzhu-p0051": {
       "fields": [
@@ -5850,7 +6219,10 @@
             "guanzhang-f0018-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "shu"
+      }
     },
     "xianzhu-p0034": {
       "fields": [
@@ -5881,7 +6253,10 @@
             "guanzhang-f0017-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "shu"
+      }
     },
     "wudi-p0119": {
       "fields": [
@@ -5912,7 +6287,10 @@
             "sunshi-f0026-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wu"
+      }
     },
     "wudi-p0099": {
       "fields": [
@@ -5934,7 +6312,10 @@
             "sunshi-f0027-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wu"
+      }
     },
     "sun-quan": {
       "fields": [
@@ -5948,6 +6329,9 @@
           ]
         }
       ],
+      "directory": {
+        "faction": "wu"
+      },
       "biography": {
         "stages": [
           {
@@ -8110,6 +8494,454 @@
           {
             "event": "chengguo-e-o017",
             "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o089",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o198",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o203",
+            "stage": null
+          },
+          {
+            "event": "gongsuntao-e-o214",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o123",
+            "stage": null
+          },
+          {
+            "event": "lvzang-e-o128",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o009",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o015",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o017",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o026",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o037",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o039",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o049",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o050",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o053",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o057",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o058",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o063",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o064",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o069",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o071",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o076",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o077",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o080",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o090",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o094",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o097",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o099",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o105",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o112",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o115",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o116",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o118",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o123",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o124",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o125",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o127",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o129",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o133",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o140",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o146",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o149",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o150",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o172",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o173",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o174",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o175",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o181",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o183",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o184",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o185",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o022",
+            "stage": null
+          },
+          {
+            "event": "wuzhu-e-o028a",
+            "stage": null
+          },
+          {
+            "event": "wuzhu-e-o079a",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o007",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o008",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o009",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o010",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o012",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o013",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o014",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o015",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o017",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o018",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o019",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o020",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o021",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o022",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o025",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o029",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o030",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o033",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o038",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o039",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o040",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o042",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o043",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o047",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o050",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o062",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o066",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o067",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o068",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o071",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o074",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o075",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o076",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o080",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o086",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o091",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o093",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o115",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o116",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o118",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o120",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o122",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o127",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o128",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o129",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o131",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o132",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o133",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o135",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o137",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o138",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o139",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o142",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o144",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o145",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o148",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o149",
+            "stage": null
+          },
+          {
+            "event": "zhouyu-e-o069a",
+            "stage": null
           }
         ],
         "compat": {
@@ -8148,7 +8980,10 @@
             "pangfa-f0005-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "shu"
+      }
     },
     "xianzhu-p0046": {
       "fields": [
@@ -8179,7 +9014,10 @@
             "pangfa-f0013-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "shu"
+      }
     },
     "xianzhu-p0115": {
       "fields": [
@@ -8219,7 +9057,10 @@
             "luxun-f0010-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wu"
+      }
     },
     "luxun-p0048": {
       "fields": [
@@ -8232,7 +9073,10 @@
             "luxun-f0011-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wu"
+      }
     },
     "wudi-p0027": {
       "fields": [
@@ -8263,7 +9107,10 @@
             "xiahoucao-f0003-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "wudi-p0278": {
       "fields": [
@@ -8285,7 +9132,10 @@
             "xiahoucao-f0006-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "cao-ren": {
       "fields": [
@@ -8307,7 +9157,10 @@
             "xiahoucao-f0009-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "xiahoucao-p0045": {
       "fields": [
@@ -8329,7 +9182,10 @@
             "xiahoucao-f0013-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "wudi-p0075": {
       "fields": [
@@ -8351,7 +9207,10 @@
             "xiahoucao-f0016-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "wendi-p0039": {
       "fields": [
@@ -8373,7 +9232,10 @@
             "xiahoucao-f0019-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "wendi-p0038": {
       "fields": [
@@ -8395,7 +9257,10 @@
             "xiahoucao-f0022-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "mingdi-p0056": {
       "fields": [
@@ -8408,7 +9273,10 @@
             "xiahoucao-f0023-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "mingdi-p0063": {
       "fields": [
@@ -8430,7 +9298,10 @@
             "xiahoucao-f0026-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "shaodi-p0064": {
       "fields": [
@@ -8443,7 +9314,10 @@
             "xiahoucao-f0027-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "wudi-p0053": {
       "fields": [
@@ -8465,7 +9339,10 @@
             "dongyuan-f0002-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "qunxiong"
+      }
     },
     "wudi-p0052": {
       "fields": [
@@ -8487,7 +9364,10 @@
             "dongyuan-f0004-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "qunxiong"
+      }
     },
     "wudi-p0057": {
       "fields": [
@@ -8500,7 +9380,10 @@
             "dongyuan-f0005-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "qunxiong"
+      }
     },
     "liu-biao": {
       "fields": [
@@ -8522,7 +9405,10 @@
             "dongyuan-f0007-q"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "qunxiong"
+      }
     },
     "guanzhang-p0047": {
       "fields": [
@@ -8546,7 +9432,10 @@
             "jfj-q0031"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "shu"
+      }
     },
     "shaodi-p0051": {
       "fields": [
@@ -8570,7 +9459,10 @@
             "jfj-q0085"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "shu"
+      }
     },
     "shaodi-p0050": {
       "fields": [
@@ -8594,7 +9486,10 @@
             "jfj-q0127"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "shu"
+      }
     },
     "shaodi-p0004": {
       "fields": [
@@ -8616,7 +9511,10 @@
             "wgc-q0001"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "mingdi-p0048": {
       "fields": [
@@ -8638,7 +9536,10 @@
             "wgc-q0011"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "shaodi-p0044": {
       "fields": [
@@ -8660,7 +9561,10 @@
             "wgc-q0022"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "shaodi-p0080": {
       "fields": [
@@ -8682,7 +9586,10 @@
             "wgc-q0035"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     },
     "shaodi-p0073": {
       "fields": [
@@ -8704,7 +9611,10 @@
             "wgc-q0063"
           ]
         }
-      ]
+      ],
+      "directory": {
+        "faction": "wei"
+      }
     }
   }
 }

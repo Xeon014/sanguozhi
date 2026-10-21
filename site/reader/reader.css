@@ -323,3 +323,28 @@ footer:before{content:'◆ ◆ ◆';display:block;font-size:8px;letter-spacing:.
   .reading-group{padding:16px 0 20px}
   .block{margin-bottom:14px}
 }
+
+/* Selected people share one directory, with reviewed primary affiliations. */
+.site-head #site-nav>.nav-person{display:flex;align-items:center;min-height:44px;font:14px system-ui,sans-serif}
+.people-factions{display:flex;flex-wrap:wrap;gap:4px 12px;margin:24px 0 0;font:14px system-ui,sans-serif}
+.people-factions a{display:flex;align-items:center;min-height:44px;padding:8px 14px;border-bottom:2px solid transparent}
+.people-factions a[aria-current=page]{color:var(--accent);border-color:var(--accent)}
+@media(max-width:760px){.site-head #site-nav>.nav-person{border-top:1px solid var(--line);padding:10px 4px;min-height:48px}.people-factions{gap:2px 4px}.people-factions a{padding-inline:12px}}
+
+/* Reading stays with its person, event or topic; cross-reading is secondary. */
+.reading-more{margin:16px 0;font:13px/1.8 system-ui,sans-serif;color:var(--muted)}
+.reading-more>summary{cursor:pointer;min-height:44px;padding:10px 0;list-style-position:inside}
+.reading-more a{display:inline-block;min-height:44px;padding:9px 0;margin-right:18px;color:var(--accent)}
+.inline-event>summary,.inline-identity>summary{cursor:pointer;min-height:44px;padding:8px 0;font-size:19px;line-height:1.7}
+.inline-identity{margin-top:22px}.inline-identity>summary{font-size:15px}
+.inline-source{margin:18px 0 26px}.inline-source figcaption{font:12px/1.8 system-ui,sans-serif;color:var(--muted);margin-bottom:10px}
+.inline-source blockquote{margin:0;font-size:17px;line-height:2}.inline-source>a{display:inline-block;min-height:44px;padding:10px 0;color:var(--accent);font-size:13px}
+.inline-evidence-body{padding:4px 0 4px 16px;border-left:2px solid var(--line)}
+.inline-life-event{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px}.inline-life-event>div{min-width:0}
+.inline-life-event .event-date{padding-top:12px}.inline-life-event .inline-event>summary{font-size:16px}
+.person-reading-more{margin-top:0}.event-context>section{margin:14px 0}
+.atlas-related .atlas-card-actions{display:flex;gap:16px;flex-wrap:wrap}.atlas-related .atlas-primary{background:none;color:var(--accent);padding:9px 0}
+.atlas-enter{font-size:12px!important;color:var(--muted)!important;background:transparent!important;border:0!important;box-shadow:none!important}
+.topic-people{display:block!important}.topic-people a{margin-right:20px}.topic-record-links{align-items:flex-start;flex-wrap:wrap}.topic-record-links .reading-more{margin:0}
+.yearbook-more{margin:4px 0 12px}.yearbook-more .yearbook-locate{font-size:13px}
+@media(max-width:760px){.inline-life-event{grid-template-columns:minmax(0,1fr);gap:2px}.inline-life-event .event-date{padding-top:0}.inline-event>summary{font-size:18px}.inline-source blockquote{font-size:16px}.inline-evidence-body{padding-left:12px}}

@@ -60,12 +60,12 @@ export function renderTopic(topic, catalog, {main, qs, esc, cv, url, collection,
   function card(entry,step) {
     const r=refs.get(entry.ref),event=events.get(entry.event),id=`topic-${step.id}-${r.id}`;
     const reading=topicReadingSources(catalog,{...event,accounts:[{evidence:[r.id]}],participants:[],place:null},sections);
-    return `<article class="topic-record" id="${esc(id)}" tabindex="-1" data-context ${targetRef===r.id?'data-source-target':''}>
+    return `<article class="topic-record" id="${esc(id)}" data-topic-evidence="${esc(r.id)}" tabindex="-1" data-context ${targetRef===r.id?'data-source-target':''}>
       ${sourceText(r)}
       ${reading.notes.length?disclosure(id+'-notes','相关注释',reading.notes.map(n=>sourceText(n,true)).join('')):''}
       ${disclosure(id+'-context','查看前后文',reading.context.map(n=>sourceText(n,true)).join(''))}
       <div class="topic-record-links"><a class="topic-out" href="${url(r.section,r.block)}">${text('阅读全文')} ↗</a>
-      <a class="topic-out" href="#/events/${encodeURIComponent(event.id)}?ref=${encodeURIComponent(r.id)}">${text(event.title)} →</a></div>
+      <details class="reading-more topic-event-more" id="${esc(id)}-event"><summary>${text('相关史事')}</summary><a class="topic-out" href="#/events/${encodeURIComponent(event.id)}?ref=${encodeURIComponent(r.id)}">${text(event.title)} →</a></details></div>
       <p class="topic-date">${text('相关史事纪年：'+dateText(event.time))}</p>
     </article>`;
   }
@@ -82,9 +82,9 @@ export function renderTopic(topic, catalog, {main, qs, esc, cv, url, collection,
       ${s.intro.map(line=>`<p>${text(line.text)} <a class="topic-jump" data-topic-ref="topic-${esc(s.id)}-${esc(line.evidence[0])}" href="#/topics/${esc(topic.id)}?step=${esc(s.id)}&ref=${encodeURIComponent(line.evidence[0])}">${text('记载')} ↓</a></p>`).join('')}
       </div></header>
       <div class="topic-chapters">${chapterIds.map(cid=>`<section class="topic-chapter" data-chapter="${esc(cid)}" data-book="${esc(collection(cid)?.id||'')}"><h3>${text(chapterName(cid))}</h3>${s.entries.filter(e=>refs.get(e.ref).section===cid).map(e=>card(e,s)).join('')||`<p class="topic-empty">${text('本节请选读其他篇目。')}</p>`}</section>`).join('')}</div>
-      <nav class="topic-people" aria-label="${text(s.title+'相关人物')}">${s.people.map(id=>`<a class="topic-out" href="#/people/${encodeURIComponent(id)}">${text(people.get(id).name)} →</a>`).join('')}<button class="topic-adjust" type="button">${text('调整对读篇目')} ↑</button></nav>
+      <details class="topic-people reading-more" id="topic-people-${esc(s.id)}"><summary>${text('相关人物')}</summary>${s.people.map(id=>`<a class="topic-out" href="#/people/${encodeURIComponent(id)}">${text(people.get(id).name)} →</a>`).join('')}</details><button class="topic-adjust" type="button">${text('调整对读篇目')} ↑</button>
     </section>`).join('')}
-    <nav class="topic-end"><a href="#/events">${text('继续浏览史事')} →</a><a href="#/contents">${text('全书目录')} →</a></nav></article>`;
+    <nav class="topic-end"><a href="#/topics">${text('返回专题研究')} →</a></nav></article>`;
   const page=main.querySelector('.topic-page'), selectA=main.querySelector('#topic-a'), selectB=main.querySelector('#topic-b');
   function update() {
     page.dataset.topicMode=mode;page.dataset.topicA=a;page.dataset.topicB=b;

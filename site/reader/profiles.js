@@ -84,15 +84,15 @@ export function personSources(data,person,profile,base) {
   return [...groups.values()].sort((a,b)=>a.section.localeCompare(b.section,undefined,{numeric:true})||({original:0,pei:1,modern:2}[a.layer]-{original:0,pei:1,modern:2}[b.layer])||(a.source?.file||'').localeCompare(b.source?.file||'',undefined,{numeric:true})||(a.source?.index||0)-(b.source?.index||0)||(a.start||0)-(b.start||0));
 }
 
-export function renderBiography({bio,data,main,text,esc,dateText,url,sourceLabel,detailPath,saved,onChange}) {
+export function renderBiography({bio,data,main,text,esc,dateText,url,sourceLabel,detailPath,saved,onChange,readingRow=null}) {
   const events=new Map(data.events.map(e=>[e.id,e]));
   const selected=new Set(bio.nodes.flatMap(n=>n.sentences.flatMap(s=>s.events)));
   const eventLink=e=>`<a href="#/events/${esc(e.id)}">${text(e.title)}</a>`;
-  const row=e=>`<article class="life-event" id="life-event-${esc(e.id)}" data-context tabindex="-1"><span>${text(dateText(e.time))}</span>${eventLink(e)}</article>`;
+  const row=e=>readingRow?readingRow(e):`<article class="life-event" id="life-event-${esc(e.id)}" data-context tabindex="-1"><span>${text(dateText(e.time))}</span>${eventLink(e)}</article>`;
   const nodes=stage=>bio.nodes.filter(n=>n.stage===stage).map(n=>{
     const ids=[...new Set(n.sentences.flatMap(s=>s.events))];
     const quotes=biographySources(n,data).map(r=>`<div class="life-source" id="life-source-${esc(n.id)}-${esc(r.ids[0])}" data-evidence-ids="${esc(JSON.stringify(r.ids))}"><p class="life-source-label">${text(sourceLabel(r))}</p><blockquote>${text(r.quote)}</blockquote><a class="evidence-link" href="${url(r.section,r.block)}">${text('原文与译注')} <span aria-hidden="true">↗</span></a></div>`).join('');
-    return `<article class="life-node" id="life-${esc(n.id)}" data-context tabindex="-1"><p class="event-date">${text(biographyDate(n,events,dateText))}</p><h4>${text(n.title)}</h4><p class="life-narrative">${n.sentences.map(s=>text(s.text)).join('')}</p><details class="life-documents" id="life-linked-${esc(n.id)}"><summary>${text('文献记载')}</summary><div class="life-documents-body">${quotes}<div class="life-document-events" role="group" aria-label="${text('所含史事')}">${ids.map(id=>row(events.get(id))).join('')}</div><div class="reading-actions"><button type="button" class="close-records">${text('收起记载')}</button></div></div></details></article>`;
+    return `<article class="life-node" id="life-${esc(n.id)}" data-context tabindex="-1"><p class="event-date">${text(biographyDate(n,events,dateText))}</p><h4>${text(n.title)}</h4><p class="life-narrative">${n.sentences.map(s=>text(s.text)).join('')}</p><details class="life-documents" id="life-linked-${esc(n.id)}"><summary>${text('文献记载')}</summary><div class="life-documents-body">${quotes}<details class="life-document-events reading-more" id="life-events-${esc(n.id)}"><summary>${text('相关史事')}</summary>${ids.map(id=>`<p>${eventLink(events.get(id))}</p>`).join('')}</details><div class="reading-actions"><button type="button" class="close-records">${text('收起记载')}</button></div></div></details></article>`;
   }).join('');
   const buckets=[];
   function bucket(stage,title){
@@ -103,7 +103,7 @@ export function renderBiography({bio,data,main,text,esc,dateText,url,sourceLabel
     return `<details class="life-more" id="${id}"><summary>${text(title)}</summary><div data-life-list="${id}" data-limit="0"></div></details>`;
   }
   const supplement=bucket(null,'展开记载');
-  const html=`<section class="person-biography"><div class="section-heading"><h2>${text('生平')}</h2><a href="#/events?person=${esc(detailPath.split('/').pop())}">${text('全部相关史事')}</a></div><nav class="life-stages" aria-label="${text('生平阶段')}">${bio.stages.map(s=>`<a href="${detailPath}?at=stage-${esc(s.id)}">${text(s.title)}</a>`).join('')}</nav>${supplement?`<p class="supplement-jump"><a href="${detailPath}?at=supplement">${text('生平补遗')}</a></p>`:''}${bio.stages.map(s=>`<section class="life-stage" id="life-stage-${esc(s.id)}" data-context tabindex="-1"><h3>${text(s.title)}</h3>${nodes(s.id)}${bucket(s.id,'更多事迹')}</section>`).join('')}</section>${supplement?`<section class="person-supplement" id="life-supplement" data-context tabindex="-1" aria-labelledby="supplement-heading"><h2 id="supplement-heading">${text('生平补遗')}</h2>${supplement}</section>`:''}`;
+  const html=`<section class="person-biography"><div class="section-heading"><h2>${text('生平')}</h2></div><nav class="life-stages" aria-label="${text('生平阶段')}">${bio.stages.map(s=>`<a href="${detailPath}?at=stage-${esc(s.id)}">${text(s.title)}</a>`).join('')}</nav>${supplement?`<p class="supplement-jump"><a href="${detailPath}?at=supplement">${text('生平补遗')}</a></p>`:''}${bio.stages.map(s=>`<section class="life-stage" id="life-stage-${esc(s.id)}" data-context tabindex="-1"><h3>${text(s.title)}</h3>${nodes(s.id)}${bucket(s.id,'更多事迹')}</section>`).join('')}</section>${supplement?`<section class="person-supplement" id="life-supplement" data-context tabindex="-1" aria-labelledby="supplement-heading"><h2 id="supplement-heading">${text('生平补遗')}</h2>${supplement}</section>`:''}`;
   return {html,bind(){
     main.querySelectorAll('.close-records').forEach(button=>button.onclick=()=>{
       const details=button.closest('details');details.open=false;

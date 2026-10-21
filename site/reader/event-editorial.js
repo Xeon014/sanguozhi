@@ -17,14 +17,13 @@ export function canonicalEditorial(qs, editorial) {
   if(result.has('view')){
     if(group)result.set('group',group.id);
     if(group&&!qs.has('node'))return result;
-    if(['all','184-199','200-219','220-249','250-280','undated'].includes(qs.get('period')))result.set('period',qs.get('period'));
     const keys=new Set();
     editorial.groups.forEach(g=>keys.add('group:'+g.id));
     Object.keys(editorial.records).forEach(id=>keys.add('event:'+id));
     if(keys.has(qs.get('node')))result.set('node',qs.get('node'));
   }
   for(const [key,field] of [['category','categories'],['importance','importance'],['kind','record_kind']]){
-    if(result.has('view')&&key!=='category')continue;
+    if(result.has('view'))continue;
     if(Object.hasOwn(editorial.taxonomy[field],qs.get(key)))result.set(key,qs.get(key));
   }
   return result;
@@ -60,6 +59,13 @@ export function groupDateText(events) {
 
 // Filter whole reviewed groups; member dates never replace the anchor year.
 export function yearbookItems(events, editorial, qs, normalize=s=>String(s).toLowerCase()) {
+  const supported=new URLSearchParams();
+  for(const key of ['q','person'])if(qs.has(key))supported.set(key,qs.get(key));
+  return filteredOverviewItems(events,editorial,supported,normalize);
+}
+
+// Atlas and legacy views retain their own time/category filters.
+export function filteredOverviewItems(events, editorial, qs, normalize=s=>String(s).toLowerCase()) {
   const period=qs.get('period')||'all',year=qs.get('year'),person=qs.get('person');
   const needle=normalize(qs.get('q')||''),category=qs.get('category');
   return overviewItems(events,editorial).filter(item=>{
