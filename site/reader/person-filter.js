@@ -1,3 +1,4 @@
+import {bindFloatingPanel} from './floating-panel.js?v=37f069b5c5e3bb96';
 // Suggestions use explicit participation, never mentions or name inference.
 export function eventPeople(data, visiblePeople, normalize) {
   const participants=new Set(data.events.flatMap(e=>e.participants.map(p=>p.person)));
@@ -26,10 +27,14 @@ export function mountPersonFilter(host,people,{selected,esc,cv,normalize,onSelec
     <input type="hidden" name="person" value="${esc(selected)}"><div class="person-popup" hidden><div id="person-options" role="listbox" aria-label="${text('人物候选')}"></div>
     <p id="person-feedback" role="status"></p></div>`;
   const input=host.querySelector('[role=combobox]'),popup=host.querySelector('.person-popup'),list=host.querySelector('[role=listbox]'),status=host.querySelector('[role=status]');
+  const clear=host.querySelector('.person-clear');
+  const floating=bindFloatingPanel(host.querySelector('.person-combo-input'),popup,{onDismiss:()=>close()});
   let options=[],active=-1,skipFocus=restoreFocus,composing=false;
+  const updateClear=()=>{clear.hidden=!selected&&!input.value;clear.setAttribute('aria-label',cv(selected?'清除人物筛选':'清除人物输入'));};
   function close(restore=true){
     popup.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');active=-1;
     if(restore)input.value=cv(chosen()?.name||'');
+    updateClear();
   }
   function highlight(index) {
     active=index;
@@ -43,7 +48,7 @@ export function mountPersonFilter(host,people,{selected,esc,cv,normalize,onSelec
     if(!query.trim()&&selected&&!options.some(p=>p.id===selected)&&chosen())options.splice(1,0,chosen());
     list.innerHTML=options.map((p,i)=>`<div role="option" id="person-option-${i}" aria-selected="false" data-index="${i}"><span>${text(p.name)}</span>${p.detail?`<small>${text(p.detail)}</small>`:''}</div>`).join('');
     status.textContent=cv(query.trim()?(matches.length?`找到 ${matches.length} 位人物${matches.length>60?'，显示前 60 位，请继续输入以缩小范围':''}`:'未找到人物，可尝试姓名、字或其他称谓。'):'常用人物；输入可查找更多人物。');
-    popup.hidden=false;input.setAttribute('aria-expanded','true');highlight(-1);
+    popup.hidden=false;input.setAttribute('aria-expanded','true');highlight(-1);updateClear();floating.fit();
   }
   function choose(person) {
     selected=person.id;host.querySelector('[name=person]').value=selected;close();
@@ -67,6 +72,7 @@ export function mountPersonFilter(host,people,{selected,esc,cv,normalize,onSelec
   };
   list.onmousedown=e=>e.preventDefault();
   list.onclick=e=>{const option=e.target.closest('[data-index]');if(option)choose(options[Number(option.dataset.index)]);};
-  host.querySelector('.person-clear').onclick=()=>choose({id:''});
+  clear.onclick=()=>{if(selected)choose({id:''});else{input.value='';close(false);input.focus({preventScroll:true});}};
   host.addEventListener('focusout',e=>{if(!host.contains(e.relatedTarget))close();});
+  updateClear();
 }

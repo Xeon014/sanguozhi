@@ -1,4 +1,4 @@
-import {quoteText} from './event-reading.js?v=c1b32f8ee85e4ec7';
+import {quoteText} from './event-reading.js?v=37f069b5c5e3bb96';
 // Read reviewed quotations in place; no summaries, facts or dates are inferred.
 export function citationText(record,text,tag='blockquote',className='') {
   return `<${tag} class="${className}" data-quote-ref="${text(record.ids?.[0]||record.id)}"><span role="status">${text('正在载入…')}</span></${tag}>`;
@@ -31,6 +31,8 @@ export function mountCitationText(root,{data,text,loadSection,onChange=()=>{}}) 
   root.citationReady=hydrate;
   root.addEventListener('toggle',hydrate,true);
   root.addEventListener('click',event=>{
+    const close=event.target.closest('.close-quote');
+    if(close){event.preventDefault();const details=close.closest('.source-quote');details.open=false;const summary=details.querySelector('summary');summary.focus({preventScroll:true});summary.scrollIntoView({block:'nearest'});onChange();return;}
     const retry=event.target.closest('.retry-citation');if(!retry)return;
     event.preventDefault();event.stopPropagation();const el=retry.closest('[data-quote-ref]');delete el.dataset.quoteState;fill(el);
   });
