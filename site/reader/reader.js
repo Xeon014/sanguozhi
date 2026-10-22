@@ -1,8 +1,8 @@
-import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=582c8d5101dc9a2a';
-import {biographyContext} from './profiles.js?v=582c8d5101dc9a2a';
-import {topicDirectory, renderTopic} from './topics.js?v=582c8d5101dc9a2a';
-import {mountAtlas, atlasHash, canonicalAtlasHomeHash} from './atlas.js?v=582c8d5101dc9a2a';
-import {filteredOverviewItems} from './event-editorial.js?v=582c8d5101dc9a2a';
+import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=c1b32f8ee85e4ec7';
+import {biographyContext} from './profiles.js?v=c1b32f8ee85e4ec7';
+import {topicDirectory, renderTopic} from './topics.js?v=c1b32f8ee85e4ec7';
+import {mountAtlas, atlasHash, canonicalAtlasHomeHash} from './atlas.js?v=c1b32f8ee85e4ec7';
+import {filteredOverviewItems} from './event-editorial.js?v=c1b32f8ee85e4ec7';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -534,7 +534,7 @@ async function boot(){
     }
     if(!inNavigation){
       const title=$('#main h1')?.textContent||'当前阅读';
-      const source=a.closest('.person-detail,.unified-event,.topic-page,.atlas,.result,.chapter-article');
+      const source=a.closest('.person-detail,.unified-event,.topic-page,.atlas,.result,.chapter-article,.yearbook-item');
       if(a.closest('.query-view')&&!a.closest('.atlas')&&detail){
         list={hash:location.hash,view:viewSnapshot(),origin:returnSearch};
       }else if(source&&!a.closest('.knowledge-tabs')&&!(main.dataset.page==='read'&&target.startsWith('#/read/'))){

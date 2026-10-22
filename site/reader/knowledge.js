@@ -1,9 +1,9 @@
-import {personSources, renderBiography, evidenceKey, biographyScope, scopeIncludes, biographyAnchor} from './profiles.js?v=582c8d5101dc9a2a';
-import {matchesEditorial, canonicalEditorial, overviewItems, groupDateText, yearbookItems} from './event-editorial.js?v=582c8d5101dc9a2a';
-import {eventPeople, mountPersonFilter} from './person-filter.js?v=582c8d5101dc9a2a';
-import {readingProjection,quoteText,passageHTML} from './event-reading.js?v=582c8d5101dc9a2a';
-import {directoryPeople} from './people-directory.js?v=582c8d5101dc9a2a';
-import {inlineEventRow,mountInlineReading,citationText,mountCitationText} from './inline-reading.js?v=582c8d5101dc9a2a';
+import {personSources, renderBiography, evidenceKey, biographyScope, scopeIncludes, biographyAnchor} from './profiles.js?v=c1b32f8ee85e4ec7';
+import {matchesEditorial, canonicalEditorial, overviewItems, groupDateText, yearbookItems} from './event-editorial.js?v=c1b32f8ee85e4ec7';
+import {eventPeople, mountPersonFilter} from './person-filter.js?v=c1b32f8ee85e4ec7';
+import {readingProjection,quoteText,passageHTML} from './event-reading.js?v=c1b32f8ee85e4ec7';
+import {directoryPeople} from './people-directory.js?v=c1b32f8ee85e4ec7';
+import {inlineEventRow,mountInlineReading,citationText,mountCitationText} from './inline-reading.js?v=c1b32f8ee85e4ec7';
 // People and events share evidence; chronology is a view of events, never a second fact set.
 const BATCH = 40, SOURCE_BATCH = 20;
 const LAYERS = {original:'正文', pei:'裴注', modern:'现代注释'};
