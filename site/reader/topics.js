@@ -1,6 +1,6 @@
-import {eventSources, sourceLayerLabel, dateText} from './knowledge.js?v=f0f0efaf1361bb90';
-import {evidenceKey} from './profiles.js?v=f0f0efaf1361bb90';
-import {quoteText,readingProjection,passageHTML} from './event-reading.js?v=f0f0efaf1361bb90';
+import {eventSources, sourceLayerLabel, dateText} from './knowledge.js?v=113ba817c614cba1';
+import {evidenceKey} from './profiles.js?v=113ba817c614cba1';
+import {quoteText,readingProjection,passageHTML} from './event-reading.js?v=113ba817c614cba1';
 
 // Topic excerpts retain their existing context view; event pages use the new
 // in-place paragraph projection. Do not couple these two reading interfaces.
@@ -43,7 +43,7 @@ export function topicDirectory(presentation, {esc, cv}) {
       const sources=[...new Map(topic.preview.map(p=>{const r=refs.get(p.ref);return [r.section,r.section_title];})).values()];
       return `<article class="topic-directory-card"><h2><a href="#/topics/${esc(topic.id)}">${text(topic.title)}</a></h2><p>${text(topic.subtitle)}</p>
       <ul class="topic-directory-sources" aria-label="${text('选读篇目')}">${sources.map(s=>`<li>${text(s)}</li>`).join('')}</ul>
-      <a class="topic-enter" href="#/topics/${esc(topic.id)}">${text('进入合读')} →</a></article>`;
+      <a class="topic-enter" href="#/topics/${esc(topic.id)}">${text('进入合读')}</a></article>`;
     }).join('')}</div></section>`;
 }
 
@@ -57,7 +57,7 @@ export function renderTopic(topic, catalog, {main, qs, esc, cv, url, collection,
   let {mode,a,b}=topicReadingState(chapterIds,saved,refs.get(targetRef)?.section);
   const sourceText=(r,context=false)=>`<p class="topic-source-label">${text((context?r.section_title+' · ':'')+sourceLayerLabel(r))}</p><blockquote>${text(quoteText(r,sections))}</blockquote>`;
   const disclosure=(id,title,body)=>`<details class="topic-disclosure" id="${esc(id)}"><summary>${text(title)}</summary>${body}
-    <div class="reading-actions"><button type="button" class="topic-close">${text('收起并返回')} ↑</button></div></details>`;
+    <div class="reading-actions"><button type="button" class="topic-close">${text('收起并返回')}</button></div></details>`;
   function card(entry,step) {
     const r=refs.get(entry.ref),event=events.get(entry.event),id=`topic-${step.id}-${r.id}`;
     const reading=topicReadingSources(catalog,{...event,accounts:[{evidence:[r.id]}],participants:[],place:null},sections);
@@ -70,8 +70,8 @@ export function renderTopic(topic, catalog, {main, qs, esc, cv, url, collection,
       <div class="topic-passage"><div class="topic-excerpt">${sourceText(r)}</div>
       ${context.some(n=>n.block!==r.block||n.quote!==r.quote)?disclosure(id+'-context','查看前后文',contextBody):''}</div>
       ${reading.notes.length?disclosure(id+'-notes','相关注释',reading.notes.map(n=>sourceText(n,true)).join('')):''}
-      <div class="topic-record-links"><a class="topic-out" href="${url(r.section,r.block)}">${text('阅读全文')} ↗</a>
-      <a class="topic-out topic-event-link" href="#/events/${encodeURIComponent(event.id)}?ref=${encodeURIComponent(r.id)}" aria-label="${text(event.title+' · 史事详情')}">${text('史事详情')} →</a></div>
+      <div class="topic-record-links"><a class="topic-out" href="${url(r.section,r.block)}">${text('阅读全文')}</a>
+      <a class="topic-out topic-event-link" href="#/events/${encodeURIComponent(event.id)}?ref=${encodeURIComponent(r.id)}" aria-label="${text(event.title+' · 史事详情')}">${text('史事详情')}</a></div>
       <p class="topic-date">${text('相关史事纪年：'+dateText(event.time))}</p>
     </article>`;
   }
@@ -85,13 +85,13 @@ export function renderTopic(topic, catalog, {main, qs, esc, cv, url, collection,
     <div class="topic-size"><button id="topic-smaller" aria-label="${text('减小字号')}">A−</button><button id="topic-larger" aria-label="${text('增大字号')}">A＋</button></div></div>
     ${topic.steps.map((s,i)=>`<section class="topic-step" id="topic-step-${esc(s.id)}" tabindex="-1" data-context ${!targetRef&&s===targetStep?'data-source-target':''}>
       <header class="topic-step-heading"><span class="topic-step-number" aria-hidden="true">0${i+1}</span><div><h2>${text(s.title)}</h2>
-      ${s.intro.map(line=>`<p>${text(line.text)} <a class="topic-jump" data-topic-ref="topic-${esc(s.id)}-${esc(line.evidence[0])}" href="#/topics/${esc(topic.id)}?step=${esc(s.id)}&ref=${encodeURIComponent(line.evidence[0])}">${text('记载')} ↓</a></p>`).join('')}
+      ${s.intro.map(line=>`<p>${text(line.text)} <a class="topic-jump" data-topic-ref="topic-${esc(s.id)}-${esc(line.evidence[0])}" href="#/topics/${esc(topic.id)}?step=${esc(s.id)}&ref=${encodeURIComponent(line.evidence[0])}">${text('记载')}</a></p>`).join('')}
       </div></header>
       <div class="topic-chapters">${chapterIds.map(cid=>`<section class="topic-chapter" data-chapter="${esc(cid)}" data-book="${esc(collection(cid)?.id||'')}"><h3>${text(chapterName(cid))}</h3>${s.entries.filter(e=>refs.get(e.ref).section===cid).map(e=>card(e,s)).join('')||`<p class="topic-empty">${text('本节未选录《'+chapterName(cid)+'》。')}</p>`}</section>`).join('')}</div>
       <details class="topic-local-pair" id="topic-pair-${esc(s.id)}"><summary>${text('调整对读篇目')}</summary><div class="topic-pair">${['a','b'].map((slot,i)=>`<label>${text(i===0?'第一篇':'第二篇')}<select data-local-pair="${slot}" aria-label="${text(s.title+' · '+(i===0?'第一篇':'第二篇'))}">${chapterIds.map(cid=>{const included=s.entries.some(e=>refs.get(e.ref).section===cid);return `<option value="${esc(cid)}" data-included="${included}">${text(chapterName(cid)+(included?'':'（本节未选录）'))}</option>`;}).join('')}</select></label>`).join('')}</div></details>
-      <details class="topic-people reading-more" id="topic-people-${esc(s.id)}"><summary>${text('相关人物')}</summary>${s.people.map(id=>`<a class="topic-out" href="#/people/${encodeURIComponent(id)}">${text(people.get(id).name)} →</a>`).join('')}</details>
+      <details class="topic-people reading-more" id="topic-people-${esc(s.id)}"><summary>${text('相关人物')}</summary>${s.people.map(id=>`<a class="topic-out" href="#/people/${encodeURIComponent(id)}">${text(people.get(id).name)} </a>`).join('')}</details>
     </section>`).join('')}
-    <nav class="topic-end"><a href="#/topics">${text('返回专题研究')} →</a></nav></article>`;
+    <nav class="topic-end"><a href="#/topics">${text('返回专题研究')}</a></nav></article>`;
   const page=main.querySelector('.topic-page'), selectA=main.querySelector('#topic-a'), selectB=main.querySelector('#topic-b');
   function update() {
     page.dataset.topicMode=mode;page.dataset.topicA=a;page.dataset.topicB=b;

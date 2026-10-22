@@ -1,9 +1,9 @@
-import {personSources, renderBiography, evidenceKey, biographyScope, scopeIncludes, biographyAnchor} from './profiles.js?v=f0f0efaf1361bb90';
-import {matchesEditorial, canonicalEditorial, overviewItems, groupDateText, yearbookItems} from './event-editorial.js?v=f0f0efaf1361bb90';
-import {eventPeople, mountPersonFilter} from './person-filter.js?v=f0f0efaf1361bb90';
-import {readingProjection,quoteText,passageHTML} from './event-reading.js?v=f0f0efaf1361bb90';
-import {directoryPeople} from './people-directory.js?v=f0f0efaf1361bb90';
-import {inlineEventRow,mountInlineReading,citationText,mountCitationText} from './inline-reading.js?v=f0f0efaf1361bb90';
+import {personSources, renderBiography, evidenceKey, biographyScope, scopeIncludes, biographyAnchor} from './profiles.js?v=113ba817c614cba1';
+import {matchesEditorial, canonicalEditorial, overviewItems, groupDateText, yearbookItems} from './event-editorial.js?v=113ba817c614cba1';
+import {eventPeople, mountPersonFilter} from './person-filter.js?v=113ba817c614cba1';
+import {readingProjection,quoteText,passageHTML} from './event-reading.js?v=113ba817c614cba1';
+import {directoryPeople} from './people-directory.js?v=113ba817c614cba1';
+import {inlineEventRow,mountInlineReading,citationText,mountCitationText} from './inline-reading.js?v=113ba817c614cba1';
 // People and events share evidence; chronology is a view of events, never a second fact set.
 const BATCH = 40, SOURCE_BATCH = 20;
 const LAYERS = {original:'正文', pei:'裴注', modern:'现代注释'};
@@ -203,7 +203,7 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
       <${compact?'h3':'h2'}>${text(sourceLabel(r))}</${compact?'h3':'h2'}>${!compact&&r.claims.length?`<dl class="source-claims">${r.claims.map(c=>`<div data-claim="${esc(c.key)}"><dt>${text(factLabel(c.label))}</dt><dd>${text(c.text)}</dd></div>`).join('')}</dl>`:''}
       ${long?`<details class="source-quote" id="quote-${esc(r.ids[0])}"><summary>${citationText(r,text,'span','quote-preview')}<span class="quote-action"><span class="when-closed">${text('展开全文')}</span><span class="when-open">${text('收起')}</span></span></summary>${citationText(r,text)}</details>`:citationText(r,text)}
       ${!compact&&r.events.length?`<div class="source-events">${r.events.map(e=>`<a href="${eventURL(e.id)}">${text(e.title)}</a>`).join('')}</div>`:''}
-      <a class="evidence-link" href="${url(r.section,r.block)}">${text('阅读全文')} <span aria-hidden="true">↗</span></a></article>`;
+      <a class="evidence-link" href="${url(r.section,r.block)}">${text('阅读全文')}</a></article>`;
   }
   function renderSources(entity,heading) {
     const records=personSources(data,entity,profiles[entity.id],sourceRecords(data,page,entity));
@@ -220,7 +220,7 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
       return `<article class="source-record person-source" id="source-${esc(r.ids[0])}" data-evidence-ids="${esc(JSON.stringify(r.ids))}" data-context tabindex="-1" ${r.ids.includes(qs.get('ref'))?'data-source-target':''}>
       <h4>${text(sourceLayerLabel(r))}</h4>
       ${long?`<details class="source-quote event-quote" id="quote-${esc(r.ids[0])}"><summary>${citationText(r,text,'span','quote-preview')}<span class="quote-action"><span class="when-closed">${text('展开全文')}</span><span class="when-open">${text('收起')}</span></span></summary>${citationText(r,text)}</details>`:citationText(r,text)}
-      <a class="evidence-link" href="${url(r.section,r.block)}">${text('阅读全文')} <span aria-hidden="true">↗</span></a>
+      <a class="evidence-link" href="${url(r.section,r.block)}">${text('阅读全文')}</a>
       ${purposes.length?`<details class="source-associations" id="associations-${esc(r.ids[0])}"><summary>${text('关联内容')}</summary><div class="source-purpose">${purposes.map(p=>`<div data-purpose="${esc(p.key)}">${purpose(p)}</div>`).join('')}</div></details>`:''}</article>`;
     }
     const group=items=>{
@@ -249,9 +249,9 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
     const related=data.events.filter(e=>e.participants.some(x=>x.person===p.id));
     const year=qs.get('year')||'',filtered=chronological(related.filter(e=>!year||yearOf(e)===year));
     const biography=profile?.biography&&!year?renderBiography({bio:profile.biography,data,main,text,esc,dateText,url,sourceLabel,detailPath,saved,onChange,renderQuote:r=>citationText(r,text),readingRow:e=>readingRow(e,p.id,'life-event-'+e.id,'life-event inline-life-event')}):null;
-    main.innerHTML=`<article class="knowledge-page person-detail">${heading}<p class="person-source-link"><a href="${sourceURL()}">${text('全部史料')} →</a></p>
+    main.innerHTML=`<article class="knowledge-page person-detail"><div class="person-cover"><div class="person-title">${heading}<p class="person-source-link"><a href="${sourceURL()}">${text('全部史料')}</a></p></div>
       ${fields.length?`<section class="person-facts" id="life-profile" data-context tabindex="-1"><div class="section-heading"><h2>${text('基本资料')}</h2></div><dl class="profile-facts">${fields.map(f=>`<div class="${f.text.length>16?'fact-wide':''}"><dt>${text(f.label)}</dt><dd>${text(f.text)}</dd></div>`).join('')}</dl><details class="inline-identity" id="person-identity-evidence" data-inline-identity><summary>${text('文献依据')}</summary><div class="inline-evidence-body" data-inline-content></div><div class="reading-actions"><button type="button" class="close-inline">${text('收起记载')}</button></div></details></section>`:''}
-      ${biography?biography.html:related.length?`<section class="person-history"><div class="section-heading"><h2>${text('经历')}</h2><form class="experience-filter" role="search">${yearSelect(related,year)}<button>${text('筛选')}</button></form></div>${profile?.biography?`<p><a href="${detailPath}">${text('生平概览')}</a></p>`:''}<div data-batch></div></section>`:`<section class="person-excerpts"><h2>${text('原文摘录')}</h2>${sourceRecords(data,page,p).slice(0,2).map(r=>sourceCard(r,true)).join('')}</section>`}</article>`;
+      </div>${biography?biography.html:related.length?`<section class="person-history"><div class="section-heading"><h2>${text('经历')}</h2><form class="experience-filter" role="search">${yearSelect(related,year)}<button>${text('筛选')}</button></form></div>${profile?.biography?`<p><a href="${detailPath}">${text('生平概览')}</a></p>`:''}<div data-batch></div></section>`:`<section class="person-excerpts"><h2>${text('原文摘录')}</h2>${sourceRecords(data,page,p).slice(0,2).map(r=>sourceCard(r,true)).join('')}</section>`}</article>`;
     if(biography)biography.bind();
     else if(related.length){batch(filtered,BATCH,items=>grouped(items,p.id));formSubmit(detailPath);}
     mountInlineReading(main.querySelector('.person-detail'),{data,text,url,sourceLabel,fields,loadSection,onChange});
@@ -276,13 +276,13 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
     const card=(r,grouped=false,withUses=false)=>`<article class="source-record event-source" data-evidence-ids="${esc(JSON.stringify(r.ids))}" id="source-${esc(r.ids[0])}" data-context tabindex="-1" ${r===target&&!grouped?'data-source-target':''}>
       <h2>${text(sourceLabel(r))}</h2>
       ${withUses?`<p class="source-uses">${uses(r).map(text).join(' · ')}</p>`:''}${quote(r)}
-      <a class="evidence-link" href="${url(r.section,r.block)}">${text('阅读全文')} <span aria-hidden="true">↗</span></a></article>`;
+      <a class="evidence-link" href="${url(r.section,r.block)}">${text('阅读全文')}</a></article>`;
     const disclosure=(items,id,title)=>scoped(items).length?`<details class="event-reading" id="${id}"><summary>${text(title)}</summary><div>${scoped(items).map(r=>direct.includes(r)
       ?`<p class="evidence-pointer"><a href="${esc(sourceURL(r.ids[0]))}">${text(sourceLabel(r)+' · 查看本文引句')}</a><small>${uses(r).map(text).join(' · ')}</small></p>`:card(r,false,true)).join('')}<div class="reading-actions"><button type="button" class="close-reading">${text('收起并返回')}</button></div></div></details>`:'';
     const passage=p=>`<section class="event-passage" id="passage-${esc(p.records[0].ids[0])}" data-context tabindex="-1" ${p.records.includes(target)?'data-source-target':''}>
       <div class="passage-excerpts">${p.records.map(r=>card(r,true)).join('')}</div>
       ${p.canExpand?`<details class="event-paragraph" id="paragraph-${esc(p.records[0].ids[0])}"><summary><span class="when-closed">${text('展开所在段落')}</span><span class="when-open">${text('收起所在段落')}</span></summary>
-      <div class="source-record"><h2>${text(sourceLabel(p.records[0]))}</h2><blockquote>${passageHTML(p,text)}</blockquote><a class="evidence-link" href="${url(p.records[0].section,p.records[0].block)}">${text('阅读全文')} ↗</a><div class="reading-actions"><button type="button" class="close-reading">${text('收起并返回')}</button></div></div></details>`:''}</section>`;
+      <div class="source-record"><h2>${text(sourceLabel(p.records[0]))}</h2><blockquote>${passageHTML(p,text)}</blockquote><a class="evidence-link" href="${url(p.records[0].section,p.records[0].block)}">${text('阅读全文')}</a><div class="reading-actions"><button type="button" class="close-reading">${text('收起并返回')}</button></div></div></details>`:''}</section>`;
     const heading=head(e.title,eventHasContext?'':'#/events?view=highlights',`<p class="event-meta">${text(dateText(e.time))}${e.place?`<span> · ${text(e.place.text)}</span>`:''}</p>${disclosure(dating,'event-dating','纪年依据')}`);
     const group=editorial?.groups.find(g=>g.id===editorial.records[e.id]?.primary_group);
     const contextCount=e.participants.length+(e.related_events?.length||0)+(e.time.after?1:0)+(group?1:0);
@@ -295,7 +295,7 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
       ${e.participants.length?`<section class="event-participants"><h2>${text('人物')}</h2><dl class="participant-list">${e.participants.map(p=>`<div class="participant"><dt>${personLink(p.person)}</dt><dd>${text(p.role)}</dd></div>`).join('')}</dl></section>`:''}
       ${e.related_events?.length?`<section class="related-events"><h2>${text('相关史事')}</h2>${e.related_events.map(r=>`<p><a href="${eventURL(r.event)}">${text(data.events.find(x=>x.id===r.event).title)}</a></p>`).join('')}</section>`:''}
       ${e.time.after?`<p class="preceding-event"><a href="${eventURL(e.time.after)}">${text('前接')}：${text(data.events.find(x=>x.id===e.time.after).title)}</a></p>`:''}
-      ${group?`<p><a href="#/events?view=highlights&group=${encodeURIComponent(group.id)}">${text('所属大事：'+group.title)} →</a></p>`:''}</${contextTag}>`:''}</article>`;
+      ${group?`<p><a href="#/events?view=highlights&group=${encodeURIComponent(group.id)}">${text('所属大事：'+group.title)} </a></p>`:''}</${contextTag}>`:''}</article>`;
     batch(visible,SOURCE_BATCH,items=>items.map(passage).join(''),visible.findIndex(p=>p.records.includes(target)));
     if(sections.length>1)formSubmit(detailPath);
     // Persist the default action synchronously, before an immediate refresh can
@@ -329,13 +329,13 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
   const factionTabs=page==='people'?`<nav class="people-factions" aria-label="${text('人物阵营')}">${[['','全部'],...Object.entries(directoryFactions)].map(([key,label])=>{const next=new URLSearchParams();if(q)next.set('q',q);if(key)next.set('faction',key);return `<a id="people-faction-${key||'all'}" href="#/people${next.size?'?'+esc(next.toString()):''}" ${key===faction?'aria-current="page"':''}>${text(label)}</a>`;}).join('')}</nav>`:'';
   const input=`<label class="filter-field query-field"><span>${text('搜索')}</span><input id="knowledge-query" name="q" type="search" value="${esc(q)}" aria-label="${text(page==='people'?'人物搜索':'史事搜索')}"></label>`;
   const personFilter='<div class="filter-field person-combo"></div>';
-  main.innerHTML=`<div class="knowledge-page query-view">${head(page==='people'?'风云人物':highlights?'大事年表':'史事')}${views}${factionTabs}<form class="knowledge-filter ${page==='people'?'people-filter':'history-filter'}" role="search">${input}${page==='people'?(faction?`<input type="hidden" name="faction" value="${esc(faction)}">`:''):personFilter+(highlights?'':yearSelect(data.events,year)+editorialFilters)}<button type="submit">${text('检索')}</button></form><p class="editorial-result meta" role="status"></p><div data-batch></div></div>`;
+  main.innerHTML=`<div class="knowledge-page query-view ${page==='people'?'people-directory':highlights?'yearbook-page':'event-query'}">${head(page==='people'?'风云人物':highlights?'大事年表':'史事')}${views}<div class="query-controls">${factionTabs}<form class="knowledge-filter ${page==='people'?'people-filter':'history-filter'}" role="search">${input}${page==='people'?(faction?`<input type="hidden" name="faction" value="${esc(faction)}">`:''):personFilter+(highlights?'':yearSelect(data.events,year)+editorialFilters)}<button type="submit">${text('检索')}</button></form></div><p class="editorial-result meta" role="status"></p><div data-batch></div></div>`;
   main.querySelectorAll('.people-factions a').forEach(a=>{a.onclick=event=>{if(event.button!==0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;event.preventDefault();navigate(a.getAttribute('href'),a.id);};});
   const filterMore=main.querySelector('.filter-more');
   if(filterMore&&matchMedia('(max-width:760px)').matches&&!qs.get('importance')&&!qs.get('kind'))filterMore.open=false;
   if(page==='people') {
     const matches=directoryPeople(data,visiblePeople,profiles,qs,normalize);
-    batch(matches,BATCH,items=>`<div class="people-grid">${items.map(p=>`<article id="person-card-${esc(p.id)}" data-context tabindex="-1"><h2><a href="${personURL(p.id)}">${text(p.name)}</a></h2>${[...new Set(p.facts.filter(f=>f.label==='字').map(f=>f.text))].map(value=>`<p>${text('字')}${text(value)}</p>`).join('')}</article>`).join('')}</div>`);
+    batch(matches,BATCH,items=>`<div class="people-grid">${items.map(p=>`<article id="person-card-${esc(p.id)}" data-context tabindex="-1"><h2><a href="${personURL(p.id)}">${text(p.name)}</a></h2>${directoryFactions[profiles[p.id]?.directory?.faction]?`<span class="person-faction">${text(directoryFactions[profiles[p.id].directory.faction])}</span>`:''}${[...new Set(p.facts.filter(f=>f.label==='字').map(f=>f.text))].map(value=>`<p>${text('字')}${text(value)}</p>`).join('')}</article>`).join('')}</div>`);
   } else {
     const matches=e=>(!selected||e.participants.some(p=>p.person===selected))&&(!year||yearOf(e)===year)&&
       [e.title,e.place?.text||'',...e.accounts.map(a=>a.text)].some(value=>normalize(value).includes(needle))&&matchesEditorial(e,editorial,qs);
@@ -348,12 +348,12 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
       main.querySelector('[data-batch]').innerHTML=years.map(year=>`<section class="yearbook-year"><h2>${text(year==='undated'?'相对时间与年代未详':year+' 年')}</h2><div>${overview.filter(i=>(Number.isInteger(i.anchor.time.year)?String(i.anchor.time.year):'undated')===year).map(item=>{
         const key=item.type+':'+item.id,node=nodes.get(key),g=item.group,chosen=selectedKey===key;
         const next=new URLSearchParams(qs);next.set('view','atlas');next.set('node',key);next.delete('group');
-        const locate=node?`<p class="yearbook-actions"><a class="yearbook-locate" href="#/events?${esc(next.toString())}">${text('在时代星图中定位')} ↗</a></p>`:'';
+        const locate=node?`<p class="yearbook-actions"><a class="yearbook-locate" href="#/events?${esc(next.toString())}">${text('在时代星图中定位')}</a></p>`:'';
         const title=node?.title||g?.title||item.event.title;
         return `<article class="yearbook-item ${g?'overview-group':''}" id="${g?'overview-'+esc(g.id):'yearbook-'+esc(item.id)}" data-context tabindex="-1" data-node="${esc(key)}" ${chosen?'data-source-target':''}>
           <h3>${g?text(title):`<a href="${eventURL(item.id)}">${text(title)}</a>`}</h3>
           ${g?`<p class="event-date">${text(groupDateText(item.events))}</p>`:`<p class="event-date">${text(Number.isInteger(item.event.time.year)?item.event.time.label:dateText(item.event.time))}</p>`}
-          ${g?`<details id="group-${esc(g.id)}" ${chosen?'open':''}><summary>${text('相关记载')} · ${item.events.length}</summary>${chronological(item.events).map(e=>readingRow(e,'','event-card-'+e.id,'timeline-entry inline-timeline-entry')).join('')}<div class="reading-actions"><button type="button" class="close-overview">${text('收起并返回')} ↑</button></div></details>`:`<p>${text(item.event.accounts[0]?.text||'')}</p>`}
+          ${g?`<details id="group-${esc(g.id)}" ${chosen?'open':''}><summary>${text('相关记载')} · ${item.events.length}</summary>${chronological(item.events).map(e=>readingRow(e,'','event-card-'+e.id,'timeline-entry inline-timeline-entry')).join('')}<div class="reading-actions"><button type="button" class="close-overview">${text('收起并返回')}</button></div></details>`:`<p>${text(item.event.accounts[0]?.text||'')}</p>`}
           ${locate}
           </article>`;
       }).join('')}</div></section>`).join('');

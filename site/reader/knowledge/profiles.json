@@ -34,7 +34,15 @@
     "chapter-007": "95943e8c03d791b311520f9c7f77fa5b9015679510b88179c6adf9ddc3b84533",
     "chapter-055": "f8bf8f526d6ea21eff760e3d455acfdd35e36080c95461478a408e442f879a10",
     "chapter-040": "5c4dc70650ccb66438f3abed0660441f0e70c13b0c12ccfb0a13d36b4c5c3c6a",
-    "chapter-052": "852088264807358d2a616e3fc794a53418be0194eaa5a72c62b0afddbb345889"
+    "chapter-052": "852088264807358d2a616e3fc794a53418be0194eaa5a72c62b0afddbb345889",
+    "chapter-039": "c5d4c0ef861f5903a95be6e2fd70d8a6fb48d0b7ffb251a1ca8b633c5ebfeb4a",
+    "chapter-043": "8c0636b546017d2646cbcfacbeeb5146108a82fab4e1396302e024e58d2053b8",
+    "chapter-031": "4cea8430d1f41d1e9d3880b9fdf0c31aa84e40abaf1fdb46fba74692d2168155",
+    "chapter-038": "53150e51c8137bc9cac4cadb84830010775f5969031f192a3489d2889dbe3ab2",
+    "chapter-045": "ad1dfff34258e552cfdbedb31dae8d2e98876bef2d7336c5ec00c8a490512f6d",
+    "chapter-042": "ce19444a1dde84aa461709b72910a52d748862479cce0c998ed4c573621db12a",
+    "chapter-034": "2909e332cb42b84de1ae6d2b84d66d42400f66944e3a32ea8ce6967ae094dce5",
+    "chapter-041": "82546d5cb0bd25de4bdfdc8d40244f2e96d58b070799fb11cd5350389cf55f6f"
   },
   "directory_factions": {
     "wei": "魏",
@@ -3670,15 +3678,75 @@
             "stage": null
           },
           {
-            "event": "zhanggu-e-o074",
-            "stage": null
-          },
-          {
-            "event": "zhanggu-e-o121",
-            "stage": null
-          },
-          {
             "event": "zhanggu-e-o132",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o030",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o062",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o093",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o107",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o132",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o016",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o112",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o113",
+            "stage": null
+          },
+          {
+            "event": "huangli-e-o107",
+            "stage": null
+          },
+          {
+            "event": "liuermu-e-o042",
+            "stage": null
+          },
+          {
+            "event": "liuermu-e-o043",
+            "stage": null
+          },
+          {
+            "event": "liuermu-e-o045",
+            "stage": null
+          },
+          {
+            "event": "liuermu-e-o046",
+            "stage": null
+          },
+          {
+            "event": "liuermu-e-o047",
+            "stage": null
+          },
+          {
+            "event": "liuermu-e-o050",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o021",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o041",
             "stage": null
           }
         ],
@@ -5653,15 +5721,7 @@
             "stage": null
           },
           {
-            "event": "liuliao-e-o022",
-            "stage": null
-          },
-          {
             "event": "liuliao-e-o024",
-            "stage": null
-          },
-          {
-            "event": "liuliao-e-o032",
             "stage": null
           },
           {
@@ -5681,10 +5741,6 @@
             "stage": null
           },
           {
-            "event": "liuliao-e-o071",
-            "stage": null
-          },
-          {
             "event": "wendi-e-o010b",
             "stage": null
           },
@@ -5697,15 +5753,491 @@
             "stage": null
           },
           {
-            "event": "zhanggu-e-o091",
+            "event": "chenghuang-e-o014",
             "stage": null
           },
           {
-            "event": "zhanggu-e-o141",
+            "event": "liuliao-e-r001",
             "stage": null
           },
           {
-            "event": "zhanggu-e-o142",
+            "event": "liuliao-e-r003",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-r006",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-r007",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-r008",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-r019",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-r023",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o070",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-r2-zhi-yiyang",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o003",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o050",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o059",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o062",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o065",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o070",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o074",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o075",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o082",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o083",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o084",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o085",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o086",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o087",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o089",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o094",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o095",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o101",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o105",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o107",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o119",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o120",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o123",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o125",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o163",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o018",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o019",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o020",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o027",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o028",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o030",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o031",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o035",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o039",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o042",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o049",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o092",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o122",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o123",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o129",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o130",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o132",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o134",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o135",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o136",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o138",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o012",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o013",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o014",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o016",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o019",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o022",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o033",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o035",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o041",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o049",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o050",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o059",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o060",
+            "stage": null
+          },
+          {
+            "event": "erfei-e-o001",
+            "stage": null
+          },
+          {
+            "event": "erfei-e-o007",
+            "stage": null
+          },
+          {
+            "event": "erfei-e-o015",
+            "stage": null
+          },
+          {
+            "event": "erfei-e-o017",
+            "stage": null
+          },
+          {
+            "event": "erfei-e-o018",
+            "stage": null
+          },
+          {
+            "event": "erfei-e-o023",
+            "stage": null
+          },
+          {
+            "event": "erfei-e-o030",
+            "stage": null
+          },
+          {
+            "event": "erfei-e-o036",
+            "stage": null
+          },
+          {
+            "event": "huangli-e-o007",
+            "stage": null
+          },
+          {
+            "event": "huangli-e-o008",
+            "stage": null
+          },
+          {
+            "event": "huangli-e-o018",
+            "stage": null
+          },
+          {
+            "event": "huangli-e-o022",
+            "stage": null
+          },
+          {
+            "event": "huangli-e-o027",
+            "stage": null
+          },
+          {
+            "event": "huangli-e-o042",
+            "stage": null
+          },
+          {
+            "event": "huangli-e-o045",
+            "stage": null
+          },
+          {
+            "event": "huangli-e-o047",
+            "stage": null
+          },
+          {
+            "event": "huangli-e-o048",
+            "stage": null
+          },
+          {
+            "event": "huangli-e-o083",
+            "stage": null
+          },
+          {
+            "event": "huangli-e-o108",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o004",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o009",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o011",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o024",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o034",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o053",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o054",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o080",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o109",
+            "stage": null
+          },
+          {
+            "event": "liuermu-e-o050",
+            "stage": null
+          },
+          {
+            "event": "liuermu-e-o057",
+            "stage": null
+          },
+          {
+            "event": "liuermu-e-o065",
+            "stage": null
+          },
+          {
+            "event": "liuermu-e-o074",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o040",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o043",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o044",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o045",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o047",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o049",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o050",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o053",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o055",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o059",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o060",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o062",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o063",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o064",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o085",
+            "stage": null
+          },
+          {
+            "event": "jfj-e-o021d",
+            "stage": null
+          },
+          {
+            "event": "pangfa-e-o011a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-o189b",
+            "stage": null
+          },
+          {
+            "event": "xianzhu-e-o034a",
+            "stage": null
+          },
+          {
+            "event": "xianzhu-e-p036a",
+            "stage": null
+          },
+          {
+            "event": "zhuge-e-o022b",
             "stage": null
           }
         ],
@@ -8680,10 +9212,6 @@
             "stage": null
           },
           {
-            "event": "chenghuang-e-o175",
-            "stage": null
-          },
-          {
             "event": "chenghuang-e-o181",
             "stage": null
           },
@@ -8693,10 +9221,6 @@
           },
           {
             "event": "chenghuang-e-o184",
-            "stage": null
-          },
-          {
-            "event": "chenghuang-e-o185",
             "stage": null
           },
           {
@@ -8860,10 +9384,6 @@
             "stage": null
           },
           {
-            "event": "zhanggu-e-o115",
-            "stage": null
-          },
-          {
             "event": "zhanggu-e-o116",
             "stage": null
           },
@@ -8873,10 +9393,6 @@
           },
           {
             "event": "zhanggu-e-o120",
-            "stage": null
-          },
-          {
-            "event": "zhanggu-e-o122",
             "stage": null
           },
           {
@@ -8924,10 +9440,6 @@
             "stage": null
           },
           {
-            "event": "zhanggu-e-o144",
-            "stage": null
-          },
-          {
             "event": "zhanggu-e-o145",
             "stage": null
           },
@@ -8940,7 +9452,155 @@
             "stage": null
           },
           {
-            "event": "zhouyu-e-o069a",
+            "event": "chenghuang-e-o014",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o034",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o052",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o092",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o093",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o100",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o107",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o114",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-o119",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-sr-chen-xiu-colonel",
+            "stage": null
+          },
+          {
+            "event": "chenghuang-e-sr-lingtong-chenglie",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o070",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-r2-zhangdun",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-r2-zhi-yiyang",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o009",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o010",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o012",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o013",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o018",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o043",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o044",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o046",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o033",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o034",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o137",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o138",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o148",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o149",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o063",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o064",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o065",
+            "stage": null
+          },
+          {
+            "event": "liuermu-e-o067",
+            "stage": null
+          },
+          {
+            "event": "liuermu-e-o070",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o065",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o066",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o089",
+            "stage": null
+          },
+          {
+            "event": "wuzhu-e-o065a",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o090",
             "stage": null
           }
         ],

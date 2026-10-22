@@ -1,4 +1,4 @@
-import {quoteText} from './event-reading.js?v=f0f0efaf1361bb90';
+import {quoteText} from './event-reading.js?v=113ba817c614cba1';
 // Read reviewed quotations in place; no summaries, facts or dates are inferred.
 export function citationText(record,text,tag='blockquote',className='') {
   return `<${tag} class="${className}" data-quote-ref="${text(record.ids?.[0]||record.id)}"><span role="status">${text('正在载入…')}</span></${tag}>`;
@@ -56,7 +56,7 @@ export function inlineEventRow(event,{text,esc,dateText,person='',id='event-card
   return `<article class="${className}" id="${esc(id)}" data-context tabindex="-1"><p class="event-date">${text(dateText(event.time))}</p><div>
     <details class="inline-event" id="inline-${esc(id)}" data-inline-event="${esc(event.id)}"><summary>${text(event.title)}</summary>
       <div class="inline-evidence-body" data-inline-content></div>
-      <p class="inline-detail-link"><a href="#/events/${encodeURIComponent(event.id)}">${text('史事详情')} →</a></p>
+      <p class="inline-detail-link"><a href="#/events/${encodeURIComponent(event.id)}">${text('史事详情')}</a></p>
       <div class="reading-actions"><button type="button" class="close-inline">${text('收起记载')}</button></div>
     </details>${role?`<p class="event-role">${text(role)}</p>`:''}
     ${event.time.precision==='relative'&&event.time.after?`<p class="relative-context">${text('相对时间；具体年份及与其他史事的先后未详。')}</p>`:''}
@@ -65,7 +65,7 @@ export function inlineEventRow(event,{text,esc,dateText,person='',id='event-card
 
 export function mountInlineReading(root,{data,text,url,sourceLabel,fields=[],loadSection,onChange=()=>{}}) {
   const events=new Map(data.events.map(e=>[e.id,e]));
-  const quote=r=>`<figure class="inline-source"><figcaption>${text(sourceLabel(r))}</figcaption>${citationText(r,text)}<a class="evidence-link" href="${url(r.section,r.block)}">${text('阅读全文')} ↗</a></figure>`;
+  const quote=r=>`<figure class="inline-source"><figcaption>${text(sourceLabel(r))}</figcaption>${citationText(r,text)}<a class="evidence-link" href="${url(r.section,r.block)}">${text('阅读全文')}</a></figure>`;
   const fill=details=>{
     if(!details.open||details.dataset.loaded)return;
     const event=events.get(details.dataset.inlineEvent);
