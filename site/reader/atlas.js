@@ -31,8 +31,9 @@ export function atlasHash(state, home=false) {
   for(const [k,v] of Object.entries(state.filters||{}))q.set(k,v);
   return (home?'#/':'#/events')+'?'+q;
 }
-export function yearbookHash(state) {
+export function yearbookHash(state,layout='') {
   const q=new URLSearchParams({view:'highlights'});
+  if(layout==='compact')q.set('layout','compact');
   if(state.key)q.set('node',state.key);
   for(const key of ['q','person'])if(state.filters?.[key])q.set(key,state.filters[key]);
   return '#/events?'+q;
@@ -73,6 +74,7 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
   let state=atlasState(bundle,qs);
   host.className='atlas'+(home?' atlas-home':'');
   host.dataset.atlasHome=String(home);
+  host.dataset.yearbookLayout=saved?.yearbookLayout==='compact'?'compact':'';
   const heading=home
     ?`<header class="atlas-heading"><h2><a class="atlas-enter" href="${esc(atlasHash(state))}">${text('时代星图')}</a></h2><p class="eyebrow">184—280</p></header>`
     :`<header class="atlas-heading"><div><p class="eyebrow">${text('184—280 · 精选大事')}</p><h1>${text('时代星图')}</h1></div></header>`;
@@ -84,11 +86,10 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
     <div class="atlas-guidebar"><ul class="atlas-legend" aria-label="${text('图例')}">
     <li><svg viewBox="-20 -20 40 40" aria-hidden="true"><path d="M0,-6 L6,0 L0,6 L-6,0 Z" class="atlas-dot"/></svg>${text('战事')}</li>
     <li><svg viewBox="-20 -20 40 40" aria-hidden="true"><g class="atlas-star" aria-pressed="true"><rect x="-14" y="-14" width="28" height="28" rx="14" class="atlas-hit"/><circle r="4" class="atlas-dot"/></g></svg>${text('当前选中')}</li></ul></div></div>
-    <aside class="atlas-card" aria-label="${text('大事点读')}"></aside></div>
-    ${home?'':`<details class="atlas-list" id="atlas-year-list"><summary>${text('按年浏览')}</summary><div></div></details>`}`;
+    <aside class="atlas-card" aria-label="${text('大事点读')}"></aside></div>`;
   const canvas=host.querySelector('.atlas-canvas'),scroll=host.querySelector('.atlas-scroll');
   const card=host.querySelector('.atlas-card'),status=host.querySelector('[role=status]');
-  const list=host.querySelector('.atlas-list>div'),select=host.querySelector('select');
+  const select=host.querySelector('select');
   let disposed=false,frame=0;
   const selected=()=>state.nodes.find(n=>n.key===state.key);
   const updateDataset=()=>{host.dataset.node=state.key;host.dataset.period=state.period;host.dataset.category=state.category;};
@@ -147,39 +148,27 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
     const href=grouped?'#/events?view=highlights&group='+encodeURIComponent(id):'#/events/'+encodeURIComponent(id);
     const years=[...new Set(n.members.filter(m=>m.year).map(m=>m.year))].sort((a,b)=>a-b);
     const other=n.members.some(m=>!m.year);
-    const people=n.participants.slice(0,5).map(p=>`<a href="#/people/${encodeURIComponent(p.id)}">${text(p.name)}</a>`).join('');
-    const related=n.participants.length>1?`<details class="atlas-related reading-more" id="atlas-related-people"><summary>${text('相关人物')}</summary><div class="atlas-people">${people}</div></details>`:people?`<p class="atlas-people">${text('相关人物：')}${people}</p>`:'';
+    const people=n.participants.map(p=>`<a href="#/people/${encodeURIComponent(p.id)}">${text(p.name)}</a>`).join('');
+    const related=people?`<section class="atlas-related"><h4>${text('相关人物')}</h4><div class="atlas-people">${people}</div></section>`:'';
     return `<div class="atlas-card-overview"><p class="atlas-card-year">${n.year}<small>${text('年')}</small></p><h3>${text(n.title)}</h3>
       <p class="atlas-card-time">${text(n.time)}</p>
       ${grouped?`<details class="atlas-member-dates" id="atlas-member-dates"><summary>${text('组内纪年：'+years.join('、')+'年'+(other?'；另有相对时间或年代未详记载':''))}</summary>
       <ul>${n.members.map(m=>`<li><a href="#/events/${encodeURIComponent(m.id)}">${text(m.title)}</a><span>${text(m.time)}</span></li>`).join('')}</ul></details>`:''}
       <p class="atlas-summary">${text(n.summary)}</p>
-      <div class="atlas-card-actions">${n.topic?`<a class="atlas-primary" href="#/topics/${encodeURIComponent(n.topic)}">${text('合读赤壁')}</a>`:''}
-      ${!grouped?`<a href="${esc(href)}">${text('史事详情')}</a>`:''}</div>
-      ${related}</div>
-      <div class="atlas-excerpts">${n.sources.map(s=>excerpt(s)).join('')}</div>`;
+      </div><div class="atlas-excerpts">${n.sources.map(s=>excerpt(s)).join('')}</div>
+      <div class="atlas-supplement">${related}${!grouped||n.topic?`<div class="atlas-card-actions">${!grouped?`<a href="${esc(href)}">${text('史事详情')}</a>`:''}${n.topic?`<a href="#/topics/${encodeURIComponent(n.topic)}">${text('合读赤壁')}</a>`:''}</div>`:''}</div>`;
   }
   function render() {
     updateDataset();
     for(const button of host.querySelectorAll('[data-period]'))button.setAttribute('aria-pressed',String(button.dataset.period===state.period));
     if(select)select.value=state.category;
     card.innerHTML=home?homeCardHTML(selected()):fullCardHTML(selected());announce();draw();
-    if(list){
-    const years=[...new Set(state.nodes.map(n=>n.year))];
-    list.innerHTML=years.length?years.map(y=>`<section><h3>${y} ${text('年')}</h3><ul>${state.nodes.filter(n=>n.year===y).map(n=>`<li><button type="button" data-node="${esc(n.key)}" aria-pressed="${n.key===state.key}">${text(n.title)}${n.warfare?` <small>${text('· 战事')}</small>`:''}</button></li>`).join('')}</ul></section>`).join(''):`<p>${text('没有符合条件的大事')}</p>`;
-    list.querySelectorAll('button').forEach(b=>b.onclick=()=>pick(b.dataset.node,'list'));
-    }
     const enter=host.querySelector('.atlas-enter');if(enter)enter.href=atlasHash(state);
     const yearbook=host.closest('.query-view')?.querySelector('[data-yearbook-link]');
-    if(yearbook)yearbook.href=yearbookHash(state);
+    if(yearbook)yearbook.href=yearbookHash(state,host.dataset.yearbookLayout);
   }
   function focusNode(kind) {
-    if(kind==='list'){
-      const heading=card.querySelector('h3');
-      if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});card.scrollIntoView({block:'start'});}
-      return;
-    }
-    const elements=kind==='list'?list.querySelectorAll('[data-node]'):canvas.querySelectorAll('[data-node]');
+    const elements=canvas.querySelectorAll('[data-node]');
     const target=[...elements].find(e=>e.dataset.node===state.key);
     if(!target)return;
     target.focus({preventScroll:true});
@@ -209,7 +198,7 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
   scroll.addEventListener('scroll',onChange,{passive:true});
   render();
   scroll.scrollLeft=saved?.scrollLeft||0;
-  if(!home&&!saved&&qs.get('node')===state.key)focusNode('point');
+  if(!home&&saved?.scrollLeft===undefined&&qs.get('node')===state.key)focusNode('point');
   const observer=new ResizeObserver(()=>{
     cancelAnimationFrame(frame);frame=requestAnimationFrame(draw);
   });observer.observe(scroll);

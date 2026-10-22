@@ -1,8 +1,8 @@
-import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=113ba817c614cba1';
-import {biographyContext} from './profiles.js?v=113ba817c614cba1';
-import {topicDirectory, renderTopic} from './topics.js?v=113ba817c614cba1';
-import {mountAtlas, atlasHash, canonicalAtlasHomeHash} from './atlas.js?v=113ba817c614cba1';
-import {filteredOverviewItems} from './event-editorial.js?v=113ba817c614cba1';
+import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=582c8d5101dc9a2a';
+import {biographyContext} from './profiles.js?v=582c8d5101dc9a2a';
+import {topicDirectory, renderTopic} from './topics.js?v=582c8d5101dc9a2a';
+import {mountAtlas, atlasHash, canonicalAtlasHomeHash} from './atlas.js?v=582c8d5101dc9a2a';
+import {filteredOverviewItems} from './event-editorial.js?v=582c8d5101dc9a2a';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -62,7 +62,7 @@ function tokenHTML(tokens, {backlinks = false, source = false, prefix = ''} = {}
       const content = tokenHTML(t.children, {source});
       if (t.note_id && !source) {
         const n = section.notes[t.note_id];
-        return `<button class="note-ref ${noteClass(n.type)}" id="ref-${esc(prefix)}-${i}" data-note="${esc(n.id)}" aria-controls="${esc(n.id)}" aria-expanded="false" aria-label="${esc(cv(label(n.type)))} ${esc(cv(t.children.map(x=>x.text||'').join('')))}">${content}</button>`;
+        return `<button class="note-ref ${noteClass(n.type)}" id="ref-${esc(prefix)}-${i}" data-note="${esc(n.id)}" data-note-type="${esc(n.type)}" aria-controls="${esc(n.id)}" aria-expanded="false" aria-label="${esc(cv(label(n.type)))} ${esc(cv(t.children.map(x=>x.text||'').join('')))}">${content}</button>`;
       }
       if (!backlinks && !source && Object.values(book.note_types).some(n=>new RegExp(n.body_pattern).test(t.anchor||''))) return '';
       const dest = t.target && book.anchor_index[t.target.join('#')];
@@ -178,9 +178,9 @@ function sidebarHTML() {
 }
 function notesHTML(group) {
   const ids=[...new Set(group.original.flatMap(id=>blockMap.get(id).tokens.filter(t=>t.note_id).map(t=>t.note_id)))];
-  return `<div class="note-stacks">${Object.keys(book.note_types).filter(k=>ids.some(id=>section.notes[id].type===k)).map(k=>`<details class="note-stack ${noteClass(k)}" id="notes-${group.id}-${k}"><summary>${esc(cv(label(k)))}</summary>${ids.filter(id=>section.notes[id].type===k).map(id=>{
+  return `<div class="note-stacks">${Object.keys(book.note_types).filter(k=>ids.some(id=>section.notes[id].type===k)).map(k=>`<details class="note-stack ${noteClass(k)}" data-note-type="${esc(k)}" id="notes-${group.id}-${k}"><summary>${esc(cv(label(k)))}</summary>${ids.filter(id=>section.notes[id].type===k).map(id=>{
     const n=section.notes[id],ref=group.original.find(bid=>blockMap.get(bid).tokens.some(t=>t.note_id===id));
-    return `<details class="note ${noteClass(n.type)}" id="${n.id}"><summary>${esc(cv(label(n.type)))} ${esc(cv(n.label))}</summary><div class="note-body">${n.blocks.map(b=>blockHTML(b)).join('')}<div class="reading-actions"><a class="return-link" data-return="${esc(ref)}" href="${url(section.id,ref)}">${cv('收起并返回引用')}</a></div></div></details>`;
+    return `<details class="note ${noteClass(n.type)}" id="${n.id}"><summary>${esc(cv(label(n.type)))} ${esc(cv(n.label))}</summary><div class="note-body">${n.blocks.map(b=>blockHTML(b)).join('')}<div class="reading-actions"><button type="button" class="return-link" data-return="${esc(ref)}">${cv('收起')}</button></div></div></details>`;
   }).join('')}</details>`).join('')}</div>`;
 }
 function setMode(mode) {
@@ -191,8 +191,9 @@ function setMode(mode) {
   document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));
 }
 function applyNoteMarkers() {
-  $('#reading')?.classList.toggle('hide-note-markers', !prefs.showNoteMarkers);
-  $('#note-markers')?.setAttribute('aria-pressed',String(prefs.showNoteMarkers));
+  document.querySelectorAll('.note-ref[data-note-type],.note-stack[data-note-type]').forEach(el=>el.hidden=prefs.noteVisibility[el.dataset.noteType]===false);
+  document.querySelectorAll('.note-stacks').forEach(el=>el.hidden=[...el.children].every(stack=>stack.hidden));
+  document.querySelectorAll('[data-note-toggle]').forEach(el=>el.setAttribute('aria-pressed',String(prefs.noteVisibility[el.dataset.noteToggle]!==false)));
 }
 // Browser-entry context, never per-chapter persistent progress.
 function viewSnapshot() {
@@ -201,11 +202,11 @@ function viewSnapshot() {
   const el=nodes.find(el=>!el.closest('details:not([open])')&&el.getClientRects().length&&el.getBoundingClientRect().bottom>top);
   return {y:window.scrollY,anchor:el?.id,offset:el?.getBoundingClientRect().top,
     topic:$('.topic-page')?{mode:$('.topic-page').dataset.topicMode,a:$('.topic-page').dataset.topicA,b:$('.topic-page').dataset.topicB}:null,
-    atlas:$('.atlas')?{scrollLeft:$('.atlas-scroll').scrollLeft}:null,
+    atlas:$('.atlas')?{scrollLeft:$('.atlas-scroll').scrollLeft,yearbookLayout:$('.atlas').dataset.yearbookLayout}:null,
     lifeLimits:Object.fromEntries([...main.querySelectorAll('[data-life-list]')].map(e=>[e.dataset.lifeList,Number(e.dataset.limit)||20])),
     knowledgeLimit:Number($('.knowledge-page')?.dataset.limit)||0,
     open:[...main.querySelectorAll('details[open]')].map(el=>el.id || el.closest('.reading-group')?.id).filter(Boolean),
-    returns:[...main.querySelectorAll('.note[data-return-id]')].map(el=>[el.id,el.dataset.returnId]),
+    returns:[...main.querySelectorAll('.note[open][data-return-id]')].map(el=>[el.id,el.dataset.returnId]),
     closed:[...main.querySelectorAll('.chapter-sidebar details:not([open]),.life-navigation:not([open])')].map(el=>el.id),searchLimit,filter:$('.directory-filter',main)?.value || ''};
 }
 function restoreView(saved) {
@@ -253,9 +254,14 @@ function navigate(hash, saved=null, origin=null, list=null) {
   history.pushState({book:storageKey,hash,view:saved,returnSearch:origin,returnList:list},'',hash);
   route();
 }
-function focusTarget(id) {
+function focusTarget(id,{revealNotes=true}={}) {
   let el=document.getElementById(id);
   if (!el || !main.contains(el)) return false;
+  const type=el.closest('[data-note-type]')?.dataset.noteType;
+  if(type&&prefs.noteVisibility[type]===false){
+    if(!revealNotes)return true;
+    prefs.noteVisibility[type]=true;savePrefs();applyNoteMarkers();
+  }
   if (section.status==='aligned' && el.closest('.original,.note-stack') && activeMode==='translation') setMode('both');
   if (section.status==='aligned' && el.closest('.translation') && activeMode==='original') setMode('both');
   let parent=el.parentElement;
@@ -263,7 +269,7 @@ function focusTarget(id) {
   el.scrollIntoView({block:'start'}); el.focus({preventScroll:true}); el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
   return true;
 }
-async function readSection(id,target,version) {
+async function readSection(id,target,version,restoring=false) {
   const info=book.sections.find(x=>x.id===id);
   if(!info)throw Error('目录中没有这一章节');
   const loaded=await data(`sections/${id}.json`);
@@ -271,7 +277,7 @@ async function readSection(id,target,version) {
   section=loaded;currentId=id;blockMap=new Map(section.blocks.map(b=>[b.id,b]));groupForBlock=new Map();
   for(const g of section.groups)for(const bid of [...g.original,...g.translation])groupForBlock.set(bid,g.id);
   const aligned=section.status==='aligned';
-  const toolbar=`<div class="toolbar" aria-label="浏览工具"><button id="open-directory">${cv('目录')}</button>${info.kind==='chapter'?`<a class="search-volume" href="#/search?section=${encodeURIComponent(id)}">${cv('检索本卷')}</a>`:''}${aligned?['both','original','translation'].map((m,i)=>`<button data-mode="${m}" aria-pressed="${prefs.mode===m}">${cv(['对照','原文','译文'][i])}</button>`).join(''):''}<details class="reading-settings" id="reading-settings"><summary>${cv('阅读设置')}</summary><div class="settings-body"><label><span>${cv('定位正文')}</span><select id="jump" aria-label="${cv('定位正文')}"><option value="">${cv('定位正文')}</option>${(aligned?section.groups:section.blocks.filter(b=>b.kind==='heading'||b.kind==='original'||b.tokens.some(t=>t.type==='image'))).map((g,i)=>`<option value="${g.id}">${esc(cv(aligned?blockMap.get(g.original[0]).text.slice(0,18):g.text.slice(0,18)||'原书图版'))}</option>`).join('')}</select></label>${aligned?`<button id="note-markers" aria-pressed="${prefs.showNoteMarkers}">${cv('显示注标')}</button>`:''}<div class="tools-end"><button id="smaller" aria-label="减小字号">A−</button><button id="larger" aria-label="增大字号">A＋</button></div></div></details></div>`;
+  const toolbar=`<div class="toolbar" aria-label="浏览工具"><button id="open-directory">${cv('目录')}</button>${info.kind==='chapter'?`<a class="search-volume" href="#/search?section=${encodeURIComponent(id)}">${cv('检索本卷')}</a>`:''}${aligned?['both','original','translation'].map((m,i)=>`<button data-mode="${m}" aria-pressed="${prefs.mode===m}">${cv(['对照','原文','译文'][i])}</button>`).join(''):''}<details class="reading-settings" id="reading-settings"><summary>${cv('阅读设置')}</summary><div class="settings-body"><label><span>${cv('定位正文')}</span><select id="jump" aria-label="${cv('定位正文')}"><option value="">${cv('定位正文')}</option>${(aligned?section.groups:section.blocks.filter(b=>b.kind==='heading'||b.kind==='original'||b.tokens.some(t=>t.type==='image'))).map((g,i)=>`<option value="${g.id}">${esc(cv(aligned?blockMap.get(g.original[0]).text.slice(0,18):g.text.slice(0,18)||'原书图版'))}</option>`).join('')}</select></label>${aligned?Object.keys(book.note_types).map(type=>`<button type="button" data-note-toggle="${esc(type)}" aria-pressed="${prefs.noteVisibility[type]!==false}">${esc(cv(label(type)))}</button>`).join(''):''}<div class="tools-end"><button id="smaller" aria-label="减小字号">A−</button><button id="larger" aria-label="增大字号">A＋</button></div></div></details></div>`;
   const body=aligned?section.groups.map(g=>`<section class="reading-group" id="${g.id}" tabindex="-1"><a class="passage-link" href="${url(id,g.id)}" aria-label="${cv('此处链接')}" title="${cv('此处链接')}">⌁</a><div class="parallel"><div class="column original">${g.original.map(b=>blockHTML(b)).join('')}</div><div class="column translation">${g.translation.map(b=>blockHTML(b)).join('')}</div></div>${notesHTML(g)}</section>`).join(''):`<div class="source-reading">${section.blocks.map(b=>blockHTML(b.id,{source:true,backlinks:true})).join('')}</div>`;
   const peers=info.kind==='chapter'?book.sections.filter(s=>s.kind==='chapter'):(site.supplements||[]).flatMap(g=>g.sections).map(sid=>book.sections.find(s=>s.id===sid));
   const idx=peers.findIndex(s=>s.id===id),prev=idx>=0?peers[idx-1]:null,next=idx>=0?peers[idx+1]:null,col=collection(id);
@@ -281,25 +287,29 @@ async function readSection(id,target,version) {
   const settings=$('#reading-settings');
   settings.addEventListener('keydown',e=>{if(e.key==='Escape'&&settings.open){e.preventDefault();settings.open=false;settings.querySelector('summary').focus();}});
   settings.addEventListener('toggle',saveContext);
-  if($('#note-markers'))$('#note-markers').onclick=()=>{const saved=viewSnapshot();prefs.showNoteMarkers=!prefs.showNoteMarkers;savePrefs();applyNoteMarkers();restoreView(saved);saveContext();};
+  document.querySelectorAll('[data-note-toggle]').forEach(button=>button.onclick=()=>{const saved=viewSnapshot();const type=button.dataset.noteToggle;prefs.noteVisibility[type]=!prefs.noteVisibility[type];savePrefs();applyNoteMarkers();restoreView(saved);saveContext();});
   document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{const saved=viewSnapshot();setMode(b.dataset.mode);restoreView(saved);saveContext();});
   $('#jump').onchange=e=>{if(e.target.value)navigate(url(id,e.target.value));};
   $('#smaller').onclick=()=>resize(-1);$('#larger').onclick=()=>resize(1);
   document.querySelectorAll('[data-note]').forEach(b=>b.onclick=()=>{
     const note=document.getElementById(b.dataset.note);
-    if(note.open){note.open=false;b.setAttribute('aria-expanded','false');b.focus({preventScroll:true});saveContext();return;}
+    if(note.open){note.open=false;delete note.dataset.returnId;b.setAttribute('aria-expanded','false');b.focus({preventScroll:true});saveContext();return;}
     note.parentElement.open=true;note.open=true;
     b.setAttribute('aria-expanded','true');note.dataset.returnId=b.id;
     note.scrollIntoView({block:'nearest'});note.querySelector('summary').focus({preventScroll:true});saveContext();
   });
-  document.querySelectorAll('.note').forEach(n=>n.addEventListener('toggle',()=>document.querySelectorAll(`[data-note="${n.id}"]`).forEach(b=>b.setAttribute('aria-expanded',String(n.open)))));
-  document.querySelectorAll('[data-return]').forEach(a=>a.onclick=e=>{e.preventDefault();const n=a.closest('.note');const ref=document.getElementById(n.dataset.returnId);const dest=ref?.getClientRects().length?ref:(ref?.closest('.block')||document.getElementById(a.dataset.return));n.open=false;dest?.scrollIntoView({block:'center'});dest?.focus({preventScroll:true});saveContext();});
-  if(target){if(!focusTarget(target))main.insertAdjacentHTML('afterbegin',`<p role="status">${cv('未找到指定段落，已显示本章。')}</p>`);}
+  document.querySelectorAll('.note').forEach(n=>{
+    n.querySelector('summary').addEventListener('click',e=>{e.preventDefault();delete n.dataset.returnId;n.open=!n.open;document.querySelectorAll(`[data-note="${n.id}"]`).forEach(b=>b.setAttribute('aria-expanded',String(n.open)));saveContext();});
+    n.addEventListener('toggle',()=>{if(!n.open)delete n.dataset.returnId;document.querySelectorAll(`[data-note="${n.id}"]`).forEach(b=>b.setAttribute('aria-expanded',String(n.open)));saveContext();});
+  });
+  document.querySelectorAll('.note-stack>summary').forEach(summary=>summary.addEventListener('click',e=>{e.preventDefault();summary.parentElement.open=!summary.parentElement.open;saveContext();}));
+  document.querySelectorAll('[data-return]').forEach(a=>a.onclick=()=>{const n=a.closest('.note');const ref=document.getElementById(n.dataset.returnId);const dest=ref?.getClientRects().length?ref:ref?.closest('.block')||n.querySelector('summary');n.open=false;delete n.dataset.returnId;dest?.focus({preventScroll:true});dest?.scrollIntoView({block:ref?'center':'nearest'});saveContext();});
+  if(target){if(!focusTarget(target,{revealNotes:!restoring}))main.insertAdjacentHTML('afterbegin',`<p role="status">${cv('未找到指定段落，已显示本章。')}</p>`);}
   else window.scrollTo(0,0);
   if(returnSearch){const back=document.createElement('a');back.className='back-search';back.href=returnSearch.hash;
     back.textContent=cv(returnSearch.label?.replace(/[\u2190\u2192\u2197\u2191\u2193]/g,'').trim()||'返回检索结果');back.onclick=e=>{if(e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();e.stopPropagation();navigate(returnSearch.hash,returnSearch.view,returnSearch.parent||null,returnSearch.returnList||null);};$('.chapter-article').prepend(back);}
 }
-function resize(delta){const saved=viewSnapshot();prefs.showNoteMarkers=prefs.showNoteMarkers!==false;
+function resize(delta){const saved=viewSnapshot();
   prefs.fs=Math.min(30,Math.max(16,prefs.fs+delta));savePrefs();applyPrefs();restoreView(saved);saveContext();}
 async function search(qs,version){
   const q=qs.get('q')||'';
@@ -380,7 +390,7 @@ async function route(){
   $('.atlas')?.atlasDispose?.();
   main.innerHTML=`<p role="status">${cv('正在载入……')}</p>`;
   try{
-    if(parts[0]==='read')await readSection(parts[1],parts[2],version);
+    if(parts[0]==='read')await readSection(parts[1],parts[2],version,!!saved);
     else if(parts[0]==='contents')contents(qs);
     else if(parts[0]==='supplements')supplements();
     else if(parts[0]==='search')await search(qs,version);
@@ -484,7 +494,8 @@ async function boot(){
   if(new Set(extras).size!==extras.length||extras.some(id=>!book.sections.some(s=>s.id===id&&s.kind!=='chapter')))throw Error('补充材料暂时无法载入');
   storageKey=`epub-reader:${book.id}:${book.source_sha256}`;
   prefs={theme:'paper',zh:'s',fs:20,mode:'both',showNoteMarkers:true,...safeRead(storageKey+':preferences',{})};
-  prefs.showNoteMarkers=prefs.showNoteMarkers!==false;
+  prefs.noteVisibility=Object.fromEntries(Object.keys(book.note_types).map(type=>[type,prefs.noteVisibility?.[type]??prefs.showNoteMarkers!==false]));
+  delete prefs.showNoteMarkers;
   prefs.fs=Math.min(30,Math.max(16,Number(prefs.fs)||20));applyPrefs();
   $('#theme').onclick=()=>{prefs.theme=prefs.theme==='dark'?'paper':'dark';savePrefs();applyPrefs();};
   $('#zh').onclick=()=>{saveContext();prefs.zh=prefs.zh==='s'?'t':'s';savePrefs();applyPrefs();route();};
@@ -517,6 +528,10 @@ async function boot(){
     const inNavigation=!!a.closest('#site-nav,.brand'),target=a.getAttribute('href');
     const detail=/^#\/(people|events)\//.test(target);
     let origin=null,list=null;
+    if(a.hasAttribute('data-yearbook-layout')){navigate(target,viewSnapshot(),returnSearch,returnList);return;}
+    if(a.closest('.yearbook-page')&&target.startsWith('#/events?')&&new URLSearchParams(target.split('?')[1]).get('view')==='atlas'){
+      navigate(target,{atlas:{yearbookLayout:new URLSearchParams(location.hash.split('?')[1]).get('layout')}},null,null);return;
+    }
     if(!inNavigation){
       const title=$('#main h1')?.textContent||'当前阅读';
       const source=a.closest('.person-detail,.unified-event,.topic-page,.atlas,.result,.chapter-article');

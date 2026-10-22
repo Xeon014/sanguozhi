@@ -32,8 +32,9 @@ export function quoteText(record,sections) {
 export const passageKey=r=>JSON.stringify([r.source_sha256,r.section,r.block,r.layer,r.attribution||'']);
 export function readingProjection(direct,support,sections) {
   const isDate=r=>r.claims.some(c=>c.key.endsWith('-time')&&c.label==='时间');
-  const dating=support.filter(isDate);
-  const extra=support.filter(r=>!direct.includes(r)&&!dating.includes(r));
+  // Date-only citations join their source layer, never a duplicate evidence panel.
+  direct=[...new Set([...direct,...support.filter(r=>isDate(r)&&r.layer!=='modern')])];
+  const extra=support.filter(r=>!direct.includes(r));
   const notes=extra.filter(r=>r.layer==='modern'),other=extra.filter(r=>r.layer!=='modern');
   const grouped=new Map();
   for(const r of direct){
@@ -52,7 +53,7 @@ export function readingProjection(direct,support,sections) {
     p.canExpand=['original','pei'].includes(p.records[0].layer)&&chars.some((c,i)=>
       /\S/.test(c)&&!p.hidden.has(i)&&!p.records.some(r=>r.start<=i&&i<r.end));
   }
-  return {direct,dating,notes,other,passages};
+  return {direct,notes,other,passages};
 }
 export function passageHTML(p,renderText) {
   const chars=[...p.block.text],parts=[];

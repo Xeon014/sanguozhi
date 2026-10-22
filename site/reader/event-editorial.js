@@ -12,7 +12,10 @@ export function matchesEditorial(event, editorial, qs) {
 export function canonicalEditorial(qs, editorial) {
   const result=new URLSearchParams();
   if(!editorial)return result;
-  if(qs.get('view')==='highlights')result.set('view','highlights');
+  if(qs.get('view')==='highlights'){
+    result.set('view','highlights');
+    if(qs.get('layout')==='compact')result.set('layout','compact');
+  }
   const group=editorial.groups.find(g=>g.id===qs.get('group'));
   if(result.has('view')){
     if(group)result.set('group',group.id);
