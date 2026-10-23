@@ -1,4 +1,4 @@
-import {quoteText} from './event-reading.js?v=37f069b5c5e3bb96';
+import {quoteText} from './event-reading.js?v=20023202d882d669';
 // Read reviewed quotations in place; no summaries, facts or dates are inferred.
 export function citationText(record,text,tag='blockquote',className='') {
   return `<${tag} class="${className}" data-quote-ref="${text(record.ids?.[0]||record.id)}"><span role="status">${text('正在载入…')}</span></${tag}>`;

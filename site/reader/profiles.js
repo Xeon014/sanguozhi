@@ -68,7 +68,7 @@ export function personSources(data,person,profile,base) {
   // the basic-profile scope. All original references remain in the base groups.
   const fields=profile?.fields||[];
   for(const f of fields)add(f.evidence,{key:f.id,use:'identity',text:f.label+'：'+f.text,target:'profile'});
-  for(const f of person.facts)if(!fields.some(x=>x.id===f.id))add(f.evidence,{key:f.id,use:'other',text:f.label+'：'+f.text});
+  for(const f of person.facts)if(!fields.some(x=>x.id===f.id))add(f.evidence,{key:f.id,use:'other',text:(f.label?f.label+'：':'')+f.text});
   for(const a of person.aliases||[])if(!person.facts.some(f=>f.text===a.text))add(a.evidence,{key:'alias-'+a.text,use:'other',text:'别称：'+a.text});
   for(const e of data.events){
     const participant=e.participants.find(p=>p.person===person.id);if(!participant)continue;

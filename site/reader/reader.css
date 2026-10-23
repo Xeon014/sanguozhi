@@ -200,16 +200,13 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .people-directory,.person-detail,.yearbook-page{max-width:none}
 .people-directory>.knowledge-heading{border-bottom:2px solid var(--ink);padding-bottom:24px;margin-bottom:0}
 .query-controls{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 0 28px}
-.people-factions{display:flex;flex-wrap:wrap;gap:24px;font:14px var(--sans)}
-.people-factions a{display:inline-flex;align-items:center;min-height:44px}
-.people-factions [aria-current]{color:var(--accent);border-bottom:2px solid var(--accent)}
-.people-directory .knowledge-filter{flex:0 1 390px;margin:0}
+.people-directory .knowledge-filter{flex:1;margin:0}
+.people-filter .people-sort{flex:0 0 160px}
 .people-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0 36px}
 .people-grid>article{position:relative;padding:30px 0 28px;border-top:1px solid var(--line);min-width:0}
-.people-grid>article h2{font-size:36px;margin:0 0 12px;padding-right:32px;line-height:1.5}
+.people-grid>article h2{font-size:36px;margin:0 0 12px;padding-right:0;line-height:1.5}
 .people-grid>article h2 a:after{content:'';position:absolute;inset:0}
 .people-grid>article p{font-size:15px;color:var(--muted);margin:0}
-.person-faction{position:absolute;right:0;top:40px;font:12px var(--sans);writing-mode:vertical-rl;color:var(--muted)}
 .person-cover{display:grid;grid-template-columns:5fr 7fr;gap:64px;padding:16px 0 48px;margin-bottom:48px;border-bottom:2px solid var(--ink)}
 .person-title .knowledge-heading h1{font-size:96px;margin:16px 0 24px}
 .person-source-link{font:14px var(--sans);color:var(--accent)}
@@ -254,7 +251,7 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .source-purpose a{display:inline-flex;align-items:center;min-height:44px}
 .person-detail:has(.source-scope){max-width:900px}
 .event-reading h2{font-size:44px}
-.event-passage:has(details[open])>.passage-excerpts{display:none}
+.event-passage:has(>.event-paragraph[open])>.passage-excerpts{display:none}
 .event-passage details:not([open]) .when-open,.event-passage details[open] .when-closed{display:none}
 .inline-event>summary{font-size:22px;padding:12px 0;min-height:44px}
 .identity-evidence>summary{font:14px/1.8 var(--sans);min-height:44px;padding:12px 0}
@@ -497,10 +494,10 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .directory-panel{inset:auto 0 0;width:100%;max-width:100%;height:85dvh;padding:20px}
 .knowledge-heading h1{font-size:44px}
 .query-controls{display:block}
-.people-directory .knowledge-filter{margin-top:16px}
+.people-directory .knowledge-filter{margin-top:0}
+.people-filter .query-field{flex-basis:100%}
 .people-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px}
-.people-grid>article h2{font-size:30px;padding-right:20px}
-.person-faction{font-size:11px}
+.people-grid>article h2{font-size:30px;padding-right:0}
 .person-cover{display:block;padding-bottom:32px;margin-bottom:32px}
 .person-title .knowledge-heading h1{font-size:72px}
 .person-facts{margin-top:32px}

@@ -1,9 +1,9 @@
-import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=37f069b5c5e3bb96';
-import {biographyContext} from './profiles.js?v=37f069b5c5e3bb96';
-import {topicDirectory, renderTopic} from './topics.js?v=37f069b5c5e3bb96';
-import {mountAtlas, atlasHash, canonicalAtlasHomeHash} from './atlas.js?v=37f069b5c5e3bb96';
-import {filteredOverviewItems} from './event-editorial.js?v=37f069b5c5e3bb96';
-import {bindFloatingPanel} from './floating-panel.js?v=37f069b5c5e3bb96';
+import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=20023202d882d669';
+import {biographyContext} from './profiles.js?v=20023202d882d669';
+import {topicDirectory, renderTopic} from './topics.js?v=20023202d882d669';
+import {mountAtlas, atlasHash, canonicalAtlasHomeHash} from './atlas.js?v=20023202d882d669';
+import {filteredOverviewItems} from './event-editorial.js?v=20023202d882d669';
+import {bindFloatingPanel} from './floating-panel.js?v=20023202d882d669';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -200,7 +200,7 @@ function applyNoteMarkers() {
 function viewSnapshot() {
   const top=$('.toolbar')?.getBoundingClientRect().bottom || 120;
   const nodes=[...main.querySelectorAll('.reading-group,.source-reading .block,[data-context]')];
-  const el=nodes.find(el=>!el.closest('details:not([open])')&&el.getClientRects().length&&el.getBoundingClientRect().bottom>top);
+  const el=nodes.find(el=>{const r=el.getBoundingClientRect();return !el.closest('details:not([open])')&&el.getClientRects().length&&r.bottom>top;});
   return {y:window.scrollY,anchor:el?.id,offset:el?.getBoundingClientRect().top,
     topic:$('.topic-page')?{mode:$('.topic-page').dataset.topicMode,a:$('.topic-page').dataset.topicA,b:$('.topic-page').dataset.topicB}:null,
     atlas:$('.atlas')?{scrollLeft:$('.atlas-scroll').scrollLeft,yearbookLayout:$('.atlas').dataset.yearbookLayout}:null,
@@ -260,7 +260,7 @@ function mountSourceReturn(origin,fromSearch) {
     .find(a=>a.getAttribute('href')===origin.hash&&a.getAttribute('aria-current')!=='page');
   const back=embedded||document.createElement('a');back.dataset.sourceReturn='';
   if(!embedded){back.className=fromSearch?'back-search':'knowledge-back';back.href=origin.hash;
-    back.textContent=cv(origin.label?.replace(/[\u2190\u2192\u2197\u2191\u2193]/g,'').trim()||(origin.hash.startsWith('#/people')?'返回风云人物':origin.hash.includes('view=highlights')?'返回大事年表':'返回记载查询'));
+    back.textContent=cv(origin.label?.replace(/[\u2190\u2192\u2197\u2191\u2193]/g,'').trim()||(origin.hash.startsWith('#/people')?(new URLSearchParams(origin.hash.split('?')[1]).get('view')==='all'?'返回人物大全':'返回风云人物'):origin.hash.includes('view=highlights')?'返回大事年表':'返回记载查询'));
     (main.querySelector('.chapter-article')||main).prepend(back);
   }
   back.onclick=e=>{if(e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();e.stopPropagation();
@@ -452,7 +452,7 @@ async function route(){
         }
       }
       const yearbookAtlas=cleanQS.get('view')==='highlights'?await loadAtlas():null;if(version!==routeVersion)return;
-      knowledgeTitle=renderKnowledge(content,{main,parts,qs:cleanQS,esc,cv,normalize,url,navigate:(hash,filterFocus)=>navigate(hash,filterFocus?{y:window.scrollY,filterFocus}:null,returnSearch,returnList),loadSection:id=>data(`sections/${id}.json`),saved,profiles,directoryFactions:presentation?.directory_factions||{},personListHash:returnList?.hash.startsWith('#/people?')?returnList.hash:'#/people',eventHasContext:!!(returnList||returnSearch),editorial,atlas:yearbookAtlas,atlasEnabled:!!site.knowledge.atlas,sections,visiblePeople:site.knowledge.people??null,legacySources:parts[0]==='events'&&qs.get('view')==='sources',onChange:saveContext});
+      knowledgeTitle=renderKnowledge(content,{main,parts,qs:cleanQS,esc,cv,normalize,url,navigate:(hash,filterFocus)=>navigate(hash,filterFocus?{y:window.scrollY,filterFocus}:null,returnSearch,returnList),loadSection:id=>data(`sections/${id}.json`),saved,profiles,featuredPeopleLimit:site.knowledge.featuredPeopleLimit??40,personListHash:returnList?.hash.startsWith('#/people?')?returnList.hash:'#/people',eventHasContext:!!(returnList||returnSearch),editorial,atlas:yearbookAtlas,atlasEnabled:!!site.knowledge.atlas,sections,visiblePeople:site.knowledge.people??null,legacySources:parts[0]==='events'&&qs.get('view')==='sources',onChange:saveContext});
       if(parts[0]==='events'&&parts[1]&&editorial?.records[parts[1]]){
         const record=editorial.records[parts[1]];
         const metadata=document.createElement('div');metadata.className='event-classification';
@@ -531,7 +531,7 @@ async function boot(){
     const a=e.target.closest('a[href^="#/"]');if(!a||e.defaultPrevented||e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;
     if(localPosition(a)){e.preventDefault();return;}
     e.preventDefault();
-    if(a.getAttribute('aria-current')==='page'&&a.closest('.knowledge-tabs,.yearbook-layout,.people-factions'))return;
+    if(a.getAttribute('aria-current')==='page'&&a.closest('.knowledge-tabs,.yearbook-layout'))return;
     const inNavigation=!!a.closest('#site-nav,.brand'),target=a.getAttribute('href');
     const detail=/^#\/(people|events)\//.test(target);
     let origin=null,list=null;
@@ -545,7 +545,7 @@ async function boot(){
       if(main.contains(a)&&a.closest('.directory-list,.supplement-section')&&target.startsWith('#/read/')){
         origin={hash:location.hash,view:viewSnapshot(),label:'返回'+title,parent:returnSearch,returnList};
       }else if(a.closest('.query-view')&&!a.closest('.atlas')&&detail){
-        list={hash:location.hash,view:viewSnapshot(),origin:returnSearch};
+        list={hash:location.hash,view:viewSnapshot(),origin:returnSearch,...(a.closest('.people-directory')?{label:'返回'+title}:{})};
       }else if(source&&!a.closest('.knowledge-tabs')&&!(main.dataset.page==='read'&&target.startsWith('#/read/'))){
         const label=source.matches('.atlas')?'返回时代星图':source.matches('.result')?'返回检索结果':'返回'+title;
         origin={hash:location.hash,view:viewSnapshot(),label,parent:returnSearch,returnList};

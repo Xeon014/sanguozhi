@@ -42,7 +42,11 @@
     "chapter-045": "ad1dfff34258e552cfdbedb31dae8d2e98876bef2d7336c5ec00c8a490512f6d",
     "chapter-042": "ce19444a1dde84aa461709b72910a52d748862479cce0c998ed4c573621db12a",
     "chapter-034": "2909e332cb42b84de1ae6d2b84d66d42400f66944e3a32ea8ce6967ae094dce5",
-    "chapter-041": "82546d5cb0bd25de4bdfdc8d40244f2e96d58b070799fb11cd5350389cf55f6f"
+    "chapter-041": "82546d5cb0bd25de4bdfdc8d40244f2e96d58b070799fb11cd5350389cf55f6f",
+    "chapter-012": "21067233db193294f8b9a3810b7d210d89cbacb42c57f418a3e9b406c1a1a12d",
+    "chapter-011": "a81d74b5bce8b6f2f002cfaf65cfedf4934d17aa3a6e54cf291bf4c618707b00",
+    "chapter-013": "24c6e486e7f78fc4d59ff01277b36cb77ffb69c68a6a9030889fe00efe4b3d27",
+    "chapter-053": "34d3d9b3cb0adf6f214c0322012e2c7bc0fb8dd61e74a36b27901e766f3f0de9"
   },
   "directory_factions": {
     "wei": "魏",
@@ -3262,10 +3266,6 @@
             "stage": null
           },
           {
-            "event": "mantian-e-o004a",
-            "stage": null
-          },
-          {
             "event": "mantian-e-o006a",
             "stage": null
           },
@@ -3747,6 +3747,426 @@
           },
           {
             "event": "xumisun-e-o041",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o010",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o011",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o012",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o014",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o016",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o017",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o019",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o020",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o021",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o028",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o029",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o030",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o032",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o033",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o036",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o037",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o041",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o043",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o045",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o050",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o055",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o059",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o063",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o065",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o072",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o073",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o075",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o077",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o089",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o091",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o093",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o099",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o103",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o104",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o112",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o114",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o133",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o142",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o159",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o185",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o186",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o191",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o194",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o197",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o198",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o199",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o201",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o222",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o223",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o226",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o227",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o010",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o017",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o019",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o028",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o030",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o031",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o034",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o035",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o042",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o044",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o048",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o061",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o062",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o068",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o070",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o090",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o091",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o092",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o095",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o104",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o105",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o107",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o108",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o113",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o114",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o127",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o134",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o142",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o151",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o162",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o165",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o178",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o180",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o194",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o003",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o006",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o018",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o052",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o053",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o070",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o139",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o140",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o141",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o142",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o144",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o150",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o155",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o159",
+            "stage": null
+          },
+          {
+            "event": "chengguo-e-p135b",
+            "stage": null
+          },
+          {
+            "event": "wendi-e-o002a",
+            "stage": null
+          },
+          {
+            "event": "chengguo-e-sr-jiatu-zhangyang",
+            "stage": null
+          },
+          {
+            "event": "chengguo-e-sr-zan-yu-dan",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-o195a",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e2-cao-liangzhou-songjian",
             "stage": null
           }
         ],
@@ -5941,14 +6361,6 @@
             "stage": null
           },
           {
-            "event": "dongliu-e-o122",
-            "stage": null
-          },
-          {
-            "event": "dongliu-e-o123",
-            "stage": null
-          },
-          {
             "event": "dongliu-e-o129",
             "stage": null
           },
@@ -5970,10 +6382,6 @@
           },
           {
             "event": "dongliu-e-o136",
-            "stage": null
-          },
-          {
-            "event": "dongliu-e-o138",
             "stage": null
           },
           {
@@ -6141,10 +6549,6 @@
             "stage": null
           },
           {
-            "event": "liuermu-e-o050",
-            "stage": null
-          },
-          {
             "event": "liuermu-e-o057",
             "stage": null
           },
@@ -6225,19 +6629,31 @@
             "stage": null
           },
           {
-            "event": "wudi-e-o189b",
-            "stage": null
-          },
-          {
-            "event": "xianzhu-e-o034a",
-            "stage": null
-          },
-          {
             "event": "xianzhu-e-p036a",
             "stage": null
           },
           {
             "event": "zhuge-e-o022b",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o065",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o171",
+            "stage": null
+          },
+          {
+            "event": "yuanzhang-e-o004",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e2-wulan-leitong-wudu-loss",
+            "stage": null
+          },
+          {
+            "event": "huowang-e2-feishi-remonstrates-imperial-title",
             "stage": null
           }
         ],
@@ -8856,10 +9272,6 @@
             "stage": null
           },
           {
-            "event": "mantian-e-o103",
-            "stage": null
-          },
-          {
             "event": "wuzhu-e-o057a",
             "stage": null
           },
@@ -9602,6 +10014,138 @@
           {
             "event": "zhanggu-e-o090",
             "stage": null
+          },
+          {
+            "event": "santizhu059-e-sr-deng-decline-crown",
+            "stage": null
+          },
+          {
+            "event": "santizhu059-e-sr-deng-mourning-remonstrance",
+            "stage": null
+          },
+          {
+            "event": "santizhu059-e-sr-deng-posthumous",
+            "stage": null
+          },
+          {
+            "event": "santizhu059-e-sr-deng-remain",
+            "stage": null
+          },
+          {
+            "event": "santizhu059-e-sr-deng-testament",
+            "stage": null
+          },
+          {
+            "event": "santizhu059-e-sr-guyong-memorial",
+            "stage": null
+          },
+          {
+            "event": "santizhu059-e-sr-he-gongwei",
+            "stage": null
+          },
+          {
+            "event": "santizhu059-e-sr-he-remonstrance",
+            "stage": null
+          },
+          {
+            "event": "santizhu059-e-sr-palace-separation",
+            "stage": null
+          },
+          {
+            "event": "santizhu059-e-sr-sunba-luwang",
+            "stage": null
+          },
+          {
+            "event": "santizhu059-e-sr-two-palaces-parties",
+            "stage": null
+          },
+          {
+            "event": "santizhu059-e-sr-xiejing-mourning",
+            "stage": null
+          },
+          {
+            "event": "santizhu059-e-sr-zhangchun-death",
+            "stage": null
+          },
+          {
+            "event": "santizhu059-e-sr-zhugeyi-feint",
+            "stage": null
+          },
+          {
+            "event": "santizhu064-e-sr-donkey-episode",
+            "stage": null
+          },
+          {
+            "event": "santizhu064-e-sr-fathers-comparison",
+            "stage": null
+          },
+          {
+            "event": "santizhu064-e-sr-feiyi-banquet",
+            "stage": null
+          },
+          {
+            "event": "santizhu064-e-sr-horse-ear",
+            "stage": null
+          },
+          {
+            "event": "santizhu064-e-sr-ke-jiedu",
+            "stage": null
+          },
+          {
+            "event": "santizhu064-e-sr-ke-stoutness",
+            "stage": null
+          },
+          {
+            "event": "santizhu064-e-sr-lantian-jade",
+            "stage": null
+          },
+          {
+            "event": "santizhu064-e-sr-liang-letter-rotation",
+            "stage": null
+          },
+          {
+            "event": "santizhu064-e-sr-shu-envoy-horse",
+            "stage": null
+          },
+          {
+            "event": "santizhu064-e-sr-tengyin-marquisate",
+            "stage": null
+          },
+          {
+            "event": "santizhu064-e-sr-whiteheaded-bird",
+            "stage": null
+          },
+          {
+            "event": "santizhu064-e-sr-yin-memorial",
+            "stage": null
+          },
+          {
+            "event": "santizhu064-e-sr-zhangzhao-toast",
+            "stage": null
+          },
+          {
+            "event": "cuimao-e-o050",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o052",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o053",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o142",
+            "stage": null
+          },
+          {
+            "event": "chengguo-e-o015a",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e2-sundeng-proposed-hostage",
+            "stage": null
           }
         ],
         "compat": {
@@ -10274,6 +10818,1265 @@
       ],
       "directory": {
         "faction": "wei"
+      }
+    },
+    "wudi-p0364": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "shaodi-p0038": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "shaodi-p0045": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "wudi-p0388": {
+      "fields": [
+        {
+          "id": "houfei-f0008",
+          "key": "home",
+          "label": "籍贯",
+          "text": "琅邪开阳",
+          "evidence": [
+            "houfei-f0008-q"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "wendi-p0016": {
+      "fields": [
+        {
+          "id": "houfei-f0001",
+          "key": "home",
+          "label": "籍贯",
+          "text": "中山毋极",
+          "evidence": [
+            "houfei-f0001-q"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "wendi-p0021": {
+      "fields": [
+        {
+          "id": "houfei-f0005",
+          "key": "courtesy",
+          "label": "字",
+          "text": "女王",
+          "evidence": [
+            "houfei-f0005-q"
+          ]
+        },
+        {
+          "id": "houfei-f0006",
+          "key": "home",
+          "label": "籍贯",
+          "text": "安平广宗",
+          "evidence": [
+            "houfei-f0006-q"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "mingdi-p0009": {
+      "fields": [
+        {
+          "id": "houfei-f0011",
+          "key": "home",
+          "label": "籍贯",
+          "text": "河内",
+          "evidence": [
+            "houfei-f0011-q"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "mingdi-p0054": {
+      "fields": [
+        {
+          "id": "houfei-f0012",
+          "key": "home",
+          "label": "籍贯",
+          "text": "西平",
+          "evidence": [
+            "houfei-f0012-q"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "wudi-p0088": {
+      "fields": [
+        {
+          "id": "wudi-p0088-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "奉先",
+          "evidence": [
+            "lvzang-q-7ef17019755e182bed9d"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "qunxiong"
+      }
+    },
+    "wudi-p0062": {
+      "fields": [
+        {
+          "id": "wudi-p0062-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "孟卓",
+          "evidence": [
+            "lvzang-q-03cac7eb9a5b97e9c265"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "qunxiong"
+      }
+    },
+    "xianzhu-p0022": {
+      "fields": [
+        {
+          "id": "xianzhu-p0022-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "元龙",
+          "evidence": [
+            "lvzang-q-ed90014ccf7e9ba19425"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "lvzang-p0017": {
+      "fields": [
+        {
+          "id": "lvzang-p0017-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "子源",
+          "evidence": [
+            "lvzang-q-a619df2b2f1d6b8a9540"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "qunxiong"
+      }
+    },
+    "wudi-p0093": {
+      "fields": [
+        {
+          "id": "wudi-p0093-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "伯珪",
+          "evidence": [
+            "gongsuntao-q-18c3621cac91e384c045"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "qunxiong"
+      }
+    },
+    "wudi-p0095": {
+      "fields": [
+        {
+          "id": "wudi-p0095-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "恭祖",
+          "evidence": [
+            "gongsuntao-q-4ab0cc9317055528b2b2"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "qunxiong"
+      }
+    },
+    "wudi-p0123": {
+      "fields": [
+        {
+          "id": "wudi-p0123-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "稚叔",
+          "evidence": [
+            "gongsuntao-q-3973ee446239797a2d8b"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "qunxiong"
+      }
+    },
+    "gongsuntao-p0007": {
+      "fields": [
+        {
+          "id": "gongsuntao-p0007-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "升济",
+          "evidence": [
+            "gongsuntao-q-6d42d8c08d3de2799666"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "qunxiong"
+      }
+    },
+    "wudi-p0247": {
+      "fields": [],
+      "directory": {
+        "faction": "qunxiong"
+      }
+    },
+    "mingdi-p0013": {
+      "fields": [],
+      "directory": {
+        "faction": "qunxiong"
+      }
+    },
+    "wudi-p0224": {
+      "fields": [],
+      "directory": {
+        "faction": "qunxiong"
+      }
+    },
+    "wudi-p0131": {
+      "fields": [],
+      "directory": {
+        "faction": "qunxiong"
+      }
+    },
+    "wudi-p0279": {
+      "fields": [
+        {
+          "id": "wudi-p0279-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "公祺",
+          "evidence": [
+            "gongsuntao-q-0cc541a8e784d4836174"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "qunxiong"
+      }
+    },
+    "wudi-p0101": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "wudi-p0144": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "wudi-p0122": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "wendi-p0071": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "shaodi-p0009": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "mingdi-p0106": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "mingdi-p0075": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "wudi-p0395": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "wudi-p0394": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "shaodi-p0046": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "wendi-p0072": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "huanchen-p0021": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "wendi-p0079": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "wendi-p0127": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "mingdi-p0038": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "mingdi-p0025": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "mantian-p0025": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "mingdi-p0100": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "gongsuntao-p0021": {
+      "fields": [],
+      "directory": {
+        "faction": "qunxiong"
+      }
+    },
+    "wudi-p0253": {
+      "fields": [],
+      "directory": {
+        "faction": "qunxiong"
+      }
+    },
+    "xianzhu-p0112": {
+      "fields": [
+        {
+          "id": "houzhu-f0001",
+          "key": "courtesy",
+          "label": "字",
+          "text": "公嗣",
+          "evidence": [
+            "houzhu-q-O001a"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0113": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0114": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "houzhu-p0026": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0059": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0021": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0027": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0060": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xumisun-p0003": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "liuliao-p0008": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0061": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0065": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0121": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "mingdi-p0072": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "zhuge-p0038": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "zhuge-p0028": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "guanzhang-p0048": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "zhuge-p0059": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "dongliu-p0004": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0070": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0071": {
+      "fields": [],
+      "directory": {
+        "faction": "wei"
+      }
+    },
+    "xianzhu-p0064": {
+      "fields": [
+        {
+          "id": "xianzhu-p0064-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "永年",
+          "evidence": [
+            "liuliao-q-20caedd4a9cadd6c705a"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "liuliao-p0004": {
+      "fields": [
+        {
+          "id": "liuliao-p0004-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "公渊",
+          "evidence": [
+            "liuliao-q-c55d6dac86cadabe1aed"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0057": {
+      "fields": [
+        {
+          "id": "xianzhu-p0057-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "正方",
+          "evidence": [
+            "liuliao-q-dda3ec0a97c4df06c3c0"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "liuliao-p0002": {
+      "fields": [
+        {
+          "id": "liuliao-p0002-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "威硕",
+          "evidence": [
+            "liuliao-q-e6ccc26c45edeab0b1bc"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0091": {
+      "fields": [
+        {
+          "id": "xianzhu-p0091-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "文长",
+          "evidence": [
+            "liuliao-q-bcbbb82ff20e67d91433"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "zhuge-p0045": {
+      "fields": [
+        {
+          "id": "zhuge-p0045-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "威公",
+          "evidence": [
+            "liuliao-q-1346b733fbb3253fbb3d"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "huowang-p0032": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "shaodi-p0154": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "liuliao-p0022": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "liuliao-p0019": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "zhuge-p0029": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0094": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0097": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "huowang-p0030": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "duzhou-p0038": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0103": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0099": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0108": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "duzhou-p0057": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0109": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "jfj-p0012": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0101": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "duzhou-p0035": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0102": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "houzhu-p0019": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "xianzhu-p0062": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "huangli-p0016": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "huangli-p0004": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "huangli-p0025": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "houzhu-p0029": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "houzhu-p0028": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "guanzhang-p0046": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "guanzhang-p0045": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "zhuge-p0061": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "luxun-p0019": {
+      "fields": [
+        {
+          "id": "luxun-p0019-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "元俭",
+          "evidence": [
+            "jfj-q0257"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "jfj-p0006": {
+      "fields": [],
+      "directory": {
+        "faction": "shu"
+      }
+    },
+    "wuzhu-p0128": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "shaodi-p0150": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "shaodi-p0162": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "wendi-p0133": {
+      "fields": [
+        {
+          "id": "wendi-p0133-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "子布",
+          "evidence": [
+            "zhanggu-q-5a4e3fbca5cd4f35f414"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "wgc-p0072": {
+      "fields": [
+        {
+          "id": "wgc-p0072-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "叔嗣",
+          "evidence": [
+            "zhanggu-q-c717b14f5045b93be823"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "wuzhu-p0045": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "zhouyu-p0061": {
+      "fields": [
+        {
+          "id": "zhouyu-p0061-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "孝则",
+          "evidence": [
+            "zhanggu-q-2d2de8dfc6ae3d7d3002"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "wuzhu-p0090": {
+      "fields": [
+        {
+          "id": "wuzhu-p0090-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "子默",
+          "evidence": [
+            "zhanggu-q-5f7279a85811f4d22444"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "luxun-p0044": {
+      "fields": [
+        {
+          "id": "luxun-p0044-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "子直",
+          "evidence": [
+            "zhanggu-q-63ddbfc995e047f915c9"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "mingdi-p0002": {
+      "fields": [
+        {
+          "id": "mingdi-p0002-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "子瑜",
+          "evidence": [
+            "zhanggu-q-049d74c9c010656925e2"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "zhanggu-p0030": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "shaodi-p0007": {
+      "fields": [
+        {
+          "id": "shaodi-p0007-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "子山",
+          "evidence": [
+            "zhanggu-q-f6ebd4abdb4a33f6af04"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "santizhu-p0054": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "luxun-p0051": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "cheng-pu": {
+      "fields": [
+        {
+          "id": "cheng-pu-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "德谋",
+          "evidence": [
+            "chenghuang-q-7cd6fb29c7a196e25320"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "huang-gai": {
+      "fields": [
+        {
+          "id": "huang-gai-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "公覆",
+          "evidence": [
+            "chenghuang-q-5fb8d468f2cfcd38bd36"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "sunshi-p0074": {
+      "fields": [
+        {
+          "id": "sunshi-p0074-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "义公",
+          "evidence": [
+            "chenghuang-q-f7bdf51d4254af566977"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "zhouyu-p0049": {
+      "fields": [
+        {
+          "id": "zhouyu-p0049-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "公奕",
+          "evidence": [
+            "chenghuang-q-6ce0d3f7175f90cc7b37"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "wuzhu-p0004": {
+      "fields": [
+        {
+          "id": "wuzhu-p0004-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "幼平",
+          "evidence": [
+            "chenghuang-q-db64a3fa955823fa8707"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "chenghuang-p0023": {
+      "fields": [
+        {
+          "id": "chenghuang-p0023-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "子烈",
+          "evidence": [
+            "chenghuang-q-062ab3f9339d16f4bc77"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "wuzhu-p0108": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "wuzhu-p0008": {
+      "fields": [
+        {
+          "id": "wuzhu-p0008-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "元代",
+          "evidence": [
+            "chenghuang-q-b7b4b90f784181da94a6"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "gan-ning": {
+      "fields": [
+        {
+          "id": "gan-ning-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "兴霸",
+          "evidence": [
+            "chenghuang-q-c529511824fdc844d118"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "ling-tong": {
+      "fields": [
+        {
+          "id": "ling-tong-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "公绩",
+          "evidence": [
+            "chenghuang-q-ac69f252a73c3166180d"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "chenghuang-p0002": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "wuzhu-p0030": {
+      "fields": [
+        {
+          "id": "wuzhu-p0030-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "文向",
+          "evidence": [
+            "chenghuang-q-2ed1dc9ea6c55f9df4df"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "zhouyu-p0055": {
+      "fields": [
+        {
+          "id": "zhouyu-p0055-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "文珪",
+          "evidence": [
+            "chenghuang-q-8e8f9ba88954732eb5f2"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "zhouyu-p0025": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "wuzhu-p0113": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "wuzhu-p0116": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "wuzhu-p0134": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "wuzhu-p0005": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "shaodi-p0005": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "wuzhu-p0086": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "wuzhu-p0058": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "wuzhu-p0065": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "wuzhu-p0115": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "panlu-p0027": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "shaodi-p0041": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "shaodi-p0075": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "houzhu-p0013": {
+      "fields": [],
+      "directory": {
+        "faction": "wu"
+      }
+    },
+    "santizhu-p0048": {
+      "fields": [
+        {
+          "id": "santizhu-p0048-directory-courtesy",
+          "key": "courtesy",
+          "label": "字",
+          "text": "子元",
+          "evidence": [
+            "santizhu064-q-7ce1af6eaac6924374cd"
+          ]
+        }
+      ],
+      "directory": {
+        "faction": "wu"
       }
     }
   }
