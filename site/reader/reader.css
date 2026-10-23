@@ -90,8 +90,6 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .chapter-number{font:12px/1.8 var(--sans);color:var(--muted)}
 .directory-controls{display:flex;gap:12px;margin-bottom:12px;font-family:var(--sans)}
 .directory-controls select{flex:0 0 130px}
-.directory-filter{width:100%;max-width:480px}
-.directory-status:empty{display:none}
 .directory-section{margin:48px 0}
 .directory-section>h2{display:flex;align-items:baseline;gap:24px;font-size:48px;margin-bottom:16px;border-top:2px solid var(--ink);padding-top:24px}
 .directory-section>h2 small{letter-spacing:.05em}

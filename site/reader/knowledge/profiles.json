@@ -46,7 +46,20 @@
     "chapter-012": "21067233db193294f8b9a3810b7d210d89cbacb42c57f418a3e9b406c1a1a12d",
     "chapter-011": "a81d74b5bce8b6f2f002cfaf65cfedf4934d17aa3a6e54cf291bf4c618707b00",
     "chapter-013": "24c6e486e7f78fc4d59ff01277b36cb77ffb69c68a6a9030889fe00efe4b3d27",
-    "chapter-053": "34d3d9b3cb0adf6f214c0322012e2c7bc0fb8dd61e74a36b27901e766f3f0de9"
+    "chapter-053": "34d3d9b3cb0adf6f214c0322012e2c7bc0fb8dd61e74a36b27901e766f3f0de9",
+    "chapter-015": "f0f9387e4b0dde80a6b055e07924ffcb4b10222a9b56646d6350f77af6526714",
+    "chapter-016": "6cfac20452f269a832b087d2e808cc4b3017944d17dca1d5b1e068ebb98d8327",
+    "chapter-018": "7a62f43c1f5dc64661b088ef0fdd48392063ef5c49001fa980aa65e766380b23",
+    "chapter-019": "a43f6648e6c9d8389d561bee9d00824665f8f06542ab2a65aac06ed8a7601c5b",
+    "chapter-020": "2ef7e28be018140e07d27d7636a9df480a5cb7ef1cb3572c314a70e0d1acd07c",
+    "chapter-049": "a319eaf1bf5f55d97ace63a168eb54f04234b59a4cd3d0fe2e6735a0ed53a0b5",
+    "chapter-051": "a35b11546f8435d585e16ee91e712d089972f83683f6d20319a1c56dc1d799d5",
+    "chapter-056": "96018f636d52bbff2c40906e669b52dc15c6734e7fa1e8a72b3260a13b5d4f69",
+    "chapter-050": "71faaaddb69f25a5bdd7f315f15562e867eed9e897c9bd439a99a09c435bfe91",
+    "chapter-023": "908d4e64a01e171bdb09c0a7ee5484b8743be26b7cc75f49bd8b41b7ff391ff2",
+    "chapter-024": "39be893c0040dbb3148f9447402c47fc24dcb4356360f8558243258cb85b089a",
+    "chapter-025": "f37fc365e7d07f96b5fd289119e1846fe7f0030d8b46a7195fab316badf817b7",
+    "chapter-027": "dd48b2052380e1f6b6f6ffcb4835dd99cfe70efe4a9096fa51448dbdfaa14f00"
   },
   "directory_factions": {
     "wei": "魏",
@@ -4168,6 +4181,722 @@
           {
             "event": "duzhou-e2-cao-liangzhou-songjian",
             "stage": null
+          },
+          {
+            "event": "cuimao-e-o039",
+            "stage": null
+          },
+          {
+            "event": "dongyuan-e-p101c",
+            "stage": null
+          },
+          {
+            "event": "hancui-e-053343c87ff5019d25d7",
+            "stage": null
+          },
+          {
+            "event": "hancui-e-05c8a0bf6219ea68af96",
+            "stage": null
+          },
+          {
+            "event": "hancui-e-145a15b02b947e6d4ff8",
+            "stage": null
+          },
+          {
+            "event": "hancui-e-14c3048b47a09844fb75",
+            "stage": null
+          },
+          {
+            "event": "hancui-e-1685dd5682f2c2c083c9",
+            "stage": null
+          },
+          {
+            "event": "hancui-e-3cfb92144fbea45ba461",
+            "stage": null
+          },
+          {
+            "event": "hancui-e-3e9190c6cb903baf7c3f",
+            "stage": null
+          },
+          {
+            "event": "hancui-e-48709bed9bf671706cea",
+            "stage": null
+          },
+          {
+            "event": "hancui-e-5fff4a8a1902ce8940c2",
+            "stage": null
+          },
+          {
+            "event": "hancui-e-7ae111f12b8ffc9ad80d",
+            "stage": null
+          },
+          {
+            "event": "hancui-e-a9e64cde7b30b53d9e10",
+            "stage": null
+          },
+          {
+            "event": "hancui-e-aed92cb4f46e0b2b8ba9",
+            "stage": null
+          },
+          {
+            "event": "hancui-e-d4cb46364bae1f018730",
+            "stage": null
+          },
+          {
+            "event": "hancui-e-fccba699b40974365d8b",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-08be0f6c8f3520f8f958",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-13d617d601afc4341f87",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-196478fa89ca80e05ecb",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-251308cff61e84615af8",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-276b6436f8f0a9633b18",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-2facb8a86a7d2edb4d37",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-38ce83ef4928cb5df5fa",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-402e1fb3ab8014f21943",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-4138867e000869381c2c",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-445cb63554d172e0ca7e",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-58a193f26220c5a76d2c",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-673f3eaa85636d96a93e",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-69d27e65c8f3adde32d2",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-707577e5fddbd096151a",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-7e0f25847516688250f9",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-a465631af49219d249b0",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-aed423dbb250679cc0c1",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-b8453b80fe532e6bfa13",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-bbb677bbe78a4eeb614a",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-c8db718711a9b2f77109",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-e92222835ecf4b7bca86",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-eb740e0ea6ed53ed6ec8",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-ed073486f7e9929ea0a1",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-ed0bc13053de0b328a1d",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o002",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o006",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o038",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o060",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o070",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o084",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o086",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o088",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o090",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o093",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o094",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o095",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o096",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o126",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o143",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o146",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o188",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o199",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o209",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o210",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o213",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o218",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o219",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o220",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o221",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o222",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o238",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o239",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o250",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o251",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o254",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o264",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o267",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o003",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o005",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o010",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o013",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o025",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o040",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o043",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o048",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o059",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o061",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o064",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o065",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o066",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o095",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o100",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o102",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o117",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o118",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o123",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o124",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o137",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o138",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o141",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o148",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o155",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o170",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o177",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o204",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o221",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o232",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-0dc2bc38e316d214cdad",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-2b869802292f8e59f7ce",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-30e38109c446c78f347c",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-3a6a8baad643ee30013f",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-3b0f32fec10e025905df",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-56792e0c2c5537ca9c7c",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-588c1a250691c8093297",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-60deacdd5c6345783fad",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-641c55fd30f55d29b134",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-6f5a6608205e478bf901",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-7bc937b1e0b0bc6216a8",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-8944ccf81ba4defe8726",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-97cce0571745893a7925",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-9fec99fae9f6013339a7",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-a816df60bdfbe7d356af",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-b0581eba1d425283a831",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-bc46395a2b1d2cdb0eca",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-c8f07dbb58df19f4e312",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-cd1bb9a60320a95b4a97",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-cfaf176321c56f00c7ec",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-db89a0ad6fadf6cd13d1",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-f00bf2687149c1ccdde3",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-f25e1f6b2337bfad76c1",
+            "stage": null
+          },
+          {
+            "event": "rensu-e-o002",
+            "stage": null
+          },
+          {
+            "event": "rensu-e-o003",
+            "stage": null
+          },
+          {
+            "event": "rensu-e-o007",
+            "stage": null
+          },
+          {
+            "event": "rensu-e-o010",
+            "stage": null
+          },
+          {
+            "event": "rensu-e-o052",
+            "stage": null
+          },
+          {
+            "event": "rensu-e-o075",
+            "stage": null
+          },
+          {
+            "event": "rensu-e-o076",
+            "stage": null
+          },
+          {
+            "event": "rensu-e-o120",
+            "stage": null
+          },
+          {
+            "event": "rensu-e-o141",
+            "stage": null
+          },
+          {
+            "event": "rensu-e-o150",
+            "stage": null
+          },
+          {
+            "event": "rensu-e-o161",
+            "stage": null
+          },
+          {
+            "event": "rensu-e-o220",
+            "stage": null
+          },
+          {
+            "event": "shaodi-e-p007a",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-o190a",
+            "stage": null
+          },
+          {
+            "event": "wuwen-e-1605379c1deeb43170ea",
+            "stage": null
+          },
+          {
+            "event": "wuwen-e-4a17d1ab8778edc03b52",
+            "stage": null
+          },
+          {
+            "event": "wuwen-e-6af306d7507e4464ca8b",
+            "stage": null
+          },
+          {
+            "event": "wuwen-e-6e753659fd711e5798f8",
+            "stage": null
+          },
+          {
+            "event": "wuwen-e-7589468d82afc1820ca2",
+            "stage": null
+          },
+          {
+            "event": "wuwen-e-97e56518540e41067a0e",
+            "stage": null
+          },
+          {
+            "event": "xianzhu-e-o022b",
+            "stage": null
+          },
+          {
+            "event": "xinyang-e-09e438e20d7d6516a428",
+            "stage": null
+          },
+          {
+            "event": "xinyang-e-171cff34f3c2c9fb212a",
+            "stage": null
+          },
+          {
+            "event": "xinyang-e-26d7ff75431fcb8b3547",
+            "stage": null
+          },
+          {
+            "event": "xinyang-e-5f3a6fb172d918855fc2",
+            "stage": null
+          },
+          {
+            "event": "xinyang-e-61afb770f5613901afbb",
+            "stage": null
+          },
+          {
+            "event": "xinyang-e-83edaa73611fcf222961",
+            "stage": null
+          },
+          {
+            "event": "xinyang-e-b648f7170f9201461b00",
+            "stage": null
+          },
+          {
+            "event": "xinyang-e-b99bb42c6b21776afb6f",
+            "stage": null
+          },
+          {
+            "event": "xinyang-e-be2b3053c5a300d5c371",
+            "stage": null
+          },
+          {
+            "event": "xuhuwang-e-289e35901ea8207b8c01",
+            "stage": null
+          },
+          {
+            "event": "xuhuwang-e-3f21dadbf39dfdaec9cd",
+            "stage": null
+          },
+          {
+            "event": "xuhuwang-e-4b484a5ddd36f9702c89",
+            "stage": null
+          },
+          {
+            "event": "xuhuwang-e-63485fb822c0930ec363",
+            "stage": null
+          },
+          {
+            "event": "xuhuwang-e-96fdce785906998ab850",
+            "stage": null
+          },
+          {
+            "event": "xunyu-e-o023b",
+            "stage": null
+          },
+          {
+            "event": "yaoci-e-o064",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o016",
+            "stage": null
+          },
+          {
+            "event": "zhonghua-e-o121",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o024",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o019",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o112",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o141",
+            "stage": null
+          },
+          {
+            "event": "liusima-e2-wei015-074",
+            "stage": null
+          },
+          {
+            "event": "lizang-e2-wei018-072",
+            "stage": null
+          },
+          {
+            "event": "lizang-e2-wei018-073",
+            "stage": null
+          },
+          {
+            "event": "lizang-e2-wei018-074",
+            "stage": null
+          },
+          {
+            "event": "rensu-e2-wei016-057",
+            "stage": null
+          },
+          {
+            "event": "rensu-e2-wei016-059",
+            "stage": null
+          },
+          {
+            "event": "rensu-e2-wei016-060",
+            "stage": null
+          },
+          {
+            "event": "rensu-e2-wei016-061",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e2-wu056-029",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e2-wu051-019",
+            "stage": null
           }
         ],
         "compat": {
@@ -6654,6 +7383,42 @@
           },
           {
             "event": "huowang-e2-feishi-remonstrates-imperial-title",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o146",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o064",
+            "stage": null
+          },
+          {
+            "event": "rencheng-e-a816df60bdfbe7d356af",
+            "stage": null
+          },
+          {
+            "event": "xinyang-e-171cff34f3c2c9fb212a",
+            "stage": null
+          },
+          {
+            "event": "xinyang-e-2a868024c2a6277d8c69",
+            "stage": null
+          },
+          {
+            "event": "yaoci-e-o051",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o024",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o094",
+            "stage": null
+          },
+          {
+            "event": "lizang-e2-wei018-068",
             "stage": null
           }
         ],
@@ -10145,6 +10910,378 @@
           },
           {
             "event": "zhonghua-e2-sundeng-proposed-hostage",
+            "stage": null
+          },
+          {
+            "event": "feipin-e-08876c743b5093e5d66e",
+            "stage": null
+          },
+          {
+            "event": "feipin-e-0980843ec6cc71f4a728",
+            "stage": null
+          },
+          {
+            "event": "feipin-e-11002a4527f419c2ad01",
+            "stage": null
+          },
+          {
+            "event": "feipin-e-15894ad6030f03b6955e",
+            "stage": null
+          },
+          {
+            "event": "feipin-e-2a81c69447f227025e63",
+            "stage": null
+          },
+          {
+            "event": "feipin-e-33bee77af670a2ef8b61",
+            "stage": null
+          },
+          {
+            "event": "feipin-e-6156d790ef6a77de3b31",
+            "stage": null
+          },
+          {
+            "event": "feipin-e-73896fd25c9c12fc3d06",
+            "stage": null
+          },
+          {
+            "event": "feipin-e-783f9c5c6208ac76c662",
+            "stage": null
+          },
+          {
+            "event": "feipin-e-8e25ef17382cbeb26878",
+            "stage": null
+          },
+          {
+            "event": "feipin-e-a1aa4c52c9cb56db0261",
+            "stage": null
+          },
+          {
+            "event": "feipin-e-a264da6a2bf1385d2b06",
+            "stage": null
+          },
+          {
+            "event": "feipin-e-e821d06280b3cb3ab6f9",
+            "stage": null
+          },
+          {
+            "event": "feipin-e-fc43d7104a422877ae05",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-c17d82ec6c82c4cca9a3",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-fd18b596646627718977",
+            "stage": null
+          },
+          {
+            "event": "hequan-e-o157",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o127",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o072",
+            "stage": null
+          },
+          {
+            "event": "lizang-e-o095",
+            "stage": null
+          },
+          {
+            "event": "wudi-e-o185b",
+            "stage": null
+          },
+          {
+            "event": "wuwen-e-1605379c1deeb43170ea",
+            "stage": null
+          },
+          {
+            "event": "xuhuwang-e-6fb288b2a1c8d8e6d686",
+            "stage": null
+          },
+          {
+            "event": "xuhuwang-e-71964769fa35e1f4851b",
+            "stage": null
+          },
+          {
+            "event": "yaoci-e-o036",
+            "stage": null
+          },
+          {
+            "event": "yaoci-e-o037",
+            "stage": null
+          },
+          {
+            "event": "yaoci-e-o041",
+            "stage": null
+          },
+          {
+            "event": "yaoci-e-o065",
+            "stage": null
+          },
+          {
+            "event": "yaoci-e-o066",
+            "stage": null
+          },
+          {
+            "event": "yaoci-e-o081",
+            "stage": null
+          },
+          {
+            "event": "yaoci-e-o085",
+            "stage": null
+          },
+          {
+            "event": "yaoci-e-o089",
+            "stage": null
+          },
+          {
+            "event": "yaoci-e-o097",
+            "stage": null
+          },
+          {
+            "event": "zhangle-e-o007b",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o012",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o016",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o017",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o018",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o022",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o023",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o024",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o025",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o026",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o030",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o035",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o039",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o058",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o059",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o060",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o062",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o063",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o070",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o078",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o092",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o094",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o096",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o103",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o105",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o111",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o112",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o135",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o138",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o140",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o141",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o142",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o147",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o161",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o162",
+            "stage": null
+          },
+          {
+            "event": "zhulv-e-o163",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o009",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o026",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o027",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o028",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o030",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o037",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o079",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o083",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o090",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o094",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o096",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o097",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o098",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o101",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o102",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o103",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o115",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o132",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o135",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o139",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e-o143",
+            "stage": null
+          },
+          {
+            "event": "lizang-e2-wei018-069",
+            "stage": null
+          },
+          {
+            "event": "lizang-e2-wenpin-weilue-alternative",
+            "stage": null
+          },
+          {
+            "event": "zongshi-e2-wu051-019",
             "stage": null
           }
         ],

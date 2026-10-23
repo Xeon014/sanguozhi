@@ -3,8 +3,8 @@
   "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
   "section_sha256": {
     "chapter-054": "b5a12151318a634fc4ef1614a82b326cf31c11f29517fa7499b22e9df91cfead",
-    "chapter-001": "8aca4c346aa9cc8706094afc84a5888aa03910aadd75d3ee763fc732c00f7cf9",
-    "chapter-032": "a96846f8d938ee9c7b7644e4c1129ee5f143cef89abd660e00079e672445f305"
+    "chapter-032": "a96846f8d938ee9c7b7644e4c1129ee5f143cef89abd660e00079e672445f305",
+    "chapter-001": "8aca4c346aa9cc8706094afc84a5888aa03910aadd75d3ee763fc732c00f7cf9"
   },
   "bindings": {
     "allied-zhou": "485f6d117bc8c3fefa0fbf352ed7bb2e6b7f92c9d7a71c6de04a515241598f7f",
@@ -41,15 +41,15 @@
   },
   "event_bindings": {
     "south-jingzhou": "f21e74ee430976c58c41875162b7414b14ca6202b81857acf8645b238ffc85a2",
-    "liu-cong-surrender": "572e5dafa3fd1395dbe4db526ace304b45a91af9969199441b7c5daf27a950da",
-    "chibi-engagement": "5c6fc2c298b4ec4694015017ac468f868ccc461a0e27498729c99cd5777a67e4",
+    "liu-cong-surrender": "0d3a690bfe5a3468df97f63cb7473457888b49a8e5babe2a694e8a148718731c",
+    "chibi-engagement": "de039c11e0e786325610c1753002022b9ea7b46e722e5ace9fc42c0d5b814e5f",
     "cao-retreat": "bf95c683abab4777d8b39636a7c8d9f08c5e727b29fc478dc6b05bc46fccf435",
-    "liang-envoy": "62418749aae881ab4aa6668ee8806e578fde76712e29d619dac9471df95314d3",
-    "dangyang-meeting": "e46f8adb9f81a0a876a776cc2689111c655a69b74139de640f026fca12b53af5",
-    "yiling-relief": "a78cedce63ee1fec641e7c9f7e4142f55eadaf59c30ecf0728e6dcc2965f0ea4",
-    "zhou-plan": "6048f81c81cb364f5a0b865e5bc4ec17b63d888c1150d603a36b11c44057d38b",
-    "su-resistance": "8c3bc4c767daa3c0f128ce201f270d1f88bc5905803d05cf315baf758b2bef55",
-    "huang-fire": "d9638e4614c88469cbf0a2e5a1ad739b52beb9f6f906e8301a1246fe3c1e935f"
+    "liang-envoy": "c7b21d890942e04d0e1479e2f4c38fc7852896348518480c4a7b0f1a35493a5d",
+    "dangyang-meeting": "93359b6be72a367264fc2417104b588cb4f894c6662faa97b0d94841ca8f6fc2",
+    "yiling-relief": "af40958a1f6c228470c7607df13068b1874a65518bba3403f3a7fd582c59a598",
+    "zhou-plan": "8859626ff420fe726c51b8984a0cfe363a885b1be88185867adbf3c005db2a6b",
+    "su-resistance": "84e6f10338d43f31420bdbb10dbd80b633844b9d65bba673bfa751891af271de",
+    "huang-fire": "c5fd03a3a5863173d5ef385b7c5cd68e1763295bbf38a9cdbbd7cee6338a237b"
   },
   "topics": [
     {

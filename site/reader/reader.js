@@ -1,9 +1,9 @@
-import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=20023202d882d669';
-import {biographyContext} from './profiles.js?v=20023202d882d669';
-import {topicDirectory, renderTopic} from './topics.js?v=20023202d882d669';
-import {mountAtlas, atlasHash, canonicalAtlasHomeHash} from './atlas.js?v=20023202d882d669';
-import {filteredOverviewItems} from './event-editorial.js?v=20023202d882d669';
-import {bindFloatingPanel} from './floating-panel.js?v=20023202d882d669';
+import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=b53d31590cbf4370';
+import {biographyContext} from './profiles.js?v=b53d31590cbf4370';
+import {topicDirectory, renderTopic} from './topics.js?v=b53d31590cbf4370';
+import {mountAtlas, atlasHash, canonicalAtlasHomeHash} from './atlas.js?v=b53d31590cbf4370';
+import {filteredOverviewItems} from './event-editorial.js?v=b53d31590cbf4370';
+import {bindFloatingPanel} from './floating-panel.js?v=b53d31590cbf4370';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -145,7 +145,7 @@ async function home(version,qs,saved) {
   if(atlas){$('#home-atlas').hidden=false;showAtlas($('#home-atlas'),atlas,qs,saved,true);}
 }
 function directoryHTML(selected='') {
-  return `<div class="directory-controls"><label class="sr-only" for="directory-book">${cv('分书')}</label><select id="directory-book" aria-label="${cv('分书')}"><option value="">${cv('全书')}</option>${site.collections.map(c=>`<option value="${c.id}" ${c.id===selected?'selected':''}>${esc(cv(c.label))}</option>`).join('')}</select><input class="directory-filter" type="search" aria-label="${cv('按卷名筛选')}"></div><p class="directory-status meta" role="status"></p><div class="directory-list">${site.collections.map(c=>`<section class="directory-section" data-collection="${c.id}"><h2>${esc(cv(c.label))}<small>${cv(`${numeral(c.chapters.length)}卷`)}</small></h2>${sectionItems(c.chapters.map(id=>book.sections.find(s=>s.id===id)))}</section>`).join('')}</div>`;
+  return `<div class="directory-controls"><label class="sr-only" for="directory-book">${cv('分书')}</label><select id="directory-book" aria-label="${cv('分书')}"><option value="">${cv('全书')}</option>${site.collections.map(c=>`<option value="${c.id}" ${c.id===selected?'selected':''}>${esc(cv(c.label))}</option>`).join('')}</select></div><div class="directory-list">${site.collections.map(c=>`<section class="directory-section" data-collection="${c.id}"><h2>${esc(cv(c.label))}<small>${cv(`${numeral(c.chapters.length)}卷`)}</small></h2>${sectionItems(c.chapters.map(id=>book.sections.find(s=>s.id===id)))}</section>`).join('')}</div>`;
 }
 function supplements() {
   main.innerHTML=`<header class="page-heading"><p class="eyebrow">${esc(cv(site.title))}</p><h1>${cv('补充材料')}</h1></header>${(site.supplements||[]).map(g=>`<section class="supplement-section"><h2>${esc(cv(g.title))}</h2>${sectionItems(g.sections.map(id=>book.sections.find(s=>s.id===id)))}</section>`).join('')}`;
@@ -157,13 +157,8 @@ function contents(qs) {
   directoryFilter(main,true);
 }
 function directoryFilter(container,routeFilter=false) {
-  const input=$('.directory-filter',container),select=$('select',container),status=$('.directory-status',container);
-  const update=()=>{let count=0;for(const part of container.querySelectorAll('.directory-section')){
-    const included=!select.value||part.dataset.collection===select.value;let visible=0;
-    for(const li of part.querySelectorAll('li')){li.hidden=!included||!normalize(li.querySelector('a').textContent).includes(normalize(input.value.trim()));if(!li.hidden){count++;visible++;}}
-    part.hidden=!visible;
-  }status.textContent=count?'':cv('没有匹配的篇目');};
-  input.oninput=update;
+  const select=$('select',container);
+  const update=()=>{for(const part of container.querySelectorAll('.directory-section'))part.hidden=!!select.value&&part.dataset.collection!==select.value;};
   select.onchange=()=>{if(routeFilter){const q=new URLSearchParams();if(select.value)q.set('book',select.value);navigate('#/contents'+(q.size?'?'+q:''),{...viewSnapshot(),y:0,anchor:null});}else update();};update();
 }
 function openDirectory() {
@@ -208,7 +203,7 @@ function viewSnapshot() {
     knowledgeLimit:Number($('.knowledge-page')?.dataset.limit)||0,
     open:[...main.querySelectorAll('details[open]')].map(el=>el.id || el.closest('.reading-group')?.id).filter(Boolean),
     returns:[...main.querySelectorAll('.note[open][data-return-id]')].map(el=>[el.id,el.dataset.returnId]),
-    closed:[...main.querySelectorAll('.chapter-sidebar details:not([open]),.life-navigation:not([open])')].map(el=>el.id),searchLimit,filter:$('.directory-filter',main)?.value || ''};
+    closed:[...main.querySelectorAll('.chapter-sidebar details:not([open]),.life-navigation:not([open])')].map(el=>el.id),searchLimit};
 }
 function restoreView(saved) {
   if(!saved)return;
@@ -217,7 +212,6 @@ function restoreView(saved) {
     else if(el?.matches('.reading-group')&&el.querySelector('.note-stack'))el.querySelector('.note-stack').open=true;}
   $('.knowledge-page')?.restoreInlineReading?.();
   for(const [id,ref] of saved.returns||[]){const el=document.getElementById(id);if(el)el.dataset.returnId=ref;}
-  const filter=$('.directory-filter',main);if(filter){filter.value=saved.filter||'';filter.dispatchEvent(new Event('input'));}
   const anchor=saved.anchor && document.getElementById(saved.anchor);
   if(anchor?.getClientRects().length && saved.y>0)window.scrollBy(0,anchor.getBoundingClientRect().top-saved.offset);
   else window.scrollTo(0,saved.y||0);
@@ -300,7 +294,8 @@ async function readSection(id,target,version,restoring=false) {
   const floating=bindFloatingPanel(settings,$('.settings-body',settings),{isOpen:()=>settings.open,onDismiss:()=>{settings.open=false;saveContext();}});
   settings.addEventListener('keydown',e=>{if(e.key==='Escape'&&settings.open){e.preventDefault();settings.open=false;settings.querySelector('summary').focus();}});
   settings.addEventListener('toggle',()=>{floating.fit();saveContext();});
-  settings.addEventListener('focusout',event=>{if(!settings.contains(event.relatedTarget)){settings.open=false;saveContext();}});
+  settings.addEventListener('focusout',event=>{if(event.relatedTarget&&!settings.contains(event.relatedTarget)){settings.open=false;saveContext();}});
+  settings.querySelector('summary').addEventListener('mousedown',e=>e.preventDefault());
   document.querySelectorAll('[data-note-toggle]').forEach(button=>button.onclick=()=>{const saved=viewSnapshot();const type=button.dataset.noteToggle;prefs.noteVisibility[type]=!prefs.noteVisibility[type];savePrefs();applyNoteMarkers();restoreView(saved);saveContext();});
   document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{const saved=viewSnapshot();setMode(b.dataset.mode);restoreView(saved);saveContext();});
   $('#jump').onchange=e=>{if(e.target.value)navigate(url(id,e.target.value));};
