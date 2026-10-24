@@ -59,7 +59,14 @@
     "chapter-023": "908d4e64a01e171bdb09c0a7ee5484b8743be26b7cc75f49bd8b41b7ff391ff2",
     "chapter-024": "39be893c0040dbb3148f9447402c47fc24dcb4356360f8558243258cb85b089a",
     "chapter-025": "f37fc365e7d07f96b5fd289119e1846fe7f0030d8b46a7195fab316badf817b7",
-    "chapter-027": "dd48b2052380e1f6b6f6ffcb4835dd99cfe70efe4a9096fa51448dbdfaa14f00"
+    "chapter-027": "dd48b2052380e1f6b6f6ffcb4835dd99cfe70efe4a9096fa51448dbdfaa14f00",
+    "chapter-062": "7031fb8ebde1ea3c95cdedcf93218fb46f69a71a29a1d9e82361f7108436a86a",
+    "chapter-063": "3ae8edfbae98c3e86a518f7022c664ed35a0d68d5ac36b331ceb560e76b1848f",
+    "chapter-065": "13c50dd7dc9a229aef1cfb43dd231955a0b1a6359dab04c54708df93fa114e12",
+    "chapter-057": "39e3922e223fe25b811b77f14049327071298549de6ed788ba7da697f067f2e3",
+    "chapter-021": "18c02b71e8f81644cf71ffea582a8e019509de0b5e9bc11451de595fa03e2cf3",
+    "chapter-029": "6ffb35bac29d20aa512b5a734e72f98ec5729b176f1bc5d6837e673bcc00880d",
+    "chapter-030": "3e0682212c3e242d0f221308bc203bd8309851b8498b94db16383bdde5234ce1"
   },
   "directory_factions": {
     "wei": "魏",
@@ -4897,6 +4904,246 @@
           {
             "event": "zongshi-e2-wu051-019",
             "stage": null
+          },
+          {
+            "event": "fangji-e-20f45067257eaa85f0cc",
+            "stage": null
+          },
+          {
+            "event": "fangji-e-3193f0a23341617e3d00",
+            "stage": null
+          },
+          {
+            "event": "fangji-e-4c260175f3d386413e71",
+            "stage": null
+          },
+          {
+            "event": "fangji-e-5aaea490e2899d5fd0c6",
+            "stage": null
+          },
+          {
+            "event": "fangji-e-62bded69af36754fad62",
+            "stage": null
+          },
+          {
+            "event": "fangji-e-7081965e32abf1938627",
+            "stage": null
+          },
+          {
+            "event": "fangji-e-7323efc37500a5cc3514",
+            "stage": null
+          },
+          {
+            "event": "fangji-e-856a8cb6f442845b4900",
+            "stage": null
+          },
+          {
+            "event": "fangji-e-97cf242e2cb5d27a064e",
+            "stage": null
+          },
+          {
+            "event": "fangji-e-a2c6178f0b98594fc998",
+            "stage": null
+          },
+          {
+            "event": "fangji-e-ad81dbff54a6ee4e486f",
+            "stage": null
+          },
+          {
+            "event": "fangji-e-dbcc5b1d1e5c4808427e",
+            "stage": null
+          },
+          {
+            "event": "fangji-e-ff86f7fb487d52a3fb30",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-1d9f437d33e0f66a3130",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-1f12236dd532c711e721",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-1f4e42990350b9cf2c2f",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-2234618aeef20f22b26b",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-2373163b5dd8a8c110dd",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-2da8072037877f8e65f5",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-4608f0c96edf9e948b3c",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-4766c00106822bd246de",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-47c66e42eae73e51d29e",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-48875feade1b229c0044",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-4bbc371241f4a63a4390",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-4e02f535377089de5850",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-4e2ab07d9c1007681a9e",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-631e018d90331b07f80a",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-6d9428a175f28ee47609",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-7cfb5fb48faee336c092",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-8005d2f119965b7e4d1b",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-87fc4dc29f53df680482",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-8de1f2a42cfc8a5223b0",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-9e3df226f805bd76e5c4",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-a6e4da3b67f435c30213",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-b538b83d6a2321b4cb44",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-b54445060b9ad63773a7",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-bba8fa1d726710055e62",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-bc2e014a13cac04a3f91",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-c1c5b456f587d2ea175d",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-c6572e2c05c1f0e200d5",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-cf331d82f3d4bb799ff8",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-e0157664879b5bd350a4",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-e32ad8f0463c64982435",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-f10452987d882f5d888d",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-fd1ec32ef4063d185bfb",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-fe398fb0c8b0679c01f6",
+            "stage": null
+          },
+          {
+            "event": "wuhuan-e-0e395db310c99e0fce2d",
+            "stage": null
+          },
+          {
+            "event": "wuhuan-e-47caa94114cb54a2691e",
+            "stage": null
+          },
+          {
+            "event": "wuhuan-e-745990a1ce3e6f17eb2d",
+            "stage": null
+          },
+          {
+            "event": "wuhuan-e-949cd1f795aae110157a",
+            "stage": null
+          },
+          {
+            "event": "wuhuan-e-a38e34b0adf19633edd7",
+            "stage": null
+          },
+          {
+            "event": "wuhuan-e-d083f297d543c4376ff6",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-288d82b1a444bbedf313",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-97271224504b175c391a",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-5ba4939657d725991f5d",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-865db94c9e19649eb9d9",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-a591efbea875b945a128",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-c8203bb1a2e01fa3210b",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-dca591e4ba813cc80992",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-e4fbf2020b2da715a332",
+            "stage": null
           }
         ],
         "compat": {
@@ -7419,6 +7666,26 @@
           },
           {
             "event": "lizang-e2-wei018-068",
+            "stage": null
+          },
+          {
+            "event": "wangwei-e-47c66e42eae73e51d29e",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-befcab651933b0972f79",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-f1f77c4590fe0d5b2d04",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-126b8c30cefc38b1c7eb",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-7652f2fa1fdc07e3db89",
             "stage": null
           }
         ],
@@ -11282,6 +11549,538 @@
           },
           {
             "event": "zongshi-e2-wu051-019",
+            "stage": null
+          },
+          {
+            "event": "panlu-e-p045",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-0c82ea38263372bf87a0",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-0dd9231cd9c61d6e10cb",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-12ddb30d768ca0478609",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-3fb871b076eacb397edf",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-4399a1a671e6d043739a",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-43e4872a548f3ade3324",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-48f7a01acc8b8a3e716b",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-4970b31bcaa990bb73b0",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-4bf7b41bd4e1106d1703",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-5244951c89405b7d808a",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-588b11ce29b1df230670",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-5e3c33d87d6a8bd957d5",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-66fac5fbb5ea571aafc7",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-6b07e58fc58859d67c83",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-7b5abf78ecffcb0ed78f",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-7e22ef508e0800065580",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-8149f01fa14405b9dc98",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-83a35e7d370cf341c28e",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-84d124c629fbf6796e4f",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-85451e3238818c0150d8",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-8de9c7fe26d22c2d279f",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-9ab460d9dedff9dff6f0",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-9f7d9facf2c2c218ab4a",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-b18e77e7f41d75ff1526",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-c2388f50a933ebb09f41",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-c33b1bba3d5061c79bff",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-c370425bf7c822b03f4a",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-c479ea5ac8295bf403fd",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-e23207ede789ff0bb488",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-e8af6c115dc263e25e67",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-ed633eb36e579612f763",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-f1910ca75659a8d83e31",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-f4422d886c5fe5f3adc5",
+            "stage": null
+          },
+          {
+            "event": "shiyi-e-f7bd5d994ee33577f99f",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-11cafdc035b27f793582",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-29b1dd2a6eb851394a7e",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-2b36e12219f520b27821",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-3284312221f462512cb5",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-3ecd2253830435461ba6",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-4545e787ae6f1ce42398",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-4ddfe9945a5c0ddcba85",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-5879759949a6cc6177d5",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-681437554c91de8994e5",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-6ddffaa59dc4d72459db",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-7fe654033b98698c9e25",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-8be588e9b9e25e43f797",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-8dea5333c8b31fabdbb9",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-91bd5712916ed2f91fd8",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-a145c846f593a6dc4867",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-a97eb35daa504527852c",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-b512b3401a58b4aaa3da",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-bc999d095b07bcb5c633",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-c9800676dcfd8c2637cf",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-d0d72255f30bd6cb07ee",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-d48da6be307fc59dbdfb",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-dc5f240cef0c7da1f694",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-dda7ffaa354890e44ee5",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-f02c6c459ceb4f08f698",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-fa7148d3c1ed686fcf9c",
+            "stage": null
+          },
+          {
+            "event": "wufan-e-fb535d7e9f0bcbf13b77",
+            "stage": null
+          },
+          {
+            "event": "wuzhu-e-o117a",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-0a250438e5dbbe1f5a6f",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-0ff741cd4487784fc6a2",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-13fb7a9b5d380ae48033",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-1b1292dc4ef485b32cca",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-297daaca1f24c6b9a85e",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-33ba663f69043d5364f1",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-438454c5ed61647a6f3f",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-448d493187bbd9219ebe",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-4a8a306503827916eb1a",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-4aec0f97a5a5c703dabe",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-50eaf15382dc7eaf1e97",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-54ec47244e2cb953ddaa",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-56bb13db8bdb5226af09",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-56c02c6eff0762bc56e4",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-5780735523572881a13f",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-59b163aa2901d1f25192",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-5dec630a6129603529af",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-638d3945c264488e1b89",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-64604a52804223e62bbe",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-652b177fb4c95ca34d34",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-680a2bfee7abf7d6d909",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-7378dc0baf514174e43d",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-7de3c77dddbfbc9a432d",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-8e7141d3857319a8d574",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-9408a68e9bf3e22ec2d4",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-9779dafa554537873eb2",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-c15713b23526caa433a3",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-c218d43222a35a10efb3",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-c9c9ecbf316de21b49eb",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-ced003bd1f3873047f19",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-de733c658830ad248cba",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-e0414da8ac1404027fd8",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-e242d7d4984ecc1f0510",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-e44d0fad7a641e59b496",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-eece9e577378a733aaca",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-0203f0fb605d28c95273",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-126b8c30cefc38b1c7eb",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-18dbf9567b10e79c738d",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-190fab6af42b8124a4fc",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-1f7c38482fa009aa958f",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-39cc72cf47f9cb65134d",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-3d9d0695bd1266ddeb14",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-41f8ebfa9be5a34e15c2",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-47616b3612550d9fbdb5",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-4ad0d37ee7f1aa83f68c",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-4ccb006c76b41fb0e1fc",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-5c819557b3429e408d50",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-60e82b59f14d813f1fe8",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-645160b66d956b8d201b",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-64f06d36cd89f908fd06",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-682ce22a2d51f8eaed09",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-6f343ed4bdf6ea0d2cb7",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-7652f2fa1fdc07e3db89",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-7c06d97b82742199dd2d",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-7c199f2b7c2beef54fb3",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-85f4f9cddc0d227407d9",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-93eb88e5473b52293e66",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-9d7b957305b6826fee6d",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-a205c63ba86ec6dfd227",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-a24d69abb3958459ee4f",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-a2699946de82447daa1f",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-a5f147b3165c25134e42",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-bb8cfb99d2c505922e28",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-bcad2fd4833bdd383b9d",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-bd5db30b9d80916d38be",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-c8203bb1a2e01fa3210b",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-c97ae6a6d9143065562c",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-cc91beb657afb2fb080b",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-ee7036fab4991963dfc3",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-f0c3b5c4bfa297d20f20",
+            "stage": null
+          },
+          {
+            "event": "zhouyu-e-o069d",
             "stage": null
           }
         ],

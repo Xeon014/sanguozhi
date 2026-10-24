@@ -3,8 +3,8 @@
   "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
   "section_sha256": {
     "chapter-054": "b5a12151318a634fc4ef1614a82b326cf31c11f29517fa7499b22e9df91cfead",
-    "chapter-032": "a96846f8d938ee9c7b7644e4c1129ee5f143cef89abd660e00079e672445f305",
-    "chapter-001": "8aca4c346aa9cc8706094afc84a5888aa03910aadd75d3ee763fc732c00f7cf9"
+    "chapter-001": "8aca4c346aa9cc8706094afc84a5888aa03910aadd75d3ee763fc732c00f7cf9",
+    "chapter-032": "a96846f8d938ee9c7b7644e4c1129ee5f143cef89abd660e00079e672445f305"
   },
   "bindings": {
     "allied-zhou": "485f6d117bc8c3fefa0fbf352ed7bb2e6b7f92c9d7a71c6de04a515241598f7f",
@@ -44,12 +44,12 @@
     "liu-cong-surrender": "0d3a690bfe5a3468df97f63cb7473457888b49a8e5babe2a694e8a148718731c",
     "chibi-engagement": "de039c11e0e786325610c1753002022b9ea7b46e722e5ace9fc42c0d5b814e5f",
     "cao-retreat": "bf95c683abab4777d8b39636a7c8d9f08c5e727b29fc478dc6b05bc46fccf435",
-    "liang-envoy": "c7b21d890942e04d0e1479e2f4c38fc7852896348518480c4a7b0f1a35493a5d",
-    "dangyang-meeting": "93359b6be72a367264fc2417104b588cb4f894c6662faa97b0d94841ca8f6fc2",
-    "yiling-relief": "af40958a1f6c228470c7607df13068b1874a65518bba3403f3a7fd582c59a598",
-    "zhou-plan": "8859626ff420fe726c51b8984a0cfe363a885b1be88185867adbf3c005db2a6b",
-    "su-resistance": "84e6f10338d43f31420bdbb10dbd80b633844b9d65bba673bfa751891af271de",
-    "huang-fire": "c5fd03a3a5863173d5ef385b7c5cd68e1763295bbf38a9cdbbd7cee6338a237b"
+    "liang-envoy": "b4cfd1180c77afce4c205f5a757e6f1e7e557bcd087a193e902de3756382b019",
+    "dangyang-meeting": "136fc7dda899587340fff6f5e83f2e96a8dbbc25486b1b5ab545b0df3781b0e7",
+    "yiling-relief": "bc57eba679d9f59ad7cfc1f87d1f51017930431bf70d950d14fee9768de4dc11",
+    "zhou-plan": "0b90dacfabcbe3f16feb8e11b7da5e2fae322f881b7819dcf2a9d717890e7908",
+    "su-resistance": "91527ba1faf400e759d499f027859a12f8a991aa980b6f1150e792376bbd33b9",
+    "huang-fire": "c03b1a2e3e8cd594a0d45b6cf1909e7154d70c2dccf6340e433d391dc282b864"
   },
   "topics": [
     {

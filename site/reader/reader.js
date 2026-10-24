@@ -1,9 +1,9 @@
-import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=b53d31590cbf4370';
-import {biographyContext} from './profiles.js?v=b53d31590cbf4370';
-import {topicDirectory, renderTopic} from './topics.js?v=b53d31590cbf4370';
-import {mountAtlas, atlasHash, canonicalAtlasHomeHash} from './atlas.js?v=b53d31590cbf4370';
-import {filteredOverviewItems} from './event-editorial.js?v=b53d31590cbf4370';
-import {bindFloatingPanel} from './floating-panel.js?v=b53d31590cbf4370';
+import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=bc51b5632c56d390';
+import {biographyContext} from './profiles.js?v=bc51b5632c56d390';
+import {topicDirectory, renderTopic} from './topics.js?v=bc51b5632c56d390';
+import {mountAtlas, atlasHash, canonicalAtlasHomeHash} from './atlas.js?v=bc51b5632c56d390';
+import {filteredOverviewItems} from './event-editorial.js?v=bc51b5632c56d390';
+import {bindFloatingPanel} from './floating-panel.js?v=bc51b5632c56d390';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

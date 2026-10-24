@@ -1,6 +1,6 @@
-import {eventSources, sourceLayerLabel, dateText} from './knowledge.js?v=b53d31590cbf4370';
-import {evidenceKey} from './profiles.js?v=b53d31590cbf4370';
-import {quoteText,readingProjection,passageHTML} from './event-reading.js?v=b53d31590cbf4370';
+import {eventSources, sourceLayerLabel, dateText} from './knowledge.js?v=bc51b5632c56d390';
+import {evidenceKey} from './profiles.js?v=bc51b5632c56d390';
+import {quoteText,readingProjection,passageHTML} from './event-reading.js?v=bc51b5632c56d390';
 
 // Topic excerpts retain their existing context view; event pages use the new
 // in-place paragraph projection. Do not couple these two reading interfaces.
