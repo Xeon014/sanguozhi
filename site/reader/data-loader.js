@@ -18,6 +18,20 @@ export function createJSONLoader(base, version, transport=fetch) {
 }
 
 const indexes=new WeakMap();
+const presentations=new WeakMap();
+export function presentPeople(data,names={}) {
+  if(!data.persons||!Object.keys(names).length)return data;
+  const old=presentations.get(data);
+  if(old?.names===names)return old.value;
+  const value={...data,persons:data.persons.map(p=>{
+    const choice=names[p.id];if(!choice||p.name===choice.name)return p;
+    const search=!p.facts;
+    const aliases=(p.aliases||[]).filter(a=>(search?a:a.text)!==choice.name);
+    if(!aliases.some(a=>(search?a:a.text)===p.name))aliases.push(search?p.name:{text:p.name,evidence:choice.evidence});
+    return {...p,name:choice.name,aliases};
+  })};
+  presentations.set(data,{names,value});return value;
+}
 export function knowledgeIndex(data){
   const previous=indexes.get(data),stamp=[data.events?.length||0,data.persons?.length||0,data.evidence.length,data.runtimeRevision||0].join(':');
   if(previous?.stamp===stamp)return previous;

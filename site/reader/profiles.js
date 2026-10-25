@@ -1,4 +1,5 @@
-import {retainMoreFocus} from './people-reading.js?v=5354103c3b299de1';
+import {retainMoreFocus} from './people-reading.js?v=91f1f8fab659b62e';
+import {citationHeading} from './inline-reading.js?v=91f1f8fab659b62e';
 // Presentation choices refer to existing facts; they never become a second event store.
 export const evidenceKey=e=>JSON.stringify([e.source_sha256,e.section,e.block,e.layer,e.attribution||'',e.start,e.end,e.quote]);
 
@@ -112,7 +113,8 @@ export function renderBiography({bio,data,main,text,esc,dateText,url,sourceLabel
   const row=e=>readingRow?readingRow(e,displayDate):`<article class="life-event ${displayDate(e.time)?'':'without-event-date'}" id="life-event-${esc(e.id)}" data-context tabindex="-1">${displayDate(e.time)?`<span>${text(displayDate(e.time))}</span>`:''}${eventLink(e)}</article>`;
   const nodes=stage=>bio.nodes.filter(n=>n.stage===stage).map(n=>{
     const ids=[...new Set(n.sentences.flatMap(s=>s.events))];
-    const quotes=biographySources(n,data).map(r=>`<div class="life-source" id="life-source-${esc(n.id)}-${esc(r.ids[0])}" data-evidence-ids="${esc(JSON.stringify(r.ids))}"><p class="life-source-label">${text(sourceLabel(r))}</p>${renderQuote(r)}<a class="evidence-link" href="${url(r.section,r.block)}">${text('阅读全文')}</a></div>`).join('');
+    const linked=new Set();
+    const quotes=biographySources(n,data).map(r=>`<div class="life-source" id="life-source-${esc(n.id)}-${esc(r.ids[0])}" data-evidence-ids="${esc(JSON.stringify(r.ids))}"><p class="life-source-label">${citationHeading(r,{text,url,label:sourceLabel(r),linked})}</p>${renderQuote(r)}</div>`).join('');
     const links=ids.map(id=>`<p>${eventLink(events.get(id))}</p>`).join('');
     const related=ids.length>1?`<details class="life-document-events reading-more" id="life-events-${esc(n.id)}"><summary>${text('相关史事')}</summary>${links}</details>`:`<div class="life-document-events" id="life-events-${esc(n.id)}">${links}</div>`;
     const date=biographyDate(n,events,dateText);
@@ -132,8 +134,8 @@ export function renderBiography({bio,data,main,text,esc,dateText,url,sourceLabel
     if(matchMedia('(max-width:760px)').matches)main.querySelector('.life-navigation').open=!!saved?.open?.includes('life-navigation');
     main.querySelectorAll('.close-records').forEach(button=>button.onclick=()=>{
       const details=button.closest('details');details.open=false;
-      details.querySelector('summary').focus({preventScroll:true});
-      details.closest('.life-node').scrollIntoView({block:'start'});onChange();
+      const summary=details.querySelector('summary');summary.focus({preventScroll:true});
+      summary.scrollIntoView({block:'nearest'});onChange();
     });
     for(const b of buckets){
       const container=main.querySelector(`[data-life-list="${b.id}"]`);

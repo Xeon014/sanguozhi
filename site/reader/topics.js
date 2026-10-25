@@ -1,6 +1,7 @@
-import {eventSources, sourceLayerLabel, dateText} from './knowledge.js?v=5354103c3b299de1';
-import {evidenceKey} from './profiles.js?v=5354103c3b299de1';
-import {quoteText,readingProjection,passageHTML} from './event-reading.js?v=5354103c3b299de1';
+import {eventSources, sourceLayerLabel, dateText} from './knowledge.js?v=91f1f8fab659b62e';
+import {evidenceKey} from './profiles.js?v=91f1f8fab659b62e';
+import {quoteText,readingProjection,passageHTML} from './event-reading.js?v=91f1f8fab659b62e';
+import {citationHeading} from './inline-reading.js?v=91f1f8fab659b62e';
 
 // Topic excerpts retain their existing context view; event pages use the new
 // in-place paragraph projection. Do not couple these two reading interfaces.
@@ -54,7 +55,7 @@ export function renderTopic(topic, catalog, {main, qs, esc, cv, url, collection,
   const targetStep=topic.steps.find(s=>s.entries.some(e=>e.ref===qs.get('ref')))||topic.steps.find(s=>s.id===qs.get('step'));
   const targetRef=targetStep?.entries.find(e=>e.ref===qs.get('ref'))?.ref;
   let {mode,a,b}=topicReadingState(chapterIds,saved,refs.get(targetRef)?.section);
-  const sourceText=(r,context=false)=>`<p class="topic-source-label">${text((context?r.section_title+' · ':'')+sourceLayerLabel(r))}</p><blockquote>${text(quoteText(r,sections))}</blockquote>`;
+  const sourceText=(r,context=false,link=false)=>`<p class="topic-source-label">${link?citationHeading(r,{text,url,label:r.section_title+' · '+sourceLayerLabel(r)}):text((context?r.section_title+' · ':'')+sourceLayerLabel(r))}</p><blockquote>${text(quoteText(r,sections))}</blockquote>`;
   const disclosure=(id,title,body)=>`<details class="topic-disclosure" id="${esc(id)}"><summary>${text(title)}</summary>${body}
     <div class="reading-actions"><button type="button" class="topic-close">${text('收起并返回')}</button></div></details>`;
   function card(entry,step) {
@@ -64,13 +65,11 @@ export function renderTopic(topic, catalog, {main, qs, esc, cv, url, collection,
     const context=reading.context.filter(n=>n.start===0&&n.end===[...sections[n.section].blocks.find(b=>b.id===n.block).text].length||!reading.context.some(other=>other!==n&&other.block===n.block&&other.section===n.section&&other.layer===n.layer&&other.attribution===n.attribution&&other.start===0&&other.end===[...sections[n.section].blocks.find(b=>b.id===n.block).text].length));
     context.sort((x,y)=>sections[x.section].blocks.findIndex(b=>b.id===x.block)-sections[y.section].blocks.findIndex(b=>b.id===y.block));
     const contextBody=context.map(n=>n.section===r.section&&n.block===r.block&&n.layer===r.layer&&n.attribution===r.attribution
-      ?`<p class="topic-source-label">${text(r.section_title+' · '+sourceLayerLabel(r))}</p><blockquote>${passageHTML(passage,text)}</blockquote>`:sourceText(n,true)).join('');
+      ?`<p class="topic-source-label">${citationHeading(r,{text,url,label:r.section_title+' · '+sourceLayerLabel(r)})}</p><blockquote>${passageHTML(passage,text)}</blockquote>`:sourceText(n,true)).join('');
     return `<article class="topic-record" id="${esc(id)}" data-topic-evidence="${esc(r.id)}" tabindex="-1" data-context ${targetRef===r.id?'data-source-target':''}>
-      <div class="topic-passage"><div class="topic-excerpt">${sourceText(r)}</div>
+      <div class="topic-passage"><div class="topic-excerpt">${sourceText(r,false,true)}</div>
       ${context.some(n=>n.block!==r.block||n.quote!==r.quote)?disclosure(id+'-context','查看前后文',contextBody):''}</div>
       ${reading.notes.length?disclosure(id+'-notes','相关注释',reading.notes.map(n=>sourceText(n,true)).join('')):''}
-      <div class="topic-record-links"><a class="topic-out" href="${url(r.section,r.block)}">${text('阅读全文')}</a>
-      <a class="topic-out topic-event-link" href="#/events/${encodeURIComponent(event.id)}?ref=${encodeURIComponent(r.id)}" aria-label="${text(event.title+' · 史事详情')}">${text('史事详情')}</a></div>
       <p class="topic-date">${text('相关史事纪年：'+dateText(event.time))}</p>
     </article>`;
   }
@@ -89,6 +88,7 @@ export function renderTopic(topic, catalog, {main, qs, esc, cv, url, collection,
       <div class="topic-chapters">${chapterIds.map(cid=>`<section class="topic-chapter" data-chapter="${esc(cid)}" data-book="${esc(collection(cid)?.id||'')}"><h3>${text(chapterName(cid))}</h3>${s.entries.filter(e=>refs.get(e.ref).section===cid).map(e=>card(e,s)).join('')||`<p class="topic-empty">${text('本节未选录《'+chapterName(cid)+'》。')}</p>`}</section>`).join('')}</div>
       <details class="topic-local-pair" id="topic-pair-${esc(s.id)}"><summary>${text('调整对读篇目')}</summary><div class="topic-pair">${['a','b'].map((slot,i)=>`<label>${text(i===0?'第一篇':'第二篇')}<select data-local-pair="${slot}" aria-label="${text(s.title+' · '+(i===0?'第一篇':'第二篇'))}">${chapterIds.map(cid=>{const included=s.entries.some(e=>refs.get(e.ref).section===cid);return `<option value="${esc(cid)}" data-included="${included}">${text(chapterName(cid)+(included?'':'（本节未选录）'))}</option>`;}).join('')}</select></label>`).join('')}</div></details>
       ${s.people.length?`<section class="topic-people" id="topic-people-${esc(s.id)}"><h3>${text('相关人物')}</h3><div>${s.people.map(id=>`<a class="topic-out" href="#/people/${encodeURIComponent(id)}">${text(people.get(id).name)}</a>`).join('')}</div></section>`:''}
+      <section class="topic-events"><h3>${text('相关史事')}</h3><div>${[...new Set(s.entries.map(e=>e.event))].map(id=>`<a class="topic-out topic-event-link" href="#/events/${encodeURIComponent(id)}">${text(events.get(id).title)}</a>`).join('')}</div></section>
     </section>`).join('')}
     <nav class="topic-end"><a href="#/topics">${text('返回专题研究')}</a></nav></article>`;
   const page=main.querySelector('.topic-page'), selectA=main.querySelector('#topic-a'), selectB=main.querySelector('#topic-b');

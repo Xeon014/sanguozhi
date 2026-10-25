@@ -899,7 +899,60 @@
     "profiles": "knowledge/profiles.json",
     "editorial": "knowledge/event-editorial.json",
     "atlas": "knowledge/atlas.json",
-    "featuredPeopleLimit": 40
+    "featuredPeople": [
+      "cao-cao",
+      "sun-quan",
+      "liu-bei",
+      "wudi-p0170",
+      "wendi-p0005",
+      "zhuge-liang",
+      "wudi-p0052",
+      "shaodi-p0162",
+      "wudi-p0099",
+      "wudi-p0364",
+      "wudi-p0053",
+      "wudi-p0057",
+      "shaodi-p0050",
+      "xianzhu-p0115",
+      "shaodi-p0041",
+      "wudi-p0088",
+      "liu-biao",
+      "wudi-p0172",
+      "lu-meng",
+      "shaodi-p0045",
+      "shaodi-p0073",
+      "shaodi-p0080",
+      "xianzhu-p0112",
+      "shaodi-p0150",
+      "wudi-p0282",
+      "wudi-p0253",
+      "zhou-yu",
+      "wendi-p0133",
+      "wudi-p0100",
+      "wudi-p0119",
+      "houzhu-p0013",
+      "wudi-p0093",
+      "cao-ren",
+      "shaodi-p0044",
+      "mingdi-p0048",
+      "wuzhu-p0086",
+      "shaodi-p0051",
+      "mingdi-p0056",
+      "shaodi-p0009",
+      "wendi-p0039",
+      "wudi-p0367",
+      "xianzhu-p0034",
+      "wudi-p0178",
+      "lu-su"
+    ],
+    "displayNames": {
+      "xianzhu-p0115": {
+        "name": "陆逊",
+        "evidence": [
+          "luxun-f0003-q"
+        ]
+      }
+    }
   },
   "topics": {
     "file": "knowledge/topics.json",

@@ -5335,6 +5335,15 @@
           "evidence": [
             "wendi-f0001-q"
           ]
+        },
+        {
+          "id": "featured-review-wudi-p0170-death",
+          "key": "lifespan",
+          "label": "生卒",
+          "text": "卒于 226 年",
+          "evidence": [
+            "wendi-e-o055c-q"
+          ]
         }
       ],
       "directory": {
@@ -5350,6 +5359,15 @@
           "text": "元仲",
           "evidence": [
             "mingdi-f0001-q"
+          ]
+        },
+        {
+          "id": "featured-review-wendi-p0005-death",
+          "key": "lifespan",
+          "label": "生卒",
+          "text": "卒于 239 年",
+          "evidence": [
+            "mingdi-e-o068b-q"
           ]
         }
       ],
@@ -5423,6 +5441,24 @@
           "text": "涿郡涿县",
           "evidence": [
             "liu-identity"
+          ]
+        },
+        {
+          "id": "featured-review-liu-bei-death",
+          "key": "lifespan",
+          "label": "生卒",
+          "text": "卒于 223 年",
+          "evidence": [
+            "xianzhu-e-o074a-q"
+          ]
+        },
+        {
+          "id": "featured-review-liu-bei-identity",
+          "key": "identity",
+          "label": "主要身份",
+          "text": "皇帝",
+          "evidence": [
+            "xianzhu-e-o065a-q"
           ]
         },
         {
@@ -8508,6 +8544,15 @@
           "evidence": [
             "su-identity"
           ]
+        },
+        {
+          "id": "featured-review-lu-su-identity",
+          "key": "identity",
+          "label": "主要身份",
+          "text": "横江将军",
+          "evidence": [
+            "zhouyu-e-o055a-q"
+          ]
         }
       ],
       "directory": {
@@ -9403,6 +9448,24 @@
           "text": "琅邪阳都",
           "evidence": [
             "zhuge-f0002-q"
+          ]
+        },
+        {
+          "id": "featured-review-zhuge-liang-death",
+          "key": "lifespan",
+          "label": "生卒",
+          "text": "卒于 234 年",
+          "evidence": [
+            "zhuge-e-o040a-q"
+          ]
+        },
+        {
+          "id": "featured-review-zhuge-liang-identity",
+          "key": "identity",
+          "label": "主要身份",
+          "text": "丞相",
+          "evidence": [
+            "zhuge-e-o019a-q"
           ]
         },
         {
@@ -10978,6 +11041,15 @@
           ]
         },
         {
+          "id": "featured-review-wudi-p0367-identity",
+          "key": "identity",
+          "label": "主要身份",
+          "text": "车骑将军",
+          "evidence": [
+            "guanzhang-e-o020a-q"
+          ]
+        },
+        {
           "id": "guanzhang-f0009",
           "key": "posthumous",
           "label": "谥号",
@@ -11080,6 +11152,15 @@
           ]
         },
         {
+          "id": "featured-review-xianzhu-p0034-identity",
+          "key": "identity",
+          "label": "主要身份",
+          "text": "镇东将军",
+          "evidence": [
+            "guanzhang-e-o044a-q"
+          ]
+        },
+        {
           "id": "guanzhang-f0017",
           "key": "posthumous",
           "label": "谥号",
@@ -11161,6 +11242,24 @@
           "text": "仲谋",
           "evidence": [
             "wuzhu-f0001-q"
+          ]
+        },
+        {
+          "id": "featured-review-sun-quan-death",
+          "key": "lifespan",
+          "label": "生卒",
+          "text": "卒于 252 年",
+          "evidence": [
+            "wuzhu-e-o167a-q"
+          ]
+        },
+        {
+          "id": "featured-review-sun-quan-identity",
+          "key": "identity",
+          "label": "主要身份",
+          "text": "皇帝",
+          "evidence": [
+            "wuzhu-e-o086a-q"
           ]
         }
       ],
@@ -15042,10 +15141,10 @@
           ]
         },
         {
-          "id": "luxun-f0003",
-          "key": "alias",
-          "label": "别名",
-          "text": "陆逊",
+          "id": "featured-review-luxun-former-name",
+          "key": "former_name",
+          "label": "原名",
+          "text": "陆议",
           "evidence": [
             "luxun-f0003-q"
           ]
@@ -15057,6 +15156,15 @@
           "text": "吴郡吴",
           "evidence": [
             "luxun-f0002-q"
+          ]
+        },
+        {
+          "id": "featured-review-xianzhu-p0115-identity",
+          "key": "identity",
+          "label": "主要身份",
+          "text": "丞相",
+          "evidence": [
+            "wuzhu-e-o141a-q"
           ]
         },
         {
@@ -15744,6 +15852,15 @@
           "evidence": [
             "lvzang-q-7ef17019755e182bed9d"
           ]
+        },
+        {
+          "id": "featured-review-wudi-p0088-home",
+          "key": "home",
+          "label": "籍贯",
+          "text": "五原郡九原",
+          "evidence": [
+            "lvzang-q-7ef17019755e182bed9d"
+          ]
         }
       ],
       "directory": {
@@ -15805,6 +15922,15 @@
           "key": "courtesy",
           "label": "字",
           "text": "伯珪",
+          "evidence": [
+            "gongsuntao-q-18c3621cac91e384c045"
+          ]
+        },
+        {
+          "id": "featured-review-wudi-p0093-home",
+          "key": "home",
+          "label": "籍贯",
+          "text": "辽西令支",
           "evidence": [
             "gongsuntao-q-18c3621cac91e384c045"
           ]
@@ -15927,7 +16053,26 @@
       }
     },
     "shaodi-p0009": {
-      "fields": [],
+      "fields": [
+        {
+          "id": "featured-review-f-shaodi-p0009-1",
+          "key": "courtesy",
+          "label": "字",
+          "text": "子通",
+          "evidence": [
+            "featured-review-q-shaodi-p0009"
+          ]
+        },
+        {
+          "id": "featured-review-f-shaodi-p0009-2",
+          "key": "home",
+          "label": "籍贯",
+          "text": "楚国平阿",
+          "evidence": [
+            "featured-review-q-shaodi-p0009"
+          ]
+        }
+      ],
       "directory": {
         "faction": "wei"
       }
@@ -16017,7 +16162,17 @@
       }
     },
     "wudi-p0253": {
-      "fields": [],
+      "fields": [
+        {
+          "id": "featured-review-f-wudi-p0253-1",
+          "key": "courtesy",
+          "label": "字",
+          "text": "季玉",
+          "evidence": [
+            "featured-review-q-wudi-p0253"
+          ]
+        }
+      ],
       "directory": {
         "faction": "qunxiong"
       }
@@ -16451,13 +16606,51 @@
       }
     },
     "shaodi-p0150": {
-      "fields": [],
+      "fields": [
+        {
+          "id": "featured-review-f-shaodi-p0150-1",
+          "key": "courtesy",
+          "label": "字",
+          "text": "子烈",
+          "evidence": [
+            "featured-review-q-shaodi-p0150"
+          ]
+        }
+      ],
       "directory": {
         "faction": "wu"
       }
     },
     "shaodi-p0162": {
-      "fields": [],
+      "fields": [
+        {
+          "id": "featured-review-f-shaodi-p0162-1",
+          "key": "courtesy",
+          "label": "字",
+          "text": "元宗",
+          "evidence": [
+            "featured-review-q-shaodi-p0162"
+          ]
+        },
+        {
+          "id": "featured-review-f-shaodi-p0162-3",
+          "key": "courtesy",
+          "label": "字",
+          "text": "皓宗",
+          "evidence": [
+            "featured-review-q-shaodi-p0162"
+          ]
+        },
+        {
+          "id": "featured-review-f-shaodi-p0162-2",
+          "key": "alias",
+          "label": "别名",
+          "text": "彭祖",
+          "evidence": [
+            "featured-review-q-shaodi-p0162"
+          ]
+        }
+      ],
       "directory": {
         "faction": "wu"
       }
@@ -16469,6 +16662,15 @@
           "key": "courtesy",
           "label": "字",
           "text": "子布",
+          "evidence": [
+            "zhanggu-q-5a4e3fbca5cd4f35f414"
+          ]
+        },
+        {
+          "id": "featured-review-wendi-p0133-home",
+          "key": "home",
+          "label": "籍贯",
+          "text": "彭城",
           "evidence": [
             "zhanggu-q-5a4e3fbca5cd4f35f414"
           ]
@@ -16823,7 +17025,26 @@
       }
     },
     "wuzhu-p0086": {
-      "fields": [],
+      "fields": [
+        {
+          "id": "featured-review-f-wuzhu-p0086-1",
+          "key": "courtesy",
+          "label": "字",
+          "text": "定公",
+          "evidence": [
+            "featured-review-q-wuzhu-p0086"
+          ]
+        },
+        {
+          "id": "featured-review-f-wuzhu-p0086-2",
+          "key": "home",
+          "label": "籍贯",
+          "text": "广陵海陵",
+          "evidence": [
+            "featured-review-q-wuzhu-p0086"
+          ]
+        }
+      ],
       "directory": {
         "faction": "wu"
       }
@@ -16853,7 +17074,17 @@
       }
     },
     "shaodi-p0041": {
-      "fields": [],
+      "fields": [
+        {
+          "id": "featured-review-f-shaodi-p0041-1",
+          "key": "courtesy",
+          "label": "字",
+          "text": "元逊",
+          "evidence": [
+            "featured-review-q-shaodi-p0041"
+          ]
+        }
+      ],
       "directory": {
         "faction": "wu"
       }
@@ -16865,7 +17096,17 @@
       }
     },
     "houzhu-p0013": {
-      "fields": [],
+      "fields": [
+        {
+          "id": "featured-review-f-houzhu-p0013-1",
+          "key": "courtesy",
+          "label": "字",
+          "text": "子通",
+          "evidence": [
+            "featured-review-q-houzhu-p0013"
+          ]
+        }
+      ],
       "directory": {
         "faction": "wu"
       }

@@ -9,20 +9,16 @@ export function directoryEventCounts(data) {
   return new Map([...related].map(([person,events])=>[person,events.size]));
 }
 
-export function directoryPeople(data, visible, profiles, qs, normalize=s=>String(s).toLowerCase(), featuredLimit=40) {
-  if(!Number.isInteger(featuredLimit)||featuredLimit<1)throw Error('人物精选配置无效');
+export function directoryPeople(data, visible, profiles, qs, normalize=s=>String(s).toLowerCase(), featuredPeople=[]) {
+  if(!Array.isArray(featuredPeople)||!featuredPeople.length||new Set(featuredPeople).size!==featuredPeople.length)throw Error('人物精选配置无效');
   const byId=new Map(data.persons.map(p=>[p.id,p]));
-  const listed=visible===null?data.persons:visible.map(entry=>byId.get(entry.id));
+  const listed=visible===null?data.persons:[...visible.map(entry=>byId.get(entry.id)),...featuredPeople.filter(id=>!visible.some(p=>p.id===id)).map(id=>byId.get(id))];
   if(listed.some(p=>!p)||new Set(listed.map(p=>p.id)).size!==listed.length)throw Error('人物展示名单无效');
   const counts=directoryEventCounts(data),order=new Map(listed.map((p,i)=>[p.id,i]));
   const original=(a,b)=>order.get(a.id)-order.get(b.id);
   const byEvents=(a,b)=>(counts.get(b.id)||0)-(counts.get(a.id)||0)||original(a,b);
-  let selected=listed;
-  if(qs.get('view')!=='all'&&!qs.has('faction')){
-    const ranked=listed.filter(p=>counts.get(p.id)>0).sort(byEvents);
-    const threshold=counts.get(ranked[Math.min(featuredLimit,ranked.length)-1]?.id);
-    selected=ranked.filter(p=>counts.get(p.id)>=threshold);
-  }
+  const selected=featuredPeople.map(id=>byId.get(id));
+  if(selected.some(p=>!p))throw Error('人物精选名单无效');
   // Selection precedes search and display sorting, so a query cannot nominate a person.
   const needle=normalize((qs.get('q')||'').trim());
   const matches=selected.filter(p=>[p.name,

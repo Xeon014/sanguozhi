@@ -7,7 +7,8 @@ export const PERIODS = [
   {id:'250-280',title:'250—280',from:250,to:280}
 ];
 // Full filters in legacy homepage links belong to the full atlas, not a hidden filter.
-export function canonicalAtlasHomeHash(hash) {
+export function canonicalAtlasHomeHash(hash, mobile=false) {
+  if(mobile)return hash;
   const [path,query='']=hash.split('?');
   if(!['','#','#/'].includes(path))return hash;
   const qs=new URLSearchParams(query);
@@ -32,23 +33,6 @@ export function zoomRange(range,anchor,factor=1,direction=0){
   const from=Math.max(184,Math.min(281-span,Math.round(center-(span-1)/2)));
   return [from,from+span-1];
 }
-// A density control is explicitly a range/count, never a historical group.
-export function clusteredNodes(nodes,range,width,selected){
-  if(range[0]===range[1])return nodes;
-  const cells=Math.max(2,Math.floor((width-72)/64)),bins=new Map(),result=[];
-  for(const node of nodes){
-    if(node.key===selected||(node.label&&width>=760)){result.push(node);continue;}
-    const cell=Math.min(cells-1,Math.floor((node.year-range[0])/(range[1]-range[0]+1)*cells));
-    if(!bins.has(cell))bins.set(cell,[]);bins.get(cell).push(node);
-  }
-  for(const values of bins.values()){
-    if(values.length<=2){result.push(...values);continue;}
-    const from=values[0].year,to=values.at(-1).year;
-    result.push({key:`cluster:${from}:${to}`,year:(from+to)/2,from,to,cluster:values,
-      title:`${from===to?from:from+'—'+to}年 · ${values.length}项`,label:true,warfare:false});
-  }
-  return result.sort((a,b)=>a.year-b.year||a.key.localeCompare(b.key));
-}
 export function atlasHash(state, home=false) {
   const q=new URLSearchParams(home?{}:{view:'atlas'});
   q.set('period',state.period);
@@ -67,12 +51,11 @@ export function yearbookHash(state,layout='') {
 }
 export function layoutNodes(nodes, period, width, measureTitle=s=>s.length*14) {
   const lanes=[],labelLanes=[],points=new Map();
-  const labelled=n=>period.id!=='all'||n.label||n.selected||n.cluster;
+  const labelled=n=>n.label;
   const sizes=new Map(nodes.filter(labelled).map(n=>[n.key,measureTitle(n.title)]));
   width=Math.max(width,Math.max(0,...sizes.values())+72);
   const yearX=year=>period.from===period.to?width/2:36+(year-period.from)/(period.to-period.from)*(width-72);
-  // Density controls are wider; reserve enough room for their hit targets.
-  const spacing=nodes.some(n=>n.cluster)?44:32;
+  const spacing=32;
   // Rows alternate around the middle and encode no historical property.
   for(const node of nodes) {
     const x=yearX(node.year);
@@ -112,25 +95,44 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
     <div class="atlas-zoom" role="group" aria-label="${text('缩放与移动时间范围')}"><button type="button" data-zoom="in">${text('放大')}</button><button type="button" data-zoom="out">${text('缩小')}</button><button type="button" data-zoom="previous">${text('前移')}</button><button type="button" data-zoom="next">${text('后移')}</button><button type="button" data-zoom="reset">${text('复位')}</button><output class="atlas-range"></output></div>
     <div class="atlas-layout"><div class="atlas-map"><p class="atlas-position${home?' sr-only':''}" role="status" aria-live="polite"></p>
     <div class="atlas-scroll" aria-label="${text('时间长卷，可横向浏览')}"><div class="atlas-canvas"></div></div>
+    <div class="atlas-tooltip" role="tooltip" hidden></div>
     <div class="atlas-guidebar"><ul class="atlas-legend" aria-label="${text('图例')}">
     <li><svg viewBox="-20 -20 40 40" aria-hidden="true"><path d="M0,-6 L6,0 L0,6 L-6,0 Z" class="atlas-dot"/></svg>${text('战事')}</li>
     <li><svg viewBox="-20 -20 40 40" aria-hidden="true"><g class="atlas-star" aria-pressed="true"><rect x="-14" y="-14" width="28" height="28" rx="14" class="atlas-hit"/><circle r="4" class="atlas-dot"/></g></svg>${text('当前选中')}</li></ul></div></div>
     <aside class="atlas-card" aria-label="${text('大事点读')}"></aside></div>`;
   const canvas=host.querySelector('.atlas-canvas'),scroll=host.querySelector('.atlas-scroll');
-  const card=host.querySelector('.atlas-card'),status=host.querySelector('[role=status]');
+  const card=host.querySelector('.atlas-card'),status=host.querySelector('[role=status]'),tooltip=host.querySelector('.atlas-tooltip');
   const select=host.querySelector('select');
-  let disposed=false,frame=0;
+  let disposed=false,frame=0,focusKey=state.key,drawnWidth=0;
+  const tooltipId=(host.id||'atlas')+'-tooltip';tooltip.id=tooltipId;
+  function hidePreview(){tooltip.hidden=true;canvas.querySelectorAll('[aria-describedby]').forEach(el=>el.removeAttribute('aria-describedby'));}
+  function preview(point){
+    const n=state.nodes.find(n=>n.key===point.dataset.node);if(!n)return;
+    hidePreview();tooltip.textContent=cv(`${n.year} 年 · ${n.title}`);tooltip.hidden=false;
+    const hit=point.querySelector('.atlas-hit').getBoundingClientRect(),box=host.getBoundingClientRect();
+    tooltip.style.left=Math.max(0,Math.min(host.clientWidth-tooltip.offsetWidth,hit.left-box.left+hit.width/2-tooltip.offsetWidth/2))+'px';
+    tooltip.style.top=Math.max(0,hit.top-box.top-tooltip.offsetHeight-8)+'px';
+    point.setAttribute('aria-describedby',tooltipId);
+  }
+  function focusPoint(key){
+    focusKey=key;
+    for(const point of canvas.querySelectorAll('[data-node]'))point.tabIndex=point.dataset.node===key?0:-1;
+    const point=[...canvas.querySelectorAll('[data-node]')].find(p=>p.dataset.node===key);
+    point?.focus({preventScroll:true});if(point)preview(point);
+  }
   const selected=()=>state.nodes.find(n=>n.key===state.key);
   const updateDataset=()=>{host.dataset.node=state.key;host.dataset.period=state.period;host.dataset.category=state.category;};
   function draw() {
     if(disposed||!host.isConnected)return;
-    const focused=canvas.contains(document.activeElement)?{node:document.activeElement.dataset.node,cluster:document.activeElement.dataset.cluster}:null;
+    const focused=canvas.contains(document.activeElement)?document.activeElement.dataset.node:null;
+    hidePreview();
+    if(!state.nodes.some(n=>n.key===focusKey))focusKey=state.key;
     const period={id:state.period,from:state.range[0],to:state.range[1]};
     const available=Math.max(240,scroll.clientWidth);
+    drawnWidth=scroll.clientWidth;
     const measure=document.createElement('canvas').getContext('2d');
-    measure.font=`13px ${getComputedStyle(host).fontFamily}`;
-    const displayed=clusteredNodes(state.nodes,state.range,available,state.key).map(n=>({...n,selected:n.key===state.key}));
-    const {points,height,width,yearX:x,bandTop}=layoutNodes(displayed,period,available,s=>measure.measureText(cv(s)).width);
+    measure.font=`13px ${getComputedStyle(host).getPropertyValue('--sans')}`;
+    const {points,height,width,yearX:x}=layoutNodes(state.nodes,period,available,s=>measure.measureText(cv(s)).width);
     const axis=height-44,ticks=[period.from];
     const step=[1,2,5,10,20,25,50,100].find(n=>n>=(period.to-period.from)*48/(width-72));
     for(let y=Math.ceil((period.from+1)/step)*step;y<period.to;y+=step)
@@ -141,21 +143,15 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
       <text class="atlas-year" x="${width-20}" y="20" text-anchor="end">${text('公元年')}</text>
       ${ticks.map(y=>`<line class="atlas-guide" x1="${x(y)}" y1="32" x2="${x(y)}" y2="${axis+6}"/><text class="atlas-year" x="${x(y)}" y="${axis+28}" text-anchor="middle">${y}</text>`).join('')}
       ${points.filter(p=>p.label).map(p=>`<line class="atlas-leader" x1="${p.x}" y1="${p.labelY+7}" x2="${p.x}" y2="${p.y-10}" aria-hidden="true"/>`).join('')}
-      ${points.map(({node:n,x,y,label,labelX,labelY})=>`<g class="atlas-star${n.cluster?' atlas-cluster':''}" role="button" tabindex="${n.cluster||n.key===state.key?0:-1}" ${n.cluster?'data-cluster':'data-node'}="${esc(n.key)}" aria-pressed="${n.key===state.key}" aria-label="${text(n.cluster?'放大 '+n.title:n.year+'年 · '+n.title+(n.warfare?' · 战事':''))}" transform="translate(${x},${y})">
-      <title>${text(n.year+'年 · '+n.title+(n.warfare?' · 战事':''))}</title><rect x="-14" y="-14" width="28" height="28" rx="14" class="atlas-hit"/>
-      ${n.cluster?`<rect class="atlas-density" x="-19" y="-14" width="38" height="28" rx="8"/><text class="atlas-density-count" text-anchor="middle" y="5">${n.cluster.length}</text>`:n.warfare?'<path d="M0,-6 L6,0 L0,6 L-6,0 Z" class="atlas-dot"/>':'<circle r="4" class="atlas-dot"/>'}
+      ${points.map(({node:n,x,y,label,labelX,labelY})=>`<g class="atlas-star" role="button" tabindex="${n.key===focusKey?0:-1}" data-node="${esc(n.key)}" aria-pressed="${n.key===state.key}" aria-label="${text(n.year+'年 · '+n.title+(n.warfare?' · 战事':''))}" transform="translate(${x},${y})">
+      <rect x="-14" y="-14" width="28" height="28" rx="14" class="atlas-hit"/>
+      ${n.warfare?'<path d="M0,-6 L6,0 L0,6 L-6,0 Z" class="atlas-dot"/>':'<circle r="4" class="atlas-dot"/>'}
       ${label?`<text x="${labelX-x}" y="${labelY-y}" text-anchor="middle" class="atlas-label">${text(n.title)}</text>`:''}</g>`).join('')}
       </svg>`;
     canvas.querySelectorAll('.atlas-star').forEach(point=>{
-      if(point.dataset.cluster){
-        const cluster=displayed.find(n=>n.key===point.dataset.cluster);
-        const activate=()=>setRange([cluster.from,cluster.to],cluster.cluster[0].key,true);
-        point.onclick=activate;point.onkeydown=e=>{if(['Enter',' '].includes(e.key)){e.preventDefault();activate();}};
-        return;
-      }
       point.onclick=()=>pick(point.dataset.node,'point');
-      point.onmouseenter=()=>{const n=state.nodes.find(n=>n.key===point.dataset.node);status.textContent=cv(`${n.year} 年 · ${n.title}`);};
-      point.onmouseleave=announce;
+      point.onmouseenter=()=>preview(point);point.onmouseleave=hidePreview;
+      point.onfocus=()=>preview(point);point.onblur=hidePreview;
       point.onkeydown=e=>{
         const i=state.nodes.findIndex(n=>n.key===point.dataset.node);
         let next;
@@ -163,12 +159,13 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
         if(e.key==='ArrowLeft'||e.key==='ArrowUp')next=state.nodes[(i-1+state.nodes.length)%state.nodes.length];
         if(e.key==='Home')next=state.nodes[0];
         if(e.key==='End')next=state.nodes.at(-1);
-        if(next){e.preventDefault();pick(next.key,'point');}
+        if(next){e.preventDefault();focusPoint(next.key);}
         if(e.key==='Enter'||e.key===' '){e.preventDefault();pick(point.dataset.node,'point');}
+        if(e.key==='Escape'){e.preventDefault();e.stopPropagation();hidePreview();}
       };
     });
     if(focused){
-      const target=[...canvas.querySelectorAll('.atlas-star')].find(p=>focused.node?p.dataset.node===focused.node:p.dataset.cluster===focused.cluster)
+      const target=[...canvas.querySelectorAll('.atlas-star')].find(p=>p.dataset.node===focused)
         ||[...canvas.querySelectorAll('[data-node]')].find(p=>p.dataset.node===state.key);
       target?.focus({preventScroll:true});
     }
@@ -218,15 +215,11 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
     const elements=canvas.querySelectorAll('[data-node]');
     const target=[...elements].find(e=>e.dataset.node===state.key);
     if(!target)return;
-    target.focus({preventScroll:true});
-    if(kind==='point'){
-      const rect=target.querySelector('.atlas-hit').getBoundingClientRect(),view=scroll.getBoundingClientRect();
-      if(rect.left<view.left||rect.right>view.right)scroll.scrollLeft+=rect.left-view.left-scroll.clientWidth/2;
-    }
+    focusPoint(state.key);hidePreview();
   }
   function change(next,focus) {
     // Save the preceding view before changing DOM, then commit the new route.
-    onState(atlasHash(next,home));state=next;render();
+    onState(atlasHash(next,home));state=next;focusKey=state.key;render();
     if(focus)focusNode(focus);
     onChange();
   }
@@ -253,11 +246,12 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
     const q=new URLSearchParams({...state.filters,from:state.range[0],to:state.range[1],category:select.value,node:state.key});
     change(atlasState(bundle,q));select.focus({preventScroll:true});
   };
-  scroll.addEventListener('scroll',onChange,{passive:true});
+  scroll.addEventListener('scroll',()=>{hidePreview();onChange();},{passive:true});
   render();
   scroll.scrollLeft=saved?.scrollLeft||0;
   if(!home&&saved?.scrollLeft===undefined&&qs.get('node')===state.key)focusNode('point');
   const observer=new ResizeObserver(()=>{
+    if(scroll.clientWidth===drawnWidth)return;
     cancelAnimationFrame(frame);frame=requestAnimationFrame(draw);
   });observer.observe(scroll);
   host.atlasDispose=()=>{disposed=true;observer.disconnect();cancelAnimationFrame(frame);};

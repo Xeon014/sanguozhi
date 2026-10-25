@@ -49576,7 +49576,8 @@
         "duzhou-q-e01eb75c730afecbb496",
         "duzhou-q-0c7a5225a2522370a91d",
         "duzhou-q2-6cb9d477bf685354ef05",
-        "wangwei-q-67c936bba3f0196206c1"
+        "wangwei-q-67c936bba3f0196206c1",
+        "featured-review-q-wudi-p0253"
       ],
       "facts": [
         {
@@ -49584,6 +49585,14 @@
           "text": "刘璋为刘焉子，任奉车都尉。",
           "evidence": [
             "liuermu-q2-ac11a4d0e425239ab23a"
+          ]
+        },
+        {
+          "id": "featured-review-f-wudi-p0253-1",
+          "label": "字",
+          "text": "季玉",
+          "evidence": [
+            "featured-review-q-wudi-p0253"
           ]
         }
       ],
@@ -85043,9 +85052,27 @@
         "hechang-q-e44a6a09974aee70a55d",
         "xinyang-q-f3686d85d8c7ed9f7b39",
         "xuhuwang-q-a7a5838f21c48d474c9b",
-        "wangwei-q-30a44fc8448038d42e79"
+        "wangwei-q-30a44fc8448038d42e79",
+        "featured-review-q-shaodi-p0009"
       ],
-      "facts": [],
+      "facts": [
+        {
+          "id": "featured-review-f-shaodi-p0009-1",
+          "label": "字",
+          "text": "子通",
+          "evidence": [
+            "featured-review-q-shaodi-p0009"
+          ]
+        },
+        {
+          "id": "featured-review-f-shaodi-p0009-2",
+          "label": "籍贯",
+          "text": "楚国平阿",
+          "evidence": [
+            "featured-review-q-shaodi-p0009"
+          ]
+        }
+      ],
       "aliases": [],
       "mentions": [
         {
@@ -87953,7 +87980,8 @@
         "yululu-q-a7c835f82230b992cee9",
         "wangwei-q-d76894cda66a005235a5",
         "wangwei-q-63e4557aa4a571bf2b7b",
-        "wangwei-q-eb7155e684829da3d57d"
+        "wangwei-q-eb7155e684829da3d57d",
+        "featured-review-q-shaodi-p0041"
       ],
       "facts": [
         {
@@ -87961,6 +87989,14 @@
           "text": "《吴录》称恪被诛时年五十一",
           "evidence": [
             "santizhu064-q-7c188d5f50fb48b22b49"
+          ]
+        },
+        {
+          "id": "featured-review-f-shaodi-p0041-1",
+          "label": "字",
+          "text": "元逊",
+          "evidence": [
+            "featured-review-q-shaodi-p0041"
           ]
         }
       ],
@@ -97742,9 +97778,19 @@
         "zhangyan-q-6d4937229d8bffc66cd5",
         "zhangyan-q-c9678ea7d6c040e49578",
         "zhangyan-q-1b8b6a592abcf0cb7e0d",
-        "yululu-q-516a6deca6b34859bb81"
+        "yululu-q-516a6deca6b34859bb81",
+        "featured-review-q-shaodi-p0150"
       ],
-      "facts": [],
+      "facts": [
+        {
+          "id": "featured-review-f-shaodi-p0150-1",
+          "label": "字",
+          "text": "子烈",
+          "evidence": [
+            "featured-review-q-shaodi-p0150"
+          ]
+        }
+      ],
       "aliases": [],
       "mentions": [
         {
@@ -98404,7 +98450,8 @@
         "zhangyan-q-40bf6de24d041e4401b4",
         "zhangyan-q-ba2a0403be17fdc1d225",
         "zhangyan-q-49821444442c6ae3a63a",
-        "zhangyan-q-f05b24ff26262c17f3ba"
+        "zhangyan-q-f05b24ff26262c17f3ba",
+        "featured-review-q-shaodi-p0162"
       ],
       "facts": [
         {
@@ -98413,9 +98460,40 @@
           "evidence": [
             "feipin-q-14fa3d865e197aecb71d"
           ]
+        },
+        {
+          "id": "featured-review-f-shaodi-p0162-1",
+          "label": "字",
+          "text": "元宗",
+          "evidence": [
+            "featured-review-q-shaodi-p0162"
+          ]
+        },
+        {
+          "id": "featured-review-f-shaodi-p0162-2",
+          "label": "一名",
+          "text": "彭祖",
+          "evidence": [
+            "featured-review-q-shaodi-p0162"
+          ]
+        },
+        {
+          "id": "featured-review-f-shaodi-p0162-3",
+          "label": "字的记载",
+          "text": "皓宗",
+          "evidence": [
+            "featured-review-q-shaodi-p0162"
+          ]
         }
       ],
-      "aliases": [],
+      "aliases": [
+        {
+          "text": "彭祖",
+          "evidence": [
+            "featured-review-q-shaodi-p0162"
+          ]
+        }
+      ],
       "mentions": [
         {
           "id": "shaodi-m-o186-shaodi-p0162",
@@ -119569,9 +119647,27 @@
         "yululu-q-5042433d2b319d71168c",
         "yululu-q-687e6f0a3900a33186d4",
         "yululu-q-5bf0ae75f77cbc2f822e",
-        "yululu-q-a3939a92ac201c49aaa8"
+        "yululu-q-a3939a92ac201c49aaa8",
+        "featured-review-q-wuzhu-p0086"
       ],
-      "facts": [],
+      "facts": [
+        {
+          "id": "featured-review-f-wuzhu-p0086-1",
+          "label": "字",
+          "text": "定公",
+          "evidence": [
+            "featured-review-q-wuzhu-p0086"
+          ]
+        },
+        {
+          "id": "featured-review-f-wuzhu-p0086-2",
+          "label": "籍贯",
+          "text": "广陵海陵",
+          "evidence": [
+            "featured-review-q-wuzhu-p0086"
+          ]
+        }
+      ],
       "aliases": [],
       "mentions": [
         {
@@ -133738,9 +133834,19 @@
         "feipin-q-7e26c69df83353def13c",
         "yululu-q-d0c998e50d1be55fdf76",
         "yululu-q-0b2bf6ee0a962838ea71",
-        "yululu-q-516a6deca6b34859bb81"
+        "yululu-q-516a6deca6b34859bb81",
+        "featured-review-q-houzhu-p0013"
       ],
-      "facts": [],
+      "facts": [
+        {
+          "id": "featured-review-f-houzhu-p0013-1",
+          "label": "字",
+          "text": "子通",
+          "evidence": [
+            "featured-review-q-houzhu-p0013"
+          ]
+        }
+      ],
       "aliases": [],
       "mentions": [
         {
@@ -1057742,6 +1057848,132 @@
       "note_id": "n-223c764a1a7d3577c3cb",
       "start": 0,
       "end": 176,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "featured-review-q-shaodi-p0041",
+      "section": "chapter-064",
+      "block": "b-cc31a8020d94eea20679",
+      "layer": "original",
+      "quote": "诸葛恪字元逊。瑾长子也",
+      "section_title": "诸葛滕二孙濮阳传第十九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0135.xhtml",
+        "index": 1,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 11,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "featured-review-q-houzhu-p0013",
+      "section": "chapter-064",
+      "block": "b-75a83cc552bd0cb3151e",
+      "layer": "original",
+      "quote": "孙綝字子通。与峻同祖。綝父绰为安民都尉",
+      "section_title": "诸葛滕二孙濮阳传第十九",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0135.xhtml",
+        "index": 415,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 19,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "featured-review-q-shaodi-p0009",
+      "section": "chapter-014",
+      "block": "b-9efd2e5da0564d968cc9",
+      "layer": "original",
+      "quote": "蒋济字子通，楚国平阿人也",
+      "section_title": "程郭董刘蒋刘传第十四",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0033.xhtml",
+        "index": 365,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 12,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "featured-review-q-shaodi-p0150",
+      "section": "chapter-048",
+      "block": "b-b426013cc32665f8203f",
+      "layer": "original",
+      "quote": "孙休字子烈。权第六子。",
+      "section_title": "三嗣主传第三",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0103.xhtml",
+        "index": 127,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 11,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "featured-review-q-shaodi-p0162",
+      "section": "chapter-048",
+      "block": "b-94103343fb0f081b62fa",
+      "layer": "original",
+      "quote": "孙皓字元宗。权孙，和子也。一名彭祖，字皓宗。",
+      "section_title": "三嗣主传第三",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0103.xhtml",
+        "index": 298,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 22,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "featured-review-q-wuzhu-p0086",
+      "section": "chapter-060",
+      "block": "b-44a514d78eb9c8c39310",
+      "layer": "original",
+      "quote": "吕岱字定公，广陵海陵人也",
+      "section_title": "贺全吕周钟离传第十五",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0127.xhtml",
+        "index": 160,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 12,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "featured-review-q-wudi-p0253",
+      "section": "chapter-031",
+      "block": "b-e1d93d8865a36222023d",
+      "layer": "original",
+      "quote": "璋，字季玉。既袭焉位，而张鲁稍骄恣，不承顺璋",
+      "section_title": "刘二牧传第一",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0068.xhtml",
+        "index": 67,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": null,
+      "start": 0,
+      "end": 22,
       "offset_unit": "unicode_code_point"
     }
   ],

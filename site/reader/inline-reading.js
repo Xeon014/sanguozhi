@@ -1,8 +1,17 @@
-import {quoteText} from './event-reading.js?v=5354103c3b299de1';
-import {knowledgeIndex} from './data-loader.js?v=5354103c3b299de1';
+import {quoteText} from './event-reading.js?v=91f1f8fab659b62e';
+import {knowledgeIndex} from './data-loader.js?v=91f1f8fab659b62e';
 // Read reviewed quotations in place; no summaries, facts or dates are inferred.
 export function citationText(record,text,tag='blockquote',className='') {
   return `<${tag} class="${className}" data-quote-ref="${text(record.ids?.[0]||record.id)}"><span role="status">${text('正在载入…')}</span></${tag}>`;
+}
+
+// A source heading is the precise paragraph entrance. Keep every quotation,
+// while offering an identical destination only once within a reading unit.
+export function citationHeading(record,{text,url,label,linked}) {
+  const href=url(record.section,record.block);
+  if(linked?.has(href))return text(label);
+  linked?.add(href);
+  return `<a class="evidence-link source-link" href="${text(href)}" aria-label="${text('阅读全文：'+label)}">${text(label)}</a>`;
 }
 
 export function mountCitationText(root,{data,text,loadSection,onChange=()=>{}}) {
@@ -68,24 +77,30 @@ export function inlineEventRow(event,{text,esc,dateText,person='',id='event-card
 }
 
 export function mountInlineReading(root,{data,text,url,sourceLabel,fields=[],loadSection,onChange=()=>{}}) {
-  const events=new Map(data.events.map(e=>[e.id,e]));
-  const quote=r=>`<figure class="inline-source"><figcaption>${text(sourceLabel(r))}</figcaption>${citationText(r,text)}<a class="evidence-link" href="${url(r.section,r.block)}">${text('阅读全文')}</a></figure>`;
-  const fill=async details=>{
-    if(!details.open||details.dataset.loaded)return;
+  const events=new Map(data.events.map(e=>[e.id,e])),pending=new WeakMap();
+  const fill=details=>{
+    if(!details.open)return;
+    if(pending.has(details))return pending.get(details);
+    if(details.dataset.loaded)return;
     const body=details.querySelector('[data-inline-content]');if(!body)return;
     details.dataset.loaded='loading';
+    const task=(async()=>{
     try{
       let event=events.get(details.dataset.inlineEvent);
       if(event&&data.loadEvent)event=await data.loadEvent(event.id);
       if(!root.isConnected)return;
       const records=details.hasAttribute('data-inline-identity')?exactCitations(data,fields.flatMap(f=>f.evidence)):event?eventCitations(data,event):[];
-      body.innerHTML=records.map(quote).join('');details.dataset.loaded='true';
+      const linked=new Set();
+      body.innerHTML=records.map(r=>`<figure class="inline-source"><figcaption>${citationHeading(r,{text,url,label:sourceLabel(r),linked})}</figcaption>${citationText(r,text)}</figure>`).join('');details.dataset.loaded='true';
       await root.citationReady?.();
     }catch{
       delete details.dataset.loaded;
       body.innerHTML=`<p role="alert">${text('文献暂无法载入。')} <button type="button" class="retry-inline">${text('重试')}</button></p>`;
       body.querySelector('button').onclick=()=>fill(details);
     }
+    })();
+    pending.set(details,task);
+    return task.finally(()=>pending.delete(details));
   };
   root.addEventListener('toggle',event=>{
     const details=event.target;if(!details.matches?.('[data-inline-event],[data-inline-identity]'))return;
@@ -96,7 +111,7 @@ export function mountInlineReading(root,{data,text,url,sourceLabel,fields=[],loa
     const details=button.closest('details');details.open=false;
     const summary=details.querySelector('summary');summary.focus({preventScroll:true});summary.scrollIntoView({block:'nearest'});onChange();
   });
-  root.restoreInlineReading=()=>root.querySelectorAll('[data-inline-event][open],[data-inline-identity][open]').forEach(fill);
+  root.restoreInlineReading=()=>Promise.all([...root.querySelectorAll('[data-inline-event][open],[data-inline-identity][open]')].map(fill));
   root.restoreInlineReading();
   mountCitationText(root,{data,text,loadSection,onChange});
 }
