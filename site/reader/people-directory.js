@@ -1,5 +1,6 @@
 // Count reviewed participant relationships, never mentions, quotations or accounts.
 export function directoryEventCounts(data) {
+  if(data.directory_counts)return new Map(Object.entries(data.directory_counts));
   const related=new Map();
   for(const event of data.events)for(const {person} of event.participants){
     if(!related.has(person))related.set(person,new Set());

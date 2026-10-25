@@ -1,4 +1,5 @@
-import {quoteText} from './event-reading.js?v=bc51b5632c56d390';
+import {quoteText} from './event-reading.js?v=5354103c3b299de1';
+import {knowledgeIndex} from './data-loader.js?v=5354103c3b299de1';
 // Read reviewed quotations in place; no summaries, facts or dates are inferred.
 export function citationText(record,text,tag='blockquote',className='') {
   return `<${tag} class="${className}" data-quote-ref="${text(record.ids?.[0]||record.id)}"><span role="status">${text('正在载入…')}</span></${tag}>`;
@@ -8,7 +9,7 @@ export function mountCitationText(root,{data,text,loadSection,onChange=()=>{}}) 
   const records=new Map(data.evidence.map(r=>[r.id,r])),pending=new Map();
   const read=id=>{
     if(!pending.has(id))pending.set(id,(async()=>{
-      const record=records.get(id);if(!record)throw Error('未找到对应文献记载');
+      const record=records.get(id)||data.evidence.find(r=>r.id===id);if(!record)throw Error('未找到对应文献记载');
       const sections=loadSection?{[record.section]:await loadSection(record.section)}:{};
       return quoteText(record,sections);
     })().catch(error=>{pending.delete(id);throw error;}));
@@ -40,7 +41,7 @@ export function mountCitationText(root,{data,text,loadSection,onChange=()=>{}}) 
   hydrate();
 }
 export function exactCitations(data, ids) {
-  const refs=new Map(data.evidence.map(r=>[r.id,r])),seen=new Set(),result=[];
+  const refs=knowledgeIndex(data).evidence,seen=new Set(),result=[];
   for(const id of ids){
     const r=refs.get(id);if(!r)throw Error('未找到对应文献记载');
     const key=JSON.stringify([r.source_sha256,r.section,r.block,r.layer,r.attribution||'',r.start,r.end,r.quote]);
@@ -53,14 +54,15 @@ export function eventCitations(data,event) {
   return exactCitations(data,event.accounts.flatMap(a=>a.evidence));
 }
 
-export function inlineEventRow(event,{text,esc,dateText,person='',id='event-card-'+event.id,className='person-event'}) {
+export function inlineEventRow(event,{text,esc,dateText,person='',id='event-card-'+event.id,className='person-event',roleInSummary=false}) {
   const role=person?event.participants.find(p=>p.person===person)?.role:'';
-  return `<article class="${className}" id="${esc(id)}" data-context tabindex="-1"><p class="event-date">${text(dateText(event.time))}</p><div>
-    <details class="inline-event" id="inline-${esc(id)}" data-inline-event="${esc(event.id)}"><summary>${text(event.title)}</summary>
+  const date=dateText(event.time);
+  return `<article class="${className}${date?'':' without-event-date'}" id="${esc(id)}" data-context tabindex="-1">${date?`<p class="event-date">${text(date)}</p>`:''}<div>
+    <details class="inline-event" id="inline-${esc(id)}" data-inline-event="${esc(event.id)}"><summary>${text(event.title)}${roleInSummary&&role?`<span class="event-role">${text(role)}</span>`:''}</summary>
       <div class="inline-evidence-body" data-inline-content></div>
       <p class="inline-detail-link"><a href="#/events/${encodeURIComponent(event.id)}">${text('史事详情')}</a></p>
       <div class="reading-actions"><button type="button" class="close-inline">${text('收起记载')}</button></div>
-    </details>${role?`<p class="event-role">${text(role)}</p>`:''}
+    </details>${role&&!roleInSummary?`<p class="event-role">${text(role)}</p>`:''}
     ${event.time.precision==='relative'&&event.time.after?`<p class="relative-context">${text('相对时间；具体年份及与其他史事的先后未详。')}</p>`:''}
   </div></article>`;
 }
@@ -68,12 +70,22 @@ export function inlineEventRow(event,{text,esc,dateText,person='',id='event-card
 export function mountInlineReading(root,{data,text,url,sourceLabel,fields=[],loadSection,onChange=()=>{}}) {
   const events=new Map(data.events.map(e=>[e.id,e]));
   const quote=r=>`<figure class="inline-source"><figcaption>${text(sourceLabel(r))}</figcaption>${citationText(r,text)}<a class="evidence-link" href="${url(r.section,r.block)}">${text('阅读全文')}</a></figure>`;
-  const fill=details=>{
+  const fill=async details=>{
     if(!details.open||details.dataset.loaded)return;
-    const event=events.get(details.dataset.inlineEvent);
-    const records=details.hasAttribute('data-inline-identity')?exactCitations(data,fields.flatMap(f=>f.evidence)):event?eventCitations(data,event):[];
     const body=details.querySelector('[data-inline-content]');if(!body)return;
-    body.innerHTML=records.map(quote).join('');details.dataset.loaded='true';
+    details.dataset.loaded='loading';
+    try{
+      let event=events.get(details.dataset.inlineEvent);
+      if(event&&data.loadEvent)event=await data.loadEvent(event.id);
+      if(!root.isConnected)return;
+      const records=details.hasAttribute('data-inline-identity')?exactCitations(data,fields.flatMap(f=>f.evidence)):event?eventCitations(data,event):[];
+      body.innerHTML=records.map(quote).join('');details.dataset.loaded='true';
+      await root.citationReady?.();
+    }catch{
+      delete details.dataset.loaded;
+      body.innerHTML=`<p role="alert">${text('文献暂无法载入。')} <button type="button" class="retry-inline">${text('重试')}</button></p>`;
+      body.querySelector('button').onclick=()=>fill(details);
+    }
   };
   root.addEventListener('toggle',event=>{
     const details=event.target;if(!details.matches?.('[data-inline-event],[data-inline-identity]'))return;

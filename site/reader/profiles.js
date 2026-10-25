@@ -1,3 +1,4 @@
+import {retainMoreFocus} from './people-reading.js?v=5354103c3b299de1';
 // Presentation choices refer to existing facts; they never become a second event store.
 export const evidenceKey=e=>JSON.stringify([e.source_sha256,e.section,e.block,e.layer,e.attribution||'',e.start,e.end,e.quote]);
 
@@ -26,29 +27,48 @@ export function biographyAnchor(bio,at) {
   return target==='profile'||(target==='supplement'&&bio?.placements.some(p=>p.stage===null))||bio?.nodes.some(n=>n.id===target)||bio?.stages.some(s=>'stage-'+s.id===target)?target:null;
 }
 
+// An entry snapshot belongs to its exact arrangement. A split is migrated once,
+// rather than expanding neighbouring stages again on every refresh.
+export function biographyRevision(bio) {
+  const signature=bio.stages.map(s=>s.id).join('|')+';'+bio.nodes.map(n=>n.id+':'+n.stage).join('|')+';'+bio.placements.map(p=>p.event+':'+(p.stage||'')).join('|');
+  let hash=2166136261;
+  for(const c of signature)hash=Math.imul(hash^c.charCodeAt(0),16777619)>>>0;
+  return hash.toString(16).padStart(8,'0');
+}
 export function biographyContext(bio,saved) {
   if(!bio||!saved)return saved;
+  const revision=biographyRevision(bio);
+  const group=stage=>bio.compat?.stage_groups?.['revision-'+(saved.lifeRevision||'unversioned')+'-'+stage]||bio.compat?.stage_groups?.[stage]||[stage];
   const ids=id=>{
     if(id?.startsWith('life-linked-')){
       const nodes=bio.compat?.sources?.[id.slice(12)]?.nodes;
       if(nodes)return nodes.map(n=>'life-linked-'+n);
     }
-    const match=/^life-more-(.+)-(dated|other)$/.exec(id||'');
-    if(match)return (bio.compat?.stage_groups?.[match[1]]||[match[1]]).map(s=>'life-more-'+s);
+    const match=/^life-more-(.+?)(?:-(dated|other))?$/.exec(id||'');
+    if(match)return group(match[1]).map(s=>'life-more-'+s);
+    if(id?.startsWith('life-stage-'))return ['life-stage-'+group(id.slice(11))[0]];
     if(id?.startsWith('life-')&&bio.compat?.anchors?.[id.slice(5)])return ['life-'+bio.compat.anchors[id.slice(5)]];
     return [id];
   };
   const limits={};
   for(const [id,n] of Object.entries(saved.lifeLimits||{}))for(const next of ids(id))limits[next]=Math.max(limits[next]||0,n);
-  return {...saved,anchor:ids(saved.anchor)[0],open:[...new Set((saved.open||[]).flatMap(ids))],lifeLimits:limits};
+  return {...saved,lifeRevision:revision,anchor:ids(saved.anchor)[0],open:[...new Set((saved.open||[]).flatMap(ids))],lifeLimits:limits};
+}
+
+export function biographyTime(time,dateText){
+  const label=String(time.label||'').trim();
+  const placeholder=new Set(['年代未详','年代不详','原文未明示时间','原文纪年见引文','不换算公元年','生平补叙']);
+  const meaningful=label.split(/[；;]/).map(s=>s.trim()).filter(s=>s&&!placeholder.has(s)).map(s=>s.replace(/^原文叙在/,'')).join('；');
+  if(!meaningful)return Number.isInteger(time.year)?`${time.year} 年`:'';
+  return dateText({...time,label:meaningful});
 }
 
 export function biographyDate(node,events,dateText){
   const times=node.time_events.map(id=>events.get(id).time);
-  if(times.length===1)return dateText(times[0]);
+  if(times.length===1)return biographyTime(times[0],dateText);
   // A combined narrative must not inherit its first action's month or age.
   const years=[...new Set(times.filter(t=>Number.isInteger(t.year)).map(t=>t.year))].sort((a,b)=>a-b);
-  const uncertain=[...new Set(times.filter(t=>!Number.isInteger(t.year)).map(dateText))];
+  const uncertain=[...new Set(times.filter(t=>!Number.isInteger(t.year)).map(t=>biographyTime(t,dateText)).filter(Boolean))];
   return [...(years.length?[years.join('、')+' 年']:[]),...uncertain].join('；');
 }
 
@@ -88,13 +108,15 @@ export function renderBiography({bio,data,main,text,esc,dateText,url,sourceLabel
   const events=new Map(data.events.map(e=>[e.id,e]));
   const selected=new Set(bio.nodes.flatMap(n=>n.sentences.flatMap(s=>s.events)));
   const eventLink=e=>`<a href="#/events/${esc(e.id)}">${text(e.title)}</a>`;
-  const row=e=>readingRow?readingRow(e):`<article class="life-event" id="life-event-${esc(e.id)}" data-context tabindex="-1"><span>${text(dateText(e.time))}</span>${eventLink(e)}</article>`;
+  const displayDate=t=>biographyTime(t,dateText);
+  const row=e=>readingRow?readingRow(e,displayDate):`<article class="life-event ${displayDate(e.time)?'':'without-event-date'}" id="life-event-${esc(e.id)}" data-context tabindex="-1">${displayDate(e.time)?`<span>${text(displayDate(e.time))}</span>`:''}${eventLink(e)}</article>`;
   const nodes=stage=>bio.nodes.filter(n=>n.stage===stage).map(n=>{
     const ids=[...new Set(n.sentences.flatMap(s=>s.events))];
     const quotes=biographySources(n,data).map(r=>`<div class="life-source" id="life-source-${esc(n.id)}-${esc(r.ids[0])}" data-evidence-ids="${esc(JSON.stringify(r.ids))}"><p class="life-source-label">${text(sourceLabel(r))}</p>${renderQuote(r)}<a class="evidence-link" href="${url(r.section,r.block)}">${text('阅读全文')}</a></div>`).join('');
     const links=ids.map(id=>`<p>${eventLink(events.get(id))}</p>`).join('');
     const related=ids.length>1?`<details class="life-document-events reading-more" id="life-events-${esc(n.id)}"><summary>${text('相关史事')}</summary>${links}</details>`:`<div class="life-document-events" id="life-events-${esc(n.id)}">${links}</div>`;
-    return `<article class="life-node" id="life-${esc(n.id)}" data-context tabindex="-1"><p class="event-date">${text(biographyDate(n,events,dateText))}</p><h4>${text(n.title)}</h4><p class="life-narrative">${n.sentences.map(s=>text(s.text)).join('')}</p><details class="life-documents" id="life-linked-${esc(n.id)}"><summary>${text('文献记载')}</summary><div class="life-documents-body">${quotes}${related}<div class="reading-actions"><button type="button" class="close-records">${text('收起记载')}</button></div></div></details></article>`;
+    const date=biographyDate(n,events,dateText);
+    return `<article class="life-node" id="life-${esc(n.id)}" data-context tabindex="-1">${date?`<p class="event-date">${text(date)}</p>`:''}<h4>${text(n.title)}</h4><p class="life-narrative">${n.sentences.map(s=>text(s.text)).join('')}</p><details class="life-documents" id="life-linked-${esc(n.id)}"><summary>${text('文献记载')}</summary><div class="life-documents-body">${quotes}${related}<div class="reading-actions"><button type="button" class="close-records">${text('收起记载')}</button></div></div></details></article>`;
   }).join('');
   const buckets=[];
   function bucket(stage,title){
@@ -105,7 +127,7 @@ export function renderBiography({bio,data,main,text,esc,dateText,url,sourceLabel
     return `<details class="life-more" id="${id}"><summary>${text(title)}</summary><div data-life-list="${id}" data-limit="0"></div></details>`;
   }
   const supplement=bucket(null,'展开记载');
-  const html=`<section class="person-biography"><div class="section-heading"><h2>${text('生平')}</h2></div><div class="biography-layout"><details class="life-navigation" id="life-navigation" open><summary>${text('生平阶段')}</summary><nav class="life-stages" aria-label="${text('生平阶段')}">${bio.stages.map(s=>`<a href="${detailPath}?at=stage-${esc(s.id)}">${text(s.title)}</a>`).join('')}</nav>${supplement?`<p class="supplement-jump"><a href="${detailPath}?at=supplement">${text('生平补遗')}</a></p>`:''}</details><div class="life-chapters">${bio.stages.map(s=>`<section class="life-stage" id="life-stage-${esc(s.id)}" data-context tabindex="-1"><h3>${text(s.title)}</h3>${nodes(s.id)}${bucket(s.id,'更多事迹')}</section>`).join('')}</div></div></section>${supplement?`<section class="person-supplement" id="life-supplement" data-context tabindex="-1" aria-labelledby="supplement-heading"><h2 id="supplement-heading">${text('生平补遗')}</h2>${supplement}</section>`:''}`;
+  const html=`<section class="person-biography" data-life-revision="${biographyRevision(bio)}"><div class="section-heading"><h2>${text('生平')}</h2></div><div class="biography-layout"><details class="life-navigation" id="life-navigation" open><summary><span>${text('生平阶段')}</span><span class="life-current"></span></summary><div class="life-stage-menu"><nav class="life-stages" aria-label="${text('生平阶段')}">${bio.stages.map(s=>`<a data-stage-target="life-stage-${esc(s.id)}" href="${detailPath}?at=stage-${esc(s.id)}">${text(s.title)}</a>`).join('')}</nav>${supplement?`<p class="supplement-jump"><a data-stage-target="life-supplement" href="${detailPath}?at=supplement">${text('生平补遗')}</a></p>`:''}</div></details><div class="life-chapters">${bio.stages.map(s=>`<section class="life-stage" id="life-stage-${esc(s.id)}" data-context tabindex="-1"><h3>${text(s.title)}</h3>${nodes(s.id)}${bucket(s.id,'更多记载')}</section>`).join('')}</div></div></section>${supplement?`<section class="person-supplement" id="life-supplement" data-context tabindex="-1" aria-labelledby="supplement-heading"><h2 id="supplement-heading">${text('生平补遗')}</h2>${supplement}</section>`:''}`;
   return {html,bind(){
     if(matchMedia('(max-width:760px)').matches)main.querySelector('.life-navigation').open=!!saved?.open?.includes('life-navigation');
     main.querySelectorAll('.close-records').forEach(button=>button.onclick=()=>{
@@ -118,16 +140,19 @@ export function renderBiography({bio,data,main,text,esc,dateText,url,sourceLabel
       const targetIndex=b.items.findIndex(e=>'life-event-'+e.id===saved?.anchor);
       let limit=Math.max(20,Number(saved?.lifeLimits?.[b.id])||0,targetIndex>=0?Math.ceil((targetIndex+1)/20)*20:0);
       if(targetIndex>=0)container.closest('details').open=true;
-      const more=()=>limit<b.items.length?`<button type="button" class="load-more">${text('加载更多')}</button>`:'';
+      const more=()=>limit<b.items.length?`<button type="button" class="load-more" data-people-more>${text('加载更多')}</button>`:'';
       limit=Math.min(limit,b.items.length);container.dataset.limit=String(limit);
       container.innerHTML=b.items.slice(0,limit).map(row).join('')+more();
-      container.addEventListener('click',event=>{
-        const button=event.target.closest('.load-more');if(!button||button.parentElement!==container)return;
-        const y=window.scrollY,old=limit;limit=Math.min(limit+20,b.items.length);button.remove();
+      const load=(automatic=false)=>{
+        const button=container.querySelector(':scope>.load-more');if(!button)return 0;
+        const y=window.scrollY,keepMoreFocus=automatic&&document.activeElement===button,old=limit;limit=Math.min(limit+20,b.items.length);button.remove();
         container.insertAdjacentHTML('beforeend',b.items.slice(old,limit).map(row).join('')+more());
         container.dataset.limit=String(limit);window.scrollTo(0,y);
-        container.querySelectorAll(':scope>article')[old]?.focus({preventScroll:true});onChange();
-      });
+        if(keepMoreFocus)retainMoreFocus(button,container,text);
+        if(!automatic)container.querySelectorAll(':scope>article')[old]?.focus({preventScroll:true});onChange();bindMore();return limit-old;
+      };
+      const bindMore=()=>{const button=container.querySelector(':scope>.load-more');if(button){button.onclick=()=>load();button.peopleLoad=()=>load(true);}};
+      bindMore();
     }
   }};
 }

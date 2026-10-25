@@ -178,15 +178,19 @@
           },
           {
             "id": "south",
-            "title": "南征荆州"
+            "title": "南征与赤壁"
           },
           {
             "id": "west",
-            "title": "经营关中"
+            "title": "西征与政务"
+          },
+          {
+            "id": "ruxu",
+            "title": "濡须用兵"
           },
           {
             "id": "duke",
-            "title": "进封魏公"
+            "title": "魏公时期"
           },
           {
             "id": "king",
@@ -534,7 +538,7 @@
             ],
             "sentences": [
               {
-                "text": "曹操攻破南皮，杀袁谭并诛其妻子，冀州平定。",
+                "text": "曹操攻破南皮，斩杀袁谭，并诛其妻儿，冀州平定。",
                 "events": [
                   "wudi-e-o100a"
                 ],
@@ -775,6 +779,25 @@
                 ],
                 "evidence": [
                   "wudi-e-o200b-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "ruxu-campaign",
+            "stage": "ruxu",
+            "title": "进军濡须",
+            "time_events": [
+              "wudi-e-o139a"
+            ],
+            "sentences": [
+              {
+                "text": "曹操进军濡须口，攻破孙权在江西的营垒，俘获都督公孙阳，随后引军撤还。",
+                "events": [
+                  "wudi-e-o139a"
+                ],
+                "evidence": [
+                  "wudi-e-o139a-q"
                 ]
               }
             ]
@@ -1771,15 +1794,15 @@
           },
           {
             "event": "wudi-e-o138a",
-            "stage": "west"
+            "stage": "ruxu"
           },
           {
             "event": "wudi-e-o139a",
-            "stage": "duke"
+            "stage": "ruxu"
           },
           {
             "event": "wudi-e-o140a",
-            "stage": "duke"
+            "stage": "ruxu"
           },
           {
             "event": "wudi-e-o141a",
@@ -1915,7 +1938,7 @@
           },
           {
             "event": "wudi-e-o181a",
-            "stage": "king"
+            "stage": "duke"
           },
           {
             "event": "wudi-e-o182a",
@@ -2231,7 +2254,7 @@
           },
           {
             "event": "xianzhu-e-o039a",
-            "stage": "west"
+            "stage": "ruxu"
           },
           {
             "event": "xianzhu-e-p036a",
@@ -2271,7 +2294,7 @@
           },
           {
             "event": "zhouyu-e-p012d",
-            "stage": "south"
+            "stage": null
           },
           {
             "event": "zhouyu-e-o051b",
@@ -2419,7 +2442,7 @@
           },
           {
             "event": "xunyu-e-o029b",
-            "stage": "west"
+            "stage": "ruxu"
           },
           {
             "event": "xunyu-e-o030a",
@@ -2427,7 +2450,7 @@
           },
           {
             "event": "xunyu-e-p022a",
-            "stage": "west"
+            "stage": "ruxu"
           },
           {
             "event": "xunyu-e-p022d",
@@ -2515,7 +2538,7 @@
           },
           {
             "event": "xunyu-e-o063a",
-            "stage": "plains"
+            "stage": null
           },
           {
             "event": "xunyu-e-o063b",
@@ -2767,19 +2790,19 @@
           },
           {
             "event": "wuzhu-e-p009a",
-            "stage": "duke"
+            "stage": "ruxu"
           },
           {
             "event": "wuzhu-e-p009b",
-            "stage": "duke"
+            "stage": "ruxu"
           },
           {
             "event": "wuzhu-e-p009c",
-            "stage": "duke"
+            "stage": "ruxu"
           },
           {
             "event": "wuzhu-e-p010a",
-            "stage": "duke"
+            "stage": "ruxu"
           },
           {
             "event": "wuzhu-e-o031a",
@@ -3295,7 +3318,7 @@
           },
           {
             "event": "hequan-e-o057",
-            "stage": null
+            "stage": "king"
           },
           {
             "event": "chengguo-e-o076",
@@ -3443,7 +3466,7 @@
           },
           {
             "event": "chengguo-e-o037",
-            "stage": null
+            "stage": "court"
           },
           {
             "event": "chengguo-e-o050b",
@@ -3679,7 +3702,7 @@
           },
           {
             "event": "wudi-e-o061b",
-            "stage": null
+            "stage": "plains"
           },
           {
             "event": "gongsuntao-e-review-caocao-attacks",
@@ -4171,7 +4194,7 @@
           },
           {
             "event": "wendi-e-o002a",
-            "stage": null
+            "stage": "king"
           },
           {
             "event": "chengguo-e-sr-jiatu-zhangyang",
@@ -4663,7 +4686,7 @@
           },
           {
             "event": "rencheng-e-b0581eba1d425283a831",
-            "stage": null
+            "stage": "king"
           },
           {
             "event": "rencheng-e-bc46395a2b1d2cdb0eca",
@@ -4747,7 +4770,7 @@
           },
           {
             "event": "wudi-e-o190a",
-            "stage": null
+            "stage": "king"
           },
           {
             "event": "wuwen-e-1605379c1deeb43170ea",
@@ -5134,10 +5157,6 @@
             "stage": null
           },
           {
-            "event": "zhangyan-e-c8203bb1a2e01fa3210b",
-            "stage": null
-          },
-          {
             "event": "zhangyan-e-dca591e4ba813cc80992",
             "stage": null
           },
@@ -5160,7 +5179,13 @@
             "hebei": "ye",
             "chibi": "jingzhou-campaign",
             "hanzhong": "nanzheng",
-            "death": "return-changan"
+            "death": "return-changan",
+            "stage-revision-unversioned-west": "stage-west",
+            "stage-revision-35415961-west": "stage-west",
+            "stage-revision-unversioned-duke": "stage-ruxu",
+            "stage-revision-35415961-duke": "stage-ruxu",
+            "stage-revision-unversioned-king": "stage-duke",
+            "stage-revision-35415961-king": "stage-duke"
           },
           "sources": {
             "jinan": {
@@ -5269,6 +5294,30 @@
               "west"
             ],
             "6": [
+              "duke",
+              "king"
+            ],
+            "revision-unversioned-west": [
+              "west",
+              "ruxu"
+            ],
+            "revision-35415961-west": [
+              "west",
+              "ruxu"
+            ],
+            "revision-unversioned-duke": [
+              "ruxu",
+              "duke"
+            ],
+            "revision-35415961-duke": [
+              "ruxu",
+              "duke"
+            ],
+            "revision-unversioned-king": [
+              "duke",
+              "king"
+            ],
+            "revision-35415961-king": [
               "duke",
               "king"
             ]
@@ -5416,16 +5465,24 @@
             "title": "入蜀定益州"
           },
           {
-            "id": "hanzhong",
+            "id": "jingdivision",
+            "title": "荆州分治"
+          },
+          {
+            "id": "hanzhong-campaign",
             "title": "争汉中与称王"
           },
           {
             "id": "emperor",
-            "title": "称帝与东征"
+            "title": "成都称帝"
           },
           {
-            "id": "last",
-            "title": "夷陵败退与托孤"
+            "id": "dongzheng",
+            "title": "东征与夷陵之败"
+          },
+          {
+            "id": "yongan",
+            "title": "永安托孤与病逝"
           }
         ],
         "nodes": [
@@ -5727,14 +5784,14 @@
           },
           {
             "id": "liubei-divide-jing",
-            "stage": "hanzhong",
+            "stage": "jingdivision",
             "title": "与孙权分荆州",
             "time_events": [
               "xianzhu-e-o045b"
             ],
             "sentences": [
               {
-                "text": "刘备与孙权议和，江夏、长沙、桂阳东属，南郡、零陵、武陵西属。",
+                "text": "刘备与孙权议和，分定荆州：江夏、长沙、桂阳归孙权，南郡、零陵、武陵归刘备。",
                 "events": [
                   "xianzhu-e-o045b"
                 ],
@@ -5746,7 +5803,7 @@
           },
           {
             "id": "liubei-hanzhong",
-            "stage": "hanzhong",
+            "stage": "hanzhong-campaign",
             "title": "进兵汉中",
             "time_events": [
               "pangfa-e-o023a"
@@ -5765,7 +5822,7 @@
           },
           {
             "id": "liubei-dingjun",
-            "stage": "hanzhong",
+            "stage": "hanzhong-campaign",
             "title": "定军山破夏侯渊",
             "time_events": [
               "wudi-e-o195a"
@@ -5784,7 +5841,7 @@
           },
           {
             "id": "liubei-king",
-            "stage": "hanzhong",
+            "stage": "hanzhong-campaign",
             "title": "受汉中王冠",
             "time_events": [
               "xianzhu-e-o055a"
@@ -5822,7 +5879,7 @@
           },
           {
             "id": "liubei-east",
-            "stage": "emperor",
+            "stage": "dongzheng",
             "title": "东征孙权",
             "time_events": [
               "xianzhu-e-o067a"
@@ -5841,7 +5898,7 @@
           },
           {
             "id": "liubei-yiling",
-            "stage": "last",
+            "stage": "dongzheng",
             "title": "猇亭败退",
             "time_events": [
               "xianzhu-e-o069b",
@@ -5870,14 +5927,14 @@
           },
           {
             "id": "liubei-reconcile",
-            "stage": "last",
+            "stage": "yongan",
             "title": "与吴复通",
             "time_events": [
               "xianzhu-e-o071b"
             ],
             "sentences": [
               {
-                "text": "孙权遣使请和，刘备遣宗玮答复。",
+                "text": "孙权遣使请和，刘备同意，遣太中大夫宗玮回报。",
                 "events": [
                   "xianzhu-e-o071b"
                 ],
@@ -5889,7 +5946,7 @@
           },
           {
             "id": "liubei-entrust",
-            "stage": "last",
+            "stage": "yongan",
             "title": "永安托孤",
             "time_events": [
               "xianzhu-e-o073c"
@@ -5908,7 +5965,7 @@
           },
           {
             "id": "liubei-lastinstruction",
-            "stage": "last",
+            "stage": "yongan",
             "title": "遗诏勉后主",
             "time_events": [
               "xianzhu-e-p050a"
@@ -5927,7 +5984,7 @@
           },
           {
             "id": "liubei-death",
-            "stage": "last",
+            "stage": "yongan",
             "title": "卒于永安",
             "time_events": [
               "xianzhu-e-o074a",
@@ -6042,35 +6099,35 @@
           },
           {
             "event": "wudi-e-o179b",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "wudi-e-o187a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "wudi-e-o189a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "wudi-e-o192a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "wudi-e-o195a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "wudi-e-o195b",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "wudi-e-o196a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "xianzhu-e-o069b",
-            "stage": "last"
+            "stage": "dongzheng"
           },
           {
             "event": "mingdi-e-p021d",
@@ -6110,7 +6167,7 @@
           },
           {
             "event": "xianzhu-e-o047b",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "xiahoucao-e-o033c",
@@ -6126,19 +6183,19 @@
           },
           {
             "event": "xianzhu-e-o046a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "zhangle-e-o031d",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "zhangle-e-o032a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "zhangle-e-p008a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "xianzhu-e-o002a",
@@ -6278,7 +6335,7 @@
           },
           {
             "event": "xianzhu-e-o021a",
-            "stage": "jingzhou"
+            "stage": "xuzhou"
           },
           {
             "event": "xianzhu-e-o022b",
@@ -6470,35 +6527,35 @@
           },
           {
             "event": "xianzhu-e-o044a",
-            "stage": "hanzhong"
+            "stage": "jingdivision"
           },
           {
             "event": "xianzhu-e-o044b",
-            "stage": "hanzhong"
+            "stage": "jingdivision"
           },
           {
             "event": "xianzhu-e-o044c",
-            "stage": "hanzhong"
+            "stage": "jingdivision"
           },
           {
             "event": "xianzhu-e-o045b",
-            "stage": "hanzhong"
+            "stage": "jingdivision"
           },
           {
             "event": "xianzhu-e-o045c",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "xianzhu-e-o049c",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "xianzhu-e-o051a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "xianzhu-e-o055a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "xianzhu-e-p040c",
@@ -6506,19 +6563,19 @@
           },
           {
             "event": "xianzhu-e-o059a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "xianzhu-e-o060a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "xianzhu-e-p043a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "xianzhu-e-o061b",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "xianzhu-e-o063a",
@@ -6534,7 +6591,7 @@
           },
           {
             "event": "xianzhu-e-p045a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "xianzhu-e-o066a",
@@ -6558,55 +6615,55 @@
           },
           {
             "event": "xianzhu-e-o067a",
-            "stage": "emperor"
+            "stage": "dongzheng"
           },
           {
             "event": "xianzhu-e-o067b",
-            "stage": "emperor"
+            "stage": "dongzheng"
           },
           {
             "event": "xianzhu-e-o068a",
-            "stage": "last"
+            "stage": "dongzheng"
           },
           {
             "event": "xianzhu-e-o068b",
-            "stage": "last"
+            "stage": "dongzheng"
           },
           {
             "event": "xianzhu-e-o069c",
-            "stage": "last"
+            "stage": "dongzheng"
           },
           {
             "event": "xianzhu-e-o071a",
-            "stage": "last"
+            "stage": "yongan"
           },
           {
             "event": "xianzhu-e-o071b",
-            "stage": "last"
+            "stage": "yongan"
           },
           {
             "event": "xianzhu-e-o073c",
-            "stage": "last"
+            "stage": "yongan"
           },
           {
             "event": "xianzhu-e-o074a",
-            "stage": "last"
+            "stage": "yongan"
           },
           {
             "event": "xianzhu-e-o075a",
-            "stage": "last"
+            "stage": "yongan"
           },
           {
             "event": "xianzhu-e-o076a",
-            "stage": "last"
+            "stage": "yongan"
           },
           {
             "event": "xianzhu-e-o077a",
-            "stage": "last"
+            "stage": "yongan"
           },
           {
             "event": "xianzhu-e-p050a",
-            "stage": "last"
+            "stage": "yongan"
           },
           {
             "event": "xianzhu-e-p050b",
@@ -6614,7 +6671,7 @@
           },
           {
             "event": "xianzhu-e-p050c",
-            "stage": "last"
+            "stage": "yongan"
           },
           {
             "event": "xianzhu-e-p051a",
@@ -6682,7 +6739,7 @@
           },
           {
             "event": "zhuge-e-o021a",
-            "stage": "last"
+            "stage": "yongan"
           },
           {
             "event": "guanzhang-e-o001a",
@@ -6718,7 +6775,7 @@
           },
           {
             "event": "guanzhang-e-o008a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "guanzhang-e-o015b",
@@ -6738,7 +6795,7 @@
           },
           {
             "event": "guanzhang-e-o019a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "guanzhang-e-o020a",
@@ -6750,7 +6807,7 @@
           },
           {
             "event": "guanzhang-e-o022b",
-            "stage": "emperor"
+            "stage": "dongzheng"
           },
           {
             "event": "guanzhang-e-o030a",
@@ -6766,7 +6823,7 @@
           },
           {
             "event": "guanzhang-e-o032a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "guanzhang-e-o033a",
@@ -6774,7 +6831,7 @@
           },
           {
             "event": "guanzhang-e-o034a",
-            "stage": "last"
+            "stage": "yongan"
           },
           {
             "event": "guanzhang-e-p020a",
@@ -6786,7 +6843,7 @@
           },
           {
             "event": "guanzhang-e-o039a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "guanzhang-e-o041a",
@@ -6810,11 +6867,11 @@
           },
           {
             "event": "guanzhang-e-p025d",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "guanzhang-e-p025e",
-            "stage": "emperor"
+            "stage": "dongzheng"
           },
           {
             "event": "pangfa-e-o004b",
@@ -6874,19 +6931,19 @@
           },
           {
             "event": "pangfa-e-o023a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "pangfa-e-o025a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "pangfa-e-o026a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "pangfa-e-p015a",
-            "stage": "hanzhong"
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "wuzhu-e-o014a",
@@ -6910,23 +6967,23 @@
           },
           {
             "event": "wuzhu-e-o028a",
-            "stage": "hanzhong"
+            "stage": "jingdivision"
           },
           {
             "event": "wuzhu-e-o051a",
-            "stage": "emperor"
+            "stage": "dongzheng"
           },
           {
             "event": "wuzhu-e-o062a",
-            "stage": "last"
+            "stage": "yongan"
           },
           {
             "event": "wuzhu-e-p035a",
-            "stage": "last"
+            "stage": "yongan"
           },
           {
             "event": "wuzhu-e-p036b",
-            "stage": "last"
+            "stage": "yongan"
           },
           {
             "event": "wuzhu-e-p040a",
@@ -6954,35 +7011,35 @@
           },
           {
             "event": "luxun-e-o016a",
-            "stage": "last"
+            "stage": "dongzheng"
           },
           {
             "event": "luxun-e-o017a",
-            "stage": "last"
+            "stage": "dongzheng"
           },
           {
             "event": "luxun-e-o017b",
-            "stage": "last"
+            "stage": "dongzheng"
           },
           {
             "event": "luxun-e-o018a",
-            "stage": "last"
+            "stage": "dongzheng"
           },
           {
             "event": "luxun-e-o021c",
-            "stage": "last"
+            "stage": "dongzheng"
           },
           {
             "event": "luxun-e-o022a",
-            "stage": "last"
+            "stage": "dongzheng"
           },
           {
             "event": "luxun-e-o026a",
-            "stage": "last"
+            "stage": "yongan"
           },
           {
             "event": "luxun-e-p005a",
-            "stage": "last"
+            "stage": "yongan"
           },
           {
             "event": "houzhu-e-o001m0",
@@ -7014,7 +7071,7 @@
           },
           {
             "event": "wudi-e-o197b",
-            "stage": null
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "huanchen-e-o109a",
@@ -7074,7 +7131,7 @@
           },
           {
             "event": "wudi-e-o058b",
-            "stage": null
+            "stage": "xuzhou"
           },
           {
             "event": "chenghuang-e-o054",
@@ -7138,7 +7195,7 @@
           },
           {
             "event": "wendi-e-o010b",
-            "stage": null
+            "stage": "hanzhong-campaign"
           },
           {
             "event": "zhanggu-e-o008",
@@ -7610,7 +7667,7 @@
           },
           {
             "event": "zhuge-e-o022b",
-            "stage": null
+            "stage": "yongan"
           },
           {
             "event": "cuimao-e-o065",
@@ -7690,9 +7747,61 @@
           }
         ],
         "compat": {
-          "anchors": {},
+          "anchors": {
+            "stage-hanzhong": "stage-jingdivision",
+            "stage-last": "stage-dongzheng",
+            "stage-revision-unversioned-jingzhou": "stage-xuzhou",
+            "stage-revision-448c7d22-jingzhou": "stage-xuzhou",
+            "stage-revision-unversioned-hanzhong": "stage-jingdivision",
+            "stage-revision-448c7d22-hanzhong": "stage-jingdivision",
+            "stage-revision-unversioned-emperor": "stage-emperor",
+            "stage-revision-448c7d22-emperor": "stage-emperor",
+            "stage-revision-unversioned-last": "stage-dongzheng",
+            "stage-revision-448c7d22-last": "stage-dongzheng"
+          },
           "sources": {},
-          "stage_groups": {}
+          "stage_groups": {
+            "hanzhong": [
+              "jingdivision",
+              "hanzhong-campaign"
+            ],
+            "last": [
+              "dongzheng",
+              "yongan"
+            ],
+            "revision-unversioned-jingzhou": [
+              "xuzhou",
+              "jingzhou"
+            ],
+            "revision-448c7d22-jingzhou": [
+              "xuzhou",
+              "jingzhou"
+            ],
+            "revision-unversioned-hanzhong": [
+              "jingdivision",
+              "hanzhong-campaign"
+            ],
+            "revision-448c7d22-hanzhong": [
+              "jingdivision",
+              "hanzhong-campaign"
+            ],
+            "revision-unversioned-emperor": [
+              "emperor",
+              "dongzheng"
+            ],
+            "revision-448c7d22-emperor": [
+              "emperor",
+              "dongzheng"
+            ],
+            "revision-unversioned-last": [
+              "dongzheng",
+              "yongan"
+            ],
+            "revision-448c7d22-last": [
+              "dongzheng",
+              "yongan"
+            ]
+          }
         }
       }
     },
@@ -7719,6 +7828,665 @@
       ],
       "directory": {
         "faction": "wu"
+      },
+      "biography": {
+        "stages": [
+          {
+            "id": "early",
+            "title": "早年交游"
+          },
+          {
+            "id": "sunce",
+            "title": "从孙策定江东"
+          },
+          {
+            "id": "serve",
+            "title": "辅佐孙权"
+          },
+          {
+            "id": "chibi",
+            "title": "赤壁之战"
+          },
+          {
+            "id": "nanjun",
+            "title": "南郡攻守"
+          },
+          {
+            "id": "last",
+            "title": "取蜀之议与病逝"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "friendship",
+            "stage": "early",
+            "title": "与孙策友善",
+            "time_events": [
+              "zhouyu-e-o002a"
+            ],
+            "sentences": [
+              {
+                "text": "孙坚徙家于舒时，孙策与同年的周瑜相友善。周瑜让出大宅供孙策居住，两家互通有无。",
+                "events": [
+                  "zhouyu-e-o002a"
+                ],
+                "evidence": [
+                  "zhouyu-e-o002a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "cross-river",
+            "stage": "sunce",
+            "title": "迎孙策东渡",
+            "time_events": [
+              "zhouyu-e-o003a",
+              "zhouyu-e-o003d"
+            ],
+            "sentences": [
+              {
+                "text": "孙策将东渡，到历阳后致书周瑜；周瑜率兵迎接，随军进取，进入曲阿，刘繇奔走。",
+                "events": [
+                  "zhouyu-e-o003a",
+                  "zhouyu-e-o003d"
+                ],
+                "evidence": [
+                  "zhouyu-e-o003a-q",
+                  "zhouyu-e-o003d-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "return-wu",
+            "stage": "sunce",
+            "title": "借道归吴",
+            "time_events": [
+              "zhouyu-e-o004b",
+              "zhouyu-e-o005a"
+            ],
+            "sentences": [
+              {
+                "text": "袁术欲任周瑜为将，周瑜认为袁术终无所成，求为居巢长以借道东归。还吴后，孙策亲迎，授建威中郎将，给兵马。",
+                "events": [
+                  "zhouyu-e-o004b",
+                  "zhouyu-e-o005a"
+                ],
+                "evidence": [
+                  "zhouyu-e-o004b-q",
+                  "zhouyu-e-o005a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "successor",
+            "stage": "serve",
+            "title": "共掌众事",
+            "time_events": [
+              "zhouyu-e-o007a",
+              "zhouyu-e-o007b"
+            ],
+            "sentences": [
+              {
+                "text": "孙策去世，孙权统事，周瑜率兵赴丧，留在吴，以中护军身份与长史张昭共掌众事。",
+                "events": [
+                  "zhouyu-e-o007a",
+                  "zhouyu-e-o007b"
+                ],
+                "evidence": [
+                  "zhouyu-e-o007a-q",
+                  "zhouyu-e-o007b-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "lusu",
+            "stage": "serve",
+            "title": "荐鲁肃于孙权",
+            "time_events": [
+              "zhouyu-e-o038a"
+            ],
+            "sentences": [
+              {
+                "text": "周瑜向孙权推荐鲁肃，认为其才足以辅佐时局，不可令去。孙权见鲁肃，与之交谈后十分欣赏。",
+                "events": [
+                  "zhouyu-e-o038a"
+                ],
+                "evidence": [
+                  "zhouyu-e-o038a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "hostage",
+            "stage": "serve",
+            "title": "劝不送质",
+            "time_events": [
+              "zhouyu-e-p006b"
+            ],
+            "sentences": [
+              {
+                "text": "《江表传》记曹操索取质子，周瑜认为送质将受制于人，劝孙权暂不遣送；孙权母赞同，孙权遂不送质。",
+                "events": [
+                  "zhouyu-e-p006b"
+                ],
+                "evidence": [
+                  "zhouyu-e-p006b-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "resistance",
+            "stage": "chibi",
+            "title": "请兵拒曹",
+            "time_events": [
+              "zhou-plan"
+            ],
+            "sentences": [
+              {
+                "text": "周瑜提出请兵三万、进驻夏口拒曹的主张，孙权赞同。",
+                "events": [
+                  "zhou-plan"
+                ],
+                "evidence": [
+                  "zhou-advice",
+                  "sun-decision"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "alliance",
+            "stage": "chibi",
+            "title": "与刘备并力",
+            "time_events": [
+              "allied-army"
+            ],
+            "sentences": [
+              {
+                "text": "孙权派周瑜、程普等率水军，与刘备合力。",
+                "events": [
+                  "allied-army"
+                ],
+                "evidence": [
+                  "allied-shu"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "fire",
+            "stage": "chibi",
+            "title": "火攻与追击",
+            "time_events": [
+              "huang-fire",
+              "cao-retreat"
+            ],
+            "sentences": [
+              {
+                "text": "周瑜部将黄盖提出火攻，先致书诈降，再令船只同时发火，延烧曹军岸上营落。曹军败退南郡，刘备与周瑜等共同追击；曹操留曹仁守江陵后北归。",
+                "events": [
+                  "huang-fire",
+                  "cao-retreat"
+                ],
+                "evidence": [
+                  "huang-plan",
+                  "huang-feint",
+                  "huang-fire",
+                  "retreat"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "yiling",
+            "stage": "nanjun",
+            "title": "救援夷陵",
+            "time_events": [
+              "yiling-relief"
+            ],
+            "sentences": [
+              {
+                "text": "周瑜遣甘宁前据夷陵，曹仁分兵围攻甘宁。周瑜采纳吕蒙建议，留凌统守后，亲与吕蒙前往救援。",
+                "events": [
+                  "yiling-relief"
+                ],
+                "evidence": [
+                  "yiling-zhou"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wounded",
+            "stage": "nanjun",
+            "title": "带伤巡营",
+            "time_events": [
+              "zhouyu-e-o016d",
+              "zhouyu-e-o017a"
+            ],
+            "sentences": [
+              {
+                "text": "夷陵解围后，周瑜渡屯北岸，临阵中箭受重伤。曹仁闻其卧病而出阵，周瑜起身巡营、激励将士，曹仁遂退。",
+                "events": [
+                  "zhouyu-e-o016d",
+                  "zhouyu-e-o017a"
+                ],
+                "evidence": [
+                  "zhouyu-e-o016d-q",
+                  "zhouyu-e-o017a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "jiangling",
+            "stage": "nanjun",
+            "title": "领南郡太守",
+            "time_events": [
+              "zhouyu-e-o018a"
+            ],
+            "sentences": [
+              {
+                "text": "孙权拜周瑜为偏将军，领南郡太守，以四邑为奉邑，屯据江陵。",
+                "events": [
+                  "zhouyu-e-o018a"
+                ],
+                "evidence": [
+                  "zhouyu-e-o018a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "proposal",
+            "stage": "last",
+            "title": "取蜀之议",
+            "time_events": [
+              "zhouyu-e-o021a",
+              "zhouyu-e-o022a"
+            ],
+            "sentences": [
+              {
+                "text": "周瑜向孙权提出与孙瑜进取蜀地、兼并张鲁并结援马超，继而据襄阳以图北方的计划。孙权同意，周瑜还江陵准备行装。",
+                "events": [
+                  "zhouyu-e-o021a",
+                  "zhouyu-e-o022a"
+                ],
+                "evidence": [
+                  "zhouyu-e-o021a-q",
+                  "zhouyu-e-o022a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "recommend",
+            "stage": "last",
+            "title": "病中荐鲁肃",
+            "time_events": [
+              "zhouyu-e-o052a"
+            ],
+            "sentences": [
+              {
+                "text": "周瑜病重时上疏，认为边境需要良将镇抚，称鲁肃智略足任，请求由鲁肃接替。",
+                "events": [
+                  "zhouyu-e-o052a"
+                ],
+                "evidence": [
+                  "zhouyu-e-o052a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "death",
+            "stage": "last",
+            "title": "病卒巴丘",
+            "time_events": [
+              "zhouyu-e-o022b"
+            ],
+            "sentences": [
+              {
+                "text": "周瑜在途中于巴丘病卒，时年三十六。",
+                "events": [
+                  "zhouyu-e-o022b"
+                ],
+                "evidence": [
+                  "zhouyu-e-o022b-q"
+                ]
+              }
+            ]
+          }
+        ],
+        "placements": [
+          {
+            "event": "chibi-engagement",
+            "stage": "chibi"
+          },
+          {
+            "event": "cao-retreat",
+            "stage": "chibi"
+          },
+          {
+            "event": "xiahoucao-e-o024a",
+            "stage": "nanjun"
+          },
+          {
+            "event": "lizang-e2-wei018-068",
+            "stage": "nanjun"
+          },
+          {
+            "event": "allied-army",
+            "stage": "chibi"
+          },
+          {
+            "event": "xianzhu-e-p028a",
+            "stage": "chibi"
+          },
+          {
+            "event": "xianzhu-e-p029a",
+            "stage": "nanjun"
+          },
+          {
+            "event": "zhuge-e-o014a",
+            "stage": "chibi"
+          },
+          {
+            "event": "pangfa-e-o003a",
+            "stage": "last"
+          },
+          {
+            "event": "sunshi-e-o024d",
+            "stage": "early"
+          },
+          {
+            "event": "sunshi-e-p047a",
+            "stage": "sunce"
+          },
+          {
+            "event": "wuzhu-e-o005a",
+            "stage": "serve"
+          },
+          {
+            "event": "wuzhu-e-o006b",
+            "stage": "serve"
+          },
+          {
+            "event": "wuzhu-e-o014b",
+            "stage": "chibi"
+          },
+          {
+            "event": "wuzhu-e-o015a",
+            "stage": "nanjun"
+          },
+          {
+            "event": "yiling-relief",
+            "stage": "nanjun"
+          },
+          {
+            "event": "wuzhu-e-o017a",
+            "stage": "nanjun"
+          },
+          {
+            "event": "zongshi-e-o120",
+            "stage": "sunce"
+          },
+          {
+            "event": "zongshi-e-o121",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-o002a",
+            "stage": "early"
+          },
+          {
+            "event": "zhouyu-e-o002b",
+            "stage": "early"
+          },
+          {
+            "event": "zhouyu-e-o003a",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-o003b",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-o003c",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-o003d",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-o003e",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-o004a",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-o004b",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-o005a",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-o005b",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-o006a",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-o006b",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-o006f",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-o006d",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-o006e",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-p003a",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-p004a",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-o007a",
+            "stage": "serve"
+          },
+          {
+            "event": "zhouyu-e-o007b",
+            "stage": "serve"
+          },
+          {
+            "event": "zhouyu-e-o008a",
+            "stage": "serve"
+          },
+          {
+            "event": "zhouyu-e-o008b",
+            "stage": "serve"
+          },
+          {
+            "event": "zhouyu-e-o008c",
+            "stage": "serve"
+          },
+          {
+            "event": "zhouyu-e-o009a",
+            "stage": "serve"
+          },
+          {
+            "event": "zhou-plan",
+            "stage": "chibi"
+          },
+          {
+            "event": "zhouyu-e-p006b",
+            "stage": "serve"
+          },
+          {
+            "event": "zhouyu-e-p007b",
+            "stage": "chibi"
+          },
+          {
+            "event": "su-resistance",
+            "stage": "chibi"
+          },
+          {
+            "event": "huang-fire",
+            "stage": "chibi"
+          },
+          {
+            "event": "zhouyu-e-o016d",
+            "stage": "nanjun"
+          },
+          {
+            "event": "zhouyu-e-o017a",
+            "stage": "nanjun"
+          },
+          {
+            "event": "zhouyu-e-o018a",
+            "stage": "nanjun"
+          },
+          {
+            "event": "zhouyu-e-p009a",
+            "stage": "chibi"
+          },
+          {
+            "event": "zhouyu-e-p010a",
+            "stage": "nanjun"
+          },
+          {
+            "event": "zhouyu-e-o019a",
+            "stage": "last"
+          },
+          {
+            "event": "zhouyu-e-o021a",
+            "stage": "last"
+          },
+          {
+            "event": "zhouyu-e-o022a",
+            "stage": "last"
+          },
+          {
+            "event": "zhouyu-e-o022b",
+            "stage": "last"
+          },
+          {
+            "event": "zhouyu-e-o024a",
+            "stage": null
+          },
+          {
+            "event": "zhouyu-e-p012a",
+            "stage": null
+          },
+          {
+            "event": "zhouyu-e-p012b",
+            "stage": null
+          },
+          {
+            "event": "zhouyu-e-p012g",
+            "stage": null
+          },
+          {
+            "event": "zhouyu-e-o033b",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-o034b",
+            "stage": "sunce"
+          },
+          {
+            "event": "zhouyu-e-o036b",
+            "stage": null
+          },
+          {
+            "event": "zhouyu-e-o037a",
+            "stage": "serve"
+          },
+          {
+            "event": "zhouyu-e-o038a",
+            "stage": "serve"
+          },
+          {
+            "event": "zhouyu-e-o052a",
+            "stage": "last"
+          },
+          {
+            "event": "zhouyu-e-o056a",
+            "stage": "last"
+          },
+          {
+            "event": "meng-wulin",
+            "stage": "chibi"
+          },
+          {
+            "event": "zhouyu-e-o070a",
+            "stage": "nanjun"
+          },
+          {
+            "event": "zhouyu-e-o071b",
+            "stage": "nanjun"
+          },
+          {
+            "event": "zhouyu-e-o071c",
+            "stage": "nanjun"
+          },
+          {
+            "event": "zhouyu-e-o071d",
+            "stage": "nanjun"
+          },
+          {
+            "event": "chenghuang-e-o013",
+            "stage": "last"
+          },
+          {
+            "event": "chenghuang-e-o030",
+            "stage": "chibi"
+          },
+          {
+            "event": "chenghuang-e-o097",
+            "stage": "serve"
+          }
+        ],
+        "compat": {
+          "anchors": {
+            "stage-revision-unversioned-chibi": "stage-serve",
+            "stage-revision-b52c3fcb-chibi": "stage-serve"
+          },
+          "sources": {},
+          "stage_groups": {
+            "revision-unversioned-chibi": [
+              "serve",
+              "chibi"
+            ],
+            "revision-b52c3fcb-chibi": [
+              "serve",
+              "chibi"
+            ]
+          }
+        }
       }
     },
     "lu-su": {
@@ -7896,6 +8664,589 @@
       ],
       "directory": {
         "faction": "wei"
+      },
+      "biography": {
+        "stages": [
+          {
+            "id": "early",
+            "title": "早年转徙"
+          },
+          {
+            "id": "service",
+            "title": "归曹立功"
+          },
+          {
+            "id": "north",
+            "title": "北征与平叛"
+          },
+          {
+            "id": "hefei",
+            "title": "合肥之战"
+          },
+          {
+            "id": "guard",
+            "title": "居巢守御"
+          },
+          {
+            "id": "wei",
+            "title": "魏初任职与晚年"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "junli",
+            "stage": "early",
+            "title": "由郡吏入军",
+            "time_events": [
+              "zhangle-e-o001a",
+              "zhangle-e-o001b"
+            ],
+            "sentences": [
+              {
+                "text": "张辽少时为郡吏。丁原因其武力过人，召为从事，令他领兵前往京都。",
+                "events": [
+                  "zhangle-e-o001a",
+                  "zhangle-e-o001b"
+                ],
+                "evidence": [
+                  "zhangle-e-o001a-q",
+                  "zhangle-e-o001b-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "recruit",
+            "stage": "early",
+            "title": "募兵与转徙",
+            "time_events": [
+              "zhangle-e-o001c"
+            ],
+            "sentences": [
+              {
+                "text": "何进遣张辽到河北募兵，得千余人；还军时何进已败，张辽遂率兵归属董卓。",
+                "events": [
+                  "zhangle-e-o001c"
+                ],
+                "evidence": [
+                  "zhangle-e-o001c-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "lvbu",
+            "stage": "early",
+            "title": "随吕布东奔",
+            "time_events": [
+              "zhangle-e-o002a",
+              "zhangle-e-o002b"
+            ],
+            "sentences": [
+              {
+                "text": "董卓败后，张辽率兵归属吕布，迁骑都尉。吕布为李傕所败，张辽随之东奔徐州，领鲁相。",
+                "events": [
+                  "zhangle-e-o002a",
+                  "zhangle-e-o002b"
+                ],
+                "evidence": [
+                  "zhangle-e-o002a-q",
+                  "zhangle-e-o002b-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "surrender",
+            "stage": "service",
+            "title": "率众归曹",
+            "time_events": [
+              "zhangle-e-o003a"
+            ],
+            "sentences": [
+              {
+                "text": "曹操在下邳击破吕布，张辽率众投降，受拜中郎将、赐爵关内侯，后以战功迁裨将军。",
+                "events": [
+                  "zhangle-e-o003a"
+                ],
+                "evidence": [
+                  "zhangle-e-o003a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "changxi",
+            "stage": "service",
+            "title": "单身劝降昌豨",
+            "time_events": [
+              "zhangle-e-o003c"
+            ],
+            "sentences": [
+              {
+                "text": "围攻昌豨数月后，张辽观察其动向，主动交谈劝降，随后独自入其家中，昌豨随他前往见曹操。曹操责其不合大将之法，张辽以奉曹操威信作答。",
+                "events": [
+                  "zhangle-e-o003c"
+                ],
+                "evidence": [
+                  "zhangle-e-o003c-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "yuan",
+            "stage": "service",
+            "title": "从征袁氏",
+            "time_events": [
+              "zhangle-e-o004a",
+              "zhangle-e-o004d"
+            ],
+            "sentences": [
+              {
+                "text": "张辽从攻黎阳有功，行中坚将军；又从攻袁谭，别军击破柳毅等。还邺时曹操亲迎，与之同载，任其为荡寇将军。",
+                "events": [
+                  "zhangle-e-o004a",
+                  "zhangle-e-o004d"
+                ],
+                "evidence": [
+                  "zhangle-e-o004a-q",
+                  "zhangle-e-o004d-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "bailang",
+            "stage": "north",
+            "title": "白狼山先锋",
+            "time_events": [
+              "wudi-e-o115a"
+            ],
+            "sentences": [
+              {
+                "text": "曹军在白狼山与乌丸军相遇，曹操观察敌阵不整，令张辽为先锋进击，乌丸军大败，蹋顿等被斩。",
+                "events": [
+                  "wudi-e-o115a"
+                ],
+                "evidence": [
+                  "wudi-e-o115a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "night",
+            "stage": "north",
+            "title": "镇定军中夜乱",
+            "time_events": [
+              "zhangle-e-o006a"
+            ],
+            "sentences": [
+              {
+                "text": "出发屯长社前，军中夜惊起火。张辽令不反者安坐，率亲兵数十人立于军中，平定骚动后捕杀首谋者。",
+                "events": [
+                  "zhangle-e-o006a"
+                ],
+                "evidence": [
+                  "zhangle-e-o006a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "tianzhu",
+            "stage": "north",
+            "title": "攻陈兰梅成",
+            "time_events": [
+              "zhangle-e-o007b"
+            ],
+            "sentences": [
+              {
+                "text": "陈兰等据险山，诸将以兵少道险为虑，张辽仍进至山下攻营，斩陈兰、梅成，俘获其众。",
+                "events": [
+                  "zhangle-e-o007b"
+                ],
+                "evidence": [
+                  "zhangle-e-o007b-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "garrison",
+            "stage": "hefei",
+            "title": "留屯合肥",
+            "time_events": [
+              "zhangle-e-o008a"
+            ],
+            "sentences": [
+              {
+                "text": "曹操使张辽与乐进、李典等率七千余人屯合肥，征张鲁时留下密教，约定敌军到来方可开启。",
+                "events": [
+                  "zhangle-e-o008a"
+                ],
+                "evidence": [
+                  "zhangle-e-o008a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "eight-hundred",
+            "stage": "hefei",
+            "title": "夜募八百士",
+            "time_events": [
+              "zhangle-e-o008b"
+            ],
+            "sentences": [
+              {
+                "text": "孙权围合肥，张辽认为应趁敌军尚未合围，先挫其锋以安众心，李典赞同。张辽当夜招募敢从之士八百人，准备次日出战。",
+                "events": [
+                  "zhangle-e-o008b"
+                ],
+                "evidence": [
+                  "zhangle-e-o008b-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "breakout",
+            "stage": "hefei",
+            "title": "突阵与追击",
+            "time_events": [
+              "wudi-e-o177a"
+            ],
+            "sentences": [
+              {
+                "text": "《张辽传》记张辽披甲持戟突入孙权军阵，突围后又返回救出余众；孙权十余日未能拔城而撤军，张辽率军追击，后受拜征东将军。",
+                "events": [
+                  "wudi-e-o177a"
+                ],
+                "evidence": [
+                  "zhangle-e-o009a-q",
+                  "zhangle-e-o009b-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "juchao",
+            "stage": "guard",
+            "title": "移屯居巢",
+            "time_events": [
+              "zhangle-e-o010a"
+            ],
+            "sentences": [
+              {
+                "text": "曹操到合肥察看张辽作战之处，增其兵力，多留诸军，令其移屯居巢。",
+                "events": [
+                  "zhangle-e-o010a"
+                ],
+                "evidence": [
+                  "zhangle-e-o010a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "general",
+            "stage": "wei",
+            "title": "前将军与晋阳侯",
+            "time_events": [
+              "zhangle-e-o012a",
+              "zhangle-e-o012c"
+            ],
+            "sentences": [
+              {
+                "text": "曹丕即魏王位，任张辽为前将军，分封其兄及一子；称帝后封张辽为晋阳侯，增加食邑。",
+                "events": [
+                  "zhangle-e-o012a",
+                  "zhangle-e-o012c"
+                ],
+                "evidence": [
+                  "zhangle-e-o012a-q",
+                  "zhangle-e-o012c-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "luoyang",
+            "stage": "wei",
+            "title": "朝见洛阳",
+            "time_events": [
+              "zhangle-e-o013a"
+            ],
+            "sentences": [
+              {
+                "text": "张辽朝见洛阳宫，曹丕亲问破吴战事，为他建宅，又特为其母作殿；当年随他破吴的应募步卒皆列为虎贲。",
+                "events": [
+                  "zhangle-e-o013a"
+                ],
+                "evidence": [
+                  "zhangle-e-o013a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "death",
+            "stage": "wei",
+            "title": "患病与去世",
+            "time_events": [
+              "zhangle-e-o013b",
+              "zhangle-e-o013d"
+            ],
+            "sentences": [
+              {
+                "text": "张辽在雍丘患病，曹丕遣刘晔带太医诊视，并亲临慰问；稍有好转后，张辽返回驻地。本传又记他与诸将击破吕范，随后病重，卒于江都，谥刚侯，子张虎继嗣。",
+                "events": [
+                  "zhangle-e-o013b",
+                  "zhangle-e-o013d"
+                ],
+                "evidence": [
+                  "zhangle-e-o013b-q",
+                  "zhangle-e-o013d-q"
+                ]
+              }
+            ]
+          }
+        ],
+        "placements": [
+          {
+            "event": "wudi-e-o057a",
+            "stage": "early"
+          },
+          {
+            "event": "wudi-e-o074a",
+            "stage": "service"
+          },
+          {
+            "event": "wudi-e-o115a",
+            "stage": "north"
+          },
+          {
+            "event": "wudi-e-o177a",
+            "stage": "hefei"
+          },
+          {
+            "event": "wudi-e-o185a",
+            "stage": "guard"
+          },
+          {
+            "event": "wudi-e-o185b",
+            "stage": "guard"
+          },
+          {
+            "event": "wudi-e-p153a",
+            "stage": null
+          },
+          {
+            "event": "xiahoucao-e-o043c",
+            "stage": "wei"
+          },
+          {
+            "event": "cuimao-e-o070",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o126",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o128",
+            "stage": null
+          },
+          {
+            "event": "zhangle-e-o001a",
+            "stage": "early"
+          },
+          {
+            "event": "zhangle-e-o001b",
+            "stage": "early"
+          },
+          {
+            "event": "zhangle-e-o001c",
+            "stage": "early"
+          },
+          {
+            "event": "zhangle-e-o002a",
+            "stage": "early"
+          },
+          {
+            "event": "zhangle-e-o002b",
+            "stage": "early"
+          },
+          {
+            "event": "zhangle-e-o003a",
+            "stage": "service"
+          },
+          {
+            "event": "zhangle-e-o003b",
+            "stage": "service"
+          },
+          {
+            "event": "zhangle-e-o003c",
+            "stage": "service"
+          },
+          {
+            "event": "zhangle-e-o004a",
+            "stage": "service"
+          },
+          {
+            "event": "zhangle-e-o004b",
+            "stage": "service"
+          },
+          {
+            "event": "zhangle-e-o004c",
+            "stage": "service"
+          },
+          {
+            "event": "zhangle-e-o004d",
+            "stage": "service"
+          },
+          {
+            "event": "zhangle-e-o004e",
+            "stage": "service"
+          },
+          {
+            "event": "zhangle-e-p001a",
+            "stage": "north"
+          },
+          {
+            "event": "zhangle-e-o006a",
+            "stage": "north"
+          },
+          {
+            "event": "zhangle-e-o007b",
+            "stage": "north"
+          },
+          {
+            "event": "zhangle-e-o007c",
+            "stage": "north"
+          },
+          {
+            "event": "zhangle-e-o008a",
+            "stage": "hefei"
+          },
+          {
+            "event": "zhangle-e-o008b",
+            "stage": "hefei"
+          },
+          {
+            "event": "zhangle-e-o010a",
+            "stage": "guard"
+          },
+          {
+            "event": "zhangle-e-o011a",
+            "stage": "guard"
+          },
+          {
+            "event": "zhangle-e-o012a",
+            "stage": "wei"
+          },
+          {
+            "event": "zhangle-e-o012b",
+            "stage": "wei"
+          },
+          {
+            "event": "zhangle-e-o012c",
+            "stage": "wei"
+          },
+          {
+            "event": "zhangle-e-o013a",
+            "stage": "wei"
+          },
+          {
+            "event": "zhangle-e-o013b",
+            "stage": "wei"
+          },
+          {
+            "event": "zhangle-e-o013c",
+            "stage": "wei"
+          },
+          {
+            "event": "zhangle-e-o013d",
+            "stage": "wei"
+          },
+          {
+            "event": "zhangle-e-p003a",
+            "stage": "wei"
+          },
+          {
+            "event": "zhangle-e-o016a",
+            "stage": "service"
+          },
+          {
+            "event": "zhangle-e-o024b",
+            "stage": "north"
+          },
+          {
+            "event": "zhangle-e-o030c",
+            "stage": "north"
+          },
+          {
+            "event": "hechang-e-e1761c7def3de6c7158d",
+            "stage": null
+          },
+          {
+            "event": "xuhuwang-e-cfe6b2499af254ba05f6",
+            "stage": null
+          },
+          {
+            "event": "wgc-e-0-e9",
+            "stage": null
+          },
+          {
+            "event": "guanzhang-e-o004a",
+            "stage": "service"
+          },
+          {
+            "event": "wuzhu-e-p012a",
+            "stage": "hefei"
+          },
+          {
+            "event": "wuzhu-e-o057a",
+            "stage": "wei"
+          },
+          {
+            "event": "wuzhu-e-p030b",
+            "stage": "wei"
+          },
+          {
+            "event": "zhouyu-e-o078c",
+            "stage": "north"
+          }
+        ],
+        "compat": {
+          "anchors": {
+            "stage-revision-unversioned-service": "stage-early",
+            "stage-revision-0e19fc65-service": "stage-early",
+            "stage-revision-unversioned-hefei": "stage-hefei",
+            "stage-revision-0e19fc65-hefei": "stage-hefei"
+          },
+          "sources": {},
+          "stage_groups": {
+            "revision-unversioned-service": [
+              "early",
+              "service"
+            ],
+            "revision-0e19fc65-service": [
+              "early",
+              "service"
+            ],
+            "revision-unversioned-hefei": [
+              "hefei",
+              "guard"
+            ],
+            "revision-0e19fc65-hefei": [
+              "hefei",
+              "guard"
+            ]
+          }
+        }
       }
     },
     "wudi-p0236": {
@@ -8066,6 +9417,1510 @@
       ],
       "directory": {
         "faction": "shu"
+      },
+      "biography": {
+        "stages": [
+          {
+            "id": "early",
+            "title": "早年"
+          },
+          {
+            "id": "service",
+            "title": "出仕"
+          },
+          {
+            "id": "alliance",
+            "title": "联孙拒曹"
+          },
+          {
+            "id": "assist",
+            "title": "荆州任事"
+          },
+          {
+            "id": "yizhou",
+            "title": "入蜀辅政"
+          },
+          {
+            "id": "govern",
+            "title": "托孤治蜀"
+          },
+          {
+            "id": "south",
+            "title": "南征南中"
+          },
+          {
+            "id": "north",
+            "title": "筹备与北伐"
+          },
+          {
+            "id": "last",
+            "title": "病逝"
+          }
+        ],
+        "nodes": [
+          {
+            "id": "early-life",
+            "stage": "early",
+            "title": "早孤与躬耕",
+            "time_events": [
+              "zhuge-e-o002a",
+              "zhuge-e-o003a"
+            ],
+            "sentences": [
+              {
+                "text": "诸葛亮早孤，随诸葛玄赴任，后往依刘表。诸葛玄去世后，诸葛亮躬耕陇亩，喜好《梁父吟》。",
+                "events": [
+                  "zhuge-e-o002a",
+                  "zhuge-e-o003a"
+                ],
+                "evidence": [
+                  "zhuge-e-o002a-q",
+                  "zhuge-e-o003a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "visits",
+            "stage": "service",
+            "title": "三顾问策",
+            "time_events": [
+              "zhuge-e-o005a"
+            ],
+            "sentences": [
+              {
+                "text": "刘备三往草庐才见到诸葛亮，屏退旁人，询问匡复汉室之计。",
+                "events": [
+                  "zhuge-e-o005a"
+                ],
+                "evidence": [
+                  "zhuge-e-o005a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "longzhong",
+            "stage": "service",
+            "title": "对策荆益",
+            "time_events": [
+              "zhuge-e-o006a"
+            ],
+            "sentences": [
+              {
+                "text": "面对刘备的问策，诸葛亮提出跨有荆、益，外结孙权、内修政理，等待时机两路北向的设想；刘备称善，两人日益亲密。",
+                "events": [
+                  "zhuge-e-o006a"
+                ],
+                "evidence": [
+                  "zhuge-e-o006a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "envoy",
+            "stage": "alliance",
+            "title": "出使孙权",
+            "time_events": [
+              "liang-envoy",
+              "zhuge-e-o011a"
+            ],
+            "sentences": [
+              {
+                "text": "刘备遣诸葛亮出使孙权。诸葛亮劝孙权及早决定抗曹或降曹，不可外托服从而内怀犹豫。",
+                "events": [
+                  "liang-envoy",
+                  "zhuge-e-o011a"
+                ],
+                "evidence": [
+                  "envoy-shu",
+                  "zhuge-e-o011a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "joint-army",
+            "stage": "alliance",
+            "title": "联军拒曹",
+            "time_events": [
+              "zhuge-e-o014a"
+            ],
+            "sentences": [
+              {
+                "text": "孙权派周瑜、程普、鲁肃等率水军随诸葛亮往与刘备合力，共拒曹操。",
+                "events": [
+                  "zhuge-e-o014a"
+                ],
+                "evidence": [
+                  "zhuge-e-o014a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "supplies",
+            "stage": "assist",
+            "title": "督三郡赋税",
+            "time_events": [
+              "zhuge-e-o015a"
+            ],
+            "sentences": [
+              {
+                "text": "刘备收江南后，以诸葛亮为军师中郎将，令他督零陵、桂阳、长沙三郡，调赋税以充军资。",
+                "events": [
+                  "zhuge-e-o015a"
+                ],
+                "evidence": [
+                  "zhuge-e-o015a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "chengdu",
+            "stage": "yizhou",
+            "title": "溯江与留守成都",
+            "time_events": [
+              "xianzhu-e-o041c",
+              "zhuge-e-o017b"
+            ],
+            "sentences": [
+              {
+                "text": "诸葛亮与张飞、赵云等率兵溯流，平定白帝、江州、江阳。成都平定后，他任军师将军、署左将军府事，刘备外出时常镇成都，供给兵粮。",
+                "events": [
+                  "xianzhu-e-o041c",
+                  "zhuge-e-o017b"
+                ],
+                "evidence": [
+                  "xianzhu-e-o041c-q",
+                  "zhuge-e-o017b-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "chancellor",
+            "stage": "yizhou",
+            "title": "受任丞相",
+            "time_events": [
+              "zhuge-e-o019a"
+            ],
+            "sentences": [
+              {
+                "text": "刘备即皇帝位，策命诸葛亮为丞相，令其辅弼政事。",
+                "events": [
+                  "zhuge-e-o019a"
+                ],
+                "evidence": [
+                  "zhuge-e-o019a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "entrust",
+            "stage": "govern",
+            "title": "永安受托",
+            "time_events": [
+              "zhuge-e-o021a"
+            ],
+            "sentences": [
+              {
+                "text": "刘备在永安病笃，召诸葛亮付以后事；诸葛亮表示愿尽忠至死。刘备又诏刘禅，事丞相如父。",
+                "events": [
+                  "zhuge-e-o021a"
+                ],
+                "evidence": [
+                  "zhuge-e-o021a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "administration",
+            "stage": "govern",
+            "title": "开府领益州牧",
+            "time_events": [
+              "zhuge-e-o022a"
+            ],
+            "sentences": [
+              {
+                "text": "建兴元年，诸葛亮受封武乡侯，开府治事，后领益州牧，政事无论大小皆由他裁决。",
+                "events": [
+                  "zhuge-e-o022a"
+                ],
+                "evidence": [
+                  "zhuge-e-o022a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "south-campaign",
+            "stage": "south",
+            "title": "南征南中",
+            "time_events": [
+              "zhuge-e-o023a"
+            ],
+            "sentences": [
+              {
+                "text": "诸葛亮春率众南征，秋平南中，取得军资，随后整军备战。",
+                "events": [
+                  "zhuge-e-o023a"
+                ],
+                "evidence": [
+                  "zhuge-e-o023a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "hanzhong",
+            "stage": "north",
+            "title": "北驻汉中",
+            "time_events": [
+              "zhuge-e-o024a"
+            ],
+            "sentences": [
+              {
+                "text": "诸葛亮率诸军北驻汉中，临行前向后主上疏。",
+                "events": [
+                  "zhuge-e-o024a"
+                ],
+                "evidence": [
+                  "zhuge-e-o024a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "qishan",
+            "stage": "north",
+            "title": "初出祁山",
+            "time_events": [
+              "zhuge-e-o032a"
+            ],
+            "sentences": [
+              {
+                "text": "诸葛亮使赵云、邓芝为疑军据箕谷，自己率诸军攻祁山；南安、天水、安定三郡响应。",
+                "events": [
+                  "zhuge-e-o032a"
+                ],
+                "evidence": [
+                  "zhuge-e-o032a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "jieting",
+            "stage": "north",
+            "title": "街亭失利与自贬",
+            "time_events": [
+              "mingdi-e-o009b",
+              "zhuge-e-o035a"
+            ],
+            "sentences": [
+              {
+                "text": "《明帝纪》记张郃在街亭击破蜀军，三郡复平；《诸葛亮传》记诸葛亮降为右将军，仍行丞相事，统领事务如前。",
+                "events": [
+                  "mingdi-e-o009b",
+                  "zhuge-e-o035a"
+                ],
+                "evidence": [
+                  "mingdi-e-o009b-q",
+                  "zhuge-e-o035a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "chencang",
+            "stage": "north",
+            "title": "围陈仓而还",
+            "time_events": [
+              "zhuge-e-o035b"
+            ],
+            "sentences": [
+              {
+                "text": "诸葛亮再出散关围陈仓，粮尽退军；魏将王双率骑兵追击，诸葛亮与之交战，击破并斩王双。",
+                "events": [
+                  "zhuge-e-o035b"
+                ],
+                "evidence": [
+                  "zhuge-e-o035b-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "two-commandery",
+            "stage": "north",
+            "title": "取武都阴平",
+            "time_events": [
+              "zhuge-e-o036a",
+              "zhuge-e-o037a"
+            ],
+            "sentences": [
+              {
+                "text": "诸葛亮遣陈式攻武都、阴平，自己进至建威，郭淮退还，二郡平定；后主随后恢复其丞相之职。",
+                "events": [
+                  "zhuge-e-o036a",
+                  "zhuge-e-o037a"
+                ],
+                "evidence": [
+                  "zhuge-e-o036a-q",
+                  "zhuge-e-o037a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "qishan-again",
+            "stage": "north",
+            "title": "再出祁山",
+            "time_events": [
+              "mingdi-e-o021c"
+            ],
+            "sentences": [
+              {
+                "text": "《后主传》记诸葛亮再出军围祁山，开始用木牛运输，司马懿、张郃来援。",
+                "events": [
+                  "mingdi-e-o021c"
+                ],
+                "evidence": [
+                  "houzhu-q-O022"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "wuzhang",
+            "stage": "north",
+            "title": "渭南相持与屯田",
+            "time_events": [
+              "zhuge-e-o039a"
+            ],
+            "sentences": [
+              {
+                "text": "诸葛亮由斜谷出兵，以流马运输，据五丈原与司马懿相持。为解决粮食接续问题，他分兵屯田，准备久驻。",
+                "events": [
+                  "zhuge-e-o039a"
+                ],
+                "evidence": [
+                  "zhuge-e-o039a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "burial",
+            "stage": "last",
+            "title": "遗命简葬",
+            "time_events": [
+              "zhuge-e-o041a"
+            ],
+            "sentences": [
+              {
+                "text": "诸葛亮遗命葬于汉中定军山，依山为坟，墓穴仅容棺木，以平常衣服入殓，不用随葬器物。",
+                "events": [
+                  "zhuge-e-o041a"
+                ],
+                "evidence": [
+                  "zhuge-e-o041a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "death",
+            "stage": "last",
+            "title": "卒于军中",
+            "time_events": [
+              "zhuge-e-o040a"
+            ],
+            "sentences": [
+              {
+                "text": "《诸葛亮传》记诸葛亮八月病卒于军中，年五十四。",
+                "events": [
+                  "zhuge-e-o040a"
+                ],
+                "evidence": [
+                  "zhuge-e-o040a-q"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "death-accounts",
+            "stage": "last",
+            "title": "病卒记载的异说",
+            "time_events": [
+              "zhuge-e-p039a"
+            ],
+            "sentences": [
+              {
+                "text": "裴注引《魏书》另称诸葛亮烧营退入谷后病卒；裴松之对此提出异议，认为入谷发丧被写成入谷而卒。",
+                "events": [
+                  "zhuge-e-p039a"
+                ],
+                "evidence": [
+                  "zhuge-e-p039a-q",
+                  "zhuge-q-p042-judgment"
+                ]
+              }
+            ]
+          }
+        ],
+        "placements": [
+          {
+            "event": "mingdi-e-o007e",
+            "stage": "north"
+          },
+          {
+            "event": "mingdi-e-p007d",
+            "stage": null
+          },
+          {
+            "event": "mingdi-e-o008a",
+            "stage": "north"
+          },
+          {
+            "event": "mingdi-e-o009a",
+            "stage": "north"
+          },
+          {
+            "event": "mingdi-e-o009b",
+            "stage": "north"
+          },
+          {
+            "event": "mingdi-e-o012c",
+            "stage": "north"
+          },
+          {
+            "event": "mingdi-e-p013c",
+            "stage": "north"
+          },
+          {
+            "event": "mingdi-e-p013d",
+            "stage": "north"
+          },
+          {
+            "event": "mingdi-e-o021c",
+            "stage": "north"
+          },
+          {
+            "event": "mingdi-e-o038c",
+            "stage": "north"
+          },
+          {
+            "event": "mingdi-e-p034a",
+            "stage": "north"
+          },
+          {
+            "event": "mingdi-e-o041a",
+            "stage": "last"
+          },
+          {
+            "event": "xiahoucao-e-o053b",
+            "stage": "north"
+          },
+          {
+            "event": "chengguo-e-o017",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o201",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o228",
+            "stage": null
+          },
+          {
+            "event": "liusima-e-o234",
+            "stage": null
+          },
+          {
+            "event": "zhangle-e-o036b",
+            "stage": "north"
+          },
+          {
+            "event": "zhangle-e-o038a",
+            "stage": "north"
+          },
+          {
+            "event": "xianzhu-e-o027a",
+            "stage": "alliance"
+          },
+          {
+            "event": "huanchen-e-o007a",
+            "stage": null
+          },
+          {
+            "event": "hechang-e-c1b76822a6660a4afc9a",
+            "stage": null
+          },
+          {
+            "event": "xinyang-e-97c64ee0ba0e8319030a",
+            "stage": "last"
+          },
+          {
+            "event": "xinyang-e-2ec229e98bffe057bac4",
+            "stage": null
+          },
+          {
+            "event": "mantian-e-o022b",
+            "stage": null
+          },
+          {
+            "event": "mantian-e-o124",
+            "stage": null
+          },
+          {
+            "event": "mantian-e-o125a",
+            "stage": "north"
+          },
+          {
+            "event": "mantian-e-o129",
+            "stage": null
+          },
+          {
+            "event": "xuhuwang-e-d07359cfa82ee6907644",
+            "stage": null
+          },
+          {
+            "event": "liuermu-e-o084",
+            "stage": null
+          },
+          {
+            "event": "xianzhu-e-o036a",
+            "stage": "assist"
+          },
+          {
+            "event": "xianzhu-e-o025a",
+            "stage": "alliance"
+          },
+          {
+            "event": "liang-envoy",
+            "stage": "alliance"
+          },
+          {
+            "event": "xianzhu-e-p033a",
+            "stage": "assist"
+          },
+          {
+            "event": "xianzhu-e-o041c",
+            "stage": "yizhou"
+          },
+          {
+            "event": "xianzhu-e-o043c",
+            "stage": "yizhou"
+          },
+          {
+            "event": "xianzhu-e-o051a",
+            "stage": "yizhou"
+          },
+          {
+            "event": "xianzhu-e-p040e",
+            "stage": null
+          },
+          {
+            "event": "xianzhu-e-o064a",
+            "stage": "yizhou"
+          },
+          {
+            "event": "xianzhu-e-o066b",
+            "stage": "yizhou"
+          },
+          {
+            "event": "xianzhu-e-o066d",
+            "stage": "yizhou"
+          },
+          {
+            "event": "xianzhu-e-o071a",
+            "stage": "yizhou"
+          },
+          {
+            "event": "xianzhu-e-o073a",
+            "stage": "govern"
+          },
+          {
+            "event": "xianzhu-e-o073b",
+            "stage": "govern"
+          },
+          {
+            "event": "xianzhu-e-o073c",
+            "stage": "govern"
+          },
+          {
+            "event": "xianzhu-e-o075a",
+            "stage": "govern"
+          },
+          {
+            "event": "xianzhu-e-p050a",
+            "stage": "govern"
+          },
+          {
+            "event": "xianzhu-e-p050b",
+            "stage": null
+          },
+          {
+            "event": "xianzhu-e-p050c",
+            "stage": "govern"
+          },
+          {
+            "event": "houzhu-e-p007a",
+            "stage": null
+          },
+          {
+            "event": "houzhu-e-p009m0",
+            "stage": "govern"
+          },
+          {
+            "event": "houzhu-e-o013a",
+            "stage": "north"
+          },
+          {
+            "event": "houzhu-e-p016m0",
+            "stage": "north"
+          },
+          {
+            "event": "houzhu-e-o020m0",
+            "stage": "north"
+          },
+          {
+            "event": "houzhu-e-o024a",
+            "stage": "north"
+          },
+          {
+            "event": "houzhu-e-o025a",
+            "stage": "north"
+          },
+          {
+            "event": "houzhu-e-o026m0",
+            "stage": null
+          },
+          {
+            "event": "houzhu-e-p090m0",
+            "stage": null
+          },
+          {
+            "event": "erfei-e-o009",
+            "stage": null
+          },
+          {
+            "event": "erfei-e-o051",
+            "stage": "assist"
+          },
+          {
+            "event": "zhuge-e-o002a",
+            "stage": "early"
+          },
+          {
+            "event": "zhuge-e-o003a",
+            "stage": "early"
+          },
+          {
+            "event": "zhuge-e-p004a",
+            "stage": "early"
+          },
+          {
+            "event": "zhuge-e-o005a",
+            "stage": "service"
+          },
+          {
+            "event": "zhuge-e-o006a",
+            "stage": "service"
+          },
+          {
+            "event": "zhuge-e-o008a",
+            "stage": null
+          },
+          {
+            "event": "zhuge-e-p008a",
+            "stage": "service"
+          },
+          {
+            "event": "zhuge-e-o009a",
+            "stage": "alliance"
+          },
+          {
+            "event": "zhuge-e-o011a",
+            "stage": "alliance"
+          },
+          {
+            "event": "zhuge-e-o014a",
+            "stage": "alliance"
+          },
+          {
+            "event": "zhuge-e-o015a",
+            "stage": "assist"
+          },
+          {
+            "event": "zhuge-e-p011b",
+            "stage": null
+          },
+          {
+            "event": "zhuge-e-p011c",
+            "stage": null
+          },
+          {
+            "event": "zhuge-e-p012a",
+            "stage": "alliance"
+          },
+          {
+            "event": "zhuge-e-o016a",
+            "stage": "assist"
+          },
+          {
+            "event": "zhuge-e-o017b",
+            "stage": "yizhou"
+          },
+          {
+            "event": "zhuge-e-o018a",
+            "stage": "yizhou"
+          },
+          {
+            "event": "zhuge-e-o019a",
+            "stage": "yizhou"
+          },
+          {
+            "event": "zhuge-e-o020a",
+            "stage": "yizhou"
+          },
+          {
+            "event": "zhuge-e-p016a",
+            "stage": null
+          },
+          {
+            "event": "zhuge-e-p018a",
+            "stage": null
+          },
+          {
+            "event": "zhuge-e-o021a",
+            "stage": "govern"
+          },
+          {
+            "event": "zhuge-e-o022a",
+            "stage": "govern"
+          },
+          {
+            "event": "zhuge-e-o022b",
+            "stage": "govern"
+          },
+          {
+            "event": "zhuge-e-o023a",
+            "stage": "south"
+          },
+          {
+            "event": "zhuge-e-p021a",
+            "stage": "govern"
+          },
+          {
+            "event": "zhuge-e-p022a",
+            "stage": "south"
+          },
+          {
+            "event": "zhuge-e-p023a",
+            "stage": "south"
+          },
+          {
+            "event": "zhuge-e-p023b",
+            "stage": "south"
+          },
+          {
+            "event": "zhuge-e-o024a",
+            "stage": "north"
+          },
+          {
+            "event": "zhuge-e-o031a",
+            "stage": "north"
+          },
+          {
+            "event": "zhuge-e-o032a",
+            "stage": "north"
+          },
+          {
+            "event": "zhuge-e-o035a",
+            "stage": "north"
+          },
+          {
+            "event": "zhuge-e-o035b",
+            "stage": "north"
+          },
+          {
+            "event": "zhuge-e-o036a",
+            "stage": "north"
+          },
+          {
+            "event": "zhuge-e-o037a",
+            "stage": "north"
+          },
+          {
+            "event": "zhuge-e-p026a",
+            "stage": null
+          },
+          {
+            "event": "zhuge-e-p028a",
+            "stage": "north"
+          },
+          {
+            "event": "zhuge-e-p029a",
+            "stage": "north"
+          },
+          {
+            "event": "zhuge-e-p031a",
+            "stage": "north"
+          },
+          {
+            "event": "zhuge-e-p031b",
+            "stage": "north"
+          },
+          {
+            "event": "zhuge-e-p033a",
+            "stage": "north"
+          },
+          {
+            "event": "zhuge-e-o039a",
+            "stage": "north"
+          },
+          {
+            "event": "zhuge-e-o040a",
+            "stage": "last"
+          },
+          {
+            "event": "zhuge-e-o041a",
+            "stage": "last"
+          },
+          {
+            "event": "zhuge-e-o043a",
+            "stage": null
+          },
+          {
+            "event": "zhuge-e-o044a",
+            "stage": null
+          },
+          {
+            "event": "zhuge-e-p034a",
+            "stage": "north"
+          },
+          {
+            "event": "zhuge-e-p034c",
+            "stage": "north"
+          },
+          {
+            "event": "zhuge-e-p034e",
+            "stage": "north"
+          },
+          {
+            "event": "zhuge-e-p035a",
+            "stage": null
+          },
+          {
+            "event": "zhuge-e-p037a",
+            "stage": "north"
+          },
+          {
+            "event": "zhuge-e-p039a",
+            "stage": "last"
+          },
+          {
+            "event": "zhuge-e-p049a",
+            "stage": null
+          },
+          {
+            "event": "zhuge-e-o081a",
+            "stage": null
+          },
+          {
+            "event": "zhuge-e-o083a",
+            "stage": null
+          },
+          {
+            "event": "zhuge-e-p050a",
+            "stage": null
+          },
+          {
+            "event": "guanzhang-e-o006a",
+            "stage": "yizhou"
+          },
+          {
+            "event": "guanzhang-e-o016a",
+            "stage": "yizhou"
+          },
+          {
+            "event": "guanzhang-e-o017a",
+            "stage": "yizhou"
+          },
+          {
+            "event": "guanzhang-e-o039a",
+            "stage": "yizhou"
+          },
+          {
+            "event": "guanzhang-e-o042a",
+            "stage": "yizhou"
+          },
+          {
+            "event": "guanzhang-e-o045a",
+            "stage": "north"
+          },
+          {
+            "event": "guanzhang-e-o045b",
+            "stage": "north"
+          },
+          {
+            "event": "guanzhang-e-p026a",
+            "stage": "north"
+          },
+          {
+            "event": "pangfa-e-p001a",
+            "stage": null
+          },
+          {
+            "event": "pangfa-e-o004b",
+            "stage": "assist"
+          },
+          {
+            "event": "pangfa-e-o005c",
+            "stage": "assist"
+          },
+          {
+            "event": "pangfa-e-o008d",
+            "stage": "yizhou"
+          },
+          {
+            "event": "pangfa-e-o021b",
+            "stage": null
+          },
+          {
+            "event": "pangfa-e-o027a",
+            "stage": "yizhou"
+          },
+          {
+            "event": "xumisun-e-o032",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o068",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o120",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o087",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o090",
+            "stage": null
+          },
+          {
+            "event": "xumisun-e-o091",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o009",
+            "stage": "yizhou"
+          },
+          {
+            "event": "dongliu-e-o011",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e2-liang-youjiao-four-friends",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o020",
+            "stage": "yizhou"
+          },
+          {
+            "event": "dongliu-e-o026",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o115",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o116",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o127",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o131",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o028",
+            "stage": "yizhou"
+          },
+          {
+            "event": "dongliu-e-o029",
+            "stage": "yizhou"
+          },
+          {
+            "event": "dongliu-e-o032",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o042",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o043",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o140",
+            "stage": "south"
+          },
+          {
+            "event": "dongliu-e-o141",
+            "stage": "south"
+          },
+          {
+            "event": "dongliu-e-o143",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o144",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o145",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o146",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o057",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o062",
+            "stage": "north"
+          },
+          {
+            "event": "dongliu-e-o068",
+            "stage": "north"
+          },
+          {
+            "event": "dongliu-e-o150",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o096",
+            "stage": null
+          },
+          {
+            "event": "dongliu-e-o097",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o001",
+            "stage": "yizhou"
+          },
+          {
+            "event": "liuliao-e-o011",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o016",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o020",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o022",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o025",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o027",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o073",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-r024",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o038",
+            "stage": "north"
+          },
+          {
+            "event": "liuliao-e-o039",
+            "stage": "north"
+          },
+          {
+            "event": "liuliao-e-o040",
+            "stage": "north"
+          },
+          {
+            "event": "liuliao-e-o074",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o076",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o044",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-r015",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o050",
+            "stage": "north"
+          },
+          {
+            "event": "liuliao-e-o051",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o078",
+            "stage": "north"
+          },
+          {
+            "event": "liuliao-e-o052",
+            "stage": "last"
+          },
+          {
+            "event": "liuliao-e-o079",
+            "stage": "last"
+          },
+          {
+            "event": "liuliao-e-o061",
+            "stage": "south"
+          },
+          {
+            "event": "liuliao-e-r016",
+            "stage": "north"
+          },
+          {
+            "event": "liuliao-e-r009",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o062",
+            "stage": null
+          },
+          {
+            "event": "liuliao-e-o063",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o011",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o030",
+            "stage": "south"
+          },
+          {
+            "event": "huowang-e-o039",
+            "stage": "north"
+          },
+          {
+            "event": "huowang-e-o066",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o067",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o069",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o080",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o082",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o091",
+            "stage": "north"
+          },
+          {
+            "event": "huowang-e-o097",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o159",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o160",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o111",
+            "stage": null
+          },
+          {
+            "event": "huowang-e-o113",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o005",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o006",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o019",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o052",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o121",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o062",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o070",
+            "stage": null
+          },
+          {
+            "event": "duzhou-e-o124",
+            "stage": null
+          },
+          {
+            "event": "huangli-e-o031",
+            "stage": null
+          },
+          {
+            "event": "huangli-e-o075",
+            "stage": null
+          },
+          {
+            "event": "huangli-e-o084",
+            "stage": null
+          },
+          {
+            "event": "huangli-e-o085",
+            "stage": null
+          },
+          {
+            "event": "huangli-e-o087",
+            "stage": null
+          },
+          {
+            "event": "jfj-e-o002b",
+            "stage": null
+          },
+          {
+            "event": "jfj-e-o005a",
+            "stage": "govern"
+          },
+          {
+            "event": "jfj-e-o005b",
+            "stage": "govern"
+          },
+          {
+            "event": "jfj-e-o007b",
+            "stage": null
+          },
+          {
+            "event": "jfj-e-o007c",
+            "stage": null
+          },
+          {
+            "event": "jfj-e-o022b",
+            "stage": "south"
+          },
+          {
+            "event": "jfj-e-o023a",
+            "stage": "south"
+          },
+          {
+            "event": "jfj-e-o023e",
+            "stage": null
+          },
+          {
+            "event": "jfj-e-o032b",
+            "stage": "north"
+          },
+          {
+            "event": "jfj-e-o032d",
+            "stage": "north"
+          },
+          {
+            "event": "jfj-e-o033a",
+            "stage": "north"
+          },
+          {
+            "event": "jfj-e-o034a",
+            "stage": null
+          },
+          {
+            "event": "jfj-e-o034b",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o007",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o013",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o042",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o068",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o161",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o162",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o091",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o164",
+            "stage": null
+          },
+          {
+            "event": "dengzhang-e-o166",
+            "stage": "north"
+          },
+          {
+            "event": "dengzhang-e2-lifu-asks-successor",
+            "stage": "last"
+          },
+          {
+            "event": "wuzhu-e-o014b",
+            "stage": "alliance"
+          },
+          {
+            "event": "wuzhu-e-o065a",
+            "stage": "govern"
+          },
+          {
+            "event": "wuzhu-e-o108b",
+            "stage": "north"
+          },
+          {
+            "event": "zongshi-e-o085",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-r2-yinli",
+            "stage": null
+          },
+          {
+            "event": "zhanggu-e-o066",
+            "stage": null
+          },
+          {
+            "event": "zhangyan-e-602463c9c58c65f352c7",
+            "stage": null
+          },
+          {
+            "event": "zhouyu-e-o045a",
+            "stage": "alliance"
+          },
+          {
+            "event": "zhouyu-e-o061a",
+            "stage": "yizhou"
+          },
+          {
+            "event": "yululu-e-3f633c21d162130c357f",
+            "stage": null
+          },
+          {
+            "event": "yululu-e-5efac3d41e4f3cf2719c",
+            "stage": null
+          },
+          {
+            "event": "luxun-e-o026c",
+            "stage": null
+          },
+          {
+            "event": "santizhu064-e-sr-liang-letter-rotation",
+            "stage": null
+          }
+        ],
+        "compat": {
+          "anchors": {
+            "stage-revision-unversioned-early": "stage-early",
+            "stage-revision-961d1a43-early": "stage-early",
+            "stage-revision-unversioned-assist": "stage-assist",
+            "stage-revision-961d1a43-assist": "stage-assist",
+            "stage-revision-unversioned-south": "stage-south",
+            "stage-revision-961d1a43-south": "stage-south"
+          },
+          "sources": {},
+          "stage_groups": {
+            "revision-unversioned-early": [
+              "early",
+              "service"
+            ],
+            "revision-961d1a43-early": [
+              "early",
+              "service"
+            ],
+            "revision-unversioned-assist": [
+              "assist",
+              "yizhou"
+            ],
+            "revision-961d1a43-assist": [
+              "assist",
+              "yizhou"
+            ],
+            "revision-unversioned-south": [
+              "south",
+              "north"
+            ],
+            "revision-961d1a43-south": [
+              "south",
+              "north"
+            ]
+          }
+        }
       }
     },
     "wudi-p0172": {
@@ -8324,11 +11179,11 @@
           },
           {
             "id": "redcliffs",
-            "title": "决战赤壁"
+            "title": "赤壁前后"
           },
           {
             "id": "river",
-            "title": "沿江攻守"
+            "title": "沿江经营"
           },
           {
             "id": "jingzhou",
@@ -8336,11 +11191,11 @@
           },
           {
             "id": "king",
-            "title": "称王与吴蜀复通"
+            "title": "称藩与称王"
           },
           {
             "id": "emperor",
-            "title": "称帝与迁都"
+            "title": "称帝治国"
           },
           {
             "id": "late",
@@ -8380,7 +11235,7 @@
             ],
             "sentences": [
               {
-                "text": "孙策去世，将事授权孙权；张昭劝孙权暂抑哀情，换服上马出巡军队。",
+                "text": "孙策死后，孙权承接其事。张昭劝孙权暂抑哀情，换服上马出巡军队。",
                 "events": [
                   "wuzhu-e-o004a"
                 ],
@@ -8449,7 +11304,7 @@
           },
           {
             "id": "sunquan-huangzu",
-            "stage": "redcliffs",
+            "stage": "succeed",
             "title": "再征黄祖",
             "time_events": [
               "wuzhu-e-o012a"
@@ -8695,7 +11550,7 @@
             ],
             "sentences": [
               {
-                "text": "蜀使陈震来贺，孙权与蜀约定分州疆界，立盟相守。",
+                "text": "蜀使陈震来贺，孙权与蜀议定天下诸州的分属方案，以函谷关划分司州，并制订盟书。",
                 "events": [
                   "wuzhu-e-o089a"
                 ],
@@ -8727,13 +11582,13 @@
           {
             "id": "sunquan-taxes",
             "stage": "emperor",
-            "title": "宽免逋欠",
+            "title": "宽缓逋欠",
             "time_events": [
               "wuzhu-e-o107a"
             ],
             "sentences": [
               {
-                "text": "孙权以兵役久、民困且岁收不登，下诏宽免逋欠，停止督课。",
+                "text": "孙权以兵役久、民困且岁收不登，下诏宽缓逋欠，不再催督征收。",
                 "events": [
                   "wuzhu-e-o107a"
                 ],
@@ -8901,7 +11756,7 @@
           },
           {
             "event": "wendi-e-o010a",
-            "stage": "jingzhou"
+            "stage": "king"
           },
           {
             "event": "wendi-e-o024a",
@@ -8981,7 +11836,7 @@
           },
           {
             "event": "zhangle-e-o012b",
-            "stage": "jingzhou"
+            "stage": "king"
           },
           {
             "event": "zhangle-e-o013c",
@@ -9137,7 +11992,7 @@
           },
           {
             "event": "sunshi-e-o036a",
-            "stage": "emperor"
+            "stage": null
           },
           {
             "event": "wuzhu-e-o001a",
@@ -9213,7 +12068,7 @@
           },
           {
             "event": "wuzhu-e-o012a",
-            "stage": "redcliffs"
+            "stage": "succeed"
           },
           {
             "event": "wuzhu-e-o013a",
@@ -9425,7 +12280,7 @@
           },
           {
             "event": "wuzhu-e-p036a",
-            "stage": "king"
+            "stage": null
           },
           {
             "event": "wuzhu-e-o064a",
@@ -9749,7 +12604,7 @@
           },
           {
             "event": "zhouyu-e-o009a",
-            "stage": "redcliffs"
+            "stage": "succeed"
           },
           {
             "event": "zhouyu-e-o009c",
@@ -9789,11 +12644,11 @@
           },
           {
             "event": "zhouyu-e-o023b",
-            "stage": "redcliffs"
+            "stage": null
           },
           {
             "event": "zhouyu-e-o024a",
-            "stage": "succeed"
+            "stage": null
           },
           {
             "event": "zhouyu-e-p012c",
@@ -9865,7 +12720,7 @@
           },
           {
             "event": "zhouyu-e-o069b",
-            "stage": "redcliffs"
+            "stage": "succeed"
           },
           {
             "event": "zhouyu-e-o070b",
@@ -9921,11 +12776,11 @@
           },
           {
             "event": "zhouyu-e-o087a",
-            "stage": "jingzhou"
+            "stage": "river"
           },
           {
             "event": "zhouyu-e-o088a",
-            "stage": "jingzhou"
+            "stage": null
           },
           {
             "event": "zhouyu-e-o089b",
@@ -10017,7 +12872,7 @@
           },
           {
             "event": "luxun-e-p003a",
-            "stage": "jingzhou"
+            "stage": null
           },
           {
             "event": "luxun-e-o015a",
@@ -10097,7 +12952,7 @@
           },
           {
             "event": "jfj-e-p002a",
-            "stage": "king"
+            "stage": null
           },
           {
             "event": "jfj-e-p003a",
@@ -10265,7 +13120,7 @@
           },
           {
             "event": "mingdi-e-o011a",
-            "stage": null
+            "stage": "king"
           },
           {
             "event": "huanchen-e-o004b",
@@ -10289,7 +13144,7 @@
           },
           {
             "event": "mantian-e-o058",
-            "stage": null
+            "stage": "emperor"
           },
           {
             "event": "mantian-e-o068",
@@ -10301,11 +13156,11 @@
           },
           {
             "event": "mantian-e-o071",
-            "stage": null
+            "stage": "emperor"
           },
           {
             "event": "wuzhu-e-o057a",
-            "stage": null
+            "stage": "king"
           },
           {
             "event": "hequan-e-o049b",
@@ -10321,7 +13176,7 @@
           },
           {
             "event": "hequan-e-o056",
-            "stage": null
+            "stage": "river"
           },
           {
             "event": "hequan-e-p003",
@@ -10449,7 +13304,7 @@
           },
           {
             "event": "chengguo-e-o128",
-            "stage": null
+            "stage": "king"
           },
           {
             "event": "chengguo-e-p173",
@@ -10673,11 +13528,11 @@
           },
           {
             "event": "wuzhu-e-o028a",
-            "stage": null
+            "stage": "river"
           },
           {
             "event": "wuzhu-e-o079a",
-            "stage": null
+            "stage": "king"
           },
           {
             "event": "zhanggu-e-o007",
@@ -11041,7 +13896,7 @@
           },
           {
             "event": "wuzhu-e-o065a",
-            "stage": null
+            "stage": "king"
           },
           {
             "event": "zhanggu-e-o090",
@@ -11097,10 +13952,6 @@
           },
           {
             "event": "santizhu059-e-sr-zhangchun-death",
-            "stage": null
-          },
-          {
-            "event": "santizhu059-e-sr-zhugeyi-feint",
             "stage": null
           },
           {
@@ -11261,7 +14112,7 @@
           },
           {
             "event": "wudi-e-o185b",
-            "stage": null
+            "stage": "river"
           },
           {
             "event": "wuwen-e-1605379c1deeb43170ea",
@@ -11605,7 +14456,7 @@
           },
           {
             "event": "shiyi-e-66fac5fbb5ea571aafc7",
-            "stage": null
+            "stage": "emperor"
           },
           {
             "event": "shiyi-e-6b07e58fc58859d67c83",
@@ -11941,7 +14792,7 @@
           },
           {
             "event": "zhangyan-e-0203f0fb605d28c95273",
-            "stage": null
+            "stage": "late"
           },
           {
             "event": "zhangyan-e-126b8c30cefc38b1c7eb",
@@ -11973,7 +14824,7 @@
           },
           {
             "event": "zhangyan-e-47616b3612550d9fbdb5",
-            "stage": null
+            "stage": "emperor"
           },
           {
             "event": "zhangyan-e-4ad0d37ee7f1aa83f68c",
@@ -12001,7 +14852,7 @@
           },
           {
             "event": "zhangyan-e-682ce22a2d51f8eaed09",
-            "stage": null
+            "stage": "river"
           },
           {
             "event": "zhangyan-e-6f343ed4bdf6ea0d2cb7",
@@ -12060,10 +14911,6 @@
             "stage": null
           },
           {
-            "event": "zhangyan-e-c8203bb1a2e01fa3210b",
-            "stage": null
-          },
-          {
             "event": "zhangyan-e-c97ae6a6d9143065562c",
             "stage": null
           },
@@ -12085,9 +14932,33 @@
           }
         ],
         "compat": {
-          "anchors": {},
+          "anchors": {
+            "stage-revision-unversioned-redcliffs": "stage-succeed",
+            "stage-revision-29bce2bb-redcliffs": "stage-succeed",
+            "stage-revision-unversioned-jingzhou": "stage-river",
+            "stage-revision-29bce2bb-jingzhou": "stage-river"
+          },
           "sources": {},
-          "stage_groups": {}
+          "stage_groups": {
+            "revision-unversioned-redcliffs": [
+              "succeed",
+              "redcliffs"
+            ],
+            "revision-29bce2bb-redcliffs": [
+              "succeed",
+              "redcliffs"
+            ],
+            "revision-unversioned-jingzhou": [
+              "river",
+              "jingzhou",
+              "king"
+            ],
+            "revision-29bce2bb-jingzhou": [
+              "river",
+              "jingzhou",
+              "king"
+            ]
+          }
         }
       }
     },

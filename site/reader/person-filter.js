@@ -1,7 +1,7 @@
-import {bindFloatingPanel} from './floating-panel.js?v=bc51b5632c56d390';
+import {bindFloatingPanel} from './floating-panel.js?v=5354103c3b299de1';
 // Suggestions use explicit participation, never mentions or name inference.
 export function eventPeople(data, visiblePeople, normalize) {
-  const participants=new Set(data.events.flatMap(e=>e.participants.map(p=>p.person)));
+  const participants=new Set(data.directory_counts?Object.keys(data.directory_counts):data.events.flatMap(e=>e.participants.map(p=>p.person)));
   const preferred=new Set((visiblePeople||[]).map(p=>p.id));
   const evidence=new Map(data.evidence.map(e=>[e.id,e]));
   const names=new Map();
@@ -18,7 +18,7 @@ export function personMatches(people, query, normalize) {
   const needle=normalize(query.trim());
   return people.filter(p=>p.eligible&&(needle?p.search.some(s=>s.includes(needle)):p.preferred));
 }
-export function mountPersonFilter(host,people,{selected,esc,cv,normalize,onSelect,restoreFocus=false}) {
+export function mountPersonFilter(host,people,{selected,esc,cv,normalize,onSelect,restoreFocus=false,loadPeople=null}) {
   const text=s=>esc(cv(s));
   const chosen=()=>people.find(p=>p.id===selected);
   host.innerHTML=`<label for="person-filter">${text('人物')}</label><div class="person-combo-input">
@@ -42,7 +42,13 @@ export function mountPersonFilter(host,people,{selected,esc,cv,normalize,onSelec
     if(active>=0){input.setAttribute('aria-activedescendant',list.children[active].id);list.children[active].scrollIntoView({block:'nearest'});}
     else input.removeAttribute('aria-activedescendant');
   }
+  let loading=null,loaded=!loadPeople;
   function open(query='') {
+    if(!loaded&&!loading){
+      loading=loadPeople().then(result=>{people=result;loaded=true;if(!popup.hidden&&host.isConnected)open(input.value);}).catch(()=>{
+        if(host.isConnected)status.textContent=cv('人物暂无法载入，请重新输入重试。');
+      }).finally(()=>loading=null);
+    }
     const matches=personMatches(people,query,normalize);
     options=query.trim()?matches.slice(0,60):[{id:'',name:'全部人物',detail:''},...matches];
     if(!query.trim()&&selected&&!options.some(p=>p.id===selected)&&chosen())options.splice(1,0,chosen());

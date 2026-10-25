@@ -1,3 +1,5 @@
 {
-  "dataRoot": "./data/"
+  "dataRoot": "./data/",
+  "bookFile": "knowledge/runtime/book.json",
+  "runtimeRoot": "knowledge/runtime/"
 }

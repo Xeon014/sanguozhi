@@ -80,7 +80,7 @@ export function filteredOverviewItems(events, editorial, qs, normalize=s=>String
     const categories=item.group?.categories||editorial.records[item.id]?.categories||[];
     if(category&&!categories.includes(category))return false;
     if(person&&!members.some(e=>e.participants.some(p=>p.person===person)))return false;
-    if(needle&&![item.group?.title||'',...members.flatMap(e=>[e.title,e.place?.text||'',...e.accounts.map(a=>a.text)])].some(s=>normalize(s).includes(needle)))return false;
+    if(needle&&![item.group?.title||'',editorial.records[item.id]?.title||'',...members.flatMap(e=>[e.title,e.place?.text||'',...e.accounts.map(a=>a.text)])].some(s=>normalize(s).includes(needle)))return false;
     return true;
   }).sort((a,b)=>(a.anchor.time.year??Infinity)-(b.anchor.time.year??Infinity));
 }

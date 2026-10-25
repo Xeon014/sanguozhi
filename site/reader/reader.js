@@ -1,9 +1,11 @@
-import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=bc51b5632c56d390';
-import {biographyContext} from './profiles.js?v=bc51b5632c56d390';
-import {topicDirectory, renderTopic} from './topics.js?v=bc51b5632c56d390';
-import {mountAtlas, atlasHash, canonicalAtlasHomeHash} from './atlas.js?v=bc51b5632c56d390';
-import {filteredOverviewItems} from './event-editorial.js?v=bc51b5632c56d390';
-import {bindFloatingPanel} from './floating-panel.js?v=bc51b5632c56d390';
+import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=5354103c3b299de1';
+import {biographyContext} from './profiles.js?v=5354103c3b299de1';
+import {topicDirectory, renderTopic} from './topics.js?v=5354103c3b299de1';
+import {mountAtlas, atlasHash, canonicalAtlasHomeHash} from './atlas.js?v=5354103c3b299de1';
+import {filteredOverviewItems} from './event-editorial.js?v=5354103c3b299de1';
+import {bindFloatingPanel} from './floating-panel.js?v=5354103c3b299de1';
+import {bindPeopleLoading,bindLifeNavigation} from './people-reading.js?v=5354103c3b299de1';
+import {createJSONLoader,attachRuntime} from './data-loader.js?v=5354103c3b299de1';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -18,6 +20,13 @@ let atlasPresentation;
 const normalize = s => simplified(String(s)).normalize('NFKC').toLowerCase();
 const cache = new Map();
 const assetVersion = new URL(import.meta.url).searchParams.get('v');
+const json=createJSONLoader(location.href,assetVersion);
+let runtimePath,anchorsPath;
+const runtime=async path=>{
+  const value=await json(runtimePath+path);
+  if(value.source_sha256&&value.source_sha256!==book.source_sha256)throw Error('查询资料与当前文本版本不一致');
+  return value;
+};
 const simplified = window.OpenCC?.Converter({from:'t',to:'cn'}) || (s => s);
 const traditional = window.OpenCC?.Converter({from:'cn',to:'t'}) || (s => s);
 const cv = s => prefs?.zh === 't' ? traditional(String(s)) : simplified(String(s));
@@ -29,11 +38,6 @@ const chapterCaption = s => {const c=collection(s.id);return c?`${c.label} · �
 const noteClass = kind => Object.keys(book.note_types).indexOf(kind) % 2 === 1 ? 'note-secondary' : 'note-primary';
 const url = (id, target = '') => `#/read/${encodeURIComponent(id)}${target ? '/' + encodeURIComponent(target) : ''}`;
 const resourceURL = path => root + 'resources/' + path.split('/').map(encodeURIComponent).join('/');
-async function json(path, options) {
-  const address=new URL(path,location.href);
-  if(assetVersion)address.searchParams.set('v',assetVersion);
-  const r=await fetch(address,options);if(!r.ok)throw Error(`读取失败（${r.status}）`);return r.json();
-}
 async function data(path, options) {
   if (!cache.has(path)) {
     const pending=json(root + path, options).catch(e => { if(cache.get(path)===pending)cache.delete(path); throw e; });
@@ -199,6 +203,8 @@ function viewSnapshot() {
   return {y:window.scrollY,anchor:el?.id,offset:el?.getBoundingClientRect().top,
     topic:$('.topic-page')?{mode:$('.topic-page').dataset.topicMode,a:$('.topic-page').dataset.topicA,b:$('.topic-page').dataset.topicB}:null,
     atlas:$('.atlas')?{scrollLeft:$('.atlas-scroll').scrollLeft,yearbookLayout:$('.atlas').dataset.yearbookLayout}:null,
+    atlasReturn:$('.yearbook-page')?.atlasReturn||null,
+    lifeRevision:main.querySelector('.person-biography')?.dataset.lifeRevision,
     lifeLimits:Object.fromEntries([...main.querySelectorAll('[data-life-list]')].map(e=>[e.dataset.lifeList,Number(e.dataset.limit)||20])),
     knowledgeLimit:Number($('.knowledge-page')?.dataset.limit)||0,
     open:[...main.querySelectorAll('details[open]')].map(el=>el.id || el.closest('.reading-group')?.id).filter(Boolean),
@@ -278,8 +284,9 @@ function focusTarget(id,{revealNotes=true}={}) {
 async function readSection(id,target,version,restoring=false) {
   const info=book.sections.find(x=>x.id===id);
   if(!info)throw Error('目录中没有这一章节');
-  const loaded=await data(`sections/${id}.json`);
+  const [loaded,anchors]=await Promise.all([data(`sections/${id}.json`),book.anchor_index||json(anchorsPath)]);
   if(version!==routeVersion)return;
+  book.anchor_index=anchors;
   section=loaded;currentId=id;blockMap=new Map(section.blocks.map(b=>[b.id,b]));groupForBlock=new Map();
   for(const g of section.groups)for(const bid of [...g.original,...g.translation])groupForBlock.set(bid,g.id);
   const aligned=section.status==='aligned';
@@ -394,6 +401,7 @@ async function route(){
   let parts;try{parts=(path||'/').split('/').filter(Boolean).map(decodeURIComponent);}catch{parts=[];}
   const qs=new URLSearchParams(query);
   main.dataset.page=parts[0]||'home';
+  main.peopleLoadingDispose?.();main.lifeNavigationDispose?.();
   $('.atlas')?.atlasDispose?.();
   main.querySelectorAll('[data-floating-panel]').forEach(panel=>panel.disposeFloating?.());
   main.innerHTML=`<p role="status">${cv('正在载入……')}</p>`;
@@ -406,7 +414,7 @@ async function route(){
       let atlas=await loadAtlas();if(version!==routeVersion)return;
       if(!atlas)throw Error('时代星图暂时不可用');
       if(['q','person','year'].some(k=>qs.get(k))){
-        const [catalog,editorial]=await Promise.all([json(site.knowledge.file),json(site.knowledge.editorial)]);
+        const [catalog,editorial]=await Promise.all([runtimePath?runtime('highlights.json'):json(site.knowledge.file),json(site.knowledge.editorial)]);
         if(version!==routeVersion)return;
         if(catalog.source_sha256!==book.source_sha256||editorial.source_sha256!==catalog.source_sha256||Object.entries(editorial.section_sha256).some(([id,sha])=>catalog.section_sha256[id]!==sha))throw Error('史事资料版本不一致');
         const filters=new URLSearchParams();for(const k of ['q','person','year'])if(qs.get(k))filters.set(k,qs.get(k));
@@ -418,15 +426,26 @@ async function route(){
     }
     else if(['people','events','timeline'].includes(parts[0])){
       if(!site.knowledge)throw Error('查询资料暂时不可用');
-      const content=await json(site.knowledge.file);if(version!==routeVersion)return;
+      const projected=runtimePath&&(parts[0]==='people'||(parts[0]==='events'&&(parts[1]||qs.get('view')==='highlights')));
+      const resource=parts[0]==='people'?(parts[1]?(qs.get('view')==='sources'?'sources/':'people/')+encodeURIComponent(parts[1])+'.json':'directory.json'):(parts[1]?'events/'+encodeURIComponent(parts[1])+'.json':'highlights.json');
+      const [content,presentation,classification]=await Promise.all([
+        projected?runtime(resource):json(site.knowledge.file),
+        !projected&&site.knowledge.profiles?json(site.knowledge.profiles):null,
+        parts[0]==='events'&&site.knowledge.editorial?json(site.knowledge.editorial).catch(loadError=>({loadError})):null
+      ]);if(version!==routeVersion)return;
+      if(projected)attachRuntime(content,runtime);
+      if(projected&&qs.get('person')&&!content.persons.some(p=>p.id===qs.get('person'))){
+        const chooser=await runtime('chooser.json');if(version!==routeVersion)return;
+        const person=chooser.persons.find(p=>p.id===qs.get('person'));if(person)content.persons.push(person);
+      }
       if(content.source_sha256!==book.source_sha256)throw Error('查询资料与当前文本版本不一致，暂不可查看');
-      const presentation=site.knowledge.profiles?await json(site.knowledge.profiles):null;if(version!==routeVersion)return;
       if(presentation&&(presentation.source_sha256!==content.source_sha256||Object.entries(presentation.section_sha256).some(([id,sha])=>content.section_sha256[id]!==sha)))throw Error('人物资料与当前文本版本不一致');
-      const profiles=presentation?.profiles||{};
+      const profiles=content.profiles||presentation?.profiles||{};
       let editorial=null;
       if(parts[0]==='events'&&site.knowledge.editorial){
         try{
-          editorial=await json(site.knowledge.editorial);if(version!==routeVersion)return;
+          editorial=classification;
+          if(editorial.loadError)throw editorial.loadError;
           if(editorial.source_sha256!==content.source_sha256||Object.entries(editorial.section_sha256).some(([id,sha])=>content.section_sha256[id]!==sha))throw Error('史事分类与当前文本版本不一致');
         }catch(error){
           editorial=null;
@@ -447,7 +466,13 @@ async function route(){
         }
       }
       const yearbookAtlas=cleanQS.get('view')==='highlights'?await loadAtlas():null;if(version!==routeVersion)return;
-      knowledgeTitle=renderKnowledge(content,{main,parts,qs:cleanQS,esc,cv,normalize,url,navigate:(hash,filterFocus)=>navigate(hash,filterFocus?{y:window.scrollY,filterFocus}:null,returnSearch,returnList),loadSection:id=>data(`sections/${id}.json`),saved,profiles,featuredPeopleLimit:site.knowledge.featuredPeopleLimit??40,personListHash:returnList?.hash.startsWith('#/people?')?returnList.hash:'#/people',eventHasContext:!!(returnList||returnSearch),editorial,atlas:yearbookAtlas,atlasEnabled:!!site.knowledge.atlas,sections,visiblePeople:site.knowledge.people??null,legacySources:parts[0]==='events'&&qs.get('view')==='sources',onChange:saveContext});
+      knowledgeTitle=renderKnowledge(content,{main,parts,qs:cleanQS,esc,cv,normalize,url,navigate:(hash,filterFocus)=>navigate(hash,{...(filterFocus?{y:window.scrollY,filterFocus}:{}),atlasReturn:$('.yearbook-page')?.atlasReturn||null},returnSearch,returnList),loadSection:id=>data(`sections/${id}.json`),saved,profiles,featuredPeopleLimit:site.knowledge.featuredPeopleLimit??40,personListHash:returnList?.hash.startsWith('#/people?')?returnList.hash:'#/people',eventHasContext:!!(returnList||returnSearch),editorial,atlas:yearbookAtlas,atlasEnabled:!!site.knowledge.atlas,sections,visiblePeople:site.knowledge.people??null,legacySources:parts[0]==='events'&&qs.get('view')==='sources',onChange:saveContext});
+      const yearbook=$('.yearbook-page');
+      if(yearbook&&saved?.atlasReturn){
+        yearbook.atlasReturn=saved.atlasReturn;
+        const back=yearbook.querySelector('.knowledge-tabs a[href*="view=atlas"]');
+        if(back)back.href=saved.atlasReturn.hash;
+      }
       if(parts[0]==='events'&&parts[1]&&editorial?.records[parts[1]]){
         const record=editorial.records[parts[1]];
         const metadata=document.createElement('div');metadata.className='event-classification';
@@ -481,6 +506,7 @@ async function route(){
     if(version!==routeVersion)return;
     restoreView(saved);
     if(!saved||saved.y===undefined){const target=main.querySelector('[data-source-target]');if(target){target.scrollIntoView({block:'start'});target.focus({preventScroll:true});}}
+    if(parts[0]==='people'){bindPeopleLoading(main,{text:cv});bindLifeNavigation(main,{onChange:saveContext});}
     updateNavigation(parts);renderedHash=location.hash;ready=true;saveContext();
     document.title=cv(`${parts[0]==='read'?section.title+' · ':knowledgeTitle?knowledgeTitle+' · ':''}${site.title}`);
   }catch(e){if(version===routeVersion){currentId=null;main.innerHTML=`<div class="error" role="alert">${esc(cv(e.message))}<p>${cv('可重新加载；若仍无法打开，请刷新页面重试。')}</p><p><button id="retry">${cv('重试')}</button> <a href="#/contents">${cv('返回目录')}</a></p></div>`;$('#retry').onclick=()=>{if(parts[0]==='topics')resetTopics();route();};}}
@@ -488,7 +514,8 @@ async function route(){
 async function boot(){
   $('.skip').onclick=e=>{e.preventDefault();main.focus();main.scrollIntoView();};
   const config=await json('config.json');root=new URL(config.dataRoot,location.href.split('#')[0]).href;
-  [book,site]=await Promise.all([data('book.json'),json('site.json')]);
+  [book,site]=await Promise.all([config.bookFile?json(config.bookFile):data('book.json'),json('site.json')]);
+  runtimePath=config.runtimeRoot||null;anchorsPath=runtimePath+'anchors.json';
   const assigned=site.collections.flatMap(c=>c.chapters);
   if(new Set(assigned).size!==assigned.length||assigned.some(id=>!book.sections.some(s=>s.id===id&&s.kind==='chapter'))||site.featured.some(id=>!assigned.includes(id))||book.sections.filter(s=>s.kind==='chapter').length!==assigned.length)throw Error('目录暂时无法载入');
   const extras=(site.supplements||[]).flatMap(g=>g.sections);
@@ -531,8 +558,12 @@ async function boot(){
     const detail=/^#\/(people|events)\//.test(target);
     let origin=null,list=null;
     if(a.hasAttribute('data-yearbook-layout')){navigate(target,viewSnapshot(),returnSearch,returnList);return;}
+    if(a.hasAttribute('data-yearbook-link')){
+      navigate(target,{atlasReturn:{hash:location.hash,view:viewSnapshot()}},null,null);return;
+    }
     if(a.closest('.yearbook-page')&&target.startsWith('#/events?')&&new URLSearchParams(target.split('?')[1]).get('view')==='atlas'){
-      navigate(target,{atlas:{yearbookLayout:new URLSearchParams(location.hash.split('?')[1]).get('layout')}},null,null);return;
+      const previous=a.closest('.knowledge-tabs')?$('.yearbook-page').atlasReturn?.view:null;
+      navigate(target,{...previous,atlas:{...previous?.atlas,yearbookLayout:new URLSearchParams(location.hash.split('?')[1]).get('layout')}},null,null);return;
     }
     if(!inNavigation){
       const title=$('#main h1')?.textContent||'当前阅读';

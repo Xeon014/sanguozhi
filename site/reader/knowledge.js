@@ -1,9 +1,11 @@
-import {personSources, renderBiography, evidenceKey, biographyScope, scopeIncludes, biographyAnchor} from './profiles.js?v=bc51b5632c56d390';
-import {matchesEditorial, canonicalEditorial, overviewItems, groupDateText, yearbookItems} from './event-editorial.js?v=bc51b5632c56d390';
-import {eventPeople, mountPersonFilter} from './person-filter.js?v=bc51b5632c56d390';
-import {readingProjection,quoteText,passageHTML} from './event-reading.js?v=bc51b5632c56d390';
-import {directoryPeople} from './people-directory.js?v=bc51b5632c56d390';
-import {inlineEventRow,mountInlineReading,citationText,mountCitationText} from './inline-reading.js?v=bc51b5632c56d390';
+import {personSources, renderBiography, evidenceKey, biographyScope, scopeIncludes, biographyAnchor} from './profiles.js?v=5354103c3b299de1';
+import {matchesEditorial, canonicalEditorial, overviewItems, groupDateText, yearbookItems} from './event-editorial.js?v=5354103c3b299de1';
+import {eventPeople, mountPersonFilter} from './person-filter.js?v=5354103c3b299de1';
+import {readingProjection,quoteText,passageHTML} from './event-reading.js?v=5354103c3b299de1';
+import {directoryPeople} from './people-directory.js?v=5354103c3b299de1';
+import {inlineEventRow,mountInlineReading,citationText,mountCitationText} from './inline-reading.js?v=5354103c3b299de1';
+import {retainMoreFocus} from './people-reading.js?v=5354103c3b299de1';
+import {knowledgeIndex} from './data-loader.js?v=5354103c3b299de1';
 // People and events share evidence; chronology is a view of events, never a second fact set.
 const BATCH = 40, SOURCE_BATCH = 20;
 const LAYERS = {original:'正文', pei:'裴注', modern:'现代注释'};
@@ -95,7 +97,7 @@ export function canonicalKnowledgeHash(parts, qs, data, profiles={}, editorial=n
 }
 // Exact source ranges are deduplicated only within the same version and attribution.
 export function sourceRecords(data, page, entity) {
-  const evidence=new Map(data.evidence.map(e=>[e.id,e])),groups=new Map();
+  const evidence=knowledgeIndex(data).evidence,groups=new Map();
   function add(refs, claim=null) {
     for(const id of refs||[]) {
       const e=evidence.get(id);if(!e)continue;
@@ -154,7 +156,7 @@ export function eventReadingSources(data,event,sections={}) {
 }
 
 export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url, navigate, loadSection, saved=null, visiblePeople=null, profiles={}, featuredPeopleLimit=40, personListHash='#/people', eventHasContext=false, editorial=null, atlasEnabled=false, atlas=null, sections:sourceSections={}, legacySources=false, onChange=()=>{}}) {
-  const people=new Map(data.persons.map(p=>[p.id,p])),sources=new Map(data.evidence.map(e=>[e.id,e]));
+  const {people,evidence:sources}=knowledgeIndex(data);
   const page=parts[0],id=parts[1],text=s=>esc(cv(s)),personURL=id=>'#/people/'+encodeURIComponent(id),eventURL=id=>'#/events/'+encodeURIComponent(id);
   const personLink=id=>`<a class="person-link" href="${personURL(id)}">${text(people.get(id).name)}</a>`;
   const factLabel=label=>label==='本文称谓'?'称谓':label.replace(/记载/g,'');
@@ -169,7 +171,7 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
   const yearSelect=(events,value)=>`<label class="filter-field"><span>${text('年份')}</span><select name="year" id="year-filter"><option value="">${text('全部时间')}</option>${years(events).map(y=>`<option value="${y}" ${String(y)===value?'selected':''}>${y}${text('年')}</option>`).join('')}<option value="relative" ${value==='relative'?'selected':''}>${text('相对时间')}</option><option value="undated" ${value==='undated'?'selected':''}>${text('年代未详')}</option></select></label>`;
   const eventRow=(e,mode,person)=>`<article class="${person?'person-event':mode==='timeline'?'timeline-entry':'event-card'}" id="event-card-${esc(e.id)}" data-context tabindex="-1">
     <p class="event-date">${text(dateText(e.time))}</p><div><h3><a href="${eventURL(e.id)}">${text(e.title)}</a></h3>${person?`<p class="event-role">${text(e.participants.find(p=>p.person===person).role)}</p>`:`<p class="event-summary">${text(e.accounts[0].text)}</p>`}${e.time.precision==='relative'&&e.time.after?`<p class="relative-context">${text('晚于')} <a href="${eventURL(e.time.after)}">${text(data.events.find(p=>p.id===e.time.after).title)}</a>${text('；具体年份及与其他史事的先后未详。')}</p>`:''}</div></article>`;
-  const readingRow=(e,person='',id='event-card-'+e.id,className='person-event')=>inlineEventRow(e,{text,esc,dateText,person,id,className});
+  const readingRow=(e,person='',id='event-card-'+e.id,className='person-event',displayDate=dateText,roleInSummary=false)=>inlineEventRow(e,{text,esc,dateText:displayDate,person,id,className,roleInSummary});
   const grouped=(events,person)=>{
     let previous=null;return events.map(e=>{
       const key=yearOf(e),heading=key!==previous?`${previous===null?'':'</section>'}<section class="chronology-group ${key==='relative'?'relative-events':key==='undated'?'undated-events':'timeline-year'}"><h2>${text(key==='relative'?'相对时间 · 年份未详':key==='undated'?'年代未详':key+' 年')}</h2>`:'';
@@ -193,8 +195,14 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
       main.querySelector('.knowledge-page').dataset.limit=String(Math.min(limit,items.length));
       for(const id of open){const node=container.querySelector('#'+CSS.escape(id));if(node)node.open=true;}
       const button=container.querySelector('.load-more');
-      if(button)button.onclick=()=>{const y=window.scrollY,known=new Set([...container.querySelectorAll('[data-context]')].map(e=>e.id));limit+=size;paint();window.scrollTo(0,y);
-        const focus=[...container.querySelectorAll('[data-context]')].find(e=>!known.has(e.id))||container.querySelector('#knowledge-more');focus?.focus({preventScroll:true});onChange();};
+      if(button){
+        const load=(automatic=false)=>{const y=window.scrollY,keepMoreFocus=automatic&&document.activeElement===button,old=Math.min(limit,items.length),known=new Set([...container.querySelectorAll('[data-context]')].map(e=>e.id));limit+=size;paint();window.scrollTo(0,y);
+          if(keepMoreFocus)retainMoreFocus(button,container,text);
+          if(!automatic){const focus=[...container.querySelectorAll('[data-context]')].find(e=>!known.has(e.id))||container.querySelector('#knowledge-more');focus?.focus({preventScroll:true});}
+          onChange();return Math.min(limit,items.length)-old;};
+        button.onclick=()=>load();
+        if(page==='people'){button.dataset.peopleMore='';button.peopleLoad=()=>load(true);}
+      }
       if(active&&container.contains(active))active.focus({preventScroll:true});
       else if(keepFocus)container.querySelector('#'+CSS.escape(keepFocus))?.focus({preventScroll:true});
     };paint();
@@ -258,7 +266,7 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
     if(qs.get('view')==='sources'){renderSources(p,heading);return p.name+' · 史料';}
     const related=data.events.filter(e=>e.participants.some(x=>x.person===p.id));
     const year=qs.get('year')||'',filtered=chronological(related.filter(e=>!year||yearOf(e)===year));
-    const biography=profile?.biography&&!year?renderBiography({bio:profile.biography,data,main,text,esc,dateText,url,sourceLabel,detailPath,saved,onChange,renderQuote:r=>citationText(r,text),readingRow:e=>readingRow(e,p.id,'life-event-'+e.id,'life-event inline-life-event')}):null;
+    const biography=profile?.biography&&!year?renderBiography({bio:profile.biography,data,main,text,esc,dateText,url,sourceLabel,detailPath,saved,onChange,renderQuote:r=>citationText(r,text),readingRow:(e,displayDate)=>readingRow(e,p.id,'life-event-'+e.id,'life-event inline-life-event',displayDate,true)}):null;
     main.innerHTML=`<article class="knowledge-page person-detail"><div class="person-cover"><div class="person-title">${heading}<p class="person-source-link"><a href="${sourceURL()}">${text('全部史料')}</a></p></div>
       ${fields.length?`<section class="person-facts" id="life-profile" data-context tabindex="-1"><div class="section-heading"><h2>${text('基本资料')}</h2></div><dl class="profile-facts">${fields.map(f=>`<div class="${f.text.length>16?'fact-wide':''}"><dt>${text(f.label)}</dt><dd>${text(f.text)}</dd></div>`).join('')}</dl><details class="inline-identity" id="person-identity-evidence" data-inline-identity><summary>${text('文献依据')}</summary><div class="inline-evidence-body" data-inline-content></div><div class="reading-actions"><button type="button" class="close-inline">${text('收起记载')}</button></div></details></section>`:''}
       </div>${biography?biography.html:related.length?`<section class="person-history"><div class="section-heading"><h2>${text('经历')}</h2><form class="experience-filter" role="search">${yearSelect(related,year)}</form></div>${profile?.biography?`<p><a href="${detailPath}">${text('生平概览')}</a></p>`:''}<div data-batch></div></section>`:`<section class="person-excerpts"><h2>${text('原文摘录')}</h2>${sourceRecords(data,page,p).slice(0,2).map(r=>sourceCard(r,true)).join('')}</section>`}</article>`;
@@ -366,7 +374,7 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
         const key=item.type+':'+item.id,node=nodes.get(key),g=item.group,chosen=selectedKey===key;
         const next=new URLSearchParams(qs);next.set('view','atlas');next.set('node',key);next.delete('group');next.delete('layout');
         const locate=node?`<a class="yearbook-locate" aria-label="${text('在时代星图中定位：'+node.title)}" href="#/events?${esc(next.toString())}">${text('星图')}</a>`:'';
-        const title=node?.title||g?.title||item.event.title;
+        const title=node?.title||g?.title||editorial.records[item.id]?.title||item.event.title;
         const content=`${g?`<p class="event-date">${text(groupDateText(item.events))}</p>`:`<p class="event-date">${text(Number.isInteger(item.event.time.year)?item.event.time.label:dateText(item.event.time))}</p>`}
           ${g?`<details id="group-${esc(g.id)}" ${chosen?'open':''}><summary>${text('相关记载')} · ${item.events.length}</summary>${chronological(item.events).map(e=>readingRow(e,'','event-card-'+e.id,'timeline-entry inline-timeline-entry')).join('')}<div class="reading-actions"><button type="button" class="close-overview">${text('收起')}</button></div></details>`:`<p>${text(item.event.accounts[0]?.text||'')}</p>${compact?`<a class="evidence-link" href="${eventURL(item.id)}">${text('史事详情')}</a>`:''}`}`;
         return `<article class="yearbook-item ${g?'overview-group':''}" id="${g?'overview-'+esc(g.id):'yearbook-'+esc(item.id)}" data-context tabindex="-1" data-node="${esc(key)}" ${chosen?'data-source-target':''}>
@@ -389,6 +397,6 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
   }
   const apply=formSubmit(page==='people'?'#/people':'#/events',highlights?{view:'highlights',...(qs.get('layout')==='compact'?{layout:'compact'}:{}),...(qs.get('node')?{node:qs.get('node')}:{})}:{},true);
   if(page!=='people')mountPersonFilter(main.querySelector('.person-combo'),eventPeople(data,visiblePeople,normalize),
-    {selected,esc,cv,normalize,restoreFocus:saved?.filterFocus==='person-filter',onSelect:()=>apply('person-filter')});
+    {selected,esc,cv,normalize,restoreFocus:saved?.filterFocus==='person-filter',onSelect:()=>apply('person-filter'),loadPeople:data.loadPeople?async()=>eventPeople(await data.loadPeople(),visiblePeople,normalize):null});
   return page==='people'?peopleTitle:highlights?'大事年表':'史事';
 }
