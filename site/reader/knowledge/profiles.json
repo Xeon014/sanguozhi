@@ -7890,6 +7890,10 @@
           {
             "id": "last",
             "title": "取蜀之议与病逝"
+          },
+          {
+            "id": "appraisal",
+            "title": "评说"
           }
         ],
         "nodes": [
@@ -8431,11 +8435,11 @@
           },
           {
             "event": "zhouyu-e-o024a",
-            "stage": null
+            "stage": "serve"
           },
           {
             "event": "zhouyu-e-p012a",
-            "stage": null
+            "stage": "appraisal"
           },
           {
             "event": "zhouyu-e-p012b",
@@ -8455,7 +8459,7 @@
           },
           {
             "event": "zhouyu-e-o036b",
-            "stage": null
+            "stage": "sunce"
           },
           {
             "event": "zhouyu-e-o037a",
@@ -8735,6 +8739,10 @@
           {
             "id": "wei",
             "title": "魏初任职与晚年"
+          },
+          {
+            "id": "appraisal",
+            "title": "评说"
           }
         ],
         "nodes": [
@@ -9086,7 +9094,7 @@
           },
           {
             "event": "wudi-e-p153a",
-            "stage": null
+            "stage": "appraisal"
           },
           {
             "event": "xiahoucao-e-o043c",
@@ -9094,15 +9102,15 @@
           },
           {
             "event": "cuimao-e-o070",
-            "stage": null
+            "stage": "service"
           },
           {
             "event": "liusima-e-o126",
-            "stage": null
+            "stage": "guard"
           },
           {
             "event": "liusima-e-o128",
-            "stage": null
+            "stage": "guard"
           },
           {
             "event": "zhangle-e-o001a",
@@ -9234,15 +9242,15 @@
           },
           {
             "event": "hechang-e-e1761c7def3de6c7158d",
-            "stage": null
+            "stage": "service"
           },
           {
             "event": "xuhuwang-e-cfe6b2499af254ba05f6",
-            "stage": null
+            "stage": "guard"
           },
           {
             "event": "wgc-e-0-e9",
-            "stage": null
+            "stage": "wei"
           },
           {
             "event": "guanzhang-e-o004a",
@@ -15736,7 +15744,17 @@
       }
     },
     "wudi-p0364": {
-      "fields": [],
+      "fields": [
+        {
+          "id": "sima-courtesy-20261025-f-wudi-p0364-1",
+          "key": "courtesy",
+          "label": "字",
+          "text": "仲达",
+          "evidence": [
+            "sima-courtesy-20261025-q-wudi-p0364"
+          ]
+        }
+      ],
       "directory": {
         "faction": "wei"
       }
@@ -15748,7 +15766,17 @@
       }
     },
     "shaodi-p0045": {
-      "fields": [],
+      "fields": [
+        {
+          "id": "sima-courtesy-20261025-f-shaodi-p0045-1",
+          "key": "courtesy",
+          "label": "字",
+          "text": "子上",
+          "evidence": [
+            "sima-courtesy-20261025-q-shaodi-p0045"
+          ]
+        }
+      ],
       "directory": {
         "faction": "wei"
       }

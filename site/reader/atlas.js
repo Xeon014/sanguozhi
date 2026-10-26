@@ -191,7 +191,7 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
     const related=people?`<section class="atlas-related"><h4>${text('相关人物')}</h4><div class="atlas-people">${people}</div></section>`:'';
     return `<div class="atlas-card-overview"><p class="atlas-card-year">${n.year}<small>${text('年')}</small></p><h3>${text(n.title)}</h3>
       <p class="atlas-card-time">${text(n.time)}</p>
-      ${grouped?`<details class="atlas-member-dates" id="atlas-member-dates"><summary>${text('组内纪年：'+years.join('、')+'年'+(other?'；另有相对时间或年代未详记载':''))}</summary>
+      ${grouped?`<details class="atlas-member-dates" id="atlas-member-dates"><summary>${text('组内纪年：'+years.join('、')+'年'+(other?'；另有相对时间或年份未定记载':''))}</summary>
       <ul>${n.members.map(m=>`<li><a href="#/events/${encodeURIComponent(m.id)}">${text(m.title)}</a><span>${text(m.time)}</span></li>`).join('')}</ul></details>`:''}
       <p class="atlas-summary">${text(n.summary)}</p>
       </div><div class="atlas-excerpts">${n.sources.map(s=>excerpt(s)).join('')}</div>

@@ -56,8 +56,8 @@ export function groupDateText(events) {
   const years=[...new Set(events.filter(e=>Number.isInteger(e.time.year)).map(e=>e.time.year))].sort((a,b)=>a-b);
   const parts=years.map(y=>`${y} 年`);
   if(events.some(e=>e.time.precision==='relative'))parts.push('另有相对时间记载');
-  if(events.some(e=>e.time.precision==='undated'))parts.push('另有年代未详记载');
-  return '记载纪年：'+(parts.join(' · ')||'年代未详');
+  if(events.some(e=>e.time.precision==='undated'))parts.push('另有年份未定记载');
+  return '记载纪年：'+(parts.join(' · ')||'年份未定');
 }
 
 // Filter whole reviewed groups; member dates never replace the anchor year.

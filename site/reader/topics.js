@@ -1,7 +1,7 @@
-import {eventSources, sourceLayerLabel, dateText} from './knowledge.js?v=91f1f8fab659b62e';
-import {evidenceKey} from './profiles.js?v=91f1f8fab659b62e';
-import {quoteText,readingProjection,passageHTML} from './event-reading.js?v=91f1f8fab659b62e';
-import {citationHeading} from './inline-reading.js?v=91f1f8fab659b62e';
+import {eventSources, sourceLayerLabel, dateText} from './knowledge.js?v=b827459d13797fb8';
+import {evidenceKey} from './profiles.js?v=b827459d13797fb8';
+import {quoteText,readingProjection,passageHTML} from './event-reading.js?v=b827459d13797fb8';
+import {citationHeading} from './inline-reading.js?v=b827459d13797fb8';
 
 // Topic excerpts retain their existing context view; event pages use the new
 // in-place paragraph projection. Do not couple these two reading interfaces.
@@ -70,7 +70,7 @@ export function renderTopic(topic, catalog, {main, qs, esc, cv, url, collection,
       <div class="topic-passage"><div class="topic-excerpt">${sourceText(r,false,true)}</div>
       ${context.some(n=>n.block!==r.block||n.quote!==r.quote)?disclosure(id+'-context','查看前后文',contextBody):''}</div>
       ${reading.notes.length?disclosure(id+'-notes','相关注释',reading.notes.map(n=>sourceText(n,true)).join('')):''}
-      <p class="topic-date">${text('相关史事纪年：'+dateText(event.time))}</p>
+      ${dateText(event.time)?`<p class="topic-date">${text('相关史事纪年：'+dateText(event.time))}</p>`:''}
     </article>`;
   }
   main.innerHTML=`<article class="topic-page" data-topic-mode="${mode}">

@@ -58135,7 +58135,8 @@
         "wangwei-q-9ffa7da77cd8aa45c6b5",
         "wangwei-q-1ac81176a8dafce82afe",
         "wuhuan-q-74208f1e1d3800fc75d8",
-        "wuhuan-q-795f128073847807d36d"
+        "wuhuan-q-795f128073847807d36d",
+        "sima-courtesy-20261025-q-wudi-p0364"
       ],
       "facts": [
         {
@@ -58144,6 +58145,14 @@
           "text": "司马防",
           "evidence": [
             "wudi-f-p134-wudi-p0364-069af8-q"
+          ]
+        },
+        {
+          "id": "sima-courtesy-20261025-f-wudi-p0364-1",
+          "label": "字",
+          "text": "仲达",
+          "evidence": [
+            "sima-courtesy-20261025-q-wudi-p0364"
           ]
         }
       ],
@@ -88809,9 +88818,19 @@
         "wangwei-q-295e09bf41500d52e2dc",
         "wangwei-q-64f38156d3f83a0b2d3a",
         "wangwei-q-00cc5c00c1aa81dc27a1",
-        "wangwei-q-c93d56f80459b881a0aa"
+        "wangwei-q-c93d56f80459b881a0aa",
+        "sima-courtesy-20261025-q-shaodi-p0045"
       ],
-      "facts": [],
+      "facts": [
+        {
+          "id": "sima-courtesy-20261025-f-shaodi-p0045-1",
+          "label": "字",
+          "text": "子上",
+          "evidence": [
+            "sima-courtesy-20261025-q-shaodi-p0045"
+          ]
+        }
+      ],
       "aliases": [],
       "mentions": [
         {
@@ -1057974,6 +1057993,42 @@
       "note_id": null,
       "start": 0,
       "end": 22,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "sima-courtesy-20261025-q-wudi-p0364",
+      "section": "chapter-021",
+      "block": "b-d68d7bbe87fd731f9c47",
+      "layer": "modern",
+      "quote": "司马宣王：即司马懿（公元 179—251）。字仲达，河内郡温县（今河南温县西）人",
+      "section_title": "王卫二刘傅传第二十一",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0048.xhtml",
+        "index": 490,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": "n-2a283b8975d30594266e",
+      "start": 35,
+      "end": 75,
+      "offset_unit": "unicode_code_point"
+    },
+    {
+      "id": "sima-courtesy-20261025-q-shaodi-p0045",
+      "section": "chapter-004",
+      "block": "b-5aaaf3a7cf1ed313ed57",
+      "layer": "modern",
+      "quote": "司马文王：即司马昭（公元 211—265）。司马懿的次子，字子上。",
+      "section_title": "三少帝纪第四",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0013_split_000.xhtml",
+        "index": 357,
+        "anchor": null
+      },
+      "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
+      "note_id": "n-b85c7a1f1426a456f6d5",
+      "start": 4,
+      "end": 37,
       "offset_unit": "unicode_code_point"
     }
   ],

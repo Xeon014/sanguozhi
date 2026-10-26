@@ -1,5 +1,5 @@
-import {retainMoreFocus} from './people-reading.js?v=91f1f8fab659b62e';
-import {citationHeading} from './inline-reading.js?v=91f1f8fab659b62e';
+import {retainMoreFocus} from './people-reading.js?v=b827459d13797fb8';
+import {citationHeading} from './inline-reading.js?v=b827459d13797fb8';
 // Presentation choices refer to existing facts; they never become a second event store.
 export const evidenceKey=e=>JSON.stringify([e.source_sha256,e.section,e.block,e.layer,e.attribution||'',e.start,e.end,e.quote]);
 
@@ -56,12 +56,20 @@ export function biographyContext(bio,saved) {
   return {...saved,lifeRevision:revision,anchor:ids(saved.anchor)[0],open:[...new Set((saved.open||[]).flatMap(ids))],lifeLimits:limits};
 }
 
+// Processing notes (why a year is absent) never reach the reader; real era
+// names, ages and relative wording stay untouched.
+const TIME_NOTE_SOURCE='原文未明示时间|原文叙在|原文纪年(?:语?见引[文句]|表达保留)|不换算公元年|不自行换算|未换算年份|未明示具体年|未明示年份|保留原纪年|保留相对纪年';
+export function cleanTimeLabel(raw){
+  let label=String(raw||'').trim()
+    .replace(new RegExp(`（[^（）]*(?:${TIME_NOTE_SOURCE})[^（）]*）`,'g'),'')
+    .replace(new RegExp(TIME_NOTE_SOURCE,'g'),'');
+  return label.replace(/^[\s；;，,]+|[\s；;，,]+$/g,'').replace(/([；;，,])\s*[；;，,]+/g,'$1');
+}
+
 export function biographyTime(time,dateText){
-  const label=String(time.label||'').trim();
-  const placeholder=new Set(['年代未详','年代不详','原文未明示时间','原文纪年见引文','不换算公元年','生平补叙']);
-  const meaningful=label.split(/[；;]/).map(s=>s.trim()).filter(s=>s&&!placeholder.has(s)).map(s=>s.replace(/^原文叙在/,'')).join('；');
-  if(!meaningful)return Number.isInteger(time.year)?`${time.year} 年`:'';
-  return dateText({...time,label:meaningful});
+  const label=cleanTimeLabel(time.label).split(/[；;]/).map(s=>s.trim()).filter(s=>s&&!['年代未详','年代不详','生平补叙'].includes(s)).join('；');
+  if(!label)return Number.isInteger(time.year)?`${time.year} 年`:'';
+  return dateText({...time,label});
 }
 
 export function biographyDate(node,events,dateText){
