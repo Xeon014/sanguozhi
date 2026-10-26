@@ -1,5 +1,5 @@
-import {quoteText} from './event-reading.js?v=b827459d13797fb8';
-import {knowledgeIndex} from './data-loader.js?v=b827459d13797fb8';
+import {quoteText} from './event-reading.js?v=2509883ee0e90517';
+import {knowledgeIndex} from './data-loader.js?v=2509883ee0e90517';
 // Read reviewed quotations in place; no summaries, facts or dates are inferred.
 export function citationText(record,text,tag='blockquote',className='') {
   return `<${tag} class="${className}" data-quote-ref="${text(record.ids?.[0]||record.id)}"><span role="status">${text('正在载入…')}</span></${tag}>`;
@@ -7,11 +7,11 @@ export function citationText(record,text,tag='blockquote',className='') {
 
 // A source heading is the precise paragraph entrance. Keep every quotation,
 // while offering an identical destination only once within a reading unit.
-export function citationHeading(record,{text,url,label,linked}) {
+export function citationHeading(record,{text,url,label,linked,ariaLabel}) {
   const href=url(record.section,record.block);
   if(linked?.has(href))return text(label);
   linked?.add(href);
-  return `<a class="evidence-link source-link" href="${text(href)}" aria-label="${text('阅读全文：'+label)}">${text(label)}</a>`;
+  return `<a class="evidence-link source-link" href="${text(href)}" aria-label="${text(ariaLabel||'阅读全文：'+label)}">${text(label)}</a>`;
 }
 
 export function mountCitationText(root,{data,text,loadSection,onChange=()=>{}}) {

@@ -1,12 +1,12 @@
-import {canonicalSearchHash} from './search.js?v=b827459d13797fb8';
-import {personSources, renderBiography, evidenceKey, biographyScope, scopeIncludes, biographyAnchor, cleanTimeLabel} from './profiles.js?v=b827459d13797fb8';
-import {matchesEditorial, canonicalEditorial, overviewItems, groupDateText, yearbookItems} from './event-editorial.js?v=b827459d13797fb8';
-import {eventPeople, mountPersonFilter} from './person-filter.js?v=b827459d13797fb8';
-import {readingProjection,quoteText,passageHTML} from './event-reading.js?v=b827459d13797fb8';
-import {directoryPeople} from './people-directory.js?v=b827459d13797fb8';
-import {inlineEventRow,mountInlineReading,citationText,citationHeading,mountCitationText} from './inline-reading.js?v=b827459d13797fb8';
-import {retainMoreFocus} from './people-reading.js?v=b827459d13797fb8';
-import {knowledgeIndex} from './data-loader.js?v=b827459d13797fb8';
+import {canonicalSearchHash} from './search.js?v=2509883ee0e90517';
+import {personSources, renderBiography, evidenceKey, biographyScope, scopeIncludes, biographyAnchor, cleanTimeLabel} from './profiles.js?v=2509883ee0e90517';
+import {matchesEditorial, canonicalEditorial, overviewItems, groupDateText, yearbookItems} from './event-editorial.js?v=2509883ee0e90517';
+import {eventPeople, mountPersonFilter} from './person-filter.js?v=2509883ee0e90517';
+import {readingProjection,quoteText,passageHTML} from './event-reading.js?v=2509883ee0e90517';
+import {directoryPeople} from './people-directory.js?v=2509883ee0e90517';
+import {inlineEventRow,mountInlineReading,citationText,citationHeading,mountCitationText} from './inline-reading.js?v=2509883ee0e90517';
+import {retainMoreFocus} from './people-reading.js?v=2509883ee0e90517';
+import {knowledgeIndex} from './data-loader.js?v=2509883ee0e90517';
 // People and events share evidence; chronology is a view of events, never a second fact set.
 const BATCH = 40, SOURCE_BATCH = 20;
 const LAYERS = {original:'正文', pei:'裴注', modern:'现代注释'};
@@ -165,7 +165,15 @@ export function eventReadingSources(data,event,sections={}) {
   return readingProjection(direct,support,sections);
 }
 
-export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url, navigate, loadSection, saved=null, visiblePeople=null, profiles={}, featuredPeople=[], personListHash='#/people', eventHasContext=false, editorial=null, atlasEnabled=false, atlas=null, sections:sourceSections={}, legacySources=false, onChange=()=>{}}) {
+export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url, navigate, loadSection, saved=null, visiblePeople=null, profiles={}, featuredPeople=[], personListHash='#/people', eventHasContext=false, editorial=null, reading={records:{}}, atlasEnabled=false, atlas=null, sections:sourceSections={}, legacySources=false, onChange=()=>{}}) {
+  // Display overrides do not mutate cached events, citations or their fingerprints.
+  // Biography formatting shallow-copies a time; its evidence array stays stable.
+  const eras=new Map(data.events.map(e=>[e.time.evidence,reading.records['event:'+e.id]]));
+  const dateText=time=>{
+    const r=eras.get(time.evidence),label=r&&Object.hasOwn(r,'time_label')?r.time_label:time.label;
+    if(Number.isInteger(time.year))return `${time.year} 年${label?' · '+label:''}`;
+    const clean=cleanTimeLabel(label);return clean||(CITED_ERA.test(String(label||''))?'':'年代未详');
+  };
   const {people,evidence:sources}=knowledgeIndex(data);
   const page=parts[0],id=parts[1],text=s=>esc(cv(s)),personURL=id=>'#/people/'+encodeURIComponent(id),eventURL=id=>'#/events/'+encodeURIComponent(id);
   const personLink=id=>`<a class="person-link" href="${personURL(id)}">${text(people.get(id).name)}</a>`;
@@ -307,7 +315,7 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
     const uses=r=>[...new Set(r.claims.filter(c=>c.label!=='记载').map(c=>c.label==='时间'?'纪年':c.label+'：'+c.text))];
     const card=(r,grouped=false,withUses=false,linked)=>`<article class="source-record event-source" data-evidence-ids="${esc(JSON.stringify(r.ids))}" id="source-${esc(r.ids[0])}" data-context tabindex="-1" ${r===target&&!grouped?'data-source-target':''}>
       <h2>${citationHeading(r,{text,url,label:sourceLabel(r),linked})}</h2>
-      ${withUses?`<p class="source-uses">${uses(r).map(text).join(' · ')}</p>`:''}${quote(r)}
+      ${withUses?`<p class="source-uses">${uses(r).map(text).join(' · ')}</p>`:r.claims.some(c=>c.label==='时间')&&!r.claims.some(c=>c.label==='记载')?`<p class="source-uses">${text('纪年依据')}</p>`:''}${quote(r)}
       </article>`;
     const disclosure=(items,id,title)=>scoped(items).length?`<details class="event-reading" id="${id}"><summary>${text(title)}</summary><div>${scoped(items).map(r=>direct.includes(r)
       ?`<p class="evidence-pointer"><a href="${esc(sourceURL(r.ids[0]))}">${text(sourceLabel(r)+' · 查看本文引句')}</a><small>${uses(r).map(text).join(' · ')}</small></p>`:card(r,false,true)).join('')}<div class="reading-actions"><button type="button" class="close-reading">${text('收起并返回')}</button></div></div></details>`:'';
@@ -319,9 +327,10 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
     const heading=head(e.title,eventHasContext?'':'#/events?view=highlights',metaParts.length?`<p class="event-meta">${metaParts.map(v=>`<span>${text(v)}</span>`).join('<span> · </span>')}</p>`:'');
     const group=editorial?.groups.find(g=>g.id===editorial.records[e.id]?.primary_group);
     const relatedEvents=[...new Set((e.related_events||[]).map(r=>r.event))].filter(id=>id!==e.time.after);
-    const contextCount=e.participants.length+relatedEvents.length+(e.time.after?1:0)+(group?1:0);
+    const contextCount=e.participants.length+relatedEvents.length+(e.time.after?1:0);
     const contextTag=contextCount>1?'details':'section';
     main.innerHTML=`<article class="knowledge-page event-detail unified-event">${heading}
+      ${group?`<p class="event-group-link"><a href="#/events?view=highlights&group=${encodeURIComponent(group.id)}">${text('所属大事：'+group.title)}</a></p>`:''}
       ${sections.length>1?`<form class="source-filter" role="search"><label class="filter-field"><span>${text('篇目')}</span><select name="section" id="source-section"><option value="">${text('全部篇目')}</option>${sections.map(([id,title])=>`<option value="${esc(id)}" ${id===selected?'selected':''}>${text(title)}</option>`).join('')}</select></label></form>`:''}
       <section class="event-accounts" aria-label="${text('文献记载')}" data-batch></section>
       <div id="event-basis">${disclosure(other,'event-other','其他依据')}${disclosure(notes,'event-notes','相关注释')}</div>
@@ -329,7 +338,7 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
       ${e.participants.length?`<section class="event-participants"><h2>${text('人物')}</h2><dl class="participant-list">${e.participants.map(p=>`<div class="participant"><dt>${personLink(p.person)}</dt><dd>${text(p.role)}</dd></div>`).join('')}</dl></section>`:''}
       ${relatedEvents.length?`<section class="related-events"><h2>${text('相关史事')}</h2>${relatedEvents.map(id=>`<p><a href="${eventURL(id)}">${text(data.events.find(x=>x.id===id).title)}</a></p>`).join('')}</section>`:''}
       ${e.time.after?`<p class="preceding-event"><a href="${eventURL(e.time.after)}">${text('前接')}：${text(data.events.find(x=>x.id===e.time.after).title)}</a></p>`:''}
-      ${group?`<p><a href="#/events?view=highlights&group=${encodeURIComponent(group.id)}">${text('所属大事：'+group.title)} </a></p>`:''}</${contextTag}>`:''}</article>`;
+      </${contextTag}>`:''}</article>`;
     batch(visible,SOURCE_BATCH,items=>items.map(passage).join(''),visible.findIndex(p=>p.records.includes(target)));
     if(sections.length>1)formSubmit(detailPath,{},true);
     // Persist the default action synchronously, before an immediate refresh can
@@ -388,8 +397,9 @@ export function renderKnowledge(data, {main, parts, qs, esc, cv, normalize, url,
         const next=new URLSearchParams(qs);next.set('view','atlas');next.set('node',key);next.delete('group');next.delete('layout');
         const locate=node?`<a class="yearbook-locate" aria-label="${text('在时代星图中定位：'+node.title)}" href="#/events?${esc(next.toString())}">${text('星图')}</a>`:'';
         const title=node?.title||g?.title||editorial.records[item.id]?.title||item.event.title;
-        const overviewDate=g?groupDateText(item.events):Number.isInteger(item.event.time.year)?item.event.time.label:dateText(item.event.time);
-        const overview=`${overviewDate?`<p class="event-date">${text(overviewDate)}</p>`:''}${g?'':`<p>${text(item.event.accounts[0]?.text||'')}</p>`}`;
+        const wording=reading.records[key]||{};
+        const overviewDate=g?groupDateText(item.events):Object.hasOwn(wording,'time_label')?wording.time_label:Number.isInteger(item.event.time.year)?item.event.time.label:dateText(item.event.time);
+        const overview=`${overviewDate?`<p class="event-date">${text(overviewDate)}</p>`:''}${wording.summary?`<p>${text(wording.summary)}</p>`:g?'':`<p>${text(item.event.accounts[0]?.text||'')}</p>`}`;
         const content=g?`<div class="yearbook-group-members" id="group-${esc(g.id)}">${chronological(item.events).map(e=>readingRow(e,'','event-card-'+e.id,'timeline-entry inline-timeline-entry')).join('')}</div>`
           :`<div class="inline-evidence-body" data-inline-content></div><p class="inline-detail-link"><a href="${eventURL(item.id)}">${text('史事详情')}</a></p>`;
         return `<article class="yearbook-item ${g?'overview-group':''}" id="${g?'overview-'+esc(g.id):'yearbook-'+esc(item.id)}" data-context tabindex="-1" data-node="${esc(key)}" ${chosen?'data-source-target':''}>

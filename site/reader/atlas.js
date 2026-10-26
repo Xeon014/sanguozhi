@@ -30,7 +30,9 @@ export function atlasState(bundle, qs) {
 export function zoomRange(range,anchor,factor=1,direction=0){
   const span=Math.max(1,Math.min(97,Math.round((range[1]-range[0]+1)*factor)));
   const center=direction?(range[0]+range[1])/2+direction*Math.max(1,Math.floor(span/2)):anchor;
-  const from=Math.max(184,Math.min(281-span,Math.round(center-(span-1)/2)));
+  // Magnifying a window must never reveal years outside that window.
+  const bounds=!direction&&factor<1?range:[184,280];
+  const from=Math.max(bounds[0],Math.min(bounds[1]+1-span,Math.round(center-(span-1)/2)));
   return [from,from+span-1];
 }
 export function atlasHash(state, home=false) {

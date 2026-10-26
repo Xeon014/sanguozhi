@@ -5,6 +5,22 @@ export function searchHash(type, query='') {
   return '#/search'+(qs.size?'?'+qs:'');
 }
 
+// Match displayed text while retaining its original characters and offsets.
+export function highlightText(value, query, normalize, escape) {
+  const needle=normalize(query);if(!needle)return escape(value);
+  const chars=[...value],folded=chars.map(normalize),offsets=[];let size=0;
+  for(let i=0;i<chars.length;i++){offsets.push(size);size+=folded[i].length;}
+  const haystack=folded.join('');let at=0,end=0,html='';
+  while((at=haystack.indexOf(needle,at))>=0){
+    const first=offsets.findIndex((p,i)=>p+folded[i].length>at);
+    let last=first;while(last<chars.length&&offsets[last]<at+needle.length)last++;
+    if(first<end){at+=needle.length;continue;}
+    html+=escape(chars.slice(end,first).join(''))+'<mark class="search-match">'+escape(chars.slice(first,last).join(''))+'</mark>';
+    end=last;at+=needle.length;
+  }
+  return html+escape(chars.slice(end).join(''));
+}
+
 export function canonicalSearchHash(hash) {
   const [path,query='']=hash.split('?'),qs=new URLSearchParams(query);
   if(path==='#/people'&&(qs.get('view')==='all'||qs.has('faction')))return searchHash('people',qs.get('q')||'');

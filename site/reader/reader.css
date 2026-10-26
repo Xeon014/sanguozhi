@@ -30,6 +30,9 @@ small{font:13px/1.7 var(--sans);color:var(--muted)}
 .skip:focus{top:8px}
 ::selection{background:#ad382830}
 mark{background:var(--soft);color:inherit;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:5px}
+.search-scope{color:var(--muted);font-size:15px;max-width:46em}
+.event-classification{display:flex;flex-wrap:wrap;align-items:center;gap:0 8px;color:var(--muted);font-size:14px;margin-top:12px}
+.event-group-link{margin:0 0 24px}
 
 #main{width:calc(100% - 96px);max-width:1280px;margin:0 auto;padding:56px 0 96px;min-height:78vh}
 #main:focus{outline:none}

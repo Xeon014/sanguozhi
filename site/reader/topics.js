@@ -1,7 +1,7 @@
-import {eventSources, sourceLayerLabel, dateText} from './knowledge.js?v=b827459d13797fb8';
-import {evidenceKey} from './profiles.js?v=b827459d13797fb8';
-import {quoteText,readingProjection,passageHTML} from './event-reading.js?v=b827459d13797fb8';
-import {citationHeading} from './inline-reading.js?v=b827459d13797fb8';
+import {eventSources, sourceLayerLabel, dateText} from './knowledge.js?v=2509883ee0e90517';
+import {evidenceKey} from './profiles.js?v=2509883ee0e90517';
+import {quoteText,readingProjection,passageHTML} from './event-reading.js?v=2509883ee0e90517';
+import {citationHeading} from './inline-reading.js?v=2509883ee0e90517';
 
 // Topic excerpts retain their existing context view; event pages use the new
 // in-place paragraph projection. Do not couple these two reading interfaces.
@@ -55,7 +55,7 @@ export function renderTopic(topic, catalog, {main, qs, esc, cv, url, collection,
   const targetStep=topic.steps.find(s=>s.entries.some(e=>e.ref===qs.get('ref')))||topic.steps.find(s=>s.id===qs.get('step'));
   const targetRef=targetStep?.entries.find(e=>e.ref===qs.get('ref'))?.ref;
   let {mode,a,b}=topicReadingState(chapterIds,saved,refs.get(targetRef)?.section);
-  const sourceText=(r,context=false,link=false)=>`<p class="topic-source-label">${link?citationHeading(r,{text,url,label:r.section_title+' · '+sourceLayerLabel(r)}):text((context?r.section_title+' · ':'')+sourceLayerLabel(r))}</p><blockquote>${text(quoteText(r,sections))}</blockquote>`;
+  const sourceText=(r,context=false,link=false)=>`<p class="topic-source-label">${link?citationHeading(r,{text,url,label:sourceLayerLabel(r),ariaLabel:'阅读全文：'+r.section_title+' · '+sourceLayerLabel(r)}):text((context?r.section_title+' · ':'')+sourceLayerLabel(r))}</p><blockquote>${text(quoteText(r,sections))}</blockquote>`;
   const disclosure=(id,title,body)=>`<details class="topic-disclosure" id="${esc(id)}"><summary>${text(title)}</summary>${body}
     <div class="reading-actions"><button type="button" class="topic-close">${text('收起并返回')}</button></div></details>`;
   function card(entry,step) {
