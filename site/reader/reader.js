@@ -1,12 +1,12 @@
-import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=2509883ee0e90517';
-import {biographyContext} from './profiles.js?v=2509883ee0e90517';
-import {topicDirectory, renderTopic} from './topics.js?v=2509883ee0e90517';
-import {mountAtlas, atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash} from './atlas.js?v=2509883ee0e90517';
-import {filteredOverviewItems} from './event-editorial.js?v=2509883ee0e90517';
-import {bindFloatingPanel} from './floating-panel.js?v=2509883ee0e90517';
-import {bindPeopleLoading,bindLifeNavigation} from './people-reading.js?v=2509883ee0e90517';
-import {createJSONLoader,attachRuntime,presentPeople} from './data-loader.js?v=2509883ee0e90517';
-import {searchHash,canonicalSearchHash,searchPeople,highlightText} from './search.js?v=2509883ee0e90517';
+import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=c52da32f17ddc471';
+import {biographyContext} from './profiles.js?v=c52da32f17ddc471';
+import {topicDirectory, renderTopic} from './topics.js?v=c52da32f17ddc471';
+import {mountAtlas, atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash} from './atlas.js?v=c52da32f17ddc471';
+import {filteredOverviewItems} from './event-editorial.js?v=c52da32f17ddc471';
+import {bindFloatingPanel} from './floating-panel.js?v=c52da32f17ddc471';
+import {bindPeopleLoading,bindLifeNavigation} from './people-reading.js?v=c52da32f17ddc471';
+import {createJSONLoader,attachRuntime,presentPeople} from './data-loader.js?v=c52da32f17ddc471';
+import {searchHash,canonicalSearchHash,searchPeople,highlightText} from './search.js?v=c52da32f17ddc471';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
 const mobileLayout=matchMedia('(max-width:760px)');
@@ -216,9 +216,11 @@ function setMode(mode) {
   $('#reading')?.setAttribute('class', 'mode-'+mode);
   applyNoteMarkers();
   document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));
+  main.progressRefresh?.();
 }
 function applyNoteMarkers() {
-  document.querySelectorAll('.note-ref[data-note-type],.note-stack[data-note-type]').forEach(el=>el.hidden=prefs.noteVisibility[el.dataset.noteType]===false);
+  document.querySelectorAll('.note-ref[data-note-type]').forEach(el=>el.hidden=prefs.noteVisibility[el.dataset.noteType]===false);
+  document.querySelectorAll('.note-stack[data-note-type]').forEach(el=>el.hidden=prefs.noteVisibility[el.dataset.noteType]===false&&el.dataset.noteRevealed===undefined);
   document.querySelectorAll('.note-stacks').forEach(el=>el.hidden=[...el.children].every(stack=>stack.hidden));
   document.querySelectorAll('[data-note-toggle]').forEach(el=>el.setAttribute('aria-pressed',String(prefs.noteVisibility[el.dataset.noteToggle]!==false)));
 }
@@ -301,14 +303,19 @@ function mountSourceReturn(origin,fromSearch) {
   back.onclick=e=>{if(e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();e.stopPropagation();
     navigate(origin.hash,origin.view,fromSearch?origin.parent||null:origin.origin||null,fromSearch?origin.returnList||null:null);};
 }
-function focusTarget(id,{revealNotes=true}={}) {
+// Note switches belong to the reader alone; a deep link only shows its own target.
+function revealSingleNote(el) {
+  const note=el.matches('.note-ref')?document.getElementById(el.dataset.note):el.closest('.note');
+  const stack=(note||el).closest('.note-stack');
+  if(!stack)return;
+  stack.dataset.noteRevealed='';
+  stack.hidden=false;
+  if(stack.parentElement?.classList.contains('note-stacks'))stack.parentElement.hidden=false;
+}
+function focusTarget(id) {
   let el=document.getElementById(id);
   if (!el || !main.contains(el)) return false;
-  const type=el.closest('[data-note-type]')?.dataset.noteType;
-  if(type&&prefs.noteVisibility[type]===false){
-    if(!revealNotes)return true;
-    prefs.noteVisibility[type]=true;savePrefs();applyNoteMarkers();
-  }
+  if(el.closest('[data-note-type]')&&prefs.noteVisibility[el.closest('[data-note-type]').dataset.noteType]===false)revealSingleNote(el);
   if (section.status==='aligned' && el.closest('.original,.note-stack') && activeMode==='translation') setMode('both');
   if (section.status==='aligned' && el.closest('.translation') && activeMode==='original') setMode('both');
   let parent=el.parentElement;
@@ -316,7 +323,75 @@ function focusTarget(id,{revealNotes=true}={}) {
   el.scrollIntoView({block:'start'}); el.focus({preventScroll:true}); el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
   return true;
 }
-async function readSection(id,target,version,restoring=false) {
+// In-chapter position bar: live scrubbing of the current view, never written to URL, history or storage.
+function setupChapterProgress(entries) {
+  const bar=$('#chapter-progress');
+  if(!bar)return;
+  const fill=bar.querySelector('.progress-fill'),thumb=bar.querySelector('.progress-thumb'),tip=bar.querySelector('.progress-tip');
+  const items=entries.map(([el])=>el),labels=entries.map(([,text])=>text);
+  if(items.length<2){bar.hidden=true;return;}
+  bar.setAttribute('aria-valuemax',items.length);
+  const topOf=el=>el.getBoundingClientRect().top+window.scrollY;
+  const bounds=()=>{const last=items[items.length-1],top=topOf(items[0]);return [top,topOf(last)+last.getBoundingClientRect().height];};
+  const indexAt=(y,offsets)=>{let index=0;for(let i=1;i<items.length;i++)if((offsets?offsets[i]:topOf(items[i]))<=y)index=i;else break;return index;};
+  let dragging=false,frame=0,offsets=null;
+  const paint=(p,index)=>{
+    fill.style.width=(p*100)+'%';thumb.style.left=(p*100)+'%';tip.style.left=Math.min(86,Math.max(14,p*100))+'%';
+    tip.textContent=`${index+1} / ${items.length} · ${labels[index]}`;
+    bar.setAttribute('aria-valuenow',index+1);
+    bar.setAttribute('aria-valuetext',`第 ${index+1} 段，共 ${items.length} 段`);
+  };
+  const update=()=>{
+    if(dragging)return;
+    const [top,bottom]=bounds(),edge=bar.getBoundingClientRect().bottom;
+    paint(Math.min(1,Math.max(0,(window.scrollY+edge-top)/Math.max(1,bottom-top))),indexAt(window.scrollY+edge));
+  };
+  const schedule=()=>{if(frame)return;frame=requestAnimationFrame(()=>{frame=0;update();});};
+  const scrub=p=>{
+    const [top,bottom]=bounds(),edge=bar.getBoundingClientRect().bottom,y=top+p*(bottom-top);
+    window.scrollTo(0,Math.max(0,y-edge));
+    paint(p,indexAt(y,offsets));
+  };
+  const ratio=e=>{const rect=bar.getBoundingClientRect();return Math.min(1,Math.max(0,(e.clientX-rect.left)/rect.width));};
+  bar.addEventListener('pointerdown',e=>{
+    if(e.button)return;
+    dragging=true;offsets=items.map(topOf);
+    bar.classList.add('dragging');bar.setPointerCapture(e.pointerId);
+    scrub(ratio(e));e.preventDefault();
+  });
+  bar.addEventListener('pointermove',e=>{if(dragging)scrub(ratio(e));});
+  const release=e=>{
+    if(!dragging)return;
+    dragging=false;offsets=null;bar.classList.remove('dragging');
+    try{bar.releasePointerCapture(e.pointerId);}catch{}
+    saveContext();
+  };
+  bar.addEventListener('pointerup',release);
+  bar.addEventListener('pointercancel',release);
+  bar.addEventListener('keydown',e=>{
+    const current=Number(bar.getAttribute('aria-valuenow'))-1;
+    let next=null;
+    if(e.key==='ArrowRight'||e.key==='ArrowDown')next=current+1;
+    else if(e.key==='ArrowLeft'||e.key==='ArrowUp')next=current-1;
+    else if(e.key==='PageDown')next=current+10;
+    else if(e.key==='PageUp')next=current-10;
+    else if(e.key==='Home')next=0;
+    else if(e.key==='End')next=items.length-1;
+    if(next===null)return;
+    e.preventDefault();
+    next=Math.min(items.length-1,Math.max(0,next));
+    bar.setAttribute('aria-valuenow',next+1);
+    items[next].scrollIntoView({block:'start'});
+    schedule();
+  });
+  window.addEventListener('scroll',schedule,{passive:true});
+  window.addEventListener('resize',schedule);
+  const dispose=()=>{window.removeEventListener('scroll',schedule);window.removeEventListener('resize',schedule);cancelAnimationFrame(frame);delete main.progressRefresh;delete main.progressDispose;};
+  main.progressRefresh=schedule;
+  main.progressDispose=dispose;
+  update();
+}
+async function readSection(id,target,version) {
   const info=book.sections.find(x=>x.id===id);
   if(!info)throw Error('目录中没有这一章节');
   const [loaded,anchors]=await Promise.all([data(`sections/${id}.json`),book.anchor_index||json(anchorsPath)]);
@@ -326,11 +401,13 @@ async function readSection(id,target,version,restoring=false) {
   for(const g of section.groups)for(const bid of [...g.original,...g.translation])groupForBlock.set(bid,g.id);
   const aligned=section.status==='aligned';
   const first=section.blocks[0],titleBlock=!aligned&&first?.kind==='heading'&&first.text===section.title&&first.tokens.every(t=>t.type==='text')?first:null;
-  const toolbar=`<div class="toolbar" aria-label="浏览工具"><button id="open-directory">${cv('目录')}</button>${info.kind==='chapter'?`<a class="search-volume" href="#/search">${cv('原文检索')}</a>`:''}${aligned?['both','original','translation'].map((m,i)=>`<button data-mode="${m}" aria-pressed="${prefs.mode===m}">${cv(['对照','原文','译文'][i])}</button>`).join(''):''}<details class="reading-settings" id="reading-settings"><summary>${cv('阅读设置')}</summary><div class="settings-body"><label><span>${cv('定位正文')}</span><select id="jump" aria-label="${cv('定位正文')}"><option value="">${cv('定位正文')}</option>${(aligned?section.groups:section.blocks.filter(b=>b.kind==='heading'||b.kind==='original'||b.tokens.some(t=>t.type==='image'))).map((g,i)=>`<option value="${g.id}">${esc(cv(aligned?blockMap.get(g.original[0]).text.slice(0,18):g.text.slice(0,18)||'原书图版'))}</option>`).join('')}</select></label>${aligned?Object.keys(book.note_types).map(type=>`<button type="button" data-note-toggle="${esc(type)}" aria-pressed="${prefs.noteVisibility[type]!==false}">${esc(cv(label(type)))}</button>`).join(''):''}<div class="tools-end"><button id="smaller" aria-label="减小字号">A−</button><button id="larger" aria-label="增大字号">A＋</button></div></div></details></div>`;
+  const landmarks=aligned?section.groups:section.blocks.filter(b=>b.kind==='heading'||b.kind==='original'||b.tokens.some(t=>t.type==='image'));
+  const landmarkText=g=>aligned?blockMap.get(g.original[0]).text.slice(0,18):g.text.slice(0,18)||'原书图版';
+  const toolbar=`<div class="toolbar" aria-label="浏览工具"><div class="toolbar-row"><button id="open-directory">${cv('目录')}</button>${aligned?`<div class="mode-switch" role="group" aria-label="${cv('文白模式')}">${['both','original','translation'].map((m,i)=>`<button data-mode="${m}" aria-pressed="${prefs.mode===m}">${cv(['对照','原文','译文'][i])}</button>`).join('')}</div>`:''}<details class="reading-settings" id="reading-settings"><summary>${cv('阅读设置')}</summary><div class="settings-body"><label><span>${cv('定位正文')}</span><select id="jump" aria-label="${cv('定位正文')}"><option value="">${cv('定位正文')}</option>${landmarks.map(g=>`<option value="${g.id}">${esc(cv(landmarkText(g)))}</option>`).join('')}</select></label>${aligned?Object.keys(book.note_types).map(type=>`<button type="button" data-note-toggle="${esc(type)}" aria-pressed="${prefs.noteVisibility[type]!==false}">${esc(cv(label(type)))}</button>`).join(''):''}<div class="tools-end"><button id="smaller" aria-label="减小字号">A−</button><button id="larger" aria-label="增大字号">A＋</button></div></div></details></div><div class="chapter-progress" id="chapter-progress" role="slider" tabindex="0" aria-label="${cv('本篇进度')}" aria-valuemin="1" aria-valuemax="1" aria-valuenow="1"><div class="progress-track" aria-hidden="true"><div class="progress-fill"></div></div><div class="progress-thumb" aria-hidden="true"></div><p class="progress-tip" aria-hidden="true"></p></div></div>`;
   const body=aligned?section.groups.map(g=>`<section class="reading-group" id="${g.id}" tabindex="-1"><a class="passage-link" href="${url(id,g.id)}" aria-label="${cv('此处链接')}" title="${cv('此处链接')}">⌁</a><div class="parallel"><div class="column original">${g.original.map(b=>blockHTML(b)).join('')}</div><div class="column translation">${g.translation.map(b=>blockHTML(b)).join('')}</div></div>${notesHTML(g)}</section>`).join(''):`<div class="source-reading">${section.blocks.filter(b=>b!==titleBlock).map(b=>blockHTML(b.id,{source:true,backlinks:true})).join('')}</div>`;
   const peers=info.kind==='chapter'?book.sections.filter(s=>s.kind==='chapter'):(site.supplements||[]).flatMap(g=>g.sections).map(sid=>book.sections.find(s=>s.id===sid));
-  const idx=peers.findIndex(s=>s.id===id),prev=idx>=0?peers[idx-1]:null,next=idx>=0?peers[idx+1]:null,col=collection(id);
-  main.innerHTML=`<div class="chapter-layout">${sidebarHTML()}<article class="chapter-article"><header class="chapter-heading"><p class="crumb"><a href="${info.kind==='chapter'?'#/contents':'#/supplements'}">${cv(info.kind==='chapter'?'全书目录':'补充材料')}</a>${col?` / <a href="#/contents?book=${col.id}">${esc(cv(col.label))}</a>`:''}</p><p class="eyebrow">${esc(cv(chapterCaption(info)))}</p><h1 ${titleBlock?`id="${esc(titleBlock.id)}" tabindex="-1"`:''}>${titleBlock?tokenHTML(titleBlock.tokens,{source:true}):esc(cv(section.title))}</h1></header>${toolbar}<div id="reading">${body}</div><nav class="pager" aria-label="${cv('相邻篇目')}">${prev?`<a href="${url(prev.id)}">${cv('上一篇')}：${esc(cv(prev.title))}</a>`:'<span></span>'}${next?`<a href="${url(next.id)}">${cv('下一篇')}：${esc(cv(next.title))}</a>`:''}</nav></article></div>`;
+  const idx=peers.findIndex(s=>s.id===id),prev=idx>=0?peers[idx-1]:null,next=idx>=0?peers[idx+1]:null;
+  main.innerHTML=`<div class="chapter-layout">${sidebarHTML()}<article class="chapter-article"><header class="chapter-heading"><p class="eyebrow">${esc(cv(chapterCaption(info)))}</p><h1 ${titleBlock?`id="${esc(titleBlock.id)}" tabindex="-1"`:''}>${titleBlock?tokenHTML(titleBlock.tokens,{source:true}):esc(cv(section.title))}</h1></header>${toolbar}<div id="reading">${body}</div><nav class="pager" aria-label="${cv('相邻篇目')}">${prev?`<a href="${url(prev.id)}">${cv('上一篇')}：${esc(cv(prev.title))}</a>`:'<span></span>'}${next?`<a href="${url(next.id)}">${cv('下一篇')}：${esc(cv(next.title))}</a>`:''}</nav></article></div>`;
   if(aligned)setMode(prefs.mode);else activeMode='source';
   $('#open-directory').onclick=openDirectory;
   const settings=$('#reading-settings');
@@ -339,7 +416,7 @@ async function readSection(id,target,version,restoring=false) {
   settings.addEventListener('toggle',()=>{floating.fit();saveContext();});
   settings.addEventListener('focusout',event=>{if(event.relatedTarget&&!settings.contains(event.relatedTarget)){settings.open=false;saveContext();}});
   settings.querySelector('summary').addEventListener('click',()=>{if(settings.open)settings.querySelector('summary').focus({preventScroll:true});});
-  document.querySelectorAll('[data-note-toggle]').forEach(button=>button.onclick=()=>{const saved=viewSnapshot();const type=button.dataset.noteToggle;prefs.noteVisibility[type]=!prefs.noteVisibility[type];savePrefs();applyNoteMarkers();restoreView(saved);saveContext();});
+  document.querySelectorAll('[data-note-toggle]').forEach(button=>button.onclick=()=>{const saved=viewSnapshot();const type=button.dataset.noteToggle;main.querySelectorAll(`.note-stack[data-note-revealed]`).forEach(stack=>{if(stack.dataset.noteType===type)stack.removeAttribute('data-note-revealed');});prefs.noteVisibility[type]=!prefs.noteVisibility[type];savePrefs();applyNoteMarkers();restoreView(saved);saveContext();main.progressRefresh?.();});
   document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{const saved=viewSnapshot();setMode(b.dataset.mode);restoreView(saved);saveContext();});
   $('#jump').onchange=e=>{if(e.target.value)navigate(url(id,e.target.value));};
   $('#smaller').onclick=()=>resize(-1);$('#larger').onclick=()=>resize(1);
@@ -356,11 +433,12 @@ async function readSection(id,target,version,restoring=false) {
   });
   document.querySelectorAll('.note-stack>summary').forEach(summary=>summary.addEventListener('click',e=>{e.preventDefault();summary.parentElement.open=!summary.parentElement.open;saveContext();}));
   document.querySelectorAll('[data-return]').forEach(a=>a.onclick=()=>{const n=a.closest('.note');const ref=document.getElementById(n.dataset.returnId);const dest=ref?.getClientRects().length?ref:ref?.closest('.block')||n.querySelector('summary');n.open=false;delete n.dataset.returnId;dest?.focus({preventScroll:true});dest?.scrollIntoView({block:ref?'center':'nearest'});saveContext();});
-  if(target){if(!focusTarget(target,{revealNotes:!restoring}))main.insertAdjacentHTML('afterbegin',`<p role="status">${cv('未找到指定段落，已显示本章。')}</p>`);}
+  setupChapterProgress(landmarks.map(g=>[document.getElementById(g.id),landmarkText(g)]).filter(([el])=>el));
+  if(target){if(!focusTarget(target))main.insertAdjacentHTML('afterbegin',`<p role="status">${cv('未找到指定段落，已显示本章。')}</p>`);}
   else window.scrollTo(0,0);
 }
 function resize(delta){const saved=viewSnapshot();
-  prefs.fs=Math.min(30,Math.max(16,prefs.fs+delta));savePrefs();applyPrefs();restoreView(saved);saveContext();}
+  prefs.fs=Math.min(30,Math.max(16,prefs.fs+delta));savePrefs();applyPrefs();restoreView(saved);saveContext();main.progressRefresh?.();}
 async function search(qs,version){
   const q=qs.get('q')||'',type=qs.get('type')==='people'?'people':'original';
   main.innerHTML=`<p class="eyebrow">${esc(cv(site.title))}</p><h1>${cv('检索')}</h1><nav class="knowledge-tabs search-modes" aria-label="${cv('检索类型')}">${[['original','原文'],['people','人物']].map(([key,title])=>`<a id="search-${key}" data-search-type="${key}" href="${esc(searchHash(key,q))}" ${type===key?'aria-current="page"':''}>${cv(title)}</a>`).join('')}</nav><p class="search-scope">${cv(type==='people'?'按姓名、字或别名检索人物。':'检索全书正文，不含译文、裴注及现代注释。')}</p><form class="search-form" role="search"><input id="query" type="search" aria-label="${cv('关键词')}" value="${esc(q)}"><button>${cv('检索')}</button></form><div id="results" aria-live="polite"></div>`;
@@ -373,7 +451,7 @@ async function search(qs,version){
   }));
   $('.search-form').onsubmit=e=>{e.preventDefault();navigate(searchHash(type,$('#query').value),{searchFocus:'query'});};
   $('.search-form').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.isComposing)e.preventDefault();});
-  if(!q.trim()){ $('#results').innerHTML=`<p class="query-empty">${cv(type==='people'?'输入姓名、字或别名，如：诸葛亮、孔明。':'输入原文中的词句，如：赤壁、出师。')}</p>`;return;}
+  if(!q.trim()){ $('#results').innerHTML=`<p class="query-empty">${cv(type==='people'?'输入姓名、字或别名，如：诸葛亮、孔明。':`全书正文共${numeral(site.collections.reduce((n,c)=>n+c.chapters.length,0))}卷：${site.collections.map(c=>`${c.label}${numeral(c.chapters.length)}卷`).join('、')}。`)}</p>`;return;}
   const out=$('#results');out.textContent=cv('正在检索……');
   let hits;
   if(type==='people'){
@@ -467,12 +545,12 @@ async function route(){
   let parts;try{parts=(path||'/').split('/').filter(Boolean).map(decodeURIComponent);}catch{parts=[];}
   const qs=new URLSearchParams(query);
   main.dataset.page=parts[0]||'home';
-  main.peopleLoadingDispose?.();main.lifeNavigationDispose?.();
+  main.peopleLoadingDispose?.();main.lifeNavigationDispose?.();main.progressDispose?.();
   $('.atlas')?.atlasDispose?.();
   main.querySelectorAll('[data-floating-panel]').forEach(panel=>panel.disposeFloating?.());
   main.innerHTML=`<p role="status">${cv('正在载入……')}</p>`;
   try{
-    if(parts[0]==='read')await readSection(parts[1],parts[2],version,!!saved);
+    if(parts[0]==='read')await readSection(parts[1],parts[2],version);
     else if(parts[0]==='contents')contents(qs);
     else if(parts[0]==='supplements')supplements();
     else if(parts[0]==='search'){await search(qs,version);knowledgeTitle='检索';}

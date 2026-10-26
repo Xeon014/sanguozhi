@@ -1,6 +1,6 @@
 /* 三国志 · Contemporary editorial exhibition
    Tokens → navigation → cover → indexes → reading → evidence → atlas → topics → responsive */
-:root{--paper:#f5f1e8;--surface:#fbf9f3;--ink:#202823;--muted:#696b60;--line:#d4d2c5;--accent:#ad3828;--accent-deep:#852d22;--soft:#ebe7dc;--modern:#426456;--pei:#826328;--gold:#826328;--wei:#456580;--shu:#974b3c;--wu:#396850;--hover:#20282308;--fs:20px;--sans:system-ui,'Microsoft YaHei',sans-serif;color-scheme:light;overflow-anchor:none;scroll-padding-top:156px}
+:root{--paper:#f5f1e8;--surface:#fbf9f3;--ink:#202823;--muted:#696b60;--line:#d4d2c5;--accent:#ad3828;--accent-deep:#852d22;--soft:#ebe7dc;--modern:#426456;--pei:#826328;--gold:#826328;--wei:#456580;--shu:#974b3c;--wu:#396850;--hover:#20282308;--fs:20px;--sans:system-ui,'Microsoft YaHei',sans-serif;color-scheme:light;overflow-anchor:none;scroll-padding-top:176px}
 
 :root[data-theme=dark]{--paper:#191e1b;--surface:#222a25;--ink:#eee9db;--muted:#b9bcae;--line:#414b43;--accent:#efab95;--accent-deep:#ffd0bc;--soft:#2a342d;--modern:#a2c6b0;--pei:#dcc18d;--gold:#dcc18d;--wei:#a6c1d8;--shu:#e8b09b;--wu:#a0c8ac;--hover:#eee9db08;color-scheme:dark}
 
@@ -46,7 +46,7 @@ mark{background:var(--soft);color:inherit;text-decoration:underline;text-decorat
 .error p{margin:16px 0 0}
 .load-more,#more{display:block;margin:32px auto 0;min-width:144px}
 .load-finished{display:block;margin:32px auto 0;min-width:144px;color:var(--muted);cursor:default}
-:where(.reading-group,.block,[data-context],.note,.atlas-card,.topic-record){scroll-margin-top:156px}
+:where(.reading-group,.block,[data-context],.note,.atlas-card,.topic-record){scroll-margin-top:176px}
 footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(--line);color:var(--muted);font:14px/1.8 var(--sans);letter-spacing:.08em}
 
 /* Navigation */
@@ -116,16 +116,27 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .sidebar-book{margin-bottom:12px}
 .all-contents{display:block;padding:14px 0}
 
-.toolbar{position:sticky;top:75px;z-index:15;display:flex;align-items:center;flex-wrap:wrap;gap:4px;padding:10px 0;margin-bottom:14px;border-block:1px solid var(--line);background:var(--paper);font:14px/1.5 var(--sans)}
-.toolbar>button{border-color:transparent;padding-inline:12px}
-.toolbar>button[aria-pressed=true]{border-color:var(--ink)}
-.search-volume{padding:12px 8px;min-height:44px}
+.toolbar{position:sticky;top:75px;z-index:15;border-block:1px solid var(--line);background:var(--paper);font:14px/1.5 var(--sans)}
+.toolbar-row{display:flex;align-items:center;gap:12px;padding:10px 0}
+.toolbar-row>button{border-color:transparent;padding-inline:12px}
+.mode-switch{display:flex}
+.mode-switch button{min-width:56px;padding:10px 12px}
+.mode-switch button+button{margin-left:-1px}
+.mode-switch button[aria-pressed=true]{position:relative;z-index:1}
 .reading-settings{margin-left:auto;position:relative}
 .reading-settings>summary{padding:12px 8px;min-height:44px;color:var(--muted)}
 .settings-body{position:absolute;right:0;top:calc(100% + 12px);padding:20px;width:300px;max-width:calc(100vw - 40px);border:1px solid var(--line);background:var(--surface);box-shadow:0 12px 28px #00000012;display:flex;flex-wrap:wrap;gap:16px;overflow:auto;overscroll-behavior:contain}
 .settings-body label{display:grid;gap:8px;width:100%;font-size:13px;color:var(--muted)}
 .settings-body select{width:100%}
 .tools-end{display:flex;gap:6px;margin-left:auto}
+.chapter-progress{position:relative;height:28px;cursor:pointer;touch-action:none;margin-bottom:14px}
+.progress-track{position:absolute;inset-inline:0;top:50%;height:4px;transform:translateY(-50%);background:var(--line)}
+.progress-fill{height:100%;width:0;background:var(--accent)}
+.progress-thumb{position:absolute;top:50%;left:0;width:12px;height:12px;transform:translate(-50%,-50%);background:var(--accent);border:2px solid var(--paper);opacity:0;transition:opacity .18s}
+.chapter-progress:hover .progress-thumb,.chapter-progress.dragging .progress-thumb,.chapter-progress:focus-visible .progress-thumb{opacity:1}
+.chapter-progress.dragging .progress-track,.chapter-progress.dragging .progress-fill{height:6px}
+.progress-tip{position:absolute;top:calc(100% + 6px);transform:translateX(-50%);white-space:nowrap;max-width:min(480px,72vw);overflow:hidden;text-overflow:ellipsis;margin:0;padding:6px 12px;border:1px solid var(--line);background:var(--surface);box-shadow:0 6px 18px #00000012;font:12px/1.6 var(--sans);color:var(--ink);opacity:0;pointer-events:none;transition:opacity .15s}
+.chapter-progress.dragging .progress-tip,.chapter-progress:focus-visible .progress-tip{opacity:1}
 
 .reading-group{position:relative;padding:22px 0 28px}
 .parallel{display:block}
@@ -485,7 +496,7 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .topic-pair{width:100%}
 }
 
-@media(max-width:760px){:root{scroll-padding-top:120px}
+@media(max-width:760px){:root{scroll-padding-top:168px}
 .atlas,.atlas-entry,.yearbook-locate{display:none!important}
 .yearbook-compact .yearbook-year{grid-template-columns:84px minmax(0,1fr);gap:12px}
 .yearbook-compact .yearbook-year>h2{font-size:22px}
@@ -516,10 +527,12 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .chapter-layout{display:block}
 .chapter-sidebar{display:none}
 .chapter-heading h1{font-size:36px}
-.toolbar{top:69px;font-size:12px}
-.toolbar>button{padding-inline:9px}
-.search-volume{order:2}
-.reading-settings{order:3}
+.toolbar{top:69px;font-size:13px}
+.toolbar-row{gap:8px;padding:8px 0}
+.toolbar-row>button{padding-inline:9px}
+.mode-switch button{min-width:44px;padding:8px 6px}
+.chapter-progress{height:32px}
+.progress-thumb{width:14px;height:14px;opacity:1}
 .note-body{padding-inline:16px}
 .translation{padding-left:16px}
 .passage-link{left:-18px}
