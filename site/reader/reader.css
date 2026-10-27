@@ -319,8 +319,7 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .yearbook-group-members .inline-evidence-body{padding-inline:16px}
 
 /* Theme-aware atlas, with a small homepage preview and a full exploration page. */
-.atlas{background:var(--paper);color:var(--ink);padding:48px 0 32px;min-width:0;position:relative}
-.atlas-heading{display:flex;align-items:baseline;justify-content:space-between;gap:24px}
+.atlas{background:var(--paper);color:var(--ink);padding:48px 0 32px;min-width:0;position:relative}.atlas-heading{display:flex;align-items:baseline;justify-content:space-between;gap:24px}
 .atlas-heading h1,.atlas-heading h2{font-size:48px}
 .atlas .eyebrow{color:var(--accent)}
 .atlas-controls{display:flex;align-items:center;flex-wrap:wrap;gap:16px;border-block:1px solid var(--line);padding:10px 0;margin:20px 0;font:14px/1.6 var(--sans)}
@@ -335,8 +334,27 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .atlas-tooltip{position:absolute;z-index:3;max-width:min(320px,100%);padding:8px 12px;border:1px solid var(--line);background:var(--paper);color:var(--ink);box-shadow:0 3px 12px #0001;font:14px/1.6 var(--sans);pointer-events:none}
 .atlas-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:24px}
 .atlas-map{min-width:0}
+.atlas-lanes{display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 14px;align-items:start;margin-bottom:4px}
+.atlas-lane-labels{display:flex;flex-direction:column}
+.atlas-lane{display:flex;align-items:center;justify-content:flex-end;padding:0 8px 0 12px;font:12px/1.4 var(--sans);color:var(--muted);text-align:right}
+button.atlas-lane{border:0;background:none;border-right:2px solid transparent;cursor:pointer}
+button.atlas-lane:hover{color:var(--ink)}
+button.atlas-lane[aria-pressed=true]{color:var(--accent);border-right-color:var(--accent)}
+button.atlas-lane:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.atlas-lane-band{fill:var(--soft);fill-opacity:.55}
+.atlas-lane-line{stroke:var(--line);stroke-dasharray:2 6}
 .atlas-scroll{max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
 .atlas-canvas svg{display:block;max-width:none}
+.atlas-records .atlas-record{cursor:pointer}
+.atlas-record-dot{fill:var(--ink);fill-opacity:.72}
+.atlas-record-hit{fill:transparent}
+.atlas-record:hover .atlas-record-dot,.atlas-record:focus-visible .atlas-record-dot{fill:var(--accent);fill-opacity:1}
+.atlas-record:focus{outline:none}
+.atlas-record:focus-visible .atlas-record-hit{stroke:var(--accent);stroke-width:1.5}
+.atlas-overview{margin-top:6px}
+.atlas-overview svg{display:block;width:100%;touch-action:none;cursor:pointer;user-select:none;-webkit-user-select:none}
+.atlas-overview-dot{fill:var(--ink);opacity:.5}
+.atlas-window{fill:var(--accent);fill-opacity:.08;stroke:var(--accent);stroke-width:1.5}
 .atlas-legend{display:flex;list-style:none;gap:24px;padding:0}
 .atlas-legend li{display:flex;align-items:center;gap:8px}
 .atlas-legend svg{width:32px;height:32px}
@@ -360,7 +378,6 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .atlas-guide{stroke:var(--line);stroke-dasharray:2 6}
 .atlas-dot{fill:var(--ink)}
 .atlas-label{fill:var(--ink);font:13px var(--sans);paint-order:stroke;stroke:var(--paper);stroke-width:4px;stroke-linejoin:round}
-.atlas-leader{stroke:var(--muted);opacity:.45}
 .atlas-hit{fill:transparent}
 .atlas-star[aria-pressed=true] .atlas-dot{fill:var(--accent)}
 .atlas-star:focus{outline:none}

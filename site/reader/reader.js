@@ -1,12 +1,12 @@
-import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=c52da32f17ddc471';
-import {biographyContext} from './profiles.js?v=c52da32f17ddc471';
-import {topicDirectory, renderTopic} from './topics.js?v=c52da32f17ddc471';
-import {mountAtlas, atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash} from './atlas.js?v=c52da32f17ddc471';
-import {filteredOverviewItems} from './event-editorial.js?v=c52da32f17ddc471';
-import {bindFloatingPanel} from './floating-panel.js?v=c52da32f17ddc471';
-import {bindPeopleLoading,bindLifeNavigation} from './people-reading.js?v=c52da32f17ddc471';
-import {createJSONLoader,attachRuntime,presentPeople} from './data-loader.js?v=c52da32f17ddc471';
-import {searchHash,canonicalSearchHash,searchPeople,highlightText} from './search.js?v=c52da32f17ddc471';
+import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=9db5ea88959c0377';
+import {biographyContext} from './profiles.js?v=9db5ea88959c0377';
+import {topicDirectory, renderTopic} from './topics.js?v=9db5ea88959c0377';
+import {mountAtlas, atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash} from './atlas.js?v=9db5ea88959c0377';
+import {filteredOverviewItems} from './event-editorial.js?v=9db5ea88959c0377';
+import {bindFloatingPanel} from './floating-panel.js?v=9db5ea88959c0377';
+import {bindPeopleLoading,bindLifeNavigation} from './people-reading.js?v=9db5ea88959c0377';
+import {createJSONLoader,attachRuntime,presentPeople} from './data-loader.js?v=9db5ea88959c0377';
+import {searchHash,canonicalSearchHash,searchPeople,highlightText} from './search.js?v=9db5ea88959c0377';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
 const mobileLayout=matchMedia('(max-width:760px)');
@@ -18,7 +18,7 @@ let contextTimer, searchRows, searchNormalized, activeMode = 'both';
 let renderedHash = '', ready = false, searchLimit = 40, returnSearch = null, returnList = null;
 let topicBundle, topicPresentation, topicRequestOptions;
 const topicSections = new Set();
-let atlasPresentation,homeAtlasRun=0;
+let atlasPresentation,atlasRecords,homeAtlasRun=0;
 let readingPresentation;
 async function loadReading(){
   if(!runtimePath)return {records:{}};
@@ -142,6 +142,17 @@ async function loadAtlas() {
     return {...p,nodes:p.nodes.map(n=>{const r=reading.records[n.key]||{};return {...n,...(r.summary?{summary:r.summary}:{}),...(Object.hasOwn(r,'time_label')?{time:r.time_label}:{}),members:n.members.map(m=>{const entry=reading.records['event:'+m.id]||{};return {...m,...(Object.hasOwn(entry,'time_label')?{time:entry.time_label}:{})};})};})};
   }).catch(e=>{atlasPresentation=null;throw e;});
   return atlasPresentation;
+}
+// The detail tier backs the full atlas only; the homepage keeps its light requests.
+// site.json is preservation-pinned, so the sibling projection path is derived here.
+function loadAtlasRecords(){
+  const atlasPath=site.knowledge?.atlas;
+  if(!atlasPath||!atlasPath.endsWith('atlas.json'))return Promise.resolve(null);
+  if(!atlasRecords)atlasRecords=json(atlasPath.replace(/atlas\.json$/,'atlas-records.json')).then(p=>{
+    if(p.source_sha256!==book.source_sha256||p.schema_version!==1||!Array.isArray(p.records))throw Error('星图纪年细事与当前文本版本不一致');
+    return p;
+  }).catch(e=>{atlasRecords=null;throw e;});
+  return atlasRecords;
 }
 function atlasCommit(hash) {
   saveContext();
@@ -572,6 +583,10 @@ async function route(){
       }
       const filterNotice=['q','person'].some(k=>qs.get(k))?`<p class="meta">${cv('已沿用年表筛选，可返回年表调整。')}</p>`:'';
       main.innerHTML=`<div class="knowledge-page query-view atlas-explore"><nav class="knowledge-tabs" aria-label="${cv('史事视图')}"><a href="#/events?view=atlas" aria-current="page">${cv('时代星图')}</a><a data-yearbook-link href="#/events?view=highlights">${cv('大事年表')}</a></nav>${filterNotice}<section id="full-atlas"></section></div>`;
+      // A failed detail tier still leaves the curated lanes fully usable.
+      const detail=await loadAtlasRecords().catch(e=>{console.warn(e.message);return null;});
+      if(version!==routeVersion)return;
+      if(detail)atlas={...atlas,records:detail.records};
       showAtlas($('#full-atlas'),atlas,qs,saved);knowledgeTitle='时代星图';
     }
     else if(['people','events','timeline'].includes(parts[0])){
