@@ -1,13 +1,13 @@
-import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=e9ac0abb5b5171b1';
-import {biographyContext} from './profiles.js?v=e9ac0abb5b5171b1';
-import {topicDirectory, renderTopic} from './topics.js?v=e9ac0abb5b5171b1';
-import {mountAtlas, atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash} from './atlas.js?v=e9ac0abb5b5171b1';
-import {filteredOverviewItems} from './event-editorial.js?v=e9ac0abb5b5171b1';
-import {readingSettingsHTML,chapterProgressHTML,mountReadingControls} from './reading-controls.js?v=e9ac0abb5b5171b1';
-import {bindPeopleLoading,bindLifeNavigation} from './people-reading.js?v=e9ac0abb5b5171b1';
-import {createJSONLoader,attachRuntime,presentPeople} from './data-loader.js?v=e9ac0abb5b5171b1';
-import {searchHash,canonicalSearchHash,searchPeople,highlightText} from './search.js?v=e9ac0abb5b5171b1';
-import {blockText} from './event-reading.js?v=e9ac0abb5b5171b1';
+import {renderKnowledge, legacyKnowledgeHash, canonicalKnowledgeHash} from './knowledge.js?v=8b82d94e4566597e';
+import {biographyContext} from './profiles.js?v=8b82d94e4566597e';
+import {topicDirectory, renderTopic} from './topics.js?v=8b82d94e4566597e';
+import {mountAtlas, atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash} from './atlas.js?v=8b82d94e4566597e';
+import {filteredOverviewItems} from './event-editorial.js?v=8b82d94e4566597e';
+import {readingSettingsHTML,chapterProgressHTML,mountReadingControls} from './reading-controls.js?v=8b82d94e4566597e';
+import {bindPeopleLoading,bindLifeNavigation} from './people-reading.js?v=8b82d94e4566597e';
+import {createJSONLoader,attachRuntime,presentPeople} from './data-loader.js?v=8b82d94e4566597e';
+import {searchHash,canonicalSearchHash,searchPeople,highlightText} from './search.js?v=8b82d94e4566597e';
+import {blockText} from './event-reading.js?v=8b82d94e4566597e';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
 const mobileLayout=matchMedia('(max-width:760px)');
@@ -205,6 +205,7 @@ function directoryFilter(container,routeFilter=false) {
   select.onchange=()=>{if(routeFilter){const q=new URLSearchParams();if(select.value)q.set('book',select.value);navigate('#/contents'+(q.size?'?'+q:''),{...viewSnapshot(),y:0,anchor:null});}else update();};update();
 }
 function openDirectory() {
+  main.readingControls?.prepareJump();
   const dialog=document.createElement('dialog');dialog.className='directory-panel';dialog.setAttribute('aria-labelledby','directory-title');
   dialog.innerHTML=`<div class="panel-head"><h2 id="directory-title">${cv('全书目录')}</h2><button autofocus>${cv('关闭目录')}</button></div>${directoryHTML(collection(currentId)?.id||'')}`;
   document.body.append(dialog);dialog.querySelector('button').onclick=()=>dialog.close();directoryFilter(dialog);
@@ -228,6 +229,7 @@ function setMode(mode) {
   $('#reading')?.setAttribute('class', 'mode-'+mode);
   applyNoteMarkers();
   document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));
+  if($('#reading-mode'))$('#reading-mode').value=mode;
   main.readingControls?.refresh();
 }
 function applyNoteMarkers() {
@@ -252,6 +254,7 @@ function viewSnapshot() {
 }
 function restoreView(saved) {
   if(!saved)return;
+  main.readingControls?.resetScrollIntent();
   for(const id of saved.closed||[]){const el=document.getElementById(id);if(el)el.open=false;}
   for(const id of saved.open||[]){const el=document.getElementById(id);if(el?.matches('details'))el.open=true;
     else if(el?.matches('.yearbook-group-members'))el.closest('.yearbook-entry').open=true;
@@ -315,6 +318,7 @@ function mountSourceReturn(origin,fromSearch) {
 }
 // A deep link may reveal one note; only reader controls change the preference.
 function focusTarget(id,{revealNotes=true}={}) {
+  main.readingControls?.prepareJump();
   let el=document.getElementById(id);
   if (!el || !main.contains(el)) return false;
   if(el.closest('[data-note-type]')&&prefs.noteVisibility[el.closest('[data-note-type]').dataset.noteType]===false){
@@ -341,7 +345,7 @@ async function readSection(id,target,version,saved) {
   const landmarks=aligned?section.groups:section.blocks.filter(b=>b.kind==='heading'||b.kind==='original'||b.tokens.some(t=>t.type==='image'));
   const landmarkText=g=>[...blockText(aligned?blockMap.get(g.original[0]):g,section)].slice(0,18).join('')||'原书图版';
   const settingsHTML=readingSettingsHTML({types:aligned?Object.keys(book.note_types).map(type=>[type,label(type)]):[],landmarks:landmarks.map(g=>[g.id,landmarkText(g)]),fontSize:prefs.fs,esc,cv});
-  const toolbar=`<div class="toolbar" aria-label="浏览工具"><div class="toolbar-row"><button id="open-directory">${cv('目录')}</button>${aligned?`<div class="mode-switch" role="group" aria-label="${cv('文白模式')}">${['both','original','translation'].map((m,i)=>`<button data-mode="${m}" aria-pressed="${prefs.mode===m}">${cv(['对照','原文','译文'][i])}</button>`).join('')}</div>`:''}${settingsHTML}</div>${chapterProgressHTML(cv)}</div>`;
+  const toolbar=`<div class="toolbar" role="region" aria-label="${cv('阅读工具')}"><div class="toolbar-row"><button id="open-directory">${cv('目录')}</button>${aligned?`<select id="reading-mode" aria-label="${cv('文白模式')}">${['both','original','translation'].map((m,i)=>`<option value="${m}">${cv(['对照','原文','译文'][i])}</option>`).join('')}</select>`:''}${chapterProgressHTML(cv)}${settingsHTML}</div></div>`;
   const body=aligned?section.groups.map(g=>`<section class="reading-group" id="${g.id}" tabindex="-1"><a class="passage-link" href="${url(id,g.id)}" aria-label="${cv('此处链接')}" title="${cv('此处链接')}">⌁</a><div class="parallel"><div class="column original">${g.original.map(b=>blockHTML(b)).join('')}</div><div class="column translation">${g.translation.map(b=>blockHTML(b)).join('')}</div></div>${notesHTML(g)}</section>`).join(''):`<div class="source-reading">${section.blocks.filter(b=>b!==titleBlock).map(b=>blockHTML(b.id,{source:true,backlinks:true})).join('')}</div>`;
   const peers=info.kind==='chapter'?book.sections.filter(s=>s.kind==='chapter'):(site.supplements||[]).flatMap(g=>g.sections).map(sid=>book.sections.find(s=>s.id===sid));
   const idx=peers.findIndex(s=>s.id===id),prev=idx>=0?peers[idx-1]:null,next=idx>=0?peers[idx+1]:null;
@@ -352,7 +356,7 @@ async function readSection(id,target,version,saved) {
     onFontChange:delta=>resize(delta),onJump:target=>navigate(url(id,target)),onPositionChange:saveContext});
   if(aligned)setMode(prefs.mode);else activeMode='source';
   $('#open-directory').onclick=openDirectory;
-  document.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{const saved=viewSnapshot();setMode(b.dataset.mode);restoreView(saved);saveContext();});
+  if($('#reading-mode'))$('#reading-mode').onchange=event=>{const saved=viewSnapshot();setMode(event.target.value);restoreView(saved);saveContext();};
   document.querySelectorAll('[data-note]').forEach(b=>b.onclick=()=>{
     const note=document.getElementById(b.dataset.note);
     if(note.open){note.open=false;delete note.dataset.returnId;b.setAttribute('aria-expanded','false');b.focus({preventScroll:true});saveContext();return;}
@@ -498,6 +502,7 @@ async function route(){
   const qs=new URLSearchParams(query);
   main.dataset.page=parts[0]||'home';
   main.peopleLoadingDispose?.();main.lifeNavigationDispose?.();main.readingControls?.dispose();delete main.readingControls;
+  document.documentElement.classList.toggle('reading-page',parts[0]==='read');
   $('.atlas')?.atlasDispose?.();
   main.querySelectorAll('[data-floating-panel]').forEach(panel=>panel.disposeFloating?.());
   main.innerHTML=`<p role="status">${cv('正在载入……')}</p>`;

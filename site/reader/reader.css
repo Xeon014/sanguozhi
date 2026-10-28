@@ -116,9 +116,15 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .sidebar-book{margin-bottom:12px}
 .all-contents{display:block;padding:14px 0}
 
-.toolbar{position:sticky;top:75px;z-index:15;border-block:1px solid var(--line);background:var(--paper);font:14px/1.5 var(--sans)}
-.toolbar-row{display:flex;align-items:center;gap:12px;padding:10px 0}
+.reading-page:root{scroll-padding-top:0;--reading-offset:60px}
+.reading-page .site-head{position:relative;top:auto}
+.reading-page :where(.reading-group,.block,.note){scroll-margin-top:var(--reading-offset)}
+.reading-page .chapter-sidebar{top:24px;max-height:calc(100dvh - 48px)}
+.toolbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:35;border-block:1px solid var(--line);background:var(--paper);font:14px/1.5 var(--sans);transition:transform .18s,visibility .18s}
+.toolbar.is-concealed{transform:translateY(calc(-100% - env(safe-area-inset-top,0px) - 1px));visibility:hidden;pointer-events:none}
+.toolbar-row{display:flex;align-items:center;gap:8px;height:46px}
 .toolbar-row>button{border-color:transparent;padding-inline:12px}
+#reading-mode{border-color:transparent;background-color:transparent;padding:8px;min-height:44px;height:44px;max-height:44px;width:86px}
 .mode-switch{display:flex}
 .mode-switch button{min-width:56px;padding:10px 12px}
 .mode-switch button+button{margin-left:-1px}
@@ -140,13 +146,17 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .settings-font>div{display:flex;align-items:center;gap:12px}
 .settings-font output{min-width:24px;text-align:center;font-variant-numeric:tabular-nums}
 .settings-font button:disabled{opacity:.4;cursor:default}
-.chapter-progress{position:relative;padding-bottom:8px}
+.progress-toggle{margin-left:auto;white-space:nowrap;font-variant-numeric:tabular-nums}
+.chapter-progress{position:absolute;inset:100% 0 auto;padding:8px 16px 12px;border:1px solid var(--line);background:var(--surface);box-shadow:0 8px 18px #00000012}
+.chapter-progress.is-above{inset:auto 0 100%}
+.progress-head{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:13px}
+.progress-head button{border-color:transparent;font-size:13px}
 .chapter-progress input{display:block;appearance:none;-webkit-appearance:none;width:100%;height:44px;min-height:44px;padding:0;margin:0;border:0;background:transparent;cursor:pointer;touch-action:pan-y;--position:0%}
 .chapter-progress input::-webkit-slider-runnable-track{height:4px;background:linear-gradient(to right,var(--accent) var(--position),var(--line) var(--position))}
 .chapter-progress input::-moz-range-track{height:4px;background:linear-gradient(to right,var(--accent) var(--position),var(--line) var(--position))}
 .chapter-progress input::-webkit-slider-thumb{appearance:none;-webkit-appearance:none;width:18px;height:18px;margin-top:-7px;border:2px solid var(--paper);border-radius:50%;background:var(--accent)}
 .chapter-progress input::-moz-range-thumb{width:14px;height:14px;border:2px solid var(--paper);border-radius:50%;background:var(--accent)}
-.progress-position{display:block;font:12px/1.5 var(--sans);color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.progress-position{font:13px/1.5 var(--sans);color:var(--muted);font-variant-numeric:tabular-nums}
 .progress-tip{position:absolute;top:calc(100% + 4px);z-index:1;white-space:nowrap;max-width:min(480px,calc(100vw - 24px));overflow:hidden;text-overflow:ellipsis;margin:0;padding:8px 12px;border:1px solid var(--line);background:var(--surface);box-shadow:0 6px 18px #00000012;font:12px/1.6 var(--sans);color:var(--ink);pointer-events:none}
 
 .reading-group{position:relative;padding:22px 0 28px}
@@ -555,9 +565,10 @@ button.atlas-lane:focus-visible{outline:2px solid var(--accent);outline-offset:-
 .chapter-layout{display:block}
 .chapter-sidebar{display:none}
 .chapter-heading h1{font-size:36px}
-.toolbar{top:69px;font-size:13px}
-.toolbar-row{gap:8px;padding:8px 0}
-.toolbar-row>button{padding-inline:9px}
+.toolbar{font-size:13px}
+.toolbar-row{gap:4px}
+.toolbar-row>button{padding-inline:8px}
+#reading-mode{width:72px;padding-inline:6px;font-size:16px}
 .mode-switch button{min-width:44px;padding:8px 6px}
 .reading-settings{inset:auto 0 0;width:100%;max-width:100%;max-height:calc(100dvh - env(safe-area-inset-top) - 12px);margin:0;padding-bottom:env(safe-area-inset-bottom);border-width:1px 0 0}
 .settings-head{padding-inline:20px}

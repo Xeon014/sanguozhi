@@ -1,7 +1,7 @@
 // Reading controls own transient UI only. Preferences and browser-entry context
 // are supplied by the reader; no URL or storage is maintained here.
 export function readingSettingsHTML({types,landmarks,fontSize,esc,cv}) {
-  return `<button type="button" class="reading-settings-trigger" id="open-reading-settings" aria-haspopup="dialog" aria-controls="reading-settings">${cv('阅读设置')}</button>
+  return `<button type="button" class="reading-settings-trigger" id="open-reading-settings" aria-label="${cv('阅读设置')}" aria-haspopup="dialog" aria-controls="reading-settings">${cv('设置')}</button>
     <dialog class="reading-settings" id="reading-settings" aria-labelledby="reading-settings-title">
       <header class="settings-head"><h2 id="reading-settings-title">${cv('阅读设置')}</h2><button type="button" id="close-reading-settings" autofocus>${cv('关闭')}</button></header>
       <div class="settings-body"><label class="settings-jump"><span>${cv('定位正文')}</span><select id="jump"><option value="">${cv('定位正文')}</option>${landmarks.map(([id,text])=>`<option value="${esc(id)}">${esc(cv(text))}</option>`).join('')}</select></label>
@@ -11,18 +11,91 @@ export function readingSettingsHTML({types,landmarks,fontSize,esc,cv}) {
 }
 
 export function chapterProgressHTML(cv) {
-  return `<div class="chapter-progress" id="chapter-progress"><input type="range" id="chapter-position" min="1" max="1" value="1" step="1" aria-label="${cv('本篇进度')}"><output class="progress-position" for="chapter-position"></output><p class="progress-tip" aria-hidden="true" hidden></p></div>`;
+  return `<button type="button" id="toggle-reading-progress" class="progress-toggle" aria-expanded="false" aria-controls="chapter-progress"><span class="progress-position"></span></button>
+    <div class="chapter-progress" id="chapter-progress" role="group" aria-label="${cv('本篇进度')}" hidden><div class="progress-head"><span>${cv('本篇进度')}</span><button type="button" id="close-reading-progress">${cv('收起进度')}</button></div><input type="range" id="chapter-position" min="1" max="1" value="1" step="1" aria-label="${cv('本篇进度')}"><p class="progress-tip" aria-hidden="true" hidden></p></div>`;
 }
 
 export function mountReadingControls({host,entries,getPrefs,onNoteChange,onFontChange,onJump,onPositionChange,cv}) {
   const controller=new AbortController(),options={signal:controller.signal};
   const dialog=host.querySelector('#reading-settings'),opener=host.querySelector('#open-reading-settings');
-  const bar=host.querySelector('#chapter-progress'),range=bar.querySelector('input'),position=bar.querySelector('output'),tip=bar.querySelector('.progress-tip');
+  const toggle=host.querySelector('#toggle-reading-progress'),bar=host.querySelector('#chapter-progress'),range=bar.querySelector('input'),position=toggle.querySelector('.progress-position'),tip=bar.querySelector('.progress-tip');
   const toolbar=host.querySelector('.toolbar'),reading=host.querySelector('#reading'),head=document.querySelector('.site-head');
   const items=entries.map(([el])=>el),labels=entries.map(([,text])=>cv(text));
   let revealed=null,frame=0,observed=1,pointerActive=false,ignoreChange=false,disposed=false;
+  let concealed=false,lastY=scrollY,distance=0,direction=0,intentUntil=0,keyboardFocus=false,toolbarPointer=false;
   const listen=(el,name,fn,extra={})=>el.addEventListener(name,fn,{...options,...extra});
   const clamp=value=>Math.min(items.length,Math.max(1,Number(value)||1));
+  function resetScrollIntent() {intentUntil=0;distance=0;direction=0;lastY=scrollY;}
+  function showToolbar() {
+    concealed=false;toolbar.classList.remove('is-concealed');toolbar.inert=false;
+    document.documentElement.style.setProperty('--reading-offset',((parseFloat(getComputedStyle(toolbar).top)||0)+toolbar.offsetHeight+12)+'px');
+  }
+  function locked() {
+    return pointerActive||toolbarPointer||!bar.hidden||!!document.querySelector('dialog[open]')||
+      keyboardFocus&&toolbar.contains(document.activeElement);
+  }
+  function scrollIntent(delta) {
+    if(!delta||locked())return;
+    const next=Math.sign(delta);if(direction!==next){direction=next;distance=0;}
+    intentUntil=performance.now()+1200;
+  }
+  function placeProgress() {
+    if(bar.hidden||pointerActive)return;
+    const r=toolbar.getBoundingClientRect(),height=bar.offsetHeight;
+    bar.classList.toggle('is-above',r.bottom+height>innerHeight-8&&r.top>=height+8);
+  }
+  function onScroll() {
+    const y=Math.max(0,scrollY),delta=y-lastY;lastY=y;
+    if(y<=0||toolbar.getBoundingClientRect().top>1){showToolbar();distance=0;}
+    else if(!locked()&&performance.now()<intentUntil&&Math.sign(delta)===direction){
+      distance+=Math.abs(delta);
+      if(direction<0&&distance>=24){showToolbar();distance=0;}
+      else if(direction>0&&distance>=56&&!concealed){
+        concealed=true;toolbar.classList.add('is-concealed');toolbar.inert=true;
+        document.documentElement.style.setProperty('--reading-offset','12px');distance=0;
+      }
+    }
+    placeProgress();refresh();
+  }
+  function closeProgress(focus=false) {
+    if(bar.hidden)return;
+    cancelPreview();bar.hidden=true;toggle.setAttribute('aria-expanded','false');resetScrollIntent();
+    if(focus)toggle.focus({preventScroll:true});refresh();
+  }
+  function prepareJump() {resetScrollIntent();showToolbar();closeProgress();}
+  listen(toggle,'click',()=>{
+    resetScrollIntent();showToolbar();
+    if(!bar.hidden){closeProgress();return;}
+    bar.hidden=false;toggle.setAttribute('aria-expanded','true');placeProgress();refresh();range.focus({preventScroll:true});
+  });
+  listen(bar.querySelector('#close-reading-progress'),'click',()=>closeProgress(true));
+  listen(window,'pointerdown',event=>{
+    resetScrollIntent();keyboardFocus=false;toolbarPointer=toolbar.contains(event.target);
+    if(!bar.hidden&&!bar.contains(event.target)&&!toggle.contains(event.target))closeProgress();
+  },{capture:true,passive:true});
+  listen(window,'pointerup',()=>{toolbarPointer=false;});
+  listen(window,'pointercancel',()=>{toolbarPointer=false;});
+  listen(window,'wheel',event=>{keyboardFocus=false;if(!event.ctrlKey&&!toolbar.contains(event.target))scrollIntent(event.deltaY);},{passive:true});
+  let touchY=null;
+  listen(window,'touchstart',event=>{touchY=event.touches.length===1?event.touches[0].clientY:null;},{passive:true});
+  listen(window,'touchmove',event=>{
+    if(touchY===null||event.touches.length!==1||toolbar.contains(event.target))return;
+    const next=event.touches[0].clientY;scrollIntent(touchY-next);touchY=next;
+  },{passive:true});
+  listen(window,'touchend',()=>{touchY=null;},{passive:true});
+  listen(window,'touchcancel',()=>{touchY=null;resetScrollIntent();},{passive:true});
+  listen(window,'keydown',event=>{
+    if(event.key==='Tab'){
+      if(pointerActive){ignoreChange=true;cancelPreview();}
+      const recalling=concealed;keyboardFocus=true;resetScrollIntent();showToolbar();
+      if(recalling){event.preventDefault();(event.shiftKey?opener:toolbar.querySelector('#open-directory')).focus({preventScroll:true});}
+    }
+    if(event.key==='Escape'&&!bar.hidden){event.preventDefault();closeProgress(true);}
+    if(event.target.closest('input,select,textarea,button,summary,a,[contenteditable=true]')||event.ctrlKey||event.metaKey||event.altKey)return;
+    const delta={ArrowDown:1,PageDown:1,End:1,' ':event.shiftKey?-1:1,ArrowUp:-1,PageUp:-1,Home:-1}[event.key];
+    if(delta)scrollIntent(delta);
+  },{capture:true});
+  listen(toolbar,'focusin',showToolbar);
 
   function syncSettings() {
     const prefs=getPrefs();
@@ -56,7 +129,7 @@ export function mountReadingControls({host,entries,getPrefs,onNoteChange,onFontC
     revealed=null;applyNotes();return true;
   }
   function closeSettings() {if(dialog.open)dialog.close();}
-  listen(opener,'click',()=>{cancelPreview();syncSettings();document.documentElement.classList.add('reading-settings-open');dialog.showModal();});
+  listen(opener,'click',()=>{prepareJump();cancelPreview();syncSettings();document.documentElement.classList.add('reading-settings-open');dialog.showModal();});
   listen(dialog.querySelector('#close-reading-settings'),'click',closeSettings);
   // Dismiss only an actual backdrop click, never an internal focus transition.
   let backdrop=false;
@@ -79,6 +152,7 @@ export function mountReadingControls({host,entries,getPrefs,onNoteChange,onFontC
     range.style.setProperty('--position',ratio*100+'%');
     range.setAttribute('aria-valuetext',cv(`第 ${value} 段，共 ${items.length} 段`));
     position.textContent=cv(`${value} / ${items.length} 段`);
+    toggle.setAttribute('aria-label',cv(`本篇进度：第 ${value} 段，共 ${items.length} 段`));
     tip.hidden=!preview;
     if(preview){
       tip.textContent=`${value} / ${items.length} · ${labels[value-1]}`;
@@ -89,7 +163,7 @@ export function mountReadingControls({host,entries,getPrefs,onNoteChange,onFontC
   }
   function update() {
     if(disposed||pointerActive||items.length<2)return;
-    const line=toolbar.getBoundingClientRect().bottom+16;
+    const line=(concealed?0:Math.max(0,toolbar.getBoundingClientRect().bottom,!bar.hidden?bar.getBoundingClientRect().bottom:0))+16;
     let index=0;
     for(let i=1;i<items.length;i++)if(items[i].getBoundingClientRect().top<=line)index=i;else break;
     // The last paragraph cannot always reach the toolbar, but it is fully visible.
@@ -102,19 +176,24 @@ export function mountReadingControls({host,entries,getPrefs,onNoteChange,onFontC
   function commit(value) {
     if(items.length<2)return;
     value=clamp(value);pointerActive=false;bar.classList.remove('previewing');
-    const edge=(parseFloat(getComputedStyle(toolbar).top)||0)+toolbar.getBoundingClientRect().height+12;
+    resetScrollIntent();showToolbar();
+    bar.classList.remove('is-above');
+    const edge=(parseFloat(getComputedStyle(toolbar).top)||0)+toolbar.offsetHeight+(!bar.hidden?bar.offsetHeight:0)+12;
     const top=items[value-1].getBoundingClientRect().top+scrollY;
     scrollTo({top:Math.max(0,top-edge),behavior:'instant'});
     observed=value;paint(value);onPositionChange();refresh();
   }
-  bar.hidden=items.length<2;range.max=Math.max(1,items.length);
+  toggle.hidden=items.length<2;bar.hidden=true;range.max=Math.max(1,items.length);
   listen(range,'pointerdown',event=>{if(event.button!==0||event.isPrimary===false)return;ignoreChange=false;pointerActive=true;bar.classList.add('previewing');paint(range.value,true);});
   listen(range,'input',()=>{paint(range.value,true);});
   listen(range,'change',()=>{if(!ignoreChange&&(pointerActive||Number(range.value)!==observed))commit(range.value);});
   listen(window,'pointerup',()=>{if(pointerActive)commit(range.value);});
   listen(range,'pointercancel',()=>{ignoreChange=true;cancelPreview();});
   listen(range,'lostpointercapture',()=>{if(pointerActive){ignoreChange=true;cancelPreview();}});
-  listen(range,'blur',()=>{ignoreChange=true;cancelPreview();});
+  // Mobile WebKit moves focus off a range at the start of a mouse/pointer
+  // gesture. Keep that live gesture; Tab, pointer cancellation, capture loss
+  // and window blur still cancel explicitly without committing a jump.
+  listen(range,'blur',()=>{if(pointerActive&&toolbarPointer)return;ignoreChange=true;cancelPreview();});
   listen(range,'focus',()=>{ignoreChange=false;});
   listen(window,'blur',()=>{ignoreChange=true;cancelPreview();});
   listen(range,'keydown',event=>{
@@ -124,15 +203,15 @@ export function mountReadingControls({host,entries,getPrefs,onNoteChange,onFontC
     if(next===null)return;
     event.preventDefault();ignoreChange=false;commit(next);
   });
-  listen(window,'scroll',refresh,{passive:true});listen(window,'resize',()=>{cancelPreview();refresh();});
+  listen(window,'scroll',onScroll,{passive:true});listen(window,'resize',()=>{resetScrollIntent();showToolbar();cancelPreview();refresh();});
   listen(reading,'toggle',refresh,{capture:true});listen(reading,'load',refresh,{capture:true});
-  const fitToolbar=()=>{if(head)toolbar.style.top=Math.max(0,head.getBoundingClientRect().height-1)+'px';refresh();};
+  const fitToolbar=()=>{if(!concealed)showToolbar();placeProgress();refresh();};
   const observer=new ResizeObserver(fitToolbar);observer.observe(reading);observer.observe(toolbar);if(head)observer.observe(head);
   document.fonts?.ready.then(refresh);
   fitToolbar();applyNotes();update();
-  return {applyNotes,syncSettings,refresh,revealNote,dismissNote,
+  return {applyNotes,syncSettings,refresh,revealNote,dismissNote,prepareJump,resetScrollIntent,
     revealedId:()=>revealed?.id||null,
     isTemporary:note=>note===revealed&&getPrefs().noteVisibility[note.closest('.note-stack').dataset.noteType]===false,
-    dispose(){disposed=true;controller.abort();observer.disconnect();cancelAnimationFrame(frame);if(dialog.open)dialog.close();document.documentElement.classList.remove('reading-settings-open');}
+    dispose(){disposed=true;controller.abort();observer.disconnect();cancelAnimationFrame(frame);if(dialog.open)dialog.close();document.documentElement.classList.remove('reading-settings-open','reading-page');document.documentElement.style.removeProperty('--reading-offset');}
   };
 }
