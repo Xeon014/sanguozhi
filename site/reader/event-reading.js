@@ -29,6 +29,12 @@ export function quoteText(record,sections) {
   if(chars.slice(record.start,record.end).join('')!==record.quote)throw Error('引文与当前文本不一致');
   return chars.slice(record.start,record.end).filter((_,i)=>!hidden.has(record.start+i)).join('');
 }
+// Labels and summaries use the same token-bound projection as quotations.
+// Remove markers before clipping so a label cannot end in half a marker.
+export function blockText(block,section) {
+  const hidden=noteMask(block,section);
+  return [...block.text].filter((_,i)=>!hidden.has(i)).join('');
+}
 export const passageKey=r=>JSON.stringify([r.source_sha256,r.section,r.block,r.layer,r.attribution||'']);
 export function readingProjection(direct,support,sections) {
   const isDate=r=>r.claims.some(c=>c.key.endsWith('-time')&&c.label==='时间');

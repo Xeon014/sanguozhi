@@ -1,4 +1,4 @@
-import {bindFloatingPanel} from './floating-panel.js?v=9db5ea88959c0377';
+import {bindFloatingPanel} from './floating-panel.js?v=e9ac0abb5b5171b1';
 // Suggestions use explicit participation, never mentions or name inference.
 export function eventPeople(data, visiblePeople, normalize) {
   const participants=new Set(data.directory_counts?Object.keys(data.directory_counts):data.events.flatMap(e=>e.participants.map(p=>p.person)));
@@ -9,8 +9,10 @@ export function eventPeople(data, visiblePeople, normalize) {
   return data.persons.map(p=>{
     const courtesy=p.facts.filter(f=>f.label==='字').map(f=>f.text);
     const ref=evidence.get(p.evidence?.[0]);
-    const detail=[...courtesy.map(s=>'字'+s),...(names.get(normalize(p.name))>1&&ref?[ref.section_title,ref.quote.slice(0,38)+'…']:[])].join(' · ');
+    const citation=names.get(normalize(p.name))>1?ref:null;
+    const detail=[...courtesy.map(s=>'字'+s),...(citation?[citation.section_title]:[])].join(' · ');
     return {id:p.id,name:p.name,detail,eligible:participants.has(p.id),preferred:preferred.has(p.id),
+      citation,
       search:[p.name,...courtesy,...(p.aliases||[]).map(a=>a.text)].map(normalize)};
   });
 }
@@ -18,7 +20,7 @@ export function personMatches(people, query, normalize) {
   const needle=normalize(query.trim());
   return people.filter(p=>p.eligible&&(needle?p.search.some(s=>s.includes(needle)):p.preferred));
 }
-export function mountPersonFilter(host,people,{selected,esc,cv,normalize,onSelect,restoreFocus=false,loadPeople=null}) {
+export function mountPersonFilter(host,people,{selected,esc,cv,normalize,onSelect,restoreFocus=false,loadPeople=null,loadQuote=null}) {
   const text=s=>esc(cv(s));
   const chosen=()=>people.find(p=>p.id===selected);
   host.innerHTML=`<label for="person-filter">${text('人物')}</label><div class="person-combo-input">
@@ -29,9 +31,10 @@ export function mountPersonFilter(host,people,{selected,esc,cv,normalize,onSelec
   const input=host.querySelector('[role=combobox]'),popup=host.querySelector('.person-popup'),list=host.querySelector('[role=listbox]'),status=host.querySelector('[role=status]');
   const clear=host.querySelector('.person-clear');
   const floating=bindFloatingPanel(host.querySelector('.person-combo-input'),popup,{onDismiss:()=>close()});
-  let options=[],active=-1,skipFocus=restoreFocus,composing=false;
+  let options=[],active=-1,skipFocus=restoreFocus,composing=false,renderVersion=0;
   const updateClear=()=>{clear.hidden=!selected&&!input.value;clear.setAttribute('aria-label',cv(selected?'清除人物筛选':'清除人物输入'));};
   function close(restore=true){
+    renderVersion++;
     popup.hidden=true;input.setAttribute('aria-expanded','false');input.removeAttribute('aria-activedescendant');active=-1;
     if(restore)input.value=cv(chosen()?.name||'');
     updateClear();
@@ -52,7 +55,14 @@ export function mountPersonFilter(host,people,{selected,esc,cv,normalize,onSelec
     const matches=personMatches(people,query,normalize);
     options=query.trim()?matches.slice(0,60):[{id:'',name:'全部人物',detail:''},...matches];
     if(!query.trim()&&selected&&!options.some(p=>p.id===selected)&&chosen())options.splice(1,0,chosen());
-    list.innerHTML=options.map((p,i)=>`<div role="option" id="person-option-${i}" aria-selected="false" data-index="${i}"><span>${text(p.name)}</span>${p.detail?`<small>${text(p.detail)}</small>`:''}</div>`).join('');
+    const version=++renderVersion;
+    list.innerHTML=options.map((p,i)=>`<div role="option" id="person-option-${i}" aria-selected="false" data-index="${i}"><span>${text(p.name)}</span>${p.detail?`<small>${text(p.detail)}${p.citation&&loadQuote?`<span data-person-citation="${esc(p.id)}"></span>`:''}</small>`:''}</div>`).join('');
+    for(const p of options.filter(p=>p.citation&&loadQuote))Promise.resolve().then(()=>loadQuote(p.citation)).then(value=>{
+      if(version!==renderVersion||!host.isConnected||popup.hidden)return;
+      const el=list.querySelector(`[data-person-citation="${CSS.escape(p.id)}"]`),chars=[...value];
+      if(el)el.textContent=' · '+cv(chars.slice(0,38).join('')+(chars.length>38?'…':''));
+      floating.fit();
+    }).catch(()=>{}); // The source heading remains usable; reopening retries the quote.
     status.textContent=cv(query.trim()?(matches.length?`找到 ${matches.length} 位人物${matches.length>60?'，显示前 60 位，请继续输入以缩小范围':''}`:'未找到人物，可尝试姓名、字或其他称谓。'):'常用人物；输入可查找更多人物。');
     popup.hidden=false;input.setAttribute('aria-expanded','true');highlight(-1);updateClear();floating.fit();
   }
