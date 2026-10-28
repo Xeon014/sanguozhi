@@ -1,12 +1,12 @@
-import {canonicalSearchHash} from './search.js?v=8b82d94e4566597e';
-import {personSources, renderBiography, evidenceKey, biographyScope, scopeIncludes, biographyAnchor, cleanTimeLabel} from './profiles.js?v=8b82d94e4566597e';
-import {matchesEditorial, canonicalEditorial, overviewItems, groupDateText, yearbookItems} from './event-editorial.js?v=8b82d94e4566597e';
-import {eventPeople, mountPersonFilter} from './person-filter.js?v=8b82d94e4566597e';
-import {readingProjection,quoteText,passageHTML} from './event-reading.js?v=8b82d94e4566597e';
-import {directoryPeople} from './people-directory.js?v=8b82d94e4566597e';
-import {inlineEventRow,mountInlineReading,citationText,citationHeading,mountCitationText} from './inline-reading.js?v=8b82d94e4566597e';
-import {retainMoreFocus} from './people-reading.js?v=8b82d94e4566597e';
-import {knowledgeIndex} from './data-loader.js?v=8b82d94e4566597e';
+import {canonicalSearchHash} from './search.js?v=fc84f6282a7a3932';
+import {personSources, renderBiography, evidenceKey, biographyScope, scopeIncludes, biographyAnchor, cleanTimeLabel} from './profiles.js?v=fc84f6282a7a3932';
+import {matchesEditorial, canonicalEditorial, overviewItems, groupDateText, yearbookItems} from './event-editorial.js?v=fc84f6282a7a3932';
+import {eventPeople, mountPersonFilter} from './person-filter.js?v=fc84f6282a7a3932';
+import {readingProjection,quoteText,passageHTML} from './event-reading.js?v=fc84f6282a7a3932';
+import {directoryPeople} from './people-directory.js?v=fc84f6282a7a3932';
+import {inlineEventRow,mountInlineReading,citationText,citationHeading,mountCitationText} from './inline-reading.js?v=fc84f6282a7a3932';
+import {retainMoreFocus} from './people-reading.js?v=fc84f6282a7a3932';
+import {knowledgeIndex} from './data-loader.js?v=fc84f6282a7a3932';
 // People and events share evidence; chronology is a view of events, never a second fact set.
 const BATCH = 40, SOURCE_BATCH = 20;
 const LAYERS = {original:'正文', pei:'裴注', modern:'现代注释'};

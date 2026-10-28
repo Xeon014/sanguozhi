@@ -87,8 +87,15 @@ export function mountReadingControls({host,entries,getPrefs,onNoteChange,onFontC
   listen(window,'keydown',event=>{
     if(event.key==='Tab'){
       if(pointerActive){ignoreChange=true;cancelPreview();}
-      const recalling=concealed;keyboardFocus=true;resetScrollIntent();showToolbar();
-      if(recalling){event.preventDefault();(event.shiftKey?opener:toolbar.querySelector('#open-directory')).focus({preventScroll:true});}
+      const recalling=concealed;keyboardFocus=true;resetScrollIntent();
+      // Focus cannot enter a visibility transition's initially hidden frame
+      // in narrow Chromium. Keyboard recall must be immediately focusable.
+      if(recalling)toolbar.style.transition='none';
+      showToolbar();
+      if(recalling){
+        event.preventDefault();(event.shiftKey?opener:toolbar.querySelector('#open-directory')).focus({preventScroll:true});
+        toolbar.style.removeProperty('transition');
+      }
     }
     if(event.key==='Escape'&&!bar.hidden){event.preventDefault();closeProgress(true);}
     if(event.target.closest('input,select,textarea,button,summary,a,[contenteditable=true]')||event.ctrlKey||event.metaKey||event.altKey)return;
