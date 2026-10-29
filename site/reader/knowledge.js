@@ -1,12 +1,15 @@
-import {canonicalSearchHash} from './search.js?v=fc84f6282a7a3932';
-import {personSources, renderBiography, evidenceKey, biographyScope, scopeIncludes, biographyAnchor, cleanTimeLabel} from './profiles.js?v=fc84f6282a7a3932';
-import {matchesEditorial, canonicalEditorial, overviewItems, groupDateText, yearbookItems} from './event-editorial.js?v=fc84f6282a7a3932';
-import {eventPeople, mountPersonFilter} from './person-filter.js?v=fc84f6282a7a3932';
-import {readingProjection,quoteText,passageHTML} from './event-reading.js?v=fc84f6282a7a3932';
-import {directoryPeople} from './people-directory.js?v=fc84f6282a7a3932';
-import {inlineEventRow,mountInlineReading,citationText,citationHeading,mountCitationText} from './inline-reading.js?v=fc84f6282a7a3932';
-import {retainMoreFocus} from './people-reading.js?v=fc84f6282a7a3932';
-import {knowledgeIndex} from './data-loader.js?v=fc84f6282a7a3932';
+import {canonicalSearchHash} from './search.js?v=41167bc9ab1fa07b';
+import {personSources, renderBiography, evidenceKey, biographyScope, scopeIncludes, biographyAnchor, cleanTimeLabel} from './profiles.js?v=41167bc9ab1fa07b';
+import {matchesEditorial, canonicalEditorial, overviewItems, groupDateText, yearbookItems} from './event-editorial.js?v=41167bc9ab1fa07b';
+import {eventPeople, mountPersonFilter} from './person-filter.js?v=41167bc9ab1fa07b';
+import {readingProjection,quoteText,passageHTML} from './event-reading.js?v=41167bc9ab1fa07b';
+import {directoryPeople} from './people-directory.js?v=41167bc9ab1fa07b';
+import {inlineEventRow,mountInlineReading,citationText,citationHeading,mountCitationText} from './inline-reading.js?v=41167bc9ab1fa07b';
+import {retainMoreFocus} from './people-reading.js?v=41167bc9ab1fa07b';
+import {knowledgeIndex} from './data-loader.js?v=41167bc9ab1fa07b';
+// Legacy address canonicalization lives in route-hash.js so the entry module
+// needs no renderer import; re-exported for existing importers.
+export {legacyKnowledgeHash} from './route-hash.js?v=41167bc9ab1fa07b';
 // People and events share evidence; chronology is a view of events, never a second fact set.
 const BATCH = 40, SOURCE_BATCH = 20;
 const LAYERS = {original:'正文', pei:'裴注', modern:'现代注释'};
@@ -49,18 +52,6 @@ function ownedRefs(entity, page) {
   return page==='people'
     ? [...(entity.evidence||[]),...(entity.facts||[]).flatMap(x=>x.evidence),...(entity.aliases||[]).flatMap(x=>x.evidence),...(entity.mentions||[]).flatMap(x=>x.evidence)]
     : [...entity.time.evidence,...entity.accounts.flatMap(x=>x.evidence),...entity.participants.flatMap(x=>x.evidence),...(entity.place?.evidence||[])];
-}
-export function legacyKnowledgeHash(hash) {
-  const [path,query='']=hash.slice(1).split('?');
-  let parts;try{parts=path.split('/').filter(Boolean).map(decodeURIComponent);}catch{return hash;}
-  if(parts.length===1&&parts[0]==='timeline')return `#/events${query?'?'+query:''}`;
-  if(parts[0]!=='topics'||parts[1]!=='chibi')return hash;
-  if(parts.length===4&&['person','event'].includes(parts[2]))return `#/${parts[2]==='person'?'people':'events'}/${encodeURIComponent(parts[3])}${query?'?'+query:''}`;
-  if(parts.length!==2)return hash;
-  const qs=new URLSearchParams(query);
-  if(!['view','q','person','year'].some(key=>qs.has(key)))return hash;
-  const view=qs.get('view')==='people'?'people':'events';
-  qs.delete('view');return `#/${view}${qs.size?'?'+qs:''}`;
 }
 export function canonicalKnowledgeHash(parts, qs, data, profiles={}, editorial=null) {
   if(parts.length===1&&parts[0]==='people'){const legacy=canonicalSearchHash('#/people?'+qs);if(legacy.startsWith('#/search'))return legacy;}

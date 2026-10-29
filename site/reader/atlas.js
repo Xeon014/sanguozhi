@@ -1,37 +1,11 @@
 // The atlas lanes group reviewed dates by category; within a lane the vertical
 // position only prevents overlap. The detail tier plots every remaining
 // reviewed-year record and fades in as the time window narrows.
-export const PERIODS = [
-  {id:'all',title:'全景',from:184,to:280},
-  {id:'184-199',title:'184—199',from:184,to:199},
-  {id:'200-219',title:'200—219',from:200,to:219},
-  {id:'220-249',title:'220—249',from:220,to:249},
-  {id:'250-280',title:'250—280',from:250,to:280}
-];
-// Full filters in legacy homepage links belong to the full atlas, not a hidden filter.
-export function canonicalAtlasHomeHash(hash, mobile=false) {
-  if(mobile)return hash;
-  const [path,query='']=hash.split('?');
-  if(!['','#','#/'].includes(path))return hash;
-  const qs=new URLSearchParams(query);
-  if(!['category','q','person','year'].some(key=>qs.get(key))&&qs.get('period')!=='undated')return hash;
-  qs.set('view','atlas');return '#/events?'+qs;
-}
-export function atlasState(bundle, qs) {
-  let period=PERIODS.find(p=>p.id===qs.get('period')) || PERIODS[0];
-  const from=Number(qs.get('from')),to=Number(qs.get('to'));
-  if(qs.has('from')&&qs.has('to')&&Number.isInteger(from)&&Number.isInteger(to)&&from>=184&&to<=280&&from<=to)
-    period=PERIODS.find(p=>p.from===from&&p.to===to)||{id:'custom',from,to};
-  const category=Object.hasOwn(bundle.categories,qs.get('category'))?qs.get('category'):'';
-  const filters=Object.fromEntries(['q','person','year'].filter(k=>qs.get(k)).map(k=>[k,qs.get(k)]));
-  const nodes=bundle.nodes.filter(n=>qs.get('period')!=='undated'&&n.year>=period.from&&n.year<=period.to&&(!category||n.categories.includes(category))&&(!bundle.allowedKeys||bundle.allowedKeys.includes(n.key)));
-  // The detail tier is category-neutral, so filters and category views keep it hidden.
-  const records=!category&&!Object.keys(filters).length&&qs.get('period')!=='undated'&&Array.isArray(bundle.records)
-    ?bundle.records.filter(r=>r.year>=period.from&&r.year<=period.to):[];
-  const key=nodes.find(n=>n.key===qs.get('node'))?.key ||
-    nodes.find(n=>n.key===bundle.default)?.key || nodes[0]?.key || '';
-  return {period:qs.get('period')==='undated'?'undated':period.id,range:[period.from,period.to],category,key,nodes,records,...(Object.keys(filters).length?{filters}:{})};
-}
+// Route-level hash helpers live in route-hash.js so the entry module can
+// canonicalize addresses without loading this renderer; re-exported for
+// existing importers.
+import {PERIODS, atlasState, atlasHash, yearbookHash} from './route-hash.js?v=41167bc9ab1fa07b';
+export {PERIODS, canonicalAtlasHomeHash, atlasState, atlasHash, yearbookHash} from './route-hash.js?v=41167bc9ab1fa07b';
 export function zoomRange(range,anchor,factor=1,direction=0){
   const span=Math.max(1,Math.min(97,Math.round((range[1]-range[0]+1)*factor)));
   const center=direction?(range[0]+range[1])/2+direction*Math.max(1,Math.floor(span/2)):anchor;
@@ -39,22 +13,6 @@ export function zoomRange(range,anchor,factor=1,direction=0){
   const bounds=!direction&&factor<1?range:[184,280];
   const from=Math.max(bounds[0],Math.min(bounds[1]+1-span,Math.round(center-(span-1)/2)));
   return [from,from+span-1];
-}
-export function atlasHash(state, home=false) {
-  const q=new URLSearchParams(home?{}:{view:'atlas'});
-  q.set('period',state.period);
-  if(state.period==='custom'){q.delete('period');q.set('from',state.range[0]);q.set('to',state.range[1]);}
-  if(state.category)q.set('category',state.category);
-  if(state.key)q.set('node',state.key);
-  for(const [k,v] of Object.entries(state.filters||{}))q.set(k,v);
-  return (home?'#/':'#/events')+'?'+q;
-}
-export function yearbookHash(state,layout='') {
-  const q=new URLSearchParams({view:'highlights'});
-  if(layout==='compact')q.set('layout','compact');
-  if(state.key)q.set('node',state.key);
-  for(const key of ['q','person'])if(state.filters?.[key])q.set(key,state.filters[key]);
-  return '#/events?'+q;
 }
 // The detail tier is always plotted; wide spans pack it as a dense star field.
 const LANE_MIN=44,STACK=30,HIT=14,LABEL_GAP=16,MIN_PITCH=32;

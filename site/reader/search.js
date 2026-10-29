@@ -1,7 +1,8 @@
-export function searchHash(type, query='') {
+export function searchHash(type, query='', book='') {
   const qs=new URLSearchParams();
   if(type==='people')qs.set('type','people');
   if(query.trim())qs.set('q',query.trim());
+  if(type!=='people'&&book)qs.set('book',book);
   return '#/search'+(qs.size?'?'+qs:'');
 }
 
@@ -23,8 +24,9 @@ export function highlightText(value, query, normalize, escape) {
 
 export function canonicalSearchHash(hash) {
   const [path,query='']=hash.split('?'),qs=new URLSearchParams(query);
+  // Unknown book ids are dropped by the search page against site collections.
   if(path==='#/people'&&(qs.get('view')==='all'||qs.has('faction')))return searchHash('people',qs.get('q')||'');
-  if(path==='#/search')return searchHash(qs.get('type'),qs.get('q')||'');
+  if(path==='#/search')return searchHash(qs.get('type'),qs.get('q')||'',qs.get('book')||'');
   return hash;
 }
 
