@@ -5,7 +5,7 @@ export function readingSettingsHTML({types,landmarks,fontSize,esc,cv}) {
     <dialog class="reading-settings" id="reading-settings" aria-labelledby="reading-settings-title">
       <header class="settings-head"><h2 id="reading-settings-title">${cv('阅读设置')}</h2><button type="button" id="close-reading-settings" autofocus>${cv('关闭')}</button></header>
       <div class="settings-body"><label class="settings-jump"><span>${cv('定位正文')}</span><select id="jump"><option value="">${cv('定位正文')}</option>${landmarks.map(([id,text])=>`<option value="${esc(id)}">${esc(cv(text))}</option>`).join('')}</select></label>
-      ${types.map(([type,label])=>`<label class="note-setting"><input type="checkbox" data-note-toggle="${esc(type)}"><span>${esc(cv(label))}</span><span class="note-setting-state" aria-hidden="true"></span></label>`).join('')}
+      ${types.map(([type,label])=>`<label class="note-setting"><span>${esc(cv(label))}</span><select data-note-display="${esc(type)}">${[['hidden','隐藏'],['folded','按需展开'],['expanded','全文展开']].map(([value,text])=>`<option value="${value}">${cv(text)}</option>`).join('')}</select></label>`).join('')}
       <div class="settings-font"><span>${cv('字号')}</span><div><button type="button" id="smaller" aria-label="${cv('减小字号')}">A−</button><output id="font-size">${fontSize}</output><button type="button" id="larger" aria-label="${cv('增大字号')}">A＋</button></div></div></div>
     </dialog>`;
 }
@@ -15,13 +15,13 @@ export function chapterProgressHTML(cv) {
     <div class="chapter-progress" id="chapter-progress" role="group" aria-label="${cv('本篇进度')}" hidden><div class="progress-head"><span>${cv('本篇进度')}</span><button type="button" id="close-reading-progress">${cv('收起进度')}</button></div><input type="range" id="chapter-position" min="1" max="1" value="1" step="1" aria-label="${cv('本篇进度')}"><p class="progress-tip" aria-hidden="true" hidden></p></div>`;
 }
 
-export function mountReadingControls({host,entries,getPrefs,onNoteChange,onFontChange,onJump,onPositionChange,cv}) {
+export function mountReadingControls({host,entries,getPrefs,getView,onNoteChange,onFontChange,onJump,onPositionChange,cv}) {
   const controller=new AbortController(),options={signal:controller.signal};
   const dialog=host.querySelector('#reading-settings'),opener=host.querySelector('#open-reading-settings');
   const toggle=host.querySelector('#toggle-reading-progress'),bar=host.querySelector('#chapter-progress'),range=bar.querySelector('input'),position=toggle.querySelector('.progress-position'),tip=bar.querySelector('.progress-tip');
   const toolbar=host.querySelector('.toolbar'),reading=host.querySelector('#reading'),head=document.querySelector('.site-head');
   const items=entries.map(([el])=>el),labels=entries.map(([,text])=>cv(text));
-  let revealed=null,frame=0,observed=1,pointerActive=false,ignoreChange=false,disposed=false;
+  let revealed=null,fontView=null,frame=0,observed=1,pointerActive=false,ignoreChange=false,disposed=false;
   let concealed=false,lastY=scrollY,distance=0,direction=0,intentUntil=0,keyboardFocus=false,toolbarPointer=false;
   const listen=(el,name,fn,extra={})=>el.addEventListener(name,fn,{...options,...extra});
   const clamp=value=>Math.min(items.length,Math.max(1,Number(value)||1));
@@ -106,19 +106,21 @@ export function mountReadingControls({host,entries,getPrefs,onNoteChange,onFontC
 
   function syncSettings() {
     const prefs=getPrefs();
-    for(const input of dialog.querySelectorAll('[data-note-toggle]')){
-      input.checked=prefs.noteVisibility[input.dataset.noteToggle]!==false;
-      input.closest('label').querySelector('.note-setting-state').textContent=cv(input.checked?'显示':'隐藏');
-    }
+    for(const input of dialog.querySelectorAll('[data-note-display]'))input.value=prefs.noteDisplay[input.dataset.noteDisplay];
     dialog.querySelector('#font-size').textContent=prefs.fs;
     dialog.querySelector('#smaller').disabled=prefs.fs<=16;
     dialog.querySelector('#larger').disabled=prefs.fs>=30;
   }
-  function applyNotes() {
-    const visibility=getPrefs().noteVisibility;
-    for(const ref of host.querySelectorAll('.note-ref[data-note-type]'))ref.hidden=visibility[ref.dataset.noteType]===false;
+  function applyNotes(resetType) {
+    const display=getPrefs().noteDisplay;
+    for(const ref of host.querySelectorAll('.note-ref[data-note-type]'))ref.hidden=display[ref.dataset.noteType]==='hidden';
     for(const stack of host.querySelectorAll('.note-stack[data-note-type]')){
-      const show=visibility[stack.dataset.noteType]!==false;
+      const mode=display[stack.dataset.noteType],show=mode!=='hidden';
+      stack.classList.toggle('notes-expanded',mode==='expanded');
+      if(stack.dataset.noteType===resetType&&show){
+        stack.open=mode==='expanded';
+        for(const note of stack.querySelectorAll(':scope>.note')){note.open=mode==='expanded';delete note.dataset.returnId;}
+      }
       for(const note of stack.querySelectorAll(':scope>.note'))note.hidden=!show&&note!==revealed;
       stack.hidden=!show&&![...stack.querySelectorAll(':scope>.note')].some(note=>!note.hidden);
     }
@@ -136,7 +138,7 @@ export function mountReadingControls({host,entries,getPrefs,onNoteChange,onFontC
     revealed=null;applyNotes();return true;
   }
   function closeSettings() {if(dialog.open)dialog.close();}
-  listen(opener,'click',()=>{prepareJump();cancelPreview();syncSettings();document.documentElement.classList.add('reading-settings-open');dialog.showModal();});
+  listen(opener,'click',()=>{fontView=null;prepareJump();cancelPreview();syncSettings();document.documentElement.classList.add('reading-settings-open');dialog.showModal();});
   listen(dialog.querySelector('#close-reading-settings'),'click',closeSettings);
   // Dismiss only an actual backdrop click, never an internal focus transition.
   let backdrop=false;
@@ -144,12 +146,12 @@ export function mountReadingControls({host,entries,getPrefs,onNoteChange,onFontC
   listen(dialog,'pointerdown',event=>{backdrop=event.target===dialog&&outside(event);});
   listen(dialog,'click',event=>{if(backdrop&&event.target===dialog&&outside(event))closeSettings();backdrop=false;});
   listen(dialog,'close',()=>{document.documentElement.classList.remove('reading-settings-open');if(!disposed&&opener.isConnected)opener.focus({preventScroll:true});});
-  for(const input of dialog.querySelectorAll('[data-note-toggle]'))listen(input,'change',()=>{
-    if(revealed?.closest('.note-stack').dataset.noteType===input.dataset.noteToggle)revealed=null;
-    onNoteChange(input.dataset.noteToggle,input.checked);applyNotes();
+  for(const input of dialog.querySelectorAll('[data-note-display]'))listen(input,'change',()=>{
+    fontView=null;onNoteChange(input.dataset.noteDisplay,input.value);
   });
-  listen(dialog.querySelector('#smaller'),'click',()=>{onFontChange(-1);syncSettings();});
-  listen(dialog.querySelector('#larger'),'click',()=>{onFontChange(1);syncSettings();});
+  const changeFont=delta=>{fontView??=getView();onFontChange(delta,fontView);syncSettings();};
+  listen(dialog.querySelector('#smaller'),'click',()=>changeFont(-1));
+  listen(dialog.querySelector('#larger'),'click',()=>changeFont(1));
   listen(dialog.querySelector('#jump'),'change',event=>{const id=event.target.value;if(id){closeSettings();onJump(id);}});
 
   function paint(value,preview=false) {
@@ -218,7 +220,8 @@ export function mountReadingControls({host,entries,getPrefs,onNoteChange,onFontC
   fitToolbar();applyNotes();update();
   return {applyNotes,syncSettings,refresh,revealNote,dismissNote,prepareJump,resetScrollIntent,
     revealedId:()=>revealed?.id||null,
-    isTemporary:note=>note===revealed&&getPrefs().noteVisibility[note.closest('.note-stack').dataset.noteType]===false,
+    clearReveal:type=>{if(revealed?.closest('.note-stack').dataset.noteType===type)revealed=null;},
+    isTemporary:note=>note===revealed&&getPrefs().noteDisplay[note.closest('.note-stack').dataset.noteType]==='hidden',
     dispose(){disposed=true;controller.abort();observer.disconnect();cancelAnimationFrame(frame);if(dialog.open)dialog.close();document.documentElement.classList.remove('reading-settings-open','reading-page');document.documentElement.style.removeProperty('--reading-offset');}
   };
 }

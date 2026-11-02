@@ -1,5 +1,5 @@
-import {retainMoreFocus} from './people-reading.js?v=41167bc9ab1fa07b';
-import {citationHeading} from './inline-reading.js?v=41167bc9ab1fa07b';
+import {retainMoreFocus} from './people-reading.js?v=f23d2e503eaf55f5';
+import {citationHeading} from './inline-reading.js?v=f23d2e503eaf55f5';
 // Presentation choices refer to existing facts; they never become a second event store.
 export const evidenceKey=e=>JSON.stringify([e.source_sha256,e.section,e.block,e.layer,e.attribution||'',e.start,e.end,e.quote]);
 

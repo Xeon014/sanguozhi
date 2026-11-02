@@ -1,6 +1,6 @@
 /* 三国志 · Contemporary editorial exhibition
    Tokens → navigation → cover → indexes → reading → evidence → atlas → topics → responsive */
-:root{--paper:#f5f1e8;--surface:#fbf9f3;--ink:#202823;--muted:#696b60;--line:#d4d2c5;--accent:#ad3828;--accent-deep:#852d22;--soft:#ebe7dc;--modern:#426456;--pei:#826328;--gold:#826328;--wei:#456580;--shu:#974b3c;--wu:#396850;--hover:#20282308;--fs:20px;--sans:system-ui,'Microsoft YaHei',sans-serif;color-scheme:light;overflow-anchor:none;scroll-padding-top:176px}
+:root{--paper:#f5f1e8;--surface:#fbf9f3;--ink:#202823;--muted:#696b60;--line:#d4d2c5;--accent:#ad3828;--accent-deep:#852d22;--soft:#ebe7dc;--modern:#426456;--pei:#826328;--gold:#826328;--wei:#456580;--shu:#974b3c;--wu:#396850;--hover:#20282308;--fs:20px;--sans:system-ui,'Microsoft YaHei',sans-serif;color-scheme:light;scrollbar-gutter:stable;overflow-anchor:none;scroll-padding-top:176px}
 
 :root[data-theme=dark]{--paper:#191e1b;--surface:#222a25;--ink:#eee9db;--muted:#b9bcae;--line:#414b43;--accent:#efab95;--accent-deep:#ffd0bc;--soft:#2a342d;--modern:#a2c6b0;--pei:#dcc18d;--gold:#dcc18d;--wei:#a6c1d8;--shu:#e8b09b;--wu:#a0c8ac;--hover:#eee9db08;color-scheme:dark}
 
@@ -132,16 +132,15 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .reading-settings-trigger{margin-left:auto;color:var(--muted)}
 .reading-settings{position:fixed;inset:0;width:400px;max-width:calc(100vw - 32px);max-height:calc(100dvh - 32px);padding:0;margin:auto;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:14px/1.5 var(--sans);overscroll-behavior:contain}
 .reading-settings::backdrop{background:#101c1677}
-.reading-settings-open{overflow:hidden;scrollbar-gutter:stable}
+.reading-settings-open{overflow:hidden}
 .settings-head{position:sticky;top:0;z-index:1;background:var(--surface);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 24px;border-bottom:1px solid var(--line)}
 .settings-head h2{font:500 22px/1.5 var(--sans);margin:0}
 .settings-head button{border-color:transparent;padding-inline:12px}
 .settings-body{display:grid;gap:12px;padding:20px 24px 24px}
 .settings-jump{display:grid;gap:10px;color:var(--muted)}
 .settings-jump select{width:100%;color:var(--ink)}
-.note-setting{display:grid;grid-template-columns:24px 1fr auto;align-items:center;gap:12px;min-height:56px;padding:8px 0;cursor:pointer;border-bottom:1px solid var(--line)}
-.note-setting input{appearance:auto;width:22px;height:22px;min-height:0;margin:0;padding:0;accent-color:var(--accent);cursor:pointer}
-.note-setting-state{font-size:13px;color:var(--muted)}
+.note-setting{display:grid;grid-template-columns:1fr minmax(0,156px);align-items:center;gap:12px;min-height:56px;padding:8px 0;border-bottom:1px solid var(--line)}
+.note-setting select{width:100%}
 .settings-font{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:8px}
 .settings-font>div{display:flex;align-items:center;gap:12px}
 .settings-font output{min-width:24px;text-align:center;font-variant-numeric:tabular-nums}
@@ -185,6 +184,16 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .note>summary{padding:12px 20px;color:var(--muted);min-height:44px}
 .note-body{padding:0 24px 16px}
 .note .block{font-size:calc(var(--fs) - 2px);margin:12px 0}
+.notes-expanded{margin-top:16px}
+.notes-expanded>summary{font:14px/1.8 var(--sans);color:var(--pei)}
+.notes-expanded.note-primary>summary{color:var(--modern)}
+.notes-expanded>.note{background:transparent;border-left:0;border-top:1px solid var(--line);margin:0 0 24px}
+.notes-expanded>.note>summary{padding:12px 0 4px;font:13px/1.8 var(--sans)}
+.notes-expanded .note-body{padding:0 0 8px}
+.notes-expanded .note .block{font-family:'Noto Serif SC','Noto Serif TC','Songti SC','SimSun',serif;font-size:var(--fs);line-height:2}
+.note .reading-actions{display:flex;justify-content:flex-end;gap:20px;flex-wrap:wrap}
+.note-back{display:inline-flex;align-items:center;min-height:44px;padding:10px 8px;border:0;color:var(--muted);background:none;font:14px/1.8 var(--sans)}
+.note-back:hover{color:var(--ink);text-decoration:underline}
 .return-link,.back-search,.knowledge-back{display:inline-flex;align-items:center;padding:10px 0;min-height:44px;color:var(--accent);font:14px/1.8 var(--sans)}
 .return-link{color:var(--muted);border:0;background:none;padding:10px 8px}
 .return-link:hover{color:var(--ink);border-color:transparent;text-decoration:underline}
@@ -573,7 +582,7 @@ button.atlas-lane:focus-visible{outline:2px solid var(--accent);outline-offset:-
 .reading-settings{inset:auto 0 0;width:100%;max-width:100%;max-height:calc(100dvh - env(safe-area-inset-top) - 12px);margin:0;padding-bottom:env(safe-area-inset-bottom);border-width:1px 0 0}
 .settings-head{padding-inline:20px}
 .settings-body{padding-inline:20px}
-.settings-jump select{font-size:16px}
+.settings-jump select,.note-setting select{font-size:16px}
 .note-body{padding-inline:16px}
 .translation{padding-left:16px}
 .passage-link{left:-18px}
