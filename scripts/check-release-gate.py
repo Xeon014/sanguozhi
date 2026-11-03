@@ -129,6 +129,9 @@ def check_config_and_refs(gate: Gate) -> tuple[dict[str, Any] | None, dict[str, 
     print("== config / site refs ==")
     config = gate.load_json(gate.reader / "config.json")
     site = gate.load_json(gate.reader / "site.json")
+    for name, value in (("config.json", config), ("site.json", site)):
+        if not isinstance(value, dict):
+            gate.fail(f"{name}: must be a JSON object")
     if not isinstance(config, dict) or not isinstance(site, dict):
         return None, None, None, None
 
@@ -292,6 +295,8 @@ def check_runtime_samples(
 ) -> None:
     print("== runtime shard sample ==")
     section_map = (directory or {}).get("section_sha256") if directory else None
+    if not isinstance(section_map, dict):
+        gate.fail("runtime/directory.json: section_sha256 must be an object")
     for sub in ("people", "events", "sources"):
         folder = runtime_dir / sub
         if not folder.is_dir():
@@ -323,19 +328,14 @@ def check_runtime_samples(
                 )
                 continue
             sha_ok += 1
-            if isinstance(section_map, dict) and isinstance(value.get("section_sha256"), dict):
-                mismatched = next(
-                    (
-                        sid
-                        for sid, sha in value["section_sha256"].items()
-                        if sid in section_map and section_map[sid] != sha
-                    ),
-                    None,
-                )
-                if mismatched:
-                    gate.fail(
-                        f"{path.name}: section_sha256[{mismatched}] diverges from directory"
-                    )
+            shard_map = value.get("section_sha256")
+            if not isinstance(shard_map, dict):
+                gate.fail(f"{path.name}: section_sha256 must be an object")
+            elif isinstance(section_map, dict):
+                if shard_map.keys() != section_map.keys():
+                    gate.fail(f"{path.name}: section_sha256 keys differ from directory")
+                elif shard_map != section_map:
+                    gate.fail(f"{path.name}: section_sha256 values diverge from directory")
                 else:
                     section_ok += 1
         gate.ok(f"runtime/{sub}/ sample source_sha256 ok ({sha_ok}/{len(picks)})")
