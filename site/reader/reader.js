@@ -139,7 +139,10 @@ async function loadTopics() {
   if(!site.topics)return null;
   if(!topicBundle){
     const pending=(async()=>{
-    const [presentation,catalog]=await Promise.all([loadTopicPresentation(),json(site.knowledge.file,topicRequestOptions)]);
+    // Prefer the runtime topics projection (lean slice of catalog.json) when
+    // runtimeRoot is configured — same pattern as directory/highlights packs.
+    const catalogPath=runtimePath?runtimePath+'topics-catalog.json':site.knowledge.file;
+    const [presentation,catalog]=await Promise.all([loadTopicPresentation(),json(catalogPath,topicRequestOptions)]);
     if(presentation.source_sha256!==book.source_sha256||catalog.source_sha256!==book.source_sha256||
       Object.entries(presentation.section_sha256).some(([id,sha])=>catalog.section_sha256[id]!==sha))throw Error('专题与当前文本版本不一致');
     const stable=value=>JSON.stringify(value,(_,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.keys(v).sort().map(k=>[k,v[k]])):v);
@@ -165,7 +168,7 @@ async function loadTopicPresentation(){
   return topicPresentation;
 }
 function resetTopics() {
-  // A homepage preview may belong to an earlier release than the catalog.
+  // A homepage preview may belong to an earlier release than the topics pack.
   // Retry the whole bound bundle, including any previously read source chapters.
   topicBundle=null;topicPresentation=null;topicRequestOptions={cache:'reload'};
   for(const id of topicSections)cache.delete(`sections/${id}.json`);
