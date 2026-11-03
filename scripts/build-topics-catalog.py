@@ -136,7 +136,7 @@ def main(argv: list[str]) -> int:
   )
   size = args.out.stat().st_size
   print(
-    f"wrote {args.out.relative_to(root)} ({size:,} bytes); "
+    f"wrote {args.out} ({size:,} bytes); "
     f"events={len(projection['events'])} "
     f"persons={len(projection['persons'])} "
     f"evidence={len(projection['evidence'])}"
