@@ -39,6 +39,22 @@ export function knowledgeIndex(data){
   indexes.set(data,result);return result;
 }
 
+// Runtime shards no longer embed the shared chapter digest map. Attach it from
+// section-sha256.json after fetch; keep intentional subsets (e.g. reading.json)
+// but reject any overlapping key that disagrees with the shared pack.
+export function adoptSectionSha(data, shared) {
+  if(!shared?.section_sha256)return data;
+  if(data.source_sha256&&shared.source_sha256&&data.source_sha256!==shared.source_sha256)
+    throw Error('查询资料与当前文本版本不一致');
+  if(data.section_sha256){
+    for(const [id,sha] of Object.entries(data.section_sha256))
+      if(shared.section_sha256[id]!==sha)throw Error('查询资料与当前文本版本不一致');
+    return data;
+  }
+  data.section_sha256=shared.section_sha256;
+  return data;
+}
+
 export function attachRuntime(data, load) {
   const pending=new Map();
   data.loadEvent=id=>{

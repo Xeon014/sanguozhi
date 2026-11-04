@@ -1,7 +1,7 @@
 // Heavy views load per route so first paint only needs the shell helpers;
 // pure address canonicalizers stay in route-hash.js for every navigation.
 import {atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash, legacyKnowledgeHash} from './route-hash.js?v=f23d2e503eaf55f5';
-import {createJSONLoader,attachRuntime,presentPeople} from './data-loader.js?v=f23d2e503eaf55f5';
+import {createJSONLoader,attachRuntime,presentPeople,adoptSectionSha} from './data-loader.js?v=f23d2e503eaf55f5';
 import {searchHash,canonicalSearchHash,searchPeople,highlightText} from './search.js?v=f23d2e503eaf55f5';
 import {blockText} from './event-reading.js?v=f23d2e503eaf55f5';
 const $ = (q, el = document) => el.querySelector(q);
@@ -30,11 +30,19 @@ const cache = new Map();
 const assetVersion = new URL(import.meta.url).searchParams.get('v');
 const loadJSON=createJSONLoader(location.href,assetVersion);
 const json=async(...args)=>presentPeople(await loadJSON(...args),site?.knowledge?.displayNames);
-let runtimePath,anchorsPath;
+let runtimePath,anchorsPath,sectionShaPack;
+async function sharedSectionSha(){
+  if(!runtimePath)return null;
+  sectionShaPack??=json(runtimePath+'section-sha256.json').then(pack=>{
+    if(!pack?.section_sha256||pack.source_sha256!==book.source_sha256)throw Error('章节校验资料与当前文本版本不一致');
+    return pack;
+  }).catch(error=>{sectionShaPack=null;throw error;});
+  return sectionShaPack;
+}
 const runtime=async path=>{
-  const value=await json(runtimePath+path);
+  const [value,shared]=await Promise.all([json(runtimePath+path),sharedSectionSha()]);
   if(value.source_sha256&&value.source_sha256!==book.source_sha256)throw Error('查询资料与当前文本版本不一致');
-  return value;
+  return adoptSectionSha(value,shared);
 };
 // Simplified display runs on the reviewed projection map; the full vendored
 // converter is fetched only when a reader actually switches to traditional.
