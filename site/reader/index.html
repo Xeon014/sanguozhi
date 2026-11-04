@@ -7,12 +7,14 @@
   <meta property="og:title" content="三国志">
   <meta property="og:description" content="《三国志》原典阅读：原文与译注对照、大事年表、时代星图、风云人物与史事检索。">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="reader.css?v=f23d2e503eaf55f5">
+  <link rel="stylesheet" href="reader.css?v=d02f0cf1541105b8">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap">
-  <link rel="icon" href="favicon.ico?v=f23d2e503eaf55f5" sizes="16 32 48">
-  <link rel="icon" href="favicon.svg?v=f23d2e503eaf55f5" type="image/svg+xml" sizes="any">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap"></noscript>
+  <link rel="icon" href="favicon.ico?v=d02f0cf1541105b8" sizes="16 32 48">
+  <link rel="icon" href="favicon.svg?v=d02f0cf1541105b8" type="image/svg+xml" sizes="any">
 </head>
 <body>
   <a class="skip" href="#main">跳到正文</a>
@@ -40,6 +42,13 @@
         </div>
       </details>
       <a class="nav-search" data-nav="tools" href="#/search" data-nav-label="检索">检索</a>
+      <div class="nav-display">
+        <span data-nav-label="显示">显示</span>
+        <div class="nav-zh" role="group" data-nav-aria="简繁切换">
+          <button type="button" data-zh="s" aria-pressed="true">简体</button>
+          <button type="button" data-zh="t" aria-pressed="false">繁體</button>
+        </div>
+      </div>
     </nav>
     <div class="preferences">
       <button id="zh" title="简繁切换">繁</button>
@@ -49,6 +58,6 @@
   <main id="main" tabindex="-1"><p role="status">正在载入……</p></main>
   <footer id="footer">陈寿 撰 · 裴松之 注</footer>
   <noscript><p>本站需要启用 JavaScript 才能阅读。</p></noscript>
-  <script type="module" src="reader.js?v=f23d2e503eaf55f5"></script>
+  <script type="module" src="reader.js?v=d02f0cf1541105b8"></script>
 </body>
 </html>

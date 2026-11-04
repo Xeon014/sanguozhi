@@ -64,6 +64,7 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .nav-links a:hover{background:var(--soft)}
 .preferences{display:flex;gap:4px;padding-left:20px;border-left:1px solid var(--line)}
 .preferences button{border-color:transparent;min-width:44px}
+.nav-display{display:none}
 #nav-toggle{display:none}
 
 /* Cover */
@@ -557,6 +558,13 @@ button.atlas-lane:focus-visible{outline:2px solid var(--accent);outline-offset:-
 #nav-toggle{display:block;margin-left:auto}
 .site-head #site-nav{display:none;order:4;width:100%;margin:12px 0 0}
 .site-head #nav-toggle[aria-expanded=true]~#site-nav{display:grid;grid-template-columns:1fr}
+.preferences #zh{display:none}
+.nav-display{display:flex;align-items:center;gap:16px;padding:8px 0 10px;border-top:1px solid var(--line)}
+.nav-display>span{font:14px/1.5 var(--sans);color:var(--muted);white-space:nowrap}
+.nav-zh{display:flex;margin-left:auto}
+.nav-zh button{min-width:88px;min-height:44px;padding:10px 12px}
+.nav-zh button+button{margin-left:-1px}
+input,select{font-size:16px}
 .nav-links{position:static;box-shadow:none;min-width:0}
 .hero{display:block;min-height:0;padding:38px 0 40px}
 .hero h1{font-size:clamp(72px,20.5vw,88px);margin:20px 0 28px}

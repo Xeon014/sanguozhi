@@ -1,5 +1,5 @@
-import {quoteText} from './event-reading.js?v=f23d2e503eaf55f5';
-import {knowledgeIndex} from './data-loader.js?v=f23d2e503eaf55f5';
+import {quoteText} from './event-reading.js?v=d02f0cf1541105b8';
+import {knowledgeIndex} from './data-loader.js?v=d02f0cf1541105b8';
 // Read reviewed quotations in place; no summaries, facts or dates are inferred.
 export function citationText(record,text,tag='blockquote',className='') {
   return `<${tag} class="${className}" data-quote-ref="${text(record.ids?.[0]||record.id)}"><span role="status">${text('正在载入…')}</span></${tag}>`;
@@ -46,7 +46,10 @@ export function mountCitationText(root,{data,text,loadSection,onChange=()=>{}}) 
     const retry=event.target.closest('.retry-citation');if(!retry)return;
     event.preventDefault();event.stopPropagation();const el=retry.closest('[data-quote-ref]');delete el.dataset.quoteState;fill(el);
   });
-  new MutationObserver(hydrate).observe(root,{childList:true,subtree:true});
+  // The route unmounts this root; stop observing rather than waiting on GC.
+  const observer=new MutationObserver(hydrate);
+  observer.observe(root,{childList:true,subtree:true});
+  root.citationDispose=()=>observer.disconnect();
   hydrate();
 }
 export function exactCitations(data, ids) {

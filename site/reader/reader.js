@@ -1,19 +1,20 @@
 // Heavy views load per route so first paint only needs the shell helpers;
 // pure address canonicalizers stay in route-hash.js for every navigation.
-import {atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash, legacyKnowledgeHash} from './route-hash.js?v=f23d2e503eaf55f5';
-import {createJSONLoader,attachRuntime,presentPeople} from './data-loader.js?v=f23d2e503eaf55f5';
-import {searchHash,canonicalSearchHash,searchPeople,highlightText} from './search.js?v=f23d2e503eaf55f5';
-import {blockText} from './event-reading.js?v=f23d2e503eaf55f5';
+import {atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash, legacyKnowledgeHash} from './route-hash.js?v=d02f0cf1541105b8';
+import {createJSONLoader,attachRuntime,presentPeople,hydratePacket} from './data-loader.js?v=d02f0cf1541105b8';
+import {searchHash,canonicalSearchHash,searchPeople,highlightText} from './search.js?v=d02f0cf1541105b8';
+import {blockText} from './event-reading.js?v=d02f0cf1541105b8';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
 const mobileLayout=matchMedia('(max-width:760px)');
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const safeRead = (k, fallback) => { try { return JSON.parse(localStorage.getItem(k)) ?? fallback; } catch { return fallback; } };
 const safeWrite = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
-let book, site, zhDisplay, root, prefs, storageKey, section, blockMap, groupForBlock, routeVersion = 0, currentId = null;
+let book, site, zhDisplay, fingerprints, root, prefs, storageKey, section, blockMap, groupForBlock, routeVersion = 0, currentId = null;
 let contextTimer, searchRows, searchNormalized, activeMode = 'both';
 let renderedHash = '', ready = false, searchLimit = 40, returnSearch = null, returnList = null;
-let topicBundle, topicPresentation, topicRequestOptions;
+let topicBundle, topicPresentation, topicRequestOptions;  // topicBundle: Map of per-topic bundle promises
+let holdMenuOnce = false;  // menu display-group switches re-render via route() but keep the menu open
 const topicSections = new Set();
 let atlasPresentation,atlasRecords,homeAtlasRun=0;
 let readingPresentation;
@@ -29,8 +30,10 @@ const normalize = s => simplified(String(s)).normalize('NFKC').toLowerCase();
 const cache = new Map();
 const assetVersion = new URL(import.meta.url).searchParams.get('v');
 const loadJSON=createJSONLoader(location.href,assetVersion);
-const json=async(...args)=>presentPeople(await loadJSON(...args),site?.knowledge?.displayNames);
-let runtimePath,anchorsPath;
+const json=async(...args)=>hydratePacket(presentPeople(await loadJSON(...args),site?.knowledge?.displayNames));
+// The section fingerprints live once in runtime/fingerprints.json; packets and
+// shards verify against their own source hash plus this shared map.
+let runtimePath;
 const runtime=async path=>{
   const value=await json(runtimePath+path);
   if(value.source_sha256&&value.source_sha256!==book.source_sha256)throw Error('查询资料与当前文本版本不一致');
@@ -94,14 +97,22 @@ async function data(path, options) {
   return cache.get(path);
 }
 function savePrefs() { safeWrite(storageKey + ':preferences', prefs); }
+// An unset theme follows the system on first visit; the first explicit choice
+// is persisted and wins from then on (JSON.stringify drops undefined).
+const systemTheme = () => matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'paper';
+const currentTheme = () => prefs.theme ?? systemTheme();
 function applyPrefs() {
-  document.documentElement.dataset.theme = prefs.theme;
+  document.documentElement.dataset.theme = currentTheme();
   document.documentElement.lang = prefs.zh === 't' ? 'zh-Hant' : 'zh-Hans';
   document.documentElement.style.setProperty('--fs', prefs.fs + 'px');
   $('#zh').textContent = prefs.zh === 't' ? '简' : '繁';
-  $('#theme').textContent = cv(prefs.theme === 'dark' ? '切换至日间' : '切换至夜间');
+  const dark = currentTheme() === 'dark';
+  $('#theme').textContent = cv(dark ? '日间' : '夜间');
+  $('#theme').setAttribute('aria-label', cv(dark ? '切换至日间' : '切换至夜间'));
+  document.querySelectorAll('[data-zh]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.zh === prefs.zh)));
   $('#brand').textContent = cv(site.title);
   document.querySelectorAll('[data-nav-label]').forEach(a => a.textContent = cv(a.dataset.navLabel));
+  document.querySelectorAll('[data-nav-aria]').forEach(a => a.setAttribute('aria-label', cv(a.dataset.navAria)));
   $('#nav-toggle').textContent=cv('菜单');
   $('#footer').textContent = cv(`${site.title} · ${site.credit}`);
 }
@@ -135,26 +146,28 @@ function blockHTML(id, options = {}) {
 function sectionItems(items) {
   return `<ul class="contents">${items.map(s=>`<li><a href="${url(s.id)}" ${s.id===currentId?'aria-current="page"':''}><span class="chapter-number">${esc(cv(chapterCaption(s)))}</span><span>${esc(cv(chapterName(s)))}</span></a></li>`).join('')}</ul>`;
 }
-async function loadTopics() {
-  if(!site.topics)return null;
-  if(!topicBundle){
-    const pending=(async()=>{
-    // Prefer the runtime topics projection (lean slice of catalog.json) when
-    // runtimeRoot is configured — same pattern as directory/highlights packs.
-    const catalogPath=runtimePath?runtimePath+'topics-catalog.json':site.knowledge.file;
-    const [presentation,catalog]=await Promise.all([loadTopicPresentation(),json(catalogPath,topicRequestOptions)]);
-    if(presentation.source_sha256!==book.source_sha256||catalog.source_sha256!==book.source_sha256||
-      Object.entries(presentation.section_sha256).some(([id,sha])=>catalog.section_sha256[id]!==sha))throw Error('专题与当前文本版本不一致');
+async function loadTopics(id) {
+  // Bound bundles are runtime projections; without a runtime root there is no
+  // topic data to read (the catalog no longer ships).
+  if(!site.topics||!runtimePath)return null;
+  const cached=topicBundle?.get(id);
+  if(cached)return cached;
+  const pending=(async()=>{
+    const presentation=await loadTopicPresentation();
+    // The bound bundle replaces the whole catalog: only the entities this
+    // topic cites travel, and the digests still guard the same records.
+    const bundle=await json(runtimePath+'topics/'+encodeURIComponent(id)+'.json',topicRequestOptions);
+    if(presentation.source_sha256!==book.source_sha256||bundle.source_sha256!==book.source_sha256||
+      Object.entries(presentation.section_sha256).some(([sid,sha])=>(fingerprints?.section_sha256||bundle.section_sha256)[sid]!==sha))throw Error('专题与当前文本版本不一致');
     const stable=value=>JSON.stringify(value,(_,v)=>v&&typeof v==='object'&&!Array.isArray(v)?Object.fromEntries(Object.keys(v).sort().map(k=>[k,v[k]])):v);
     const digest=async value=>[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(stable(value))))].map(n=>n.toString(16).padStart(2,'0')).join('');
-    const refs=new Map(catalog.evidence.map(r=>[r.id,r])),events=new Map(catalog.events.map(e=>[e.id,e]));
-    for(const [id,sha] of Object.entries(presentation.bindings))if(!refs.has(id)||await digest(refs.get(id))!==sha)throw Error('专题引文已变化，暂不可查看');
-    for(const [id,sha] of Object.entries(presentation.event_bindings))if(!events.has(id)||await digest(events.get(id))!==sha)throw Error('专题史事已变化，暂不可查看');
-    return {presentation,catalog};
-    })().catch(e=>{if(topicBundle===pending)topicBundle=null;throw e;});
-    topicBundle=pending;
-  }
-  return topicBundle;
+    const refs=new Map(bundle.evidence.map(r=>[r.id,r])),events=new Map(bundle.events.map(e=>[e.id,e]));
+    for(const [rid,sha] of Object.entries(presentation.bindings))if(!refs.has(rid)||await digest(refs.get(rid))!==sha)throw Error('专题引文已变化，暂不可查看');
+    for(const [eid,sha] of Object.entries(presentation.event_bindings))if(!events.has(eid)||await digest(events.get(eid))!==sha)throw Error('专题史事已变化，暂不可查看');
+    return {presentation,bundle};
+  })().catch(e=>{if(topicBundle?.get(id)===pending)topicBundle.delete(id);throw e;});
+  (topicBundle??=new Map()).set(id,pending);
+  return pending;
 }
 async function loadTopicPresentation(){
   if(!site.topics)return null;
@@ -168,7 +181,7 @@ async function loadTopicPresentation(){
   return topicPresentation;
 }
 function resetTopics() {
-  // A homepage preview may belong to an earlier release than the topics pack.
+  // A homepage preview may belong to an earlier release than the bundles.
   // Retry the whole bound bundle, including any previously read source chapters.
   topicBundle=null;topicPresentation=null;topicRequestOptions={cache:'reload'};
   for(const id of topicSections)cache.delete(`sections/${id}.json`);
@@ -199,7 +212,7 @@ function atlasCommit(hash) {
   renderedHash=hash;
 }
 async function showAtlas(host,bundle,qs,saved,home=false) {
-  const {mountAtlas}=await import('./atlas.js?v=f23d2e503eaf55f5');
+  const {mountAtlas}=await import('./atlas.js?v=d02f0cf1541105b8');
   // The renderer module may resolve after navigation moved on; never mount into a detached host.
   if(!host.isConnected)return;
   const state=mountAtlas(host,bundle,{esc,cv,qs,home,saved:saved?.atlas,onState:atlasCommit,onChange:saveContext});
@@ -406,10 +419,12 @@ function focusTarget(id,{revealNotes=true}={}) {
 async function readSection(id,target,version,saved) {
   const info=book.sections.find(x=>x.id===id);
   if(!info)throw Error('目录中没有这一章节');
-  const [loaded,anchors,controls]=await Promise.all([data(`sections/${id}.json`),book.anchor_index||json(anchorsPath),import('./reading-controls.js?v=f23d2e503eaf55f5')]);
+  // Each section carries its own anchor shard; a legacy book that already has
+  // the full index needs no extra request.
+  const [loaded,anchors,controls]=await Promise.all([data(`sections/${id}.json`),book.anchor_index||json(runtimePath+'anchors/'+encodeURIComponent(id)+'.json'),import('./reading-controls.js?v=d02f0cf1541105b8')]);
   const {readingSettingsHTML,chapterProgressHTML,mountReadingControls}=controls;
   if(version!==routeVersion)return;
-  book.anchor_index=anchors;
+  book.anchor_index??={};Object.assign(book.anchor_index,anchors);
   section=loaded;currentId=id;blockMap=new Map(section.blocks.map(b=>[b.id,b]));groupForBlock=new Map();
   for(const g of section.groups)for(const bid of [...g.original,...g.translation])groupForBlock.set(bid,g.id);
   const aligned=section.status==='aligned';
@@ -574,7 +589,8 @@ async function route(){
   replaceHash(legacyKnowledgeHash(location.hash));
   replaceHash(canonicalSearchHash(location.hash));
   if(location.hash.startsWith('#/read/')&&(site.excludedSections||[]).some(id=>location.hash.split('?')[0].split('/')[2]===id))replaceHash('#/supplements');
-  closeMenu(document.activeElement?.closest('#site-nav'));
+  const keepMenu=holdMenuOnce;holdMenuOnce=false;
+  if(!keepMenu)closeMenu(document.activeElement?.closest('#site-nav'));
   ready=false;clearTimeout(contextTimer);currentId=null;document.querySelector('.directory-panel')?.close();
   const entry=history.state?.book===storageKey&&history.state?.hash===location.hash?history.state:{};
   let saved=entry.view;returnSearch=entry.returnSearch||null;returnList=entry.returnList||null;searchLimit=40;
@@ -585,6 +601,7 @@ async function route(){
   main.dataset.page=parts[0]||'home';
   main.peopleLoadingDispose?.();main.lifeNavigationDispose?.();main.readingControls?.dispose();delete main.readingControls;
   document.documentElement.classList.toggle('reading-page',parts[0]==='read');
+  main.querySelectorAll('.knowledge-page,.person-detail').forEach(el=>el.citationDispose?.());
   $('.atlas')?.atlasDispose?.();
   main.querySelectorAll('[data-floating-panel]').forEach(panel=>panel.disposeFloating?.());
   main.innerHTML=`<p role="status">${cv('正在载入……')}</p>`;
@@ -597,9 +614,10 @@ async function route(){
       let atlas=await loadAtlas();if(version!==routeVersion)return;
       if(!atlas)throw Error('时代星图暂时不可用');
       if(['q','person','year'].some(k=>qs.get(k))){
-        const [{filteredOverviewItems},catalog,editorial]=await Promise.all([import('./event-editorial.js?v=f23d2e503eaf55f5'),runtimePath?runtime('highlights.json'):json(site.knowledge.file),json(site.knowledge.editorial)]);
+        const [{filteredOverviewItems},catalog,editorial]=await Promise.all([import('./event-editorial.js?v=d02f0cf1541105b8'),runtimePath?runtime('highlights.json'):json(site.knowledge.file),json(site.knowledge.editorial)]);
         if(version!==routeVersion)return;
-        if(catalog.source_sha256!==book.source_sha256||editorial.source_sha256!==catalog.source_sha256||Object.entries(editorial.section_sha256).some(([id,sha])=>catalog.section_sha256[id]!==sha))throw Error('史事资料版本不一致');
+        const prints=catalog.section_sha256||fingerprints?.section_sha256;
+        if(catalog.source_sha256!==book.source_sha256||editorial.source_sha256!==catalog.source_sha256||Object.entries(editorial.section_sha256).some(([id,sha])=>prints[id]!==sha))throw Error('史事资料版本不一致');
         const filters=new URLSearchParams();for(const k of ['q','person','year'])if(qs.get(k))filters.set(k,qs.get(k));
         atlas={...atlas,allowedKeys:filteredOverviewItems(catalog.events,editorial,filters,normalize).map(i=>i.type+':'+i.id)};
       }
@@ -619,9 +637,14 @@ async function route(){
     }
     else if(['people','events','timeline'].includes(parts[0])){
       if(!site.knowledge)throw Error('查询资料暂时不可用');
-      const [{renderKnowledge,canonicalKnowledgeHash},{biographyContext}]=await Promise.all([import('./knowledge.js?v=f23d2e503eaf55f5'),import('./profiles.js?v=f23d2e503eaf55f5')]);
-      const projected=runtimePath&&(parts[0]==='people'||(parts[0]==='events'&&(parts[1]||qs.get('view')==='highlights')));
-      const resource=parts[0]==='people'?(parts[1]?(qs.get('view')==='sources'?'sources/':'people/')+encodeURIComponent(parts[1])+'.json':'directory.json'):(parts[1]?'events/'+encodeURIComponent(parts[1])+'.json':'highlights.json');
+      const [{renderKnowledge,canonicalKnowledgeHash},{biographyContext}]=await Promise.all([import('./knowledge.js?v=d02f0cf1541105b8'),import('./profiles.js?v=d02f0cf1541105b8')]);
+      // The full-record query view and the legacy timeline read the slim
+      // events index instead of the whole catalog; every other route already
+      // had a dedicated shard or projection.
+      const projected=runtimePath&&['people','events','timeline'].includes(parts[0]);
+      const resource=parts[0]==='people'?(parts[1]?(qs.get('view')==='sources'?'sources/':'people/')+encodeURIComponent(parts[1])+'.json':'directory.json')
+        :parts[0]==='timeline'||!parts[1]&&qs.get('view')!=='highlights'?'events-index.json'
+        :parts[1]?'events/'+encodeURIComponent(parts[1])+'.json':'highlights.json';
   const [content,presentation,classification,reading]=await Promise.all([
         projected?runtime(resource):json(site.knowledge.file),
         !projected&&site.knowledge.profiles?json(site.knowledge.profiles):null,
@@ -634,14 +657,15 @@ async function route(){
         const person=chooser.persons.find(p=>p.id===qs.get('person'));if(person)content.persons.push(person);
       }
       if(content.source_sha256!==book.source_sha256)throw Error('查询资料与当前文本版本不一致，暂不可查看');
-      if(presentation&&(presentation.source_sha256!==content.source_sha256||Object.entries(presentation.section_sha256).some(([id,sha])=>content.section_sha256[id]!==sha)))throw Error('人物资料与当前文本版本不一致');
+      const contentPrints=content.section_sha256||fingerprints?.section_sha256;
+      if(presentation&&(presentation.source_sha256!==content.source_sha256||Object.entries(presentation.section_sha256).some(([id,sha])=>contentPrints[id]!==sha)))throw Error('人物资料与当前文本版本不一致');
       const profiles=content.profiles||presentation?.profiles||{};
       let editorial=null;
       if(parts[0]==='events'&&site.knowledge.editorial){
         try{
           editorial=classification;
           if(editorial.loadError)throw editorial.loadError;
-          if(editorial.source_sha256!==content.source_sha256||Object.entries(editorial.section_sha256).some(([id,sha])=>content.section_sha256[id]!==sha))throw Error('史事分类与当前文本版本不一致');
+          if(editorial.source_sha256!==content.source_sha256||Object.entries(editorial.section_sha256).some(([id,sha])=>contentPrints[id]!==sha))throw Error('史事分类与当前文本版本不一致');
         }catch(error){
           editorial=null;
           if(qs.get('view')==='highlights'||['category','importance','kind','group'].some(key=>qs.has(key)))throw error;
@@ -676,19 +700,19 @@ async function route(){
       }
     }
     else if(parts[0]==='topics'&&parts.length===1){
-      const [{topicDirectory},presentation]=await Promise.all([import('./topics.js?v=f23d2e503eaf55f5'),loadTopicPresentation()]);if(version!==routeVersion)return;
+      const [{topicDirectory},presentation]=await Promise.all([import('./topics.js?v=d02f0cf1541105b8'),loadTopicPresentation()]);if(version!==routeVersion)return;
       if(!presentation)throw Error('专题暂时不可用');
       main.innerHTML=topicDirectory(presentation,{esc,cv});knowledgeTitle='专题研究';
     }
     else if(parts[0]==='topics'){
-      const [{renderTopic},bundle]=await Promise.all([import('./topics.js?v=f23d2e503eaf55f5'),loadTopics()]);if(version!==routeVersion)return;
-      const topic=bundle?.presentation.topics.find(t=>t.id===parts[1]);
+      const [{renderTopic},bound]=await Promise.all([import('./topics.js?v=d02f0cf1541105b8'),loadTopics(parts[1])]);if(version!==routeVersion)return;
+      const topic=bound?.presentation.topics.find(t=>t.id===parts[1]);
       if(!topic||parts.length!==2)throw Error('未找到此专题');
-      const ids=Object.keys(bundle.presentation.section_sha256);
+      const ids=Object.keys(bound.presentation.section_sha256);
       ids.forEach(id=>topicSections.add(id));
       const sections=Object.fromEntries(await Promise.all(ids.map(async id=>[id,await data(`sections/${id}.json`,topicRequestOptions)])));
       if(version!==routeVersion)return;
-      knowledgeTitle=renderTopic(topic,bundle.catalog,{main,qs,esc,cv,url,collection,sections,saved,onChange:saveContext});
+      knowledgeTitle=renderTopic(topic,bound.bundle,{main,qs,esc,cv,url,collection,sections,saved,onChange:saveContext});
       $('#topic-smaller').onclick=()=>resize(-1);$('#topic-larger').onclick=()=>resize(1);
     }
     else await home(version,qs,saved);
@@ -703,7 +727,7 @@ async function route(){
     if(version!==routeVersion)return;
     restoreView(saved);
     if(!saved||saved.y===undefined){const target=main.querySelector('[data-source-target]');if(target){target.scrollIntoView({block:'start'});target.focus({preventScroll:true});}}
-    if(parts[0]==='people'){const {bindPeopleLoading,bindLifeNavigation}=await import('./people-reading.js?v=f23d2e503eaf55f5');bindPeopleLoading(main,{text:cv});bindLifeNavigation(main,{onChange:saveContext});}
+    if(parts[0]==='people'){const {bindPeopleLoading,bindLifeNavigation}=await import('./people-reading.js?v=d02f0cf1541105b8');bindPeopleLoading(main,{text:cv});bindLifeNavigation(main,{onChange:saveContext});}
     updateNavigation(parts);renderedHash=location.hash;ready=true;saveContext();
     document.title=cv(`${parts[0]==='read'?section.title+' · ':knowledgeTitle?knowledgeTitle+' · ':''}${site.title}`);
   }catch(e){if(version===routeVersion){currentId=null;main.innerHTML=`<div class="error" role="alert">${esc(cv(e.message))}<p>${cv('可重新加载；若仍无法打开，请刷新页面重试。')}</p><p><button id="retry">${cv('重试')}</button> <a href="#/contents">${cv('返回目录')}</a></p></div>`;$('#retry').onclick=()=>{if(parts[0]==='topics')resetTopics();route();};}}
@@ -711,27 +735,30 @@ async function route(){
 async function boot(){
   $('.skip').onclick=e=>{e.preventDefault();main.focus();main.scrollIntoView();};
   const config=await json('config.json');root=new URL(config.dataRoot,location.href.split('#')[0]).href;
-  runtimePath=config.runtimeRoot||null;anchorsPath=runtimePath+'anchors.json';
-  [book,site,zhDisplay]=await Promise.all([config.bookFile?json(config.bookFile):data('book.json'),json('site.json'),json('knowledge/zh-display.json')]);
+  runtimePath=config.runtimeRoot||null;
+  [book,site,zhDisplay,fingerprints]=await Promise.all([config.bookFile?json(config.bookFile):data('book.json'),json('site.json'),json('knowledge/zh-display.json'),runtimePath?json(runtimePath+'fingerprints.json'):null]);
   if(zhDisplay.source_sha256!==book.source_sha256||!zhDisplay.chars||!zhDisplay.phrases)throw Error('简繁显示资料与当前文本版本不一致');
+  if(fingerprints&&fingerprints.source_sha256!==book.source_sha256)throw Error('查询资料与当前文本版本不一致');
   adoptZhDisplay(zhDisplay);
   const assigned=site.collections.flatMap(c=>c.chapters);
   if(new Set(assigned).size!==assigned.length||assigned.some(id=>!book.sections.some(s=>s.id===id&&s.kind==='chapter'))||site.featured.some(id=>!assigned.includes(id))||book.sections.filter(s=>s.kind==='chapter').length!==assigned.length)throw Error('目录暂时无法载入');
   const extras=(site.supplements||[]).flatMap(g=>g.sections);
   if(new Set(extras).size!==extras.length||extras.some(id=>!book.sections.some(s=>s.id===id&&s.kind!=='chapter')))throw Error('补充材料暂时无法载入');
   storageKey=`epub-reader:${book.id}:${book.source_sha256}`;
-  prefs={theme:'paper',zh:'s',fs:20,mode:'both',showNoteMarkers:true,...safeRead(storageKey+':preferences',{})};
+  prefs={zh:'s',fs:20,mode:'both',showNoteMarkers:true,...safeRead(storageKey+':preferences',{})};
   prefs.noteDisplay=Object.fromEntries(Object.keys(book.note_types).map(type=>[type,['hidden','folded','expanded'].includes(prefs.noteDisplay?.[type])?prefs.noteDisplay[type]:(prefs.noteVisibility?.[type]??prefs.showNoteMarkers!==false)?'folded':'hidden']));
   delete prefs.noteVisibility;
   delete prefs.showNoteMarkers;
   prefs.fs=Math.min(30,Math.max(16,Number(prefs.fs)||20));
   if(prefs.zh==='t')await ensureTraditional().catch(()=>{});
   applyPrefs();
-  $('#theme').onclick=()=>{prefs.theme=prefs.theme==='dark'?'paper':'dark';savePrefs();applyPrefs();};
-  $('#zh').onclick=async()=>{saveContext();prefs.zh=prefs.zh==='s'?'t':'s';savePrefs();applyPrefs();
+  $('#theme').onclick=()=>{prefs.theme=currentTheme()==='dark'?'paper':'dark';savePrefs();applyPrefs();};
+  const setZh=async (zh,fromMenu)=>{saveContext();prefs.zh=zh;savePrefs();applyPrefs();
     if(prefs.zh==='t')await ensureTraditional().catch(()=>{});
     // Header labels rendered before the converter arrived need one more pass.
-    applyPrefs();route();};
+    applyPrefs();holdMenuOnce=!!fromMenu;route();};
+  $('#zh').onclick=()=>setZh(prefs.zh==='s'?'t':'s');
+  document.querySelectorAll('[data-zh]').forEach(b=>b.onclick=()=>{if(b.dataset.zh!==prefs.zh)setZh(b.dataset.zh,true);});
   $('#nav-toggle').onclick=()=>{
     const button=$('#nav-toggle');
     if(button.getAttribute('aria-expanded')==='true'){closeMenu(true);return;}

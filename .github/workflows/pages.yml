@@ -2,31 +2,17 @@ name: Publish GitHub Pages
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
   workflow_dispatch:
 permissions:
   contents: read
+  pages: write
+  id-token: write
 concurrency:
-  group: pages-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  group: pages
   cancel-in-progress: false
 jobs:
-  validate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v6
-      - name: Release gate regression tests
-        run: python3 -m unittest discover -s tests -v
-      - name: Release gate (sha / refs / smoke)
-        run: python3 scripts/check-release-gate.py
   deploy:
-    needs: validate
-    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

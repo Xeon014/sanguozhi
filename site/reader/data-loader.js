@@ -19,6 +19,17 @@ export function createJSONLoader(base, version, transport=fetch) {
 
 const indexes=new WeakMap();
 const presentations=new WeakMap();
+// Runtime packets omit the two fields every record shares with its version;
+// restore them at load time so citations and digest checks see full records.
+export function hydratePacket(value) {
+  if(Array.isArray(value?.evidence)&&value.source_sha256)
+    for(const record of value.evidence)
+      if(record&&record.source_sha256===undefined){
+        record.source_sha256=value.source_sha256;
+        record.offset_unit ??= 'unicode_code_point';
+      }
+  return value;
+}
 export function presentPeople(data,names={}) {
   if(!data.persons||!Object.keys(names).length)return data;
   const old=presentations.get(data);
