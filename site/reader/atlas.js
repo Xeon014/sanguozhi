@@ -4,8 +4,8 @@
 // Route-level hash helpers live in route-hash.js so the entry module can
 // canonicalize addresses without loading this renderer; re-exported for
 // existing importers.
-import {PERIODS, atlasState, atlasHash, yearbookHash} from './route-hash.js?v=45a7244f8db4c0a4';
-export {PERIODS, canonicalAtlasHomeHash, atlasState, atlasHash, yearbookHash} from './route-hash.js?v=45a7244f8db4c0a4';
+import {PERIODS, atlasState, atlasHash, yearbookHash} from './route-hash.js?v=69ad755511b51989';
+export {PERIODS, canonicalAtlasHomeHash, atlasState, atlasHash, yearbookHash} from './route-hash.js?v=69ad755511b51989';
 export function zoomRange(range,anchor,factor=1,direction=0){
   const span=Math.max(1,Math.min(97,Math.round((range[1]-range[0]+1)*factor)));
   const center=direction?(range[0]+range[1])/2+direction*Math.max(1,Math.floor(span/2)):anchor;
@@ -227,6 +227,8 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
       };
     }
     for(const link of canvas.querySelectorAll('.atlas-record')){
+      // SVG anchors expose no .click() in every engine; dispatch instead.
+      const activate=()=>{if(typeof link.click==='function')link.click();else link.dispatchEvent(new MouseEvent('click',{bubbles:true,cancelable:true}));};
       link.onmouseenter=()=>preview(link);link.onmouseleave=hidePreview;
       link.onfocus=()=>preview(link);link.onblur=hidePreview;
       link.onkeydown=e=>{
@@ -234,7 +236,7 @@ export function mountAtlas(host,bundle,{esc,cv,home=false,qs=new URLSearchParams
         if(e.key==='ArrowLeft'||e.key==='ArrowUp'){e.preventDefault();moveFocus(link,-1);}
         if(e.key==='Home'){e.preventDefault();focusItem(sequence()[0]);}
         if(e.key==='End'){e.preventDefault();focusItem(sequence().at(-1));}
-        if(e.key===' '){e.preventDefault();link.click();}
+        if(e.key===' '){e.preventDefault();activate();}
         if(e.key==='Escape'){e.preventDefault();e.stopPropagation();hidePreview();}
       };
     }

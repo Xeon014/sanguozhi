@@ -1,8 +1,10 @@
-export function searchHash(type, query='', book='') {
+export function searchHash(type, query='', book='', notes=false) {
   const qs=new URLSearchParams();
-  if(type==='people')qs.set('type','people');
+  const original=type!=='people'; // absent type means the original-text mode
+  if(!original)qs.set('type','people');
   if(query.trim())qs.set('q',query.trim());
-  if(type!=='people'&&book)qs.set('book',book);
+  if(original&&book)qs.set('book',book);
+  if(original&&notes)qs.set('notes','1');
   return '#/search'+(qs.size?'?'+qs:'');
 }
 
@@ -26,7 +28,7 @@ export function canonicalSearchHash(hash) {
   const [path,query='']=hash.split('?'),qs=new URLSearchParams(query);
   // Unknown book ids are dropped by the search page against site collections.
   if(path==='#/people'&&(qs.get('view')==='all'||qs.has('faction')))return searchHash('people',qs.get('q')||'');
-  if(path==='#/search')return searchHash(qs.get('type'),qs.get('q')||'',qs.get('book')||'');
+  if(path==='#/search')return searchHash(qs.get('type'),qs.get('q')||'',qs.get('book')||'',qs.get('notes')==='1');
   return hash;
 }
 

@@ -5,6 +5,9 @@
     "modern": "注释",
     "pei": "裴注"
   },
+  "searchNoteTypes": [
+    "pei"
+  ],
   "collections": [
     {
       "id": "wei",
