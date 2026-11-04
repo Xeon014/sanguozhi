@@ -39,11 +39,24 @@ class ReleaseGateTests(unittest.TestCase):
         self.write_json("reader/data/sections/chapter-001.json", {})
         for name in gate_module.RUNTIME_INDEX_FILES:
             self.write_json("reader/knowledge/runtime/" + name, {
-                "source_sha256": self.sha, "section_sha256": self.section_map,
-                "files": {},
+                "source_sha256": self.sha,
             })
+        self.write_json("reader/knowledge/runtime/fingerprints.json", {
+            "source_sha256": self.sha, "section_sha256": self.section_map,
+        })
+        self.write_json("reader/knowledge/runtime/events-index.json", {
+            "source_sha256": self.sha,
+        })
+        for sid in self.section_map:
+            self.write_json(f"reader/knowledge/runtime/anchors/{sid}.json", {})
+        self.write_json("reader/knowledge/topics.json", {
+            "source_sha256": self.sha, "topics": [{"id": "chibi"}],
+        })
+        self.write_json("reader/knowledge/runtime/topics/chibi.json", {
+            "source_sha256": self.sha,
+        })
         for sub in ("people", "events", "sources"):
-            self.write_shard(sub, self.section_map)
+            self.write_shard(sub)
         for name in ("zh-display.json", "atlas-records.json"):
             self.write_json("reader/knowledge/" + name, {"source_sha256": self.sha})
 
@@ -55,11 +68,27 @@ class ReleaseGateTests(unittest.TestCase):
     def write_json(self, relative, value):
         self.write(relative, json.dumps(value))
 
-    def write_shard(self, sub, section_map, *, omit=False):
-        value = {"source_sha256": self.sha}
-        if not omit:
-            value["section_sha256"] = section_map
+    def write_shard(self, sub, sha=None, section_map=False):
+        value = {"source_sha256": sha or self.sha}
+        if section_map:
+            value["section_sha256"] = self.section_map
         self.write_json(f"reader/knowledge/runtime/{sub}/sample.json", value)
+
+    def make_legacy(self):
+        """Swap the slim markers for the legacy layout markers."""
+        (self.runtime / "fingerprints.json").unlink()
+        (self.runtime / "events-index.json").unlink()
+        self.write_json("reader/knowledge/runtime/manifest.json", {
+            "source_sha256": self.sha, "files": {},
+        })
+        self.write_json("reader/knowledge/runtime/anchors.json", {
+            "source_sha256": self.sha,
+        })
+        self.write_json("reader/knowledge/runtime/directory.json", {
+            "source_sha256": self.sha, "section_sha256": self.section_map,
+        })
+        for sub in ("people", "events", "sources"):
+            self.write_shard(sub, section_map=True)
 
     def run_gate(self):
         output = io.StringIO()
@@ -68,7 +97,9 @@ class ReleaseGateTests(unittest.TestCase):
                 result = gate_module.main()
         return result, output.getvalue()
 
-    def test_valid_fixture_passes(self):
+    def test_valid_fixture_passes_without_catalog(self):
+        # The slimmed export ships no catalog.json; the gate must accept that.
+        self.assertFalse((self.reader / "knowledge" / "catalog.json").exists())
         result, output = self.run_gate()
         self.assertEqual(result, 0, output)
         self.assertIn("PASSED", output)
@@ -85,44 +116,87 @@ class ReleaseGateTests(unittest.TestCase):
                     self.assertNotIn("PASSED", output)
             self.write("reader/" + name, original)
 
-    def test_sampled_shard_requires_complete_matching_section_map(self):
-        cases = {
-            "missing key": {"chapter-001": "b" * 64},
-            "empty map": {},
-            "extra key": {**self.section_map, "chapter-003": "d" * 64},
-            "wrong digest": {**self.section_map, "chapter-001": "d" * 64},
-            "null": None,
-            "array": [],
-            "string": "invalid",
-        }
+    def test_sampled_shard_requires_matching_source_sha(self):
         for sub in ("people", "events", "sources"):
-            for label, section_map in cases.items():
-                with self.subTest(shard_type=sub, case=label):
-                    self.write_shard(sub, section_map)
-                    result, output = self.run_gate()
-                    self.assertEqual(result, 1, output)
-                    self.assertIn("sample.json: section_sha256", output)
-                    self.assertNotIn("PASSED", output)
-            with self.subTest(shard_type=sub, case="missing map"):
-                self.write_shard(sub, None, omit=True)
+            with self.subTest(shard_type=sub, case="wrong sha"):
+                self.write_shard(sub, "d" * 64)
                 result, output = self.run_gate()
                 self.assertEqual(result, 1, output)
-                self.assertIn("sample.json: section_sha256 must be an object", output)
-            self.write_shard(sub, self.section_map)
+                self.assertIn("source_sha256 mismatch or missing", output)
+                self.assertNotIn("PASSED", output)
+            with self.subTest(shard_type=sub, case="missing sha"):
+                self.write_json(f"reader/knowledge/runtime/{sub}/sample.json", {})
+                result, output = self.run_gate()
+                self.assertEqual(result, 1, output)
+                self.assertNotIn("PASSED", output)
+            self.write_shard(sub)
 
-    def test_directory_requires_section_map(self):
+    def test_fingerprints_requires_section_map(self):
         for value in (None, [], "invalid"):
             with self.subTest(value=value):
-                self.write_json("reader/knowledge/runtime/directory.json", {
+                self.write_json("reader/knowledge/runtime/fingerprints.json", {
                     "source_sha256": self.sha, "section_sha256": value,
                 })
                 result, output = self.run_gate()
                 self.assertEqual(result, 1, output)
-                self.assertIn("runtime/directory.json: section_sha256 must be an object", output)
-        self.write_json("reader/knowledge/runtime/directory.json", {"source_sha256": self.sha})
+                self.assertIn("runtime/fingerprints.json: section_sha256 must be an object", output)
+        self.write_json("reader/knowledge/runtime/fingerprints.json", {"source_sha256": self.sha})
         result, output = self.run_gate()
         self.assertEqual(result, 1, output)
-        self.assertIn("runtime/directory.json: section_sha256 must be an object", output)
+        self.assertIn("runtime/fingerprints.json: section_sha256 must be an object", output)
+
+    def test_missing_anchor_index_fails(self):
+        (self.runtime / "anchors" / "chapter-001.json").unlink()
+        result, output = self.run_gate()
+        self.assertEqual(result, 1, output)
+        self.assertIn("runtime/anchors/ missing per-chapter indexes: chapter-001", output)
+
+    def test_missing_topic_bundle_fails(self):
+        (self.runtime / "topics" / "chibi.json").unlink()
+        result, output = self.run_gate()
+        self.assertEqual(result, 1, output)
+        self.assertIn("runtime/topics/ missing bundles: chibi", output)
+
+    def test_topic_bundle_source_sha_mismatch_fails(self):
+        self.write_json("reader/knowledge/runtime/topics/chibi.json", {
+            "source_sha256": "d" * 64,
+        })
+        result, output = self.run_gate()
+        self.assertEqual(result, 1, output)
+        self.assertIn("source_sha256 mismatch", output)
+        self.assertNotIn("PASSED", output)
+
+    def test_legacy_fixture_passes(self):
+        self.make_legacy()
+        result, output = self.run_gate()
+        self.assertEqual(result, 0, output)
+        self.assertIn("PASSED", output)
+
+    def test_legacy_shard_map_divergence_fails(self):
+        self.make_legacy()
+        self.write_json("reader/knowledge/runtime/people/sample.json", {
+            "source_sha256": self.sha,
+            "section_sha256": {**self.section_map, "chapter-001": "d" * 64},
+        })
+        result, output = self.run_gate()
+        self.assertEqual(result, 1, output)
+        self.assertIn("section_sha256 values diverge from directory", output)
+
+    def test_mixed_layout_markers_fail(self):
+        self.make_legacy()  # keeps manifest.json; re-add a slim marker
+        self.write_json("reader/knowledge/runtime/fingerprints.json", {
+            "source_sha256": self.sha, "section_sha256": self.section_map,
+        })
+        result, output = self.run_gate()
+        self.assertEqual(result, 1, output)
+        self.assertIn("runtime mixes legacy and slim layout markers", output)
+
+    def test_missing_layout_markers_fail(self):
+        (self.runtime / "fingerprints.json").unlink()
+        (self.runtime / "events-index.json").unlink()
+        result, output = self.run_gate()
+        self.assertEqual(result, 1, output)
+        self.assertIn("runtime layout markers missing", output)
 
 
 if __name__ == "__main__":

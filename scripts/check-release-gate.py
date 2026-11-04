@@ -27,17 +27,30 @@ MAX_CATALOG_BYTES = 50 * 1024 * 1024  # ~34MB today
 MAX_SECTION_BYTES = 3 * 1024 * 1024  # ~2.0MB today (chapter-001)
 MAX_RUNTIME_SHARD_BYTES = 512 * 1024  # people/events/sources samples
 
+# Adapted 2026-11-04 for the slimmed runtime layout while staying compatible
+# with the legacy tree: legacy markers are manifest.json + central anchors.json
+# with per-shard section_sha256; the slim layout centralizes section
+# fingerprints in fingerprints.json, splits anchors per chapter under anchors/,
+# ships topic detail pages as per-topic bound bundles under topics/, and drops
+# catalog.json and the runtime manifest from the export. The layout is
+# detected per tree so intermediate branch states validate either way.
 RUNTIME_INDEX_FILES = (
     "book.json",
-    "manifest.json",
     "directory.json",
     "highlights.json",
     "reading.json",
     "chooser.json",
     "people-search.json",
     "search-original.json",
-    "anchors.json",
 )
+LEGACY_RUNTIME_INDEX_FILES = ("manifest.json", "anchors.json")
+SLIM_RUNTIME_INDEX_FILES = ("fingerprints.json", "events-index.json")
+# anchors.json is a plain anchor map without a source_sha256 header; the sha
+# comparison only takes digest-bearing extras per layout.
+RUNTIME_SHA_EXTRAS = {
+    "legacy": ("manifest.json",),
+    "slim": ("fingerprints.json", "events-index.json"),
+}
 
 SHELL_JS = (
     "reader.js",
@@ -133,17 +146,17 @@ def check_config_and_refs(gate: Gate) -> tuple[dict[str, Any] | None, dict[str, 
         if not isinstance(value, dict):
             gate.fail(f"{name}: must be a JSON object")
     if not isinstance(config, dict) or not isinstance(site, dict):
-        return None, None, None, None
+        return None, None, None, None, None
 
     data_root = config.get("dataRoot") or "./data/"
     book_file = config.get("bookFile")
     runtime_root = config.get("runtimeRoot")
     if not book_file:
         gate.fail("config.json: bookFile required")
-        return config, site, None, None
+        return config, site, None, None, None
     if not runtime_root:
         gate.fail("config.json: runtimeRoot required")
-        return config, site, None, None
+        return config, site, None, None, None
 
     data_dir = resolve_under(gate.reader, data_root)
     if not data_dir.is_dir():
@@ -153,10 +166,11 @@ def check_config_and_refs(gate: Gate) -> tuple[dict[str, Any] | None, dict[str, 
 
     book_path = resolve_under(gate.reader, book_file)
     runtime_dir = resolve_under(gate.reader, runtime_root)
+    layout = None
     book = gate.load_json(book_path, book_file)
     if not isinstance(book, dict) or not book.get("source_sha256"):
         gate.fail(f"{book_file}: source_sha256 required")
-        return config, site, None, runtime_dir if runtime_dir.is_dir() else None
+        return config, site, None, runtime_dir if runtime_dir.is_dir() else None, None
 
     expected = book["source_sha256"]
     gate.ok(f"anchor source_sha256 {expected[:16]}…")
@@ -166,7 +180,23 @@ def check_config_and_refs(gate: Gate) -> tuple[dict[str, Any] | None, dict[str, 
         runtime_dir = None
     else:
         gate.ok(f"runtimeRoot {runtime_root}")
-        for name in RUNTIME_INDEX_FILES:
+        legacy = (runtime_dir / "manifest.json").is_file()
+        slim = (runtime_dir / "fingerprints.json").is_file()
+        extras = ()
+        if legacy and slim:
+            gate.fail("runtime mixes legacy and slim layout markers")
+        elif legacy:
+            layout = "legacy"
+            extras = LEGACY_RUNTIME_INDEX_FILES
+        elif slim:
+            layout = "slim"
+            extras = SLIM_RUNTIME_INDEX_FILES
+        else:
+            gate.fail(
+                "runtime layout markers missing "
+                "(need manifest.json or fingerprints.json)"
+            )
+        for name in RUNTIME_INDEX_FILES + extras:
             gate.require_file(runtime_dir / name, f"{runtime_root.rstrip('/')}/{name}")
 
     knowledge = site.get("knowledge") or {}
@@ -183,7 +213,15 @@ def check_config_and_refs(gate: Gate) -> tuple[dict[str, Any] | None, dict[str, 
     for rel in ref_files:
         if not rel:
             continue
-        gate.require_file(resolve_under(gate.reader, rel), rel)
+        target = resolve_under(gate.reader, rel)
+        if target.is_file():
+            gate.ok(f"exists {rel}")
+        elif rel == knowledge.get("file") and layout == "slim":
+            # The slim export no longer ships the full catalog; runtime
+            # projections serve its readers. Absence is expected, not fatal.
+            gate.warn(f"{rel} absent (runtime projections serve readers)")
+        else:
+            gate.fail(f"missing file: {rel}")
 
     # Collection / supplement chapter files under data/sections.
     section_ids: list[str] = []
@@ -239,10 +277,15 @@ def check_config_and_refs(gate: Gate) -> tuple[dict[str, Any] | None, dict[str, 
         else:
             gate.ok(f"site.json people refs present ({len(set(person_ids))})")
 
-    return config, site, expected, runtime_dir
+    return config, site, expected, runtime_dir, layout
 
 
-def check_sha_packages(gate: Gate, expected: str, runtime_dir: Path | None) -> dict[str, Any] | None:
+def check_sha_packages(
+    gate: Gate,
+    expected: str,
+    runtime_dir: Path | None,
+    layout: str | None,
+) -> dict[str, Any] | None:
     print("== source_sha256 packages ==")
     packages = [
         "knowledge/zh-display.json",
@@ -254,49 +297,44 @@ def check_sha_packages(gate: Gate, expected: str, runtime_dir: Path | None) -> d
         "knowledge/catalog.json",
         "data/book.json",
     ]
-    directory = None
+    section_map = None
     for rel in packages:
         path = gate.reader / rel
         if not path.is_file():
-            # catalog may eventually leave the publish set; warn rather than hard-fail
-            # only if site.json no longer points at it — handled via refs already.
-            if rel == "knowledge/catalog.json":
-                gate.warn("catalog.json absent (ok once topics leave that hot path)")
+            # The slim export intentionally drops the full catalog; the refs
+            # check already warns there. Legacy trees must still ship it.
+            if rel == "knowledge/catalog.json" and layout == "slim":
                 continue
             continue
         value = gate.load_json(path, rel)
         gate.expect_sha(value, expected, rel)
-        if rel == "knowledge/catalog.json" and isinstance(value, dict):
-            directory = value  # reuse section map below if needed
 
     if runtime_dir:
-        for name in (
-            "book.json",
-            "manifest.json",
-            "directory.json",
-            "highlights.json",
-            "reading.json",
-            "chooser.json",
-            "people-search.json",
-            "search-original.json",
-        ):
+        for name in RUNTIME_INDEX_FILES + RUNTIME_SHA_EXTRAS.get(layout, ()):
             value = gate.load_json(runtime_dir / name, f"runtime/{name}")
             gate.expect_sha(value, expected, f"runtime/{name}")
-            if name == "directory.json" and isinstance(value, dict):
-                directory = value
-    return directory
+            if not isinstance(value, dict):
+                continue
+            if layout == "slim" and name == "fingerprints.json":
+                section_map = value.get("section_sha256")
+            elif layout == "legacy" and name == "directory.json":
+                section_map = value.get("section_sha256")
+    return section_map
 
 
 def check_runtime_samples(
     gate: Gate,
     expected: str,
     runtime_dir: Path,
-    directory: dict[str, Any] | None,
+    section_map: dict[str, Any] | None,
+    site: dict[str, Any] | None,
+    layout: str | None,
 ) -> None:
     print("== runtime shard sample ==")
-    section_map = (directory or {}).get("section_sha256") if directory else None
     if not isinstance(section_map, dict):
-        gate.fail("runtime/directory.json: section_sha256 must be an object")
+        source = "fingerprints.json" if layout == "slim" else "directory.json"
+        gate.fail(f"runtime/{source}: section_sha256 must be an object")
+        section_map = None
     for sub in ("people", "events", "sources"):
         folder = runtime_dir / sub
         if not folder.is_dir():
@@ -328,6 +366,10 @@ def check_runtime_samples(
                 )
                 continue
             sha_ok += 1
+            if layout != "legacy":
+                continue
+            # Legacy shards embed the full section map; it must match the
+            # directory's map exactly. Slim shards centralize it instead.
             shard_map = value.get("section_sha256")
             if not isinstance(shard_map, dict):
                 gate.fail(f"{path.name}: section_sha256 must be an object")
@@ -339,10 +381,67 @@ def check_runtime_samples(
                 else:
                     section_ok += 1
         gate.ok(f"runtime/{sub}/ sample source_sha256 ok ({sha_ok}/{len(picks)})")
-        if section_map is not None:
+        if layout == "legacy" and section_map is not None:
             gate.ok(f"runtime/{sub}/ sample section_sha256 ok ({section_ok}/{len(picks)})")
 
-    # Manifest: every listed top-level index exists; sample relative shard paths exist.
+    if layout == "legacy":
+        check_legacy_manifest(gate, expected, runtime_dir)
+        return
+    if layout != "slim":
+        return
+
+    # Section fingerprints no longer ride inside every shard; the centralized
+    # fingerprints map must be covered by one per-chapter anchor index each.
+    if section_map is not None:
+        anchors_dir = runtime_dir / "anchors"
+        if not anchors_dir.is_dir():
+            gate.fail("runtime/anchors/ missing")
+        else:
+            missing_anchors = [
+                sid for sid in sorted(section_map)
+                if not (anchors_dir / f"{sid}.json").is_file()
+            ]
+            if missing_anchors:
+                preview = ", ".join(missing_anchors[:8])
+                more = f" (+{len(missing_anchors) - 8} more)" if len(missing_anchors) > 8 else ""
+                gate.fail(f"runtime/anchors/ missing per-chapter indexes: {preview}{more}")
+            else:
+                gate.ok(f"runtime/anchors/ covers all {len(section_map)} sections")
+
+    # Topic detail pages ship as per-topic bound bundles; the presentation
+    # file lists the ids that must each have a bundle on the same source.
+    topics_rel = ((site or {}).get("topics") or {}).get("file") or "knowledge/topics.json"
+    presentation = gate.load_json(gate.reader / topics_rel, topics_rel)
+    topic_ids = []
+    if isinstance(presentation, dict) and isinstance(presentation.get("topics"), list):
+        topic_ids = [
+            entry.get("id")
+            for entry in presentation["topics"]
+            if isinstance(entry, dict) and entry.get("id")
+        ]
+    if not topic_ids:
+        gate.fail(f"{topics_rel}: no topics listed")
+        return
+    topics_dir = runtime_dir / "topics"
+    if not topics_dir.is_dir():
+        gate.fail("runtime/topics/ missing")
+        return
+    missing = [tid for tid in topic_ids if not (topics_dir / f"{tid}.json").is_file()]
+    if missing:
+        gate.fail(f"runtime/topics/ missing bundles: {', '.join(missing[:8])}")
+        return
+    gate.ok(f"runtime/topics/ bundles present ({len(topic_ids)})")
+    for tid in sample_paths(
+        [topics_dir / f"{tid}.json" for tid in topic_ids],
+        SAMPLE_PER_DIR,
+        f"{expected}:topics",
+    ):
+        value = gate.load_json(tid, f"runtime/topics/{tid.name}")
+        gate.expect_sha(value, expected, f"runtime/topics/{tid.name}")
+
+
+def check_legacy_manifest(gate: Gate, expected: str, runtime_dir: Path) -> None:
+    """Legacy trees ship runtime/manifest.json; sample its listed paths."""
     manifest_path = runtime_dir / "manifest.json"
     try:
         with manifest_path.open("r", encoding="utf-8") as fh:
@@ -452,12 +551,12 @@ def main() -> int:
     print(f"release gate: {site_root}")
 
     check_entries(gate)
-    _config, site, expected, runtime_dir = check_config_and_refs(gate)
-    directory = None
+    _config, site, expected, runtime_dir, layout = check_config_and_refs(gate)
+    section_map = None
     if expected:
-        directory = check_sha_packages(gate, expected, runtime_dir)
+        section_map = check_sha_packages(gate, expected, runtime_dir, layout)
         if runtime_dir:
-            check_runtime_samples(gate, expected, runtime_dir, directory)
+            check_runtime_samples(gate, expected, runtime_dir, section_map, site, layout)
     check_size_budgets(gate)
     check_smoke(gate, site)
 
