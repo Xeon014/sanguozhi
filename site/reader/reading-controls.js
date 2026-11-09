@@ -15,7 +15,7 @@ export function chapterProgressHTML(cv) {
     <div class="chapter-progress" id="chapter-progress" role="group" aria-label="${cv('本篇进度')}" hidden><div class="progress-head"><span>${cv('本篇进度')}</span><button type="button" id="close-reading-progress">${cv('收起进度')}</button></div><input type="range" id="chapter-position" min="1" max="1" value="1" step="1" aria-label="${cv('本篇进度')}"><p class="progress-tip" aria-hidden="true" hidden></p></div>`;
 }
 
-export function mountReadingControls({host,entries,getPrefs,getView,onNoteChange,onFontChange,onJump,onPositionChange,cv}) {
+export function mountReadingControls({host,mobileLayout,entries,getPrefs,getView,onNoteChange,onFontChange,onJump,onPositionChange,cv}) {
   const controller=new AbortController(),options={signal:controller.signal};
   const dialog=host.querySelector('#reading-settings'),opener=host.querySelector('#open-reading-settings');
   const toggle=host.querySelector('#toggle-reading-progress'),bar=host.querySelector('#chapter-progress'),range=bar.querySelector('input'),position=toggle.querySelector('.progress-position'),tip=bar.querySelector('.progress-tip');
@@ -23,6 +23,9 @@ export function mountReadingControls({host,entries,getPrefs,getView,onNoteChange
   const items=entries.map(([el])=>el),labels=entries.map(([,text])=>cv(text));
   let revealed=null,fontView=null,frame=0,observed=1,pointerActive=false,ignoreChange=false,disposed=false;
   let concealed=false,lastY=scrollY,distance=0,direction=0,intentUntil=0,keyboardFocus=false,toolbarPointer=false;
+  let toolbarTap=null;
+  const isReadingSurface=target=>reading.contains(target)&&
+    !target.closest('a,button,summary,input,select,textarea,label,[contenteditable],[role=button],[role=link]');
   const listen=(el,name,fn,extra={})=>el.addEventListener(name,fn,{...options,...extra});
   const clamp=value=>Math.min(items.length,Math.max(1,Number(value)||1));
   function resetScrollIntent() {intentUntil=0;distance=0;direction=0;lastY=scrollY;}
@@ -49,7 +52,7 @@ export function mountReadingControls({host,entries,getPrefs,getView,onNoteChange
     if(y<=0||toolbar.getBoundingClientRect().top>1){showToolbar();distance=0;}
     else if(!locked()&&performance.now()<intentUntil&&Math.sign(delta)===direction){
       distance+=Math.abs(delta);
-      if(direction<0&&distance>=24){showToolbar();distance=0;}
+      if(direction<0&&!mobileLayout.matches&&distance>=24){showToolbar();distance=0;}
       else if(direction>0&&distance>=56&&!concealed){
         concealed=true;toolbar.classList.add('is-concealed');toolbar.inert=true;
         document.documentElement.style.setProperty('--reading-offset','12px');distance=0;
@@ -71,10 +74,24 @@ export function mountReadingControls({host,entries,getPrefs,getView,onNoteChange
   listen(bar.querySelector('#close-reading-progress'),'click',()=>closeProgress(true));
   listen(window,'pointerdown',event=>{
     resetScrollIntent();keyboardFocus=false;toolbarPointer=toolbar.contains(event.target);
+    toolbarTap=null;
+    if(mobileLayout.matches&&concealed&&event.isPrimary&&event.button===0&&isReadingSurface(event.target)){
+      toolbarTap={x:event.clientX,y:event.clientY,scroll:scrollY,started:performance.now()};
+    }
     if(!bar.hidden&&!bar.contains(event.target)&&!toggle.contains(event.target))closeProgress();
   },{capture:true,passive:true});
+  listen(window,'pointermove',event=>{
+    if(toolbarTap&&Math.hypot(event.clientX-toolbarTap.x,event.clientY-toolbarTap.y)>8)toolbarTap=null;
+  },{passive:true});
   listen(window,'pointerup',()=>{toolbarPointer=false;});
-  listen(window,'pointercancel',()=>{toolbarPointer=false;});
+  listen(window,'pointercancel',()=>{toolbarPointer=false;toolbarTap=null;});
+  listen(reading,'contextmenu',()=>{toolbarTap=null;});
+  listen(reading,'click',event=>{
+    const tap=toolbarTap;toolbarTap=null;
+    if(!tap||!concealed||!mobileLayout.matches||!event.detail||!isReadingSurface(event.target)||
+      scrollY!==tap.scroll||performance.now()-tap.started>500||getSelection()?.isCollapsed===false)return;
+    resetScrollIntent();showToolbar();refresh();
+  });
   listen(window,'wheel',event=>{keyboardFocus=false;if(!event.ctrlKey&&!toolbar.contains(event.target))scrollIntent(event.deltaY);},{passive:true});
   let touchY=null;
   listen(window,'touchstart',event=>{touchY=event.touches.length===1?event.touches[0].clientY:null;},{passive:true});

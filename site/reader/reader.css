@@ -556,6 +556,7 @@ button.atlas-lane:focus-visible{outline:2px solid var(--accent);outline-offset:-
 .yearbook-compact .yearbook-entry-body{margin-left:-112px;padding-left:0;border-left:0}
 .yearbook-page:not(.yearbook-compact) .yearbook-entry-body{padding-left:12px}
 #main{width:calc(100% - 40px);padding:32px 0 64px}
+#main[data-page]:not([data-page=home]){padding-top:20px}
 .site-head{position:sticky;min-height:70px;padding:12px 20px;gap:6px;flex-wrap:wrap}
 .brand{font-size:24px;padding:0}
 #nav-toggle{display:block;margin-left:auto}
@@ -578,22 +579,32 @@ button.atlas-lane:focus-visible{outline:2px solid var(--accent);outline-offset:-
 .nav-zh button[aria-pressed=true]{color:var(--paper);border-color:var(--accent);background:var(--accent)}
 .nav-zh button+button{margin-left:-1px}
 input,select{font-size:16px}
-.hero{display:block;min-height:0;padding:38px 0 40px}
-.hero h1{font-size:clamp(72px,20.5vw,88px);margin:20px 0 28px}
+.hero{display:block;min-height:0;padding:20px 0 12px}
+.hero h1{font-size:clamp(44px,13vw,56px);margin:8px 0 0}
 .hero .eyebrow{font-size:13px}
-.collection-grid{margin-top:40px}
-.collection-card{grid-template-columns:88px minmax(0,1fr);padding:20px 0;gap:12px}
-.collection-title{font-size:36px}
+.collection-grid{margin-top:20px}
+.collection-card{grid-template-columns:72px minmax(0,1fr);min-height:44px;padding:12px 0;gap:12px}
+.collection-title{font-size:28px}
 .collection-meta{font-size:12px}
-.featured{padding-top:40px}
-.featured .section-heading h2{font-size:32px}
+.featured{padding-top:14px}
+.featured>.section-heading{padding-bottom:10px;margin-bottom:14px}
+.featured>.section-heading h2{font-size:26px}
 .featured-books{grid-template-columns:minmax(0,1fr);gap:32px}
+.featured-books h3{font-size:22px;margin-bottom:4px}
 .contents{grid-template-columns:minmax(0,1fr)}
 .contents a{grid-template-columns:76px minmax(0,1fr);font-size:19px}
 .directory-section h2{font-size:36px}
+.page-heading h1,#main[data-page=search]>h1,.topic-directory>header h1{font-size:32px;margin-bottom:12px}
+.page-heading .eyebrow,#main[data-page=search]>.eyebrow,.topic-directory>header .eyebrow{margin-bottom:6px}
+#main[data-page=contents] .directory-section{margin:20px 0}
+#main[data-page=contents] .directory-section>h2{font-size:28px;padding-top:12px;margin-bottom:6px}
+#main[data-page=supplements] .supplement-section{margin:20px 0}
+#main[data-page=supplements] .supplement-section>h2{font-size:24px;margin-bottom:6px}
 .chapter-layout{display:block}
 .chapter-sidebar{display:none}
 .chapter-heading h1{font-size:36px}
+#main[data-page=read] .chapter-heading{padding-bottom:14px}
+#main[data-page=read] .chapter-heading h1{font-size:30px}
 .toolbar{font-size:13px}
 .toolbar-row{gap:4px}
 .toolbar-row>button{padding-inline:8px}
@@ -607,7 +618,8 @@ input,select{font-size:16px}
 .translation{padding-left:16px}
 .passage-link{left:-18px}
 .directory-panel{inset:auto 0 0;width:100%;max-width:100%;height:85dvh;padding:20px;border:0;border-top:2px solid var(--ink)}
-.knowledge-heading h1{font-size:44px}
+.knowledge-heading h1{font-size:32px;margin-bottom:12px}
+.knowledge-heading .crumb,.topic-heading .crumb{margin-bottom:12px}
 .query-view .knowledge-heading h1{font-size:30px}
 .query-view .knowledge-heading{margin-bottom:12px}
 .people-directory>.knowledge-heading{padding-bottom:12px}
@@ -622,9 +634,10 @@ input,select{font-size:16px}
 .people-grid>article{padding:14px 0 12px}
 .people-grid>article h2{font-size:20px;margin-bottom:4px;padding-right:0}
 .people-grid>article p{font-size:13px}
-.person-cover{display:block;padding-bottom:32px;margin-bottom:32px}
-.person-title .knowledge-heading h1{font-size:72px}
-.person-facts{margin-top:32px}
+.person-cover{display:block;padding:4px 0 20px;margin-bottom:20px}
+.person-title .knowledge-heading{margin-bottom:12px}
+.person-title .knowledge-heading h1{font-size:40px;margin:6px 0 12px}
+.person-facts{margin-top:20px}
 .person-facts dl{gap:20px}
 .person-facts dd{font-size:18px}
 .biography-layout{display:block}
@@ -647,7 +660,7 @@ input,select{font-size:16px}
 .person-event,.timeline-item,.life-event{display:block}
 .inline-event>summary{font-size:21px}
 .yearbook-year{display:block}
-.yearbook-year>h2{font-size:44px;margin-bottom:16px}
+.yearbook-year>h2{font-size:32px;margin-bottom:12px}
 .yearbook-item h3{font-size:24px}
 .knowledge-filter{display:flex}
 .filter-field{flex:1 1 130px}
@@ -664,11 +677,11 @@ input,select{font-size:16px}
 .atlas-card-year{font-size:64px}
 .atlas-card h3{font-size:32px}
 .atlas-excerpts figure blockquote{font-size:17px}
-.topic-directory-card{display:block}
-.topic-directory-card h2{font-size:36px}
-.topic-heading h1{font-size:40px}
-.topic-steps{grid-template-columns:repeat(2,minmax(0,1fr))}
-.topic-controls{display:flex;flex-wrap:wrap}
+.topic-directory-card{display:block;padding:20px 0}
+.topic-directory-card h2{font-size:28px;margin-bottom:8px}
+.topic-heading h1{font-size:32px;margin-bottom:12px}
+.topic-steps{grid-template-columns:repeat(2,minmax(0,1fr));margin:16px 0;padding:12px 0}
+.topic-controls{display:flex;flex-wrap:wrap;margin:16px 0 24px}
 .topic-pair{display:grid;grid-template-columns:minmax(0,1fr);width:100%}
 .topic-pair label{grid-template-columns:52px minmax(0,1fr);align-items:center}
 .topic-pair select{width:100%;min-width:0}
@@ -677,7 +690,8 @@ input,select{font-size:16px}
 .topic-step-number{font-size:36px}
 .topic-chapter{padding:20px 16px}
 footer{padding:28px 20px}
-.search-form{gap:8px}
+.search-modes{margin-bottom:12px}
+.search-form{gap:8px;padding:12px 0;margin:12px 0 20px}
 .search-form select{max-width:100%}
 .result h2{font-size:24px}
 }
