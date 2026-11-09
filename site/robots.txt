@@ -1,0 +1,5 @@
+# https://www.hoven.zone/sanguozhi/ — 欢迎搜索引擎与 AI 爬虫抓取
+User-agent: *
+Allow: /
+
+Sitemap: https://www.hoven.zone/sanguozhi/sitemap.xml
