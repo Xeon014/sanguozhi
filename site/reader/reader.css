@@ -224,16 +224,16 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 
 /* Search, catalogues and biography */
 .search-form{display:flex;flex-wrap:wrap;gap:12px;border-block:1px solid var(--ink);padding:24px 0;margin:24px 0 32px}
+/* Desktop keeps the scope controls inline; phones regroup them into one row. */
+.search-filters{display:contents}
 .search-form input{flex:1;min-width:180px;font-size:20px}
 .search-form select{max-width:240px}
 .search-form button{background:var(--accent);color:var(--paper);border-color:var(--accent)}
-/* The optional-scope toggle must not read as the primary submit action. */
-.search-form button[aria-pressed]{background:var(--surface);color:var(--ink);border-color:var(--line)}
-.search-form button[aria-pressed]:hover{border-color:var(--ink);background:var(--surface)}
-.search-form button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
-.search-form button[aria-pressed=true]::before{content:'✓\00a0'}
-.search-form button[aria-pressed=true]:hover{background:var(--accent);border-color:var(--accent)}
-.search-form button:not([aria-pressed]):hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.search-form button:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+/* The optional annotation scope is a quiet inclusion checkbox, not an action. */
+.search-notes{display:inline-flex;align-items:center;gap:8px;font:14px/1.5 var(--sans);color:var(--muted);cursor:pointer;min-height:44px;padding:0 4px}
+.search-notes input{width:18px;height:18px;min-width:0;min-height:0;padding:0;border:0;background:none;flex:none;accent-color:var(--accent)}
+.search-notes:has(input:checked){color:var(--ink)}
 .result{max-width:900px;padding:28px 0;border-bottom:1px solid var(--line)}
 .result h2{font-size:28px}
 .result p{font-size:18px;line-height:1.9}
@@ -697,10 +697,19 @@ input,select{font-size:16px}
 .topic-step-number{font-size:36px}
 .topic-chapter{padding:20px 16px}
 footer{padding:28px 20px}
-.search-modes{margin-bottom:12px}
-.search-form{gap:8px;padding:12px 0;margin:12px 0 20px}
-.search-form select{max-width:100%}
-.result h2{font-size:24px}
+.search-modes{margin-bottom:8px}
+/* Phone search: the filter row shares the full width, the head stays compact
+   and result rows tighten so more of the list fits the first screen. */
+#main[data-page=search]>h1{font-size:24px;margin-bottom:8px}
+.search-scope{font-size:14px}
+.search-form{gap:8px;padding:10px 0;margin:8px 0 16px}
+.search-filters{display:flex;flex:1 1 100%;align-items:center;gap:8px;min-width:0}
+.search-form select{flex:1;max-width:none;min-height:52px}
+.search-form button:not([aria-pressed]){padding-inline:20px}
+.result{padding:20px 0}
+.result h2{font-size:24px;margin-bottom:8px}
+.result h2 a{font-size:24px}
+.result p{font-size:16px;line-height:1.75}
 }
 
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition:none!important}

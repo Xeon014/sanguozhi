@@ -1,9 +1,9 @@
 // Heavy views load per route so first paint only needs the shell helpers;
 // pure address canonicalizers stay in route-hash.js for every navigation.
-import {atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash, legacyKnowledgeHash} from './route-hash.js?v=3bb046e1f573abc3';
-import {createJSONLoader,attachRuntime,presentPeople,hydratePacket} from './data-loader.js?v=3bb046e1f573abc3';
-import {searchHash,canonicalSearchHash,searchPeople,highlightText,firstMatch} from './search.js?v=3bb046e1f573abc3';
-import {blockText} from './event-reading.js?v=3bb046e1f573abc3';
+import {atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash, legacyKnowledgeHash} from './route-hash.js?v=c3579d687a6a8633';
+import {createJSONLoader,attachRuntime,presentPeople,hydratePacket} from './data-loader.js?v=c3579d687a6a8633';
+import {searchHash,canonicalSearchHash,searchPeople,highlightText,firstMatch} from './search.js?v=c3579d687a6a8633';
+import {blockText} from './event-reading.js?v=c3579d687a6a8633';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
 const initialTitle = document.title;
@@ -219,7 +219,7 @@ function atlasCommit(hash) {
   renderedHash=hash;
 }
 async function showAtlas(host,bundle,qs,saved,home=false) {
-  const {mountAtlas}=await import('./atlas.js?v=3bb046e1f573abc3');
+  const {mountAtlas}=await import('./atlas.js?v=c3579d687a6a8633');
   // The renderer module may resolve after navigation moved on; never mount into a detached host.
   if(!host.isConnected)return;
   const state=mountAtlas(host,bundle,{esc,cv,qs,home,saved:saved?.atlas,onState:atlasCommit,onChange:saveContext});
@@ -432,7 +432,7 @@ async function readSection(id,target,version,saved) {
   if(!info)throw Error('目录中没有这一章节');
   // Each section carries its own anchor shard; a legacy book that already has
   // the full index needs no extra request.
-  const [loaded,anchors,controls]=await Promise.all([data(`sections/${id}.json`),book.anchor_index||json(runtimePath+'anchors/'+encodeURIComponent(id)+'.json'),import('./reading-controls.js?v=3bb046e1f573abc3')]);
+  const [loaded,anchors,controls]=await Promise.all([data(`sections/${id}.json`),book.anchor_index||json(runtimePath+'anchors/'+encodeURIComponent(id)+'.json'),import('./reading-controls.js?v=c3579d687a6a8633')]);
   const {readingSettingsHTML,chapterProgressHTML,mountReadingControls}=controls;
   if(version!==routeVersion)return;
   book.anchor_index??={};Object.assign(book.anchor_index,anchors);
@@ -499,11 +499,11 @@ async function search(qs,version){
   if((type==='original'&&qs.has('book')&&!bookScope)||(qs.has('notes')&&!notesOn)){qs.delete('book');qs.delete('notes');replaceHash(searchHash(type,q,type==='original'?bookScope:'',notesOn));}
   const scopeLabel=bookScope?site.collections.find(c=>c.id===bookScope).label:'全书';
   const scopeText=type==='people'?'按姓名、字或别名检索人物。':notesOn?`检索${scopeLabel}正文与${notesLabel}，不含译文及现代注释。`:`检索${scopeLabel}正文，不含译文、${notesLabel||'裴注'}及现代注释。`;
-  main.innerHTML=`<p class="eyebrow">${esc(cv(site.title))}</p><h1>${cv('检索')}</h1><nav class="knowledge-tabs search-modes" aria-label="${cv('检索类型')}">${[['original','原文'],['people','人物']].map(([key,title])=>`<a id="search-${key}" data-search-type="${key}" href="${esc(searchHash(key,q))}" ${type===key?'aria-current="page"':''}>${cv(title)}</a>`).join('')}</nav><p class="search-scope">${cv(scopeText)}</p><form class="search-form" role="search">${type==='original'?`<label class="sr-only" for="search-book">${cv('检索范围')}</label><select id="search-book"><option value="">${cv('全书')}</option>${site.collections.map(c=>`<option value="${c.id}" ${c.id===bookScope?'selected':''}>${esc(cv(c.label))}</option>`).join('')}</select>`:''}${type==='original'&&noteTypes.length?`<button type="button" id="search-notes" aria-pressed="${notesOn}">${cv(`含${notesLabel}`)}</button>`:''}<input id="query" type="search" aria-label="${cv('关键词')}" value="${esc(q)}"><button>${cv('检索')}</button></form><div id="results" aria-live="polite"></div>`;
+  main.innerHTML=`<p class="eyebrow">${esc(cv(site.title))}</p><h1>${cv('检索')}</h1><nav class="knowledge-tabs search-modes" aria-label="${cv('检索类型')}">${[['original','原文'],['people','人物']].map(([key,title])=>`<a id="search-${key}" data-search-type="${key}" href="${esc(searchHash(key,q))}" ${type===key?'aria-current="page"':''}>${cv(title)}</a>`).join('')}</nav><p class="search-scope">${cv(scopeText)}</p><form class="search-form" role="search">${type==='original'?`<div class="search-filters"><label class="sr-only" for="search-book">${cv('检索范围')}</label><select id="search-book"><option value="">${cv('全书')}</option>${site.collections.map(c=>`<option value="${c.id}" ${c.id===bookScope?'selected':''}>${esc(cv(c.label))}</option>`).join('')}</select>${noteTypes.length?`<label class="search-notes"><input type="checkbox" id="search-notes" ${notesOn?'checked':''}>${cv(`含${notesLabel}`)}</label>`:''}</div>`:''}<input id="query" type="search" aria-label="${cv('关键词')}" value="${esc(q)}"><button>${cv('检索')}</button></form><div id="results" aria-live="polite"></div>`;
   const syncLinks=()=>main.querySelectorAll('[data-search-type]').forEach(a=>a.href=searchHash(a.dataset.searchType,$('#query').value,'',a.dataset.searchType==='original'&&notesOn));
   $('#query').addEventListener('input',syncLinks);
   if($('#search-book'))$('#search-book').onchange=e=>navigate(searchHash(type,$('#query').value,e.target.value,notesOn),{searchFocus:'search-book'});
-  if($('#search-notes'))$('#search-notes').onclick=()=>navigate(searchHash(type,$('#query').value,$('#search-book')?.value||'',!notesOn),{searchFocus:'search-notes'});
+  if($('#search-notes'))$('#search-notes').onchange=e=>navigate(searchHash(type,$('#query').value,$('#search-book')?.value||'',e.target.checked),{searchFocus:'search-notes'});
   main.querySelectorAll('[data-search-type]').forEach(a=>a.addEventListener('click',e=>{
     if(e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;
     e.preventDefault();
@@ -644,7 +644,7 @@ async function route(){
       let atlas=await loadAtlas();if(version!==routeVersion)return;
       if(!atlas)throw Error('时代星图暂时不可用');
       if(['q','person','year'].some(k=>qs.get(k))){
-        const [{filteredOverviewItems},catalog,editorial]=await Promise.all([import('./event-editorial.js?v=3bb046e1f573abc3'),runtimePath?runtime('highlights.json'):json(site.knowledge.file),json(site.knowledge.editorial)]);
+        const [{filteredOverviewItems},catalog,editorial]=await Promise.all([import('./event-editorial.js?v=c3579d687a6a8633'),runtimePath?runtime('highlights.json'):json(site.knowledge.file),json(site.knowledge.editorial)]);
         if(version!==routeVersion)return;
         const prints=catalog.section_sha256||fingerprints?.section_sha256;
         if(catalog.source_sha256!==book.source_sha256||editorial.source_sha256!==catalog.source_sha256||Object.entries(editorial.section_sha256).some(([id,sha])=>prints[id]!==sha))throw Error('史事资料版本不一致');
@@ -667,7 +667,7 @@ async function route(){
     }
     else if(['people','events','timeline'].includes(parts[0])){
       if(!site.knowledge)throw Error('查询资料暂时不可用');
-      const [{renderKnowledge,canonicalKnowledgeHash},{biographyContext}]=await Promise.all([import('./knowledge.js?v=3bb046e1f573abc3'),import('./profiles.js?v=3bb046e1f573abc3')]);
+      const [{renderKnowledge,canonicalKnowledgeHash},{biographyContext}]=await Promise.all([import('./knowledge.js?v=c3579d687a6a8633'),import('./profiles.js?v=c3579d687a6a8633')]);
       // The full-record query view and the legacy timeline read the slim
       // events index instead of the whole catalog; every other route already
       // had a dedicated shard or projection.
@@ -730,12 +730,12 @@ async function route(){
       }
     }
     else if(parts[0]==='topics'&&parts.length===1){
-      const [{topicDirectory},presentation]=await Promise.all([import('./topics.js?v=3bb046e1f573abc3'),loadTopicPresentation()]);if(version!==routeVersion)return;
+      const [{topicDirectory},presentation]=await Promise.all([import('./topics.js?v=c3579d687a6a8633'),loadTopicPresentation()]);if(version!==routeVersion)return;
       if(!presentation)throw Error('专题暂时不可用');
       main.innerHTML=topicDirectory(presentation,{esc,cv});knowledgeTitle='专题研究';
     }
     else if(parts[0]==='topics'){
-      const [{renderTopic},bound]=await Promise.all([import('./topics.js?v=3bb046e1f573abc3'),loadTopics(parts[1])]);if(version!==routeVersion)return;
+      const [{renderTopic},bound]=await Promise.all([import('./topics.js?v=c3579d687a6a8633'),loadTopics(parts[1])]);if(version!==routeVersion)return;
       const topic=bound?.presentation.topics.find(t=>t.id===parts[1]);
       if(!topic||parts.length!==2)throw Error('未找到此专题');
       const ids=Object.keys(bound.presentation.section_sha256);
@@ -757,7 +757,7 @@ async function route(){
     if(version!==routeVersion)return;
     restoreView(saved);
     if(!saved||saved.y===undefined){const target=main.querySelector('[data-source-target]');if(target){target.scrollIntoView({block:'start'});target.focus({preventScroll:true});}}
-    if(parts[0]==='people'){const {bindPeopleLoading,bindLifeNavigation}=await import('./people-reading.js?v=3bb046e1f573abc3');bindPeopleLoading(main,{text:cv});bindLifeNavigation(main,{onChange:saveContext});}
+    if(parts[0]==='people'){const {bindPeopleLoading,bindLifeNavigation}=await import('./people-reading.js?v=c3579d687a6a8633');bindPeopleLoading(main,{text:cv});bindLifeNavigation(main,{onChange:saveContext});}
     updateNavigation(parts);renderedHash=location.hash;ready=true;saveContext();
     setPageTitle(parts[0]==='read'?section.title:knowledgeTitle);
   }catch(e){

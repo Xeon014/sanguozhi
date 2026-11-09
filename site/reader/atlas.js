@@ -4,8 +4,8 @@
 // Route-level hash helpers live in route-hash.js so the entry module can
 // canonicalize addresses without loading this renderer; re-exported for
 // existing importers.
-import {PERIODS, atlasState, atlasHash, yearbookHash} from './route-hash.js?v=3bb046e1f573abc3';
-export {PERIODS, canonicalAtlasHomeHash, atlasState, atlasHash, yearbookHash} from './route-hash.js?v=3bb046e1f573abc3';
+import {PERIODS, atlasState, atlasHash, yearbookHash} from './route-hash.js?v=c3579d687a6a8633';
+export {PERIODS, canonicalAtlasHomeHash, atlasState, atlasHash, yearbookHash} from './route-hash.js?v=c3579d687a6a8633';
 export function zoomRange(range,anchor,factor=1,direction=0){
   const span=Math.max(1,Math.min(97,Math.round((range[1]-range[0]+1)*factor)));
   const center=direction?(range[0]+range[1])/2+direction*Math.max(1,Math.floor(span/2)):anchor;
