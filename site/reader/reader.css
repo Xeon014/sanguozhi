@@ -227,6 +227,13 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .search-form input{flex:1;min-width:180px;font-size:20px}
 .search-form select{max-width:240px}
 .search-form button{background:var(--accent);color:var(--paper);border-color:var(--accent)}
+/* The optional-scope toggle must not read as the primary submit action. */
+.search-form button[aria-pressed]{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.search-form button[aria-pressed]:hover{border-color:var(--ink);background:var(--surface)}
+.search-form button[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.search-form button[aria-pressed=true]::before{content:'✓\00a0'}
+.search-form button[aria-pressed=true]:hover{background:var(--accent);border-color:var(--accent)}
+.search-form button:not([aria-pressed]):hover{background:var(--accent-deep);border-color:var(--accent-deep)}
 .result{max-width:900px;padding:28px 0;border-bottom:1px solid var(--line)}
 .result h2{font-size:28px}
 .result p{font-size:18px;line-height:1.9}
@@ -493,7 +500,7 @@ button.atlas-lane:focus-visible{outline:2px solid var(--accent);outline-offset:-
 .person-popup [role=option]{display:flex;justify-content:space-between;gap:16px;min-height:44px;padding:10px;cursor:pointer}
 .person-popup [aria-selected=true]{background:var(--soft);color:var(--accent)}
 .person-popup p{font-size:12px;margin:8px}
-.result>a{font-size:28px;line-height:1.5}
+.result h2 a{font-size:28px;line-height:1.5}
 .inline-source{padding:20px 0;border-bottom:1px solid var(--line)}
 .inline-source blockquote{font-size:19px;line-height:2;margin:16px 0;white-space:pre-wrap;overflow-wrap:anywhere}
 .inline-source figcaption,.inline-source h3,.source-record h2,.life-source-label{font:14px/1.8 var(--sans);color:var(--muted)}

@@ -8,6 +8,15 @@ export function searchHash(type, query='', book='', notes=false) {
   return '#/search'+(qs.size?'?'+qs:'');
 }
 
+// First normalized match as a code-point index into the original value.
+export function firstMatch(value, query, normalize) {
+  const needle=normalize(query);if(!needle)return -1;
+  const chars=[...value],folded=chars.map(normalize),offsets=[];let size=0;
+  for(let i=0;i<chars.length;i++){offsets.push(size);size+=folded[i].length;}
+  const at=folded.join('').indexOf(needle);
+  return at<0?-1:offsets.findIndex((p,i)=>p+folded[i].length>at);
+}
+
 // Match displayed text while retaining its original characters and offsets.
 export function highlightText(value, query, normalize, escape) {
   const needle=normalize(query);if(!needle)return escape(value);
