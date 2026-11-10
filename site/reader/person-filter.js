@@ -1,4 +1,4 @@
-import {bindFloatingPanel} from './floating-panel.js?v=da3a460de0a5cea8';
+import {bindFloatingPanel} from './floating-panel.js?v=b8dcfde7a3d0902f';
 // Suggestions use explicit participation, never mentions or name inference.
 export function eventPeople(data, visiblePeople, normalize) {
   const participants=new Set(data.directory_counts?Object.keys(data.directory_counts):data.events.flatMap(e=>e.participants.map(p=>p.person)));
