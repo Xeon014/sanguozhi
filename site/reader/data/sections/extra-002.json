@@ -1,6 +1,6 @@
 {
   "id": "extra-002",
-  "title": "封面 / 图版",
+  "title": "原书版本信息（文字整理）",
   "kind": "extra",
   "status": "source",
   "blocks": [
@@ -13,17 +13,394 @@
       },
       "tokens": [
         {
-          "type": "image",
-          "path": "OEBPS/Images/00119.jpg",
-          "alt": ""
+          "type": "text",
+          "text": "图书在版编目（CIP）数据"
         }
       ],
-      "text": "",
+      "text": "图书在版编目（CIP）数据",
       "kind": "heading",
       "anchors": [
         "filepos245"
       ],
       "source_heading": true
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-01",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "三国志译注 /（晋）陈寿著；（南朝宋）裴松之注. —上海：上海古籍出版社，2021.12"
+        }
+      ],
+      "text": "三国志译注 /（晋）陈寿著；（南朝宋）裴松之注. —上海：上海古籍出版社，2021.12",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-02",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "（中国古代名著全本译注丛书）"
+        }
+      ],
+      "text": "（中国古代名著全本译注丛书）",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-03",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "ISBN 978-7-5732-0128-7"
+        }
+      ],
+      "text": "ISBN 978-7-5732-0128-7",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-04",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "Ⅰ.①三…　Ⅱ.①陈… ②裴…　Ⅲ.①中国历史—三国时代—纪传体 ②《三国志》—译文 ③《三国志》—注释　Ⅳ.①K236.042"
+        }
+      ],
+      "text": "Ⅰ.①三…　Ⅱ.①陈… ②裴…　Ⅲ.①中国历史—三国时代—纪传体 ②《三国志》—译文 ③《三国志》—注释　Ⅳ.①K236.042",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-05",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "中国版本图书馆 CIP 数据核字（2021）第 243638 号"
+        }
+      ],
+      "text": "中国版本图书馆 CIP 数据核字（2021）第 243638 号",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-06",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "中国古代名著全本译注丛书"
+        }
+      ],
+      "text": "中国古代名著全本译注丛书",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-07",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "三国志译注"
+        }
+      ],
+      "text": "三国志译注",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-08",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "（全三册）"
+        }
+      ],
+      "text": "（全三册）",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-09",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "〔晋〕陈寿 著"
+        }
+      ],
+      "text": "〔晋〕陈寿 著",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-10",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "〔南朝宋〕裴松之 注"
+        }
+      ],
+      "text": "〔南朝宋〕裴松之 注",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-11",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "上海古籍出版社出版发行"
+        }
+      ],
+      "text": "上海古籍出版社出版发行",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-12",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "（上海市闵行区号景路 159 弄 1—5 号 A 座 5F　邮政编码 201101）"
+        }
+      ],
+      "text": "（上海市闵行区号景路 159 弄 1—5 号 A 座 5F　邮政编码 201101）",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-13",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "（1）网址：www.guji.com.cn"
+        }
+      ],
+      "text": "（1）网址：www.guji.com.cn",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-14",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "（2）E-mail：guji1@guji.com.cn"
+        }
+      ],
+      "text": "（2）E-mail：guji1@guji.com.cn",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-15",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "（3）易文网网址：www.ewen.co"
+        }
+      ],
+      "text": "（3）易文网网址：www.ewen.co",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-16",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "江阴市机关印刷服务有限公司印刷"
+        }
+      ],
+      "text": "江阴市机关印刷服务有限公司印刷",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-17",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "开本 890×1240　1/32　印张 100.125　插页 15　字数 1,923,000"
+        }
+      ],
+      "text": "开本 890×1240　1/32　印张 100.125　插页 15　字数 1,923,000",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-18",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "2021 年 12 月第 1 版　2021 年 12 月第 1 次印刷"
+        }
+      ],
+      "text": "2021 年 12 月第 1 版　2021 年 12 月第 1 次印刷",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-19",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "ISBN 978-7-5732-0128-7"
+        }
+      ],
+      "text": "ISBN 978-7-5732-0128-7",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-20",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "K·3074　定价：398.00 元"
+        }
+      ],
+      "text": "K·3074　定价：398.00 元",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
+    },
+    {
+      "id": "b-06ea760d66e60e71fe1d-text-21",
+      "source": {
+        "file": "OEBPS/Text/titlepage_0002.xhtml",
+        "index": 0,
+        "anchor": "filepos245"
+      },
+      "tokens": [
+        {
+          "type": "text",
+          "text": "如有质量问题，请与承印公司联系"
+        }
+      ],
+      "text": "如有质量问题，请与承印公司联系",
+      "kind": "source",
+      "anchors": [],
+      "source_heading": false
     }
   ],
   "groups": [],

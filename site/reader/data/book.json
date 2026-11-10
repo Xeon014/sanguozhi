@@ -3,9 +3,8 @@
   "title": "三国志译注",
   "author": "陈寿",
   "annotator": "裴松之",
-  "translator": "方北辰",
   "publisher": "上海古籍出版社",
-  "edition_note": "据用户提供 EPUB；译注者与出版社据书内前言，前言署于 2020 年 6 月，未以电子文件日期推断出版年。",
+  "edition_note": "据用户提供 EPUB；出版社据书内前言，前言署于 2020 年 6 月，未以电子文件日期推断出版年。",
   "schema_version": 1,
   "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
   "source_filename": "三国志译注.epub",
@@ -26,19 +25,19 @@
   "sections": [
     {
       "id": "extra-000",
-      "title": "封面 / 图版",
+      "title": "封面（文字整理）",
       "kind": "extra",
       "status": "source"
     },
     {
       "id": "extra-001",
-      "title": "封面 / 图版",
+      "title": "封面（文字整理）",
       "kind": "extra",
       "status": "source"
     },
     {
       "id": "extra-002",
-      "title": "封面 / 图版",
+      "title": "原书版本信息（文字整理）",
       "kind": "extra",
       "status": "source"
     },
@@ -2019,14 +2018,11 @@
     "OEBPS/Images/00115.jpg",
     "OEBPS/Images/00116.jpg",
     "OEBPS/Images/00117.jpg",
-    "OEBPS/Images/00119.jpg",
     "OEBPS/Images/00120.jpg",
-    "OEBPS/Images/00121.jpg",
     "OEBPS/Images/00122.jpg",
     "OEBPS/Images/00126.jpg",
     "OEBPS/Images/00139.jpg",
     "OEBPS/Images/00140.jpg",
-    "cover.jpeg",
     "page_styles.css",
     "stylesheet.css"
   ]
