@@ -196,6 +196,37 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .notes-expanded .note-body{padding:0 0 8px}
 .notes-expanded .note .block{font-family:'Noto Serif SC','Noto Serif TC','Songti SC','SimSun',serif;font-size:var(--fs);line-height:2}
 .note .reading-actions{display:flex;justify-content:flex-end;gap:20px;flex-wrap:wrap}
+/* Bottom sheet for one tapped annotation on phones; mirrors the mobile
+   reading-settings sheet (full width, top rule, veil backdrop). */
+.note-sheet{position:fixed;inset:auto 0 0;width:100%;max-width:100%;max-height:calc(100dvh - env(safe-area-inset-top) - 12px);margin:0;padding:0 0 env(safe-area-inset-bottom);border:0;border-top:2px solid var(--ink);background:var(--surface);color:var(--ink);font:14px/1.8 var(--sans)}
+.note-sheet[open]{display:flex;flex-direction:column;animation:note-sheet-up .22s ease-out}
+.note-sheet::backdrop{background:var(--veil)}
+.note-sheet-open{overflow:hidden}
+.note-sheet-grab{width:40px;height:4px;border-radius:2px;background:var(--line);margin:10px auto 4px;flex:none}
+.note-sheet-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 16px 0 24px;flex:none}
+.note-sheet-label{margin:0;color:var(--modern);font:13px/1.6 var(--sans)}
+.note-sheet.note-secondary .note-sheet-label{color:var(--pei)}
+.note-sheet-close{display:inline-flex;align-items:center;min-height:44px;min-width:44px;margin:0;padding:0 12px;border:0;background:none;color:var(--muted);font:13px/1.4 var(--sans)}
+.note-sheet-close:hover{color:var(--ink);text-decoration:underline}
+.note-sheet-body{flex:1;min-height:0;padding:2px 24px 18px;overflow:auto;overscroll-behavior:contain}
+.note-sheet-body .block{font-size:calc(var(--fs) - 2px);margin:12px 0}
+@keyframes note-sheet-up{from{transform:translateY(18px)}to{transform:translateY(0)}}
+/* Wide desktop: annotation rail beside the reading column. The article
+   widens so the parallel text keeps its measure; folded stacks align with
+   their paragraph in the rail, and any expanded stack drops back below the
+   paragraph for full-width reading. Narrow widths keep the stacked layout. */
+@media(min-width:1280px){
+  .chapter-layout{grid-template-columns:180px minmax(0,1068px)}
+  .reading-group{display:grid;grid-template-columns:minmax(0,1fr) 264px;column-gap:44px}
+  .parallel{grid-column:1}
+  .note-stacks{grid-column:2;grid-row:1;align-self:start;margin-top:0;border-left:1px solid var(--line);padding-left:24px}
+  .note-stacks:has(>.note-stack.notes-expanded){grid-column:1/-1;grid-row:2;border-left:0;padding-left:0;margin-top:12px}
+  .note-stacks:not(:has(>.note-stack.notes-expanded)) .note-stack>summary{min-height:36px;padding:6px 0}
+  .note-stacks:not(:has(>.note-stack.notes-expanded)) .note{margin:6px 0 16px}
+  .note-stacks:not(:has(>.note-stack.notes-expanded)) .note>summary{padding:10px 14px;min-height:36px;font-size:13px}
+  .note-stacks:not(:has(>.note-stack.notes-expanded)) .note-body{padding:0 14px 12px}
+  .note-stacks:not(:has(>.note-stack.notes-expanded)) .note .block{font-size:14px}
+}
 .note-back{display:inline-flex;align-items:center;min-height:44px;padding:10px 8px;border:0;color:var(--muted);background:none;font:14px/1.8 var(--sans)}
 .note-back:hover{color:var(--ink);text-decoration:underline}
 .return-link,.back-search,.knowledge-back{display:inline-flex;align-items:center;padding:10px 0;min-height:44px;color:var(--accent);font:14px/1.8 var(--sans)}
