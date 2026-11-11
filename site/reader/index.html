@@ -7,14 +7,24 @@
   <meta property="og:title" content="三国志">
   <meta property="og:description" content="《三国志》原典阅读：原文与译注对照、大事年表、时代星图、风云人物与史事检索。">
   <meta property="og:type" content="website">
-  <link rel="stylesheet" href="reader.css?v=c3579d687a6a8633">
+  <!-- Boot-critical module graph and the config-independent JSONs start during
+       HTML parse instead of after reader.js evaluates; version_static_assets
+       appends the shared ?v= to every local href. -->
+  <link rel="modulepreload" href="route-hash.js?v=9a51375c73846db3">
+  <link rel="modulepreload" href="data-loader.js?v=9a51375c73846db3">
+  <link rel="modulepreload" href="search.js?v=9a51375c73846db3">
+  <link rel="modulepreload" href="event-reading.js?v=9a51375c73846db3">
+  <link rel="preload" as="fetch" href="config.json?v=9a51375c73846db3" crossorigin>
+  <link rel="preload" as="fetch" href="site.json?v=9a51375c73846db3" crossorigin>
+  <link rel="preload" as="fetch" href="knowledge/zh-display.json?v=9a51375c73846db3" crossorigin>
+  <link rel="stylesheet" href="reader.css?v=9a51375c73846db3">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&family=Noto+Serif+TC:wght@400;500;600&display=swap"></noscript>
-  <link rel="icon" href="favicon.ico?v=c3579d687a6a8633" sizes="16 32 48">
-  <link rel="icon" href="favicon.svg?v=c3579d687a6a8633" type="image/svg+xml" sizes="any">
+  <link rel="icon" href="favicon.ico?v=9a51375c73846db3" sizes="16 32 48">
+  <link rel="icon" href="favicon.svg?v=9a51375c73846db3" type="image/svg+xml" sizes="any">
 </head>
 <body>
   <a class="skip" href="#main">跳到正文</a>
@@ -54,9 +64,9 @@
       <button id="theme">夜间</button>
     </div>
   </header>
-  <main id="main" tabindex="-1"><p role="status">正在载入……</p></main>
+  <main id="main" tabindex="-1"><div class="boot-loading" role="status"><span class="boot-seal" aria-hidden="true"><svg viewBox="0 0 64 64"><rect width="64" height="64" rx="6"/><path d="M14 14h36v6H14zm4 15h28v6H18zm-7 15h42v6H11z"/></svg></span><p class="boot-note">正在载入……</p></div></main>
   <footer id="footer">陈寿 撰 · 裴松之 注</footer>
   <noscript><p>本站需要启用 JavaScript 才能阅读。</p></noscript>
-  <script type="module" src="reader.js?v=c3579d687a6a8633"></script>
+  <script type="module" src="reader.js?v=9a51375c73846db3"></script>
 </body>
 </html>

@@ -1,12 +1,12 @@
 # 三国志
 
-> 《三国志》原典数字阅读站：原文与裴松之注、现代译注分层对照，附大事年表、时代星图与人物检索。文本采用《三国志译注》（陈寿撰、裴松之注，上海古籍出版社），正文、裴注与译注分层呈现，保留所据文本的标点与分段。
+> 这是三国志。
 
 ## 站点入口
 
-- [全书目录](https://www.hoven.zone/sanguozhi/reader/#/contents): 魏书、蜀书、吴书及补充材料的全部篇目
-- [静态全书目录](https://www.hoven.zone/sanguozhi/reader/read/): 每篇正文的独立静态全文页，无需 JavaScript 即可读取，正文、裴注与译注完整呈现
-- [原文检索](https://www.hoven.zone/sanguozhi/reader/#/search): 全书原文检索，可选包含裴注，支持简繁查询、魏蜀吴分书与篇目范围、命中定位
+- [篇目目录](https://www.hoven.zone/sanguozhi/reader/#/contents): 魏书、蜀书、吴书及补充材料的全部篇目
+- [静态篇目目录](https://www.hoven.zone/sanguozhi/reader/read/): 每篇正文的独立静态全文页，无需 JavaScript 即可读取，正文、裴注与译注完整呈现
+- [原文检索](https://www.hoven.zone/sanguozhi/reader/#/search): 跨篇目原文检索，可选包含裴注，支持简繁查询、魏蜀吴分书与篇目范围、命中定位
 - [风云人物](https://www.hoven.zone/sanguozhi/reader/#/people): 人物资料、精选生平经历与相关记载，可展开引文并进入原文
 - [大事年表](https://www.hoven.zone/sanguozhi/reader/#/events?view=highlights): 按审定年份排列的精选大事，逐年查阅相关人物与文献依据
 - [时代星图](https://www.hoven.zone/sanguozhi/reader/#/events?view=atlas): 可缩放的时代全景，按类别浏览精选史事并进入详情

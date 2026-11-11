@@ -47,6 +47,13 @@ mark{background:var(--soft);color:inherit;text-decoration:underline;text-decorat
 .section-heading a{font:14px/1.8 var(--sans);color:var(--accent);padding:10px 0}
 .error,.query-empty{padding:32px;background:var(--soft);border-left:3px solid var(--accent);margin:24px 0;color:var(--muted)}
 .error p{margin:16px 0 0}
+.boot-loading{min-height:56vh;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:32px}
+.boot-seal{width:60px;height:60px;color:var(--accent);animation:seal-breathe 2.2s ease-in-out infinite}
+.boot-seal svg{display:block;width:100%;height:100%}
+.boot-seal svg rect{fill:currentColor}
+.boot-seal svg path{fill:var(--paper)}
+.boot-note{margin:0;font-size:14px;color:var(--muted);letter-spacing:.3em;text-indent:.3em}
+@keyframes seal-breathe{0%,100%{opacity:1}50%{opacity:.4}}
 .load-more,#more{display:block;margin:32px auto 0;min-width:144px}
 .load-finished{display:block;margin:32px auto 0;min-width:144px;color:var(--muted);cursor:default}
 :where(.reading-group,.block,[data-context],.note,.atlas-card,.topic-record){scroll-margin-top:176px}
@@ -176,7 +183,6 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .reading-group:hover>.passage-link,.passage-link:focus-visible{opacity:1}
 .note-ref{display:inline-flex;align-items:center;justify-content:center;min-width:26px;min-height:28px;padding:1px 3px;margin:0 1px;vertical-align:baseline;font:11px/1.4 var(--sans);color:var(--modern);border:0;background:none}
 .note-ref.note-secondary{color:var(--pei)}
-.note-ref:hover{background:var(--soft)}
 .note-ref[hidden],.note-stack[hidden],.note-stacks[hidden]{display:none!important}
 .note-stacks{margin-top:12px}
 .note-stacks:empty{display:none}
@@ -196,6 +202,56 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .notes-expanded .note-body{padding:0 0 8px}
 .notes-expanded .note .block{font-family:'Noto Serif SC','Noto Serif TC','Songti SC','SimSun',serif;font-size:var(--fs);line-height:2}
 .note .reading-actions{display:flex;justify-content:flex-end;gap:20px;flex-wrap:wrap}
+/* Bottom sheet for one tapped annotation on phones; mirrors the mobile
+   reading-settings sheet (full width, top rule, veil backdrop). */
+.note-sheet{position:fixed;inset:auto 0 0;width:100%;max-width:100%;max-height:calc(100dvh - env(safe-area-inset-top) - 12px);margin:0;padding:0 0 env(safe-area-inset-bottom);border:0;border-top:2px solid var(--ink);background:var(--surface);color:var(--ink);font:14px/1.8 var(--sans)}
+.note-sheet[open]{display:flex;flex-direction:column;animation:note-sheet-up .22s ease-out}
+.note-sheet::backdrop{background:var(--veil)}
+.note-sheet-open{overflow:hidden}
+.note-sheet-grab{width:40px;height:4px;border-radius:2px;background:var(--line);margin:10px auto 4px;flex:none}
+.note-sheet-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 16px 0 24px;flex:none}
+.note-sheet-label{margin:0;color:var(--modern);font:13px/1.6 var(--sans)}
+.note-sheet.note-secondary .note-sheet-label{color:var(--pei)}
+.note-sheet-close{display:inline-flex;align-items:center;min-height:44px;min-width:44px;margin:0;padding:0 12px;border:0;background:none;color:var(--muted);font:13px/1.4 var(--sans)}
+.note-sheet-close:hover{color:var(--ink);text-decoration:underline}
+.note-sheet-clip{position:relative;flex:1;min-height:0}
+.note-sheet-body{height:100%;max-height:38dvh;padding:2px 24px 14px;overflow:auto;overscroll-behavior:contain}
+.note-sheet.tall .note-sheet-body{max-height:76dvh}
+.note-sheet-body .block{font-size:calc(var(--fs) - 2px);margin:12px 0}
+.note-sheet-fade{position:absolute;left:0;right:0;bottom:0;height:46px;background:linear-gradient(to bottom,transparent,var(--surface));pointer-events:none;display:none}
+.note-sheet.capped:not(.tall) .note-sheet-fade{display:block}
+.note-sheet-more{display:none;width:100%;margin:10px 0 0;min-height:44px;border:1px solid var(--line);border-radius:999px;background:none;color:var(--ink);font:13px/1.4 var(--sans)}
+.note-sheet.capped .note-sheet-more{display:block}
+@keyframes note-sheet-up{from{transform:translateY(18px)}to{transform:translateY(0)}}
+/* Mobile markers read as type-coloured pills; the open one stays filled.
+   Touch hover never sticks and the pill keeps a 44px hit area. */
+@media(hover:hover){.note-ref:hover{background:var(--soft)}}
+@media(max-width:760px){
+  .note-ref{padding:2px 8px;border-radius:999px;font-size:11.5px;line-height:1.5;background:color-mix(in srgb,var(--modern) 10%,transparent)}
+  .note-ref.note-secondary{background:color-mix(in srgb,var(--pei) 13%,transparent)}
+  .note-ref[aria-expanded="true"]{background:var(--modern);color:var(--paper)}
+  .note-ref.note-secondary[aria-expanded="true"]{background:var(--pei);color:var(--paper)}
+}
+@media(pointer:coarse){
+  .note-ref{position:relative}
+  .note-ref::after{content:'';position:absolute;inset:-8px -6px}
+}
+/* Wide desktop: annotation rail beside the reading column. The article
+   widens so the parallel text keeps its measure; folded stacks align with
+   their paragraph in the rail, and any expanded stack drops back below the
+   paragraph for full-width reading. Narrow widths keep the stacked layout. */
+@media(min-width:1280px){
+  .chapter-layout{grid-template-columns:180px minmax(0,1068px)}
+  .reading-group{display:grid;grid-template-columns:minmax(0,1fr) 264px;column-gap:44px}
+  .parallel{grid-column:1}
+  .note-stacks{grid-column:2;grid-row:1;align-self:start;margin-top:0;border-left:1px solid var(--line);padding-left:24px}
+  .note-stacks:has(>.note-stack.notes-expanded){grid-column:1/-1;grid-row:2;border-left:0;padding-left:0;margin-top:12px}
+  .note-stacks:not(:has(>.note-stack.notes-expanded)) .note-stack>summary{min-height:36px;padding:6px 0}
+  .note-stacks:not(:has(>.note-stack.notes-expanded)) .note{margin:6px 0 16px}
+  .note-stacks:not(:has(>.note-stack.notes-expanded)) .note>summary{padding:10px 14px;min-height:36px;font-size:13px}
+  .note-stacks:not(:has(>.note-stack.notes-expanded)) .note-body{padding:0 14px 12px}
+  .note-stacks:not(:has(>.note-stack.notes-expanded)) .note .block{font-size:14px}
+}
 .note-back{display:inline-flex;align-items:center;min-height:44px;padding:10px 8px;border:0;color:var(--muted);background:none;font:14px/1.8 var(--sans)}
 .note-back:hover{color:var(--ink);text-decoration:underline}
 .return-link,.back-search,.knowledge-back{display:inline-flex;align-items:center;padding:10px 0;min-height:44px;color:var(--accent);font:14px/1.8 var(--sans)}

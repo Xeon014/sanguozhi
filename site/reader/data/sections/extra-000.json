@@ -1,6 +1,6 @@
 {
   "id": "extra-000",
-  "title": "封面（文字整理）",
+  "title": "三国志",
   "kind": "extra",
   "status": "source",
   "blocks": [
@@ -14,103 +14,13 @@
       "tokens": [
         {
           "type": "text",
-          "text": "中国古代名著全本译注丛书"
+          "text": "三国志"
         }
       ],
-      "text": "中国古代名著全本译注丛书",
+      "text": "三国志",
       "kind": "heading",
       "anchors": [],
       "source_heading": true
-    },
-    {
-      "id": "b-c192c5a3fa222984ede2-text-01",
-      "source": {
-        "file": "titlepage.xhtml",
-        "index": 0,
-        "anchor": null
-      },
-      "tokens": [
-        {
-          "type": "text",
-          "text": "三国志译注"
-        }
-      ],
-      "text": "三国志译注",
-      "kind": "source",
-      "anchors": [],
-      "source_heading": false
-    },
-    {
-      "id": "b-c192c5a3fa222984ede2-text-02",
-      "source": {
-        "file": "titlepage.xhtml",
-        "index": 0,
-        "anchor": null
-      },
-      "tokens": [
-        {
-          "type": "text",
-          "text": "一"
-        }
-      ],
-      "text": "一",
-      "kind": "source",
-      "anchors": [],
-      "source_heading": false
-    },
-    {
-      "id": "b-c192c5a3fa222984ede2-text-03",
-      "source": {
-        "file": "titlepage.xhtml",
-        "index": 0,
-        "anchor": null
-      },
-      "tokens": [
-        {
-          "type": "text",
-          "text": "〔晋〕陈寿 著"
-        }
-      ],
-      "text": "〔晋〕陈寿 著",
-      "kind": "source",
-      "anchors": [],
-      "source_heading": false
-    },
-    {
-      "id": "b-c192c5a3fa222984ede2-text-04",
-      "source": {
-        "file": "titlepage.xhtml",
-        "index": 0,
-        "anchor": null
-      },
-      "tokens": [
-        {
-          "type": "text",
-          "text": "〔南朝宋〕裴松之 注"
-        }
-      ],
-      "text": "〔南朝宋〕裴松之 注",
-      "kind": "source",
-      "anchors": [],
-      "source_heading": false
-    },
-    {
-      "id": "b-c192c5a3fa222984ede2-text-05",
-      "source": {
-        "file": "titlepage.xhtml",
-        "index": 0,
-        "anchor": null
-      },
-      "tokens": [
-        {
-          "type": "text",
-          "text": "上海古籍出版社"
-        }
-      ],
-      "text": "上海古籍出版社",
-      "kind": "source",
-      "anchors": [],
-      "source_heading": false
     }
   ],
   "groups": [],

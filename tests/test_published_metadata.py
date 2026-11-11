@@ -1,4 +1,4 @@
-"""Keep the published metadata and front matter consistent after export."""
+"""Keep the public site identity consistent after export."""
 
 import json
 from pathlib import Path
@@ -20,16 +20,23 @@ def load_json(path):
 
 
 class PublishedMetadataTests(unittest.TestCase):
-    def test_book_projections_match_without_translator_credit(self):
+    def test_public_descriptions_use_the_site_name(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        llms = (ROOT / "site" / "llms.txt").read_text(encoding="utf-8")
+        self.assertEqual(readme.split("\n\n")[1], "这是三国志。")
+        self.assertEqual(llms.split("\n\n")[1], "> 这是三国志。")
+
+    def test_metadata_projections_match_without_source_edition_fields(self):
         source = load_json(READER / "data" / "book.json")
         runtime = load_json(READER / "knowledge" / "runtime" / "book.json")
         self.assertEqual(source, runtime)
-        self.assertNotIn("translator", source)
+        self.assertEqual(source["title"], "三国志")
+        for field in ("translator", "publisher", "edition_note", "source_filename"):
+            self.assertNotIn(field, source)
         self.assertEqual(source["author"], "陈寿")
         self.assertEqual(source["annotator"], "裴松之")
-        self.assertEqual(source["publisher"], "上海古籍出版社")
 
-    def test_static_chapter_metadata_omits_translator_credit(self):
+    def test_static_chapter_metadata_identifies_the_site(self):
         pages = sorted((READER / "read").glob("chapter-*.html"))
         self.assertEqual(len(pages), 65)
         for page in pages:
@@ -39,27 +46,23 @@ class PublishedMetadataTests(unittest.TestCase):
                     page.read_text(encoding="utf-8"),
                 )
                 self.assertIsNotNone(match)
-                book = json.loads(match[1])["isPartOf"]
-                self.assertNotIn("translator", book)
-                self.assertEqual(book["author"]["name"], "陈寿")
-                self.assertEqual(book["publisher"]["name"], "上海古籍出版社")
+                page_metadata = json.loads(match[1])
+                self.assertEqual(page_metadata["@type"], "WebPage")
+                self.assertEqual(page_metadata["isPartOf"], {"@type": "WebSite", "name": "三国志"})
 
-    def test_front_matter_preserves_text_and_original_anchors(self):
+    def test_intro_sections_use_the_site_name_and_keep_original_anchors(self):
         book = load_json(READER / "data" / "book.json")
         titles = {entry["id"]: entry["title"] for entry in book["sections"]}
         for sid in ("extra-000", "extra-001", "extra-002"):
             with self.subTest(section=sid):
                 section = load_json(READER / "data" / "sections" / f"{sid}.json")
-                self.assertEqual(titles[sid], section["title"])
+                self.assertEqual(titles[sid], "三国志")
+                self.assertEqual(section["title"], "三国志")
+                self.assertEqual(len(section["blocks"]), 1)
                 blocks = {block["id"]: block for block in section["blocks"]}
-                self.assertEqual(len(blocks), len(section["blocks"]))
-                text = "\n".join(block["text"] for block in section["blocks"])
-                for required in ("三国志译注", "陈寿", "裴松之", "上海古籍出版社"):
-                    self.assertIn(required, text)
-                self.assertFalse(any(
-                    token["type"] == "image"
-                    for block in section["blocks"] for token in block["tokens"]
-                ))
+                block = section["blocks"][0]
+                self.assertEqual(block["text"], "三国志")
+                self.assertEqual(block["tokens"], [{"type": "text", "text": "三国志"}])
                 anchors = load_json(READER / "knowledge" / "runtime" / "anchors" / f"{sid}.json")
                 for target in anchors.values():
                     if target.get("block"):
