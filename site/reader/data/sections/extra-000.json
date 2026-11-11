@@ -1,6 +1,6 @@
 {
   "id": "extra-000",
-  "title": "封面 / 图版",
+  "title": "三国志",
   "kind": "extra",
   "status": "source",
   "blocks": [
@@ -14,23 +14,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "\n                "
-        },
-        {
-          "type": "image",
-          "path": "cover.jpeg",
-          "alt": ""
-        },
-        {
-          "type": "text",
-          "text": "\n            "
-        },
-        {
-          "type": "text",
-          "text": "\n        "
+          "text": "三国志"
         }
       ],
-      "text": "",
+      "text": "三国志",
       "kind": "heading",
       "anchors": [],
       "source_heading": true

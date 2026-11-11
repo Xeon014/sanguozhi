@@ -1,14 +1,10 @@
 {
   "id": "sanguozhi-yizhu",
-  "title": "三国志译注",
+  "title": "三国志",
   "author": "陈寿",
   "annotator": "裴松之",
-  "translator": "方北辰",
-  "publisher": "上海古籍出版社",
-  "edition_note": "据用户提供 EPUB；译注者与出版社据书内前言，前言署于 2020 年 6 月，未以电子文件日期推断出版年。",
   "schema_version": 1,
   "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
-  "source_filename": "三国志译注.epub",
   "note_types": {
     "modern": {
       "label": "现代注释",
@@ -26,19 +22,19 @@
   "sections": [
     {
       "id": "extra-000",
-      "title": "封面 / 图版",
+      "title": "三国志",
       "kind": "extra",
       "status": "source"
     },
     {
       "id": "extra-001",
-      "title": "封面 / 图版",
+      "title": "三国志",
       "kind": "extra",
       "status": "source"
     },
     {
       "id": "extra-002",
-      "title": "封面 / 图版",
+      "title": "三国志",
       "kind": "extra",
       "status": "source"
     },
@@ -507,7 +503,7 @@
   ],
   "toc": [
     {
-      "label": "封面",
+      "label": "三国志",
       "source": [
         "titlepage.xhtml",
         ""
@@ -547,7 +543,7 @@
       }
     },
     {
-      "label": "【三国志译注卷一】 魏志一",
+      "label": "【三国志卷一】 魏志一",
       "source": [
         "OEBPS/Text/titlepage_0006.xhtml",
         ""
@@ -567,7 +563,7 @@
       }
     },
     {
-      "label": "【三国志译注卷二】 魏志二",
+      "label": "【三国志卷二】 魏志二",
       "source": [
         "OEBPS/Text/titlepage_0008.xhtml",
         ""
@@ -587,7 +583,7 @@
       }
     },
     {
-      "label": "【三国志译注卷三】 魏志三",
+      "label": "【三国志卷三】 魏志三",
       "source": [
         "OEBPS/Text/titlepage_0010.xhtml",
         ""
@@ -607,7 +603,7 @@
       }
     },
     {
-      "label": "【三国志译注卷四】 魏志四",
+      "label": "【三国志卷四】 魏志四",
       "source": [
         "OEBPS/Text/titlepage_0012.xhtml",
         ""
@@ -627,7 +623,7 @@
       }
     },
     {
-      "label": "【三国志译注卷五】 魏志五",
+      "label": "【三国志卷五】 魏志五",
       "source": [
         "OEBPS/Text/titlepage_0014.xhtml",
         ""
@@ -647,7 +643,7 @@
       }
     },
     {
-      "label": "【三国志译注卷六】 魏志六",
+      "label": "【三国志卷六】 魏志六",
       "source": [
         "OEBPS/Text/titlepage_0016.xhtml",
         ""
@@ -667,7 +663,7 @@
       }
     },
     {
-      "label": "【三国志译注卷七】 魏志七",
+      "label": "【三国志卷七】 魏志七",
       "source": [
         "OEBPS/Text/titlepage_0018.xhtml",
         ""
@@ -687,7 +683,7 @@
       }
     },
     {
-      "label": "【三国志译注卷八】 魏志八",
+      "label": "【三国志卷八】 魏志八",
       "source": [
         "OEBPS/Text/titlepage_0020.xhtml",
         ""
@@ -707,7 +703,7 @@
       }
     },
     {
-      "label": "【三国志译注卷九】 魏志九",
+      "label": "【三国志卷九】 魏志九",
       "source": [
         "OEBPS/Text/titlepage_0022.xhtml",
         ""
@@ -727,7 +723,7 @@
       }
     },
     {
-      "label": "【三国志译注卷十】 魏志十",
+      "label": "【三国志卷十】 魏志十",
       "source": [
         "OEBPS/Text/titlepage_0024.xhtml",
         ""
@@ -747,7 +743,7 @@
       }
     },
     {
-      "label": "【三国志译注卷十一】 魏志十一",
+      "label": "【三国志卷十一】 魏志十一",
       "source": [
         "OEBPS/Text/titlepage_0026.xhtml",
         ""
@@ -767,7 +763,7 @@
       }
     },
     {
-      "label": "【三国志译注卷十二】 魏志十二",
+      "label": "【三国志卷十二】 魏志十二",
       "source": [
         "OEBPS/Text/titlepage_0028.xhtml",
         ""
@@ -787,7 +783,7 @@
       }
     },
     {
-      "label": "【三国志译注卷十三】 魏志十三",
+      "label": "【三国志卷十三】 魏志十三",
       "source": [
         "OEBPS/Text/titlepage_0030.xhtml",
         ""
@@ -807,7 +803,7 @@
       }
     },
     {
-      "label": "【三国志译注卷十四】 魏志十四",
+      "label": "【三国志卷十四】 魏志十四",
       "source": [
         "OEBPS/Text/titlepage_0032.xhtml",
         ""
@@ -827,7 +823,7 @@
       }
     },
     {
-      "label": "【三国志译注卷十五】 魏志十五",
+      "label": "【三国志卷十五】 魏志十五",
       "source": [
         "OEBPS/Text/titlepage_0034.xhtml",
         ""
@@ -847,7 +843,7 @@
       }
     },
     {
-      "label": "【三国志译注卷十六】 魏志十六",
+      "label": "【三国志卷十六】 魏志十六",
       "source": [
         "OEBPS/Text/titlepage_0036.xhtml",
         ""
@@ -867,7 +863,7 @@
       }
     },
     {
-      "label": "【三国志译注卷十七】 魏志十七",
+      "label": "【三国志卷十七】 魏志十七",
       "source": [
         "OEBPS/Text/titlepage_0038.xhtml",
         ""
@@ -887,7 +883,7 @@
       }
     },
     {
-      "label": "【三国志译注卷十八】 魏志十八",
+      "label": "【三国志卷十八】 魏志十八",
       "source": [
         "OEBPS/Text/titlepage_0040.xhtml",
         ""
@@ -907,7 +903,7 @@
       }
     },
     {
-      "label": "【三国志译注卷十九】 魏志十九",
+      "label": "【三国志卷十九】 魏志十九",
       "source": [
         "OEBPS/Text/titlepage_0042.xhtml",
         ""
@@ -927,7 +923,7 @@
       }
     },
     {
-      "label": "【三国志译注卷二十】 魏志二十",
+      "label": "【三国志卷二十】 魏志二十",
       "source": [
         "OEBPS/Text/titlepage_0044.xhtml",
         ""
@@ -957,7 +953,7 @@
       }
     },
     {
-      "label": "【三国志译注卷二十一】 魏志二十一",
+      "label": "【三国志卷二十一】 魏志二十一",
       "source": [
         "OEBPS/Text/titlepage_0047.xhtml",
         ""
@@ -977,7 +973,7 @@
       }
     },
     {
-      "label": "【三国志译注卷二十二】 魏志二十二",
+      "label": "【三国志卷二十二】 魏志二十二",
       "source": [
         "OEBPS/Text/titlepage_0049.xhtml",
         ""
@@ -997,7 +993,7 @@
       }
     },
     {
-      "label": "【三国志译注卷二十三】 魏志二十三",
+      "label": "【三国志卷二十三】 魏志二十三",
       "source": [
         "OEBPS/Text/titlepage_0051.xhtml",
         ""
@@ -1017,7 +1013,7 @@
       }
     },
     {
-      "label": "【三国志译注卷二十四】 魏志二十四",
+      "label": "【三国志卷二十四】 魏志二十四",
       "source": [
         "OEBPS/Text/titlepage_0053.xhtml",
         ""
@@ -1037,7 +1033,7 @@
       }
     },
     {
-      "label": "【三国志译注卷二十五】 魏志二十五",
+      "label": "【三国志卷二十五】 魏志二十五",
       "source": [
         "OEBPS/Text/titlepage_0055.xhtml",
         ""
@@ -1057,7 +1053,7 @@
       }
     },
     {
-      "label": "【三国志译注卷二十六】 魏志二十六",
+      "label": "【三国志卷二十六】 魏志二十六",
       "source": [
         "OEBPS/Text/titlepage_0057.xhtml",
         ""
@@ -1077,7 +1073,7 @@
       }
     },
     {
-      "label": "【三国志译注卷二十七】 魏志二十七",
+      "label": "【三国志卷二十七】 魏志二十七",
       "source": [
         "OEBPS/Text/titlepage_0059.xhtml",
         ""
@@ -1097,7 +1093,7 @@
       }
     },
     {
-      "label": "【三国志译注卷二十八】 魏志二十八",
+      "label": "【三国志卷二十八】 魏志二十八",
       "source": [
         "OEBPS/Text/titlepage_0061.xhtml",
         ""
@@ -1117,7 +1113,7 @@
       }
     },
     {
-      "label": "【三国志译注卷二十九】 魏志二十九",
+      "label": "【三国志卷二十九】 魏志二十九",
       "source": [
         "OEBPS/Text/titlepage_0063.xhtml",
         ""
@@ -1137,7 +1133,7 @@
       }
     },
     {
-      "label": "【三国志译注卷三十】 魏志三十",
+      "label": "【三国志卷三十】 魏志三十",
       "source": [
         "OEBPS/Text/titlepage_0065.xhtml",
         ""
@@ -1157,7 +1153,7 @@
       }
     },
     {
-      "label": "【三国志译注卷三十一】 蜀志一",
+      "label": "【三国志卷三十一】 蜀志一",
       "source": [
         "OEBPS/Text/titlepage_0067.xhtml",
         ""
@@ -1177,7 +1173,7 @@
       }
     },
     {
-      "label": "【三国志译注卷三十二】 蜀志二",
+      "label": "【三国志卷三十二】 蜀志二",
       "source": [
         "OEBPS/Text/titlepage_0069.xhtml",
         ""
@@ -1197,7 +1193,7 @@
       }
     },
     {
-      "label": "【三国志译注卷三十三】 蜀志三",
+      "label": "【三国志卷三十三】 蜀志三",
       "source": [
         "OEBPS/Text/titlepage_0071.xhtml",
         ""
@@ -1217,7 +1213,7 @@
       }
     },
     {
-      "label": "【三国志译注卷三十四】 蜀志四",
+      "label": "【三国志卷三十四】 蜀志四",
       "source": [
         "OEBPS/Text/titlepage_0073.xhtml",
         ""
@@ -1237,7 +1233,7 @@
       }
     },
     {
-      "label": "【三国志译注卷三十五】 蜀志五",
+      "label": "【三国志卷三十五】 蜀志五",
       "source": [
         "OEBPS/Text/titlepage_0075.xhtml",
         ""
@@ -1257,7 +1253,7 @@
       }
     },
     {
-      "label": "【三国志译注卷三十六】 蜀志六",
+      "label": "【三国志卷三十六】 蜀志六",
       "source": [
         "OEBPS/Text/titlepage_0077.xhtml",
         ""
@@ -1277,7 +1273,7 @@
       }
     },
     {
-      "label": "【三国志译注卷三十七】 蜀志七",
+      "label": "【三国志卷三十七】 蜀志七",
       "source": [
         "OEBPS/Text/titlepage_0079.xhtml",
         ""
@@ -1297,7 +1293,7 @@
       }
     },
     {
-      "label": "【三国志译注卷三十八】 蜀志八",
+      "label": "【三国志卷三十八】 蜀志八",
       "source": [
         "OEBPS/Text/titlepage_0081.xhtml",
         ""
@@ -1317,7 +1313,7 @@
       }
     },
     {
-      "label": "【三国志译注卷三十九】 蜀志九",
+      "label": "【三国志卷三十九】 蜀志九",
       "source": [
         "OEBPS/Text/titlepage_0083.xhtml",
         ""
@@ -1337,7 +1333,7 @@
       }
     },
     {
-      "label": "【三国志译注卷四十】 蜀志十",
+      "label": "【三国志卷四十】 蜀志十",
       "source": [
         "OEBPS/Text/titlepage_0085.xhtml",
         ""
@@ -1357,7 +1353,7 @@
       }
     },
     {
-      "label": "【三国志译注卷四十一】 蜀志十一",
+      "label": "【三国志卷四十一】 蜀志十一",
       "source": [
         "OEBPS/Text/titlepage_0087.xhtml",
         ""
@@ -1377,7 +1373,7 @@
       }
     },
     {
-      "label": "【三国志译注卷四十二】 蜀志十二",
+      "label": "【三国志卷四十二】 蜀志十二",
       "source": [
         "OEBPS/Text/titlepage_0089.xhtml",
         ""
@@ -1397,7 +1393,7 @@
       }
     },
     {
-      "label": "【三国志译注卷四十三】 蜀志十三",
+      "label": "【三国志卷四十三】 蜀志十三",
       "source": [
         "OEBPS/Text/titlepage_0091.xhtml",
         ""
@@ -1417,7 +1413,7 @@
       }
     },
     {
-      "label": "【三国志译注卷四十四】 蜀志十四",
+      "label": "【三国志卷四十四】 蜀志十四",
       "source": [
         "OEBPS/Text/titlepage_0093.xhtml",
         ""
@@ -1437,7 +1433,7 @@
       }
     },
     {
-      "label": "【三国志译注卷四十五】 蜀志十五",
+      "label": "【三国志卷四十五】 蜀志十五",
       "source": [
         "OEBPS/Text/titlepage_0095.xhtml",
         ""
@@ -1467,7 +1463,7 @@
       }
     },
     {
-      "label": "【三国志译注卷四十六】 吴志一",
+      "label": "【三国志卷四十六】 吴志一",
       "source": [
         "OEBPS/Text/titlepage_0098.xhtml",
         ""
@@ -1487,7 +1483,7 @@
       }
     },
     {
-      "label": "【三国志译注卷四十七】 吴志二",
+      "label": "【三国志卷四十七】 吴志二",
       "source": [
         "OEBPS/Text/titlepage_0100.xhtml",
         ""
@@ -1507,7 +1503,7 @@
       }
     },
     {
-      "label": "【三国志译注卷四十八】 吴志三",
+      "label": "【三国志卷四十八】 吴志三",
       "source": [
         "OEBPS/Text/titlepage_0102.xhtml",
         ""
@@ -1527,7 +1523,7 @@
       }
     },
     {
-      "label": "【三国志译注卷四十九】 吴志四",
+      "label": "【三国志卷四十九】 吴志四",
       "source": [
         "OEBPS/Text/titlepage_0104.xhtml",
         ""
@@ -1547,7 +1543,7 @@
       }
     },
     {
-      "label": "【三国志译注卷五十】 吴志五",
+      "label": "【三国志卷五十】 吴志五",
       "source": [
         "OEBPS/Text/titlepage_0106.xhtml",
         ""
@@ -1567,7 +1563,7 @@
       }
     },
     {
-      "label": "【三国志译注卷五十一】 吴志六",
+      "label": "【三国志卷五十一】 吴志六",
       "source": [
         "OEBPS/Text/titlepage_0108.xhtml",
         ""
@@ -1587,7 +1583,7 @@
       }
     },
     {
-      "label": "【三国志译注卷五十二】 吴志七",
+      "label": "【三国志卷五十二】 吴志七",
       "source": [
         "OEBPS/Text/titlepage_0110.xhtml",
         ""
@@ -1607,7 +1603,7 @@
       }
     },
     {
-      "label": "【三国志译注卷五十三】 吴志八",
+      "label": "【三国志卷五十三】 吴志八",
       "source": [
         "OEBPS/Text/titlepage_0112.xhtml",
         ""
@@ -1627,7 +1623,7 @@
       }
     },
     {
-      "label": "【三国志译注卷五十四】 吴志九",
+      "label": "【三国志卷五十四】 吴志九",
       "source": [
         "OEBPS/Text/titlepage_0114.xhtml",
         ""
@@ -1647,7 +1643,7 @@
       }
     },
     {
-      "label": "【三国志译注卷五十五】 吴志十",
+      "label": "【三国志卷五十五】 吴志十",
       "source": [
         "OEBPS/Text/titlepage_0116.xhtml",
         ""
@@ -1667,7 +1663,7 @@
       }
     },
     {
-      "label": "【三国志译注卷五十六】 吴志十一",
+      "label": "【三国志卷五十六】 吴志十一",
       "source": [
         "OEBPS/Text/titlepage_0118.xhtml",
         ""
@@ -1687,7 +1683,7 @@
       }
     },
     {
-      "label": "【三国志译注卷五十七】 吴志十二",
+      "label": "【三国志卷五十七】 吴志十二",
       "source": [
         "OEBPS/Text/titlepage_0120.xhtml",
         ""
@@ -1707,7 +1703,7 @@
       }
     },
     {
-      "label": "【三国志译注卷五十八】 吴志十三",
+      "label": "【三国志卷五十八】 吴志十三",
       "source": [
         "OEBPS/Text/titlepage_0122.xhtml",
         ""
@@ -1727,7 +1723,7 @@
       }
     },
     {
-      "label": "【三国志译注卷五十九】 吴志十四",
+      "label": "【三国志卷五十九】 吴志十四",
       "source": [
         "OEBPS/Text/titlepage_0124.xhtml",
         ""
@@ -1747,7 +1743,7 @@
       }
     },
     {
-      "label": "【三国志译注卷六十】 吴志十五",
+      "label": "【三国志卷六十】 吴志十五",
       "source": [
         "OEBPS/Text/titlepage_0126.xhtml",
         ""
@@ -1767,7 +1763,7 @@
       }
     },
     {
-      "label": "【三国志译注卷六十一】 吴志十六",
+      "label": "【三国志卷六十一】 吴志十六",
       "source": [
         "OEBPS/Text/titlepage_0128.xhtml",
         ""
@@ -1787,7 +1783,7 @@
       }
     },
     {
-      "label": "【三国志译注卷六十二】 吴志十七",
+      "label": "【三国志卷六十二】 吴志十七",
       "source": [
         "OEBPS/Text/titlepage_0130.xhtml",
         ""
@@ -1807,7 +1803,7 @@
       }
     },
     {
-      "label": "【三国志译注卷六十三】 吴志十八",
+      "label": "【三国志卷六十三】 吴志十八",
       "source": [
         "OEBPS/Text/titlepage_0132.xhtml",
         ""
@@ -1827,7 +1823,7 @@
       }
     },
     {
-      "label": "【三国志译注卷六十四】 吴志十九",
+      "label": "【三国志卷六十四】 吴志十九",
       "source": [
         "OEBPS/Text/titlepage_0134.xhtml",
         ""
@@ -1847,7 +1843,7 @@
       }
     },
     {
-      "label": "【三国志译注卷六十五】 吴志二十",
+      "label": "【三国志卷六十五】 吴志二十",
       "source": [
         "OEBPS/Text/titlepage_0136.xhtml",
         ""
@@ -2019,14 +2015,11 @@
     "OEBPS/Images/00115.jpg",
     "OEBPS/Images/00116.jpg",
     "OEBPS/Images/00117.jpg",
-    "OEBPS/Images/00119.jpg",
     "OEBPS/Images/00120.jpg",
-    "OEBPS/Images/00121.jpg",
     "OEBPS/Images/00122.jpg",
     "OEBPS/Images/00126.jpg",
     "OEBPS/Images/00139.jpg",
     "OEBPS/Images/00140.jpg",
-    "cover.jpeg",
     "page_styles.css",
     "stylesheet.css"
   ]

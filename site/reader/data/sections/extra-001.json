@@ -1,6 +1,6 @@
 {
   "id": "extra-001",
-  "title": "封面 / 图版",
+  "title": "三国志",
   "kind": "extra",
   "status": "source",
   "blocks": [
@@ -13,12 +13,11 @@
       },
       "tokens": [
         {
-          "type": "image",
-          "path": "OEBPS/Images/00121.jpg",
-          "alt": ""
+          "type": "text",
+          "text": "三国志"
         }
       ],
-      "text": "",
+      "text": "三国志",
       "kind": "heading",
       "anchors": [
         "filepos109"
