@@ -1,15 +1,15 @@
-import {canonicalSearchHash} from './search.js?v=9a51375c73846db3';
-import {personSources, renderBiography, evidenceKey, biographyScope, scopeIncludes, biographyAnchor, cleanTimeLabel} from './profiles.js?v=9a51375c73846db3';
-import {matchesEditorial, canonicalEditorial, overviewItems, groupDateText, yearbookItems} from './event-editorial.js?v=9a51375c73846db3';
-import {eventPeople, mountPersonFilter} from './person-filter.js?v=9a51375c73846db3';
-import {readingProjection,quoteText,passageHTML} from './event-reading.js?v=9a51375c73846db3';
-import {directoryPeople} from './people-directory.js?v=9a51375c73846db3';
-import {inlineEventRow,mountInlineReading,citationText,citationHeading,mountCitationText} from './inline-reading.js?v=9a51375c73846db3';
-import {retainMoreFocus} from './people-reading.js?v=9a51375c73846db3';
-import {knowledgeIndex} from './data-loader.js?v=9a51375c73846db3';
+import {canonicalSearchHash} from './search.js?v=7ab9854108da2476';
+import {personSources, renderBiography, evidenceKey, biographyScope, scopeIncludes, biographyAnchor, cleanTimeLabel} from './profiles.js?v=7ab9854108da2476';
+import {matchesEditorial, canonicalEditorial, overviewItems, groupDateText, yearbookItems} from './event-editorial.js?v=7ab9854108da2476';
+import {eventPeople, mountPersonFilter} from './person-filter.js?v=7ab9854108da2476';
+import {readingProjection,quoteText,passageHTML} from './event-reading.js?v=7ab9854108da2476';
+import {directoryPeople} from './people-directory.js?v=7ab9854108da2476';
+import {inlineEventRow,mountInlineReading,citationText,citationHeading,mountCitationText} from './inline-reading.js?v=7ab9854108da2476';
+import {retainMoreFocus} from './people-reading.js?v=7ab9854108da2476';
+import {knowledgeIndex} from './data-loader.js?v=7ab9854108da2476';
 // Legacy address canonicalization lives in route-hash.js so the entry module
 // needs no renderer import; re-exported for existing importers.
-export {legacyKnowledgeHash} from './route-hash.js?v=9a51375c73846db3';
+export {legacyKnowledgeHash} from './route-hash.js?v=7ab9854108da2476';
 // People and events share evidence; chronology is a view of events, never a second fact set.
 const BATCH = 40, SOURCE_BATCH = 20;
 const LAYERS = {original:'正文', pei:'裴注', modern:'现代注释'};

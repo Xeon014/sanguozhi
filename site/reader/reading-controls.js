@@ -5,7 +5,7 @@ export function readingSettingsHTML({types,landmarks,fontSize,esc,cv}) {
     <dialog class="reading-settings" id="reading-settings" aria-labelledby="reading-settings-title">
       <header class="settings-head"><h2 id="reading-settings-title">${cv('阅读设置')}</h2><button type="button" id="close-reading-settings" autofocus>${cv('关闭')}</button></header>
       <div class="settings-body"><label class="settings-jump"><span>${cv('定位正文')}</span><select id="jump"><option value="">${cv('定位正文')}</option>${landmarks.map(([id,text])=>`<option value="${esc(id)}">${esc(cv(text))}</option>`).join('')}</select></label>
-      ${types.map(([type,label])=>`<label class="note-setting"><span>${esc(cv(label))}</span><select data-note-display="${esc(type)}">${[['hidden','隐藏'],['folded','按需展开'],['expanded','全文展开']].map(([value,text])=>`<option value="${value}">${cv(text)}</option>`).join('')}</select></label>`).join('')}
+      ${types.map(([type,label])=>`<label class="note-setting"><span>${esc(cv(label))}</span><select data-note-display="${esc(type)}">${[['hidden','隐藏'],['folded','点击查看'],['expanded','全文展开']].map(([value,text])=>`<option value="${value}">${cv(text)}</option>`).join('')}</select></label>`).join('')}
       <div class="settings-font"><span>${cv('字号')}</span><div><button type="button" id="smaller" aria-label="${cv('减小字号')}">A−</button><output id="font-size">${fontSize}</output><button type="button" id="larger" aria-label="${cv('增大字号')}">A＋</button></div></div></div>
     </dialog>`;
 }
@@ -21,7 +21,7 @@ export function mountReadingControls({host,mobileLayout,entries,getPrefs,getView
   const toggle=host.querySelector('#toggle-reading-progress'),bar=host.querySelector('#chapter-progress'),range=bar.querySelector('input'),position=toggle.querySelector('.progress-position'),tip=bar.querySelector('.progress-tip');
   const toolbar=host.querySelector('.toolbar'),reading=host.querySelector('#reading'),head=document.querySelector('.site-head');
   const items=entries.map(([el])=>el),labels=entries.map(([,text])=>cv(text));
-  let revealed=null,fontView=null,frame=0,observed=1,pointerActive=false,ignoreChange=false,disposed=false;
+  let revealedNote=null,fontView=null,frame=0,observed=1,pointerActive=false,ignoreChange=false,disposed=false;
   let concealed=false,lastY=scrollY,distance=0,direction=0,intentUntil=0,keyboardFocus=false,toolbarPointer=false;
   let toolbarTap=null;
   const isReadingSurface=target=>reading.contains(target)&&
@@ -131,28 +131,26 @@ export function mountReadingControls({host,mobileLayout,entries,getPrefs,getView
   function applyNotes(resetType) {
     const display=getPrefs().noteDisplay;
     for(const ref of host.querySelectorAll('.note-ref[data-note-type]'))ref.hidden=display[ref.dataset.noteType]==='hidden';
+    // Click-to-view keeps the stacks hidden; only the expanded preference
+    // lays the full notes under their paragraphs.
     for(const stack of host.querySelectorAll('.note-stack[data-note-type]')){
-      const mode=display[stack.dataset.noteType],show=mode!=='hidden';
+      const mode=display[stack.dataset.noteType];
       stack.classList.toggle('notes-expanded',mode==='expanded');
-      if(stack.dataset.noteType===resetType&&show){
+      stack.hidden=mode!=='expanded';
+      if(resetType===undefined||stack.dataset.noteType===resetType){
         stack.open=mode==='expanded';
         for(const note of stack.querySelectorAll(':scope>.note')){note.open=mode==='expanded';delete note.dataset.returnId;}
       }
-      for(const note of stack.querySelectorAll(':scope>.note'))note.hidden=!show&&note!==revealed;
-      stack.hidden=!show&&![...stack.querySelectorAll(':scope>.note')].some(note=>!note.hidden);
     }
     for(const stacks of host.querySelectorAll('.note-stacks'))stacks.hidden=[...stacks.children].every(stack=>stack.hidden);
     syncSettings();refresh();
   }
-  function revealNote(el) {
-    const note=el.matches('.note-ref')?host.querySelector('#'+CSS.escape(el.dataset.note)):el.closest('.note')||el.querySelector('.note');
-    if(!note?.matches('.note')||!host.contains(note))return null;
-    revealed=note;applyNotes();
-    return el.matches('.note-ref')?note.querySelector('summary'):el;
-  }
-  function dismissNote(note) {
-    if(note!==revealed)return false;
-    revealed=null;applyNotes();return true;
+  // A deep link records the one revealed note as transient state; the sheet
+  // or popover shows it, dismissing it here ends the reveal.
+  function revealNote(noteId,type) {revealedNote={id:noteId,type};}
+  function dismissNote(noteId) {
+    if(revealedNote?.id!==noteId)return false;
+    revealedNote=null;return true;
   }
   function closeSettings() {if(dialog.open)dialog.close();}
   listen(opener,'click',()=>{fontView=null;prepareJump();cancelPreview();syncSettings();document.documentElement.classList.add('reading-settings-open');dialog.showModal();});
@@ -236,9 +234,8 @@ export function mountReadingControls({host,mobileLayout,entries,getPrefs,getView
   document.fonts?.ready.then(refresh);
   fitToolbar();applyNotes();update();
   return {applyNotes,syncSettings,refresh,revealNote,dismissNote,prepareJump,resetScrollIntent,
-    revealedId:()=>revealed?.id||null,
-    clearReveal:type=>{if(revealed?.closest('.note-stack').dataset.noteType===type)revealed=null;},
-    isTemporary:note=>note===revealed&&getPrefs().noteDisplay[note.closest('.note-stack').dataset.noteType]==='hidden',
+    revealedId:()=>revealedNote?.id||null,
+    clearReveal:type=>{if(revealedNote?.type===type)revealedNote=null;},
     dispose(){disposed=true;controller.abort();observer.disconnect();cancelAnimationFrame(frame);if(dialog.open)dialog.close();document.documentElement.classList.remove('reading-settings-open','reading-page');document.documentElement.style.removeProperty('--reading-offset');}
   };
 }

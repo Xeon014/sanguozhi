@@ -1,7 +1,7 @@
-import {eventSources, sourceLayerLabel, dateText} from './knowledge.js?v=9a51375c73846db3';
-import {evidenceKey} from './profiles.js?v=9a51375c73846db3';
-import {quoteText,readingProjection,passageHTML} from './event-reading.js?v=9a51375c73846db3';
-import {citationHeading} from './inline-reading.js?v=9a51375c73846db3';
+import {eventSources, sourceLayerLabel, dateText} from './knowledge.js?v=7ab9854108da2476';
+import {evidenceKey} from './profiles.js?v=7ab9854108da2476';
+import {quoteText,readingProjection,passageHTML} from './event-reading.js?v=7ab9854108da2476';
+import {citationHeading} from './inline-reading.js?v=7ab9854108da2476';
 
 // Topic excerpts retain their existing context view; event pages use the new
 // in-place paragraph projection. Do not couple these two reading interfaces.

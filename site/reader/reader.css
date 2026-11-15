@@ -223,6 +223,29 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .note-sheet-more{display:none;width:100%;margin:10px 0 0;min-height:44px;border:1px solid var(--line);border-radius:999px;background:none;color:var(--ink);font:13px/1.4 var(--sans)}
 .note-sheet.capped .note-sheet-more{display:block}
 @keyframes note-sheet-up{from{transform:translateY(18px)}to{transform:translateY(0)}}
+/* Desktop popover for one tapped annotation; mirrors the mobile sheet's
+   visual language beside the marker that opened it. Absolutely positioned
+   inside #reading, so it scrolls with the paragraph. */
+#reading{position:relative}
+.note-popover{position:absolute;z-index:40;width:min(560px,calc(100vw - 32px));max-height:min(70dvh,640px);display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-top:2px solid var(--modern);box-shadow:0 12px 32px #0000001f;color:var(--ink);font:14px/1.8 var(--sans)}
+.note-popover.note-secondary{border-top-color:var(--pei)}
+.note-popover[hidden]{display:none}
+.note-popover:focus-visible{outline:none}
+.note-popover-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:4px 8px 4px 20px;flex:none}
+.note-popover-label{margin:0;color:var(--modern);font:13px/1.6 var(--sans)}
+.note-popover.note-secondary .note-popover-label{color:var(--pei)}
+.note-popover-close{display:inline-flex;align-items:center;min-height:44px;min-width:44px;margin:0;padding:0 12px;border:0;background:none;color:var(--muted);font:13px/1.4 var(--sans)}
+.note-popover-close:hover{color:var(--ink);text-decoration:underline}
+.note-popover-body{min-height:0;overflow:auto;overscroll-behavior:contain;padding:2px 20px 14px}
+.note-popover-body .block{font-size:calc(var(--fs) - 2px);margin:12px 0}
+.note-popover-nav{display:none;align-items:center;justify-content:space-between;gap:8px;padding:0 12px 10px;border-top:1px solid var(--line);flex:none}
+.note-popover.has-nav .note-popover-nav{display:flex}
+.note-popover-count{font:12px/1.4 var(--sans);color:var(--muted)}
+.note-popover-prev,.note-popover-next{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:999px;background:none;color:var(--ink);font:13px/1.4 var(--sans)}
+.note-popover-prev:hover,.note-popover-next:hover{background:var(--soft)}
+.note-popover-prev[hidden],.note-popover-next[hidden],.note-popover-count[hidden]{display:none}
+@media(prefers-reduced-motion:no-preference){.note-popover:not([hidden]){animation:note-popover-in .14s ease-out}}
+@keyframes note-popover-in{from{opacity:.4}to{opacity:1}}
 /* Mobile markers read as type-coloured pills; the open one stays filled.
    Touch hover never sticks and the pill keeps a 44px hit area. */
 @media(hover:hover){.note-ref:hover{background:var(--soft)}}
@@ -236,21 +259,10 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
   .note-ref{position:relative}
   .note-ref::after{content:'';position:absolute;inset:-8px -6px}
 }
-/* Wide desktop: annotation rail beside the reading column. The article
-   widens so the parallel text keeps its measure; folded stacks align with
-   their paragraph in the rail, and any expanded stack drops back below the
-   paragraph for full-width reading. Narrow widths keep the stacked layout. */
+/* Wide desktop keeps the wider article column; expanded annotation stacks
+   flow full width under their paragraph, same as narrow widths. */
 @media(min-width:1280px){
   .chapter-layout{grid-template-columns:180px minmax(0,1068px)}
-  .reading-group{display:grid;grid-template-columns:minmax(0,1fr) 264px;column-gap:44px}
-  .parallel{grid-column:1}
-  .note-stacks{grid-column:2;grid-row:1;align-self:start;margin-top:0;border-left:1px solid var(--line);padding-left:24px}
-  .note-stacks:has(>.note-stack.notes-expanded){grid-column:1/-1;grid-row:2;border-left:0;padding-left:0;margin-top:12px}
-  .note-stacks:not(:has(>.note-stack.notes-expanded)) .note-stack>summary{min-height:36px;padding:6px 0}
-  .note-stacks:not(:has(>.note-stack.notes-expanded)) .note{margin:6px 0 16px}
-  .note-stacks:not(:has(>.note-stack.notes-expanded)) .note>summary{padding:10px 14px;min-height:36px;font-size:13px}
-  .note-stacks:not(:has(>.note-stack.notes-expanded)) .note-body{padding:0 14px 12px}
-  .note-stacks:not(:has(>.note-stack.notes-expanded)) .note .block{font-size:14px}
 }
 .note-back{display:inline-flex;align-items:center;min-height:44px;padding:10px 8px;border:0;color:var(--muted);background:none;font:14px/1.8 var(--sans)}
 .note-back:hover{color:var(--ink);text-decoration:underline}

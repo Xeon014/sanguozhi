@@ -8,6 +8,9 @@
   "searchNoteTypes": [
     "pei"
   ],
+  "noteBrowse": [
+    "pei"
+  ],
   "collections": [
     {
       "id": "wei",

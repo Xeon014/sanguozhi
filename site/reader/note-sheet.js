@@ -1,7 +1,7 @@
 // Mobile note sheet: on narrow layouts a marker opens one annotation in a
 // bottom dialog instead of unfolding stacks under the paragraph. The sheet
 // is transient UI; the reader never records it in view context.
-export function mountNoteSheet({mobileLayout,cv}) {
+export function mountNoteSheet({mobileLayout,cv,render,onDismiss}) {
   const controller=new AbortController(),options={signal:controller.signal};
   const dialog=document.createElement('dialog');
   dialog.className='note-sheet';
@@ -12,7 +12,7 @@ export function mountNoteSheet({mobileLayout,cv}) {
     <button type="button" class="note-sheet-more" aria-expanded="false"></button>`;
   document.body.append(dialog);
   const listen=(el,name,fn)=>el.addEventListener(name,fn,options);
-  let origin=null,pointerClose=false;
+  let origin=null,currentId=null,pointerClose=false;
   // Long notes start capped near two fifths of the screen; the reader expands
   // on request. Switching notes resets the height, same as closing.
   const fitHeight=()=>{
@@ -22,22 +22,16 @@ export function mountNoteSheet({mobileLayout,cv}) {
     more.textContent=cv('展开全部');
     requestAnimationFrame(()=>{dialog.classList.toggle('capped',body.scrollHeight>body.clientHeight+2);});
   };
-  // Cloned annotation blocks carry block and nested-ref ids; strip them so
-  // getElementById keeps resolving to the in-place reading DOM only.
-  const fill=note=>{
-    const source=note.querySelector('.note-body');
-    dialog.querySelector('.note-sheet-label').textContent=note.querySelector('summary')?.textContent||'';
-    dialog.classList.toggle('note-secondary',note.classList.contains('note-secondary'));
+  // The body renders from note data in plain mode, so no reading-DOM ids ever
+  // enter the sheet.
+  const fill=noteId=>{
+    const data=render(noteId);
+    currentId=noteId;
+    dialog.querySelector('.note-sheet-label').textContent=data.label;
+    dialog.classList.toggle('note-secondary',data.secondary);
     const body=dialog.querySelector('.note-sheet-body');
     body.textContent='';
-    if(!source)return;
-    for(const el of source.children){
-      if(el.classList.contains('reading-actions'))continue;
-      const copy=el.cloneNode(true);
-      copy.removeAttribute('id');
-      for(const nested of copy.querySelectorAll('[id]'))nested.removeAttribute('id');
-      body.append(copy);
-    }
+    body.insertAdjacentHTML('afterbegin',data.html);
   };
   const close=()=>{if(dialog.open)dialog.close();};
   // Keyboard activations carry detail 0 and keep returning to the marker;
@@ -62,26 +56,32 @@ export function mountNoteSheet({mobileLayout,cv}) {
     document.documentElement.classList.remove('note-sheet-open');
     dialog.querySelector('.note-sheet-body').textContent='';
     dialog.classList.remove('capped','tall');
+    const dismissed=currentId;currentId=null;
     if(origin){
       origin.setAttribute('aria-expanded','false');
       if(pointerClose){if(document.activeElement===origin)origin.blur();}
-      else origin.focus({preventScroll:true});
+      else{const dest=origin.getClientRects().length?origin:origin.closest('.reading-group');dest?.focus({preventScroll:true});}
       origin=null;
     }
     pointerClose=false;
+    onDismiss?.(dismissed);
   });
   listen(mobileLayout,'change',event=>{if(!event.matches)close();});
+  const open=(ref,noteId)=>{
+    if(origin&&origin!==ref)origin.setAttribute('aria-expanded','false');
+    origin=ref;ref.setAttribute('aria-expanded','true');
+    dialog.querySelector('.note-sheet-close').textContent=cv('收起');
+    fill(noteId);
+    fitHeight();
+    if(!dialog.open){document.documentElement.classList.add('note-sheet-open');dialog.showModal();}
+    dialog.querySelector('.note-sheet-close').focus({preventScroll:true});
+  };
   return {
-    toggle(ref,note){
+    toggle(ref,noteId){
       if(dialog.open&&origin===ref){close();return;}
-      if(origin&&origin!==ref)origin.setAttribute('aria-expanded','false');
-      origin=ref;ref.setAttribute('aria-expanded','true');
-      dialog.querySelector('.note-sheet-close').textContent=cv('收起');
-      fill(note);
-      fitHeight();
-      if(!dialog.open){document.documentElement.classList.add('note-sheet-open');dialog.showModal();}
-      dialog.querySelector('.note-sheet-close').focus({preventScroll:true});
+      open(ref,noteId);
     },
+    open,close,currentId:()=>currentId,currentRef:()=>origin,
     dispose(){controller.abort();close();dialog.remove();document.documentElement.classList.remove('note-sheet-open');}
   };
 }

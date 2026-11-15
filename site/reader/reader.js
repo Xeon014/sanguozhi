@@ -1,9 +1,9 @@
 // Heavy views load per route so first paint only needs the shell helpers;
 // pure address canonicalizers stay in route-hash.js for every navigation.
-import {atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash, legacyKnowledgeHash} from './route-hash.js?v=9a51375c73846db3';
-import {createJSONLoader,attachRuntime,presentPeople,hydratePacket} from './data-loader.js?v=9a51375c73846db3';
-import {searchHash,canonicalSearchHash,searchPeople,highlightText,firstMatch} from './search.js?v=9a51375c73846db3';
-import {blockText} from './event-reading.js?v=9a51375c73846db3';
+import {atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash, legacyKnowledgeHash} from './route-hash.js?v=7ab9854108da2476';
+import {createJSONLoader,attachRuntime,presentPeople,hydratePacket} from './data-loader.js?v=7ab9854108da2476';
+import {searchHash,canonicalSearchHash,searchPeople,highlightText,firstMatch} from './search.js?v=7ab9854108da2476';
+import {blockText} from './event-reading.js?v=7ab9854108da2476';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
 const initialTitle = document.title;
@@ -16,6 +16,7 @@ const loadingHTML = text => `<div class="boot-loading" role="status"><span class
 const safeRead = (k, fallback) => { try { return JSON.parse(localStorage.getItem(k)) ?? fallback; } catch { return fallback; } };
 const safeWrite = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
 let book, site, zhDisplay, fingerprints, root, prefs, storageKey, section, blockMap, groupForBlock, routeVersion = 0, currentId = null;
+let noteRefs, typeNotes;  // per-section marker maps for transient note views
 let contextTimer, searchRows, searchNormalized, noteRows, noteNormalized, activeMode = 'both', searchScope;
 let renderedHash = '', ready = false, searchLimit = 40, returnSearch = null, returnList = null;
 let topicBundle, topicPresentation, topicRequestOptions;  // topicBundle: Map of per-topic bundle promises
@@ -125,14 +126,16 @@ function applyPrefs() {
   $('#nav-toggle').textContent=cv('菜单');
   $('#footer').textContent = cv(`${site.title} · ${site.credit}`);
 }
-function tokenHTML(tokens, {backlinks = false, source = false, prefix = '', highlight = ''} = {}) {
+function tokenHTML(tokens, {backlinks = false, source = false, prefix = '', highlight = '', plain = false} = {}) {
   return tokens.map((t, i) => {
     if (t.type === 'text') return highlight?highlightText(cv(t.text),highlight,normalize,esc):esc(cv(t.text));
     if (t.type === 'image') return book.assets.includes(t.path)
       ? `<img src="${esc(resourceURL(t.path))}" alt="${esc(t.alt || '原书图版') }" loading="lazy">`
       : '';
     if (t.type === 'link') {
-      const content = tokenHTML(t.children, {source});
+      const content = tokenHTML(t.children, {source, plain});
+      // Transient copies (sheet, popover) carry no ids; nested marks read as text.
+      if (plain && t.note_id) return content;
       if (t.note_id && !source) {
         const n = section.notes[t.note_id];
         return `<button class="note-ref ${noteClass(n.type)}" id="ref-${esc(prefix)}-${i}" data-note="${esc(n.id)}" data-note-type="${esc(n.type)}" aria-controls="${esc(n.id)}" aria-expanded="false" aria-label="${esc(cv(label(n.type)))} ${esc(cv(t.children.map(x=>x.text||'').join('')))}">${content}</button>`;
@@ -151,7 +154,7 @@ function blockHTML(id, options = {}) {
   const [path,query='']=location.hash.split('?'),q=new URLSearchParams(query).get('q');
   // Search deep links highlight the linked block, in the main text or in notes.
   if(q&&path.split('/').at(-1)===id&&(b.kind==='original'||book.note_types[b.kind]))options={...options,highlight:q};
-  return `<div class="block kind-${esc(b.kind)} ${book.note_types[b.kind]?'annotation-block':''}" id="${b.id}" tabindex="-1">${tokenHTML(b.tokens, {...options,prefix:b.id})}</div>`;
+  return `<div class="block kind-${esc(b.kind)} ${book.note_types[b.kind]?'annotation-block':''}"${options.plain?'':` id="${b.id}" tabindex="-1"`}>${tokenHTML(b.tokens, {...options,prefix:b.id})}</div>`;
 }
 function sectionItems(items) {
   return `<ul class="contents">${items.map(s=>`<li><a href="${url(s.id)}" ${s.id===currentId?'aria-current="page"':''}><span class="chapter-number">${esc(cv(chapterCaption(s)))}</span><span>${esc(cv(chapterName(s)))}</span></a></li>`).join('')}</ul>`;
@@ -222,7 +225,7 @@ function atlasCommit(hash) {
   renderedHash=hash;
 }
 async function showAtlas(host,bundle,qs,saved,home=false) {
-  const {mountAtlas}=await import('./atlas.js?v=9a51375c73846db3');
+  const {mountAtlas}=await import('./atlas.js?v=7ab9854108da2476');
   // The renderer module may resolve after navigation moved on; never mount into a detached host.
   if(!host.isConnected)return;
   const state=mountAtlas(host,bundle,{esc,cv,qs,home,saved:saved?.atlas,onState:atlasCommit,onChange:saveContext});
@@ -284,17 +287,23 @@ function sidebarHTML() {
   if(!collection(currentId))return `<aside class="chapter-sidebar"><details open id="chapter-navigation"><summary>${cv('补充材料')}</summary>${(site.supplements||[]).map(g=>`<h2 class="supplement-label">${esc(cv(g.title))}</h2>${sectionItems(g.sections.map(id=>book.sections.find(s=>s.id===id)))}`).join('')}<a class="all-contents" href="#/supplements">${cv('全部补充材料')}</a></details></aside>`;
   return `<aside class="chapter-sidebar"><details open id="chapter-navigation"><summary>${cv('本书目录')}</summary>${site.collections.map(c=>`<details class="sidebar-book" id="sidebar-${c.id}" ${c===collection(currentId)?'open':''}><summary>${esc(cv(c.label))}</summary>${sectionItems(c.chapters.map(id=>book.sections.find(s=>s.id===id)))}</details>`).join('')}<a class="all-contents" href="#/contents">${cv('全书目录')}</a></details></aside>`;
 }
+// The same note body feeds the in-place stacks (with ids for deep links) and
+// the transient views (plain: no ids, nested marks read as plain text).
+function noteBodyHTML(id, {plain = false} = {}) {
+  return section.notes[id].blocks.map(b => blockHTML(b, {plain})).join('');
+}
 function notesHTML(group) {
   const ids=[...new Set(group.original.flatMap(id=>blockMap.get(id).tokens.filter(t=>t.note_id).map(t=>t.note_id)))];
   return `<div class="note-stacks">${Object.keys(book.note_types).filter(k=>ids.some(id=>section.notes[id].type===k)).map(k=>`<details class="note-stack ${noteClass(k)}" data-note-type="${esc(k)}" id="notes-${group.id}-${k}" ${prefs.noteDisplay[k]==='expanded'?'open':''}><summary>${esc(cv(label(k)))}</summary>${ids.filter(id=>section.notes[id].type===k).map(id=>{
     const n=section.notes[id],ref=group.original.find(bid=>blockMap.get(bid).tokens.some(t=>t.note_id===id));
-    return `<details class="note ${noteClass(n.type)}" id="${n.id}" ${prefs.noteDisplay[n.type]==='expanded'?'open':''}><summary>${esc(cv(label(n.type)))} ${esc(cv(n.label))}</summary><div class="note-body">${n.blocks.map(b=>blockHTML(b)).join('')}<div class="reading-actions"><button type="button" class="note-back" data-note-back="${esc(ref)}">${cv('返回正文')}</button><button type="button" class="return-link" data-return="${esc(ref)}">${cv('收起')}</button></div></div></details>`;
+    return `<details class="note ${noteClass(n.type)}" id="${n.id}" ${prefs.noteDisplay[n.type]==='expanded'?'open':''}><summary>${esc(cv(label(n.type)))} ${esc(cv(n.label))}</summary><div class="note-body">${noteBodyHTML(id)}<div class="reading-actions"><button type="button" class="note-back" data-note-back="${esc(ref)}">${cv('返回正文')}</button><button type="button" class="return-link" data-return="${esc(ref)}">${cv('收起')}</button></div></div></details>`;
   }).join('')}</details>`).join('')}</div>`;
 }
 function setMode(mode) {
   if (!['both','original','translation'].includes(mode)) mode='both';
   activeMode=mode; prefs.mode=mode; savePrefs();
   $('#reading')?.setAttribute('class', 'mode-'+mode);
+  main.notePopover?.close(false);
   applyNoteMarkers();
   document.querySelectorAll('[data-mode]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.mode===mode)));
   if($('#reading-mode'))$('#reading-mode').value=mode;
@@ -353,7 +362,8 @@ function restoreView(saved) {
     else if(el?.matches('.reading-group')&&el.querySelector('.note-stack'))el.querySelector('.note-stack').open=true;}
   $('.knowledge-page')?.restoreInlineReading?.();
   for(const [id,ref] of saved.returns||[]){const el=document.getElementById(id);if(el&&restoreNote(el))el.dataset.returnId=ref;}
-  for(const ref of main.querySelectorAll('.note-ref'))ref.setAttribute('aria-expanded',String(document.getElementById(ref.dataset.note)?.open||false));
+  // An open transient view keeps its marker reported as expanded.
+  for(const ref of main.querySelectorAll('.note-ref'))ref.setAttribute('aria-expanded',String(!!document.getElementById(ref.dataset.note)?.open||ref===main.notePopover?.currentRef()||ref===main.noteSheet?.currentRef()));
   const anchor=saved.anchor && document.getElementById(saved.anchor);
   const block=saved.text&&document.getElementById(saved.text.id);
   const rect=block?.getClientRects().length&&!block.closest('details:not([open])')?textPoint(block,Math.min(saved.text.at,block.textContent.length-1)):null;
@@ -414,14 +424,37 @@ function mountSourceReturn(origin,fromSearch) {
   back.onclick=e=>{if(e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||e.altKey)return;e.preventDefault();e.stopPropagation();
     navigate(origin.hash,origin.view,fromSearch?origin.parent||null:origin.origin||null,fromSearch?origin.returnList||null:null);};
 }
+// One transient annotation view: the bottom sheet on phones, the anchored
+// popover elsewhere. Both stay out of view context; only reveals are recorded.
+function openTransientNote(ref,noteId) {
+  if(mobileLayout.matches&&main.noteSheet)main.noteSheet.open(ref,noteId);
+  else main.notePopover?.open(ref,noteId);
+}
 // A deep link may reveal one note; only reader controls change the preference.
 function focusTarget(id,{revealNotes=true}={}) {
   main.readingControls?.prepareJump();
   let el=document.getElementById(id);
   if (!el || !main.contains(el)) return false;
-  if(el.closest('[data-note-type]')&&prefs.noteDisplay[el.closest('[data-note-type]').dataset.noteType]==='hidden'){
-    if(revealNotes)el=main.readingControls.revealNote(el)||el;
-    if(el.closest('.note')?.hidden||el.matches('.note-ref')&&el.hidden)el=el.closest('.reading-group');
+  // Click-to-view and hidden types keep their stacks hidden; a deep link shows
+  // the one note transiently beside its marker instead of opening the stack.
+  const stack=el.closest('.note-stack');
+  if(stack&&prefs.noteDisplay[stack.dataset.noteType]!=='expanded'){
+    const noteId=el.closest('.note')?.id,ref=noteId&&noteRefs.get(noteId);
+    if(ref){
+      // A restore keeps an explicit dismissal closed; only a fresh deep link
+      // reveals, and an already-open view just repositions.
+      const shown=main.notePopover?.currentId()===noteId||main.noteSheet?.currentId()===noteId;
+      if(revealNotes||shown){
+        if(revealNotes)main.readingControls.revealNote(noteId,stack.dataset.noteType);
+        if(activeMode==='translation')setMode('both');
+        // The sheet locks scrolling once open, so position the paragraph first.
+        ref.scrollIntoView({block:'center'});
+        const flashTarget=ref.hidden?ref.closest('.reading-group'):ref;
+        flashTarget.classList.remove('flash');void flashTarget.offsetWidth;flashTarget.classList.add('flash');
+        openTransientNote(ref,noteId);
+      }
+      return true;
+    }
   }
   if (section.status==='aligned' && el.closest('.original,.note-stack') && activeMode==='translation') setMode('both');
   if (section.status==='aligned' && el.closest('.translation') && activeMode==='original') setMode('both');
@@ -435,7 +468,7 @@ async function readSection(id,target,version,saved) {
   if(!info)throw Error('目录中没有这一章节');
   // Each section carries its own anchor shard; a legacy book that already has
   // the full index needs no extra request.
-  const [loaded,anchors,controls,sheetModule]=await Promise.all([data(`sections/${id}.json`),book.anchor_index||json(runtimePath+'anchors/'+encodeURIComponent(id)+'.json'),import('./reading-controls.js?v=9a51375c73846db3'),import('./note-sheet.js?v=9a51375c73846db3')]);
+  const [loaded,anchors,controls,sheetModule,popoverModule]=await Promise.all([data(`sections/${id}.json`),book.anchor_index||json(runtimePath+'anchors/'+encodeURIComponent(id)+'.json'),import('./reading-controls.js?v=7ab9854108da2476'),import('./note-sheet.js?v=7ab9854108da2476'),import('./note-popover.js?v=7ab9854108da2476')]);
   const {readingSettingsHTML,chapterProgressHTML,mountReadingControls}=controls;
   if(version!==routeVersion)return;
   book.anchor_index??={};Object.assign(book.anchor_index,anchors);
@@ -451,51 +484,83 @@ async function readSection(id,target,version,saved) {
   const peers=info.kind==='chapter'?book.sections.filter(s=>s.kind==='chapter'):(site.supplements||[]).flatMap(g=>g.sections).map(sid=>book.sections.find(s=>s.id===sid));
   const idx=peers.findIndex(s=>s.id===id),prev=idx>=0?peers[idx-1]:null,next=idx>=0?peers[idx+1]:null;
   main.innerHTML=`<div class="chapter-layout">${sidebarHTML()}<article class="chapter-article"><header class="chapter-heading"><p class="eyebrow">${esc(cv(chapterCaption(info)))}</p><h1 ${titleBlock?`id="${esc(titleBlock.id)}" tabindex="-1"`:''}>${titleBlock?tokenHTML(titleBlock.tokens,{source:true}):esc(cv(section.title))}</h1></header>${toolbar}<div id="reading">${body}</div><nav class="pager" aria-label="${cv('相邻篇目')}">${prev?`<a href="${url(prev.id)}">${cv('上一篇')}：${esc(cv(prev.title))}</a>`:'<span></span>'}${next?`<a href="${url(next.id)}">${cv('下一篇')}：${esc(cv(next.title))}</a>`:''}</nav></article></div>`;
+  // Marker order is reading order: it anchors transient views and sequences
+  // the browse types.
+  noteRefs=new Map();typeNotes=new Map();
+  for(const b of main.querySelectorAll('.note-ref[data-note]')){
+    const noteId=b.dataset.note,type=b.dataset.noteType;
+    if(noteRefs.has(noteId))continue;
+    noteRefs.set(noteId,b);
+    if(!typeNotes.has(type))typeNotes.set(type,[]);
+    typeNotes.get(type).push({id:noteId,ref:b});
+  }
   main.readingControls=mountReadingControls({host:main,mobileLayout,getPrefs:()=>prefs,getView:viewSnapshot,cv,
     entries:landmarks.map(g=>[document.getElementById(g.id),landmarkText(g)]).filter(([el])=>el),
-    onNoteChange:(type,mode)=>{const view=viewSnapshot(),prior=prefs.noteDisplay[type];prefs.noteDisplay[type]=mode;savePrefs();main.readingControls.clearReveal(type);main.readingControls.applyNotes(prior==='hidden'&&mode==='folded'?undefined:type);restoreView(view);saveContext();},
+    onNoteChange:(type,mode)=>{const view=viewSnapshot(),prior=prefs.noteDisplay[type];prefs.noteDisplay[type]=mode;savePrefs();
+      const ofType=nid=>nid&&section.notes[nid]?.type===type?nid:null;
+      if(ofType(main.notePopover?.currentId))main.notePopover.close(false);
+      if(ofType(main.noteSheet?.currentId))main.noteSheet.close();
+      main.readingControls.clearReveal(type);main.readingControls.applyNotes(prior==='hidden'&&mode==='folded'?undefined:type);restoreView(view);saveContext();},
     onFontChange:(delta,view)=>resize(delta,view),onJump:target=>navigate(url(id,target)),onPositionChange:saveContext});
-  main.noteSheet=aligned?sheetModule.mountNoteSheet({mobileLayout,cv}):null;
+  // Site config decides which note types offer sequential browsing.
+  const browseTypes=new Set((site.noteBrowse||[]).filter(k=>book.note_types[k]));
+  const transientNote=nid=>{const n=section.notes[nid];return {secondary:noteClass(n.type)==='note-secondary',label:`${cv(label(n.type))} ${cv(n.label)}`,html:noteBodyHTML(nid,{plain:true})};};
+  const noteNeighbors=nid=>{
+    const n=section.notes[nid];
+    if(!n||!browseTypes.has(n.type))return null;
+    const list=typeNotes.get(n.type)||[],i=list.findIndex(e=>e.id===nid);
+    return i<0?null:{prev:list[i-1]||null,next:list[i+1]||null,index:i+1,total:list.length};
+  };
+  const dismissTransient=nid=>{if(main.readingControls?.dismissNote(nid))saveContext();};
+  main.noteSheet=aligned?sheetModule.mountNoteSheet({mobileLayout,cv,render:transientNote,onDismiss:dismissTransient}):null;
+  main.notePopover=aligned?popoverModule.mountNotePopover({mobileLayout,cv,render:transientNote,neighbors:noteNeighbors,onDismiss:dismissTransient}):null;
   if(aligned)setMode(prefs.mode);else activeMode='source';
   $('#open-directory').onclick=openDirectory;
   if($('#reading-mode'))$('#reading-mode').onchange=event=>{const saved=viewSnapshot();setMode(event.target.value);restoreView(saved);saveContext();};
   document.querySelectorAll('[data-note]').forEach(b=>b.onclick=()=>{
+    // The expanded preference keeps locating the in-place note; every other
+    // display opens the transient sheet on phones or the popover elsewhere.
+    if(prefs.noteDisplay[b.dataset.noteType]!=='expanded'){
+      if(mobileLayout.matches&&main.noteSheet)main.noteSheet.toggle(b,b.dataset.note);
+      else main.notePopover?.toggle(b,b.dataset.note);
+      return;
+    }
     const note=document.getElementById(b.dataset.note);
-    // On phones the marker opens the transient sheet while notes stay folded;
-    // the expanded preference keeps locating the in-place note instead.
-    if(mobileLayout.matches&&main.noteSheet&&prefs.noteDisplay[b.dataset.noteType]!=='expanded'){main.noteSheet.toggle(b,note);return;}
-    if(note.open&&prefs.noteDisplay[b.dataset.noteType]!=='expanded'){note.open=false;delete note.dataset.returnId;b.setAttribute('aria-expanded','false');b.focus({preventScroll:true});saveContext();return;}
+    // In expanded display a marker tap always locates, never collapses.
     note.parentElement.open=true;note.open=true;
     b.setAttribute('aria-expanded','true');note.dataset.returnId=b.id;main.readingControls.prepareJump();
     note.scrollIntoView({block:'nearest'});note.querySelector('summary').focus({preventScroll:true});saveContext();
   });
   const closeNote=n=>{
-    const temporary=main.readingControls.isTemporary(n),ref=document.getElementById(n.dataset.returnId);
-    const dest=temporary?n.closest('.reading-group'):ref?.getClientRects().length?ref:ref?.closest('.block')||n.querySelector('summary');
-    n.open=false;delete n.dataset.returnId;main.readingControls.dismissNote(n);
-    dest?.focus({preventScroll:true});dest?.scrollIntoView({block:ref&&!temporary?'center':'nearest'});saveContext();
+    const ref=document.getElementById(n.dataset.returnId);
+    n.open=false;delete n.dataset.returnId;
+    ref?.focus({preventScroll:true});ref?.scrollIntoView({block:'center'});saveContext();
   };
   document.querySelectorAll('.note').forEach(n=>{
-    n.querySelector('summary').addEventListener('click',e=>{e.preventDefault();if(n.open&&main.readingControls.isTemporary(n)){closeNote(n);return;}delete n.dataset.returnId;n.open=!n.open;document.querySelectorAll(`[data-note="${n.id}"]`).forEach(b=>b.setAttribute('aria-expanded',String(n.open)));saveContext();});
+    n.querySelector('summary').addEventListener('click',e=>{e.preventDefault();delete n.dataset.returnId;n.open=!n.open;document.querySelectorAll(`[data-note="${n.id}"]`).forEach(b=>b.setAttribute('aria-expanded',String(n.open)));saveContext();});
     n.addEventListener('toggle',()=>{if(!n.open)delete n.dataset.returnId;document.querySelectorAll(`[data-note="${n.id}"]`).forEach(b=>b.setAttribute('aria-expanded',String(n.open)));queueContext();});
   });
   document.querySelectorAll('.note-stack>summary').forEach(summary=>summary.addEventListener('click',e=>{
-    e.preventDefault();const stack=summary.parentElement,n=stack.querySelector('.note:not([hidden])');
-    if(stack.open&&n&&main.readingControls.isTemporary(n)){closeNote(n);return;}
-    stack.open=!stack.open;saveContext();
+    e.preventDefault();summary.parentElement.open=!summary.parentElement.open;saveContext();
   }));
   document.querySelectorAll('[data-return]').forEach(a=>a.onclick=()=>closeNote(a.closest('.note')));
   document.querySelectorAll('[data-note-back]').forEach(a=>a.onclick=()=>{
     const note=a.closest('.note'),ref=document.getElementById(note.dataset.returnId)||document.getElementById(a.dataset.noteBack);
     if(ref){main.readingControls.prepareJump();ref.scrollIntoView({block:'center'});ref.focus({preventScroll:true});saveContext();}
   });
-  document.querySelectorAll('.note-ref').forEach(b=>b.setAttribute('aria-expanded',String(document.getElementById(b.dataset.note).open)));
-  if(saved?.noteReveal){const note=document.getElementById(saved.noteReveal);if(note)main.readingControls.revealNote(note);}
+  document.querySelectorAll('.note-ref').forEach(b=>b.setAttribute('aria-expanded',String(!!document.getElementById(b.dataset.note)?.open)));
+  if(saved?.noteReveal&&section.notes[saved.noteReveal]?.type){
+    const noteId=saved.noteReveal,type=section.notes[noteId].type;
+    if(prefs.noteDisplay[type]!=='expanded'){
+      const ref=noteRefs.get(noteId);
+      if(ref){main.readingControls.revealNote(noteId,type);openTransientNote(ref,noteId);}
+    }
+  }
   if(target){if(!focusTarget(target,{revealNotes:!saved||!Object.hasOwn(saved,'noteReveal')}))main.insertAdjacentHTML('afterbegin',`<p role="status">${cv('未找到指定段落，已显示本章。')}</p>`);}
   else window.scrollTo(0,0);
 }
 function resize(delta,saved=viewSnapshot()){
-  prefs.fs=Math.min(30,Math.max(16,prefs.fs+delta));savePrefs();applyPrefs();restoreView(saved);saveContext();main.readingControls?.syncSettings();main.readingControls?.refresh();}
+  prefs.fs=Math.min(30,Math.max(16,prefs.fs+delta));savePrefs();applyPrefs();main.notePopover?.close(false);restoreView(saved);saveContext();main.readingControls?.syncSettings();main.readingControls?.refresh();}
 async function search(qs,version){
   const q=qs.get('q')||'',type=qs.get('type')==='people'?'people':'original';
   const bookScope=type==='original'&&site.collections.some(c=>c.id===qs.get('book'))?qs.get('book'):'';
@@ -638,6 +703,7 @@ async function route(){
   main.dataset.page=parts[0]||'home';
   main.peopleLoadingDispose?.();main.lifeNavigationDispose?.();main.readingControls?.dispose();delete main.readingControls;
   main.noteSheet?.dispose();delete main.noteSheet;
+  main.notePopover?.dispose();delete main.notePopover;
   document.documentElement.classList.toggle('reading-page',parts[0]==='read');
   main.querySelectorAll('.knowledge-page,.person-detail').forEach(el=>el.citationDispose?.());
   $('.atlas')?.atlasDispose?.();
@@ -652,7 +718,7 @@ async function route(){
       let atlas=await loadAtlas();if(version!==routeVersion)return;
       if(!atlas)throw Error('时代星图暂时不可用');
       if(['q','person','year'].some(k=>qs.get(k))){
-        const [{filteredOverviewItems},catalog,editorial]=await Promise.all([import('./event-editorial.js?v=9a51375c73846db3'),runtimePath?runtime('highlights.json'):json(site.knowledge.file),json(site.knowledge.editorial)]);
+        const [{filteredOverviewItems},catalog,editorial]=await Promise.all([import('./event-editorial.js?v=7ab9854108da2476'),runtimePath?runtime('highlights.json'):json(site.knowledge.file),json(site.knowledge.editorial)]);
         if(version!==routeVersion)return;
         const prints=catalog.section_sha256||fingerprints?.section_sha256;
         if(catalog.source_sha256!==book.source_sha256||editorial.source_sha256!==catalog.source_sha256||Object.entries(editorial.section_sha256).some(([id,sha])=>prints[id]!==sha))throw Error('史事资料版本不一致');
@@ -675,7 +741,7 @@ async function route(){
     }
     else if(['people','events','timeline'].includes(parts[0])){
       if(!site.knowledge)throw Error('查询资料暂时不可用');
-      const [{renderKnowledge,canonicalKnowledgeHash},{biographyContext}]=await Promise.all([import('./knowledge.js?v=9a51375c73846db3'),import('./profiles.js?v=9a51375c73846db3')]);
+      const [{renderKnowledge,canonicalKnowledgeHash},{biographyContext}]=await Promise.all([import('./knowledge.js?v=7ab9854108da2476'),import('./profiles.js?v=7ab9854108da2476')]);
       // The full-record query view and the legacy timeline read the slim
       // events index instead of the whole catalog; every other route already
       // had a dedicated shard or projection.
@@ -738,12 +804,12 @@ async function route(){
       }
     }
     else if(parts[0]==='topics'&&parts.length===1){
-      const [{topicDirectory},presentation]=await Promise.all([import('./topics.js?v=9a51375c73846db3'),loadTopicPresentation()]);if(version!==routeVersion)return;
+      const [{topicDirectory},presentation]=await Promise.all([import('./topics.js?v=7ab9854108da2476'),loadTopicPresentation()]);if(version!==routeVersion)return;
       if(!presentation)throw Error('专题暂时不可用');
       main.innerHTML=topicDirectory(presentation,{esc,cv});knowledgeTitle='专题研究';
     }
     else if(parts[0]==='topics'){
-      const [{renderTopic},bound]=await Promise.all([import('./topics.js?v=9a51375c73846db3'),loadTopics(parts[1])]);if(version!==routeVersion)return;
+      const [{renderTopic},bound]=await Promise.all([import('./topics.js?v=7ab9854108da2476'),loadTopics(parts[1])]);if(version!==routeVersion)return;
       const topic=bound?.presentation.topics.find(t=>t.id===parts[1]);
       if(!topic||parts.length!==2)throw Error('未找到此专题');
       const ids=Object.keys(bound.presentation.section_sha256);
@@ -765,7 +831,7 @@ async function route(){
     if(version!==routeVersion)return;
     restoreView(saved);
     if(!saved||saved.y===undefined){const target=main.querySelector('[data-source-target]');if(target){target.scrollIntoView({block:'start'});target.focus({preventScroll:true});}}
-    if(parts[0]==='people'){const {bindPeopleLoading,bindLifeNavigation}=await import('./people-reading.js?v=9a51375c73846db3');bindPeopleLoading(main,{text:cv});bindLifeNavigation(main,{onChange:saveContext});}
+    if(parts[0]==='people'){const {bindPeopleLoading,bindLifeNavigation}=await import('./people-reading.js?v=7ab9854108da2476');bindPeopleLoading(main,{text:cv});bindLifeNavigation(main,{onChange:saveContext});}
     updateNavigation(parts);renderedHash=location.hash;ready=true;saveContext();
     setPageTitle(parts[0]==='read'?section.title:knowledgeTitle);
   }catch(e){
@@ -789,8 +855,9 @@ async function boot(){
       const warm=decodeURIComponent(initialRead[1]);
       data(`sections/${warm}.json`).catch(()=>{});
       if(runtimePath)json(runtimePath+'anchors/'+encodeURIComponent(warm)+'.json').catch(()=>{});
-      import('./reading-controls.js?v=9a51375c73846db3').catch(()=>{});
-      import('./note-sheet.js?v=9a51375c73846db3').catch(()=>{});
+      import('./reading-controls.js?v=7ab9854108da2476').catch(()=>{});
+      import('./note-sheet.js?v=7ab9854108da2476').catch(()=>{});
+      import('./note-popover.js?v=7ab9854108da2476').catch(()=>{});
     }catch{}
   }
   [book,site,zhDisplay,fingerprints]=await Promise.all([config.bookFile?json(config.bookFile):data('book.json'),json('site.json'),json('knowledge/zh-display.json'),runtimePath?json(runtimePath+'fingerprints.json'):null]);
