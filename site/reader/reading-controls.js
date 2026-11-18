@@ -5,7 +5,7 @@ export function readingSettingsHTML({types,landmarks,fontSize,esc,cv}) {
     <dialog class="reading-settings" id="reading-settings" aria-labelledby="reading-settings-title">
       <header class="settings-head"><h2 id="reading-settings-title">${cv('阅读设置')}</h2><button type="button" id="close-reading-settings" autofocus>${cv('关闭')}</button></header>
       <div class="settings-body"><label class="settings-jump"><span>${cv('定位正文')}</span><select id="jump"><option value="">${cv('定位正文')}</option>${landmarks.map(([id,text])=>`<option value="${esc(id)}">${esc(cv(text))}</option>`).join('')}</select></label>
-      ${types.map(([type,label])=>`<label class="note-setting"><span>${esc(cv(label))}</span><select data-note-display="${esc(type)}">${[['hidden','隐藏'],['folded','点击查看'],['expanded','全文展开']].map(([value,text])=>`<option value="${value}">${cv(text)}</option>`).join('')}</select></label>`).join('')}
+      ${types.map(([type,label,inline])=>`<label class="note-setting"><span>${esc(cv(label))}</span><select data-note-display="${esc(type)}">${[['hidden','隐藏'],['folded','点击查看'],...(inline?[['inline','随文']]:[]),['expanded','全文展开']].map(([value,text])=>`<option value="${value}">${cv(text)}</option>`).join('')}</select></label>`).join('')}
       <div class="settings-font"><span>${cv('字号')}</span><div><button type="button" id="smaller" aria-label="${cv('减小字号')}">A−</button><output id="font-size">${fontSize}</output><button type="button" id="larger" aria-label="${cv('增大字号')}">A＋</button></div></div></div>
     </dialog>`;
 }
@@ -130,7 +130,12 @@ export function mountReadingControls({host,mobileLayout,entries,getPrefs,getView
   }
   function applyNotes(resetType) {
     const display=getPrefs().noteDisplay;
-    for(const ref of host.querySelectorAll('.note-ref[data-note-type]'))ref.hidden=display[ref.dataset.noteType]==='hidden';
+    for(const ref of host.querySelectorAll('.note-ref[data-note-type]')){
+      ref.hidden=display[ref.dataset.noteType]==='hidden';
+      // Inline copies sit open beside their markers; other displays start closed
+      // and the note toggle listeners take over from there.
+      ref.setAttribute('aria-expanded',String(display[ref.dataset.noteType]==='inline'));
+    }
     // Click-to-view keeps the stacks hidden; only the expanded preference
     // lays the full notes under their paragraphs.
     for(const stack of host.querySelectorAll('.note-stack[data-note-type]')){
@@ -142,6 +147,8 @@ export function mountReadingControls({host,mobileLayout,entries,getPrefs,getView
         for(const note of stack.querySelectorAll(':scope>.note')){note.open=mode==='expanded';delete note.dataset.returnId;}
       }
     }
+    // The inline (随文) preference shows each note's copy beside its marker.
+    for(const note of host.querySelectorAll('.note-inline[data-note-type]'))note.hidden=display[note.dataset.noteType]!=='inline';
     for(const stacks of host.querySelectorAll('.note-stacks'))stacks.hidden=[...stacks.children].every(stack=>stack.hidden);
     syncSettings();refresh();
   }

@@ -1,9 +1,9 @@
 // Heavy views load per route so first paint only needs the shell helpers;
 // pure address canonicalizers stay in route-hash.js for every navigation.
-import {atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash, legacyKnowledgeHash} from './route-hash.js?v=7ab9854108da2476';
-import {createJSONLoader,attachRuntime,presentPeople,hydratePacket} from './data-loader.js?v=7ab9854108da2476';
-import {searchHash,canonicalSearchHash,searchPeople,highlightText,firstMatch} from './search.js?v=7ab9854108da2476';
-import {blockText} from './event-reading.js?v=7ab9854108da2476';
+import {atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash, legacyKnowledgeHash} from './route-hash.js?v=74603104776baee7';
+import {createJSONLoader,attachRuntime,presentPeople,hydratePacket} from './data-loader.js?v=74603104776baee7';
+import {searchHash,canonicalSearchHash,searchPeople,highlightText,firstMatch} from './search.js?v=74603104776baee7';
+import {blockText} from './event-reading.js?v=74603104776baee7';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
 const initialTitle = document.title;
@@ -17,6 +17,7 @@ const safeRead = (k, fallback) => { try { return JSON.parse(localStorage.getItem
 const safeWrite = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
 let book, site, zhDisplay, fingerprints, root, prefs, storageKey, section, blockMap, groupForBlock, routeVersion = 0, currentId = null;
 let noteRefs, typeNotes;  // per-section marker maps for transient note views
+let inlineTypes = new Set(), firstInlineNotes = new Set();  // 随文 layers and each note's first marker
 let contextTimer, searchRows, searchNormalized, noteRows, noteNormalized, activeMode = 'both', searchScope;
 let renderedHash = '', ready = false, searchLimit = 40, returnSearch = null, returnList = null;
 let topicBundle, topicPresentation, topicRequestOptions;  // topicBundle: Map of per-topic bundle promises
@@ -138,7 +139,12 @@ function tokenHTML(tokens, {backlinks = false, source = false, prefix = '', high
       if (plain && t.note_id) return content;
       if (t.note_id && !source) {
         const n = section.notes[t.note_id];
-        return `<button class="note-ref ${noteClass(n.type)}" id="ref-${esc(prefix)}-${i}" data-note="${esc(n.id)}" data-note-type="${esc(n.type)}" aria-controls="${esc(n.id)}" aria-expanded="false" aria-label="${esc(cv(label(n.type)))} ${esc(cv(t.children.map(x=>x.text||'').join('')))}">${content}</button>`;
+        const marker=`<button class="note-ref ${noteClass(n.type)}" id="ref-${esc(prefix)}-${i}" data-note="${esc(n.id)}" data-note-type="${esc(n.type)}" aria-controls="${esc(n.id)}" aria-expanded="false" aria-label="${esc(cv(label(n.type)))} ${esc(cv(t.children.map(x=>x.text||'').join('')))}">${content}</button>`;
+        // 随文 layers carry a plain inline copy after the note's first marker;
+        // consuming the set during rendering keeps one copy per note.
+        return inlineTypes.has(n.type)&&firstInlineNotes.delete(n.id)
+          ?`${marker}<span class="note-inline ${noteClass(n.type)}" data-note="${esc(n.id)}" data-note-type="${esc(n.type)}" hidden>${noteInlineHTML(n.id)}</span>`
+          :marker;
       }
       if (!backlinks && !source && Object.values(book.note_types).some(n=>new RegExp(n.body_pattern).test(t.anchor||''))) return '';
       const dest = t.target && book.anchor_index[t.target.join('#')];
@@ -225,7 +231,7 @@ function atlasCommit(hash) {
   renderedHash=hash;
 }
 async function showAtlas(host,bundle,qs,saved,home=false) {
-  const {mountAtlas}=await import('./atlas.js?v=7ab9854108da2476');
+  const {mountAtlas}=await import('./atlas.js?v=74603104776baee7');
   // The renderer module may resolve after navigation moved on; never mount into a detached host.
   if(!host.isConnected)return;
   const state=mountAtlas(host,bundle,{esc,cv,qs,home,saved:saved?.atlas,onState:atlasCommit,onChange:saveContext});
@@ -291,6 +297,14 @@ function sidebarHTML() {
 // the transient views (plain: no ids, nested marks read as plain text).
 function noteBodyHTML(id, {plain = false} = {}) {
   return section.notes[id].blocks.map(b => blockHTML(b, {plain})).join('');
+}
+// The inline (随文) copy flows beside its marker: plain tokens only, note
+// blocks joined by a full-width space. Search deep links highlight it under
+// the same condition blockHTML highlights the linked stack block.
+function noteInlineHTML(id) {
+  const [path,query='']=location.hash.split('?'),q=new URLSearchParams(query).get('q');
+  const highlight=q&&section.notes[id].blocks.includes(path.split('/').at(-1))?q:'';
+  return section.notes[id].blocks.map(b=>tokenHTML(blockMap.get(b).tokens,{plain:true,highlight})).join('　');
 }
 function notesHTML(group) {
   const ids=[...new Set(group.original.flatMap(id=>blockMap.get(id).tokens.filter(t=>t.note_id).map(t=>t.note_id)))];
@@ -438,6 +452,18 @@ function focusTarget(id,{revealNotes=true}={}) {
   // Click-to-view and hidden types keep their stacks hidden; a deep link shows
   // the one note transiently beside its marker instead of opening the stack.
   const stack=el.closest('.note-stack');
+  // Inline layers already show the note beside its marker; locate it without
+  // opening the transient sheet or popover.
+  if(stack&&prefs.noteDisplay[stack.dataset.noteType]==='inline'){
+    const noteId=el.closest('.note')?.id,inline=noteId&&main.querySelector(`.note-inline[data-note="${noteId}"]`),ref=noteId&&noteRefs.get(noteId);
+    if(inline||ref){
+      if(activeMode==='translation')setMode('both');
+      const flashTarget=inline||ref;flashTarget.classList.remove('flash');void flashTarget.offsetWidth;flashTarget.classList.add('flash');
+      (ref||flashTarget).scrollIntoView({block:'center'});
+      ref?.focus({preventScroll:true});ref?.setAttribute('aria-expanded','true');
+      return true;
+    }
+  }
   if(stack&&prefs.noteDisplay[stack.dataset.noteType]!=='expanded'){
     const noteId=el.closest('.note')?.id,ref=noteId&&noteRefs.get(noteId);
     if(ref){
@@ -468,7 +494,7 @@ async function readSection(id,target,version,saved) {
   if(!info)throw Error('目录中没有这一章节');
   // Each section carries its own anchor shard; a legacy book that already has
   // the full index needs no extra request.
-  const [loaded,anchors,controls,sheetModule,popoverModule]=await Promise.all([data(`sections/${id}.json`),book.anchor_index||json(runtimePath+'anchors/'+encodeURIComponent(id)+'.json'),import('./reading-controls.js?v=7ab9854108da2476'),import('./note-sheet.js?v=7ab9854108da2476'),import('./note-popover.js?v=7ab9854108da2476')]);
+  const [loaded,anchors,controls,sheetModule,popoverModule]=await Promise.all([data(`sections/${id}.json`),book.anchor_index||json(runtimePath+'anchors/'+encodeURIComponent(id)+'.json'),import('./reading-controls.js?v=74603104776baee7'),import('./note-sheet.js?v=74603104776baee7'),import('./note-popover.js?v=74603104776baee7')]);
   const {readingSettingsHTML,chapterProgressHTML,mountReadingControls}=controls;
   if(version!==routeVersion)return;
   book.anchor_index??={};Object.assign(book.anchor_index,anchors);
@@ -478,8 +504,11 @@ async function readSection(id,target,version,saved) {
   const first=section.blocks[0],titleBlock=!aligned&&first?.kind==='heading'&&first.text===section.title&&first.tokens.every(t=>t.type==='text')?first:null;
   const landmarks=aligned?section.groups:section.blocks.filter(b=>b.kind==='heading'||b.kind==='original'||b.tokens.some(t=>t.type==='image'));
   const landmarkText=g=>[...blockText(aligned?blockMap.get(g.original[0]):g,section)].slice(0,18).join('')||'原书图版';
-  const settingsHTML=readingSettingsHTML({types:aligned?Object.keys(book.note_types).map(type=>[type,label(type)]):[],landmarks:landmarks.map(g=>[g.id,landmarkText(g)]),fontSize:prefs.fs,esc,cv});
+  const settingsHTML=readingSettingsHTML({types:aligned?Object.keys(book.note_types).map(type=>[type,label(type),inlineTypes.has(type)]):[],landmarks:landmarks.map(g=>[g.id,landmarkText(g)]),fontSize:prefs.fs,esc,cv});
   const toolbar=`<div class="toolbar" role="region" aria-label="${cv('阅读工具')}"><div class="toolbar-row"><button id="open-directory">${cv('目录')}</button>${aligned?`<select id="reading-mode" aria-label="${cv('文白模式')}">${['both','original','translation'].map((m,i)=>`<option value="${m}">${cv(['对照','原文','译文'][i])}</option>`).join('')}</select>`:''}${chapterProgressHTML(cv)}${settingsHTML}</div></div>`;
+  // Inline copies follow each note's first marker in reading order; the set is
+  // consumed while rendering so a note with repeated markers never duplicates.
+  firstInlineNotes=new Set((section.groups||[]).flatMap(g=>g.original).flatMap(bid=>blockMap.get(bid).tokens.filter(t=>t.note_id&&inlineTypes.has(section.notes[t.note_id]?.type)).map(t=>t.note_id)));
   const body=aligned?section.groups.map(g=>`<section class="reading-group" id="${g.id}" tabindex="-1"><a class="passage-link" href="${url(id,g.id)}" aria-label="${cv('此处链接')}" title="${cv('此处链接')}">⌁</a><div class="parallel"><div class="column original">${g.original.map(b=>blockHTML(b)).join('')}</div><div class="column translation">${g.translation.map(b=>blockHTML(b)).join('')}</div></div>${notesHTML(g)}</section>`).join(''):`<div class="source-reading">${section.blocks.filter(b=>b!==titleBlock).map(b=>blockHTML(b.id,{source:true,backlinks:true})).join('')}</div>`;
   const peers=info.kind==='chapter'?book.sections.filter(s=>s.kind==='chapter'):(site.supplements||[]).flatMap(g=>g.sections).map(sid=>book.sections.find(s=>s.id===sid));
   const idx=peers.findIndex(s=>s.id===id),prev=idx>=0?peers[idx-1]:null,next=idx>=0?peers[idx+1]:null;
@@ -518,9 +547,17 @@ async function readSection(id,target,version,saved) {
   $('#open-directory').onclick=openDirectory;
   if($('#reading-mode'))$('#reading-mode').onchange=event=>{const saved=viewSnapshot();setMode(event.target.value);restoreView(saved);saveContext();};
   document.querySelectorAll('[data-note]').forEach(b=>b.onclick=()=>{
+    const display=prefs.noteDisplay[b.dataset.noteType];
+    // The inline preference keeps its note beside the marker; a tap locates.
+    if(display==='inline'){
+      const inline=main.querySelector(`.note-inline[data-note="${b.dataset.note}"]`);
+      b.setAttribute('aria-expanded','true');main.readingControls.prepareJump();
+      if(inline){inline.classList.remove('flash');void inline.offsetWidth;inline.classList.add('flash');inline.scrollIntoView({block:'center'});}
+      return;
+    }
     // The expanded preference keeps locating the in-place note; every other
     // display opens the transient sheet on phones or the popover elsewhere.
-    if(prefs.noteDisplay[b.dataset.noteType]!=='expanded'){
+    if(display!=='expanded'){
       if(mobileLayout.matches&&main.noteSheet)main.noteSheet.toggle(b,b.dataset.note);
       else main.notePopover?.toggle(b,b.dataset.note);
       return;
@@ -570,7 +607,7 @@ async function search(qs,version){
   const notesOn=type==='original'&&noteTypes.length>0&&qs.get('notes')==='1';
   if((type==='original'&&qs.has('book')&&!bookScope)||(qs.has('notes')&&!notesOn)){qs.delete('book');qs.delete('notes');replaceHash(searchHash(type,q,type==='original'?bookScope:'',notesOn));}
   const scopeLabel=bookScope?site.collections.find(c=>c.id===bookScope).label:'全书';
-  const scopeText=type==='people'?'按姓名、字或别名检索人物。':notesOn?`检索${scopeLabel}正文与${notesLabel}，不含译文及现代注释。`:`检索${scopeLabel}正文，不含译文、${notesLabel||'裴注'}及现代注释。`;
+  const scopeText=type==='people'?'按姓名、字或别名检索人物。':notesOn?`检索${scopeLabel}正文与${notesLabel}。`:`检索${scopeLabel}正文。`;
   main.innerHTML=`<p class="eyebrow">${esc(cv(site.title))}</p><h1>${cv('检索')}</h1><nav class="knowledge-tabs search-modes" aria-label="${cv('检索类型')}">${[['original','原文'],['people','人物']].map(([key,title])=>`<a id="search-${key}" data-search-type="${key}" href="${esc(searchHash(key,q))}" ${type===key?'aria-current="page"':''}>${cv(title)}</a>`).join('')}</nav><p class="search-scope">${cv(scopeText)}</p><form class="search-form" role="search">${type==='original'?`<div class="search-filters"><label class="sr-only" for="search-book">${cv('检索范围')}</label><select id="search-book"><option value="">${cv('全书')}</option>${site.collections.map(c=>`<option value="${c.id}" ${c.id===bookScope?'selected':''}>${esc(cv(c.label))}</option>`).join('')}</select>${noteTypes.length?`<label class="search-notes"><input type="checkbox" id="search-notes" ${notesOn?'checked':''}>${cv(`含${notesLabel}`)}</label>`:''}</div>`:''}<input id="query" type="search" aria-label="${cv('关键词')}" value="${esc(q)}"><button>${cv('检索')}</button></form><div id="results" aria-live="polite"></div>`;
   const syncLinks=()=>main.querySelectorAll('[data-search-type]').forEach(a=>a.href=searchHash(a.dataset.searchType,$('#query').value,'',a.dataset.searchType==='original'&&notesOn));
   $('#query').addEventListener('input',syncLinks);
@@ -718,7 +755,7 @@ async function route(){
       let atlas=await loadAtlas();if(version!==routeVersion)return;
       if(!atlas)throw Error('时代星图暂时不可用');
       if(['q','person','year'].some(k=>qs.get(k))){
-        const [{filteredOverviewItems},catalog,editorial]=await Promise.all([import('./event-editorial.js?v=7ab9854108da2476'),runtimePath?runtime('highlights.json'):json(site.knowledge.file),json(site.knowledge.editorial)]);
+        const [{filteredOverviewItems},catalog,editorial]=await Promise.all([import('./event-editorial.js?v=74603104776baee7'),runtimePath?runtime('highlights.json'):json(site.knowledge.file),json(site.knowledge.editorial)]);
         if(version!==routeVersion)return;
         const prints=catalog.section_sha256||fingerprints?.section_sha256;
         if(catalog.source_sha256!==book.source_sha256||editorial.source_sha256!==catalog.source_sha256||Object.entries(editorial.section_sha256).some(([id,sha])=>prints[id]!==sha))throw Error('史事资料版本不一致');
@@ -741,7 +778,7 @@ async function route(){
     }
     else if(['people','events','timeline'].includes(parts[0])){
       if(!site.knowledge)throw Error('查询资料暂时不可用');
-      const [{renderKnowledge,canonicalKnowledgeHash},{biographyContext}]=await Promise.all([import('./knowledge.js?v=7ab9854108da2476'),import('./profiles.js?v=7ab9854108da2476')]);
+      const [{renderKnowledge,canonicalKnowledgeHash},{biographyContext}]=await Promise.all([import('./knowledge.js?v=74603104776baee7'),import('./profiles.js?v=74603104776baee7')]);
       // The full-record query view and the legacy timeline read the slim
       // events index instead of the whole catalog; every other route already
       // had a dedicated shard or projection.
@@ -804,12 +841,12 @@ async function route(){
       }
     }
     else if(parts[0]==='topics'&&parts.length===1){
-      const [{topicDirectory},presentation]=await Promise.all([import('./topics.js?v=7ab9854108da2476'),loadTopicPresentation()]);if(version!==routeVersion)return;
+      const [{topicDirectory},presentation]=await Promise.all([import('./topics.js?v=74603104776baee7'),loadTopicPresentation()]);if(version!==routeVersion)return;
       if(!presentation)throw Error('专题暂时不可用');
       main.innerHTML=topicDirectory(presentation,{esc,cv});knowledgeTitle='专题研究';
     }
     else if(parts[0]==='topics'){
-      const [{renderTopic},bound]=await Promise.all([import('./topics.js?v=7ab9854108da2476'),loadTopics(parts[1])]);if(version!==routeVersion)return;
+      const [{renderTopic},bound]=await Promise.all([import('./topics.js?v=74603104776baee7'),loadTopics(parts[1])]);if(version!==routeVersion)return;
       const topic=bound?.presentation.topics.find(t=>t.id===parts[1]);
       if(!topic||parts.length!==2)throw Error('未找到此专题');
       const ids=Object.keys(bound.presentation.section_sha256);
@@ -831,7 +868,7 @@ async function route(){
     if(version!==routeVersion)return;
     restoreView(saved);
     if(!saved||saved.y===undefined){const target=main.querySelector('[data-source-target]');if(target){target.scrollIntoView({block:'start'});target.focus({preventScroll:true});}}
-    if(parts[0]==='people'){const {bindPeopleLoading,bindLifeNavigation}=await import('./people-reading.js?v=7ab9854108da2476');bindPeopleLoading(main,{text:cv});bindLifeNavigation(main,{onChange:saveContext});}
+    if(parts[0]==='people'){const {bindPeopleLoading,bindLifeNavigation}=await import('./people-reading.js?v=74603104776baee7');bindPeopleLoading(main,{text:cv});bindLifeNavigation(main,{onChange:saveContext});}
     updateNavigation(parts);renderedHash=location.hash;ready=true;saveContext();
     setPageTitle(parts[0]==='read'?section.title:knowledgeTitle);
   }catch(e){
@@ -855,9 +892,9 @@ async function boot(){
       const warm=decodeURIComponent(initialRead[1]);
       data(`sections/${warm}.json`).catch(()=>{});
       if(runtimePath)json(runtimePath+'anchors/'+encodeURIComponent(warm)+'.json').catch(()=>{});
-      import('./reading-controls.js?v=7ab9854108da2476').catch(()=>{});
-      import('./note-sheet.js?v=7ab9854108da2476').catch(()=>{});
-      import('./note-popover.js?v=7ab9854108da2476').catch(()=>{});
+      import('./reading-controls.js?v=74603104776baee7').catch(()=>{});
+      import('./note-sheet.js?v=74603104776baee7').catch(()=>{});
+      import('./note-popover.js?v=74603104776baee7').catch(()=>{});
     }catch{}
   }
   [book,site,zhDisplay,fingerprints]=await Promise.all([config.bookFile?json(config.bookFile):data('book.json'),json('site.json'),json('knowledge/zh-display.json'),runtimePath?json(runtimePath+'fingerprints.json'):null]);
@@ -869,8 +906,20 @@ async function boot(){
   const extras=(site.supplements||[]).flatMap(g=>g.sections);
   if(new Set(extras).size!==extras.length||extras.some(id=>!book.sections.some(s=>s.id===id&&s.kind!=='chapter')))throw Error('补充材料暂时无法载入');
   storageKey=`epub-reader:${book.id}:${book.source_sha256}`;
-  prefs={zh:'s',fs:20,mode:'both',showNoteMarkers:true,...safeRead(storageKey+':preferences',{})};
-  prefs.noteDisplay=Object.fromEntries(Object.keys(book.note_types).map(type=>[type,['hidden','folded','expanded'].includes(prefs.noteDisplay?.[type])?prefs.noteDisplay[type]:(prefs.noteVisibility?.[type]??prefs.showNoteMarkers!==false)?'folded':'hidden']));
+  // Site config decides which annotation layers offer the inline (随文) copy.
+  inlineTypes=new Set((site.noteInline||[]).filter(k=>book.note_types[k]));
+  const savedPrefs=safeRead(storageKey+':preferences',{});
+  prefs={zh:'s',fs:20,mode:'both',showNoteMarkers:true,...savedPrefs};
+  // A profile with no note choice yet opens inline layers inline; everything
+  // else keeps the click-to-view default and the legacy boolean migration.
+  const freshProfile=!('noteDisplay' in savedPrefs)&&!('noteVisibility' in savedPrefs)&&!('showNoteMarkers' in savedPrefs);
+  prefs.noteDisplay=Object.fromEntries(Object.keys(book.note_types).map(type=>{
+    const saved=prefs.noteDisplay?.[type];
+    if(['hidden','folded','expanded'].includes(saved))return[type,saved];
+    if(saved==='inline'&&inlineTypes.has(type))return[type,saved];
+    if(saved===undefined&&freshProfile&&inlineTypes.has(type))return[type,'inline'];
+    return[type,(prefs.noteVisibility?.[type]??prefs.showNoteMarkers!==false)?'folded':'hidden'];
+  }));
   delete prefs.noteVisibility;
   delete prefs.showNoteMarkers;
   prefs.fs=Math.min(30,Math.max(16,Number(prefs.fs)||20));

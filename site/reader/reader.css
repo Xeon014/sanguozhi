@@ -68,7 +68,8 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .site-head nav>a[aria-current=page],.nav-group.is-current>summary{color:var(--accent)}
 .site-head nav>a[aria-current=page]{text-decoration:underline}
 .nav-group{position:relative}
-.nav-group>summary{display:list-item;list-style:revert;padding:12px 0}
+.nav-group>summary{list-style:none;padding:12px 0}
+.nav-group>summary::-webkit-details-marker{display:none}
 .nav-links{position:absolute;top:calc(100% + 15px);left:-20px;min-width:188px;padding:12px;border:1px solid var(--line);border-top:2px solid var(--ink);background:var(--surface);box-shadow:0 12px 28px #00000012}
 .site-head .nav-links a{display:block;min-height:44px;padding:10px 12px;font:14px/1.7 var(--sans)}
 .nav-links a:hover{background:var(--soft)}
@@ -176,14 +177,18 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .column .block:last-child{margin-bottom:0}
 .translation{border-left:1px solid var(--line);padding-left:24px;margin:20px 0 0}
 .translation .block{font-size:calc(var(--fs) - 2px);color:var(--muted)}
-.mode-original .translation,.mode-translation .original,.mode-translation .note-stacks{display:none}
+.mode-original .translation,.mode-translation .original,.mode-translation .note-stacks,.mode-translation .note-inline{display:none}
 .mode-translation .translation{border:0;padding:0;margin:0}
 .mode-translation .translation .block{font-size:var(--fs);color:var(--ink)}
 .passage-link{position:absolute;left:-24px;top:24px;opacity:0;font:18px var(--sans);color:var(--muted)}
 .reading-group:hover>.passage-link,.passage-link:focus-visible{opacity:1}
 .note-ref{display:inline-flex;align-items:center;justify-content:center;min-width:26px;min-height:28px;padding:1px 3px;margin:0 1px;vertical-align:baseline;font:11px/1.4 var(--sans);color:var(--modern);border:0;background:none}
 .note-ref.note-secondary{color:var(--pei)}
-.note-ref[hidden],.note-stack[hidden],.note-stacks[hidden]{display:none!important}
+.note-ref[hidden],.note-stack[hidden],.note-stacks[hidden],.note-inline[hidden]{display:none!important}
+/* Inline (随文) copies flow after their markers in small serif, the layer's
+   colour leaning toward ink so long notes still read as body text. */
+.note-inline{font-family:'Noto Serif SC','Noto Serif TC','Songti SC','SimSun',serif;font-size:calc(var(--fs) - 4px);line-height:1.9;color:color-mix(in srgb,var(--pei) 45%,var(--ink))}
+.note-inline.note-primary{color:color-mix(in srgb,var(--modern) 45%,var(--ink))}
 .note-stacks{margin-top:12px}
 .note-stacks:empty{display:none}
 .note-stack{color:var(--modern);font:14px/1.8 var(--sans)}
