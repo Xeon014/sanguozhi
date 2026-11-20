@@ -1,9 +1,9 @@
 // Heavy views load per route so first paint only needs the shell helpers;
 // pure address canonicalizers stay in route-hash.js for every navigation.
-import {atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash, legacyKnowledgeHash} from './route-hash.js?v=74603104776baee7';
-import {createJSONLoader,attachRuntime,presentPeople,hydratePacket} from './data-loader.js?v=74603104776baee7';
-import {searchHash,canonicalSearchHash,searchPeople,highlightText,firstMatch} from './search.js?v=74603104776baee7';
-import {blockText} from './event-reading.js?v=74603104776baee7';
+import {atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash, legacyKnowledgeHash} from './route-hash.js?v=f769547b68cdb97f';
+import {createJSONLoader,attachRuntime,presentPeople,hydratePacket} from './data-loader.js?v=f769547b68cdb97f';
+import {searchHash,canonicalSearchHash,searchPeople,highlightText,firstMatch} from './search.js?v=f769547b68cdb97f';
+import {blockText} from './event-reading.js?v=f769547b68cdb97f';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
 const initialTitle = document.title;
@@ -231,7 +231,7 @@ function atlasCommit(hash) {
   renderedHash=hash;
 }
 async function showAtlas(host,bundle,qs,saved,home=false) {
-  const {mountAtlas}=await import('./atlas.js?v=74603104776baee7');
+  const {mountAtlas}=await import('./atlas.js?v=f769547b68cdb97f');
   // The renderer module may resolve after navigation moved on; never mount into a detached host.
   if(!host.isConnected)return;
   const state=mountAtlas(host,bundle,{esc,cv,qs,home,saved:saved?.atlas,onState:atlasCommit,onChange:saveContext});
@@ -494,7 +494,7 @@ async function readSection(id,target,version,saved) {
   if(!info)throw Error('目录中没有这一章节');
   // Each section carries its own anchor shard; a legacy book that already has
   // the full index needs no extra request.
-  const [loaded,anchors,controls,sheetModule,popoverModule]=await Promise.all([data(`sections/${id}.json`),book.anchor_index||json(runtimePath+'anchors/'+encodeURIComponent(id)+'.json'),import('./reading-controls.js?v=74603104776baee7'),import('./note-sheet.js?v=74603104776baee7'),import('./note-popover.js?v=74603104776baee7')]);
+  const [loaded,anchors,controls,sheetModule,popoverModule]=await Promise.all([data(`sections/${id}.json`),book.anchor_index||json(runtimePath+'anchors/'+encodeURIComponent(id)+'.json'),import('./reading-controls.js?v=f769547b68cdb97f'),import('./note-sheet.js?v=f769547b68cdb97f'),import('./note-popover.js?v=f769547b68cdb97f')]);
   const {readingSettingsHTML,chapterProgressHTML,mountReadingControls}=controls;
   if(version!==routeVersion)return;
   book.anchor_index??={};Object.assign(book.anchor_index,anchors);
@@ -512,7 +512,7 @@ async function readSection(id,target,version,saved) {
   const body=aligned?section.groups.map(g=>`<section class="reading-group" id="${g.id}" tabindex="-1"><a class="passage-link" href="${url(id,g.id)}" aria-label="${cv('此处链接')}" title="${cv('此处链接')}">⌁</a><div class="parallel"><div class="column original">${g.original.map(b=>blockHTML(b)).join('')}</div><div class="column translation">${g.translation.map(b=>blockHTML(b)).join('')}</div></div>${notesHTML(g)}</section>`).join(''):`<div class="source-reading">${section.blocks.filter(b=>b!==titleBlock).map(b=>blockHTML(b.id,{source:true,backlinks:true})).join('')}</div>`;
   const peers=info.kind==='chapter'?book.sections.filter(s=>s.kind==='chapter'):(site.supplements||[]).flatMap(g=>g.sections).map(sid=>book.sections.find(s=>s.id===sid));
   const idx=peers.findIndex(s=>s.id===id),prev=idx>=0?peers[idx-1]:null,next=idx>=0?peers[idx+1]:null;
-  main.innerHTML=`<div class="chapter-layout">${sidebarHTML()}<article class="chapter-article"><header class="chapter-heading"><p class="eyebrow">${esc(cv(chapterCaption(info)))}</p><h1 ${titleBlock?`id="${esc(titleBlock.id)}" tabindex="-1"`:''}>${titleBlock?tokenHTML(titleBlock.tokens,{source:true}):esc(cv(section.title))}</h1></header>${toolbar}<div id="reading">${body}</div><nav class="pager" aria-label="${cv('相邻篇目')}">${prev?`<a href="${url(prev.id)}">${cv('上一篇')}：${esc(cv(prev.title))}</a>`:'<span></span>'}${next?`<a href="${url(next.id)}">${cv('下一篇')}：${esc(cv(next.title))}</a>`:''}</nav></article></div>`;
+  main.innerHTML=`<div class="chapter-layout">${sidebarHTML()}<article class="chapter-article"><header class="chapter-heading"><p class="eyebrow">${esc(cv(chapterCaption(info)))}</p><h1 ${titleBlock?`id="${esc(titleBlock.id)}" tabindex="-1"`:''}>${titleBlock?tokenHTML(titleBlock.tokens,{source:true}):esc(cv(section.title))}</h1></header>${toolbar}<button type="button" class="reading-fab" id="open-reading-settings-fab" aria-label="${cv('阅读设置')}" aria-haspopup="dialog" aria-controls="reading-settings">Aa</button><div id="reading">${body}</div><nav class="pager" aria-label="${cv('相邻篇目')}">${prev?`<a href="${url(prev.id)}">${cv('上一篇')}：${esc(cv(prev.title))}</a>`:'<span></span>'}${next?`<a href="${url(next.id)}">${cv('下一篇')}：${esc(cv(next.title))}</a>`:''}</nav></article></div>`;
   // Marker order is reading order: it anchors transient views and sequences
   // the browse types.
   noteRefs=new Map();typeNotes=new Map();
@@ -546,7 +546,9 @@ async function readSection(id,target,version,saved) {
   if(aligned)setMode(prefs.mode);else activeMode='source';
   $('#open-directory').onclick=openDirectory;
   if($('#reading-mode'))$('#reading-mode').onchange=event=>{const saved=viewSnapshot();setMode(event.target.value);restoreView(saved);saveContext();};
-  document.querySelectorAll('[data-note]').forEach(b=>b.onclick=()=>{
+  // Only markers locate; inline copies stay plain reading text so a body
+  // tap still recalls the toolbar instead of jumping the page.
+  document.querySelectorAll('.note-ref[data-note]').forEach(b=>b.onclick=()=>{
     const display=prefs.noteDisplay[b.dataset.noteType];
     // The inline preference keeps its note beside the marker; a tap locates.
     if(display==='inline'){
@@ -755,7 +757,7 @@ async function route(){
       let atlas=await loadAtlas();if(version!==routeVersion)return;
       if(!atlas)throw Error('时代星图暂时不可用');
       if(['q','person','year'].some(k=>qs.get(k))){
-        const [{filteredOverviewItems},catalog,editorial]=await Promise.all([import('./event-editorial.js?v=74603104776baee7'),runtimePath?runtime('highlights.json'):json(site.knowledge.file),json(site.knowledge.editorial)]);
+        const [{filteredOverviewItems},catalog,editorial]=await Promise.all([import('./event-editorial.js?v=f769547b68cdb97f'),runtimePath?runtime('highlights.json'):json(site.knowledge.file),json(site.knowledge.editorial)]);
         if(version!==routeVersion)return;
         const prints=catalog.section_sha256||fingerprints?.section_sha256;
         if(catalog.source_sha256!==book.source_sha256||editorial.source_sha256!==catalog.source_sha256||Object.entries(editorial.section_sha256).some(([id,sha])=>prints[id]!==sha))throw Error('史事资料版本不一致');
@@ -778,7 +780,7 @@ async function route(){
     }
     else if(['people','events','timeline'].includes(parts[0])){
       if(!site.knowledge)throw Error('查询资料暂时不可用');
-      const [{renderKnowledge,canonicalKnowledgeHash},{biographyContext}]=await Promise.all([import('./knowledge.js?v=74603104776baee7'),import('./profiles.js?v=74603104776baee7')]);
+      const [{renderKnowledge,canonicalKnowledgeHash},{biographyContext}]=await Promise.all([import('./knowledge.js?v=f769547b68cdb97f'),import('./profiles.js?v=f769547b68cdb97f')]);
       // The full-record query view and the legacy timeline read the slim
       // events index instead of the whole catalog; every other route already
       // had a dedicated shard or projection.
@@ -841,12 +843,12 @@ async function route(){
       }
     }
     else if(parts[0]==='topics'&&parts.length===1){
-      const [{topicDirectory},presentation]=await Promise.all([import('./topics.js?v=74603104776baee7'),loadTopicPresentation()]);if(version!==routeVersion)return;
+      const [{topicDirectory},presentation]=await Promise.all([import('./topics.js?v=f769547b68cdb97f'),loadTopicPresentation()]);if(version!==routeVersion)return;
       if(!presentation)throw Error('专题暂时不可用');
       main.innerHTML=topicDirectory(presentation,{esc,cv});knowledgeTitle='专题研究';
     }
     else if(parts[0]==='topics'){
-      const [{renderTopic},bound]=await Promise.all([import('./topics.js?v=74603104776baee7'),loadTopics(parts[1])]);if(version!==routeVersion)return;
+      const [{renderTopic},bound]=await Promise.all([import('./topics.js?v=f769547b68cdb97f'),loadTopics(parts[1])]);if(version!==routeVersion)return;
       const topic=bound?.presentation.topics.find(t=>t.id===parts[1]);
       if(!topic||parts.length!==2)throw Error('未找到此专题');
       const ids=Object.keys(bound.presentation.section_sha256);
@@ -868,7 +870,7 @@ async function route(){
     if(version!==routeVersion)return;
     restoreView(saved);
     if(!saved||saved.y===undefined){const target=main.querySelector('[data-source-target]');if(target){target.scrollIntoView({block:'start'});target.focus({preventScroll:true});}}
-    if(parts[0]==='people'){const {bindPeopleLoading,bindLifeNavigation}=await import('./people-reading.js?v=74603104776baee7');bindPeopleLoading(main,{text:cv});bindLifeNavigation(main,{onChange:saveContext});}
+    if(parts[0]==='people'){const {bindPeopleLoading,bindLifeNavigation}=await import('./people-reading.js?v=f769547b68cdb97f');bindPeopleLoading(main,{text:cv});bindLifeNavigation(main,{onChange:saveContext});}
     updateNavigation(parts);renderedHash=location.hash;ready=true;saveContext();
     setPageTitle(parts[0]==='read'?section.title:knowledgeTitle);
   }catch(e){
@@ -892,9 +894,9 @@ async function boot(){
       const warm=decodeURIComponent(initialRead[1]);
       data(`sections/${warm}.json`).catch(()=>{});
       if(runtimePath)json(runtimePath+'anchors/'+encodeURIComponent(warm)+'.json').catch(()=>{});
-      import('./reading-controls.js?v=74603104776baee7').catch(()=>{});
-      import('./note-sheet.js?v=74603104776baee7').catch(()=>{});
-      import('./note-popover.js?v=74603104776baee7').catch(()=>{});
+      import('./reading-controls.js?v=f769547b68cdb97f').catch(()=>{});
+      import('./note-sheet.js?v=f769547b68cdb97f').catch(()=>{});
+      import('./note-popover.js?v=f769547b68cdb97f').catch(()=>{});
     }catch{}
   }
   [book,site,zhDisplay,fingerprints]=await Promise.all([config.bookFile?json(config.bookFile):data('book.json'),json('site.json'),json('knowledge/zh-display.json'),runtimePath?json(runtimePath+'fingerprints.json'):null]);

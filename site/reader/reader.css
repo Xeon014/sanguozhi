@@ -169,6 +169,11 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .chapter-progress input::-moz-range-thumb{width:14px;height:14px;border:2px solid var(--paper);border-radius:2px;background:var(--accent)}
 .progress-position{font:13px/1.5 var(--sans);color:var(--muted);font-variant-numeric:tabular-nums}
 .progress-tip{position:absolute;top:calc(100% + 4px);z-index:1;white-space:nowrap;max-width:min(480px,calc(100vw - 24px));overflow:hidden;text-overflow:ellipsis;margin:0;padding:8px 12px;border:1px solid var(--line);border-top:2px solid var(--ink);background:var(--surface);box-shadow:0 6px 18px #00000012;font:12px/1.6 var(--sans);color:var(--ink);pointer-events:none}
+/* Books-style corner settings entry. Phones only; it shares the toolbar's
+   show/conceal state and never occupies the reading column. */
+.reading-fab{display:none}
+@media(prefers-reduced-motion:no-preference){.reading-fab:not([hidden]){animation:reading-fab-in .16s ease-out}}
+@keyframes reading-fab-in{from{opacity:0}to{opacity:1}}
 
 .reading-group{position:relative;padding:22px 0 28px}
 .parallel{display:block}
@@ -636,7 +641,7 @@ button.atlas-lane:focus-visible{outline:2px solid var(--accent);outline-offset:-
 .yearbook-compact .yearbook-entry-body{margin-left:-112px;padding-left:0;border-left:0}
 .yearbook-page:not(.yearbook-compact) .yearbook-entry-body{padding-left:12px}
 #main{width:calc(100% - 40px);padding:32px 0 64px}
-#main[data-page]:not([data-page=home]){padding-top:20px}
+#main[data-page]:not([data-page=home]):not([data-page=read]){padding-top:20px}
 .site-head{position:sticky;min-height:70px;padding:12px 20px;gap:6px;flex-wrap:wrap}
 .brand{font-size:24px;padding:0}
 #nav-toggle{display:block;margin-left:auto}
@@ -688,6 +693,13 @@ input,select{font-size:16px}
 .toolbar{font-size:13px}
 .toolbar-row{gap:4px}
 .toolbar-row>button{padding-inline:8px}
+/* The phone reading page breathes like a book leaf: wider gutters than the
+   site default, heading clear of the toolbar, last line clear of the home
+   indicator and landscape notches. */
+#main[data-page=read]{width:calc(100% - clamp(48px,15vw,56px) - env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px));padding:32px 0 calc(112px + env(safe-area-inset-bottom,0px))}
+/* Settings live in one phone entry: the corner button beside the thumb. */
+.reading-settings-trigger{display:none}
+.reading-fab{position:fixed;right:max(20px,env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:36;display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:0 18px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:15px/1 'Noto Serif SC','Noto Serif TC','Songti SC','SimSun',serif;letter-spacing:.06em;box-shadow:0 10px 24px #2028231f}
 #reading-mode{width:72px;padding-inline:6px;font-size:16px}
 .mode-switch button{min-width:44px;padding:8px 6px}
 .reading-settings{inset:auto 0 0;width:100%;max-width:100%;max-height:calc(100dvh - env(safe-area-inset-top) - 12px);margin:0;padding-bottom:env(safe-area-inset-bottom);border-inline:0;border-bottom:0;border-top:2px solid var(--ink)}

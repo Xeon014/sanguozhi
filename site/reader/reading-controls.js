@@ -18,6 +18,9 @@ export function chapterProgressHTML(cv) {
 export function mountReadingControls({host,mobileLayout,entries,getPrefs,getView,onNoteChange,onFontChange,onJump,onPositionChange,cv}) {
   const controller=new AbortController(),options={signal:controller.signal};
   const dialog=host.querySelector('#reading-settings'),opener=host.querySelector('#open-reading-settings');
+  // Phones move the settings entry to a corner button that shares the
+  // toolbar's show/conceal state instead of occupying the reading column.
+  const fab=host.querySelector('#open-reading-settings-fab');
   const toggle=host.querySelector('#toggle-reading-progress'),bar=host.querySelector('#chapter-progress'),range=bar.querySelector('input'),position=toggle.querySelector('.progress-position'),tip=bar.querySelector('.progress-tip');
   const toolbar=host.querySelector('.toolbar'),reading=host.querySelector('#reading'),head=document.querySelector('.site-head');
   const items=entries.map(([el])=>el),labels=entries.map(([,text])=>cv(text));
@@ -32,7 +35,9 @@ export function mountReadingControls({host,mobileLayout,entries,getPrefs,getView
   function showToolbar() {
     concealed=false;toolbar.classList.remove('is-concealed');toolbar.inert=false;
     document.documentElement.style.setProperty('--reading-offset',((parseFloat(getComputedStyle(toolbar).top)||0)+toolbar.offsetHeight+12)+'px');
+    syncFab();
   }
+  function syncFab() {if(fab)fab.hidden=!mobileLayout.matches||concealed;}
   function locked() {
     return pointerActive||toolbarPointer||!bar.hidden||!!document.querySelector('dialog[open]')||
       keyboardFocus&&toolbar.contains(document.activeElement);
@@ -56,6 +61,7 @@ export function mountReadingControls({host,mobileLayout,entries,getPrefs,getView
       else if(direction>0&&distance>=56&&!concealed){
         concealed=true;toolbar.classList.add('is-concealed');toolbar.inert=true;
         document.documentElement.style.setProperty('--reading-offset','12px');distance=0;
+        syncFab();
       }
     }
     placeProgress();refresh();
@@ -110,7 +116,9 @@ export function mountReadingControls({host,mobileLayout,entries,getPrefs,getView
       if(recalling)toolbar.style.transition='none';
       showToolbar();
       if(recalling){
-        event.preventDefault();(event.shiftKey?opener:toolbar.querySelector('#open-directory')).focus({preventScroll:true});
+        // Backward tab lands on the last control: the corner button on phones.
+        const last=mobileLayout.matches&&fab&&!fab.hidden?fab:opener;
+        event.preventDefault();(event.shiftKey?last:toolbar.querySelector('#open-directory')).focus({preventScroll:true});
         toolbar.style.removeProperty('transition');
       }
     }
@@ -160,14 +168,19 @@ export function mountReadingControls({host,mobileLayout,entries,getPrefs,getView
     revealedNote=null;return true;
   }
   function closeSettings() {if(dialog.open)dialog.close();}
-  listen(opener,'click',()=>{fontView=null;prepareJump();cancelPreview();syncSettings();document.documentElement.classList.add('reading-settings-open');dialog.showModal();});
+  const openSettings=()=>{fontView=null;prepareJump();cancelPreview();syncSettings();document.documentElement.classList.add('reading-settings-open');dialog.showModal();};
+  listen(opener,'click',openSettings);
+  if(fab)listen(fab,'click',openSettings);
   listen(dialog.querySelector('#close-reading-settings'),'click',closeSettings);
   // Dismiss only an actual backdrop click, never an internal focus transition.
   let backdrop=false;
   const outside=event=>{const r=dialog.getBoundingClientRect();return event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom;};
   listen(dialog,'pointerdown',event=>{backdrop=event.target===dialog&&outside(event);});
   listen(dialog,'click',event=>{if(backdrop&&event.target===dialog&&outside(event))closeSettings();backdrop=false;});
-  listen(dialog,'close',()=>{document.documentElement.classList.remove('reading-settings-open');if(!disposed&&opener.isConnected)opener.focus({preventScroll:true});});
+  listen(dialog,'close',()=>{document.documentElement.classList.remove('reading-settings-open');
+    // Focus returns to whichever entry is actually rendered at this width.
+    const returning=(mobileLayout.matches&&fab&&!fab.hidden)?fab:opener;
+    if(!disposed&&returning.isConnected)returning.focus({preventScroll:true});});
   for(const input of dialog.querySelectorAll('[data-note-display]'))listen(input,'change',()=>{
     fontView=null;onNoteChange(input.dataset.noteDisplay,input.value);
   });
@@ -235,11 +248,12 @@ export function mountReadingControls({host,mobileLayout,entries,getPrefs,getView
     event.preventDefault();ignoreChange=false;commit(next);
   });
   listen(window,'scroll',onScroll,{passive:true});listen(window,'resize',()=>{resetScrollIntent();showToolbar();cancelPreview();refresh();});
+  listen(mobileLayout,'change',()=>{syncFab();});
   listen(reading,'toggle',refresh,{capture:true});listen(reading,'load',refresh,{capture:true});
   const fitToolbar=()=>{if(!concealed)showToolbar();placeProgress();refresh();};
   const observer=new ResizeObserver(fitToolbar);observer.observe(reading);observer.observe(toolbar);if(head)observer.observe(head);
   document.fonts?.ready.then(refresh);
-  fitToolbar();applyNotes();update();
+  fitToolbar();applyNotes();update();syncFab();
   return {applyNotes,syncSettings,refresh,revealNote,dismissNote,prepareJump,resetScrollIntent,
     revealedId:()=>revealedNote?.id||null,
     clearReveal:type=>{if(revealedNote?.type===type)revealedNote=null;},
