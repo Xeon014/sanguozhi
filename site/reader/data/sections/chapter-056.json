@@ -1,7 +1,7 @@
 {
   "id": "chapter-056",
   "title": "朱治朱然吕范朱桓传第十一",
-  "heading": "【三国志译注卷五十六】 吴志十一",
+  "heading": "【三国志卷五十六】 吴志十一",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷五十六】 吴志十一 "
+          "text": "【三国志卷五十六】 吴志十一 "
         }
       ],
-      "text": "【三国志译注卷五十六】 吴志十一",
+      "text": "【三国志卷五十六】 吴志十一",
       "kind": "heading",
       "anchors": [
         "filepos7603514"

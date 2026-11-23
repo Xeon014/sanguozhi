@@ -1,7 +1,7 @@
 {
   "id": "chapter-026",
   "title": "满田牵郭传第二十六",
-  "heading": "【三国志译注卷二十六】 魏志二十六",
+  "heading": "【三国志卷二十六】 魏志二十六",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷二十六】 魏志二十六 "
+          "text": "【三国志卷二十六】 魏志二十六 "
         }
       ],
-      "text": "【三国志译注卷二十六】 魏志二十六",
+      "text": "【三国志卷二十六】 魏志二十六",
       "kind": "heading",
       "anchors": [
         "filepos4165934"

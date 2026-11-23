@@ -1,7 +1,7 @@
 {
   "id": "chapter-038",
   "title": "许麋孙简伊秦传第八",
-  "heading": "【三国志译注卷三十八】 蜀志八",
+  "heading": "【三国志卷三十八】 蜀志八",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷三十八】 蜀志八 "
+          "text": "【三国志卷三十八】 蜀志八 "
         }
       ],
-      "text": "【三国志译注卷三十八】 蜀志八",
+      "text": "【三国志卷三十八】 蜀志八",
       "kind": "heading",
       "anchors": [
         "filepos5539566"

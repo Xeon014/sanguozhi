@@ -1,7 +1,7 @@
 {
   "id": "chapter-018",
   "title": "二李臧文吕许典二庞阎传第十八",
-  "heading": "【三国志译注卷十八】 魏志十八",
+  "heading": "【三国志卷十八】 魏志十八",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷十八】 魏志十八 "
+          "text": "【三国志卷十八】 魏志十八 "
         }
       ],
-      "text": "【三国志译注卷十八】 魏志十八",
+      "text": "【三国志卷十八】 魏志十八",
       "kind": "heading",
       "anchors": [
         "filepos2942409"

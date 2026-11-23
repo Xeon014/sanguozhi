@@ -1,7 +1,7 @@
 {
   "id": "chapter-013",
   "title": "钟繇华歆王朗传第十三",
-  "heading": "【三国志译注卷十三】 魏志十三",
+  "heading": "【三国志卷十三】 魏志十三",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷十三】 魏志十三 "
+          "text": "【三国志卷十三】 魏志十三 "
         }
       ],
-      "text": "【三国志译注卷十三】 魏志十三",
+      "text": "【三国志卷十三】 魏志十三",
       "kind": "heading",
       "anchors": [
         "filepos2200972"

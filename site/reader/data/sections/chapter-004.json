@@ -1,7 +1,7 @@
 {
   "id": "chapter-004",
   "title": "三少帝纪第四",
-  "heading": "【三国志译注卷四】 魏志四",
+  "heading": "【三国志卷四】 魏志四",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷四】 魏志四 "
+          "text": "【三国志卷四】 魏志四 "
         }
       ],
-      "text": "【三国志译注卷四】 魏志四",
+      "text": "【三国志卷四】 魏志四",
       "kind": "heading",
       "anchors": [
         "filepos705601"

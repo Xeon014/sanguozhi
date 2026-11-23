@@ -1,7 +1,7 @@
 {
   "id": "chapter-048",
   "title": "三嗣主传第三",
-  "heading": "【三国志译注卷四十八】 吴志三",
+  "heading": "【三国志卷四十八】 吴志三",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷四十八】 吴志三 "
+          "text": "【三国志卷四十八】 吴志三 "
         }
       ],
-      "text": "【三国志译注卷四十八】 吴志三",
+      "text": "【三国志卷四十八】 吴志三",
       "kind": "heading",
       "anchors": [
         "filepos6688547"

@@ -1,7 +1,7 @@
 {
   "id": "chapter-012",
   "title": "崔毛徐何邢鲍司马传第十二",
-  "heading": "【三国志译注卷十二】 魏志十二",
+  "heading": "【三国志卷十二】 魏志十二",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷十二】 魏志十二 "
+          "text": "【三国志卷十二】 魏志十二 "
         }
       ],
-      "text": "【三国志译注卷十二】 魏志十二",
+      "text": "【三国志卷十二】 魏志十二",
       "kind": "heading",
       "anchors": [
         "filepos2062440"

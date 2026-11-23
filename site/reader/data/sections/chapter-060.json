@@ -1,7 +1,7 @@
 {
   "id": "chapter-060",
   "title": "贺全吕周钟离传第十五",
-  "heading": "【三国志译注卷六十】 吴志十五",
+  "heading": "【三国志卷六十】 吴志十五",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷六十】 吴志十五 "
+          "text": "【三国志卷六十】 吴志十五 "
         }
       ],
-      "text": "【三国志译注卷六十】 吴志十五",
+      "text": "【三国志卷六十】 吴志十五",
       "kind": "heading",
       "anchors": [
         "filepos8072275"

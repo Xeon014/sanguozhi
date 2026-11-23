@@ -1,7 +1,7 @@
 {
   "id": "chapter-014",
   "title": "程郭董刘蒋刘传第十四",
-  "heading": "【三国志译注卷十四】 魏志十四",
+  "heading": "【三国志卷十四】 魏志十四",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷十四】 魏志十四 "
+          "text": "【三国志卷十四】 魏志十四 "
         }
       ],
-      "text": "【三国志译注卷十四】 魏志十四",
+      "text": "【三国志卷十四】 魏志十四",
       "kind": "heading",
       "anchors": [
         "filepos2384449"

@@ -1,7 +1,7 @@
 {
   "id": "chapter-050",
   "title": "妃嫔传第五",
-  "heading": "【三国志译注卷五十】 吴志五",
+  "heading": "【三国志卷五十】 吴志五",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷五十】 吴志五 "
+          "text": "【三国志卷五十】 吴志五 "
         }
       ],
-      "text": "【三国志译注卷五十】 吴志五",
+      "text": "【三国志卷五十】 吴志五",
       "kind": "heading",
       "anchors": [
         "filepos6945096"

@@ -1,7 +1,7 @@
 {
   "id": "chapter-031",
   "title": "刘二牧传第一",
-  "heading": "【三国志译注卷三十一】 蜀志一",
+  "heading": "【三国志卷三十一】 蜀志一",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷三十一】 蜀志一 "
+          "text": "【三国志卷三十一】 蜀志一 "
         }
       ],
-      "text": "【三国志译注卷三十一】 蜀志一",
+      "text": "【三国志卷三十一】 蜀志一",
       "kind": "heading",
       "anchors": [
         "filepos4972623"

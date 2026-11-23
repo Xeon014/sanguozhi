@@ -1,7 +1,7 @@
 {
   "id": "chapter-025",
   "title": "辛毗杨阜高堂隆传第二十五",
-  "heading": "【三国志译注卷二十五】 魏志二十五",
+  "heading": "【三国志卷二十五】 魏志二十五",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷二十五】 魏志二十五 "
+          "text": "【三国志卷二十五】 魏志二十五 "
         }
       ],
-      "text": "【三国志译注卷二十五】 魏志二十五",
+      "text": "【三国志卷二十五】 魏志二十五",
       "kind": "heading",
       "anchors": [
         "filepos3948542"

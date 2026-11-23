@@ -1,7 +1,7 @@
 {
   "id": "chapter-030",
   "title": "乌丸鲜卑东夷传第三十",
-  "heading": "【三国志译注卷三十】 魏志三十",
+  "heading": "【三国志卷三十】 魏志三十",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷三十】 魏志三十 "
+          "text": "【三国志卷三十】 魏志三十 "
         }
       ],
-      "text": "【三国志译注卷三十】 魏志三十",
+      "text": "【三国志卷三十】 魏志三十",
       "kind": "heading",
       "anchors": [
         "filepos4794397"

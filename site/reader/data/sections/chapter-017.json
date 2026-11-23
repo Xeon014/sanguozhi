@@ -1,7 +1,7 @@
 {
   "id": "chapter-017",
   "title": "张乐于张徐传第十七",
-  "heading": "【三国志译注卷十七】 魏志十七",
+  "heading": "【三国志卷十七】 魏志十七",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷十七】 魏志十七 "
+          "text": "【三国志卷十七】 魏志十七 "
         }
       ],
-      "text": "【三国志译注卷十七】 魏志十七",
+      "text": "【三国志卷十七】 魏志十七",
       "kind": "heading",
       "anchors": [
         "filepos2859215"

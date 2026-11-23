@@ -1,7 +1,7 @@
 {
   "id": "chapter-024",
   "title": "韩崔高孙王传第二十四",
-  "heading": "【三国志译注卷二十四】 魏志二十四",
+  "heading": "【三国志卷二十四】 魏志二十四",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷二十四】 魏志二十四 "
+          "text": "【三国志卷二十四】 魏志二十四 "
         }
       ],
-      "text": "【三国志译注卷二十四】 魏志二十四",
+      "text": "【三国志卷二十四】 魏志二十四",
       "kind": "heading",
       "anchors": [
         "filepos3813284"

@@ -1,7 +1,7 @@
 {
   "id": "chapter-044",
   "title": "蒋琬费祎姜维传第十四",
-  "heading": "【三国志译注卷四十四】 蜀志十四",
+  "heading": "【三国志卷四十四】 蜀志十四",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷四十四】 蜀志十四 "
+          "text": "【三国志卷四十四】 蜀志十四 "
         }
       ],
-      "text": "【三国志译注卷四十四】 蜀志十四",
+      "text": "【三国志卷四十四】 蜀志十四",
       "kind": "heading",
       "anchors": [
         "filepos6151253"

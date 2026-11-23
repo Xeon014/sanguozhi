@@ -1,7 +1,7 @@
 {
   "id": "chapter-065",
   "title": "王楼贺韦华传第二十",
-  "heading": "【三国志译注卷六十五】 吴志二十",
+  "heading": "【三国志卷六十五】 吴志二十",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷六十五】 吴志二十 "
+          "text": "【三国志卷六十五】 吴志二十 "
         }
       ],
-      "text": "【三国志译注卷六十五】 吴志二十",
+      "text": "【三国志卷六十五】 吴志二十",
       "kind": "heading",
       "anchors": [
         "filepos8558441"

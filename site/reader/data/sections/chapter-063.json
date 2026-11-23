@@ -1,7 +1,7 @@
 {
   "id": "chapter-063",
   "title": "吴范刘惇赵达传第十八",
-  "heading": "【三国志译注卷六十三】 吴志十八",
+  "heading": "【三国志卷六十三】 吴志十八",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷六十三】 吴志十八 "
+          "text": "【三国志卷六十三】 吴志十八 "
         }
       ],
-      "text": "【三国志译注卷六十三】 吴志十八",
+      "text": "【三国志卷六十三】 吴志十八",
       "kind": "heading",
       "anchors": [
         "filepos8350063"

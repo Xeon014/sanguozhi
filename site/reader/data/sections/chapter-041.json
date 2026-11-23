@@ -1,7 +1,7 @@
 {
   "id": "chapter-041",
   "title": "霍王向张杨费传第十一",
-  "heading": "【三国志译注卷四十一】 蜀志十一",
+  "heading": "【三国志卷四十一】 蜀志十一",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷四十一】 蜀志十一 "
+          "text": "【三国志卷四十一】 蜀志十一 "
         }
       ],
-      "text": "【三国志译注卷四十一】 蜀志十一",
+      "text": "【三国志卷四十一】 蜀志十一",
       "kind": "heading",
       "anchors": [
         "filepos5828695"

@@ -1,7 +1,7 @@
 {
   "id": "chapter-009",
   "title": "诸夏侯曹传第九",
-  "heading": "【三国志译注卷九】 魏志九",
+  "heading": "【三国志卷九】 魏志九",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷九】 魏志九 "
+          "text": "【三国志卷九】 魏志九 "
         }
       ],
-      "text": "【三国志译注卷九】 魏志九",
+      "text": "【三国志卷九】 魏志九",
       "kind": "heading",
       "anchors": [
         "filepos1522594"

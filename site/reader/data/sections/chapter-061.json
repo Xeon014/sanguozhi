@@ -1,7 +1,7 @@
 {
   "id": "chapter-061",
   "title": "潘濬陆凯传第十六",
-  "heading": "【三国志译注卷六十一】 吴志十六",
+  "heading": "【三国志卷六十一】 吴志十六",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷六十一】 吴志十六 "
+          "text": "【三国志卷六十一】 吴志十六 "
         }
       ],
-      "text": "【三国志译注卷六十一】 吴志十六",
+      "text": "【三国志卷六十一】 吴志十六",
       "kind": "heading",
       "anchors": [
         "filepos8197150"

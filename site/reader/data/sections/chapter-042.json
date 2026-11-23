@@ -1,7 +1,7 @@
 {
   "id": "chapter-042",
   "title": "杜周杜许孟来尹李谯郤传第十二",
-  "heading": "【三国志译注卷四十二】 蜀志十二",
+  "heading": "【三国志卷四十二】 蜀志十二",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷四十二】 蜀志十二 "
+          "text": "【三国志卷四十二】 蜀志十二 "
         }
       ],
-      "text": "【三国志译注卷四十二】 蜀志十二",
+      "text": "【三国志卷四十二】 蜀志十二",
       "kind": "heading",
       "anchors": [
         "filepos5893128"

@@ -1,7 +1,7 @@
 {
   "id": "chapter-037",
   "title": "庞统法正传第七",
-  "heading": "【三国志译注卷三十七】 蜀志七",
+  "heading": "【三国志卷三十七】 蜀志七",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷三十七】 蜀志七 "
+          "text": "【三国志卷三十七】 蜀志七 "
         }
       ],
-      "text": "【三国志译注卷三十七】 蜀志七",
+      "text": "【三国志卷三十七】 蜀志七",
       "kind": "heading",
       "anchors": [
         "filepos5481030"

@@ -1,7 +1,7 @@
 {
   "id": "chapter-051",
   "title": "宗室传第六",
-  "heading": "【三国志译注卷五十一】 吴志六",
+  "heading": "【三国志卷五十一】 吴志六",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷五十一】 吴志六 "
+          "text": "【三国志卷五十一】 吴志六 "
         }
       ],
-      "text": "【三国志译注卷五十一】 吴志六",
+      "text": "【三国志卷五十一】 吴志六",
       "kind": "heading",
       "anchors": [
         "filepos6992645"

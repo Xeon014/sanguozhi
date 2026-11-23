@@ -1,7 +1,7 @@
 {
   "id": "chapter-010",
   "title": "荀彧荀攸贾诩传第十",
-  "heading": "【三国志译注卷十】 魏志十",
+  "heading": "【三国志卷十】 魏志十",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷十】 魏志十 "
+          "text": "【三国志卷十】 魏志十 "
         }
       ],
-      "text": "【三国志译注卷十】 魏志十",
+      "text": "【三国志卷十】 魏志十",
       "kind": "heading",
       "anchors": [
         "filepos1744040"

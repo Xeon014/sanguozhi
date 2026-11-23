@@ -1,7 +1,7 @@
 {
   "id": "chapter-015",
   "title": "刘司马梁张温贾传第十五",
-  "heading": "【三国志译注卷十五】 魏志十五",
+  "heading": "【三国志卷十五】 魏志十五",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷十五】 魏志十五 "
+          "text": "【三国志卷十五】 魏志十五 "
         }
       ],
-      "text": "【三国志译注卷十五】 魏志十五",
+      "text": "【三国志卷十五】 魏志十五",
       "kind": "heading",
       "anchors": [
         "filepos2595034"

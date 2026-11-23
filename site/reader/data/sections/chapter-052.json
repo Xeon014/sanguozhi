@@ -1,7 +1,7 @@
 {
   "id": "chapter-052",
   "title": "张顾诸葛步传第七",
-  "heading": "【三国志译注卷五十二】 吴志七",
+  "heading": "【三国志卷五十二】 吴志七",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷五十二】 吴志七 "
+          "text": "【三国志卷五十二】 吴志七 "
         }
       ],
-      "text": "【三国志译注卷五十二】 吴志七",
+      "text": "【三国志卷五十二】 吴志七",
       "kind": "heading",
       "anchors": [
         "filepos7065117"

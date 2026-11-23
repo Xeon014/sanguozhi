@@ -1,7 +1,7 @@
 {
   "id": "chapter-045",
   "title": "邓张宗杨传第十五",
-  "heading": "【三国志译注卷四十五】 蜀志十五",
+  "heading": "【三国志卷四十五】 蜀志十五",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷四十五】 蜀志十五 "
+          "text": "【三国志卷四十五】 蜀志十五 "
         }
       ],
-      "text": "【三国志译注卷四十五】 蜀志十五",
+      "text": "【三国志卷四十五】 蜀志十五",
       "kind": "heading",
       "anchors": [
         "filepos6233569"

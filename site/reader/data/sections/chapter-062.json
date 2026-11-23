@@ -1,7 +1,7 @@
 {
   "id": "chapter-062",
   "title": "是仪胡综传第十七",
-  "heading": "【三国志译注卷六十二】 吴志十七",
+  "heading": "【三国志卷六十二】 吴志十七",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷六十二】 吴志十七 "
+          "text": "【三国志卷六十二】 吴志十七 "
         }
       ],
-      "text": "【三国志译注卷六十二】 吴志十七",
+      "text": "【三国志卷六十二】 吴志十七",
       "kind": "heading",
       "anchors": [
         "filepos8283399"

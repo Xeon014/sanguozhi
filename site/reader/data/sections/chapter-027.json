@@ -1,7 +1,7 @@
 {
   "id": "chapter-027",
   "title": "徐胡二王传第二十七",
-  "heading": "【三国志译注卷二十七】 魏志二十七",
+  "heading": "【三国志卷二十七】 魏志二十七",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷二十七】 魏志二十七 "
+          "text": "【三国志卷二十七】 魏志二十七 "
         }
       ],
-      "text": "【三国志译注卷二十七】 魏志二十七",
+      "text": "【三国志卷二十七】 魏志二十七",
       "kind": "heading",
       "anchors": [
         "filepos4282689"

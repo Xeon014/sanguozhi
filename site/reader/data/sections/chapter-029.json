@@ -1,7 +1,7 @@
 {
   "id": "chapter-029",
   "title": "方伎传第二十九",
-  "heading": "【三国志译注卷二十九】 魏志二十九",
+  "heading": "【三国志卷二十九】 魏志二十九",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷二十九】 魏志二十九 "
+          "text": "【三国志卷二十九】 魏志二十九 "
         }
       ],
-      "text": "【三国志译注卷二十九】 魏志二十九",
+      "text": "【三国志卷二十九】 魏志二十九",
       "kind": "heading",
       "anchors": [
         "filepos4635081"

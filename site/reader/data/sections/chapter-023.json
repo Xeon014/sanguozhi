@@ -1,7 +1,7 @@
 {
   "id": "chapter-023",
   "title": "和常杨杜赵裴传第二十三",
-  "heading": "【三国志译注卷二十三】 魏志二十三",
+  "heading": "【三国志卷二十三】 魏志二十三",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷二十三】 魏志二十三 "
+          "text": "【三国志卷二十三】 魏志二十三 "
         }
       ],
-      "text": "【三国志译注卷二十三】 魏志二十三",
+      "text": "【三国志卷二十三】 魏志二十三",
       "kind": "heading",
       "anchors": [
         "filepos3687075"

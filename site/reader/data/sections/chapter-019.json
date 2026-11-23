@@ -1,7 +1,7 @@
 {
   "id": "chapter-019",
   "title": "任城陈萧王传第十九",
-  "heading": "【三国志译注卷十九】 魏志十九",
+  "heading": "【三国志卷十九】 魏志十九",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷十九】 魏志十九 "
+          "text": "【三国志卷十九】 魏志十九 "
         }
       ],
-      "text": "【三国志译注卷十九】 魏志十九",
+      "text": "【三国志卷十九】 魏志十九",
       "kind": "heading",
       "anchors": [
         "filepos3051525"

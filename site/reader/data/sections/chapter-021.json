@@ -1,7 +1,7 @@
 {
   "id": "chapter-021",
   "title": "王卫二刘傅传第二十一",
-  "heading": "【三国志译注卷二十一】 魏志二十一",
+  "heading": "【三国志卷二十一】 魏志二十一",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷二十一】 魏志二十一 "
+          "text": "【三国志卷二十一】 魏志二十一 "
         }
       ],
-      "text": "【三国志译注卷二十一】 魏志二十一",
+      "text": "【三国志卷二十一】 魏志二十一",
       "kind": "heading",
       "anchors": [
         "filepos3301963"

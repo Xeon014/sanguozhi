@@ -1,7 +1,7 @@
 {
   "id": "chapter-043",
   "title": "黄李吕马王张传第十三",
-  "heading": "【三国志译注卷四十三】 蜀志十三",
+  "heading": "【三国志卷四十三】 蜀志十三",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷四十三】 蜀志十三 "
+          "text": "【三国志卷四十三】 蜀志十三 "
         }
       ],
-      "text": "【三国志译注卷四十三】 蜀志十三",
+      "text": "【三国志卷四十三】 蜀志十三",
       "kind": "heading",
       "anchors": [
         "filepos6069538"

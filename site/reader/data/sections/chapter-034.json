@@ -1,7 +1,7 @@
 {
   "id": "chapter-034",
   "title": "二主妃子传第四",
-  "heading": "【三国志译注卷三十四】 蜀志四",
+  "heading": "【三国志卷三十四】 蜀志四",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷三十四】 蜀志四 "
+          "text": "【三国志卷三十四】 蜀志四 "
         }
       ],
-      "text": "【三国志译注卷三十四】 蜀志四",
+      "text": "【三国志卷三十四】 蜀志四",
       "kind": "heading",
       "anchors": [
         "filepos5233786"

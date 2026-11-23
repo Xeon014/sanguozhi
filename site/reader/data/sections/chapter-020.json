@@ -1,7 +1,7 @@
 {
   "id": "chapter-020",
   "title": "武文世王公传第二十",
-  "heading": "【三国志译注卷二十】 魏志二十",
+  "heading": "【三国志卷二十】 魏志二十",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷二十】 魏志二十 "
+          "text": "【三国志卷二十】 魏志二十 "
         }
       ],
-      "text": "【三国志译注卷二十】 魏志二十",
+      "text": "【三国志卷二十】 魏志二十",
       "kind": "heading",
       "anchors": [
         "filepos3212430"

@@ -1,7 +1,7 @@
 {
   "id": "chapter-022",
   "title": "桓二陈徐卫卢传第二十二",
-  "heading": "【三国志译注卷二十二】 魏志二十二",
+  "heading": "【三国志卷二十二】 魏志二十二",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷二十二】 魏志二十二 "
+          "text": "【三国志卷二十二】 魏志二十二 "
         }
       ],
-      "text": "【三国志译注卷二十二】 魏志二十二",
+      "text": "【三国志卷二十二】 魏志二十二",
       "kind": "heading",
       "anchors": [
         "filepos3499829"

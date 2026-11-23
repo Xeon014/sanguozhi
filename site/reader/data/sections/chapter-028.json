@@ -1,7 +1,7 @@
 {
   "id": "chapter-028",
   "title": "王毌丘诸葛邓钟传第二十八",
-  "heading": "【三国志译注卷二十八】 魏志二十八",
+  "heading": "【三国志卷二十八】 魏志二十八",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷二十八】 魏志二十八 "
+          "text": "【三国志卷二十八】 魏志二十八 "
         }
       ],
-      "text": "【三国志译注卷二十八】 魏志二十八",
+      "text": "【三国志卷二十八】 魏志二十八",
       "kind": "heading",
       "anchors": [
         "filepos4402552"

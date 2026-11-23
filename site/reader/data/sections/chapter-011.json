@@ -1,7 +1,7 @@
 {
   "id": "chapter-011",
   "title": "袁张凉国田王邴管传第十一",
-  "heading": "【三国志译注卷十一】 魏志十一",
+  "heading": "【三国志卷十一】 魏志十一",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷十一】 魏志十一 "
+          "text": "【三国志卷十一】 魏志十一 "
         }
       ],
-      "text": "【三国志译注卷十一】 魏志十一",
+      "text": "【三国志卷十一】 魏志十一",
       "kind": "heading",
       "anchors": [
         "filepos1872052"

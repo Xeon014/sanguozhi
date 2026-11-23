@@ -1,7 +1,7 @@
 {
   "id": "chapter-008",
   "title": "二公孙陶四张传第八",
-  "heading": "【三国志译注卷八】 魏志八",
+  "heading": "【三国志卷八】 魏志八",
   "kind": "chapter",
   "status": "aligned",
   "blocks": [
@@ -15,10 +15,10 @@
       "tokens": [
         {
           "type": "text",
-          "text": "【三国志译注卷八】 魏志八 "
+          "text": "【三国志卷八】 魏志八 "
         }
       ],
-      "text": "【三国志译注卷八】 魏志八",
+      "text": "【三国志卷八】 魏志八",
       "kind": "heading",
       "anchors": [
         "filepos1399174"

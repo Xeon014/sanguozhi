@@ -1,16 +1,30 @@
+// A dropped request or a briefly failing origin is asked twice more, with
+// growing pauses; a definite answer such as 404 is final at once.
+const RETRY_DELAYS=[300,900];
 // Cache parsed resources by full versioned URL, including concurrent consumers.
-export function createJSONLoader(base, version, transport=fetch) {
+export function createJSONLoader(base, version, transport=fetch, pause=ms=>new Promise(resolve=>setTimeout(resolve,ms))) {
   const cache=new Map();
+  const read=async(key,options,attempt=0)=>{
+    let response;
+    try{response=await transport(key,options);}
+    catch(error){
+      if(attempt>=RETRY_DELAYS.length)throw error;
+      await pause(RETRY_DELAYS[attempt]);return read(key,options,attempt+1);
+    }
+    if(!response.ok){
+      // 5xx and 429 describe the origin's moment, not the resource.
+      if(!((response.status>=500||response.status===429)&&attempt<RETRY_DELAYS.length))throw Error(`读取失败（${response.status}）`);
+      await pause(RETRY_DELAYS[attempt]);return read(key,options,attempt+1);
+    }
+    return response.json();
+  };
   return function load(path, options) {
     const address=new URL(path,base);
     if(version)address.searchParams.set('v',version);
     const key=address.href;
     if(options?.cache==='reload')cache.delete(key);
     if(!cache.has(key)){
-      const pending=transport(key,options).then(r=>{
-        if(!r.ok)throw Error(`读取失败（${r.status}）`);
-        return r.json();
-      }).catch(error=>{if(cache.get(key)===pending)cache.delete(key);throw error;});
+      const pending=read(key,options).catch(error=>{if(cache.get(key)===pending)cache.delete(key);throw error;});
       cache.set(key,pending);
     }
     return cache.get(key);
