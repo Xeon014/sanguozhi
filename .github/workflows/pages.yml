@@ -38,15 +38,18 @@ jobs:
         run: |
           # The deployment lists artifacts once, through the Actions results
           # service, and fails at once when the artifact is not there yet. That
-          # service takes in a freshly uploaded artifact later than the public
-          # listing does, so it is asked directly here, with the same request.
-          # A re-run must not upload a second artifact of the same name: the
-          # deployment refuses a run that holds two. So a re-run first looks
-          # for what an earlier attempt uploaded. When this service cannot be
-          # asked, the step steps aside and the artifact is uploaded as before.
+          # service takes in a freshly uploaded artifact late, so it is asked
+          # directly here, with the same request. A re-run must not upload a
+          # second artifact of the same name: the deployment refuses a run that
+          # holds two. So a re-run first looks for what an earlier attempt
+          # uploaded. When the service cannot be asked, the step steps aside and
+          # the artifact is uploaded as before.
           origin=$(python3 -c 'import os; from urllib.parse import urlparse
           u = urlparse(os.environ.get("ACTIONS_RESULTS_URL", ""))
           print(f"{u.scheme}://{u.netloc}" if u.scheme and u.netloc else "")' || true)
+          # The address of the service and the two ids come from what the runner
+          # gives the job. Nothing here prints the token. A request that cannot
+          # be made says why, once, so the log tells which link is broken.
           read -r run job <<< "$(printf '%s' "$ACTIONS_RUNTIME_TOKEN" | python3 -c '
           import base64, json, sys
           parts = sys.stdin.read().split(".")
@@ -56,17 +59,49 @@ jobs:
               print(*scope.split(":")[1:3])
           except Exception:
               sys.exit(1)' || true)"
-          RESPONSE=$(mktemp)
+          RESPONSE=$(mktemp); ERRORS=$(mktemp); SAID=$(mktemp)
+          say() { echo "cannot ask the Actions results service: $1" >&2; }
           count() {
             # artifacts named github-pages this run holds, or "unknown"
-            if [ -z "$run" ] || [ -z "$origin" ]; then echo unknown; return; fi
-            local code n
+            if [ -z "$origin" ]; then
+              [ -s "$SAID" ] || { say "the job has no address for it (ACTIONS_RESULTS_URL is empty)"; echo x > "$SAID"; }
+              echo unknown; return
+            fi
+            if [ -z "$run" ]; then
+              [ -s "$SAID" ] || { say "the runtime token carries no run and job ids"; echo x > "$SAID"; }
+              echo unknown; return
+            fi
+            local body code status n
+            body="{\"workflowRunBackendId\":\"$run\",\"workflowJobRunBackendId\":\"$job\"}"
+            status=0
             code=$(curl -sS -o "$RESPONSE" -w '%{http_code}' -X POST \
               "$origin/twirp/github.actions.results.api.v1.ArtifactService/ListArtifacts" \
               -H "Authorization: Bearer $ACTIONS_RUNTIME_TOKEN" -H "Content-Type: application/json" \
-              -d "{\"workflowRunBackendId\":\"$run\",\"workflowJobRunBackendId\":\"$job\"}") || { echo unknown; return; }
-            if [ "$code" != "200" ]; then echo unknown; return; fi
-            n=$(jq '[.artifacts[]? | select(.name == "github-pages")] | length' "$RESPONSE" 2>/dev/null) || n=unknown
+              -d "$body" 2>"$ERRORS") || status=$?
+            if [ "$status" != "0" ]; then
+              [ -s "$SAID" ] || { say "curl exit $status: $(tr '\n' ' ' < "$ERRORS")"; echo x > "$SAID"; }
+              echo unknown; return
+            fi
+            if [ "$code" != "200" ]; then
+              [ -s "$SAID" ] || { say "http $code: $(head -c 300 "$RESPONSE" | tr '\n' ' ')"; echo x > "$SAID"; }
+              echo unknown; return
+            fi
+            status=0
+            n=$(python3 - "$RESPONSE" <<'ANSWER'
+          import json, sys
+          try:
+              text = open(sys.argv[1], encoding="utf-8").read()
+              named = [a for a in json.loads(text).get("artifacts", []) if a.get("name") == "github-pages"]
+          except Exception as error:
+              print("unparsable answer: %s; start of it: %s" % (str(error)[:120], text[:200].replace("\n", " ")), file=sys.stderr)
+              sys.exit(1)
+          print(len(named))
+          ANSWER
+          ) 2>"$ERRORS" || status=$?
+            if [ "$status" != "0" ]; then
+              [ -s "$SAID" ] || { say "$(tr '\n' ' ' < "$ERRORS")"; echo x > "$SAID"; }
+              echo unknown; return
+            fi
             echo "${n:-unknown}"
           }
           if [ "$GITHUB_RUN_ATTEMPT" = "1" ]; then exit 0; fi
@@ -88,12 +123,15 @@ jobs:
         run: |
           # The deployment looks the artifact up once, as soon as it starts,
           # and fails at once when it is not there. So ask the same service the
-          # same question until exactly one artifact is listed. When this
+          # same question until exactly one artifact is listed. When the
           # service cannot be asked at all, wait the full time and leave the
           # lookup to the deployment, as it was before this step existed.
           origin=$(python3 -c 'import os; from urllib.parse import urlparse
           u = urlparse(os.environ.get("ACTIONS_RESULTS_URL", ""))
           print(f"{u.scheme}://{u.netloc}" if u.scheme and u.netloc else "")' || true)
+          # The address of the service and the two ids come from what the runner
+          # gives the job. Nothing here prints the token. A request that cannot
+          # be made says why, once, so the log tells which link is broken.
           read -r run job <<< "$(printf '%s' "$ACTIONS_RUNTIME_TOKEN" | python3 -c '
           import base64, json, sys
           parts = sys.stdin.read().split(".")
@@ -103,17 +141,49 @@ jobs:
               print(*scope.split(":")[1:3])
           except Exception:
               sys.exit(1)' || true)"
-          RESPONSE=$(mktemp)
+          RESPONSE=$(mktemp); ERRORS=$(mktemp); SAID=$(mktemp)
+          say() { echo "cannot ask the Actions results service: $1" >&2; }
           count() {
             # artifacts named github-pages this run holds, or "unknown"
-            if [ -z "$run" ] || [ -z "$origin" ]; then echo unknown; return; fi
-            local code n
+            if [ -z "$origin" ]; then
+              [ -s "$SAID" ] || { say "the job has no address for it (ACTIONS_RESULTS_URL is empty)"; echo x > "$SAID"; }
+              echo unknown; return
+            fi
+            if [ -z "$run" ]; then
+              [ -s "$SAID" ] || { say "the runtime token carries no run and job ids"; echo x > "$SAID"; }
+              echo unknown; return
+            fi
+            local body code status n
+            body="{\"workflowRunBackendId\":\"$run\",\"workflowJobRunBackendId\":\"$job\"}"
+            status=0
             code=$(curl -sS -o "$RESPONSE" -w '%{http_code}' -X POST \
               "$origin/twirp/github.actions.results.api.v1.ArtifactService/ListArtifacts" \
               -H "Authorization: Bearer $ACTIONS_RUNTIME_TOKEN" -H "Content-Type: application/json" \
-              -d "{\"workflowRunBackendId\":\"$run\",\"workflowJobRunBackendId\":\"$job\"}") || { echo unknown; return; }
-            if [ "$code" != "200" ]; then echo unknown; return; fi
-            n=$(jq '[.artifacts[]? | select(.name == "github-pages")] | length' "$RESPONSE" 2>/dev/null) || n=unknown
+              -d "$body" 2>"$ERRORS") || status=$?
+            if [ "$status" != "0" ]; then
+              [ -s "$SAID" ] || { say "curl exit $status: $(tr '\n' ' ' < "$ERRORS")"; echo x > "$SAID"; }
+              echo unknown; return
+            fi
+            if [ "$code" != "200" ]; then
+              [ -s "$SAID" ] || { say "http $code: $(head -c 300 "$RESPONSE" | tr '\n' ' ')"; echo x > "$SAID"; }
+              echo unknown; return
+            fi
+            status=0
+            n=$(python3 - "$RESPONSE" <<'ANSWER'
+          import json, sys
+          try:
+              text = open(sys.argv[1], encoding="utf-8").read()
+              named = [a for a in json.loads(text).get("artifacts", []) if a.get("name") == "github-pages"]
+          except Exception as error:
+              print("unparsable answer: %s; start of it: %s" % (str(error)[:120], text[:200].replace("\n", " ")), file=sys.stderr)
+              sys.exit(1)
+          print(len(named))
+          ANSWER
+          ) 2>"$ERRORS" || status=$?
+            if [ "$status" != "0" ]; then
+              [ -s "$SAID" ] || { say "$(tr '\n' ' ' < "$ERRORS")"; echo x > "$SAID"; }
+              echo unknown; return
+            fi
             echo "${n:-unknown}"
           }
           listed=0
