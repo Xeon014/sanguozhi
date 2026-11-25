@@ -285,6 +285,8 @@ footer{padding:36px max(48px,calc((100% - 1280px)/2));border-top:1px solid var(-
 .source-reading{padding-top:24px}
 .source-reading .kind-heading{font-size:28px;margin-top:32px}
 .source-reading img,.block img{display:block;max-width:100%;height:auto;margin:24px auto}
+.block img.glyph{display:inline-block;width:auto;min-width:.9em;height:1.1em;max-width:none;margin:0 .04em;vertical-align:-.14em;mix-blend-mode:multiply}
+:root[data-theme=dark] .block img.glyph{filter:invert(1);mix-blend-mode:screen}
 .source-reading .annotation-block{border-left:2px solid var(--line);padding-left:20px}
 
 .directory-panel{position:fixed;inset:0 0 0 auto;width:min(460px,95vw);max-width:95vw;height:100dvh;max-height:100dvh;margin:0;border:0;border-left:1px solid var(--line);padding:28px;background:var(--paper);color:var(--ink)}

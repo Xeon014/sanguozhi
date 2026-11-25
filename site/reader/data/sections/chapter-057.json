@@ -4426,7 +4426,7 @@
         },
         {
           "type": "image",
-          "path": "OEBPS/Text/images/00018.jpg",
+          "path": "OEBPS/Images/00019.jpg",
           "alt": ""
         },
         {
@@ -29897,5 +29897,8 @@
       ]
     }
   },
-  "review_status": "machine_checked"
+  "review_status": "machine_checked",
+  "emendations": [
+    "em-asset-0004"
+  ]
 }

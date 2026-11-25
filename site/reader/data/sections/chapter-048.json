@@ -11875,7 +11875,7 @@
         },
         {
           "type": "image",
-          "path": "OEBPS/Text/images/00050.jpg",
+          "path": "OEBPS/Images/00140.jpg",
           "alt": ""
         },
         {
@@ -14147,7 +14147,7 @@
         },
         {
           "type": "image",
-          "path": "OEBPS/Text/images/00048.jpg",
+          "path": "OEBPS/Images/00055.jpg",
           "alt": ""
         },
         {
@@ -32706,5 +32706,9 @@
       ]
     }
   },
-  "review_status": "machine_checked"
+  "review_status": "machine_checked",
+  "emendations": [
+    "em-asset-0002",
+    "em-asset-0003"
+  ]
 }
