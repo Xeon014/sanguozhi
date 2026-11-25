@@ -27,15 +27,55 @@ jobs:
       contents: read
       pages: write
       id-token: write
+      actions: read
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v6
       - uses: actions/configure-pages@v5
+      - name: Artifact this run already holds
+        id: held
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # A re-run must not upload a second artifact of the same name: the
+          # deployment refuses a run that holds two. An artifact a failed
+          # attempt uploaded can take a minute to be listed, so look for one
+          # before uploading again; the first attempt has nothing to find.
+          count() { gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?per_page=100" \
+            --jq '[.artifacts[] | select(.name == "github-pages" and (.expired | not))] | length'; }
+          if [ "$GITHUB_RUN_ATTEMPT" = "1" ]; then exit 0; fi
+          for try in $(seq 1 18); do
+            n=$(count 2>/dev/null) || n=0
+            if [ "$n" -gt 0 ]; then echo "found=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+            sleep 5
+          done
       - uses: actions/upload-pages-artifact@v4
+        if: steps.held.outputs.found != 'true'
         with:
           path: site
+      - name: Wait until the artifact is listed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # The deployment looks the artifact up by name as soon as it starts
+          # and gives up after about ten seconds. Listing it can lag behind
+          # the upload by longer than that, so wait here, where it is plain
+          # what is being waited for.
+          count() { gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?per_page=100" \
+            --jq '[.artifacts[] | select(.name == "github-pages" and (.expired | not))] | length'; }
+          for try in $(seq 1 60); do
+            n=$(count 2>/dev/null) || n=0
+            if [ "$n" = "1" ]; then exit 0; fi
+            if [ "$n" -gt "1" ]; then
+              echo "::error::this run holds $n artifacts named github-pages; start a fresh run for the commit instead of re-running this one"
+              exit 1
+            fi
+            sleep 5
+          done
+          echo "::error::the uploaded artifact was not listed within five minutes"
+          exit 1
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
