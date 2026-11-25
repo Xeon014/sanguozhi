@@ -27,7 +27,6 @@ jobs:
       contents: read
       pages: write
       id-token: write
-      actions: read
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -36,46 +35,105 @@ jobs:
       - uses: actions/configure-pages@v5
       - name: Artifact this run already holds
         id: held
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
+          # The deployment lists artifacts once, through the Actions results
+          # service, and fails at once when the artifact is not there yet. That
+          # service takes in a freshly uploaded artifact later than the public
+          # listing does, so it is asked directly here, with the same request.
           # A re-run must not upload a second artifact of the same name: the
-          # deployment refuses a run that holds two. An artifact a failed
-          # attempt uploaded can take a minute to be listed, so look for one
-          # before uploading again; the first attempt has nothing to find.
-          count() { gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?per_page=100" \
-            --jq '[.artifacts[] | select(.name == "github-pages" and (.expired | not))] | length'; }
+          # deployment refuses a run that holds two. So a re-run first looks
+          # for what an earlier attempt uploaded. When this service cannot be
+          # asked, the step steps aside and the artifact is uploaded as before.
+          origin=$(python3 -c 'import os; from urllib.parse import urlparse
+          u = urlparse(os.environ.get("ACTIONS_RESULTS_URL", ""))
+          print(f"{u.scheme}://{u.netloc}" if u.scheme and u.netloc else "")' || true)
+          read -r run job <<< "$(printf '%s' "$ACTIONS_RUNTIME_TOKEN" | python3 -c '
+          import base64, json, sys
+          parts = sys.stdin.read().split(".")
+          try:
+              claims = json.loads(base64.urlsafe_b64decode(parts[1] + "=" * (-len(parts[1]) % 4)))
+              scope = next(s for s in claims["scp"].split(" ") if s.startswith("Actions.Results:"))
+              print(*scope.split(":")[1:3])
+          except Exception:
+              sys.exit(1)' || true)"
+          RESPONSE=$(mktemp)
+          count() {
+            # artifacts named github-pages this run holds, or "unknown"
+            if [ -z "$run" ] || [ -z "$origin" ]; then echo unknown; return; fi
+            local code n
+            code=$(curl -sS -o "$RESPONSE" -w '%{http_code}' -X POST \
+              "$origin/twirp/github.actions.results.api.v1.ArtifactService/ListArtifacts" \
+              -H "Authorization: Bearer $ACTIONS_RUNTIME_TOKEN" -H "Content-Type: application/json" \
+              -d "{\"workflowRunBackendId\":\"$run\",\"workflowJobRunBackendId\":\"$job\"}") || { echo unknown; return; }
+            if [ "$code" != "200" ]; then echo unknown; return; fi
+            n=$(jq '[.artifacts[]? | select(.name == "github-pages")] | length' "$RESPONSE" 2>/dev/null) || n=unknown
+            echo "${n:-unknown}"
+          }
           if [ "$GITHUB_RUN_ATTEMPT" = "1" ]; then exit 0; fi
+          unknown=0
           for try in $(seq 1 18); do
-            n=$(count 2>/dev/null) || n=0
-            if [ "$n" -gt 0 ]; then echo "found=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+            n=$(count)
+            case "$n" in
+              unknown) unknown=$((unknown + 1)); [ "$unknown" -lt 3 ] || exit 0 ;;
+              0) ;;
+              *) echo "found=true" >> "$GITHUB_OUTPUT"; exit 0 ;;
+            esac
             sleep 5
           done
       - uses: actions/upload-pages-artifact@v4
         if: steps.held.outputs.found != 'true'
         with:
           path: site
-      - name: Wait until the artifact is listed
-        env:
-          GH_TOKEN: ${{ github.token }}
+      - name: Wait until the deployment can see the artifact
         run: |
-          # The deployment looks the artifact up by name as soon as it starts
-          # and gives up after about ten seconds. Listing it can lag behind
-          # the upload by longer than that, so wait here, where it is plain
-          # what is being waited for.
-          count() { gh api "repos/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts?per_page=100" \
-            --jq '[.artifacts[] | select(.name == "github-pages" and (.expired | not))] | length'; }
+          # The deployment looks the artifact up once, as soon as it starts,
+          # and fails at once when it is not there. So ask the same service the
+          # same question until exactly one artifact is listed. When this
+          # service cannot be asked at all, wait the full time and leave the
+          # lookup to the deployment, as it was before this step existed.
+          origin=$(python3 -c 'import os; from urllib.parse import urlparse
+          u = urlparse(os.environ.get("ACTIONS_RESULTS_URL", ""))
+          print(f"{u.scheme}://{u.netloc}" if u.scheme and u.netloc else "")' || true)
+          read -r run job <<< "$(printf '%s' "$ACTIONS_RUNTIME_TOKEN" | python3 -c '
+          import base64, json, sys
+          parts = sys.stdin.read().split(".")
+          try:
+              claims = json.loads(base64.urlsafe_b64decode(parts[1] + "=" * (-len(parts[1]) % 4)))
+              scope = next(s for s in claims["scp"].split(" ") if s.startswith("Actions.Results:"))
+              print(*scope.split(":")[1:3])
+          except Exception:
+              sys.exit(1)' || true)"
+          RESPONSE=$(mktemp)
+          count() {
+            # artifacts named github-pages this run holds, or "unknown"
+            if [ -z "$run" ] || [ -z "$origin" ]; then echo unknown; return; fi
+            local code n
+            code=$(curl -sS -o "$RESPONSE" -w '%{http_code}' -X POST \
+              "$origin/twirp/github.actions.results.api.v1.ArtifactService/ListArtifacts" \
+              -H "Authorization: Bearer $ACTIONS_RUNTIME_TOKEN" -H "Content-Type: application/json" \
+              -d "{\"workflowRunBackendId\":\"$run\",\"workflowJobRunBackendId\":\"$job\"}") || { echo unknown; return; }
+            if [ "$code" != "200" ]; then echo unknown; return; fi
+            n=$(jq '[.artifacts[]? | select(.name == "github-pages")] | length' "$RESPONSE" 2>/dev/null) || n=unknown
+            echo "${n:-unknown}"
+          }
+          listed=0
           for try in $(seq 1 60); do
-            n=$(count 2>/dev/null) || n=0
-            if [ "$n" = "1" ]; then exit 0; fi
-            if [ "$n" -gt "1" ]; then
-              echo "::error::this run holds $n artifacts named github-pages; start a fresh run for the commit instead of re-running this one"
-              exit 1
-            fi
+            n=$(count)
+            echo "poll $try: $n artifact(s) named github-pages"
+            case "$n" in
+              unknown) ;;
+              1) exit 0 ;;
+              0) listed=1 ;;
+              *) echo "::error::this run holds $n artifacts named github-pages; start a fresh run for the commit instead of re-running this one"
+                 exit 1 ;;
+            esac
             sleep 5
           done
-          echo "::error::the uploaded artifact was not listed within five minutes"
-          exit 1
+          if [ "$listed" = "1" ]; then
+            echo "::error::the Actions results service did not list the artifact within five minutes"
+            exit 1
+          fi
+          echo "::warning::the Actions results service could not be asked; waited five minutes and left the lookup to the deployment"
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
