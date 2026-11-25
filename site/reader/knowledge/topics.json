@@ -2,9 +2,9 @@
   "schema_version": 1,
   "source_sha256": "b0f2c19b3dce18a6d6e6148b6c0c6dd9332e1ab1a6357578003e333bc0a14a28",
   "section_sha256": {
-    "chapter-001": "8aca4c346aa9cc8706094afc84a5888aa03910aadd75d3ee763fc732c00f7cf9",
-    "chapter-032": "a96846f8d938ee9c7b7644e4c1129ee5f143cef89abd660e00079e672445f305",
-    "chapter-054": "b5a12151318a634fc4ef1614a82b326cf31c11f29517fa7499b22e9df91cfead"
+    "chapter-001": "f323d14b48f78bdff5e7f9b40f0e9b0759bb9e8cf67eb89129a3dd5a2dd26327",
+    "chapter-032": "4ce4f62e9812569c67634a669474d921286520b29302633865d03e749cac05c3",
+    "chapter-054": "d9c70e18372a48b787eb01065ccf7de85d21c03753b0c806f9441e30f9d63aaf"
   },
   "bindings": {
     "allied-zhou": "485f6d117bc8c3fefa0fbf352ed7bb2e6b7f92c9d7a71c6de04a515241598f7f",
