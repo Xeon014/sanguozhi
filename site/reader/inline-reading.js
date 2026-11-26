@@ -1,5 +1,5 @@
-import {quoteText} from './event-reading.js?v=66d896a8bddba8e4';
-import {knowledgeIndex} from './data-loader.js?v=66d896a8bddba8e4';
+import {quoteText} from './event-reading.js?v=7c49f2ff9c5aea1d';
+import {knowledgeIndex} from './data-loader.js?v=7c49f2ff9c5aea1d';
 // Read reviewed quotations in place; no summaries, facts or dates are inferred.
 export function citationText(record,text,tag='blockquote',className='') {
   return `<${tag} class="${className}" data-quote-ref="${text(record.ids?.[0]||record.id)}"><span role="status">${text('正在载入…')}</span></${tag}>`;
