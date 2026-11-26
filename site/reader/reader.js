@@ -1,9 +1,9 @@
 // Heavy views load per route so first paint only needs the shell helpers;
 // pure address canonicalizers stay in route-hash.js for every navigation.
-import {atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash, legacyKnowledgeHash} from './route-hash.js?v=49642ee46183f6a8';
-import {createJSONLoader,attachRuntime,presentPeople,hydratePacket} from './data-loader.js?v=49642ee46183f6a8';
-import {searchHash,canonicalSearchHash,searchPeople,highlightText,firstMatch} from './search.js?v=49642ee46183f6a8';
-import {blockText} from './event-reading.js?v=49642ee46183f6a8';
+import {atlasState, atlasHash, yearbookHash, canonicalAtlasHomeHash, legacyKnowledgeHash} from './route-hash.js?v=66d896a8bddba8e4';
+import {createJSONLoader,attachRuntime,presentPeople,hydratePacket} from './data-loader.js?v=66d896a8bddba8e4';
+import {searchHash,canonicalSearchHash,searchPeople,highlightText,firstMatch} from './search.js?v=66d896a8bddba8e4';
+import {blockText} from './event-reading.js?v=66d896a8bddba8e4';
 const $ = (q, el = document) => el.querySelector(q);
 const main = $('#main');
 const initialTitle = document.title;
@@ -234,7 +234,7 @@ function atlasCommit(hash) {
   renderedHash=hash;
 }
 async function showAtlas(host,bundle,qs,saved,home=false) {
-  const {mountAtlas}=await import('./atlas.js?v=49642ee46183f6a8');
+  const {mountAtlas}=await import('./atlas.js?v=66d896a8bddba8e4');
   // The renderer module may resolve after navigation moved on; never mount into a detached host.
   if(!host.isConnected)return;
   const state=mountAtlas(host,bundle,{esc,cv,qs,home,saved:saved?.atlas,onState:atlasCommit,onChange:saveContext});
@@ -423,6 +423,19 @@ function navigate(hash, saved=null, origin=null, list=null) {
   history.pushState({book:storageKey,hash,view:saved,returnSearch:origin,returnList:list},'',hash);
   route();
 }
+// Focus ends up in the view that was opened: on the located target when the
+// route has one (blocks, sources, filters and search take it while rendering),
+// else on the main region itself. A fresh load keeps the browser's own starting
+// point; so does a control that only re-renders the page it sits on, and the
+// menu kept open for a display switch.
+let routed=false;
+function settleFocus(first,keptMenu) {
+  const active=document.activeElement;
+  if(first||keptMenu||(active&&(main.contains(active)||active.closest('dialog[open]'))))return;
+  const moved=location.hash.split('?')[0]!==renderedHash.split('?')[0];
+  if(!moved&&active!==document.body&&active?.isConnected)return;
+  main.focus({preventScroll:true});
+}
 function mountSourceReturn(origin,fromSearch) {
   const previous=main.querySelector('[data-source-return]');
   if(previous){if(previous.matches('.back-search,.knowledge-back'))previous.remove();else{delete previous.dataset.sourceReturn;previous.onclick=null;}}
@@ -447,6 +460,12 @@ function openTransientNote(ref,noteId) {
   if(mobileLayout.matches&&main.noteSheet)main.noteSheet.open(ref,noteId);
   else main.notePopover?.open(ref,noteId);
 }
+// One located target at a time. The class outlives the tint, which is what the
+// checks wait for, and is the mark itself when animations are turned off.
+function flash(target) {
+  main.querySelectorAll('.flash').forEach(el=>{if(el!==target)el.classList.remove('flash');});
+  target.classList.remove('flash');void target.offsetWidth;target.classList.add('flash');
+}
 // A deep link may reveal one note; only reader controls change the preference.
 function focusTarget(id,{revealNotes=true}={}) {
   main.readingControls?.prepareJump();
@@ -461,7 +480,7 @@ function focusTarget(id,{revealNotes=true}={}) {
     const noteId=el.closest('.note')?.id,inline=noteId&&main.querySelector(`.note-inline[data-note="${noteId}"]`),ref=noteId&&noteRefs.get(noteId);
     if(inline||ref){
       if(activeMode==='translation')setMode('both');
-      const flashTarget=inline||ref;flashTarget.classList.remove('flash');void flashTarget.offsetWidth;flashTarget.classList.add('flash');
+      const flashTarget=inline||ref;flash(flashTarget);
       (ref||flashTarget).scrollIntoView({block:'center'});
       ref?.focus({preventScroll:true});ref?.setAttribute('aria-expanded','true');
       return true;
@@ -479,7 +498,7 @@ function focusTarget(id,{revealNotes=true}={}) {
         // The sheet locks scrolling once open, so position the paragraph first.
         ref.scrollIntoView({block:'center'});
         const flashTarget=ref.hidden?ref.closest('.reading-group'):ref;
-        flashTarget.classList.remove('flash');void flashTarget.offsetWidth;flashTarget.classList.add('flash');
+        flash(flashTarget);
         openTransientNote(ref,noteId);
       }
       return true;
@@ -489,7 +508,7 @@ function focusTarget(id,{revealNotes=true}={}) {
   if (section.status==='aligned' && el.closest('.translation') && activeMode==='original') setMode('both');
   let parent=el.parentElement;
   while(parent && parent!==main){if(parent.tagName==='DETAILS')parent.open=true;parent=parent.parentElement;}
-  el.scrollIntoView({block:'start'}); el.focus({preventScroll:true}); el.classList.remove('flash'); void el.offsetWidth; el.classList.add('flash');
+  el.scrollIntoView({block:'start'}); el.focus({preventScroll:true}); flash(el);
   return true;
 }
 async function readSection(id,target,version,saved) {
@@ -497,7 +516,7 @@ async function readSection(id,target,version,saved) {
   if(!info)throw Error('目录中没有这一章节');
   // Each section carries its own anchor shard; a legacy book that already has
   // the full index needs no extra request.
-  const [loaded,anchors,controls,sheetModule,popoverModule]=await Promise.all([data(`sections/${id}.json`),book.anchor_index||json(runtimePath+'anchors/'+encodeURIComponent(id)+'.json'),import('./reading-controls.js?v=49642ee46183f6a8'),import('./note-sheet.js?v=49642ee46183f6a8'),import('./note-popover.js?v=49642ee46183f6a8')]);
+  const [loaded,anchors,controls,sheetModule,popoverModule]=await Promise.all([data(`sections/${id}.json`),book.anchor_index||json(runtimePath+'anchors/'+encodeURIComponent(id)+'.json'),import('./reading-controls.js?v=66d896a8bddba8e4'),import('./note-sheet.js?v=66d896a8bddba8e4'),import('./note-popover.js?v=66d896a8bddba8e4')]);
   const {readingSettingsHTML,chapterProgressHTML,mountReadingControls}=controls;
   if(version!==routeVersion)return;
   book.anchor_index??={};Object.assign(book.anchor_index,anchors);
@@ -557,7 +576,7 @@ async function readSection(id,target,version,saved) {
     if(display==='inline'){
       const inline=main.querySelector(`.note-inline[data-note="${b.dataset.note}"]`);
       b.setAttribute('aria-expanded','true');main.readingControls.prepareJump();
-      if(inline){inline.classList.remove('flash');void inline.offsetWidth;inline.classList.add('flash');inline.scrollIntoView({block:'center'});}
+      if(inline){flash(inline);inline.scrollIntoView({block:'center'});}
       return;
     }
     // The expanded preference keeps locating the in-place note; every other
@@ -738,7 +757,7 @@ async function route(){
   ready=false;clearTimeout(contextTimer);currentId=null;document.querySelector('.directory-panel')?.close();
   const entry=history.state?.book===storageKey&&history.state?.hash===location.hash?history.state:{};
   let saved=entry.view;returnSearch=entry.returnSearch||null;returnList=entry.returnList||null;searchLimit=40;
-  const version=++routeVersion;let knowledgeTitle='';
+  const version=++routeVersion,first=!routed;let knowledgeTitle='';
   const [path,query='']=location.hash.slice(1).split('?');
   let parts;try{parts=(path||'/').split('/').filter(Boolean).map(decodeURIComponent);}catch{parts=[];}
   const qs=new URLSearchParams(query);
@@ -760,7 +779,7 @@ async function route(){
       let atlas=await loadAtlas();if(version!==routeVersion)return;
       if(!atlas)throw Error('时代星图暂时不可用');
       if(['q','person','year'].some(k=>qs.get(k))){
-        const [{filteredOverviewItems},catalog,editorial]=await Promise.all([import('./event-editorial.js?v=49642ee46183f6a8'),runtimePath?runtime('highlights.json'):json(site.knowledge.file),json(site.knowledge.editorial)]);
+        const [{filteredOverviewItems},catalog,editorial]=await Promise.all([import('./event-editorial.js?v=66d896a8bddba8e4'),runtimePath?runtime('highlights.json'):json(site.knowledge.file),json(site.knowledge.editorial)]);
         if(version!==routeVersion)return;
         const prints=catalog.section_sha256||fingerprints?.section_sha256;
         if(catalog.source_sha256!==book.source_sha256||editorial.source_sha256!==catalog.source_sha256||Object.entries(editorial.section_sha256).some(([id,sha])=>prints[id]!==sha))throw Error('史事资料版本不一致');
@@ -783,7 +802,7 @@ async function route(){
     }
     else if(['people','events','timeline'].includes(parts[0])){
       if(!site.knowledge)throw Error('查询资料暂时不可用');
-      const [{renderKnowledge,canonicalKnowledgeHash},{biographyContext}]=await Promise.all([import('./knowledge.js?v=49642ee46183f6a8'),import('./profiles.js?v=49642ee46183f6a8')]);
+      const [{renderKnowledge,canonicalKnowledgeHash},{biographyContext}]=await Promise.all([import('./knowledge.js?v=66d896a8bddba8e4'),import('./profiles.js?v=66d896a8bddba8e4')]);
       // The full-record query view and the legacy timeline read the slim
       // events index instead of the whole catalog; every other route already
       // had a dedicated shard or projection.
@@ -846,12 +865,12 @@ async function route(){
       }
     }
     else if(parts[0]==='topics'&&parts.length===1){
-      const [{topicDirectory},presentation]=await Promise.all([import('./topics.js?v=49642ee46183f6a8'),loadTopicPresentation()]);if(version!==routeVersion)return;
+      const [{topicDirectory},presentation]=await Promise.all([import('./topics.js?v=66d896a8bddba8e4'),loadTopicPresentation()]);if(version!==routeVersion)return;
       if(!presentation)throw Error('专题暂时不可用');
       main.innerHTML=topicDirectory(presentation,{esc,cv});knowledgeTitle='专题研究';
     }
     else if(parts[0]==='topics'){
-      const [{renderTopic},bound]=await Promise.all([import('./topics.js?v=49642ee46183f6a8'),loadTopics(parts[1])]);if(version!==routeVersion)return;
+      const [{renderTopic},bound]=await Promise.all([import('./topics.js?v=66d896a8bddba8e4'),loadTopics(parts[1])]);if(version!==routeVersion)return;
       const topic=bound?.presentation.topics.find(t=>t.id===parts[1]);
       if(!topic||parts.length!==2)throw Error('未找到此专题');
       const ids=Object.keys(bound.presentation.section_sha256);
@@ -873,8 +892,8 @@ async function route(){
     if(version!==routeVersion)return;
     restoreView(saved);
     if(!saved||saved.y===undefined){const target=main.querySelector('[data-source-target]');if(target){target.scrollIntoView({block:'start'});target.focus({preventScroll:true});}}
-    if(parts[0]==='people'){const {bindPeopleLoading,bindLifeNavigation}=await import('./people-reading.js?v=49642ee46183f6a8');bindPeopleLoading(main,{text:cv});bindLifeNavigation(main,{onChange:saveContext});}
-    updateNavigation(parts);renderedHash=location.hash;ready=true;saveContext();
+    if(parts[0]==='people'){const {bindPeopleLoading,bindLifeNavigation}=await import('./people-reading.js?v=66d896a8bddba8e4');bindPeopleLoading(main,{text:cv});bindLifeNavigation(main,{onChange:saveContext});}
+    settleFocus(first,keepMenu);routed=true;updateNavigation(parts);renderedHash=location.hash;ready=true;saveContext();
     setPageTitle(parts[0]==='read'?section.title:knowledgeTitle);
   }catch(e){
     if(version!==routeVersion)return;
@@ -882,6 +901,7 @@ async function route(){
     setPageTitle(loadErrorTitle);
     main.innerHTML=`<div class="error" role="alert">${esc(cv(e.message))}<p>${cv('可重新加载；若仍无法打开，请刷新页面重试。')}</p><p><button id="retry">${cv('重试')}</button> <a href="#/contents">${cv('返回目录')}</a></p></div>`;
     $('#retry').onclick=()=>{if(parts[0]==='topics')resetTopics();route();};
+    settleFocus(first,false);routed=true;
   }
 }
 async function boot(){
@@ -897,9 +917,9 @@ async function boot(){
       const warm=decodeURIComponent(initialRead[1]);
       data(`sections/${warm}.json`).catch(()=>{});
       if(runtimePath)json(runtimePath+'anchors/'+encodeURIComponent(warm)+'.json').catch(()=>{});
-      import('./reading-controls.js?v=49642ee46183f6a8').catch(()=>{});
-      import('./note-sheet.js?v=49642ee46183f6a8').catch(()=>{});
-      import('./note-popover.js?v=49642ee46183f6a8').catch(()=>{});
+      import('./reading-controls.js?v=66d896a8bddba8e4').catch(()=>{});
+      import('./note-sheet.js?v=66d896a8bddba8e4').catch(()=>{});
+      import('./note-popover.js?v=66d896a8bddba8e4').catch(()=>{});
     }catch{}
   }
   [book,site,zhDisplay,fingerprints]=await Promise.all([config.bookFile?json(config.bookFile):data('book.json'),json('site.json'),json('knowledge/zh-display.json'),runtimePath?json(runtimePath+'fingerprints.json'):null]);

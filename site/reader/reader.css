@@ -33,6 +33,18 @@ small{font:13px/1.7 var(--sans);color:var(--muted)}
 .skip:focus{top:8px}
 ::selection{background:#ad382830}
 mark{background:var(--soft);color:inherit;text-decoration:underline;text-decoration-color:var(--accent);text-underline-offset:5px}
+/* A located passage, note or marker is pointed out once: a gold tint that
+   fades and leaves nothing behind. A marker keeps its own colour and takes a
+   ring instead. With animations off (the reduced-motion rule) the mark stays;
+   reader.js then keeps it to the one target located last. */
+.flash{--flash:color-mix(in srgb,var(--gold) 16%,transparent);animation:flash 1.8s ease-out}
+@keyframes flash{from{background-color:var(--flash)}to{background-color:transparent}}
+.note-ref.flash{animation-name:flash-ring}
+@keyframes flash-ring{from{box-shadow:0 0 0 6px var(--flash)}to{box-shadow:0 0 0 6px transparent}}
+@media(prefers-reduced-motion:reduce){
+.flash:not(.note-ref){background-color:var(--flash)}
+.note-ref.flash{box-shadow:0 0 0 6px var(--flash)}
+}
 .search-scope{color:var(--muted);font-size:15px;max-width:46em}
 .event-classification{display:flex;flex-wrap:wrap;align-items:center;gap:0 8px;color:var(--muted);font-size:14px;margin-top:12px}
 .event-group-link{margin:0 0 24px}

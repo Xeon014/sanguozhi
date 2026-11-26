@@ -1,5 +1,5 @@
-import {retainMoreFocus} from './people-reading.js?v=49642ee46183f6a8';
-import {citationHeading} from './inline-reading.js?v=49642ee46183f6a8';
+import {retainMoreFocus} from './people-reading.js?v=66d896a8bddba8e4';
+import {citationHeading} from './inline-reading.js?v=66d896a8bddba8e4';
 // Presentation choices refer to existing facts; they never become a second event store.
 export const evidenceKey=e=>JSON.stringify([e.source_sha256,e.section,e.block,e.layer,e.attribution||'',e.start,e.end,e.quote]);
 
@@ -137,7 +137,7 @@ export function renderBiography({bio,data,main,text,esc,dateText,url,sourceLabel
     return `<details class="life-more" id="${id}"><summary>${text(title)}</summary><div data-life-list="${id}" data-limit="0"></div></details>`;
   }
   const supplement=bucket(null,'展开记载');
-  const html=`<section class="person-biography" data-life-revision="${biographyRevision(bio)}"><div class="section-heading"><h2>${text('生平')}</h2></div><div class="biography-layout"><details class="life-navigation" id="life-navigation" open><summary><span>${text('生平阶段')}</span><span class="life-current"></span></summary><div class="life-stage-menu"><nav class="life-stages" aria-label="${text('生平阶段')}">${bio.stages.map(s=>`<a data-stage-target="life-stage-${esc(s.id)}" href="${detailPath}?at=stage-${esc(s.id)}">${text(s.title)}</a>`).join('')}</nav>${supplement?`<p class="supplement-jump"><a data-stage-target="life-supplement" href="${detailPath}?at=supplement">${text('生平补遗')}</a></p>`:''}</div></details><div class="life-chapters">${bio.stages.map(s=>`<section class="life-stage" id="life-stage-${esc(s.id)}" data-context tabindex="-1"><h3>${text(s.title)}</h3>${nodes(s.id)}${bucket(s.id,'更多记载')}</section>`).join('')}</div></div></section>${supplement?`<section class="person-supplement" id="life-supplement" data-context tabindex="-1" aria-labelledby="supplement-heading"><h2 id="supplement-heading">${text('生平补遗')}</h2>${supplement}</section>`:''}`;
+  const html=`<section class="person-biography" data-life-revision="${biographyRevision(bio)}"><div class="section-heading"><h2>${text('生平')}</h2></div><div class="biography-layout"><details class="life-navigation" id="life-navigation" open><summary><span>${text('生平阶段')}</span><span class="life-current"></span></summary><div class="life-stage-menu"><nav class="life-stages" aria-label="${text('生平阶段')}">${bio.stages.map(s=>`<a data-stage-target="life-stage-${esc(s.id)}" href="${detailPath}?at=stage-${esc(s.id)}">${text(s.title)}</a>`).join('')}</nav>${supplement?`<a class="life-supplement-jump" data-stage-target="life-supplement" href="${detailPath}?at=supplement">${text('生平补遗')}</a>`:''}</div></details><div class="life-chapters">${bio.stages.map(s=>`<section class="life-stage" id="life-stage-${esc(s.id)}" data-context tabindex="-1"><h3>${text(s.title)}</h3>${nodes(s.id)}${bucket(s.id,'更多记载')}</section>`).join('')}</div></div></section>${supplement?`<section class="person-supplement" id="life-supplement" data-context tabindex="-1" aria-labelledby="supplement-heading"><h2 id="supplement-heading">${text('生平补遗')}</h2>${supplement}</section>`:''}`;
   return {html,bind(){
     if(matchMedia('(max-width:760px)').matches)main.querySelector('.life-navigation').open=!!saved?.open?.includes('life-navigation');
     main.querySelectorAll('.close-records').forEach(button=>button.onclick=()=>{
